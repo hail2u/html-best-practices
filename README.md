@@ -716,6 +716,19 @@ Good:
     HTML <em>Best</em> Practices
 
 
+### Break after `br` element
+
+Bad:
+
+    <p>HTML<br>Best<br>Practices</p>
+
+Good:
+
+    <p>HTML<br>
+    Best<br>
+    Practices</p>
+
+
 ### Don't use `br` element only for presentational purpose
 
 Bad:
