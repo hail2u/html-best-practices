@@ -228,6 +228,17 @@ Good:
     <link href="/css/screen.css" rel="stylesheet">
 
 
+### Don't link to `favicon.ico`
+
+Bad:
+
+    <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
+
+Good:
+
+Place `favicon.ico` in the root directory.
+
+
 ### Add `title` attribute to alternate stylesheets
 
 Bad:
