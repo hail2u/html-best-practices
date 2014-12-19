@@ -937,6 +937,17 @@ Good:
     </script>
 
 
+### Add `defer` attribute if `script` element has `async` attribute
+
+Bad:
+
+    <script async src="/js/main.js"></script>
+
+Good:
+
+    <script async defer src="/js/main.js"></script>
+
+
 Other
 -----
 
