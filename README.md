@@ -273,14 +273,14 @@ Other
 Contributers
 ------------
 
-  - [@hail2u][]
+  - [@hail2u]
 
 
 License
 -------
 
-[CC0][]
+[CC0]
 
 
 [@hail2u]: https://github.com/hail2u
-[CC0]: http://creativecommons.org/publicdomain/zero/1.0/
+[CC0]:     http://creativecommons.org/publicdomain/zero/1.0/
