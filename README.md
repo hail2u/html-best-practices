@@ -39,44 +39,44 @@ Good:
 
 Bad:
 
-    <img alt="She sits infront of a mirror." src='cat-and-mirror.jpg'>
+    <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
 Good:
 
-    <img alt="She sits infront of a mirror." src="cat-and-mirror.jpg">
+    <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
 ### Don't mix character cases
 
 Bad:
 
-    <a HREF="foo">foo</a>
+    <a HREF="#general">General</a>
 
 Good:
 
-    <a href="foo">foo</a>
+    <a href="#general">General</a>
 
 
 ### Don't put white spaces around tags and attribute values
 
 Bad:
 
-    <em class=" foo bar " >hot</em>
+    <h1 class=" title " >HTML Best Practices</h1>
 
 Good:
 
-    <em class="foo bar">hot</em>
+    <h1 class="title">HTML Best Practices</h1>
 
 
 ### Omit boolean attribute value
 
 Bad:
 
-    <audio autoplay="autoplay" src="foo.png">
+    <audio autoplay="autoplay" src="/audio/theme.mp3">
 
 Good:
 
-    <audio autoplay src="foo.png">
+    <audio autoplay src="/audio/theme.mp3">
 
 
 ### Don't omit closing tag
@@ -100,13 +100,13 @@ Good:
 
 Bad:
 
-    <img alt="To right" src="right.png">
-    <img alt="To left" src="left.png" />
+    <img alt="HTML Best Practices" src="/img/logo.png">
+    <hr />
 
 Good:
 
-    <img alt="To right" src="right.png">
-    <img alt="To left" src="left.png">
+    <img alt="HTML Best Practices" src="/img/logo.png">
+    <hr>
 
 
 The root element
@@ -167,7 +167,7 @@ Bad:
 Good:
 
     <link href="/css/screen.css" rel="stylesheet">
-    <link href="/css/high-contrast.css" rel="stylesheet" title="High contrast">
+    <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
 ### Specify document character encoding
@@ -202,14 +202,14 @@ Bad:
 
     <head>
       <meta content="width=device-width" name="viewport">
-      <meta charset="utf-8">
+      <meta charset="UTF-8">
       ...
     </head>
 
 Good:
 
     <head>
-      <meta charset="utf-8">
+      <meta charset="UTF-8">
       <meta content="width=device-width" name="viewport">
       ...
     </head>
@@ -275,11 +275,11 @@ Good:
 
 Bad:
 
-    <address>Copyright © 2014 John Doe, all rights reserved.</address>
+    <address>No rights reserved.</address>
 
 Good:
 
-    <address>Contact: <a href="mailto:john.doe@example.com">John Doe</a></address>
+    <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
 Grouping content
