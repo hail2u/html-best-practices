@@ -112,7 +112,7 @@ Good:
 The root element
 ----------------
 
-### Don't omit lang attribute
+### Don't omit `lang` attribute
 
 Bad:
 
@@ -123,7 +123,7 @@ Good:
     <html lang="en-US">
 
 
-### Keep lang value short as possible
+### Keep `lang` attribute value short as possible
 
 Bad
 
@@ -137,7 +137,7 @@ Good:
 Document metadata
 -----------------
 
-### Don't omit title element
+### Don't omit `title` element
 
 Bad:
 
@@ -168,7 +168,7 @@ Good:
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### Add title to alternate stylesheets
+### Add `title` attribute to alternate stylesheets
 
 Bad:
 
@@ -226,7 +226,7 @@ Good:
     </head>
 
 
-### Omit type attribute for CSS
+### Omit `type` attribute for CSS
 
 Bad:
 
@@ -244,7 +244,7 @@ Good:
 Sections
 --------
 
-### Don't omit body tag
+### Don't omit `body` tag
 
 Bad:
 
@@ -267,7 +267,7 @@ Good:
     </html>
 
 
-### Forget about hgroup element
+### Forget about `hgroup` element
 
 Bad:
 
@@ -282,7 +282,7 @@ Good:
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### Use address element only for contact information
+### Use `address` element only for contact information
 
 Bad:
 
@@ -296,7 +296,7 @@ Good:
 Grouping content
 ----------------
 
-### Don't start with newline in pre
+### Don't start with newline in `pre` element
 
 Bad:
 
@@ -310,7 +310,7 @@ Good:
     </pre>
 
 
-### Use appropriate element in blockquote
+### Use appropriate element in `blockquote` element
 
 Bad:
 
@@ -323,7 +323,7 @@ Good:
     </blockquote>
 
 
-### Don't include attribution in blockquote
+### Don't include attribution in `blockquote` element
 
 Bad:
 
@@ -370,7 +370,7 @@ Good:
     </ul>
 
 
-### Use type attribute for ol
+### Use `type` attribute for `ol` element
 
 Bad:
 
@@ -402,7 +402,7 @@ Good:
     </body>
 
 
-### Place figcaption as first or last child of figure
+### Place `figcaption` element as first or last child of `figure` element
 
 Bad:
 
@@ -421,7 +421,7 @@ Good:
     </figure>
 
 
-### Use main element
+### Use `main` element
 
 Bad:
 
@@ -436,8 +436,7 @@ Good:
     </main>
 
 
-### Avoid div element as possible
-
+### Avoid `div` element as possible
 
 Bad:
 
@@ -472,7 +471,7 @@ Good:
     </a>
 
 
-### Use download attribute for downloading a resource
+### Use `download` attribute for downloading a resource
 
 Bad:
 
@@ -483,7 +482,7 @@ Good:
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Use rel, hreflang, and type attribute if needed
+### Use `rel`, `hreflang`, and `type` attribute if needed
 
 Bad:
 
@@ -494,7 +493,7 @@ Good:
     <a href="/pdf" rel="alternate" type="application/pdf">PDF version</a>
 
 
-### Don't use em for warning or caution
+### Don't use `em` element for warning or caution
 
 Bad:
 
@@ -505,7 +504,7 @@ Good:
     <strong>Caution!</strong>
 
 
-### Avoid s, i, b, and u element as possible
+### Avoid `s`, `i`, `b`, and `u` element as possible
 
 Bad:
 
@@ -516,7 +515,7 @@ Good:
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### Add title attribute to abbr
+### Add `title` attribute to `abbr` element
 
 Bad:
 
@@ -527,7 +526,7 @@ Good:
     <abbr title="HTML Best Practices">HBP</abbr>
 
 
-### Markup ruby element verbosely
+### Markup `ruby` element verbosely
 
 Bad:
 
@@ -538,7 +537,7 @@ Good:
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Add datetime attribute to non W3CDTF time
+### Add `datetime` attribute to non W3CDTF time
 
 Bad:
 
@@ -549,7 +548,7 @@ Good:
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Specify code language with class prefixed with language-
+### Specify code language with `class` prefixed with `language-`
 
 Bad:
 
@@ -560,7 +559,7 @@ Good:
     <code class="language-html">&lt;DOCTYPE html></code>
 
 
-### Keep kbd simple as possible
+### Keep `kbd` element simple as possible
 
 Bad:
 
@@ -571,7 +570,7 @@ Good:
     <kbd>Ctrl+F5</kbd>
 
 
-### Avoid span as possible
+### Avoid `span` element as possible
 
 Bad:
 
@@ -582,7 +581,7 @@ Good:
     HTML <em>Best</em> Practices
 
 
-### Don't use br only for presentational purpose
+### Don't use `br` element only for presentational purpose
 
 Bad:
 
