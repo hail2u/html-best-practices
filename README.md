@@ -158,6 +158,17 @@ Good:
     <span lang="ja">...</span>
 
 
+### Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
+
+Bad:
+
+    <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
+
+Good:
+
+    <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
+
+
 The root element
 ----------------
 
