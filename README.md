@@ -120,7 +120,18 @@ Bad:
 
 Good:
 
+    <html lang="en-US">
+
+
+### Keep lang value short as possible
+
+Bad
+
     <html lang="ja-JP">
+
+Good:
+
+    <html lang="ja">
 
 
 Document metadata
