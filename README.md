@@ -1061,6 +1061,22 @@ Good:
     </script>
 
 
+### Don't use script-injected `script` element
+
+Bad:
+
+    <script>
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "//example.com/widget.js";
+      document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
+
+Good:
+
+    <script async defer src="//example.com/widget.js"></script>
+
+
 Other
 -----
 
