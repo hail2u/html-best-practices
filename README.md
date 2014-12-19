@@ -919,6 +919,17 @@ Good:
 Forms
 -----
 
+### Wrap form controls with `label` element
+
+Bad:
+
+    <p>Query: <input name="q" type="text"></p>
+
+Good:
+
+    <p><label>Query: <input name="q" type="text"></label></p>
+
+
 ### Omit `for` attribute if possible
 
 Bad:
