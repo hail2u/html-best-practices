@@ -274,6 +274,7 @@ Contributers
 ------------
 
   - [@hail2u]
+  - [@momdo]
 
 
 License
@@ -283,4 +284,5 @@ License
 
 
 [@hail2u]: https://github.com/hail2u
+[@momdo]:  https://github.com/momdo
 [CC0]:     http://creativecommons.org/publicdomain/zero/1.0/
