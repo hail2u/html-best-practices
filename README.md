@@ -58,6 +58,17 @@ Good:
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
+### Use named character references for control or invisible characters
+
+Bad:
+
+    <p>This book can read in 1 hour.</p>
+
+Good:
+
+    <p>This book can read in 1&nbsp;hour.</p>
+
+
 ### Add white spaces around comment contents
 
 Bad:
