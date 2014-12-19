@@ -47,17 +47,6 @@ Good:
     <!DOCTYPE html>
 
 
-### Omit namespaces
-
-Bad:
-
-    <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
-
-Good:
-
-    <html lang="ja">
-
-
 ### Don't mix quotation marks
 
 Bad:
@@ -130,6 +119,21 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
+
+
+### Omit namespaces
+
+Bad:
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    ...
+    </svg>
+
+Good:
+
+    <svg version="1.1">
+    ...
+    </svg>
 
 
 ### Don't use XML attrbutes
