@@ -919,10 +919,6 @@ Good:
     </fieldset>
 
 
-Interactive elements
---------------------
-
-
 Scripting
 ---------
 
