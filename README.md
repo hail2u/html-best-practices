@@ -617,6 +617,78 @@ Good:
 Embedded content
 ----------------
 
+### Don't forget `alt` attrbute if needed
+
+Bad:
+
+    <img src="/img/logo.png">
+
+Good:
+
+    <img alt="HTML Best Practices" src="/img/logo.png">
+
+
+### Empty `alt` attribute if possible
+
+Bad:
+
+    <img src="/img/icon/help.png"> Help
+
+Good:
+
+    <img alt="" src="/img/icon/help.png"> Help
+
+
+### Omit `alt` attibute if possible
+
+Bad:
+
+    <img alt="CAPTCHA" src="captcha.cgi?id=82174">
+
+Good:
+
+    <img src="captcha.cgi?id=82174" title="CAPTCHA">
+
+
+### Empty `iframe` element
+
+Bad:
+
+    <iframe src="/ads/default.html">
+      <p>If your browser support inline frame, ads are displayed here.</p>
+    </iframe>
+
+Good:
+
+    <iframe src="/ads/default.html"></iframe>
+
+
+### Markup `map` element content
+
+Bad:
+
+    <map name="toc">
+      <a href="#general">General</a>
+      <area alt="General" coords="0, 0, 40, 40" href="#General"> |
+      <a href="#the_root_element">The root element</a>
+      <area alt="The root element" coords="50, 0, 90, 40" href="#the_root_element"> |
+      <a href="#sections">Sections</a>
+      <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
+    </map>
+
+Good:
+
+    <map name="toc">
+      <p>
+        <a href="#general">General</a>
+        <area alt="General" coords="0, 0, 40, 40" href="#General"> |
+        <a href="#the_root_element">The root element</a>
+        <area alt="The root element" coords="50, 0, 90, 40" href="#the_root_element"> |
+        <a href="#sections">Sections</a>
+        <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
+      </p>
+    </map>
+
 
 Tabular data
 ------------
