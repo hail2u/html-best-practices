@@ -323,6 +323,27 @@ Good:
     </style>
 
 
+### Don't comment out contents of `style` element
+
+Bad:
+
+    <style>
+    <!--
+    body {
+      lint-height: 1.5;
+    }
+    -->
+    </style>
+
+Good:
+
+    <style>
+    body {
+      lint-height: 1.5;
+    }
+    </style>
+
+
 ### Don't mix tag for CSS and JavaScript
 
 Bad:
@@ -1004,6 +1025,29 @@ Bad:
 Good:
 
     <script async defer src="/js/main.js"></script>
+
+
+### Don't comment out contents of `script` element
+
+Bad:
+
+    <script>/*<![CDATA[*/
+    ...
+    /*]]>*/</script>
+
+Also bad:
+
+    <script>
+    //<!--
+    ...
+    //-->
+    </script>
+
+Good:
+
+    <script>
+    ...
+    </script>
 
 
 Other
