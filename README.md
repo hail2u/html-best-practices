@@ -233,6 +233,54 @@ Good:
 Sections
 --------
 
+### Don't omit body tag
+
+Bad:
+
+    <html>
+      <head>
+      ...
+      </head>
+      ...
+    </html>
+
+Good:
+
+    <html>
+      <head>
+      ...
+      </head>
+      <body>
+      ...
+      </body>
+    </html>
+
+
+### Forget about hgroup element
+
+Bad:
+
+    <hgroup>
+      <h1>HTML Best Practices</h1>
+      <h2>For writing maintainable and scalable HTML documents.</h2>
+    </hgroup>
+
+Good:
+
+    <h1>HTML Best Practices</h1>
+    <p>For writing maintainable and scalable HTML documents.</p>
+
+
+### Use address element only for contact information
+
+Bad:
+
+    <address>Copyright © 2014 John Doe, all rights reserved.</address>
+
+Good:
+
+    <address>Contact: <a href="mailto:john.doe@example.com">John Doe</a></address>
+
 
 Grouping content
 ----------------
