@@ -132,7 +132,7 @@ Good:
     <hr>
 
 
-### Don't use XML attrbutes.
+### Don't use XML attrbutes
 
 Bad:
 
