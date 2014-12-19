@@ -112,6 +112,16 @@ Good:
 The root element
 ----------------
 
+### Don't omit lang attribute
+
+Bad:
+
+    <html>
+
+Good:
+
+    <html lang="ja-JP">
+
 
 Document metadata
 -----------------
