@@ -130,7 +130,7 @@ Good:
     </html>
 
 
-### Don't mix empty elemet format
+### Don't mix empty element format
 
 Bad:
 
@@ -194,7 +194,7 @@ Good:
     <html lang="en-US">
 
 
-### Keep `lang` attribute value short as possible
+### Keep `lang` attribute value as short as possible
 
 Bad
 
@@ -1105,7 +1105,7 @@ Good:
     </html>
 
 
-Contributers
+Contributors
 ------------
 
   - [@hail2u]
