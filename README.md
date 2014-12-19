@@ -805,6 +805,120 @@ Good:
 Forms
 -----
 
+### Omit `for` attribute if possible
+
+Bad:
+
+    <label for="q">Query: <input id="q" name="q" type="text"></label>
+
+Good:
+
+    <label>Query: <input name="q" type="text"></label>
+
+
+### Use appropriate `type` attribute for `input` element
+
+Bad:
+
+    <label>Search keyword: <input name="q" type="text"></label>
+
+Good:
+
+    <label>Search keyword: <input name="q" type="search"></label>
+
+
+### Specify `value` attribute for `input type="submit"`
+
+
+Bad:
+
+    <input type="submit">
+
+Good:
+
+    <input type="submit" value="Search">
+
+
+### Include `title` attibute when there is `pattern` attribute
+
+Bad:
+
+    <input name="security-code" pattern="[0-9]{3}" type="text">
+
+Good:
+
+    <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
+
+
+### Don't use `placeholder` attribute for labeling
+
+Bad:
+
+    <input name="email" placeholder="Email" type="text">
+
+Good:
+
+    <label>Email: <input name="email" placeholder="john.doeexample.com" type="text"></label>
+
+
+### Write one `option` element per line
+
+Bad:
+
+    <datalist id="toc">
+      <option label="General"><option label="The root element"><option label="Sections">
+    </datalist>
+
+Good:
+
+    <datalist id="toc">
+      <option label="General">
+      <option label="The root element">
+      <option label="Sections">
+    </datalist>
+
+
+### Use `max` attribute for `progress` element
+
+Bad:
+
+    <progress value="0.5"> 50% </progress>
+
+Good:
+
+    <progress max="100" value="50"> 50% </progress>
+
+
+### Use `min` and `max` attribute for `meter` element
+
+Bad:
+
+    <meter value="0.5"> 512GB used (1024GB total)</meter>
+
+Good:
+
+    <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
+
+
+### Place `legend` element as first child of `fieldset` element
+
+Bad:
+
+    <fieldset>
+      <p><label>Is this secition is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      ...
+      <legend>About "General"</legend>
+    </fieldset>
+
+Good:
+
+    <fieldset>
+      <legend>About "General"</legend>
+      <p><label>Is this secition is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      ...
+    </fieldset>
+
+
 Interactive elements
 --------------------
 
