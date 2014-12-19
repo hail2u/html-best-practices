@@ -35,6 +35,29 @@ Good:
     <!DOCTYPE html>
 
 
+### Don't use XML Declaration
+
+Bad:
+
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <!DOCTYPE html>
+
+Good:
+
+    <!DOCTYPE html>
+
+
+### Omit namespaces
+
+Bad:
+
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+
+Good:
+
+    <html lang="ja">
+
+
 ### Don't mix quotation marks
 
 Bad:
@@ -107,6 +130,17 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
+
+
+### Don't use XML attrbutes
+
+Bad:
+
+    <span lang="ja" xml:lang="ja">...</span>
+
+Good:
+
+    <span lang="ja">...</span>
 
 
 The root element
@@ -224,6 +258,17 @@ Good:
       <meta content="width=device-width" name="viewport">
       ...
     </head>
+
+
+### Use UTF-8
+
+Bad:
+
+    <meta charset="Shift_JIS">
+
+Good:
+
+    <meta charset="UTF-8">
 
 
 ### Omit `type` attribute for CSS
@@ -704,6 +749,20 @@ Interactive elements
 
 Scripting
 ---------
+
+### Omit `type` attribute for `script` element
+
+Bad:
+
+    <script type="text/javascript">
+    ...
+    </script>
+
+Good:
+
+    <script>
+    ...
+    </script>
 
 
 Other
