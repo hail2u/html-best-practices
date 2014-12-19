@@ -628,6 +628,17 @@ Good:
     <a href="/pdf" rel="alternate" type="application/pdf">PDF version</a>
 
 
+### Clear link text
+
+Bad:
+
+    <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
+
+Good:
+
+    <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+
+
 ### Don't use `em` element for warning or caution
 
 Bad:
