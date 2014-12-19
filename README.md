@@ -483,6 +483,31 @@ Scripting
 Other
 -----
 
+### Indent consistently
+
+Bad:
+
+    <html>
+    	<head>
+    	...
+    	</head>
+      <body>
+      ...
+      </body>
+    </html>
+
+Good:
+
+
+    <html>
+      <head>
+      ...
+      </head>
+      <body>
+      ...
+      </body>
+    </html>
+
 
 Contributers
 ------------
