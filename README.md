@@ -285,6 +285,161 @@ Good:
 Grouping content
 ----------------
 
+### Don't start with newline in pre
+
+Bad:
+
+    <pre>
+    &lt;!DOCTYPE html>
+    </pre>
+
+Good:
+
+    <pre>&lt;!DOCTYPE html>
+    </pre>
+
+
+### Use appropriate element in blockquote
+
+Bad:
+
+    <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
+
+Good:
+
+    <blockquote>
+      <p>For writing maintainable and scalable HTML documents.</p>
+    </blockquote>
+
+
+### Don't include attribution in blockquote
+
+Bad:
+
+    <blockquote>
+      <p>For writing maintainable and scalable HTML documents.</p>
+
+      <p>— HTML Best Practices</p>
+    </blockquote>
+
+Good:
+
+    <blockquote>
+      <p>For writing maintainable and scalable HTML documents.</p>
+    </blockquote>
+    
+    <p>— HTML Best Practices</p>
+
+Also good:
+
+    <figure>
+      <blockquote>
+        <p>For writing maintainable and scalable HTML documents.</p>
+      </blockquote>
+    
+      <figcaption>— HTML Best Practices</figcaption>
+    </figure>
+
+
+### Write one list item per line
+
+Bad:
+
+    <ul>
+      <li>General</li><li>The root Element</li><li>Sections</li>...
+    </ul>
+
+Good:
+
+    <ul>
+      <li>General</li>
+      <li>The root Element</li>
+      <li>Sections</li>
+      ...
+    </ul>
+
+
+### Use type attribute for ol
+
+Bad:
+
+    <head>
+      <style>
+        .toc {
+          list-style-type: upper-roman;
+        }
+      </style>
+    </head>
+    <body>
+      <ol class="toc">
+        <li>General</li>
+        <li>The root Element</li>
+        <li>Sections</li>
+        ...
+      </ol>
+    </body>
+
+Good:
+
+    <body>
+      <ol type="upper-roman">
+        <li>General</li>
+        <li>The root Element</li>
+        <li>Sections</li>
+        ...
+      </ol>
+    </body>
+
+
+### Place figcaption as first or last child of figure
+
+Bad:
+
+    <figure>
+      <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
+      <figcaption>“HTML Best Practices” Cover Art</figcaption>
+      <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
+    </figure>
+
+Good:
+
+    <figure>
+      <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
+      <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
+      <figcaption>“HTML Best Practices” Cover Art</figcaption>
+    </figure>
+
+
+### Use main element
+
+Bad:
+
+    <div id="content">
+    ...
+    </div>
+
+Good:
+
+    <main>
+    ...
+    </main>
+
+
+### Avoid div element as possible
+
+
+Bad:
+
+    <div class="chapter">
+    ...
+    </div>
+
+Good:
+
+    <section>
+    ...
+    </section>
+
 
 Text-level semantics
 --------------------
