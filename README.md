@@ -96,6 +96,19 @@ Good:
     </html>
 
 
+### Don't mix empty elemet format
+
+Bad:
+
+    <img alt="To right" src="right.png">
+    <img alt="To left" src="left.png" />
+
+Good:
+
+    <img alt="To right" src="right.png">
+    <img alt="To left" src="left.png">
+
+
 The root element
 ----------------
 
