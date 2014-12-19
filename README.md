@@ -126,6 +126,109 @@ Good:
 Document metadata
 -----------------
 
+### Don't omit title element
+
+Bad:
+
+    <head>
+      <meta charset="UTF-8">
+    </head>
+
+Good:
+
+    <head>
+      <meta charset="UTF-8">
+      <title>HTML Best Practices</title>
+    </head>
+
+
+### Specify MIME type of minor linked resources
+
+Bad:
+
+    <link href="/favicon.ico" rel="icon">
+    <link href="/feed" rel="alternate">
+    <link href="/css/screen.css" rel="stylesheet">
+
+Good:
+
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/feed" rel="alternate" type="application/rss+xml">
+    <link href="/css/screen.css" rel="stylesheet">
+
+
+### Add title to alternate stylesheets
+
+Bad:
+
+    <link href="/css/screen.css" rel="stylesheet">
+    <link href="/css/high-contrast.css" rel="alternate stylesheet">
+
+Good:
+
+    <link href="/css/screen.css" rel="stylesheet">
+    <link href="/css/high-contrast.css" rel="stylesheet" title="High contrast">
+
+
+### Specify document character encoding
+
+Bad:
+
+    <head>
+      <title>HTML Best Practices</title>
+    </head>
+
+Good:
+
+    <head>
+      <meta charset="UTF-8">
+      <title>HTML Best Practices</title>
+    </head>
+
+
+### Don't use legacy character encoding format
+
+Bad:
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+Good:
+    <meta charset="UTF-8">
+
+
+### Specify character encoding at first
+
+Bad:
+
+    <head>
+      <meta content="width=device-width" name="viewport">
+      <meta charset="utf-8">
+      ...
+    </head>
+
+Good:
+
+    <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width" name="viewport">
+      ...
+    </head>
+
+
+### Omit type attribute for CSS
+
+Bad:
+
+    <style type="text/css">
+    ...
+    </style>
+
+Good:
+
+    <style>
+    ...
+    </style>
+
 
 Sections
 --------
