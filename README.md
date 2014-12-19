@@ -136,7 +136,7 @@ Good:
     </svg>
 
 
-### Don't use XML attrbutes
+### Don't use XML attributes
 
 Bad:
 
