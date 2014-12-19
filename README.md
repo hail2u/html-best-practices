@@ -323,6 +323,27 @@ Good:
     </style>
 
 
+### Don't comment out contents of `style` element
+
+Bad:
+
+    <style>
+    <!--
+    body {
+      lint-height: 1.5;
+    }
+    -->
+    </style>
+
+Good:
+
+    <style>
+    body {
+      lint-height: 1.5;
+    }
+    </style>
+
+
 ### Don't mix tag for CSS and JavaScript
 
 Bad:
