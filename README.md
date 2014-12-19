@@ -959,7 +959,6 @@ Bad:
 
 Good:
 
-
     <html>
       <head>
       ...
