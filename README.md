@@ -80,6 +80,17 @@ Good:
     <h1 class="title">HTML Best Practices</h1>
 
 
+### Don't separate attributes with two or more white spaces
+
+Bad:
+
+    <input   name="q"  type="search">
+
+Good:
+
+    <input name="q" type="search">
+
+
 ### Omit boolean attribute value
 
 Bad:
