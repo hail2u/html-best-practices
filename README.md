@@ -1027,6 +1027,29 @@ Good:
     <script async defer src="/js/main.js"></script>
 
 
+### Don't comment out contents of `script` element
+
+Bad:
+
+    <script>/*<![CDATA[*/
+    ...
+    /*]]>*/</script>
+
+Also bad:
+
+    <script>
+    //<!--
+    ...
+    //-->
+    </script>
+
+Good:
+
+    <script>
+    ...
+    </script>
+
+
 Other
 -----
 
