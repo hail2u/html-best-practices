@@ -47,6 +47,17 @@ Good:
     <!DOCTYPE html>
 
 
+### Add white spaces around comment contents
+
+Bad:
+
+    <!--This section is non-normative-->
+
+Good:
+
+    <!-- This section is non-normative -->
+
+
 ### Don't mix quotation marks
 
 Bad:
