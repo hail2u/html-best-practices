@@ -47,6 +47,17 @@ Good:
     <!DOCTYPE html>
 
 
+### Don't use character references as possible
+
+Bad:
+
+    <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
+
+Good:
+
+    <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
+
+
 ### Add white spaces around comment contents
 
 Bad:
