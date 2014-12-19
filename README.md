@@ -79,6 +79,23 @@ Good:
     <audio autoplay src="foo.png">
 
 
+### Don't omit closing tag
+
+Bad:
+
+    <html>
+      <body>
+      ...
+
+Good:
+
+    <html>
+      <body>
+      ...
+      </body>
+    </html>
+
+
 The root element
 ----------------
 
