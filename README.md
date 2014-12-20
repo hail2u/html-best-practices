@@ -481,7 +481,7 @@ Good:
     </blockquote>
 
 
-### Don't include attribution in `blockquote` element
+### Don't include attribution directly in `blockquote` element
 
 Bad:
 
@@ -499,7 +499,7 @@ Good:
     
     <p>— HTML Best Practices</p>
 
-Also good:
+Also good (recommended by WHATWG):
 
     <figure>
       <blockquote>
@@ -508,6 +508,14 @@ Also good:
     
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
+
+Also good too (recommended by W3C):
+
+    <blockquote>
+      <p>For writing maintainable and scalable HTML documents.</p>
+    
+      <footer>— HTML Best Practices</footer>
+    </blockquote>
 
 
 ### Write one list item per line
