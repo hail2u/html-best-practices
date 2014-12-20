@@ -3,6 +3,22 @@ HTML Best Practices
 
 For writing maintainable and scalable HTML documents.
 
+## Contents
+
+1.  [General](#general)
+2.  [The root element](#the-root-element)
+3.  [Sections](#sections)
+4.  [Grouping content](#grouping-content)
+5.  [Text-level semantics](#text-level-semantics)
+6.  [Edits](#edits)
+7.  [Embedded content](#embedded-content)
+8.  [Tabular data](#tabular-data)
+9.  [Forms](#forms)
+10. [Scripting](#scripting)
+11. [Other](#other)
+12. [Contributors](#contributors)
+13. [License](#license)
+
 
 General
 -------
