@@ -687,11 +687,11 @@ Good:
 
 Bad:
 
-    <a href="/pdf">PDF version</a>
+    <a href="/ja/pdf">Japanese PDF version</a>
 
 Good:
 
-    <a href="/pdf" rel="alternate" type="application/pdf">PDF version</a>
+    <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
 ### Clear link text
