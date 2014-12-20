@@ -711,6 +711,21 @@ Good:
     <span class="icon-search" aria-hidden="true"></span>
 
 
+### Don't put quotes to `q` element
+
+Bad:
+
+    <q>“For writing maintainable and scalable HTML documents”</q>
+
+Good:
+
+    <q>For writing maintainable and scalable HTML documents</q>
+
+Also good:
+
+    “For writing maintainable and scalable HTML documents”
+
+
 ### Add `title` attribute to `abbr` element
 
 Bad:
