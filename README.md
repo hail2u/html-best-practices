@@ -202,6 +202,25 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
+### Prefer strong native semantics
+
+Bad:
+
+    <nav role="navigation">
+    ...
+    </nav>
+    
+    <hr role="separator">
+
+Good:
+
+    <nav>
+    ...
+    </nav>
+    
+    <hr>
+
+
 The root element
 ----------------
 
