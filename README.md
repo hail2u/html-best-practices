@@ -738,7 +738,7 @@ Text-level semantics
 
 Bad:
 
-    <h1><a href="https://whatwg.org/">WHATWG</h1>
+    <h1><a href="https://whatwg.org/">WHATWG</a></h1>
     
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
