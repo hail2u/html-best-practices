@@ -3,14 +3,13 @@ HTML Best Practices
 
 For writing maintainable and scalable HTML documents.
 
-
 * [General](#general)
   * [Start with DOCTYPE](#start-with-doctype)
   * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
   * [Don't use XML Declaration](#dont-use-xml-declaration)
-  * [Don't use character references as possible](#dont-use-character-references-as-possible)
+  * [Don't use character references as much as possible](#dont-use-character-references-as-much-as-possible)
   * [Use named character references for control or invisible characters](#use-named-character-references-for-control-or-invisible-characters)
-  * [Add white spaces around comment contents](#add-white-spaces-around-comment-contents)
+  * [Put white spaces around comment contents](#put-white-spaces-around-comment-contents)
   * [Don't mix quotation marks](#dont-mix-quotation-marks)
   * [Don't mix character cases](#dont-mix-character-cases)
   * [Don't put white spaces around tags and attribute values](#dont-put-white-spaces-around-tags-and-attribute-values)
@@ -23,10 +22,10 @@ For writing maintainable and scalable HTML documents.
   * [Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes)
   * [Prefer strong native semantics](#prefer-strong-native-semantics)
 * [The root element](#the-root-element)
-  * [Don't omit `lang` attribute](#dont-omit-lang-attribute)
+  * [Add `lang` attribute](#add-lang-attribute)
   * [Keep `lang` attribute value as short as possible](#keep-lang-attribute-value-as-short-as-possible)
 * [Document metadata](#document-metadata)
-  * [Don't omit `title` element](#dont-omit-title-element)
+  * [Add `title` element](#add-title-element)
   * [Specify MIME type of minor linked resources](#specify-mime-type-of-minor-linked-resources)
   * [Don't link to `favicon.ico`](#dont-link-to-faviconico)
   * [Add `title` attribute to alternate stylesheets](#add-title-attribute-to-alternate-stylesheets)
@@ -38,7 +37,7 @@ For writing maintainable and scalable HTML documents.
   * [Don't comment out contents of `style` element](#dont-comment-out-contents-of-style-element)
   * [Don't mix tag for CSS and JavaScript](#dont-mix-tag-for-css-and-javascript)
 * [Sections](#sections)
-  * [Don't omit `body` tag](#dont-omit-body-tag)
+  * [Add `body` tag](#add-body-tag)
   * [Forget about `hgroup` element](#forget-about-hgroup-element)
   * [Use `address` element only for contact information](#use-address-element-only-for-contact-information)
 * [Grouping content](#grouping-content)
@@ -49,27 +48,27 @@ For writing maintainable and scalable HTML documents.
   * [Use `type` attribute for `ol` element](#use-type-attribute-for-ol-element)
   * [Place `figcaption` element as first or last child of `figure` element](#place-figcaption-element-as-first-or-last-child-of-figure-element)
   * [Use `main` element](#use-main-element)
-  * [Avoid `div` element as possible](#avoid-div-element-as-possible)
+  * [Avoid `div` element as much as possible](#avoid-div-element-as-much-as-possible)
 * [Text-level semantics](#text-level-semantics)
   * [Don't split same link that can be grouped](#dont-split-same-link-that-can-be-grouped)
   * [Use `download` attribute for downloading a resource](#use-download-attribute-for-downloading-a-resource)
   * [Use `rel`, `hreflang`, and `type` attribute if needed](#use-rel-hreflang-and-type-attribute-if-needed)
   * [Clear link text](#clear-link-text)
   * [Don't use `em` element for warning or caution](#dont-use-em-element-for-warning-or-caution)
-  * [Avoid `s`, `i`, `b`, and `u` element as possible](#avoid-s-i-b-and-u-element-as-possible)
+  * [Avoid `s`, `i`, `b`, and `u` element as much as possible](#avoid-s-i-b-and-u-element-as-much-as-possible)
   * [Don't put quotes to `q` element](#dont-put-quotes-to-q-element)
   * [Add `title` attribute to `abbr` element](#add-title-attribute-to-abbr-element)
   * [Markup `ruby` element verbosely](#markup-ruby-element-verbosely)
-  * [Add `datetime` attribute to non W3CDTF time](#add-datetime-attribute-to-non-w3cdtf-time)
-  * [Specify code language with `class` prefixed with `language-`](#specify-code-language-with-class-prefixed-with-language-)
-  * [Keep `kbd` element simple as possible](#keep-kbd-element-simple-as-possible)
-  * [Avoid `span` element as possible](#avoid-span-element-as-possible)
+  * [Add `datetime` attribute to non-machine-readable `time` element](#add-datetime-attribute-to-non-machine-readable-time-element)
+  * [Specify code language with `class` attribute prefixed with `language-`](#specify-code-language-with-class-attribute-prefixed-with-language-)
+  * [Keep `kbd` element as simple as possible](#keep-kbd-element-as-simple-as-possible)
+  * [Avoid `span` element as much as possible](#avoid-span-element-as-much-as-possible)
   * [Break after `br` element](#break-after-br-element)
   * [Don't use `br` element only for presentational purpose](#dont-use-br-element-only-for-presentational-purpose)
 * [Edits](#edits)
-  * [Don't stride over other elements](#dont-stride-over-other-elements)
+  * [Don't stride `ins` and `del` element over other elements](#dont-stride-ins-and-del-element-over-other-elements)
 * [Embedded content](#embedded-content)
-  * [Don't forget `alt` attrbute if needed](#dont-forget-alt-attrbute-if-needed)
+  * [Add `alt` attrbute to `img` element if needed](#add-alt-attrbute-to-img-element-if-needed)
   * [Empty `alt` attribute if possible](#empty-alt-attribute-if-possible)
   * [Omit `alt` attibute if possible](#omit-alt-attibute-if-possible)
   * [Empty `iframe` element](#empty-iframe-element)
@@ -78,18 +77,18 @@ For writing maintainable and scalable HTML documents.
   * [Write one cell per line](#write-one-cell-per-line)
   * [Use `th` element for header cell](#use-th-element-for-header-cell)
 * [Forms](#forms)
-  * [Wrap form controls with `label` element](#wrap-form-controls-with-label-element)
+  * [Wrap form control with `label` element](#wrap-form-control-with-label-element)
   * [Omit `for` attribute if possible](#omit-for-attribute-if-possible)
   * [Use appropriate `type` attribute for `input` element](#use-appropriate-type-attribute-for-input-element)
-  * [Specify `value` attribute for `input type="submit"`](#specify-value-attribute-for-input-typesubmit)
-  * [Include `title` attibute when there is `pattern` attribute](#include-title-attibute-when-there-is-pattern-attribute)
+  * [Add `value` attribute to `input type="submit"`](#add-value-attribute-to-input-typesubmit)
+  * [Add `title` attibute to `input` element when there is `pattern` attribute](#add-title-attibute-to-input-element-when-there-is-pattern-attribute)
   * [Don't use `placeholder` attribute for labeling](#dont-use-placeholder-attribute-for-labeling)
   * [Write one `option` element per line](#write-one-option-element-per-line)
-  * [Use `max` attribute for `progress` element](#use-max-attribute-for-progress-element)
-  * [Use `min` and `max` attribute for `meter` element](#use-min-and-max-attribute-for-meter-element)
+  * [Add `max` attribute to `progress` element](#add-max-attribute-to-progress-element)
+  * [Add `min` and `max` attribute to `meter` element](#add-min-and-max-attribute-to-meter-element)
   * [Place `legend` element as first child of `fieldset` element](#place-legend-element-as-first-child-of-fieldset-element)
 * [Scripting](#scripting)
-  * [Omit `type` attribute for `script` element](#omit-type-attribute-for-script-element)
+  * [Omit `type` attribute for JavaScript](#omit-type-attribute-for-javascript)
   * [Add `defer` attribute if `script` element has `async` attribute](#add-defer-attribute-if-script-element-has-async-attribute)
   * [Don't comment out contents of `script` element](#dont-comment-out-contents-of-script-element)
   * [Don't use script-injected `script` element](#dont-use-script-injected-script-element)
@@ -142,7 +141,7 @@ Good:
     <!DOCTYPE html>
 
 
-### Don't use character references as possible
+### Don't use character references as much as possible
 
 Bad:
 
@@ -164,7 +163,7 @@ Good:
     <p>This book can read in 1&nbsp;hour.</p>
 
 
-### Add white spaces around comment contents
+### Put white spaces around comment contents
 
 Bad:
 
@@ -319,7 +318,7 @@ Good:
 The root element
 ----------------
 
-### Don't omit `lang` attribute
+### Add `lang` attribute
 
 Bad:
 
@@ -344,7 +343,7 @@ Good:
 Document metadata
 -----------------
 
-### Don't omit `title` element
+### Add `title` element
 
 Bad:
 
@@ -510,7 +509,7 @@ Also good:
 Sections
 --------
 
-### Don't omit `body` tag
+### Add `body` tag
 
 Bad:
 
@@ -710,7 +709,7 @@ Good:
     </main>
 
 
-### Avoid `div` element as possible
+### Avoid `div` element as much as possible
 
 Bad:
 
@@ -789,7 +788,7 @@ Good:
     <strong>Caution!</strong>
 
 
-### Avoid `s`, `i`, `b`, and `u` element as possible
+### Avoid `s`, `i`, `b`, and `u` element as much as possible
 
 Bad:
 
@@ -837,7 +836,7 @@ Good:
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Add `datetime` attribute to non W3CDTF time
+### Add `datetime` attribute to non-machine-readable `time` element
 
 Bad:
 
@@ -848,7 +847,7 @@ Good:
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Specify code language with `class` prefixed with `language-`
+### Specify code language with `class` attribute prefixed with `language-`
 
 Bad:
 
@@ -859,7 +858,7 @@ Good:
     <code class="language-html">&lt;DOCTYPE html></code>
 
 
-### Keep `kbd` element simple as possible
+### Keep `kbd` element as simple as possible
 
 Bad:
 
@@ -870,7 +869,7 @@ Good:
     <kbd>Ctrl+F5</kbd>
 
 
-### Avoid `span` element as possible
+### Avoid `span` element as much as possible
 
 Bad:
 
@@ -912,7 +911,7 @@ Good:
 Edits
 -----
 
-### Don't stride over other elements
+### Don't stride `ins` and `del` element over other elements
 
 Bad:
 
@@ -930,7 +929,7 @@ Good:
 Embedded content
 ----------------
 
-### Don't forget `alt` attrbute if needed
+### Add `alt` attrbute to `img` element if needed
 
 Bad:
 
@@ -1077,7 +1076,7 @@ Good:
 Forms
 -----
 
-### Wrap form controls with `label` element
+### Wrap form control with `label` element
 
 Bad:
 
@@ -1110,8 +1109,7 @@ Good:
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### Specify `value` attribute for `input type="submit"`
-
+### Add `value` attribute to `input type="submit"`
 
 Bad:
 
@@ -1122,7 +1120,7 @@ Good:
     <input type="submit" value="Search">
 
 
-### Include `title` attibute when there is `pattern` attribute
+### Add `title` attibute to `input` element when there is `pattern` attribute
 
 Bad:
 
@@ -1161,7 +1159,7 @@ Good:
     </datalist>
 
 
-### Use `max` attribute for `progress` element
+### Add `max` attribute to `progress` element
 
 Bad:
 
@@ -1172,7 +1170,7 @@ Good:
     <progress max="100" value="50"> 50%</progress>
 
 
-### Use `min` and `max` attribute for `meter` element
+### Add `min` and `max` attribute to `meter` element
 
 Bad:
 
@@ -1205,7 +1203,7 @@ Good:
 Scripting
 ---------
 
-### Omit `type` attribute for `script` element
+### Omit `type` attribute for JavaScript
 
 Bad:
 
