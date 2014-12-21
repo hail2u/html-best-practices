@@ -475,20 +475,14 @@ Good:
 
 Bad:
 
-    <style>
-    <!--
-    body {
-      lint-height: 1.5;
-    }
-    -->
-    </style>
+    <style><!--
+    ...
+    --></style>
 
 Good:
 
     <style>
-    body {
-      lint-height: 1.5;
-    }
+    ...
     </style>
 
 
@@ -951,7 +945,7 @@ Good:
 
 Bad:
 
-    <img src="/img/icon/help.png"> Help
+    <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
 Good:
 
@@ -1016,13 +1010,17 @@ Tabular data
 
 Bad:
 
-    <td>General</td><td>The root Element</td><td>Sections</td>
+    <tr>
+      <td>General</td><td>The root Element</td><td>Sections</td>
+    </tr>
 
 Good:
 
-    <td>General</td>
-    <td>The root Element</td>
-    <td>Sections</td>
+    <tr>
+      <td>General</td>
+      <td>The root Element</td>
+      <td>Sections</td>
+    </tr>
 
 
 ### Use `th` element for header cell
@@ -1143,7 +1141,7 @@ Bad:
 
 Good:
 
-    <label>Email: <input name="email" placeholder="john.doeexample.com" type="text"></label>
+    <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
 ### Write one `option` element per line
@@ -1167,11 +1165,11 @@ Good:
 
 Bad:
 
-    <progress value="0.5"> 50% </progress>
+    <progress value="0.5"> 50%</progress>
 
 Good:
 
-    <progress max="100" value="50"> 50% </progress>
+    <progress max="100" value="50"> 50%</progress>
 
 
 ### Use `min` and `max` attribute for `meter` element
@@ -1244,9 +1242,9 @@ Bad:
 Also bad:
 
     <script>
-    //<!--
+    <!--
     ...
-    //-->
+    // -->
     </script>
 
 Good:
