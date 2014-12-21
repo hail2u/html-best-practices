@@ -4,6 +4,7 @@ HTML Best Practices
 For writing maintainable and scalable HTML documents.
 
 <!-- #toc -->
+
 * [General](#general)
   * [Start with DOCTYPE](#start-with-doctype)
   * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
@@ -98,6 +99,7 @@ For writing maintainable and scalable HTML documents.
   * [Indent consistently](#indent-consistently)
 * [Contributors](#contributors)
 * [License](#license)
+
 <!-- /toc -->
 
 
