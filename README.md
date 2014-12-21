@@ -7,6 +7,7 @@ For writing maintainable and scalable HTML documents.
   * [Start with DOCTYPE](#start-with-doctype)
   * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
   * [Don't use XML Declaration](#dont-use-xml-declaration)
+  * [Escape `&`, `<`, `>`, `"`, and `'` with named character references](#escape-----and--with-named-character-references)
   * [Don't use character references as much as possible](#dont-use-character-references-as-much-as-possible)
   * [Use named character references for control or invisible characters](#use-named-character-references-for-control-or-invisible-characters)
   * [Put white spaces around comment contents](#put-white-spaces-around-comment-contents)
@@ -139,6 +140,17 @@ Bad:
 Good:
 
     <!DOCTYPE html>
+
+
+### Escape `&`, `<`, `>`, `"`, and `'` with named character references
+
+Bad:
+
+    <h1>The "&" character</h1>
+
+Good:
+
+    <h1>The &quot;&amp;&quot; character</h1>
 
 
 ### Don't use character references as much as possible
@@ -566,12 +578,12 @@ Grouping content
 Bad:
 
     <pre>
-    &lt;!DOCTYPE html>
+    &lt;!DOCTYPE html&gt;
     </pre>
 
 Good:
 
-    <pre>&lt;!DOCTYPE html>
+    <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
 
