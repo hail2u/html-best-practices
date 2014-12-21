@@ -3,6 +3,7 @@ HTML Best Practices
 
 For writing maintainable and scalable HTML documents.
 
+<!-- #toc -->
 * [General](#general)
   * [Start with DOCTYPE](#start-with-doctype)
   * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
@@ -20,7 +21,7 @@ For writing maintainable and scalable HTML documents.
   * [Don't mix empty element format](#dont-mix-empty-element-format)
   * [Omit namespaces](#omit-namespaces)
   * [Don't use XML attributes](#dont-use-xml-attributes)
-  * [Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes)
+  * [Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes)
   * [Prefer strong native semantics](#prefer-strong-native-semantics)
 * [The root element](#the-root-element)
   * [Add `lang` attribute](#add-lang-attribute)
@@ -97,6 +98,7 @@ For writing maintainable and scalable HTML documents.
   * [Indent consistently](#indent-consistently)
 * [Contributors](#contributors)
 * [License](#license)
+<!-- /toc -->
 
 
 General
