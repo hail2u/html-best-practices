@@ -1340,8 +1340,8 @@ Good:
 Contributors
 ------------
 
-  - [@hail2u]
-  - [@momdo]
+- [@hail2u]
+- [@momdo]
 
 
 License
