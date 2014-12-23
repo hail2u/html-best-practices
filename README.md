@@ -682,7 +682,7 @@ Bad:
 Good:
 
     <body>
-      <ol type="upper-roman">
+      <ol type="I">
         <li>General</li>
         <li>The root Element</li>
         <li>Sections</li>
