@@ -112,14 +112,14 @@ General
 Bad:
 
     <html>
-    ...
+      ...
     </html>
 
 Good:
 
     <!DOCTYPE html>
     <html>
-    ...
+      ...
     </html>
 
 
@@ -252,13 +252,13 @@ Bad:
 
     <html>
       <body>
-      ...
+        ...
 
 Good:
 
     <html>
       <body>
-      ...
+        ...
       </body>
     </html>
 
@@ -281,13 +281,13 @@ Good:
 Bad:
 
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-    ...
+      ...
     </svg>
 
 Good:
 
     <svg version="1.1">
-    ...
+      ...
     </svg>
 
 
@@ -318,7 +318,7 @@ Good:
 Bad:
 
     <nav role="navigation">
-    ...
+      ...
     </nav>
     
     <hr role="separator">
@@ -326,7 +326,7 @@ Bad:
 Good:
 
     <nav>
-    ...
+      ...
     </nav>
     
     <hr>
@@ -477,13 +477,13 @@ Good:
 Bad:
 
     <style type="text/css">
-    ...
+      ...
     </style>
 
 Good:
 
     <style>
-    ...
+      ...
     </style>
 
 
@@ -491,14 +491,16 @@ Good:
 
 Bad:
 
-    <style><!--
-    ...
-    --></style>
+    <style>
+    <!--
+      ...
+      -->
+    </style>
 
 Good:
 
     <style>
-    ...
+      ...
     </style>
 
 
@@ -532,7 +534,7 @@ Bad:
 
     <html>
       <head>
-      ...
+        ...
       </head>
       ...
     </html>
@@ -541,10 +543,10 @@ Good:
 
     <html>
       <head>
-      ...
+        ...
       </head>
       <body>
-      ...
+        ...
       </body>
     </html>
 
@@ -716,13 +718,13 @@ Good:
 Bad:
 
     <div id="content">
-    ...
+      ...
     </div>
 
 Good:
 
     <main>
-    ...
+      ...
     </main>
 
 
@@ -731,13 +733,13 @@ Good:
 Bad:
 
     <div class="chapter">
-    ...
+      ...
     </div>
 
 Good:
 
     <section>
-    ...
+      ...
     </section>
 
 
@@ -1245,13 +1247,13 @@ Scripting
 Bad:
 
     <script type="text/javascript">
-    ...
+      ...
     </script>
 
 Good:
 
     <script>
-    ...
+      ...
     </script>
 
 
@@ -1270,22 +1272,24 @@ Good:
 
 Bad:
 
-    <script>/*<![CDATA[*/
-    ...
-    /*]]>*/</script>
+    <script>
+    /*<![CDATA[*/
+      ...
+    /*]]>*/
+    </script>
 
 Also bad:
 
     <script>
     <!--
-    ...
+      ...
     // -->
     </script>
 
 Good:
 
     <script>
-    ...
+      ...
     </script>
 
 
@@ -1314,10 +1318,10 @@ Bad:
 
     <html>
     	<head>
-    	...
+    	  ...
     	</head>
       <body>
-      ...
+        ...
       </body>
     </html>
 
@@ -1325,10 +1329,10 @@ Good:
 
     <html>
       <head>
-      ...
+        ...
       </head>
       <body>
-      ...
+        ...
       </body>
     </html>
 
