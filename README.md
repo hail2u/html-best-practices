@@ -76,6 +76,7 @@ For writing maintainable and scalable HTML documents.
   * [Omit `alt` attibute if possible](#omit-alt-attibute-if-possible)
   * [Empty `iframe` element](#empty-iframe-element)
   * [Markup `map` element content](#markup-map-element-content)
+  * [Provide fallback content for `audio` or `video` element](#provide-fallback-content-for-audio-or-video-element)
 * [Tabular data](#tabular-data)
   * [Write one cell per line](#write-one-cell-per-line)
   * [Use `th` element for header cell](#use-th-element-for-header-cell)
@@ -1016,6 +1017,25 @@ Good:
         <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
       </p>
     </map>
+
+### Provide fallback content for `audio` or `video` element
+
+Bad:
+
+    <video>
+      <source src="/mov/theme.mp4" type="video/mp4">
+      <source src="/mov/theme.ogv" type="video/ogg">
+      ...
+    </video>
+
+Good:
+
+    <video>
+      <source src="/mov/theme.mp4" type="video/mp4">
+      <source src="/mov/theme.ogv" type="video/ogg">
+      ...
+      <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
+    </video>
 
 
 Tabular data
