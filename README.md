@@ -236,7 +236,7 @@ Good:
 
 Bad:
 
-    <a HREF="#general">General</a>
+    <a HREF="#general">General</A>
 
 Good:
 
