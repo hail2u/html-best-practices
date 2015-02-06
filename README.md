@@ -9,17 +9,17 @@ For writing maintainable and scalable HTML documents.
   * [Start with DOCTYPE](#start-with-doctype)
   * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
   * [Don't use XML Declaration](#dont-use-xml-declaration)
-  * [Escape `&`, `<`, `>`, `"`, and `'` with named character references](#escape-----and--with-named-character-references)
   * [Don't use character references as much as possible](#dont-use-character-references-as-much-as-possible)
+  * [Escape `&`, `<`, `>`, `"`, and `'` with named character references](#escape-----and--with-named-character-references)
   * [Use named character references for control or invisible characters](#use-named-character-references-for-control-or-invisible-characters)
   * [Put white spaces around comment contents](#put-white-spaces-around-comment-contents)
-  * [Don't mix quotation marks](#dont-mix-quotation-marks)
-  * [Don't mix character cases](#dont-mix-character-cases)
-  * [Don't put white spaces around tags and attribute values](#dont-put-white-spaces-around-tags-and-attribute-values)
-  * [Don't separate attributes with two or more white spaces](#dont-separate-attributes-with-two-or-more-white-spaces)
-  * [Omit boolean attribute value](#omit-boolean-attribute-value)
   * [Don't omit closing tag](#dont-omit-closing-tag)
   * [Don't mix empty element format](#dont-mix-empty-element-format)
+  * [Don't put white spaces around tags and attribute values](#dont-put-white-spaces-around-tags-and-attribute-values)
+  * [Don't mix character cases](#dont-mix-character-cases)
+  * [Don't mix quotation marks](#dont-mix-quotation-marks)
+  * [Don't separate attributes with two or more white spaces](#dont-separate-attributes-with-two-or-more-white-spaces)
+  * [Omit boolean attribute value](#omit-boolean-attribute-value)
   * [Omit namespaces](#omit-namespaces)
   * [Don't use XML attributes](#dont-use-xml-attributes)
   * [Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes)
@@ -147,17 +147,6 @@ Good:
     <!DOCTYPE html>
 
 
-### Escape `&`, `<`, `>`, `"`, and `'` with named character references
-
-Bad:
-
-    <h1>The "&" character</h1>
-
-Good:
-
-    <h1>The &quot;&amp;&quot; character</h1>
-
-
 ### Don't use character references as much as possible
 
 Bad:
@@ -167,6 +156,17 @@ Bad:
 Good:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
+
+
+### Escape `&`, `<`, `>`, `"`, and `'` with named character references
+
+Bad:
+
+    <h1>The "&" character</h1>
+
+Good:
+
+    <h1>The &quot;&amp;&quot; character</h1>
 
 
 ### Use named character references for control or invisible characters
@@ -189,61 +189,6 @@ Bad:
 Good:
 
     <!-- This section is non-normative -->
-
-
-### Don't mix quotation marks
-
-Bad:
-
-    <img alt="HTML Best Practices" src='/img/logo.jpg'>
-
-Good:
-
-    <img alt="HTML Best Practices" src="/img/logo.jpg">
-
-
-### Don't mix character cases
-
-Bad:
-
-    <a HREF="#general">General</a>
-
-Good:
-
-    <a href="#general">General</a>
-
-
-### Don't put white spaces around tags and attribute values
-
-Bad:
-
-    <h1 class=" title " >HTML Best Practices</h1>
-
-Good:
-
-    <h1 class="title">HTML Best Practices</h1>
-
-
-### Don't separate attributes with two or more white spaces
-
-Bad:
-
-    <input   name="q"  type="search">
-
-Good:
-
-    <input name="q" type="search">
-
-
-### Omit boolean attribute value
-
-Bad:
-
-    <audio autoplay="autoplay" src="/audio/theme.mp3">
-
-Good:
-
-    <audio autoplay src="/audio/theme.mp3">
 
 
 ### Don't omit closing tag
@@ -274,6 +219,61 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
+
+
+### Don't put white spaces around tags and attribute values
+
+Bad:
+
+    <h1 class=" title " >HTML Best Practices</h1>
+
+Good:
+
+    <h1 class="title">HTML Best Practices</h1>
+
+
+### Don't mix character cases
+
+Bad:
+
+    <a HREF="#general">General</a>
+
+Good:
+
+    <a href="#general">General</a>
+
+
+### Don't mix quotation marks
+
+Bad:
+
+    <img alt="HTML Best Practices" src='/img/logo.jpg'>
+
+Good:
+
+    <img alt="HTML Best Practices" src="/img/logo.jpg">
+
+
+### Don't separate attributes with two or more white spaces
+
+Bad:
+
+    <input   name="q"  type="search">
+
+Good:
+
+    <input name="q" type="search">
+
+
+### Omit boolean attribute value
+
+Bad:
+
+    <audio autoplay="autoplay" src="/audio/theme.mp3">
+
+Good:
+
+    <audio autoplay src="/audio/theme.mp3">
 
 
 ### Omit namespaces
