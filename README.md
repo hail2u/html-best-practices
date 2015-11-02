@@ -98,6 +98,7 @@ For writing maintainable and scalable HTML documents.
   * [Don't use script-injected `script` element](#dont-use-script-injected-script-element)
 * [Other](#other)
   * [Indent consistently](#indent-consistently)
+  * [Use absolute path for internal links](#use-absolute-path-for-internal-links)
 * [Contributors](#contributors)
 * [License](#license)
 
@@ -1335,6 +1336,21 @@ Good:
         ...
       </body>
     </html>
+
+
+### Use absolute path for internal links
+
+Bad:
+
+    <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
+    ...
+    <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
+
+Good:
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
+    ...
+    <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
 
 Contributors
