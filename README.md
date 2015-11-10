@@ -77,6 +77,7 @@ For writing maintainable and scalable HTML documents.
   * [Empty `iframe` element](#empty-iframe-element)
   * [Markup `map` element content](#markup-map-element-content)
   * [Provide fallback content for `audio` or `video` element](#provide-fallback-content-for-audio-or-video-element)
+  * [Provide fallback `img` element for `picture` element](#provide-fallback-img-element-for-picture-element)
 * [Tabular data](#tabular-data)
   * [Write one cell per line](#write-one-cell-per-line)
   * [Use `th` element for header cell](#use-th-element-for-header-cell)
@@ -1039,6 +1040,27 @@ Good:
       <source src="/mov/theme.ogv" type="video/ogg">
       ...
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
+    </video>
+
+
+### Provide fallback `img` element for `picture` element
+
+Bad:
+
+    <picture>
+      <source src="/img/logo.webp" type="image/webp">
+      <source src="/img/logo.hdp" type="image/vnd.ms-photo">
+      <source src="/img/logo.jp2" type="image/jp2">
+      <source src="/img/logo.jpg" type="image/jpg">
+    </video>
+
+Good:
+
+    <picture>
+      <source src="/img/logo.webp" type="image/webp">
+      <source src="/img/logo.hdp" type="image/vnd.ms-photo">
+      <source src="/img/logo.jp2" type="image/jp2">
+      <img src="/img/logo.jpg">
     </video>
 
 
