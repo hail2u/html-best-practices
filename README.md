@@ -29,6 +29,7 @@ For writing maintainable and scalable HTML documents.
   * [Keep `lang` attribute value as short as possible](#keep-lang-attribute-value-as-short-as-possible)
 * [Document metadata](#document-metadata)
   * [Add `title` element](#add-title-element)
+  * [Don’t use `base` element](#dont-use-base-element)
   * [Specify MIME type of minor linked resources](#specify-mime-type-of-minor-linked-resources)
   * [Don't link to `favicon.ico`](#dont-link-to-faviconico)
   * [Add `title` attribute to alternate stylesheets](#add-title-attribute-to-alternate-stylesheets)
@@ -375,6 +376,26 @@ Good:
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
+    </head>
+
+
+### Don’t use `base` element
+
+Bad:
+
+    <head>
+      ...
+      <base href="/blog/">
+      <link href="hello-world" rel="canonical">
+      ...
+    </head>
+
+Good:
+
+    <head>
+      ...
+      <link href="/blog/hello-world" rel="canonical">
+      ...
     </head>
 
 
