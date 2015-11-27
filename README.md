@@ -980,7 +980,7 @@ Bad:
       <source srcset="/img/logo.hdp" type="image/vnd.ms-photo">
       <source srcset="/img/logo.jp2" type="image/jp2">
       <source srcset="/img/logo.jpg" type="image/jpg">
-    </video>
+    </picture>
 
 Good:
 
@@ -989,7 +989,7 @@ Good:
       <source srcset="/img/logo.hdp" type="image/vnd.ms-photo">
       <source srcset="/img/logo.jp2" type="image/jp2">
       <img src="/img/logo.jpg">
-    </video>
+    </picture>
 
 
 ### Add `alt` attrbute to `img` element if needed
