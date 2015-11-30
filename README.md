@@ -50,6 +50,7 @@ For writing maintainable and scalable HTML documents.
   * [Don't include attribution directly in `blockquote` element](#dont-include-attribution-directly-in-blockquote-element)
   * [Write one list item per line](#write-one-list-item-per-line)
   * [Use `type` attribute for `ol` element](#use-type-attribute-for-ol-element)
+  * [Don’t use `dl` for dialogue](#dont-use-dl-for-dialogue)
   * [Place `figcaption` element as first or last child of `figure` element](#place-figcaption-element-as-first-or-last-child-of-figure-element)
   * [Use `main` element](#use-main-element)
   * [Avoid `div` element as much as possible](#avoid-div-element-as-much-as-possible)
@@ -715,6 +716,37 @@ Good:
         ...
       </ol>
     </body>
+
+
+### Don’t use `dl` for dialogue
+
+Bad:
+
+    <dl>
+      <dt>Costello</dt>
+      <dd>Look, you gotta first baseman?</dd>
+      <dt>Abbott</dt>
+      <dd>Certainly.</dd>
+      <dt>Costello</dt>
+      <dd>Who’s playing first?</dd>
+      <dt>Abbott</dt>
+      <dd>That’s right.</dd>
+      <dt>Costello becomes exasperated.</dd>
+      <dt>Costello</dt>
+      <dd>When you pay off the first baseman every month, who gets the money?</dd>
+      <dt>Abbott</dt>
+      <dd>Every dollar of it.</dd>
+    </dl>
+
+Good:
+
+    <p>Costello: Look, you gotta first baseman?</p>
+    <p>Abbott: Certainly.</p>
+    <p>Costello: Who's playing first?</p>
+    <p>Abbott: That's right.</p>
+    <p>Costello becomes exasperated.</p>
+    <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
+    <p>Abbott: Every dollar of it.</p>
 
 
 ### Place `figcaption` element as first or last child of `figure` element
