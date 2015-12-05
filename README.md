@@ -598,6 +598,8 @@ Sections
 
 ### Add `body` tag
 
+Sometimes `body` element is complemented in unexpected position by a browser.
+
 Bad:
 
     <html>
@@ -621,6 +623,8 @@ Good:
 
 ### Forget about `hgroup` element
 
+W3C spec removes this element.
+
 Bad:
 
     <hgroup>
@@ -635,6 +639,9 @@ Good:
 
 
 ### Use `address` element only for contact information
+
+`address` element is for email address, social network account, street address,
+telephone number, or something you can get in touch with.
 
 Bad:
 
