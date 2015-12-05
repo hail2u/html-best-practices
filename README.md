@@ -1168,6 +1168,8 @@ Tabular data
 
 ### Write one cell per line
 
+Long lines are hard to scan.
+
 Bad:
 
     <tr>
@@ -1184,6 +1186,8 @@ Good:
 
 
 ### Use `th` element for header cell
+
+There is no reason to avoid this.
 
 Bad:
 
