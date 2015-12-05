@@ -1370,6 +1370,9 @@ Scripting
 
 ### Omit `type` attribute for JavaScript
 
+In HTML5, the default `type` attribute’s value of `script` element is
+`text/javascript`.
+
 Bad:
 
     <script type="text/javascript">
@@ -1385,6 +1388,9 @@ Good:
 
 ### Add `defer` attribute if `script` element has `async` attribute
 
+`async` is better, but some browser doesn’t support this attribute. `defer` is
+not bad.
+
 Bad:
 
     <script async src="/js/main.js"></script>
@@ -1395,6 +1401,8 @@ Good:
 
 
 ### Don't comment out contents of `script` element
+
+This ritual is for an old browser.
 
 Bad:
 
@@ -1420,6 +1428,8 @@ Good:
 
 
 ### Don't use script-injected `script` element
+
+`async` is the best for both simplicity and performance.
 
 Bad:
 
