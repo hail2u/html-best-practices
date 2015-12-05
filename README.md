@@ -113,6 +113,8 @@ General
 
 ### Start with DOCTYPE
 
+`DOCTYPE` is needed for activating standard mode.
+
 Bad:
 
     <html>
@@ -129,6 +131,8 @@ Good:
 
 ### Don't use legacy or obsolete DOCTYPE
 
+`DOCTYPE` is not for DTD anymore, be simple.
+
 Bad:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -140,6 +144,8 @@ Good:
 
 
 ### Don't use XML Declaration
+
+Are you sure you want to write XHTML?
 
 Bad:
 
@@ -153,6 +159,9 @@ Good:
 
 ### Don't use character references as much as possible
 
+If you write a HTML document with UTF-8, almost all charaters (including Emoji)
+can be write directly.
+
 Bad:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
@@ -163,6 +172,8 @@ Good:
 
 
 ### Escape `&`, `<`, `>`, `"`, and `'` with named character references
+
+These characters should escape always for a bug-free HTML document.
 
 Bad:
 
@@ -175,6 +186,9 @@ Good:
 
 ### Use numeric character references for control or invisible characters
 
+These characters are easily mistaken for another character. And also spec does
+not guarantee to define a human readable name for these characters.
+
 Bad:
 
     <p>This book can read in 1 hour.</p>
@@ -186,6 +200,9 @@ Good:
 
 ### Put white spaces around comment contents
 
+Some character cannot be used immediately after comment open tag or before
+comment close tag.
+
 Bad:
 
     <!--This section is non-normative-->
@@ -196,6 +213,8 @@ Good:
 
 
 ### Don't omit closing tag
+
+I think you don’t understand a rule for omitting closing tag.
 
 Bad:
 
@@ -214,6 +233,8 @@ Good:
 
 ### Don't mix empty element format
 
+Consistency is a key for readability.
+
 Bad:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
@@ -227,6 +248,8 @@ Good:
 
 ### Don't put white spaces around tags and attribute values
 
+There is no reason for doing this.
+
 Bad:
 
     <h1 class=" title " >HTML Best Practices</h1>
@@ -237,6 +260,8 @@ Good:
 
 
 ### Don't mix character cases
+
+It gives a consistency also.
 
 Bad:
 
@@ -249,6 +274,8 @@ Good:
 
 ### Don't mix quotation marks
 
+Same as above.
+
 Bad:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
@@ -259,6 +286,8 @@ Good:
 
 
 ### Don't separate attributes with two or more white spaces
+
+Your weird formatting rule confuses someone.
 
 Bad:
 
@@ -271,6 +300,8 @@ Good:
 
 ### Omit boolean attribute value
 
+It’s easy to write, isn’t it?
+
 Bad:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
@@ -281,6 +312,8 @@ Good:
 
 
 ### Omit namespaces
+
+SVG and MathML can be used directly in a HTML5 document.
 
 Bad:
 
@@ -297,6 +330,8 @@ Good:
 
 ### Don't use XML attributes
 
+It is a HTML document.
+
 Bad:
 
     <span lang="ja" xml:lang="ja">...</span>
@@ -308,6 +343,9 @@ Good:
 
 ### Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
 
+A tag string can be very complicated. This simple rule helps reading such tag
+string.
+
 Bad:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
@@ -318,6 +356,8 @@ Good:
 
 
 ### Prefer strong native semantics
+
+Some element has a implicit role in a HTML document, don’t specify (or change).
 
 Bad:
 
