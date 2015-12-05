@@ -1434,6 +1434,8 @@ Other
 
 ### Indent consistently
 
+Indentation is important for readability.
+
 Bad:
 
     <html>
@@ -1458,6 +1460,8 @@ Good:
 
 
 ### Use absolute path for internal links
+
+An absolute path works better on your localhost without internet connection.
 
 Bad:
 
