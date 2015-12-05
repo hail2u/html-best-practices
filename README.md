@@ -381,6 +381,8 @@ The root element
 
 ### Add `lang` attribute
 
+`lang` attribute will help translating a HTML document.
+
 Bad:
 
     <html>
@@ -391,6 +393,8 @@ Good:
 
 
 ### Keep `lang` attribute value as short as possible
+
+Japanese is only used in Japan. So country code is not necessary.
 
 Bad
 
