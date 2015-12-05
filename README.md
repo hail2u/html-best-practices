@@ -173,7 +173,7 @@ Good:
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### Use named character references for control or invisible characters
+### Use numeric character references for control or invisible characters
 
 Bad:
 
@@ -181,7 +181,7 @@ Bad:
 
 Good:
 
-    <p>This book can read in 1&nbsp;hour.</p>
+    <p>This book can read in 1&#xA0;hour.</p>
 
 
 ### Put white spaces around comment contents
