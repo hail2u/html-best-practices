@@ -1275,6 +1275,8 @@ Forms
 
 ### Wrap form control with `label` element
 
+`label` helps focusing form element.
+
 Bad:
 
     <p>Query: <input name="q" type="text"></p>
@@ -1285,6 +1287,8 @@ Good:
 
 
 ### Omit `for` attribute if possible
+
+`label` can contain some form elements.
 
 Bad:
 
@@ -1297,6 +1301,8 @@ Good:
 
 ### Use appropriate `type` attribute for `input` element
 
+With appropriate `type`, browsers gives a tiny features to the `input` element.
+
 Bad:
 
     <label>Search keyword: <input name="q" type="text"></label>
@@ -1307,6 +1313,9 @@ Good:
 
 
 ### Add `value` attribute to `input type="submit"`
+
+The default lable for submit button is not standarized across the browser and
+languages.
 
 Bad:
 
@@ -1319,6 +1328,9 @@ Good:
 
 ### Add `title` attibute to `input` element when there is `pattern` attribute
 
+If input text does not match to `pattern`, the value of `title` attribute will
+be display as a hint.
+
 Bad:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
@@ -1330,6 +1342,8 @@ Good:
 
 ### Don't use `placeholder` attribute for labeling
 
+`label` element is for a label, `placeholder` attribute is for a short hint.
+
 Bad:
 
     <input name="email" placeholder="Email" type="text">
@@ -1340,6 +1354,8 @@ Good:
 
 
 ### Write one `option` element per line
+
+Long lines are hard to scan.
 
 Bad:
 
@@ -1358,6 +1374,8 @@ Good:
 
 ### Add `max` attribute to `progress` element
 
+With `max` attribute, the `value` attribute can be write in an easy format.
+
 Bad:
 
     <progress value="0.5"> 50%</progress>
@@ -1369,6 +1387,9 @@ Good:
 
 ### Add `min` and `max` attribute to `meter` element
 
+With `min` and `max` attribute, the `value` attribute can be write in an easy
+format.
+
 Bad:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
@@ -1379,6 +1400,8 @@ Good:
 
 
 ### Place `legend` element as the first child of `fieldset` element
+
+Spec requires this.
 
 Bad:
 
