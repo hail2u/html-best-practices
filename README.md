@@ -1083,6 +1083,8 @@ Embedded content
 
 ### Provide fallback `img` element for `picture` element
 
+The support of `picture` element is not good yet.
+
 Bad:
 
     <picture>
@@ -1104,6 +1106,9 @@ Good:
 
 ### Add `alt` attrbute to `img` element if needed
 
+`alt` attribute helps those who cannot process images or have image loading
+disabled.
+
 Bad:
 
     <img src="/img/logo.png">
@@ -1114,6 +1119,8 @@ Good:
 
 
 ### Empty `alt` attribute if possible
+
+If the image is supplemental, there is equivalent content somewhere in the near.
 
 Bad:
 
@@ -1126,6 +1133,8 @@ Good:
 
 ### Omit `alt` attibute if possible
 
+Sometimes you don’t know what text is suitable for `alt` attribute.
+
 Bad:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
@@ -1133,9 +1142,12 @@ Bad:
 Good:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
+    (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
 ### Empty `iframe` element
+
+There is some restriction in its content. Being empty is always safe.
 
 Bad:
 
@@ -1149,6 +1161,8 @@ Good:
 
 
 ### Markup `map` element content
+
+This content present to a screen reader.
 
 Bad:
 
@@ -1176,6 +1190,8 @@ Good:
 
 
 ### Provide fallback content for `audio` or `video` element
+
+Fallback content is needed for newly introduced elements in HTML5.
 
 Bad:
 
