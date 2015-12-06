@@ -1409,7 +1409,7 @@ Good:
 
 ### Don't comment out contents of `script` element
 
-This ritual is for an old browser.
+This ritual is for the old browser.
 
 Bad:
 
