@@ -1046,7 +1046,7 @@ Good:
 
 ### Avoid `span` element as much as possible
 
-`span` element is and element of last resort.
+`span` element is an element of last resort.
 
 Bad:
 
