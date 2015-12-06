@@ -1001,11 +1001,11 @@ Good:
 
 Bad:
 
-    <code>&lt;DOCTYPE html></code>
+    <code>&lt;DOCTYPE html&gt;</code>
 
 Good:
 
-    <code class="language-html">&lt;DOCTYPE html></code>
+    <code class="language-html">&lt;DOCTYPE html&gt;</code>
 
 
 ### Keep `kbd` element as simple as possible
