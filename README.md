@@ -682,6 +682,8 @@ Grouping content
 
 ### Don't start with newline in `pre` element
 
+It will rendered as actual line break in the browsers.
+
 Bad:
 
     <pre>
@@ -696,6 +698,8 @@ Good:
 
 ### Use appropriate element in `blockquote` element
 
+`blockquote` content is a quote, not a chunks of characters.
+
 Bad:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
@@ -708,6 +712,8 @@ Good:
 
 
 ### Don't include attribution directly in `blockquote` element
+
+`blockquote` content is a quote.
 
 Bad:
 
@@ -746,6 +752,9 @@ Also good too (recommended by W3C):
 
 ### Write one list item per line
 
+Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
+line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
+
 Bad:
 
     <ul>
@@ -763,6 +772,9 @@ Good:
 
 
 ### Use `type` attribute for `ol` element
+
+Sometimes marker referenced by the contents in the near. If you change marker
+with `type` attribute, you will be safe to reference.
 
 Bad:
 
@@ -796,6 +808,8 @@ Good:
 
 ### Don’t use `dl` for dialogue
 
+`dl` element is restricted to an association list in HTML5.
+
 Bad:
 
     <dl>
@@ -827,6 +841,8 @@ Good:
 
 ### Place `figcaption` element as first or last child of `figure` element
 
+Spec disallows `figcaption` element in the middle of `figure` element.
+
 Bad:
 
     <figure>
@@ -846,6 +862,8 @@ Good:
 
 ### Use `main` element
 
+`main` element can be used wrapping contents.
+
 Bad:
 
     <div id="content">
@@ -860,6 +878,8 @@ Good:
 
 
 ### Avoid `div` element as much as possible
+
+`div` element is an element of last resort.
 
 Bad:
 
