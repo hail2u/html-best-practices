@@ -879,6 +879,8 @@ Text-level semantics
 
 ### Don't split same link that can be grouped
 
+`a` element can wrap all elements (except `a` element itself).
+
 Bad:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
@@ -896,6 +898,8 @@ Good:
 
 ### Use `download` attribute for downloading a resource
 
+It will force browsers to download linked resource to the storage.
+
 Bad:
 
     <a href="/downloads/offline.zip">offline version</a>
@@ -906,6 +910,8 @@ Good:
 
 
 ### Use `rel`, `hreflang`, and `type` attribute if needed
+
+These hints helps applications how handle linked resource.
 
 Bad:
 
@@ -918,6 +924,8 @@ Good:
 
 ### Clear link text
 
+Link text should be the label of its linked resource.
+
 Bad:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
@@ -928,6 +936,8 @@ Good:
 
 
 ### Don't use `em` element for warning or caution
+
+These are seriousness. So, `strong` element is more appropriate.
 
 Bad:
 
@@ -940,6 +950,8 @@ Good:
 
 ### Avoid `s`, `i`, `b`, and `u` element as much as possible
 
+These elements’ semantics is too difficult to humans.
+
 Bad:
 
     <i class="icon-search"></i>
@@ -950,6 +962,8 @@ Good:
 
 
 ### Don't put quotes to `q` element
+
+Quotes are provided by the browser.
 
 Bad:
 
@@ -966,6 +980,8 @@ Also good:
 
 ### Add `title` attribute to `abbr` element
 
+There is no other way to represent its expansion.
+
 Bad:
 
     <abbr>HBP</abbr>
@@ -976,6 +992,8 @@ Good:
 
 
 ### Markup `ruby` element verbosely
+
+`ruby` support is not completed across the modern browsers.
 
 Bad:
 
@@ -988,6 +1006,9 @@ Good:
 
 ### Add `datetime` attribute to non-machine-readable `time` element
 
+When `datetime` attribute does not present, the format of `time` element’s
+content is restricted.
+
 Bad:
 
     <time>Dec 19, 2014</time>
@@ -998,6 +1019,8 @@ Good:
 
 
 ### Specify code language with `class` attribute prefixed with `language-`
+
+This is not a formal way, but spec mentions this.
 
 Bad:
 
@@ -1010,6 +1033,8 @@ Good:
 
 ### Keep `kbd` element as simple as possible
 
+Nesting `kbd` element is too difficult to humans.
+
 Bad:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
@@ -1021,6 +1046,8 @@ Good:
 
 ### Avoid `span` element as much as possible
 
+`span` element is and element of last resort.
+
 Bad:
 
     HTML <span class="best">Best</span> Practices
@@ -1031,6 +1058,8 @@ Good:
 
 
 ### Break after `br` element
+
+Line break should be needed where `br` element is used.
 
 Bad:
 
@@ -1044,6 +1073,8 @@ Good:
 
 
 ### Don't use `br` element only for presentational purpose
+
+`br` element is not for line breaking, it is for line breaks in the contents.
 
 Bad:
 
