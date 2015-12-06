@@ -330,7 +330,7 @@ Good:
 
 ### Don't use XML attributes
 
-It is a HTML document.
+We write a HTML document.
 
 Bad:
 
