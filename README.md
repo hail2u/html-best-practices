@@ -113,7 +113,7 @@ General
 
 ### Start with DOCTYPE
 
-`DOCTYPE` is needed for activating standard mode.
+`DOCTYPE` is required for activating standard mode.
 
 Bad:
 
