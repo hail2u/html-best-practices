@@ -1288,7 +1288,7 @@ Good:
 
 Bad:
 
-    <label for="q">Query: <input id="q" name="q" type="text"></label>
+    <label for="q">Query: </label><input id="q" name="q" type="text">
 
 Good:
 
