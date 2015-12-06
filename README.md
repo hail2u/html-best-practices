@@ -410,6 +410,8 @@ Document metadata
 
 ### Add `title` element
 
+A value for `title` element is used by various application not only a browser.
+
 Bad:
 
     <head>
@@ -425,6 +427,8 @@ Good:
 
 
 ### Don’t use `base` element
+
+An absolute path or URL is safer for both developers and users.
 
 Bad:
 
@@ -446,6 +450,8 @@ Good:
 
 ### Specify MIME type of minor linked resources
 
+This is a hint how application handles this resource.
+
 Bad:
 
     <link href="/pdf" rel="alternate">
@@ -461,16 +467,20 @@ Good:
 
 ### Don't link to `favicon.ico`
 
+Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
+
 Bad:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
 Good:
 
-Place `favicon.ico` in the root directory.
+    <!-- Place `favicon.ico` in the root directory. -->
 
 
 ### Add `title` attribute to alternate stylesheets
+
+A human readable label helps people selecting proper stylesheet.
 
 Bad:
 
@@ -484,6 +494,8 @@ Good:
 
 
 ### Specify document character encoding
+
+UTF-8 is not default in all browsers yet.
 
 Bad:
 
@@ -501,6 +513,8 @@ Good:
 
 ### Don't use legacy character encoding format
 
+HTTP headers should be specified by a server, be simple.
+
 Bad:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -511,6 +525,9 @@ Good:
 
 
 ### Specify character encoding at first
+
+Spec requires the character encoding is specified within the first 1024 bytes of
+the document.
 
 Bad:
 
@@ -531,6 +548,8 @@ Good:
 
 ### Use UTF-8
 
+With UTF-8, you can free to use Emoji.
+
 Bad:
 
     <meta charset="Shift_JIS">
@@ -541,6 +560,8 @@ Good:
 
 
 ### Omit `type` attribute for CSS
+
+In HTML5,  default `type` attribute’s value of `style` element is `text/css`.
 
 Bad:
 
@@ -556,6 +577,8 @@ Good:
 
 
 ### Don't comment out contents of `style` element
+
+This ritual is for the old browser.
 
 Bad:
 
@@ -573,6 +596,8 @@ Good:
 
 
 ### Don't mix tag for CSS and JavaScript
+
+Sometimes `script` element blocks DOM construction.
 
 Bad:
 
