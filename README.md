@@ -1378,7 +1378,7 @@ Good:
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### Place `legend` element as first child of `fieldset` element
+### Place `legend` element as the first child of `fieldset` element
 
 Bad:
 
