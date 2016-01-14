@@ -159,7 +159,7 @@ Good:
 
 ### Don't use character references as much as possible
 
-If you write a HTML document with UTF-8, almost all charaters (including Emoji)
+If you write an HTML document with UTF-8, almost all charaters (including Emoji)
 can be write directly.
 
 Bad:
@@ -313,7 +313,7 @@ Good:
 
 ### Omit namespaces
 
-SVG and MathML can be used directly in a HTML5 document.
+SVG and MathML can be used directly in an HTML5 document.
 
 Bad:
 
@@ -330,7 +330,7 @@ Good:
 
 ### Don't use XML attributes
 
-We write a HTML document.
+We write an HTML document.
 
 Bad:
 
@@ -357,7 +357,7 @@ Good:
 
 ### Prefer strong native semantics
 
-Some element has a implicit role in a HTML document, don’t specify (or change).
+Some element has a implicit role in an HTML document, don’t specify (or change).
 
 Bad:
 
@@ -381,7 +381,7 @@ The root element
 
 ### Add `lang` attribute
 
-`lang` attribute will help translating a HTML document.
+`lang` attribute will help translating an HTML document.
 
 Bad:
 
