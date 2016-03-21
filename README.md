@@ -76,7 +76,7 @@ For writing maintainable and scalable HTML documents.
   * [Provide fallback `img` element for `picture` element](#provide-fallback-img-element-for-picture-element)
   * [Add `alt` attrbute to `img` element if needed](#add-alt-attrbute-to-img-element-if-needed)
   * [Empty `alt` attribute if possible](#empty-alt-attribute-if-possible)
-  * [Omit `alt` attibute if possible](#omit-alt-attibute-if-possible)
+  * [Omit `alt` attribute if possible](#omit-alt-attribute-if-possible)
   * [Empty `iframe` element](#empty-iframe-element)
   * [Markup `map` element content](#markup-map-element-content)
   * [Provide fallback content for `audio` or `video` element](#provide-fallback-content-for-audio-or-video-element)
@@ -88,7 +88,7 @@ For writing maintainable and scalable HTML documents.
   * [Omit `for` attribute if possible](#omit-for-attribute-if-possible)
   * [Use appropriate `type` attribute for `input` element](#use-appropriate-type-attribute-for-input-element)
   * [Add `value` attribute to `input type="submit"`](#add-value-attribute-to-input-typesubmit)
-  * [Add `title` attibute to `input` element when there is `pattern` attribute](#add-title-attibute-to-input-element-when-there-is-pattern-attribute)
+  * [Add `title` attribute to `input` element when there is `pattern` attribute](#add-title-attribute-to-input-element-when-there-is-pattern-attribute)
   * [Don't use `placeholder` attribute for labeling](#dont-use-placeholder-attribute-for-labeling)
   * [Write one `option` element per line](#write-one-option-element-per-line)
   * [Add `max` attribute to `progress` element](#add-max-attribute-to-progress-element)
@@ -1182,7 +1182,7 @@ Good:
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### Omit `alt` attibute if possible
+### Omit `alt` attribute if possible
 
 Sometimes you don’t know what text is suitable for `alt` attribute.
 
@@ -1393,7 +1393,7 @@ Good:
     <input type="submit" value="Search">
 
 
-### Add `title` attibute to `input` element when there is `pattern` attribute
+### Add `title` attribute to `input` element when there is `pattern` attribute
 
 If input text does not match to `pattern`, the value of `title` attribute will
 be display as a hint.
