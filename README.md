@@ -682,7 +682,7 @@ Grouping content
 
 ### Don't start with newline in `pre` element
 
-It will rendered as actual line break in the browsers.
+A first newline will ignored in the browsers, but second and later are rendered.
 
 Bad:
 
