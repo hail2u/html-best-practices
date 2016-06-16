@@ -899,7 +899,7 @@ Text-level semantics
 
 ### Don't split same link that can be grouped
 
-`a` element can wrap all elements (except `a` element itself).
+`a` element can wrap almost all elements (except interactive elements like form controls and `a` element itself).
 
 Bad:
 
