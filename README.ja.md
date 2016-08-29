@@ -5,7 +5,7 @@
 
 <!-- #toc -->
 
-* [General](#general)
+* [一般](#%E4%B8%80%E8%88%AC)
   * [Start with DOCTYPE](#start-with-doctype)
   * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
   * [Don't use XML Declaration](#dont-use-xml-declaration)
@@ -24,10 +24,10 @@
   * [Don't use XML attributes](#dont-use-xml-attributes)
   * [Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes)
   * [Prefer strong native semantics](#prefer-strong-native-semantics)
-* [The root element](#the-root-element)
+* [文書要素](#%E6%96%87%E6%9B%B8%E8%A6%81%E7%B4%A0)
   * [Add `lang` attribute](#add-lang-attribute)
   * [Keep `lang` attribute value as short as possible](#keep-lang-attribute-value-as-short-as-possible)
-* [Document metadata](#document-metadata)
+* [文書メタデータ](#%E6%96%87%E6%9B%B8%E3%83%A1%E3%82%BF%E3%83%87%E3%83%BC%E3%82%BF)
   * [Add `title` element](#add-title-element)
   * [Don’t use `base` element](#dont-use-base-element)
   * [Specify MIME type of minor linked resources](#specify-mime-type-of-minor-linked-resources)
@@ -40,11 +40,11 @@
   * [Omit `type` attribute for CSS](#omit-type-attribute-for-css)
   * [Don't comment out contents of `style` element](#dont-comment-out-contents-of-style-element)
   * [Don't mix tag for CSS and JavaScript](#dont-mix-tag-for-css-and-javascript)
-* [Sections](#sections)
+* [セクション](#%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3)
   * [Add `body` tag](#add-body-tag)
   * [Forget about `hgroup` element](#forget-about-hgroup-element)
   * [Use `address` element only for contact information](#use-address-element-only-for-contact-information)
-* [Grouping content](#grouping-content)
+* [グルーピングコンテンツ](#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%94%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
   * [Don't start with newline in `pre` element](#dont-start-with-newline-in-pre-element)
   * [Use appropriate element in `blockquote` element](#use-appropriate-element-in-blockquote-element)
   * [Don't include attribution directly in `blockquote` element](#dont-include-attribution-directly-in-blockquote-element)
@@ -54,7 +54,7 @@
   * [Place `figcaption` element as first or last child of `figure` element](#place-figcaption-element-as-first-or-last-child-of-figure-element)
   * [Use `main` element](#use-main-element)
   * [Avoid `div` element as much as possible](#avoid-div-element-as-much-as-possible)
-* [Text-level semantics](#text-level-semantics)
+* [テキストレベルセマンティックス](#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%AC%E3%83%99%E3%83%AB%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9)
   * [Don't split same link that can be grouped](#dont-split-same-link-that-can-be-grouped)
   * [Use `download` attribute for downloading a resource](#use-download-attribute-for-downloading-a-resource)
   * [Use `rel`, `hreflang`, and `type` attribute if needed](#use-rel-hreflang-and-type-attribute-if-needed)
@@ -70,9 +70,9 @@
   * [Avoid `span` element as much as possible](#avoid-span-element-as-much-as-possible)
   * [Break after `br` element](#break-after-br-element)
   * [Don't use `br` element only for presentational purpose](#dont-use-br-element-only-for-presentational-purpose)
-* [Edits](#edits)
+* [編集](#%E7%B7%A8%E9%9B%86)
   * [Don't stride `ins` and `del` element over other elements](#dont-stride-ins-and-del-element-over-other-elements)
-* [Embedded content](#embedded-content)
+* [エンベディッドコンテンツ](#%E3%82%A8%E3%83%B3%E3%83%99%E3%83%87%E3%82%A3%E3%83%83%E3%83%89%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
   * [Provide fallback `img` element for `picture` element](#provide-fallback-img-element-for-picture-element)
   * [Add `alt` attrbute to `img` element if needed](#add-alt-attrbute-to-img-element-if-needed)
   * [Empty `alt` attribute if possible](#empty-alt-attribute-if-possible)
@@ -80,10 +80,10 @@
   * [Empty `iframe` element](#empty-iframe-element)
   * [Markup `map` element content](#markup-map-element-content)
   * [Provide fallback content for `audio` or `video` element](#provide-fallback-content-for-audio-or-video-element)
-* [Tabular data](#tabular-data)
+* [テーブルデータ](#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF)
   * [Write one cell per line](#write-one-cell-per-line)
   * [Use `th` element for header cell](#use-th-element-for-header-cell)
-* [Forms](#forms)
+* [フォーム](#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0)
   * [Wrap form control with `label` element](#wrap-form-control-with-label-element)
   * [Omit `for` attribute if possible](#omit-for-attribute-if-possible)
   * [Use appropriate `type` attribute for `input` element](#use-appropriate-type-attribute-for-input-element)
@@ -94,22 +94,22 @@
   * [Add `max` attribute to `progress` element](#add-max-attribute-to-progress-element)
   * [Add `min` and `max` attribute to `meter` element](#add-min-and-max-attribute-to-meter-element)
   * [Place `legend` element as the first child of `fieldset` element](#place-legend-element-as-the-first-child-of-fieldset-element)
-* [Scripting](#scripting)
+* [スクリプティング](#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
   * [Omit `type` attribute for JavaScript](#omit-type-attribute-for-javascript)
   * [Add `defer` attribute if `script` element has `async` attribute](#add-defer-attribute-if-script-element-has-async-attribute)
   * [Don't comment out contents of `script` element](#dont-comment-out-contents-of-script-element)
   * [Don't use script-injected `script` element](#dont-use-script-injected-script-element)
-* [Other](#other)
+* [その他](#%E3%81%9D%E3%81%AE%E4%BB%96)
   * [Indent consistently](#indent-consistently)
   * [Use absolute path for internal links](#use-absolute-path-for-internal-links)
-* [Contributors](#contributors)
-* [License](#license)
+* [投稿者](#%E6%8A%95%E7%A8%BF%E8%80%85)
+* [ライセンス](#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
 
 <!-- /toc -->
 
 
-General
--------
+一般
+----
 
 ### Start with DOCTYPE
 
@@ -376,8 +376,8 @@ Good:
     <hr>
 
 
-The root element
-----------------
+文書要素
+--------
 
 ### Add `lang` attribute
 
@@ -405,8 +405,8 @@ Good:
     <html lang="ja">
 
 
-Document metadata
------------------
+文書メタデータ
+--------------
 
 ### Add `title` element
 
@@ -618,8 +618,8 @@ Also good:
     <link href="/css/screen.css" rel="stylesheet">
 
 
-Sections
---------
+セクション
+----------
 
 ### Add `body` tag
 
@@ -677,8 +677,8 @@ Good:
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-Grouping content
-----------------
+グルーピングコンテンツ
+----------------------
 
 ### Don't start with newline in `pre` element
 
@@ -894,8 +894,8 @@ Good:
     </section>
 
 
-Text-level semantics
---------------------
+テキストレベルセマンティックス
+------------------------------
 
 ### Don't split same link that can be grouped
 
@@ -1110,8 +1110,8 @@ Good:
     <textarea name="rule-description"></textarea></label></p>
 
 
-Edits
------
+編集
+----
 
 ### Don't stride `ins` and `del` element over other elements
 
@@ -1130,8 +1130,8 @@ Good:
     <del><p>Don't trust!</p></del>
 
 
-Embedded content
-----------------
+エンベディッドコンテンツ
+------------------------
 
 ### Provide fallback `img` element for `picture` element
 
@@ -1263,8 +1263,8 @@ Good:
     </video>
 
 
-Tabular data
-------------
+テーブルデータ
+--------------
 
 ### Write one cell per line
 
@@ -1338,8 +1338,8 @@ Good:
     </table>
 
 
-Forms
------
+フォーム
+--------
 
 ### Wrap form control with `label` element
 
@@ -1488,8 +1488,8 @@ Good:
     </fieldset>
 
 
-Scripting
----------
+スクリプティング
+----------------
 
 ### Omit `type` attribute for JavaScript
 
@@ -1568,8 +1568,8 @@ Good:
     <script async defer src="//example.com/widget.js"></script>
 
 
-Other
------
+その他
+------
 
 ### Indent consistently
 
@@ -1615,15 +1615,15 @@ Good:
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
 
-Contributors
-------------
+投稿者
+------
 
 - [@hail2u]
 - [@momdo]
 
 
-License
--------
+ライセンス
+----------
 
 [CC0]
 
