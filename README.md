@@ -1,7 +1,7 @@
 HTML Best Practices
 ===================
 
-For writing maintainable and scalable HTML documents.
+For writing maintainable and scalable HTML documents
 
 <!-- #toc -->
 
