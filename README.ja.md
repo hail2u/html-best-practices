@@ -81,8 +81,8 @@
   * [`map`要素の中はマークアップする](#map%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%81%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%81%99%E3%82%8B)
   * [`audio`や`video`要素にフォールバックのためのコンテンツを提供する](#audio%E3%82%84video%E8%A6%81%E7%B4%A0%E3%81%AB%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%99%E3%82%8B)
 * [テーブルデータ](#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF)
-  * [Write one cell per line](#write-one-cell-per-line)
-  * [Use `th` element for header cell](#use-th-element-for-header-cell)
+  * [1行に1つのセルを書く](#1%E8%A1%8C%E3%81%AB1%E3%81%A4%E3%81%AE%E3%82%BB%E3%83%AB%E3%82%92%E6%9B%B8%E3%81%8F)
+  * [見出しセルには`th`要素を使う](#%E8%A6%8B%E5%87%BA%E3%81%97%E3%82%BB%E3%83%AB%E3%81%AB%E3%81%AFth%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
 * [フォーム](#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0)
   * [Wrap form control with `label` element](#wrap-form-control-with-label-element)
   * [Omit `for` attribute if possible](#omit-for-attribute-if-possible)
@@ -1266,7 +1266,7 @@ Good:
 テーブルデータ
 --------------
 
-### Write one cell per line
+### 1行に1つのセルを書く
 
 Long lines are hard to scan.
 
@@ -1285,7 +1285,7 @@ Good:
     </tr>
 
 
-### Use `th` element for header cell
+### 見出しセルには`th`要素を使う
 
 There is no reason to avoid this.
 
