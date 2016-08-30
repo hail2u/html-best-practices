@@ -95,10 +95,10 @@
   * [Add `min` and `max` attribute to `meter` element](#add-min-and-max-attribute-to-meter-element)
   * [Place `legend` element as the first child of `fieldset` element](#place-legend-element-as-the-first-child-of-fieldset-element)
 * [スクリプティング](#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
-  * [Omit `type` attribute for JavaScript](#omit-type-attribute-for-javascript)
-  * [Add `defer` attribute if `script` element has `async` attribute](#add-defer-attribute-if-script-element-has-async-attribute)
-  * [Don't comment out contents of `script` element](#dont-comment-out-contents-of-script-element)
-  * [Don't use script-injected `script` element](#dont-use-script-injected-script-element)
+  * [JavaScriptでは`type`属性を省略する](#javascript%E3%81%A7%E3%81%AFtype%E5%B1%9E%E6%80%A7%E3%82%92%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
+  * [`script`要素が`async`属性を持つ場合、`defer`要素を追加する](#script%E8%A6%81%E7%B4%A0%E3%81%8Casync%E5%B1%9E%E6%80%A7%E3%82%92%E6%8C%81%E3%81%A4%E5%A0%B4%E5%90%88defer%E8%A6%81%E7%B4%A0%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`script`要素の中をコメントアウトしない](#script%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%82%92%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%81%97%E3%81%AA%E3%81%84)
+  * [`script`要素を動的に生成するテクニックを使わない](#script%E8%A6%81%E7%B4%A0%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
 * [その他](#%E3%81%9D%E3%81%AE%E4%BB%96)
   * [一貫した量でインデントする](#%E4%B8%80%E8%B2%AB%E3%81%97%E3%81%9F%E9%87%8F%E3%81%A7%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%99%E3%82%8B)
   * [内部リンクには絶対パスを使う](#%E5%86%85%E9%83%A8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%AF%E7%B5%B6%E5%AF%BE%E3%83%91%E3%82%B9%E3%82%92%E4%BD%BF%E3%81%86)
@@ -1491,7 +1491,7 @@ Good:
 スクリプティング
 ----------------
 
-### Omit `type` attribute for JavaScript
+### JavaScriptでは`type`属性を省略する
 
 In HTML5, the default `type` attribute’s value of `script` element is
 `text/javascript`.
@@ -1509,7 +1509,7 @@ Good:
     </script>
 
 
-### Add `defer` attribute if `script` element has `async` attribute
+### `script`要素が`async`属性を持つ場合、`defer`要素を追加する
 
 `async` is better, but some browser doesn’t support this attribute. `defer` is
 not bad.
@@ -1523,7 +1523,7 @@ Good:
     <script async defer src="/js/main.js"></script>
 
 
-### Don't comment out contents of `script` element
+### `script`要素の中をコメントアウトしない
 
 This ritual is for the old browser.
 
@@ -1550,7 +1550,7 @@ Good:
     </script>
 
 
-### Don't use script-injected `script` element
+### `script`要素を動的に生成するテクニックを使わない
 
 `async` is the best for both simplicity and performance.
 
