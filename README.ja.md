@@ -84,16 +84,16 @@
   * [1行に1つのセルを書く](#1%E8%A1%8C%E3%81%AB1%E3%81%A4%E3%81%AE%E3%82%BB%E3%83%AB%E3%82%92%E6%9B%B8%E3%81%8F)
   * [見出しセルには`th`要素を使う](#%E8%A6%8B%E5%87%BA%E3%81%97%E3%82%BB%E3%83%AB%E3%81%AB%E3%81%AFth%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
 * [フォーム](#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0)
-  * [Wrap form control with `label` element](#wrap-form-control-with-label-element)
-  * [Omit `for` attribute if possible](#omit-for-attribute-if-possible)
-  * [Use appropriate `type` attribute for `input` element](#use-appropriate-type-attribute-for-input-element)
-  * [Add `value` attribute to `input type="submit"`](#add-value-attribute-to-input-typesubmit)
-  * [Add `title` attribute to `input` element when there is `pattern` attribute](#add-title-attribute-to-input-element-when-there-is-pattern-attribute)
-  * [Don't use `placeholder` attribute for labeling](#dont-use-placeholder-attribute-for-labeling)
-  * [Write one `option` element per line](#write-one-option-element-per-line)
-  * [Add `max` attribute to `progress` element](#add-max-attribute-to-progress-element)
-  * [Add `min` and `max` attribute to `meter` element](#add-min-and-max-attribute-to-meter-element)
-  * [Place `legend` element as the first child of `fieldset` element](#place-legend-element-as-the-first-child-of-fieldset-element)
+  * [フォームコントロールは`label`要素で括る](#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB%E3%81%AFlabel%E8%A6%81%E7%B4%A0%E3%81%A7%E6%8B%AC%E3%82%8B)
+  * [可能ならば`for`属性は省略する](#%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%89%E3%81%B0for%E5%B1%9E%E6%80%A7%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
+  * [`input`要素では適切な`type`属性を使う](#input%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AF%E9%81%A9%E5%88%87%E3%81%AAtype%E5%B1%9E%E6%80%A7%E3%82%92%E4%BD%BF%E3%81%86)
+  * [`input type="submit"`には`value`属性を追加する](#input-typesubmit%E3%81%AB%E3%81%AFvalue%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`patter`属性を持つ`input`要素には`title`属性を追加する](#patter%E5%B1%9E%E6%80%A7%E3%82%92%E6%8C%81%E3%81%A4input%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AFtitle%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`placeholder`属性をラベル付けに使わない](#placeholder%E5%B1%9E%E6%80%A7%E3%82%92%E3%83%A9%E3%83%99%E3%83%AB%E4%BB%98%E3%81%91%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [`option`要素は1行に1つ書く](#option%E8%A6%81%E7%B4%A0%E3%81%AF1%E8%A1%8C%E3%81%AB1%E3%81%A4%E6%9B%B8%E3%81%8F)
+  * [`progress`要素には`max`属性を追加する](#progress%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AFmax%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`meter`要素では`min`及び`max`属性を追加する](#meter%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AFmin%E5%8F%8A%E3%81%B3max%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`legend`要素は`fieldset`要素の最初に置く](#legend%E8%A6%81%E7%B4%A0%E3%81%AFfieldset%E8%A6%81%E7%B4%A0%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AB%E7%BD%AE%E3%81%8F)
 * [スクリプティング](#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
   * [JavaScriptでは`type`属性を省略する](#javascript%E3%81%A7%E3%81%AFtype%E5%B1%9E%E6%80%A7%E3%82%92%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
   * [`script`要素が`async`属性を持つ場合、`defer`要素を追加する](#script%E8%A6%81%E7%B4%A0%E3%81%8Casync%E5%B1%9E%E6%80%A7%E3%82%92%E6%8C%81%E3%81%A4%E5%A0%B4%E5%90%88defer%E8%A6%81%E7%B4%A0%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
@@ -1341,7 +1341,7 @@ Good:
 フォーム
 --------
 
-### Wrap form control with `label` element
+### フォームコントロールは`label`要素で括る
 
 `label` helps focusing form element.
 
@@ -1354,7 +1354,7 @@ Good:
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### Omit `for` attribute if possible
+### 可能ならば`for`属性は省略する
 
 `label` can contain some form elements.
 
@@ -1367,7 +1367,7 @@ Good:
     <label>Query: <input name="q" type="text"></label>
 
 
-### Use appropriate `type` attribute for `input` element
+### `input`要素では適切な`type`属性を使う
 
 With appropriate `type`, browsers gives a tiny features to the `input` element.
 
@@ -1380,7 +1380,7 @@ Good:
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### Add `value` attribute to `input type="submit"`
+### `input type="submit"`には`value`属性を追加する
 
 The default label for submit button is not standarized across the browser and
 languages.
@@ -1394,7 +1394,7 @@ Good:
     <input type="submit" value="Search">
 
 
-### Add `title` attribute to `input` element when there is `pattern` attribute
+### `patter`属性を持つ`input`要素には`title`属性を追加する
 
 If input text does not match to `pattern`, the value of `title` attribute will
 be display as a hint.
@@ -1408,7 +1408,7 @@ Good:
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### Don't use `placeholder` attribute for labeling
+### `placeholder`属性をラベル付けに使わない
 
 `label` element is for a label, `placeholder` attribute is for a short hint.
 
@@ -1421,7 +1421,7 @@ Good:
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### Write one `option` element per line
+### `option`要素は1行に1つ書く
 
 Long lines are hard to scan.
 
@@ -1440,7 +1440,7 @@ Good:
     </datalist>
 
 
-### Add `max` attribute to `progress` element
+### `progress`要素には`max`属性を追加する
 
 With `max` attribute, the `value` attribute can be write in an easy format.
 
@@ -1453,7 +1453,7 @@ Good:
     <progress max="100" value="50"> 50%</progress>
 
 
-### Add `min` and `max` attribute to `meter` element
+### `meter`要素では`min`及び`max`属性を追加する
 
 With `min` and `max` attribute, the `value` attribute can be write in an easy
 format.
@@ -1467,7 +1467,7 @@ Good:
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### Place `legend` element as the first child of `fieldset` element
+### `legend`要素は`fieldset`要素の最初に置く
 
 Spec requires this.
 
