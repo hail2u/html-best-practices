@@ -100,8 +100,8 @@
   * [Don't comment out contents of `script` element](#dont-comment-out-contents-of-script-element)
   * [Don't use script-injected `script` element](#dont-use-script-injected-script-element)
 * [その他](#%E3%81%9D%E3%81%AE%E4%BB%96)
-  * [Indent consistently](#indent-consistently)
-  * [Use absolute path for internal links](#use-absolute-path-for-internal-links)
+  * [一貫した量でインデントする](#%E4%B8%80%E8%B2%AB%E3%81%97%E3%81%9F%E9%87%8F%E3%81%A7%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%99%E3%82%8B)
+  * [内部リンクには絶対パスを使う](#%E5%86%85%E9%83%A8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%AF%E7%B5%B6%E5%AF%BE%E3%83%91%E3%82%B9%E3%82%92%E4%BD%BF%E3%81%86)
 * [投稿者](#%E6%8A%95%E7%A8%BF%E8%80%85)
 * [ライセンス](#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
 
@@ -1571,7 +1571,7 @@ Good:
 その他
 ------
 
-### Indent consistently
+### 一貫した量でインデントする
 
 Indentation is important for readability.
 
@@ -1598,7 +1598,7 @@ Good:
     </html>
 
 
-### Use absolute path for internal links
+### 内部リンクには絶対パスを使う
 
 An absolute path works better on your localhost without internet connection.
 
