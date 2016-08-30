@@ -45,15 +45,15 @@
   * [`hgroup`要素のことは忘れる](#hgroup%E8%A6%81%E7%B4%A0%E3%81%AE%E3%81%93%E3%81%A8%E3%81%AF%E5%BF%98%E3%82%8C%E3%82%8B)
   * [`address`要素は連絡先情報にのみ使う](#address%E8%A6%81%E7%B4%A0%E3%81%AF%E9%80%A3%E7%B5%A1%E5%85%88%E6%83%85%E5%A0%B1%E3%81%AB%E3%81%AE%E3%81%BF%E4%BD%BF%E3%81%86)
 * [グルーピングコンテンツ](#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%94%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
-  * [Don't start with newline in `pre` element](#dont-start-with-newline-in-pre-element)
-  * [Use appropriate element in `blockquote` element](#use-appropriate-element-in-blockquote-element)
-  * [Don't include attribution directly in `blockquote` element](#dont-include-attribution-directly-in-blockquote-element)
-  * [Write one list item per line](#write-one-list-item-per-line)
-  * [Use `type` attribute for `ol` element](#use-type-attribute-for-ol-element)
-  * [Don’t use `dl` for dialogue](#dont-use-dl-for-dialogue)
-  * [Place `figcaption` element as first or last child of `figure` element](#place-figcaption-element-as-first-or-last-child-of-figure-element)
-  * [Use `main` element](#use-main-element)
-  * [Avoid `div` element as much as possible](#avoid-div-element-as-much-as-possible)
+  * [`pre`要素は改行で始めない](#pre%E8%A6%81%E7%B4%A0%E3%81%AF%E6%94%B9%E8%A1%8C%E3%81%A7%E5%A7%8B%E3%82%81%E3%81%AA%E3%81%84)
+  * [`blockquote`要素内でも適切な要素を使う](#blockquote%E8%A6%81%E7%B4%A0%E5%86%85%E3%81%A7%E3%82%82%E9%81%A9%E5%88%87%E3%81%AA%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
+  * [`blockquote`要素内に帰属情報を含めない](#blockquote%E8%A6%81%E7%B4%A0%E5%86%85%E3%81%AB%E5%B8%B0%E5%B1%9E%E6%83%85%E5%A0%B1%E3%82%92%E5%90%AB%E3%82%81%E3%81%AA%E3%81%84)
+  * [リスト項目は1行に1つずつ書く](#%E3%83%AA%E3%82%B9%E3%83%88%E9%A0%85%E7%9B%AE%E3%81%AF1%E8%A1%8C%E3%81%AB1%E3%81%A4%E3%81%9A%E3%81%A4%E6%9B%B8%E3%81%8F)
+  * [`ol`要素では`type`属性を使う](#ol%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AFtype%E5%B1%9E%E6%80%A7%E3%82%92%E4%BD%BF%E3%81%86)
+  * [`dl`を会話のために使わない](#dl%E3%82%92%E4%BC%9A%E8%A9%B1%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [`figcaption`要素は`figure`要素の最初か最後に置く](#figcaption%E8%A6%81%E7%B4%A0%E3%81%AFfigure%E8%A6%81%E7%B4%A0%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%8B%E6%9C%80%E5%BE%8C%E3%81%AB%E7%BD%AE%E3%81%8F)
+  * [`main`要素を使う](#main%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
+  * [できる限り`div`要素は使わない](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Adiv%E8%A6%81%E7%B4%A0%E3%81%AF%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
 * [テキストレベルセマンティックス](#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%AC%E3%83%99%E3%83%AB%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9)
   * [Don't split same link that can be grouped](#dont-split-same-link-that-can-be-grouped)
   * [Use `download` attribute for downloading a resource](#use-download-attribute-for-downloading-a-resource)
@@ -680,7 +680,7 @@ Good:
 グルーピングコンテンツ
 ----------------------
 
-### Don't start with newline in `pre` element
+### `pre`要素は改行で始めない
 
 A first newline will ignored in the browsers, but second and later are rendered.
 
@@ -696,7 +696,7 @@ Good:
     </pre>
 
 
-### Use appropriate element in `blockquote` element
+### `blockquote`要素内でも適切な要素を使う
 
 `blockquote` content is a quote, not a chunks of characters.
 
@@ -711,7 +711,7 @@ Good:
     </blockquote>
 
 
-### Don't include attribution directly in `blockquote` element
+### `blockquote`要素内に帰属情報を含めない
 
 `blockquote` content is a quote.
 
@@ -750,7 +750,7 @@ Also good too (recommended by W3C):
     </blockquote>
 
 
-### Write one list item per line
+### リスト項目は1行に1つずつ書く
 
 Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
 line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
@@ -771,7 +771,7 @@ Good:
     </ul>
 
 
-### Use `type` attribute for `ol` element
+### `ol`要素では`type`属性を使う
 
 Sometimes marker referenced by the contents in the near. If you change marker
 with `type` attribute, you will be safe to reference.
@@ -806,7 +806,7 @@ Good:
     </body>
 
 
-### Don’t use `dl` for dialogue
+### `dl`を会話のために使わない
 
 `dl` element is restricted to an association list in HTML5.
 
@@ -839,7 +839,7 @@ Good:
     <p>Abbott: Every dollar of it.</p>
 
 
-### Place `figcaption` element as first or last child of `figure` element
+### `figcaption`要素は`figure`要素の最初か最後に置く
 
 Spec disallows `figcaption` element in the middle of `figure` element.
 
@@ -860,7 +860,7 @@ Good:
     </figure>
 
 
-### Use `main` element
+### `main`要素を使う
 
 `main` element can be used wrapping contents.
 
@@ -877,7 +877,7 @@ Good:
     </main>
 
 
-### Avoid `div` element as much as possible
+### できる限り`div`要素は避ける
 
 `div` element is an element of last resort.
 
