@@ -53,23 +53,23 @@
   * [`dl`を会話のために使わない](#dl%E3%82%92%E4%BC%9A%E8%A9%B1%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
   * [`figcaption`要素は`figure`要素の最初か最後に置く](#figcaption%E8%A6%81%E7%B4%A0%E3%81%AFfigure%E8%A6%81%E7%B4%A0%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%8B%E6%9C%80%E5%BE%8C%E3%81%AB%E7%BD%AE%E3%81%8F)
   * [`main`要素を使う](#main%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
-  * [できる限り`div`要素は使わない](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Adiv%E8%A6%81%E7%B4%A0%E3%81%AF%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [できる限り`div`要素は避ける](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Adiv%E8%A6%81%E7%B4%A0%E3%81%AF%E9%81%BF%E3%81%91%E3%82%8B)
 * [テキストレベルセマンティックス](#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%AC%E3%83%99%E3%83%AB%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9)
-  * [Don't split same link that can be grouped](#dont-split-same-link-that-can-be-grouped)
-  * [Use `download` attribute for downloading a resource](#use-download-attribute-for-downloading-a-resource)
-  * [Use `rel`, `hreflang`, and `type` attribute if needed](#use-rel-hreflang-and-type-attribute-if-needed)
-  * [Clear link text](#clear-link-text)
-  * [Don't use `em` element for warning or caution](#dont-use-em-element-for-warning-or-caution)
-  * [Avoid `s`, `i`, `b`, and `u` element as much as possible](#avoid-s-i-b-and-u-element-as-much-as-possible)
-  * [Don't put quotes to `q` element](#dont-put-quotes-to-q-element)
-  * [Add `title` attribute to `abbr` element](#add-title-attribute-to-abbr-element)
-  * [Markup `ruby` element verbosely](#markup-ruby-element-verbosely)
-  * [Add `datetime` attribute to non-machine-readable `time` element](#add-datetime-attribute-to-non-machine-readable-time-element)
-  * [Specify code language with `class` attribute prefixed with `language-`](#specify-code-language-with-class-attribute-prefixed-with-language-)
-  * [Keep `kbd` element as simple as possible](#keep-kbd-element-as-simple-as-possible)
-  * [Avoid `span` element as much as possible](#avoid-span-element-as-much-as-possible)
-  * [Break after `br` element](#break-after-br-element)
-  * [Don't use `br` element only for presentational purpose](#dont-use-br-element-only-for-presentational-purpose)
+  * [グループ化できるリンクは分割しない](#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E5%8C%96%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AF%E5%88%86%E5%89%B2%E3%81%97%E3%81%AA%E3%81%84)
+  * [リソースをダウンロードさせる場合は`download`属性を使う](#%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%95%E3%81%9B%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AFdownload%E5%B1%9E%E6%80%A7%E3%82%92%E4%BD%BF%E3%81%86)
+  * [`rel`や`hreflang`、`type`属性を必要ならば使う](#rel%E3%82%84hreflangtype%E5%B1%9E%E6%80%A7%E3%82%92%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%89%E3%81%B0%E4%BD%BF%E3%81%86)
+  * [リンク文字列は明確にする](#%E3%83%AA%E3%83%B3%E3%82%AF%E6%96%87%E5%AD%97%E5%88%97%E3%81%AF%E6%98%8E%E7%A2%BA%E3%81%AB%E3%81%99%E3%82%8B)
+  * [`em`要素を警告や注意に使わない](#em%E8%A6%81%E7%B4%A0%E3%82%92%E8%AD%A6%E5%91%8A%E3%82%84%E6%B3%A8%E6%84%8F%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [できる限り`s`や`i`、`b`、`u`要素を避ける](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8As%E3%82%84ibu%E8%A6%81%E7%B4%A0%E3%82%92%E9%81%BF%E3%81%91%E3%82%8B)
+  * [`q`要素内へ引用符は置かない](#q%E8%A6%81%E7%B4%A0%E5%86%85%E3%81%B8%E5%BC%95%E7%94%A8%E7%AC%A6%E3%81%AF%E7%BD%AE%E3%81%8B%E3%81%AA%E3%81%84)
+  * [`abbr`要素へ`title`属性を追加する](#abbr%E8%A6%81%E7%B4%A0%E3%81%B8title%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`ruby`要素は冗長にマークアップする](#ruby%E8%A6%81%E7%B4%A0%E3%81%AF%E5%86%97%E9%95%B7%E3%81%AB%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%81%99%E3%82%8B)
+  * [機械的に解釈可能でない`time`要素では`datetime`属性を追加する](#%E6%A9%9F%E6%A2%B0%E7%9A%84%E3%81%AB%E8%A7%A3%E9%87%88%E5%8F%AF%E8%83%BD%E3%81%A7%E3%81%AA%E3%81%84time%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AFdatetime%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [コードの言語は`class`属性で`language-`で始めることで指定する](#%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E8%A8%80%E8%AA%9E%E3%81%AFclass%E5%B1%9E%E6%80%A7%E3%81%A7language-%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
+  * [できる限り`kbd`要素はシンプルにする](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Akbd%E8%A6%81%E7%B4%A0%E3%81%AF%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AB%E3%81%99%E3%82%8B)
+  * [できる限り`span`要素は使わない](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Aspan%E8%A6%81%E7%B4%A0%E3%81%AF%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [`br`要素の後ろでは改行する](#br%E8%A6%81%E7%B4%A0%E3%81%AE%E5%BE%8C%E3%82%8D%E3%81%A7%E3%81%AF%E6%94%B9%E8%A1%8C%E3%81%99%E3%82%8B)
+  * [見た目だけのために`br`要素を使わない](#%E8%A6%8B%E3%81%9F%E7%9B%AE%E3%81%A0%E3%81%91%E3%81%AE%E3%81%9F%E3%82%81%E3%81%ABbr%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
 * [編集](#%E7%B7%A8%E9%9B%86)
   * [Don't stride `ins` and `del` element over other elements](#dont-stride-ins-and-del-element-over-other-elements)
 * [エンベディッドコンテンツ](#%E3%82%A8%E3%83%B3%E3%83%99%E3%83%87%E3%82%A3%E3%83%83%E3%83%89%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
@@ -897,7 +897,7 @@ Good:
 テキストレベルセマンティックス
 ------------------------------
 
-### Don't split same link that can be grouped
+### グループ化できるリンクは分割しない
 
 `a` element can wrap almost all elements (except interactive elements like form
 controls and `a` element itself).
@@ -917,7 +917,7 @@ Good:
     </a>
 
 
-### Use `download` attribute for downloading a resource
+### リソースをダウンロードさせる場合は`download`属性を使う
 
 It will force browsers to download linked resource to the storage.
 
@@ -930,7 +930,7 @@ Good:
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Use `rel`, `hreflang`, and `type` attribute if needed
+### `rel`や`hreflang`、`type`属性を必要ならば使う
 
 These hints helps applications how handle linked resource.
 
@@ -943,7 +943,7 @@ Good:
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### Clear link text
+### リンク文字列は明確にする
 
 Link text should be the label of its linked resource.
 
@@ -956,7 +956,7 @@ Good:
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### Don't use `em` element for warning or caution
+### `em`要素を警告や注意に使わない
 
 These are seriousness. So, `strong` element is more appropriate.
 
@@ -969,7 +969,7 @@ Good:
     <strong>Caution!</strong>
 
 
-### Avoid `s`, `i`, `b`, and `u` element as much as possible
+### できる限り`s`や`i`、`b`、`u`要素を避ける
 
 These elements’ semantics is too difficult to humans.
 
@@ -982,7 +982,7 @@ Good:
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### Don't put quotes to `q` element
+### `q`要素内へ引用符は置かない
 
 Quotes are provided by the browser.
 
@@ -999,7 +999,7 @@ Also good:
     “For writing maintainable and scalable HTML documents”
 
 
-### Add `title` attribute to `abbr` element
+### `abbr`要素へ`title`属性を追加する
 
 There is no other way to represent its expansion.
 
@@ -1012,7 +1012,7 @@ Good:
     <abbr title="HTML Best Practices">HBP</abbr>
 
 
-### Markup `ruby` element verbosely
+### `ruby`要素は冗長にマークアップする
 
 `ruby` support is not completed across the modern browsers.
 
@@ -1025,7 +1025,7 @@ Good:
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Add `datetime` attribute to non-machine-readable `time` element
+### 機械的に解釈可能でない`time`要素では`datetime`属性を追加する
 
 When `datetime` attribute does not present, the format of `time` element’s
 content is restricted.
@@ -1039,7 +1039,7 @@ Good:
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Specify code language with `class` attribute prefixed with `language-`
+### コードの言語は`class`属性で`language-`で始めることで指定する
 
 This is not a formal way, but spec mentions this.
 
@@ -1052,7 +1052,7 @@ Good:
     <code class="language-html">&lt;DOCTYPE html&gt;</code>
 
 
-### Keep `kbd` element as simple as possible
+### できる限り`kbd`要素はシンプルにする
 
 Nesting `kbd` element is too difficult to humans.
 
@@ -1065,7 +1065,7 @@ Good:
     <kbd>Ctrl+F5</kbd>
 
 
-### Avoid `span` element as much as possible
+### できる限り`span`要素は使わない
 
 `span` element is an element of last resort.
 
@@ -1078,7 +1078,7 @@ Good:
     HTML <em>Best</em> Practices
 
 
-### Break after `br` element
+### `br`要素の後ろでは改行する
 
 Line break should be needed where `br` element is used.
 
@@ -1093,7 +1093,7 @@ Good:
     Practices</p>
 
 
-### Don't use `br` element only for presentational purpose
+### 見た目だけのために`br`要素を使わない
 
 `br` element is not for line breaking, it is for line breaks in the contents.
 
