@@ -71,15 +71,15 @@
   * [`br`要素の後ろでは改行する](#br%E8%A6%81%E7%B4%A0%E3%81%AE%E5%BE%8C%E3%82%8D%E3%81%A7%E3%81%AF%E6%94%B9%E8%A1%8C%E3%81%99%E3%82%8B)
   * [見た目だけのために`br`要素を使わない](#%E8%A6%8B%E3%81%9F%E7%9B%AE%E3%81%A0%E3%81%91%E3%81%AE%E3%81%9F%E3%82%81%E3%81%ABbr%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
 * [編集](#%E7%B7%A8%E9%9B%86)
-  * [Don't stride `ins` and `del` element over other elements](#dont-stride-ins-and-del-element-over-other-elements)
+  * [`ins`や`del`要素は他の要素をまたがせない](#ins%E3%82%84del%E8%A6%81%E7%B4%A0%E3%81%AF%E4%BB%96%E3%81%AE%E8%A6%81%E7%B4%A0%E3%82%92%E3%81%BE%E3%81%9F%E3%81%8C%E3%81%9B%E3%81%AA%E3%81%84)
 * [エンベディッドコンテンツ](#%E3%82%A8%E3%83%B3%E3%83%99%E3%83%87%E3%82%A3%E3%83%83%E3%83%89%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
-  * [Provide fallback `img` element for `picture` element](#provide-fallback-img-element-for-picture-element)
-  * [Add `alt` attrbute to `img` element if needed](#add-alt-attrbute-to-img-element-if-needed)
-  * [Empty `alt` attribute if possible](#empty-alt-attribute-if-possible)
-  * [Omit `alt` attribute if possible](#omit-alt-attribute-if-possible)
-  * [Empty `iframe` element](#empty-iframe-element)
-  * [Markup `map` element content](#markup-map-element-content)
-  * [Provide fallback content for `audio` or `video` element](#provide-fallback-content-for-audio-or-video-element)
+  * [`picture`要素ではフォールバックのための`img`要素を提供する](#picture%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AF%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEimg%E8%A6%81%E7%B4%A0%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%99%E3%82%8B)
+  * [必要な時は`img`要素へ`alt`属性を追加する](#%E5%BF%85%E8%A6%81%E3%81%AA%E6%99%82%E3%81%AFimg%E8%A6%81%E7%B4%A0%E3%81%B8alt%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [可能ならば`alt`属性は空にする](#%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%89%E3%81%B0alt%E5%B1%9E%E6%80%A7%E3%81%AF%E7%A9%BA%E3%81%AB%E3%81%99%E3%82%8B)
+  * [可能ならば`alt`属性は省略する](#%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%89%E3%81%B0alt%E5%B1%9E%E6%80%A7%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
+  * [`iframe`要素の中は空にする](#iframe%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%81%AF%E7%A9%BA%E3%81%AB%E3%81%99%E3%82%8B)
+  * [`map`要素の中はマークアップする](#map%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%81%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%81%99%E3%82%8B)
+  * [`audio`や`video`要素にフォールバックのためのコンテンツを提供する](#audio%E3%82%84video%E8%A6%81%E7%B4%A0%E3%81%AB%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%99%E3%82%8B)
 * [テーブルデータ](#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF)
   * [Write one cell per line](#write-one-cell-per-line)
   * [Use `th` element for header cell](#use-th-element-for-header-cell)
@@ -1113,7 +1113,7 @@ Good:
 編集
 ----
 
-### Don't stride `ins` and `del` element over other elements
+### `ins`や`del`要素は他の要素をまたがせない
 
 Elements cannot be overflow other elements.
 
@@ -1133,7 +1133,7 @@ Good:
 エンベディッドコンテンツ
 ------------------------
 
-### Provide fallback `img` element for `picture` element
+### `picture`要素ではフォールバックのための`img`要素を提供する
 
 The support of `picture` element is not good yet.
 
@@ -1156,7 +1156,7 @@ Good:
     </picture>
 
 
-### Add `alt` attrbute to `img` element if needed
+### 必要な時は`img`要素へ`alt`属性を追加する
 
 `alt` attribute helps those who cannot process images or have image loading
 disabled.
@@ -1170,7 +1170,7 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### Empty `alt` attribute if possible
+### 可能ならば`alt`属性は空にする
 
 If the image is supplemental, there is equivalent content somewhere in the near.
 
@@ -1183,7 +1183,7 @@ Good:
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### Omit `alt` attribute if possible
+### 可能ならば`alt`属性は省略する
 
 Sometimes you don’t know what text is suitable for `alt` attribute.
 
@@ -1197,7 +1197,7 @@ Good:
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
-### Empty `iframe` element
+### `iframe`要素の中は空にする
 
 There is some restriction in its content. Being empty is always safe.
 
@@ -1212,7 +1212,7 @@ Good:
     <iframe src="/ads/default.html"></iframe>
 
 
-### Markup `map` element content
+### `map`要素の中はマークアップする
 
 This content present to a screen reader.
 
@@ -1241,7 +1241,7 @@ Good:
     </map>
 
 
-### Provide fallback content for `audio` or `video` element
+### `audio`や`video`要素にフォールバックのためのコンテンツを提供する
 
 Fallback content is needed for newly introduced elements in HTML5.
 
