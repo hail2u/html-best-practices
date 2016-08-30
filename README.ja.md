@@ -6,44 +6,44 @@
 <!-- #toc -->
 
 * [一般](#%E4%B8%80%E8%88%AC)
-  * [Start with DOCTYPE](#start-with-doctype)
-  * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
-  * [Don't use XML Declaration](#dont-use-xml-declaration)
-  * [Don't use character references as much as possible](#dont-use-character-references-as-much-as-possible)
-  * [Escape `&`, `<`, `>`, `"`, and `'` with named character references](#escape-----and--with-named-character-references)
-  * [Use numeric character references for control or invisible characters](#use-numeric-character-references-for-control-or-invisible-characters)
-  * [Put white spaces around comment contents](#put-white-spaces-around-comment-contents)
-  * [Don't omit closing tag](#dont-omit-closing-tag)
-  * [Don't mix empty element format](#dont-mix-empty-element-format)
-  * [Don't put white spaces around tags and attribute values](#dont-put-white-spaces-around-tags-and-attribute-values)
-  * [Don't mix character cases](#dont-mix-character-cases)
-  * [Don't mix quotation marks](#dont-mix-quotation-marks)
-  * [Don't separate attributes with two or more white spaces](#dont-separate-attributes-with-two-or-more-white-spaces)
-  * [Omit boolean attribute value](#omit-boolean-attribute-value)
-  * [Omit namespaces](#omit-namespaces)
-  * [Don't use XML attributes](#dont-use-xml-attributes)
-  * [Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes)
-  * [Prefer strong native semantics](#prefer-strong-native-semantics)
+  * [DOCTYPEで始める](#doctype%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8B)
+  * [置き換えられるべきまたは旧式のDOCTYPEを使わない](#%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%82%89%E3%82%8C%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%BE%E3%81%9F%E3%81%AF%E6%97%A7%E5%BC%8F%E3%81%AEdoctype%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [XML宣言を使用しない](#xml%E5%AE%A3%E8%A8%80%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%AA%E3%81%84)
+  * [文字参照はできる限り使わない](#%E6%96%87%E5%AD%97%E5%8F%82%E7%85%A7%E3%81%AF%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8A%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [`&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする](#%E3%81%A8%E3%81%AF%E5%90%8D%E5%89%8D%E6%96%87%E5%AD%97%E5%8F%82%E7%85%A7%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%97%E3%81%99%E3%82%8B)
+  * [制御文字や不可視文字は数値文字参照を使う](#%E5%88%B6%E5%BE%A1%E6%96%87%E5%AD%97%E3%82%84%E4%B8%8D%E5%8F%AF%E8%A6%96%E6%96%87%E5%AD%97%E3%81%AF%E6%95%B0%E5%80%A4%E6%96%87%E5%AD%97%E5%8F%82%E7%85%A7%E3%82%92%E4%BD%BF%E3%81%86)
+  * [コメントではその内容の前後へ空白文字を置く](#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%A7%E3%81%AF%E3%81%9D%E3%81%AE%E5%86%85%E5%AE%B9%E3%81%AE%E5%89%8D%E5%BE%8C%E3%81%B8%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%82%92%E7%BD%AE%E3%81%8F)
+  * [終了タグを省略しない](#%E7%B5%82%E4%BA%86%E3%82%BF%E3%82%B0%E3%82%92%E7%9C%81%E7%95%A5%E3%81%97%E3%81%AA%E3%81%84)
+  * [空要素の書き方を混ぜない](#%E7%A9%BA%E8%A6%81%E7%B4%A0%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
+  * [タグや属性値の前後へ空白文字を置かない](#%E3%82%BF%E3%82%B0%E3%82%84%E5%B1%9E%E6%80%A7%E5%80%A4%E3%81%AE%E5%89%8D%E5%BE%8C%E3%81%B8%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%82%92%E7%BD%AE%E3%81%8B%E3%81%AA%E3%81%84)
+  * [大文字・小文字を混ぜない](#%E5%A4%A7%E6%96%87%E5%AD%97%E5%B0%8F%E6%96%87%E5%AD%97%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
+  * [引用符を混ぜない](#%E5%BC%95%E7%94%A8%E7%AC%A6%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
+  * [属性を2文字以上の空白文字で区切らない](#%E5%B1%9E%E6%80%A7%E3%82%922%E6%96%87%E5%AD%97%E4%BB%A5%E4%B8%8A%E3%81%AE%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%81%A7%E5%8C%BA%E5%88%87%E3%82%89%E3%81%AA%E3%81%84)
+  * [真偽値を取る属性の値は省略する](#%E7%9C%9F%E5%81%BD%E5%80%A4%E3%82%92%E5%8F%96%E3%82%8B%E5%B1%9E%E6%80%A7%E3%81%AE%E5%80%A4%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
+  * [名前空間は省略する](#%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
+  * [XML属性は使わない](#xml%E5%B1%9E%E6%80%A7%E3%81%AF%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [`data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない](#data-%E3%81%A8microdatardfa-lite%E7%94%A8%E3%81%AE%E5%B1%9E%E6%80%A7%E3%81%A8%E9%80%9A%E5%B8%B8%E3%81%AE%E5%B1%9E%E6%80%A7%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
+  * [暗黙のセマンティクスを尊重する](#%E6%9A%97%E9%BB%99%E3%81%AE%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9%E3%82%92%E5%B0%8A%E9%87%8D%E3%81%99%E3%82%8B)
 * [文書要素](#%E6%96%87%E6%9B%B8%E8%A6%81%E7%B4%A0)
-  * [Add `lang` attribute](#add-lang-attribute)
-  * [Keep `lang` attribute value as short as possible](#keep-lang-attribute-value-as-short-as-possible)
+  * [`lang`属性を追加する](#lang%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`lang`属性の値はできる限り短くする](#lang%E5%B1%9E%E6%80%A7%E3%81%AE%E5%80%A4%E3%81%AF%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8A%E7%9F%AD%E3%81%8F%E3%81%99%E3%82%8B)
 * [文書メタデータ](#%E6%96%87%E6%9B%B8%E3%83%A1%E3%82%BF%E3%83%87%E3%83%BC%E3%82%BF)
-  * [Add `title` element](#add-title-element)
-  * [Don’t use `base` element](#dont-use-base-element)
-  * [Specify MIME type of minor linked resources](#specify-mime-type-of-minor-linked-resources)
-  * [Don't link to `favicon.ico`](#dont-link-to-faviconico)
-  * [Add `title` attribute to alternate stylesheets](#add-title-attribute-to-alternate-stylesheets)
-  * [Specify document character encoding](#specify-document-character-encoding)
-  * [Don't use legacy character encoding format](#dont-use-legacy-character-encoding-format)
-  * [Specify character encoding at first](#specify-character-encoding-at-first)
-  * [Use UTF-8](#use-utf-8)
-  * [Omit `type` attribute for CSS](#omit-type-attribute-for-css)
-  * [Don't comment out contents of `style` element](#dont-comment-out-contents-of-style-element)
-  * [Don't mix tag for CSS and JavaScript](#dont-mix-tag-for-css-and-javascript)
+  * [`title`要素を書く](#title%E8%A6%81%E7%B4%A0%E3%82%92%E6%9B%B8%E3%81%8F)
+  * [`base`要素を使わない](#base%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [マイナーな参照先リソースのMIMEタイプを指定する](#%E3%83%9E%E3%82%A4%E3%83%8A%E3%83%BC%E3%81%AA%E5%8F%82%E7%85%A7%E5%85%88%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AEmime%E3%82%BF%E3%82%A4%E3%83%97%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
+  * [`favicon.ico`へリンクしない](#faviconico%E3%81%B8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%97%E3%81%AA%E3%81%84)
+  * [代替スタイルシートへ`title`属性を追加する](#%E4%BB%A3%E6%9B%BF%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E3%81%B8title%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [文書の文字エンコーディングを指定する](#%E6%96%87%E6%9B%B8%E3%81%AE%E6%96%87%E5%AD%97%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
+  * [置き換えられるべき文字エンコーディング指定フォーマットを使わない](#%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%82%89%E3%82%8C%E3%82%8B%E3%81%B9%E3%81%8D%E6%96%87%E5%AD%97%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
+  * [最初に文字エンコーディングを指定する](#%E6%9C%80%E5%88%9D%E3%81%AB%E6%96%87%E5%AD%97%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
+  * [UTF-8を使う](#utf-8%E3%82%92%E4%BD%BF%E3%81%86)
+  * [CSSの`type`属性は省略する](#css%E3%81%AEtype%E5%B1%9E%E6%80%A7%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
+  * [`style`要素の中をコメントアウトしない](#style%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%82%92%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%81%97%E3%81%AA%E3%81%84)
+  * [CSSとJavaScriptのタグを混ぜない](#css%E3%81%A8javascript%E3%81%AE%E3%82%BF%E3%82%B0%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
 * [セクション](#%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3)
-  * [Add `body` tag](#add-body-tag)
-  * [Forget about `hgroup` element](#forget-about-hgroup-element)
-  * [Use `address` element only for contact information](#use-address-element-only-for-contact-information)
+  * [`body`要素を書く](#body%E8%A6%81%E7%B4%A0%E3%82%92%E6%9B%B8%E3%81%8F)
+  * [`hgroup`要素のことは忘れる](#hgroup%E8%A6%81%E7%B4%A0%E3%81%AE%E3%81%93%E3%81%A8%E3%81%AF%E5%BF%98%E3%82%8C%E3%82%8B)
+  * [`address`要素は連絡先情報にのみ使う](#address%E8%A6%81%E7%B4%A0%E3%81%AF%E9%80%A3%E7%B5%A1%E5%85%88%E6%83%85%E5%A0%B1%E3%81%AB%E3%81%AE%E3%81%BF%E4%BD%BF%E3%81%86)
 * [グルーピングコンテンツ](#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%94%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
   * [Don't start with newline in `pre` element](#dont-start-with-newline-in-pre-element)
   * [Use appropriate element in `blockquote` element](#use-appropriate-element-in-blockquote-element)
@@ -111,7 +111,7 @@
 一般
 ----
 
-### Start with DOCTYPE
+### DOCTYPEで始める
 
 `DOCTYPE` is required for activating standard mode.
 
@@ -129,7 +129,7 @@ Good:
     </html>
 
 
-### Don't use legacy or obsolete DOCTYPE
+### 置き換えられるべきまたは旧式のDOCTYPEを使わない
 
 `DOCTYPE` is not for DTD anymore, be simple.
 
@@ -143,7 +143,7 @@ Good:
     <!DOCTYPE html>
 
 
-### Don't use XML Declaration
+### XML宣言を使用しない
 
 Are you sure you want to write XHTML?
 
@@ -157,7 +157,7 @@ Good:
     <!DOCTYPE html>
 
 
-### Don't use character references as much as possible
+### 文字参照はできる限り使わない
 
 If you write an HTML document with UTF-8, almost all charaters (including Emoji)
 can be write directly.
@@ -171,7 +171,7 @@ Good:
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
-### Escape `&`, `<`, `>`, `"`, and `'` with named character references
+### `&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする
 
 These characters should escape always for a bug-free HTML document.
 
@@ -184,7 +184,7 @@ Good:
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### Use numeric character references for control or invisible characters
+### 制御文字や不可視文字は数値文字参照を使う
 
 These characters are easily mistaken for another character. And also spec does
 not guarantee to define a human readable name for these characters.
@@ -198,7 +198,7 @@ Good:
     <p>This book can read in 1&#xA0;hour.</p>
 
 
-### Put white spaces around comment contents
+### コメントではその内容の前後へ空白文字を置く
 
 Some character cannot be used immediately after comment open tag or before
 comment close tag.
@@ -212,7 +212,7 @@ Good:
     <!-- This section is non-normative -->
 
 
-### Don't omit closing tag
+### 終了タグを省略しない
 
 I think you don’t understand a rule for omitting closing tag.
 
@@ -231,7 +231,7 @@ Good:
     </html>
 
 
-### Don't mix empty element format
+### 空要素の書き方を混ぜない
 
 Consistency is a key for readability.
 
@@ -246,7 +246,7 @@ Good:
     <hr>
 
 
-### Don't put white spaces around tags and attribute values
+### タグや属性値の前後へ空白文字を置かない
 
 There is no reason for doing this.
 
@@ -259,7 +259,7 @@ Good:
     <h1 class="title">HTML Best Practices</h1>
 
 
-### Don't mix character cases
+### 大文字・小文字を混ぜない
 
 It gives a consistency also.
 
@@ -272,7 +272,7 @@ Good:
     <a href="#general">General</a>
 
 
-### Don't mix quotation marks
+### 引用符を混ぜない
 
 Same as above.
 
@@ -285,7 +285,7 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### Don't separate attributes with two or more white spaces
+### 属性を2文字以上の空白文字で区切らない
 
 Your weird formatting rule confuses someone.
 
@@ -298,7 +298,7 @@ Good:
     <input name="q" type="search">
 
 
-### Omit boolean attribute value
+### 真偽値を取る属性の値は省略する
 
 It’s easy to write, isn’t it?
 
@@ -311,7 +311,7 @@ Good:
     <audio autoplay src="/audio/theme.mp3">
 
 
-### Omit namespaces
+### 名前空間は省略する
 
 SVG and MathML can be used directly in an HTML5 document.
 
@@ -328,7 +328,7 @@ Good:
     </svg>
 
 
-### Don't use XML attributes
+### XML属性は使わない
 
 We write an HTML document.
 
@@ -341,7 +341,7 @@ Good:
     <span lang="ja">...</span>
 
 
-### Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
+### `data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない
 
 A tag string can be very complicated. This simple rule helps reading such tag
 string.
@@ -355,7 +355,7 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### Prefer strong native semantics
+### 暗黙のセマンティクスを尊重する
 
 Some element has a implicit role in an HTML document, don’t specify (or change).
 
@@ -379,7 +379,7 @@ Good:
 文書要素
 --------
 
-### Add `lang` attribute
+### `lang`属性を追加する
 
 `lang` attribute will help translating an HTML document.
 
@@ -392,7 +392,7 @@ Good:
     <html lang="en-US">
 
 
-### Keep `lang` attribute value as short as possible
+### `lang`属性の値はできる限り短くする
 
 Japanese is only used in Japan. So country code is not necessary.
 
@@ -408,7 +408,7 @@ Good:
 文書メタデータ
 --------------
 
-### Add `title` element
+### `title`要素を書く
 
 A value for `title` element is used by various application not only a browser.
 
@@ -426,7 +426,7 @@ Good:
     </head>
 
 
-### Don’t use `base` element
+### `base`要素を使わない
 
 An absolute path or URL is safer for both developers and users.
 
@@ -448,7 +448,7 @@ Good:
     </head>
 
 
-### Specify MIME type of minor linked resources
+### マイナーな参照先リソースのMIMEタイプを指定する
 
 This is a hint how application handles this resource.
 
@@ -465,7 +465,7 @@ Good:
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### Don't link to `favicon.ico`
+### `favicon.ico`へリンクしない
 
 Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
 
@@ -478,7 +478,7 @@ Good:
     <!-- Place `favicon.ico` in the root directory. -->
 
 
-### Add `title` attribute to alternate stylesheets
+### 代替スタイルシートへ`title`属性を追加する
 
 A human readable label helps people selecting proper stylesheet.
 
@@ -493,7 +493,7 @@ Good:
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
-### Specify document character encoding
+### 文書の文字エンコーディングを指定する
 
 UTF-8 is not default in all browsers yet.
 
@@ -511,7 +511,7 @@ Good:
     </head>
 
 
-### Don't use legacy character encoding format
+### 置き換えられるべき文字エンコーディング指定フォーマットを使わない
 
 HTTP headers should be specified by a server, be simple.
 
@@ -524,7 +524,7 @@ Good:
     <meta charset="UTF-8">
 
 
-### Specify character encoding at first
+### 最初に文字エンコーディングを指定する
 
 Spec requires the character encoding is specified within the first 1024 bytes of
 the document.
@@ -546,7 +546,7 @@ Good:
     </head>
 
 
-### Use UTF-8
+### UTF-8を使う
 
 With UTF-8, you can free to use Emoji.
 
@@ -559,7 +559,7 @@ Good:
     <meta charset="UTF-8">
 
 
-### Omit `type` attribute for CSS
+### CSSの`type`属性は省略する
 
 In HTML5,  default `type` attribute’s value of `style` element is `text/css`.
 
@@ -576,7 +576,7 @@ Good:
     </style>
 
 
-### Don't comment out contents of `style` element
+### `style`要素の中をコメントアウトしない
 
 This ritual is for the old browser.
 
@@ -595,7 +595,7 @@ Good:
     </style>
 
 
-### Don't mix tag for CSS and JavaScript
+### CSSとJavaScriptのタグを混ぜない
 
 Sometimes `script` element blocks DOM construction.
 
@@ -621,7 +621,7 @@ Also good:
 セクション
 ----------
 
-### Add `body` tag
+### `body`要素を書く
 
 Sometimes `body` element is complemented in unexpected position by a browser.
 
@@ -646,7 +646,7 @@ Good:
     </html>
 
 
-### Forget about `hgroup` element
+### `hgroup`要素のことは忘れる
 
 W3C spec removes this element.
 
@@ -663,7 +663,7 @@ Good:
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### Use `address` element only for contact information
+### `address`要素は連絡先情報にのみ使う
 
 `address` element is for email address, social network account, street address,
 telephone number, or something you can get in touch with.
