@@ -1492,8 +1492,7 @@ Good:
 
 ### JavaScriptでは`type`属性を省略する
 
-In HTML5, the default `type` attribute’s value of `script` element is
-`text/javascript`.
+HTML5では、`script`要素における`type`属性の初期値は`text/javascript`です。
 
 Bad:
 
@@ -1510,8 +1509,8 @@ Good:
 
 ### `script`要素が`async`属性を持つ場合、`defer`要素を追加する
 
-`async` is better, but some browser doesn’t support this attribute. `defer` is
-not bad.
+`async`属性の方が良いですが、いくつかのブラウザーはこの属性をサポートしていませ
+ん。`defer`属性も悪くはありません。
 
 Bad:
 
@@ -1524,7 +1523,7 @@ Good:
 
 ### `script`要素の中をコメントアウトしない
 
-This ritual is for the old browser.
+この儀式は古いブラウザーのためです。
 
 Bad:
 
@@ -1551,7 +1550,7 @@ Good:
 
 ### `script`要素を動的に生成するテクニックを使わない
 
-`async` is the best for both simplicity and performance.
+`async`属性が明快さとパフォーマンスの両面で最良です。
 
 Bad:
 
