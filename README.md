@@ -1,9 +1,9 @@
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md)
+
 HTML Best Practices
 ===================
 
 For writing maintainable and scalable HTML documents
-
-- [日本語](README.ja.md)
 
 <!-- #toc -->
 

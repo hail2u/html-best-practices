@@ -1,9 +1,9 @@
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md)
+
 普通のHTMLの書き方
 ==================
 
 保守しやすく、規模に依存しないHTML文書のために
-
-- [English](README.md)
 
 <!-- #toc -->
 
