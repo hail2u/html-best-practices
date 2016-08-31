@@ -380,7 +380,7 @@ Good:
 
 ### `lang`属性を追加する
 
-`lang` attribute will help translating an HTML document.
+`lang`属性はHTML文書の翻訳に役立ちます。
 
 Bad:
 
@@ -393,7 +393,7 @@ Good:
 
 ### `lang`属性の値はできる限り短くする
 
-Japanese is only used in Japan. So country code is not necessary.
+日本語は日本でのみ使われます。つまり国コードは必要ありません。
 
 Bad
 
