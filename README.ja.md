@@ -1115,7 +1115,7 @@ Good:
 
 ### `ins`や`del`要素は他の要素をまたがせない
 
-Elements cannot be overflow other elements.
+要素は他の要素をまたぐことはできません。
 
 Bad:
 
