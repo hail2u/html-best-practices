@@ -1268,7 +1268,7 @@ Good:
 
 ### 1行に1つのセルを書く
 
-Long lines are hard to scan.
+長い行は把握しづらいです。
 
 Bad:
 
@@ -1287,7 +1287,7 @@ Good:
 
 ### 見出しセルには`th`要素を使う
 
-There is no reason to avoid this.
+避ける理由はないでしょう。
 
 Bad:
 
