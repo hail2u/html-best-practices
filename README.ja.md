@@ -409,7 +409,8 @@ Good:
 
 ### `title`要素を書く
 
-A value for `title` element is used by various application not only a browser.
+`title`要素の中身は、ブラウザーに限らず、様々なアプリケーションにより利用されま
+す。
 
 Bad:
 
@@ -427,7 +428,7 @@ Good:
 
 ### `base`要素を使わない
 
-An absolute path or URL is safer for both developers and users.
+絶対パスや絶対URLの方が開発者とユーザーの双方に安全です。
 
 Bad:
 
@@ -449,7 +450,7 @@ Good:
 
 ### マイナーな参照先リソースのMIMEタイプを指定する
 
-This is a hint how application handles this resource.
+アプリケーションがそのリソースをどう取り扱うべきかのヒントになります。
 
 Bad:
 
@@ -466,7 +467,7 @@ Good:
 
 ### `favicon.ico`へリンクしない
 
-Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
+ほとんどのブラウザーは`/favicon.ico`を自動的に非同期で取得します。
 
 Bad:
 
@@ -479,7 +480,7 @@ Good:
 
 ### 代替スタイルシートへ`title`属性を追加する
 
-A human readable label helps people selecting proper stylesheet.
+人間にわかりやすいラベルは人々が適切なスタイルシートを選択しやすくします。
 
 Bad:
 
@@ -494,7 +495,7 @@ Good:
 
 ### 文書の文字エンコーディングを指定する
 
-UTF-8 is not default in all browsers yet.
+まだすべてのブラウザーでUTF-8がデフォルトになっていません。
 
 Bad:
 
@@ -512,7 +513,7 @@ Good:
 
 ### 置き換えられるべき文字エンコーディング指定フォーマットを使わない
 
-HTTP headers should be specified by a server, be simple.
+HTTPヘッダーはサーバー側で指定されるべきで、簡単に書くべきです。
 
 Bad:
 
@@ -525,8 +526,8 @@ Good:
 
 ### 最初に文字エンコーディングを指定する
 
-Spec requires the character encoding is specified within the first 1024 bytes of
-the document.
+仕様では文書の先頭1024バイトまでに文字エンコーディングを指定することを要求してい
+ます。
 
 Bad:
 
@@ -547,7 +548,7 @@ Good:
 
 ### UTF-8を使う
 
-With UTF-8, you can free to use Emoji.
+UTF-8ならEmojiを自由に使えます。
 
 Bad:
 
@@ -560,7 +561,7 @@ Good:
 
 ### CSSの`type`属性は省略する
 
-In HTML5,  default `type` attribute’s value of `style` element is `text/css`.
+HTML5では、`style`要素における`type`属性の初期値は`text/css`です。
 
 Bad:
 
@@ -577,7 +578,7 @@ Good:
 
 ### `style`要素の中をコメントアウトしない
 
-This ritual is for the old browser.
+この儀式は古いブラウザーのためです。
 
 Bad:
 
@@ -596,7 +597,7 @@ Good:
 
 ### CSSとJavaScriptのタグを混ぜない
 
-Sometimes `script` element blocks DOM construction.
+時々`script`要素はDOMの構築をブロックします。
 
 Bad:
 
