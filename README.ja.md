@@ -1135,7 +1135,7 @@ Good:
 
 ### `picture`要素ではフォールバックのための`img`要素を提供する
 
-The support of `picture` element is not good yet.
+`picture`要素のサポートはまだよくありません。
 
 Bad:
 
@@ -1158,8 +1158,8 @@ Good:
 
 ### 必要な時は`img`要素へ`alt`属性を追加する
 
-`alt` attribute helps those who cannot process images or have image loading
-disabled.
+`alt`属性は、画像を表示できなかったり、画像の読み込みを無効にしている環境へ助け
+になります。
 
 Bad:
 
@@ -1172,7 +1172,7 @@ Good:
 
 ### 可能ならば`alt`属性は空にする
 
-If the image is supplemental, there is equivalent content somewhere in the near.
+画像が補助的なものならば、きっと周囲に同等のコンテンツが存在するはずです。
 
 Bad:
 
@@ -1185,7 +1185,7 @@ Good:
 
 ### 可能ならば`alt`属性は省略する
 
-Sometimes you don’t know what text is suitable for `alt` attribute.
+たまにどのような文字列が適切な`alt`属性の値かわからないこともあります。
 
 Bad:
 
@@ -1199,7 +1199,7 @@ Good:
 
 ### `iframe`要素の中は空にする
 
-There is some restriction in its content. Being empty is always safe.
+その内容にはいくつかの制限があります。空にすれば安全です。
 
 Bad:
 
@@ -1214,7 +1214,7 @@ Good:
 
 ### `map`要素の中はマークアップする
 
-This content present to a screen reader.
+その中身はスクリーン・リーダーへ提供されます。
 
 Bad:
 
@@ -1243,7 +1243,7 @@ Good:
 
 ### `audio`や`video`要素にフォールバックのためのコンテンツを提供する
 
-Fallback content is needed for newly introduced elements in HTML5.
+HTML5で新しく作られた要素にはフォールバックのためのコンテンツが必要です。
 
 Bad:
 
