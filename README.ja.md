@@ -88,7 +88,7 @@
   * [可能ならば`for`属性は省略する](#%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%89%E3%81%B0for%E5%B1%9E%E6%80%A7%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
   * [`input`要素では適切な`type`属性を使う](#input%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AF%E9%81%A9%E5%88%87%E3%81%AAtype%E5%B1%9E%E6%80%A7%E3%82%92%E4%BD%BF%E3%81%86)
   * [`input type="submit"`には`value`属性を追加する](#input-typesubmit%E3%81%AB%E3%81%AFvalue%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-  * [`patter`属性を持つ`input`要素には`title`属性を追加する](#patter%E5%B1%9E%E6%80%A7%E3%82%92%E6%8C%81%E3%81%A4input%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AFtitle%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
+  * [`pattern`属性を持つ`input`要素には`title`属性を追加する](#pattern%E5%B1%9E%E6%80%A7%E3%82%92%E6%8C%81%E3%81%A4input%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AFtitle%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
   * [`placeholder`属性をラベル付けに使わない](#placeholder%E5%B1%9E%E6%80%A7%E3%82%92%E3%83%A9%E3%83%99%E3%83%AB%E4%BB%98%E3%81%91%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
   * [`option`要素は1行に1つ書く](#option%E8%A6%81%E7%B4%A0%E3%81%AF1%E8%A1%8C%E3%81%AB1%E3%81%A4%E6%9B%B8%E3%81%8F)
   * [`progress`要素には`max`属性を追加する](#progress%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AFmax%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
@@ -1343,7 +1343,7 @@ Good:
 
 ### フォームコントロールは`label`要素で括る
 
-`label` helps focusing form element.
+`label`要素はフォーム要素へフォーカスを当てるのに役立ちます。
 
 Bad:
 
@@ -1356,7 +1356,7 @@ Good:
 
 ### 可能ならば`for`属性は省略する
 
-`label` can contain some form elements.
+`label`要素はいくつかのフォーム要素を含められます。
 
 Bad:
 
@@ -1369,7 +1369,8 @@ Good:
 
 ### `input`要素では適切な`type`属性を使う
 
-With appropriate `type`, browsers gives a tiny features to the `input` element.
+適切な`type`属性により、ブラウザーは`input`要素へちょっとした機能を与えてくれま
+す。
 
 Bad:
 
@@ -1382,8 +1383,7 @@ Good:
 
 ### `input type="submit"`には`value`属性を追加する
 
-The default label for submit button is not standarized across the browser and
-languages.
+送信ボタンのデフォルトのラベルはブラウザーや言語設定によってまちまちです。
 
 Bad:
 
@@ -1394,10 +1394,10 @@ Good:
     <input type="submit" value="Search">
 
 
-### `patter`属性を持つ`input`要素には`title`属性を追加する
+### `pattern`属性を持つ`input`要素には`title`属性を追加する
 
-If input text does not match to `pattern`, the value of `title` attribute will
-be display as a hint.
+もし入力したテキストが`pattern`属性にマッチしない場合、`title`属性の値がヒントと
+して表示されます。
 
 Bad:
 
@@ -1410,7 +1410,7 @@ Good:
 
 ### `placeholder`属性をラベル付けに使わない
 
-`label` element is for a label, `placeholder` attribute is for a short hint.
+`label`要素がラベルのためにあり、`placeholder`属性は短いヒントのためにあります。
 
 Bad:
 
@@ -1423,7 +1423,7 @@ Good:
 
 ### `option`要素は1行に1つ書く
 
-Long lines are hard to scan.
+長い行は把握しづらいです。
 
 Bad:
 
@@ -1442,7 +1442,7 @@ Good:
 
 ### `progress`要素には`max`属性を追加する
 
-With `max` attribute, the `value` attribute can be write in an easy format.
+`max`属性があると、`value`属性を簡単な形式で書くことができます。
 
 Bad:
 
@@ -1455,8 +1455,7 @@ Good:
 
 ### `meter`要素では`min`及び`max`属性を追加する
 
-With `min` and `max` attribute, the `value` attribute can be write in an easy
-format.
+`min`と`max`属性があると、`value`属性を簡単な形式で書くことができます。
 
 Bad:
 
@@ -1469,7 +1468,7 @@ Good:
 
 ### `legend`要素は`fieldset`要素の最初に置く
 
-Spec requires this.
+仕様がそう要求しています。
 
 Bad:
 
