@@ -1571,7 +1571,7 @@ Good:
 
 ### 一貫した量でインデントする
 
-Indentation is important for readability.
+インデントは読みやすさにおいて重要です。
 
 Bad:
 
@@ -1598,7 +1598,7 @@ Good:
 
 ### 内部リンクには絶対パスを使う
 
-An absolute path works better on your localhost without internet connection.
+絶対パスはインターネット回線のないローカルの環境でもうまく動きます。
 
 Bad:
 
