@@ -113,7 +113,7 @@
 
 ### DOCTYPEで始める
 
-`DOCTYPE` is required for activating standard mode.
+`DOCTYPE`は標準モードを有効にするために必要です。
 
 Bad:
 
@@ -131,7 +131,7 @@ Good:
 
 ### 置き換えられるべきまたは旧式のDOCTYPEを使わない
 
-`DOCTYPE` is not for DTD anymore, be simple.
+もはや`DOCTYPE`はDTDのためにあるわけではないので、シンプルにしましょう。
 
 Bad:
 
@@ -145,7 +145,7 @@ Good:
 
 ### XML宣言を使用しない
 
-Are you sure you want to write XHTML?
+まだXHTMLを書きたいんですか？
 
 Bad:
 
@@ -159,8 +159,7 @@ Good:
 
 ### 文字参照はできる限り使わない
 
-If you write an HTML document with UTF-8, almost all charaters (including Emoji)
-can be write directly.
+UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字はそのまま書けます。
 
 Bad:
 
@@ -173,7 +172,7 @@ Good:
 
 ### `&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする
 
-These characters should escape always for a bug-free HTML document.
+これらの文字は、バグのないHTML文書のため、常にエスケープするべきです。
 
 Bad:
 
@@ -186,8 +185,8 @@ Good:
 
 ### 制御文字や不可視文字は数値文字参照を使う
 
-These characters are easily mistaken for another character. And also spec does
-not guarantee to define a human readable name for these characters.
+これらの文字は簡単に他の文字と間違えられます。また、仕様ではこれらの文字に人間に
+わかりやすい名前がついているかどうかを保証していません。
 
 Bad:
 
@@ -200,8 +199,7 @@ Good:
 
 ### コメントではその内容の前後へ空白文字を置く
 
-Some character cannot be used immediately after comment open tag or before
-comment close tag.
+いくつかの文字はコメントの開始タグの直後や終了タグの直前に書くことができません。
 
 Bad:
 
@@ -214,7 +212,7 @@ Good:
 
 ### 終了タグを省略しない
 
-I think you don’t understand a rule for omitting closing tag.
+多分、あなたは終了タグを省略するためのルールを理解していないでしょう。
 
 Bad:
 
@@ -233,7 +231,7 @@ Good:
 
 ### 空要素の書き方を混ぜない
 
-Consistency is a key for readability.
+一貫性は読みやすさのキーポイントです。
 
 Bad:
 
@@ -248,7 +246,7 @@ Good:
 
 ### タグや属性値の前後へ空白文字を置かない
 
-There is no reason for doing this.
+そうする必要はまったくありません。
 
 Bad:
 
@@ -261,7 +259,7 @@ Good:
 
 ### 大文字・小文字を混ぜない
 
-It gives a consistency also.
+これも一貫性を与えてくれます。
 
 Bad:
 
@@ -274,7 +272,7 @@ Good:
 
 ### 引用符を混ぜない
 
-Same as above.
+上に同じです。
 
 Bad:
 
@@ -287,7 +285,7 @@ Good:
 
 ### 属性を2文字以上の空白文字で区切らない
 
-Your weird formatting rule confuses someone.
+あなたのよくわからない整形ルールは誰かを混乱させます。
 
 Bad:
 
@@ -300,7 +298,7 @@ Good:
 
 ### 真偽値を取る属性の値は省略する
 
-It’s easy to write, isn’t it?
+この方が簡単に書けますよね？
 
 Bad:
 
@@ -313,7 +311,7 @@ Good:
 
 ### 名前空間は省略する
 
-SVG and MathML can be used directly in an HTML5 document.
+SVGやMathMLはHTML5の文書では直接扱えます。
 
 Bad:
 
@@ -330,7 +328,7 @@ Good:
 
 ### XML属性は使わない
 
-We write an HTML document.
+我々はHTML文書を書いています。
 
 Bad:
 
@@ -343,8 +341,8 @@ Good:
 
 ### `data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない
 
-A tag string can be very complicated. This simple rule helps reading such tag
-string.
+タグ文字列はとても複雑になりえます。こういった簡単なルールによってタグ文字列を読
+みやすくできるでしょう。
 
 Bad:
 
@@ -357,7 +355,8 @@ Good:
 
 ### 暗黙のセマンティクスを尊重する
 
-Some element has a implicit role in an HTML document, don’t specify (or change).
+いくつかの要素はHTML文章において暗黙のroleを持っているので、わざわざ指定（変更）
+してはいけません。
 
 Bad:
 
