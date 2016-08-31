@@ -899,8 +899,8 @@ Good:
 
 ### グループ化できるリンクは分割しない
 
-`a` element can wrap almost all elements (except interactive elements like form
-controls and `a` element itself).
+`a`要素はほとんどの要素（フォームコントロールのようなインタラクティブ要素や`a`要
+素自身以外）を括ることができます。
 
 Bad:
 
@@ -919,7 +919,8 @@ Good:
 
 ### リソースをダウンロードさせる場合は`download`属性を使う
 
-It will force browsers to download linked resource to the storage.
+こうすることで確実にダウンロードするリンク先のリソースをローカルに保存させること
+ができます。
 
 Bad:
 
@@ -932,7 +933,7 @@ Good:
 
 ### `rel`や`hreflang`、`type`属性を必要ならば使う
 
-These hints helps applications how handle linked resource.
+これらのヒントは、アプリケーションがリンク先のリソースをどう扱えば良いのかの助けになります。
 
 Bad:
 
@@ -945,7 +946,7 @@ Good:
 
 ### リンク文字列は明確にする
 
-Link text should be the label of its linked resource.
+リンク文字列はリンク先のリソースのラベルであるべきです。
 
 Bad:
 
@@ -958,7 +959,7 @@ Good:
 
 ### `em`要素を警告や注意に使わない
 
-These are seriousness. So, `strong` element is more appropriate.
+それらは深刻なものです。ですから`srong`要素の方がより相応しいはずです。
 
 Bad:
 
@@ -971,7 +972,7 @@ Good:
 
 ### できる限り`s`や`i`、`b`、`u`要素を避ける
 
-These elements’ semantics is too difficult to humans.
+これらの要素のセマンティクスは人類には難しすぎます。
 
 Bad:
 
@@ -984,7 +985,7 @@ Good:
 
 ### `q`要素内へ引用符は置かない
 
-Quotes are provided by the browser.
+引用符はブラウザーが提供します。
 
 Bad:
 
@@ -1001,7 +1002,7 @@ Also good:
 
 ### `abbr`要素へ`title`属性を追加する
 
-There is no other way to represent its expansion.
+他に完全表記を提示する方法がありません。
 
 Bad:
 
@@ -1014,7 +1015,7 @@ Good:
 
 ### `ruby`要素は冗長にマークアップする
 
-`ruby` support is not completed across the modern browsers.
+`ruby`要素のサポートはまだモダンブラウザー間でも完了していません。
 
 Bad:
 
@@ -1027,8 +1028,7 @@ Good:
 
 ### 機械的に解釈可能でない`time`要素では`datetime`属性を追加する
 
-When `datetime` attribute does not present, the format of `time` element’s
-content is restricted.
+`datetime`属性を使わない場合、`time`要素の中身は限定されます。
 
 Bad:
 
@@ -1041,7 +1041,7 @@ Good:
 
 ### コードの言語は`class`属性で`language-`で始めることで指定する
 
-This is not a formal way, but spec mentions this.
+これは正式な方法ではありませんが、仕様では言及されています。
 
 Bad:
 
@@ -1054,7 +1054,7 @@ Good:
 
 ### できる限り`kbd`要素はシンプルにする
 
-Nesting `kbd` element is too difficult to humans.
+入れ子にした`kbd`要素は人類には難しすぎます。
 
 Bad:
 
@@ -1067,7 +1067,7 @@ Good:
 
 ### できる限り`span`要素は使わない
 
-`span` element is an element of last resort.
+`span`要素は最後の手段です。
 
 Bad:
 
@@ -1080,7 +1080,7 @@ Good:
 
 ### `br`要素の後ろでは改行する
 
-Line break should be needed where `br` element is used.
+`br`要素が使われる場所には、間違いなく改行が必要です。
 
 Bad:
 
@@ -1095,7 +1095,7 @@ Good:
 
 ### 見た目だけのために`br`要素を使わない
 
-`br` element is not for line breaking, it is for line breaks in the contents.
+`br`要素は改行のためにあるのではなく、コンテンツに必要な改行のためにあります。
 
 Bad:
 
