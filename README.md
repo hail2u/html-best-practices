@@ -3,6 +3,8 @@ HTML Best Practices
 
 For writing maintainable and scalable HTML documents
 
+- [日本語](README.ja.md)
+
 <!-- #toc -->
 
 * [General](#general)
