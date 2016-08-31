@@ -113,7 +113,7 @@
 
 ### DOCTYPEで始める
 
-`DOCTYPE`は標準モードを有効にするために必要です。
+DOCTYPEは標準モードを有効にするために必要です。
 
 Bad:
 
@@ -131,7 +131,7 @@ Good:
 
 ### 置き換えられるべきまたは旧式のDOCTYPEを使わない
 
-もはや`DOCTYPE`はDTDのためにあるわけではないので、シンプルにしましょう。
+もはやDOCTYPEはDTDのためにあるわけではないので、シンプルにしましょう。
 
 Bad:
 
@@ -832,8 +832,8 @@ Good:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
-    <p>Costello: Who's playing first?</p>
-    <p>Abbott: That's right.</p>
+    <p>Costello: Who’s playing first?</p>
+    <p>Abbott: That’s right.</p>
     <p>Costello becomes exasperated.</p>
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
@@ -1121,13 +1121,13 @@ Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
     
-    <p>Don't trust!</p></del>
+    <p>Don’t trust!</p></del>
 
 Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
     
-    <del><p>Don't trust!</p></del>
+    <del><p>Don’t trust!</p></del>
 
 
 エンベディッドコンテンツ
@@ -1555,10 +1555,10 @@ Good:
 Bad:
 
     <script>
-      var script = document.createElement('script');
+      var script = document.createElement("script");
       script.async = true;
       script.src = "//example.com/widget.js";
-      document.getElementsByTagName('head')[0].appendChild(script);
+      document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
 Good:

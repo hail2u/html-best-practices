@@ -7,22 +7,22 @@ For writing maintainable and scalable HTML documents
 
 * [General](#general)
   * [Start with DOCTYPE](#start-with-doctype)
-  * [Don't use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
-  * [Don't use XML Declaration](#dont-use-xml-declaration)
-  * [Don't use character references as much as possible](#dont-use-character-references-as-much-as-possible)
+  * [Don’t use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
+  * [Don’t use XML Declaration](#dont-use-xml-declaration)
+  * [Don’t use character references as much as possible](#dont-use-character-references-as-much-as-possible)
   * [Escape `&`, `<`, `>`, `"`, and `'` with named character references](#escape-----and--with-named-character-references)
   * [Use numeric character references for control or invisible characters](#use-numeric-character-references-for-control-or-invisible-characters)
   * [Put white spaces around comment contents](#put-white-spaces-around-comment-contents)
-  * [Don't omit closing tag](#dont-omit-closing-tag)
-  * [Don't mix empty element format](#dont-mix-empty-element-format)
-  * [Don't put white spaces around tags and attribute values](#dont-put-white-spaces-around-tags-and-attribute-values)
-  * [Don't mix character cases](#dont-mix-character-cases)
-  * [Don't mix quotation marks](#dont-mix-quotation-marks)
-  * [Don't separate attributes with two or more white spaces](#dont-separate-attributes-with-two-or-more-white-spaces)
+  * [Don’t omit closing tag](#dont-omit-closing-tag)
+  * [Don’t mix empty element format](#dont-mix-empty-element-format)
+  * [Don’t put white spaces around tags and attribute values](#dont-put-white-spaces-around-tags-and-attribute-values)
+  * [Don’t mix character cases](#dont-mix-character-cases)
+  * [Don’t mix quotation marks](#dont-mix-quotation-marks)
+  * [Don’t separate attributes with two or more white spaces](#dont-separate-attributes-with-two-or-more-white-spaces)
   * [Omit boolean attribute value](#omit-boolean-attribute-value)
   * [Omit namespaces](#omit-namespaces)
-  * [Don't use XML attributes](#dont-use-xml-attributes)
-  * [Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes)
+  * [Don’t use XML attributes](#dont-use-xml-attributes)
+  * [Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes)
   * [Prefer strong native semantics](#prefer-strong-native-semantics)
 * [The root element](#the-root-element)
   * [Add `lang` attribute](#add-lang-attribute)
@@ -31,23 +31,23 @@ For writing maintainable and scalable HTML documents
   * [Add `title` element](#add-title-element)
   * [Don’t use `base` element](#dont-use-base-element)
   * [Specify MIME type of minor linked resources](#specify-mime-type-of-minor-linked-resources)
-  * [Don't link to `favicon.ico`](#dont-link-to-faviconico)
+  * [Don’t link to `favicon.ico`](#dont-link-to-faviconico)
   * [Add `title` attribute to alternate stylesheets](#add-title-attribute-to-alternate-stylesheets)
   * [Specify document character encoding](#specify-document-character-encoding)
-  * [Don't use legacy character encoding format](#dont-use-legacy-character-encoding-format)
+  * [Don’t use legacy character encoding format](#dont-use-legacy-character-encoding-format)
   * [Specify character encoding at first](#specify-character-encoding-at-first)
   * [Use UTF-8](#use-utf-8)
   * [Omit `type` attribute for CSS](#omit-type-attribute-for-css)
-  * [Don't comment out contents of `style` element](#dont-comment-out-contents-of-style-element)
-  * [Don't mix tag for CSS and JavaScript](#dont-mix-tag-for-css-and-javascript)
+  * [Don’t comment out contents of `style` element](#dont-comment-out-contents-of-style-element)
+  * [Don’t mix tag for CSS and JavaScript](#dont-mix-tag-for-css-and-javascript)
 * [Sections](#sections)
-  * [Add `body` tag](#add-body-tag)
+  * [Add `body` element](#add-body-element)
   * [Forget about `hgroup` element](#forget-about-hgroup-element)
   * [Use `address` element only for contact information](#use-address-element-only-for-contact-information)
 * [Grouping content](#grouping-content)
-  * [Don't start with newline in `pre` element](#dont-start-with-newline-in-pre-element)
+  * [Don’t start with newline in `pre` element](#dont-start-with-newline-in-pre-element)
   * [Use appropriate element in `blockquote` element](#use-appropriate-element-in-blockquote-element)
-  * [Don't include attribution directly in `blockquote` element](#dont-include-attribution-directly-in-blockquote-element)
+  * [Don’t include attribution directly in `blockquote` element](#dont-include-attribution-directly-in-blockquote-element)
   * [Write one list item per line](#write-one-list-item-per-line)
   * [Use `type` attribute for `ol` element](#use-type-attribute-for-ol-element)
   * [Don’t use `dl` for dialogue](#dont-use-dl-for-dialogue)
@@ -55,13 +55,13 @@ For writing maintainable and scalable HTML documents
   * [Use `main` element](#use-main-element)
   * [Avoid `div` element as much as possible](#avoid-div-element-as-much-as-possible)
 * [Text-level semantics](#text-level-semantics)
-  * [Don't split same link that can be grouped](#dont-split-same-link-that-can-be-grouped)
+  * [Don’t split same link that can be grouped](#dont-split-same-link-that-can-be-grouped)
   * [Use `download` attribute for downloading a resource](#use-download-attribute-for-downloading-a-resource)
   * [Use `rel`, `hreflang`, and `type` attribute if needed](#use-rel-hreflang-and-type-attribute-if-needed)
   * [Clear link text](#clear-link-text)
-  * [Don't use `em` element for warning or caution](#dont-use-em-element-for-warning-or-caution)
+  * [Don’t use `em` element for warning or caution](#dont-use-em-element-for-warning-or-caution)
   * [Avoid `s`, `i`, `b`, and `u` element as much as possible](#avoid-s-i-b-and-u-element-as-much-as-possible)
-  * [Don't put quotes to `q` element](#dont-put-quotes-to-q-element)
+  * [Don’t put quotes to `q` element](#dont-put-quotes-to-q-element)
   * [Add `title` attribute to `abbr` element](#add-title-attribute-to-abbr-element)
   * [Markup `ruby` element verbosely](#markup-ruby-element-verbosely)
   * [Add `datetime` attribute to non-machine-readable `time` element](#add-datetime-attribute-to-non-machine-readable-time-element)
@@ -69,9 +69,9 @@ For writing maintainable and scalable HTML documents
   * [Keep `kbd` element as simple as possible](#keep-kbd-element-as-simple-as-possible)
   * [Avoid `span` element as much as possible](#avoid-span-element-as-much-as-possible)
   * [Break after `br` element](#break-after-br-element)
-  * [Don't use `br` element only for presentational purpose](#dont-use-br-element-only-for-presentational-purpose)
+  * [Don’t use `br` element only for presentational purpose](#dont-use-br-element-only-for-presentational-purpose)
 * [Edits](#edits)
-  * [Don't stride `ins` and `del` element over other elements](#dont-stride-ins-and-del-element-over-other-elements)
+  * [Don’t stride `ins` and `del` element over other elements](#dont-stride-ins-and-del-element-over-other-elements)
 * [Embedded content](#embedded-content)
   * [Provide fallback `img` element for `picture` element](#provide-fallback-img-element-for-picture-element)
   * [Add `alt` attrbute to `img` element if needed](#add-alt-attrbute-to-img-element-if-needed)
@@ -89,7 +89,7 @@ For writing maintainable and scalable HTML documents
   * [Use appropriate `type` attribute for `input` element](#use-appropriate-type-attribute-for-input-element)
   * [Add `value` attribute to `input type="submit"`](#add-value-attribute-to-input-typesubmit)
   * [Add `title` attribute to `input` element when there is `pattern` attribute](#add-title-attribute-to-input-element-when-there-is-pattern-attribute)
-  * [Don't use `placeholder` attribute for labeling](#dont-use-placeholder-attribute-for-labeling)
+  * [Don’t use `placeholder` attribute for labeling](#dont-use-placeholder-attribute-for-labeling)
   * [Write one `option` element per line](#write-one-option-element-per-line)
   * [Add `max` attribute to `progress` element](#add-max-attribute-to-progress-element)
   * [Add `min` and `max` attribute to `meter` element](#add-min-and-max-attribute-to-meter-element)
@@ -97,8 +97,8 @@ For writing maintainable and scalable HTML documents
 * [Scripting](#scripting)
   * [Omit `type` attribute for JavaScript](#omit-type-attribute-for-javascript)
   * [Add `defer` attribute if `script` element has `async` attribute](#add-defer-attribute-if-script-element-has-async-attribute)
-  * [Don't comment out contents of `script` element](#dont-comment-out-contents-of-script-element)
-  * [Don't use script-injected `script` element](#dont-use-script-injected-script-element)
+  * [Don’t comment out contents of `script` element](#dont-comment-out-contents-of-script-element)
+  * [Don’t use script-injected `script` element](#dont-use-script-injected-script-element)
 * [Other](#other)
   * [Indent consistently](#indent-consistently)
   * [Use absolute path for internal links](#use-absolute-path-for-internal-links)
@@ -113,7 +113,7 @@ General
 
 ### Start with DOCTYPE
 
-`DOCTYPE` is required for activating standard mode.
+DOCTYPE is required for activating standard mode.
 
 Bad:
 
@@ -129,9 +129,9 @@ Good:
     </html>
 
 
-### Don't use legacy or obsolete DOCTYPE
+### Don’t use legacy or obsolete DOCTYPE
 
-`DOCTYPE` is not for DTD anymore, be simple.
+DOCTYPE is not for DTD anymore, be simple.
 
 Bad:
 
@@ -143,7 +143,7 @@ Good:
     <!DOCTYPE html>
 
 
-### Don't use XML Declaration
+### Don’t use XML Declaration
 
 Are you sure you want to write XHTML?
 
@@ -157,7 +157,7 @@ Good:
     <!DOCTYPE html>
 
 
-### Don't use character references as much as possible
+### Don’t use character references as much as possible
 
 If you write an HTML document with UTF-8, almost all charaters (including Emoji)
 can be write directly.
@@ -212,7 +212,7 @@ Good:
     <!-- This section is non-normative -->
 
 
-### Don't omit closing tag
+### Don’t omit closing tag
 
 I think you don’t understand a rule for omitting closing tag.
 
@@ -231,7 +231,7 @@ Good:
     </html>
 
 
-### Don't mix empty element format
+### Don’t mix empty element format
 
 Consistency is a key for readability.
 
@@ -246,7 +246,7 @@ Good:
     <hr>
 
 
-### Don't put white spaces around tags and attribute values
+### Don’t put white spaces around tags and attribute values
 
 There is no reason for doing this.
 
@@ -259,7 +259,7 @@ Good:
     <h1 class="title">HTML Best Practices</h1>
 
 
-### Don't mix character cases
+### Don’t mix character cases
 
 It gives a consistency also.
 
@@ -272,7 +272,7 @@ Good:
     <a href="#general">General</a>
 
 
-### Don't mix quotation marks
+### Don’t mix quotation marks
 
 Same as above.
 
@@ -285,7 +285,7 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### Don't separate attributes with two or more white spaces
+### Don’t separate attributes with two or more white spaces
 
 Your weird formatting rule confuses someone.
 
@@ -328,7 +328,7 @@ Good:
     </svg>
 
 
-### Don't use XML attributes
+### Don’t use XML attributes
 
 We write an HTML document.
 
@@ -341,7 +341,7 @@ Good:
     <span lang="ja">...</span>
 
 
-### Don't mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
+### Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
 
 A tag string can be very complicated. This simple rule helps reading such tag
 string.
@@ -357,7 +357,8 @@ Good:
 
 ### Prefer strong native semantics
 
-Some element has a implicit role in an HTML document, don’t specify (or change).
+Some element has a implicit ARIA role in an HTML document, don’t specify (or
+change).
 
 Bad:
 
@@ -465,7 +466,7 @@ Good:
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### Don't link to `favicon.ico`
+### Don’t link to `favicon.ico`
 
 Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
 
@@ -511,7 +512,7 @@ Good:
     </head>
 
 
-### Don't use legacy character encoding format
+### Don’t use legacy character encoding format
 
 HTTP headers should be specified by a server, be simple.
 
@@ -561,7 +562,7 @@ Good:
 
 ### Omit `type` attribute for CSS
 
-In HTML5,  default `type` attribute’s value of `style` element is `text/css`.
+In HTML5, default `type` attribute’s value of `style` element is `text/css`.
 
 Bad:
 
@@ -576,7 +577,7 @@ Good:
     </style>
 
 
-### Don't comment out contents of `style` element
+### Don’t comment out contents of `style` element
 
 This ritual is for the old browser.
 
@@ -595,7 +596,7 @@ Good:
     </style>
 
 
-### Don't mix tag for CSS and JavaScript
+### Don’t mix tag for CSS and JavaScript
 
 Sometimes `script` element blocks DOM construction.
 
@@ -621,7 +622,7 @@ Also good:
 Sections
 --------
 
-### Add `body` tag
+### Add `body` element
 
 Sometimes `body` element is complemented in unexpected position by a browser.
 
@@ -680,7 +681,7 @@ Good:
 Grouping content
 ----------------
 
-### Don't start with newline in `pre` element
+### Don’t start with newline in `pre` element
 
 A first newline will ignored in the browsers, but second and later are rendered.
 
@@ -698,7 +699,7 @@ Good:
 
 ### Use appropriate element in `blockquote` element
 
-`blockquote` content is a quote, not a chunks of characters.
+`blockquote` element’s content is a quote, not a chunks of characters.
 
 Bad:
 
@@ -711,9 +712,9 @@ Good:
     </blockquote>
 
 
-### Don't include attribution directly in `blockquote` element
+### Don’t include attribution directly in `blockquote` element
 
-`blockquote` content is a quote.
+`blockquote` element’s content is a quote.
 
 Bad:
 
@@ -832,8 +833,8 @@ Good:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
-    <p>Costello: Who's playing first?</p>
-    <p>Abbott: That's right.</p>
+    <p>Costello: Who’s playing first?</p>
+    <p>Abbott: That’s right.</p>
     <p>Costello becomes exasperated.</p>
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
@@ -897,7 +898,7 @@ Good:
 Text-level semantics
 --------------------
 
-### Don't split same link that can be grouped
+### Don’t split same link that can be grouped
 
 `a` element can wrap almost all elements (except interactive elements like form
 controls and `a` element itself).
@@ -956,7 +957,7 @@ Good:
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### Don't use `em` element for warning or caution
+### Don’t use `em` element for warning or caution
 
 These are seriousness. So, `strong` element is more appropriate.
 
@@ -982,7 +983,7 @@ Good:
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### Don't put quotes to `q` element
+### Don’t put quotes to `q` element
 
 Quotes are provided by the browser.
 
@@ -1014,7 +1015,7 @@ Good:
 
 ### Markup `ruby` element verbosely
 
-`ruby` support is not completed across the modern browsers.
+`ruby` element support is not completed across the modern browsers.
 
 Bad:
 
@@ -1093,7 +1094,7 @@ Good:
     Practices</p>
 
 
-### Don't use `br` element only for presentational purpose
+### Don’t use `br` element only for presentational purpose
 
 `br` element is not for line breaking, it is for line breaks in the contents.
 
@@ -1113,7 +1114,7 @@ Good:
 Edits
 -----
 
-### Don't stride `ins` and `del` element over other elements
+### Don’t stride `ins` and `del` element over other elements
 
 Elements cannot be overflow other elements.
 
@@ -1121,13 +1122,13 @@ Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
     
-    <p>Don't trust!</p></del>
+    <p>Don’t trust!</p></del>
 
 Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
     
-    <del><p>Don't trust!</p></del>
+    <del><p>Don’t trust!</p></del>
 
 
 Embedded content
@@ -1214,7 +1215,7 @@ Good:
 
 ### Markup `map` element content
 
-This content present to a screen reader.
+This content presents to a screen reader.
 
 Bad:
 
@@ -1343,7 +1344,7 @@ Forms
 
 ### Wrap form control with `label` element
 
-`label` helps focusing form element.
+`label` element helps focusing form element.
 
 Bad:
 
@@ -1356,7 +1357,7 @@ Good:
 
 ### Omit `for` attribute if possible
 
-`label` can contain some form elements.
+`label` element can contain some form elements.
 
 Bad:
 
@@ -1396,8 +1397,8 @@ Good:
 
 ### Add `title` attribute to `input` element when there is `pattern` attribute
 
-If input text does not match to `pattern`, the value of `title` attribute will
-be display as a hint.
+If input text does not match to `pattern` attribute, the value of `title`
+attribute will be display as a hint.
 
 Bad:
 
@@ -1408,7 +1409,7 @@ Good:
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### Don't use `placeholder` attribute for labeling
+### Don’t use `placeholder` attribute for labeling
 
 `label` element is for a label, `placeholder` attribute is for a short hint.
 
@@ -1511,8 +1512,8 @@ Good:
 
 ### Add `defer` attribute if `script` element has `async` attribute
 
-`async` is better, but some browser doesn’t support this attribute. `defer` is
-not bad.
+`async` attribute is better, but some browser doesn’t support this attribute.
+`defer` attribute is not bad.
 
 Bad:
 
@@ -1523,7 +1524,7 @@ Good:
     <script async defer src="/js/main.js"></script>
 
 
-### Don't comment out contents of `script` element
+### Don’t comment out contents of `script` element
 
 This ritual is for the old browser.
 
@@ -1550,17 +1551,17 @@ Good:
     </script>
 
 
-### Don't use script-injected `script` element
+### Don’t use script-injected `script` element
 
-`async` is the best for both simplicity and performance.
+`async` attribute is the best for both simplicity and performance.
 
 Bad:
 
     <script>
-      var script = document.createElement('script');
+      var script = document.createElement("script");
       script.async = true;
       script.src = "//example.com/widget.js";
-      document.getElementsByTagName('head')[0].appendChild(script);
+      document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
 Good:
