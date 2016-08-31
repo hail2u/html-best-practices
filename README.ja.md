@@ -682,7 +682,7 @@ Good:
 
 ### `pre`要素は改行で始めない
 
-A first newline will ignored in the browsers, but second and later are rendered.
+最初の改行はブラウザーに無視されますが、2番目以降はそのまま表示されます。
 
 Bad:
 
@@ -698,7 +698,7 @@ Good:
 
 ### `blockquote`要素内でも適切な要素を使う
 
-`blockquote` content is a quote, not a chunks of characters.
+`blockquote`要素の中身は引用で、単なる文字の連続ではありません。
 
 Bad:
 
@@ -713,7 +713,7 @@ Good:
 
 ### `blockquote`要素内に帰属情報を含めない
 
-`blockquote` content is a quote.
+`blockquote`要素の中身は引用です。
 
 Bad:
 
@@ -752,8 +752,8 @@ Also good too (recommended by W3C):
 
 ### リスト項目は1行に1つずつ書く
 
-Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
-line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
+長ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーい
+行はとっっっっっっっっっっっっっっっっっっっっっっっっっっっても読みづらいです。
 
 Bad:
 
@@ -773,8 +773,8 @@ Good:
 
 ### `ol`要素では`type`属性を使う
 
-Sometimes marker referenced by the contents in the near. If you change marker
-with `type` attribute, you will be safe to reference.
+時々リスト・マーカーは周辺から参照されます。`type`属性を使ってリスト・マーカーを
+変更すれば、安全に参照できるでしょう。
 
 Bad:
 
@@ -808,7 +808,7 @@ Good:
 
 ### `dl`を会話のために使わない
 
-`dl` element is restricted to an association list in HTML5.
+HTML5では`dl`要素は関連付けリストに限定されています。
 
 Bad:
 
@@ -841,7 +841,7 @@ Good:
 
 ### `figcaption`要素は`figure`要素の最初か最後に置く
 
-Spec disallows `figcaption` element in the middle of `figure` element.
+仕様では`figcaption`要素を`figure`要素の中ほどに置くことは許可されていません。
 
 Bad:
 
@@ -862,7 +862,7 @@ Good:
 
 ### `main`要素を使う
 
-`main` element can be used wrapping contents.
+`main`要素はコンテンツをまとめるために使えます。
 
 Bad:
 
@@ -879,7 +879,7 @@ Good:
 
 ### できる限り`div`要素は避ける
 
-`div` element is an element of last resort.
+`div`要素は最後の手段です。
 
 Bad:
 
