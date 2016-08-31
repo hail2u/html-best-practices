@@ -98,7 +98,6 @@ For writing maintainable and scalable HTML documents
   * [Place `legend` element as the first child of `fieldset` element](#place-legend-element-as-the-first-child-of-fieldset-element)
 * [Scripting](#scripting)
   * [Omit `type` attribute for JavaScript](#omit-type-attribute-for-javascript)
-  * [Add `defer` attribute if `script` element has `async` attribute](#add-defer-attribute-if-script-element-has-async-attribute)
   * [Don’t comment out contents of `script` element](#dont-comment-out-contents-of-script-element)
   * [Don’t use script-injected `script` element](#dont-use-script-injected-script-element)
 * [Other](#other)
@@ -1510,20 +1509,6 @@ Good:
     <script>
       ...
     </script>
-
-
-### Add `defer` attribute if `script` element has `async` attribute
-
-`async` attribute is better, but some browser doesn’t support this attribute.
-`defer` attribute is not bad.
-
-Bad:
-
-    <script async src="/js/main.js"></script>
-
-Good:
-
-    <script async defer src="/js/main.js"></script>
 
 
 ### Don’t comment out contents of `script` element
