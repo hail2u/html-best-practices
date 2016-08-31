@@ -623,7 +623,7 @@ Also good:
 
 ### `body`要素を書く
 
-Sometimes `body` element is complemented in unexpected position by a browser.
+時々、思っても見ない位置へブラウザーは`body`要素を補完します。
 
 Bad:
 
@@ -648,7 +648,7 @@ Good:
 
 ### `hgroup`要素のことは忘れる
 
-W3C spec removes this element.
+W3C版仕様では削除されました。
 
 Bad:
 
@@ -665,8 +665,8 @@ Good:
 
 ### `address`要素は連絡先情報にのみ使う
 
-`address` element is for email address, social network account, street address,
-telephone number, or something you can get in touch with.
+`address`要素はメールアドレスやSNSアカウント、住所、電話番号など、実際にあなたと
+連絡できる何かのためのものです。
 
 Bad:
 
