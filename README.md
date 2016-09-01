@@ -358,8 +358,7 @@ Good:
 
 ### Prefer strong native semantics
 
-Some element has a implicit ARIA role in an HTML document, don’t specify (or
-change).
+Some element has a implicit ARIA role in an HTML document, don’t specify.
 
 Bad:
 
