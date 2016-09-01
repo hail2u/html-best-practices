@@ -1036,11 +1036,11 @@ Good:
 
 Bad:
 
-    <code>&lt;DOCTYPE html&gt;</code>
+    <code>&lt;!DOCTYPE html&gt;</code>
 
 Good:
 
-    <code class="language-html">&lt;DOCTYPE html&gt;</code>
+    <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
 ### できる限り`kbd`要素はシンプルにする

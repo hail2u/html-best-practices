@@ -1046,11 +1046,11 @@ This is not a formal way, but spec mentions this.
 
 Bad:
 
-    <code>&lt;DOCTYPE html&gt;</code>
+    <code>&lt;!DOCTYPE html&gt;</code>
 
 Good:
 
-    <code class="language-html">&lt;DOCTYPE html&gt;</code>
+    <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
 ### Keep `kbd` element as simple as possible
