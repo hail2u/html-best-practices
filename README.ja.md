@@ -834,7 +834,7 @@ Good:
 
 ### `figcaption`要素は`figure`要素の最初か最後に置く
 
-仕様では`figcaption`要素を`figure`要素の中ほどに置くことは許可されていません。
+仕様（WHATWG版）では`figcaption`要素を`figure`要素の中ほどに置くことは許可されていません。
 
 Bad:
 

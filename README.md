@@ -842,7 +842,8 @@ Good:
 
 ### Place `figcaption` element as first or last child of `figure` element
 
-Spec disallows `figcaption` element in the middle of `figure` element.
+Spec (WHATWG version) disallows `figcaption` element in the middle of `figure`
+element.
 
 Bad:
 
