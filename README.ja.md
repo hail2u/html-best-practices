@@ -25,7 +25,7 @@ Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md)
   * [名前空間は省略する](#%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
   * [XML属性は使わない](#xml%E5%B1%9E%E6%80%A7%E3%81%AF%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
   * [`data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない](#data-%E3%81%A8microdatardfa-lite%E7%94%A8%E3%81%AE%E5%B1%9E%E6%80%A7%E3%81%A8%E9%80%9A%E5%B8%B8%E3%81%AE%E5%B1%9E%E6%80%A7%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
-  * [暗黙のセマンティクスを尊重する](#%E6%9A%97%E9%BB%99%E3%81%AE%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9%E3%82%92%E5%B0%8A%E9%87%8D%E3%81%99%E3%82%8B)
+  * [暗黙のARIAセマンティクスを尊重する](#%E6%9A%97%E9%BB%99%E3%81%AEaria%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9%E3%82%92%E5%B0%8A%E9%87%8D%E3%81%99%E3%82%8B)
 * [文書要素](#%E6%96%87%E6%9B%B8%E8%A6%81%E7%B4%A0)
   * [`lang`属性を追加する](#lang%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
   * [`lang`属性の値はできる限り短くする](#lang%E5%B1%9E%E6%80%A7%E3%81%AE%E5%80%A4%E3%81%AF%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8A%E7%9F%AD%E3%81%8F%E3%81%99%E3%82%8B)
@@ -352,9 +352,9 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### 暗黙のセマンティクスを尊重する
+### 暗黙のARIAセマンティクスを尊重する
 
-いくつかの要素はHTML文章において暗黙のARIA roleを持っているので、指定してはいけません。
+いくつかの要素はHTML文章において暗黙のARIA roleを持っているので、それは指定しないようにしましょう。
 
 Bad:
 
