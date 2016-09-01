@@ -358,7 +358,7 @@ Good:
 
 ### Prefer implicit ARIA semantics
 
-Some element has a implicit ARIA role in an HTML document, don’t specify.
+Some element has a implicit ARIA role in an HTML document, don’t specify it.
 
 Bad:
 
