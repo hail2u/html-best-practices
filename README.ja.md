@@ -29,6 +29,7 @@ Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md)
 * [文書要素](#%E6%96%87%E6%9B%B8%E8%A6%81%E7%B4%A0)
   * [`lang`属性を追加する](#lang%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
   * [`lang`属性の値はできる限り短くする](#lang%E5%B1%9E%E6%80%A7%E3%81%AE%E5%80%A4%E3%81%AF%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8A%E7%9F%AD%E3%81%8F%E3%81%99%E3%82%8B)
+  * [できる限り`data-*`属性は避ける](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Adata-%E5%B1%9E%E6%80%A7%E3%81%AF%E9%81%BF%E3%81%91%E3%82%8B)
 * [文書メタデータ](#%E6%96%87%E6%9B%B8%E3%83%A1%E3%82%BF%E3%83%87%E3%83%BC%E3%82%BF)
   * [`title`要素を書く](#title%E8%A6%81%E7%B4%A0%E3%82%92%E6%9B%B8%E3%81%8F)
   * [`base`要素を使わない](#base%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
@@ -401,6 +402,23 @@ Bad
 Good:
 
     <html lang="ja">
+
+
+### できる限り`data-*`属性は避ける
+
+適切な属性は、ブラウザーがうまく扱ってくれるかもしれません。
+
+Bad:
+
+    <span data-language="french">chemises</span>
+    ...
+    <strong data-type="warning">Do not wash!</strong>
+
+Good:
+
+    <span title="French"><span lang="fr-FR">chemises</span></span>
+    ...
+    <strong class="warning">Do not wash!</strong>
 
 
 文書メタデータ

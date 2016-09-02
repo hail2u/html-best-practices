@@ -29,6 +29,7 @@ For writing maintainable and scalable HTML documents
 * [The root element](#the-root-element)
   * [Add `lang` attribute](#add-lang-attribute)
   * [Keep `lang` attribute value as short as possible](#keep-lang-attribute-value-as-short-as-possible)
+  * [Avoid `data-*` as much as possible](#avoid-data--as-much-as-possible)
 * [Document metadata](#document-metadata)
   * [Add `title` element](#add-title-element)
   * [Don’t use `base` element](#dont-use-base-element)
@@ -405,6 +406,23 @@ Bad
 Good:
 
     <html lang="ja">
+
+
+### Avoid `data-*` as much as possible
+
+An appropriate attribute can be handled properly by browsers.
+
+Bad:
+
+    <span data-language="french">chemises</span>
+    ...
+    <strong data-type="warning">Do not wash!</strong>
+
+Good:
+
+    <span title="French"><span lang="fr-FR">chemises</span></span>
+    ...
+    <strong class="warning">Do not wash!</strong>
 
 
 Document metadata
