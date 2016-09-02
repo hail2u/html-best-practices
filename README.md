@@ -35,6 +35,7 @@ For writing maintainable and scalable HTML documents
   * [Specify MIME type of minor linked resources](#specify-mime-type-of-minor-linked-resources)
   * [Don’t link to `favicon.ico`](#dont-link-to-faviconico)
   * [Add `title` attribute to alternate stylesheets](#add-title-attribute-to-alternate-stylesheets)
+  * [For URL, use `link` element](#for-url-use-link-element)
   * [Specify document character encoding](#specify-document-character-encoding)
   * [Don’t use legacy character encoding format](#dont-use-legacy-character-encoding-format)
   * [Specify character encoding at first](#specify-character-encoding-at-first)
@@ -492,6 +493,25 @@ Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
+
+
+### For URL, use `link` element
+
+A value of `href` attribute can be resolved as URL.
+
+Bad:
+
+    <section itemscope itemtype="http://schema.org/BlogPosting">
+      <meta content="https://example.com/blog/hello" itemprop="url">
+      ...
+    </section>
+
+Good:
+
+    <section itemscope itemtype="http://schema.org/BlogPosting">
+      <link href="/blog/hello" itemprop="url">
+      ...
+    </section>
 
 
 ### Specify document character encoding
