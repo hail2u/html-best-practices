@@ -399,7 +399,7 @@ Good:
 
 Japanese is only used in Japan. So country code is not necessary.
 
-Bad
+Bad:
 
     <html lang="ja-JP">
 
