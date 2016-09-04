@@ -118,13 +118,13 @@ Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md)
 
 DOCTYPEは標準モードを有効にするために必要です。
 
-Bad:
+悪い例:
 
     <html>
       ...
     </html>
 
-Good:
+良い例:
 
     <!DOCTYPE html>
     <html>
@@ -136,12 +136,12 @@ Good:
 
 もはやDOCTYPEはDTDのためにあるわけではないので、シンプルにしましょう。
 
-Bad:
+悪い例:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Good:
+良い例:
 
     <!DOCTYPE html>
 
@@ -150,12 +150,12 @@ Good:
 
 まだXHTMLを書きたいんですか？
 
-Bad:
+悪い例:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Good:
+良い例:
 
     <!DOCTYPE html>
 
@@ -164,11 +164,11 @@ Good:
 
 UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字はそのまま書けます。
 
-Bad:
+悪い例:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Good:
+良い例:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
@@ -177,11 +177,11 @@ Good:
 
 バグのないHTML文書を作成するためには、これらの文字は常にエスケープされるべきです。
 
-Bad:
+悪い例:
 
     <h1>The "&" character</h1>
 
-Good:
+良い例:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
@@ -190,11 +190,11 @@ Good:
 
 これらの文字は簡単に他の文字と間違えられてしまいます。また仕様では、これらの文字へ人間にわかりやすい名前を付けていることを保証していません。
 
-Bad:
+悪い例:
 
     <p>This book can read in 1 hour.</p>
 
-Good:
+良い例:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
@@ -203,11 +203,11 @@ Good:
 
 いくつかの文字はコメントの開始タグの直後や終了タグの直前に書くことができません。
 
-Bad:
+悪い例:
 
     <!--This section is non-normative-->
 
-Good:
+良い例:
 
     <!-- This section is non-normative -->
 
@@ -216,13 +216,13 @@ Good:
 
 多分、あなたは終了タグを省略するためのルールを理解していないでしょう。
 
-Bad:
+悪い例:
 
     <html>
       <body>
         ...
 
-Good:
+良い例:
 
     <html>
       <body>
@@ -235,12 +235,12 @@ Good:
 
 一貫性は読みやすさのキーポイントです。
 
-Bad:
+悪い例:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Good:
+良い例:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
@@ -250,11 +250,11 @@ Good:
 
 そうする必要はまったくありません。
 
-Bad:
+悪い例:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Good:
+良い例:
 
     <h1 class="title">HTML Best Practices</h1>
 
@@ -263,11 +263,11 @@ Good:
 
 これも一貫性を与えてくれます。
 
-Bad:
+悪い例:
 
     <a HREF="#general">General</A>
 
-Good:
+良い例:
 
     <a href="#general">General</a>
 
@@ -276,11 +276,11 @@ Good:
 
 上に同じです。
 
-Bad:
+悪い例:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Good:
+良い例:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
@@ -289,11 +289,11 @@ Good:
 
 あなたのよくわからない整形ルールは誰かを混乱させます。
 
-Bad:
+悪い例:
 
     <input   name="q"  type="search">
 
-Good:
+良い例:
 
     <input name="q" type="search">
 
@@ -302,11 +302,11 @@ Good:
 
 この方が簡単に書けますよね？
 
-Bad:
+悪い例:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Good:
+良い例:
 
     <audio autoplay src="/audio/theme.mp3">
 
@@ -315,13 +315,13 @@ Good:
 
 SVGやMathMLはHTML5の文書では直接扱えます。
 
-Bad:
+悪い例:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Good:
+良い例:
 
     <svg>
       ...
@@ -332,11 +332,11 @@ Good:
 
 我々はHTML文書を書いています。
 
-Bad:
+悪い例:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Good:
+良い例:
 
     <span lang="ja">...</span>
 
@@ -345,11 +345,11 @@ Good:
 
 タグ文字列はとても複雑になりえます。こういった簡単なルールによってタグ文字列を読みやすくできるでしょう。
 
-Bad:
+悪い例:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Good:
+良い例:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
@@ -358,7 +358,7 @@ Good:
 
 いくつかの要素はHTML文章において暗黙のARIA roleを持っているので、それは指定しないようにしましょう。
 
-Bad:
+悪い例:
 
     <nav role="navigation">
       ...
@@ -366,7 +366,7 @@ Bad:
     
     <hr role="separator">
 
-Good:
+良い例:
 
     <nav>
       ...
@@ -382,11 +382,11 @@ Good:
 
 `lang`属性はHTML文書の翻訳に役立ちます。
 
-Bad:
+悪い例:
 
     <html>
 
-Good:
+良い例:
 
     <html lang="en-US">
 
@@ -395,11 +395,11 @@ Good:
 
 日本語は日本でのみ使われます。つまり国コードは必要ありません。
 
-Bad:
+悪い例:
 
     <html lang="ja-JP">
 
-Good:
+良い例:
 
     <html lang="ja">
 
@@ -408,13 +408,13 @@ Good:
 
 適切な属性は、ブラウザーがうまく扱ってくれるかもしれません。
 
-Bad:
+悪い例:
 
     <span data-language="french">chemises</span>
     ...
     <strong data-type="warning">Do not wash!</strong>
 
-Good:
+良い例:
 
     <span title="French"><span lang="fr-FR">chemises</span></span>
     ...
@@ -428,13 +428,13 @@ Good:
 
 `title`要素の中身は、ブラウザーに限らず、様々なアプリケーションにより利用されます。
 
-Bad:
+悪い例:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Good:
+良い例:
 
     <head>
       <meta charset="UTF-8">
@@ -446,7 +446,7 @@ Good:
 
 絶対パスや絶対URLの方が開発者とユーザーの双方に安全です。
 
-Bad:
+悪い例:
 
     <head>
       ...
@@ -455,7 +455,7 @@ Bad:
       ...
     </head>
 
-Good:
+良い例:
 
     <head>
       ...
@@ -468,13 +468,13 @@ Good:
 
 アプリケーションがそのリソースをどう取り扱うべきかのヒントになります。
 
-Bad:
+悪い例:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Good:
+良い例:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
@@ -485,11 +485,11 @@ Good:
 
 ほとんどのブラウザーは`/favicon.ico`を自動的に非同期で取得します。
 
-Bad:
+悪い例:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Good:
+良い例:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
@@ -498,12 +498,12 @@ Good:
 
 人間にわかりやすいラベルにより適切なスタイルシートを選択しやすくなります。
 
-Bad:
+悪い例:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Good:
+良い例:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
@@ -513,14 +513,14 @@ Good:
 
 `href`属性の値はURLとして解決できます。
 
-Bad:
+悪い例:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Good:
+良い例:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
@@ -532,13 +532,13 @@ Good:
 
 まだすべてのブラウザーでUTF-8がデフォルトになっていません。
 
-Bad:
+悪い例:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Good:
+良い例:
 
     <head>
       <meta charset="UTF-8">
@@ -550,11 +550,11 @@ Good:
 
 HTTPヘッダーはサーバー側で指定されるべきで、簡単にしておきましょう。
 
-Bad:
+悪い例:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Good:
+良い例:
 
     <meta charset="UTF-8">
 
@@ -563,7 +563,7 @@ Good:
 
 仕様では文書の先頭1024バイトまでに文字エンコーディングを指定することを要求しています。
 
-Bad:
+悪い例:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -571,7 +571,7 @@ Bad:
       ...
     </head>
 
-Good:
+良い例:
 
     <head>
       <meta charset="UTF-8">
@@ -584,11 +584,11 @@ Good:
 
 UTF-8ならEmojiを自由に使えます。
 
-Bad:
+悪い例:
 
     <meta charset="Shift_JIS">
 
-Good:
+良い例:
 
     <meta charset="UTF-8">
 
@@ -597,13 +597,13 @@ Good:
 
 HTML5では、`style`要素における`type`属性の初期値は`text/css`です。
 
-Bad:
+悪い例:
 
     <style type="text/css">
       ...
     </style>
 
-Good:
+良い例:
 
     <style>
       ...
@@ -614,7 +614,7 @@ Good:
 
 この儀式は古いブラウザーのためです。
 
-Bad:
+悪い例:
 
     <style>
     <!--
@@ -622,7 +622,7 @@ Bad:
       -->
     </style>
 
-Good:
+良い例:
 
     <style>
       ...
@@ -633,19 +633,19 @@ Good:
 
 `script`要素はDOMの構築をブロックすることがあります。
 
-Bad:
+悪い例:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Good:
+良い例:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Also good:
+同じく良い例:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
@@ -659,7 +659,7 @@ Also good:
 
 ブラウザーは思っても見ない位置へ`body`要素を補完することがあります。
 
-Bad:
+悪い例:
 
     <html>
       <head>
@@ -668,7 +668,7 @@ Bad:
       ...
     </html>
 
-Good:
+良い例:
 
     <html>
       <head>
@@ -684,14 +684,14 @@ Good:
 
 W3C版仕様では削除されました。
 
-Bad:
+悪い例:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Good:
+良い例:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
@@ -701,11 +701,11 @@ Good:
 
 `address`要素はメールアドレスやSNSアカウント、住所、電話番号など、実際に利用できるあなたとの連絡手段のための要素です。
 
-Bad:
+悪い例:
 
     <address>No rights reserved.</address>
 
-Good:
+良い例:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
@@ -717,13 +717,13 @@ Good:
 
 最初の改行はブラウザーに無視されますが、2番目以降はそのまま表示されます。
 
-Bad:
+悪い例:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Good:
+良い例:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
@@ -733,11 +733,11 @@ Good:
 
 `blockquote`要素の中身は引用で、単なる文字の連続ではありません。
 
-Bad:
+悪い例:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Good:
+良い例:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -748,7 +748,7 @@ Good:
 
 `blockquote`要素の中身は引用です。
 
-Bad:
+悪い例:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -756,7 +756,7 @@ Bad:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Good:
+良い例:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -764,7 +764,7 @@ Good:
     
     <p>— HTML Best Practices</p>
 
-Also good (recommended by WHATWG):
+同じく良い例（WHATWG推奨）:
 
     <figure>
       <blockquote>
@@ -774,7 +774,7 @@ Also good (recommended by WHATWG):
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-Also good too (recommended by W3C):
+同じく良い例（W3C推奨）:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -787,13 +787,13 @@ Also good too (recommended by W3C):
 
 長ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーい行はとっっっっっっっっっっっっっっっっっっっっっっっっっっっても読みづらいです。
 
-Bad:
+悪い例:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Good:
+良い例:
 
     <ul>
       <li>General</li>
@@ -807,7 +807,7 @@ Good:
 
 リスト・マーカーは周辺から参照されることもあります。`type`属性を使ってリスト・マーカーを変更すれば、安全に参照できるでしょう。
 
-Bad:
+悪い例:
 
     <head>
       <style>
@@ -825,7 +825,7 @@ Bad:
       </ol>
     </body>
 
-Good:
+良い例:
 
     <body>
       <ol type="I">
@@ -841,7 +841,7 @@ Good:
 
 HTML5では`dl`要素は関連付けリストに限定されています。
 
-Bad:
+悪い例:
 
     <dl>
       <dt>Costello</dt>
@@ -859,7 +859,7 @@ Bad:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Good:
+良い例:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -874,7 +874,7 @@ Good:
 
 仕様（WHATWG版）では`figcaption`要素を`figure`要素の中ほどに置くことは許可されていません。
 
-Bad:
+悪い例:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -882,7 +882,7 @@ Bad:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Good:
+良い例:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -895,13 +895,13 @@ Good:
 
 `main`要素はコンテンツをまとめるために使えます。
 
-Bad:
+悪い例:
 
     <div id="content">
       ...
     </div>
 
-Good:
+良い例:
 
     <main>
       ...
@@ -912,13 +912,13 @@ Good:
 
 `div`要素は最後の手段です。
 
-Bad:
+悪い例:
 
     <div class="chapter">
       ...
     </div>
 
-Good:
+良い例:
 
     <section>
       ...
@@ -932,13 +932,13 @@ Good:
 
 `a`要素はほとんどの要素（フォームコントロールのようなインタラクティブ要素や`a`要素自身以外）を括ることができます。
 
-Bad:
+悪い例:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
     
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Good:
+良い例:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
@@ -951,11 +951,11 @@ Good:
 
 こうすることでダウンロードするリンク先のリソースを確実にローカルに保存させることができます。
 
-Bad:
+悪い例:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Good:
+良い例:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
@@ -964,11 +964,11 @@ Good:
 
 これらのヒントは、アプリケーションがリンク先のリソースをどう扱えば良いのかの助けになります。
 
-Bad:
+悪い例:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Good:
+良い例:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
@@ -977,11 +977,11 @@ Good:
 
 リンク文字列はリンク先のリソースのラベルであるべきです。
 
-Bad:
+悪い例:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Good:
+良い例:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
@@ -990,11 +990,11 @@ Good:
 
 それらは深刻なものです。ですから`strong`要素の方がより相応しいはずです。
 
-Bad:
+悪い例:
 
     <em>Caution!</em>
 
-Good:
+良い例:
 
     <strong>Caution!</strong>
 
@@ -1003,11 +1003,11 @@ Good:
 
 これらの要素のセマンティクスは人類には難しすぎます。
 
-Bad:
+悪い例:
 
     <i class="icon-search"></i>
 
-Good:
+良い例:
 
     <span class="icon-search" aria-hidden="true"></span>
 
@@ -1016,15 +1016,15 @@ Good:
 
 引用符はブラウザーが提供します。
 
-Bad:
+悪い例:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Good:
+良い例:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Also good:
+同じく良い例:
 
     “For writing maintainable and scalable HTML documents”
 
@@ -1033,11 +1033,11 @@ Also good:
 
 他に完全表記を提示する方法がありません。
 
-Bad:
+悪い例:
 
     <abbr>HBP</abbr>
 
-Good:
+良い例:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
@@ -1046,11 +1046,11 @@ Good:
 
 `ruby`要素のサポートはまだモダンブラウザー間でも完了していません。
 
-Bad:
+悪い例:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Good:
+良い例:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
@@ -1059,11 +1059,11 @@ Good:
 
 `datetime`属性を使わない場合、`time`要素の中身は限定されます。
 
-Bad:
+悪い例:
 
     <time>Dec 19, 2014</time>
 
-Good:
+良い例:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
@@ -1072,11 +1072,11 @@ Good:
 
 これは正式な方法ではありませんが、仕様では言及されています。
 
-Bad:
+悪い例:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Good:
+良い例:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
@@ -1085,11 +1085,11 @@ Good:
 
 入れ子にした`kbd`要素は人類には難しすぎます。
 
-Bad:
+悪い例:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
-Good:
+良い例:
 
     <kbd>Ctrl+F5</kbd>
 
@@ -1098,11 +1098,11 @@ Good:
 
 `span`要素は最後の手段です。
 
-Bad:
+悪い例:
 
     HTML <span class="best">Best</span> Practices
 
-Good:
+良い例:
 
     HTML <em>Best</em> Practices
 
@@ -1111,11 +1111,11 @@ Good:
 
 `br`要素が使われる場所には、間違いなく改行が必要です。
 
-Bad:
+悪い例:
 
     <p>HTML<br>Best<br>Practices</p>
 
-Good:
+良い例:
 
     <p>HTML<br>
     Best<br>
@@ -1126,13 +1126,13 @@ Good:
 
 `br`要素は改行のためにあるのではなく、コンテンツに必要な改行のためにあります。
 
-Bad:
+悪い例:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Good:
+良い例:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
@@ -1146,13 +1146,13 @@ Good:
 
 要素は他の要素をまたぐことはできません。
 
-Bad:
+悪い例:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
     
     <p>Don’t trust!</p></del>
 
-Good:
+良い例:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
     
@@ -1166,7 +1166,7 @@ Good:
 
 `picture`要素のサポートはまだよくありません。
 
-Bad:
+悪い例:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1175,7 +1175,7 @@ Bad:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Good:
+良い例:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1189,11 +1189,11 @@ Good:
 
 `alt`属性は、画像を表示できなかったり、画像の読み込みを無効にしている環境へ助けになります。
 
-Bad:
+悪い例:
 
     <img src="/img/logo.png">
 
-Good:
+良い例:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
@@ -1202,11 +1202,11 @@ Good:
 
 画像が補助的なものならば、きっと周囲に同等のコンテンツが存在するはずです。
 
-Bad:
+悪い例:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Good:
+良い例:
 
     <img alt="" src="/img/icon/help.png"> Help
 
@@ -1215,11 +1215,11 @@ Good:
 
 たまにどのような文字列が適切な`alt`属性の値かわからないこともあります。
 
-Bad:
+悪い例:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Good:
+良い例:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
@@ -1229,13 +1229,13 @@ Good:
 
 その内容にはいくつかの制限があります。空にすれば安全です。
 
-Bad:
+悪い例:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Good:
+良い例:
 
     <iframe src="/ads/default.html"></iframe>
 
@@ -1244,7 +1244,7 @@ Good:
 
 その中身はスクリーン・リーダーへ提供されます。
 
-Bad:
+悪い例:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1255,7 +1255,7 @@ Bad:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Good:
+良い例:
 
     <map name="toc">
       <p>
@@ -1273,7 +1273,7 @@ Good:
 
 HTML5で新しく作られた要素にはフォールバックのためのコンテンツが必要です。
 
-Bad:
+悪い例:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1281,7 +1281,7 @@ Bad:
       ...
     </video>
 
-Good:
+良い例:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1298,13 +1298,13 @@ Good:
 
 長い行は把握しづらいです。
 
-Bad:
+悪い例:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Good:
+良い例:
 
     <tr>
       <td>General</td>
@@ -1317,7 +1317,7 @@ Good:
 
 避ける理由はないでしょう。
 
-Bad:
+悪い例:
 
     <table>
       <thead>
@@ -1341,7 +1341,7 @@ Bad:
       </tbody>
     </table>
 
-Good:
+良い例:
 
     <table>
       <thead>
@@ -1373,11 +1373,11 @@ Good:
 
 `label`要素はフォーム要素へフォーカスを当てるのに役立ちます。
 
-Bad:
+悪い例:
 
     <p>Query: <input name="q" type="text"></p>
 
-Good:
+良い例:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
@@ -1386,11 +1386,11 @@ Good:
 
 `label`要素はいくつかのフォーム要素を含められます。
 
-Bad:
+悪い例:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Good:
+良い例:
 
     <label>Query: <input name="q" type="text"></label>
 
@@ -1399,11 +1399,11 @@ Good:
 
 適切な`type`属性により、ブラウザーは`input`要素へちょっとした機能を与えてくれます。
 
-Bad:
+悪い例:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Good:
+良い例:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
@@ -1412,11 +1412,11 @@ Good:
 
 送信ボタンは、そのデフォルトのラベルがブラウザーや言語設定によって変わってしまいます。
 
-Bad:
+悪い例:
 
     <input type="submit">
 
-Good:
+良い例:
 
     <input type="submit" value="Search">
 
@@ -1425,11 +1425,11 @@ Good:
 
 もし入力したテキストが`pattern`属性にマッチしない場合、`title`属性の値がヒントとして表示されます。
 
-Bad:
+悪い例:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
 
-Good:
+良い例:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
@@ -1438,11 +1438,11 @@ Good:
 
 `label`要素がラベルのためにあり、`placeholder`属性は短いヒントのためにあります。
 
-Bad:
+悪い例:
 
     <input name="email" placeholder="Email" type="text">
 
-Good:
+良い例:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
@@ -1451,13 +1451,13 @@ Good:
 
 長い行は把握しづらいです。
 
-Bad:
+悪い例:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Good:
+良い例:
 
     <datalist id="toc">
       <option label="General">
@@ -1470,11 +1470,11 @@ Good:
 
 `max`属性があると、`value`属性を簡単な形式で書くことができます。
 
-Bad:
+悪い例:
 
     <progress value="0.5"> 50%</progress>
 
-Good:
+良い例:
 
     <progress max="100" value="50"> 50%</progress>
 
@@ -1483,11 +1483,11 @@ Good:
 
 `min`と`max`属性があると、`value`属性を簡単な形式で書くことができます。
 
-Bad:
+悪い例:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-Good:
+良い例:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
@@ -1496,7 +1496,7 @@ Good:
 
 仕様がそう要求しています。
 
-Bad:
+悪い例:
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1504,7 +1504,7 @@ Bad:
       <legend>About "General"</legend>
     </fieldset>
 
-Good:
+良い例:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1520,13 +1520,13 @@ Good:
 
 HTML5では、`script`要素における`type`属性の初期値は`text/javascript`です。
 
-Bad:
+悪い例:
 
     <script type="text/javascript">
       ...
     </script>
 
-Good:
+良い例:
 
     <script>
       ...
@@ -1537,7 +1537,7 @@ Good:
 
 この儀式は古いブラウザーのためです。
 
-Bad:
+悪い例:
 
     <script>
     /*<![CDATA[*/
@@ -1545,7 +1545,7 @@ Bad:
     /*]]>*/
     </script>
 
-Also bad:
+同じく悪い例:
 
     <script>
     <!--
@@ -1553,7 +1553,7 @@ Also bad:
     // -->
     </script>
 
-Good:
+良い例:
 
     <script>
       ...
@@ -1564,7 +1564,7 @@ Good:
 
 明快さとパフォーマンスの両面で`async`属性が最良です。
 
-Bad:
+悪い例:
 
     <script>
       var script = document.createElement("script");
@@ -1573,7 +1573,7 @@ Bad:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Good:
+良い例:
 
     <script async defer src="//example.com/widget.js"></script>
 
@@ -1585,7 +1585,7 @@ Good:
 
 インデントは読みやすさにおいて重要です。
 
-Bad:
+悪い例:
 
     <html>
     	<head>
@@ -1596,7 +1596,7 @@ Bad:
       </body>
     </html>
 
-Good:
+良い例:
 
     <html>
       <head>
@@ -1612,13 +1612,13 @@ Good:
 
 絶対パスはインターネット回線のないローカルの環境でもうまく動きます。
 
-Bad:
+悪い例:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Good:
+良い例:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
