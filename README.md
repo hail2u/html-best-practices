@@ -25,7 +25,7 @@ For writing maintainable and scalable HTML documents
   * [Omit namespaces](#omit-namespaces)
   * [Don’t use XML attributes](#dont-use-xml-attributes)
   * [Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes)
-  * [Prefer implicit ARIA semantics](#prefer-implicit-aria-semantics)
+  * [Prefer default implicit ARIA semantics](#prefer-default-implicit-aria-semantics)
 * [The root element](#the-root-element)
   * [Add `lang` attribute](#add-lang-attribute)
   * [Keep `lang` attribute value as short as possible](#keep-lang-attribute-value-as-short-as-possible)
@@ -362,9 +362,9 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### Prefer implicit ARIA semantics
+### Prefer default implicit ARIA semantics
 
-Some element has a implicit ARIA role in an HTML document, don’t specify it.
+Some element has an ARIA `role` implicitly in an HTML document, don’t specify it.
 
 Bad:
 
