@@ -271,6 +271,10 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
 
     <a href="#general">General</a>
 
+同じく良い例:
+
+    <A HREF="#general">General</A>
+
 
 ### 引用符を混ぜない
 

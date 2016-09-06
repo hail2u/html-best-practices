@@ -274,6 +274,10 @@ Good:
 
     <a href="#general">General</a>
 
+Also Good:
+
+    <A HREF="#general">General</A>
+
 
 ### Don’t mix quotation marks
 
