@@ -1640,7 +1640,7 @@ Contributors
 
 - [@hail2u]
 - [@momdo]
-- [@tehchtml]
+- [@techhtml]
 
 
 License
