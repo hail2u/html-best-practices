@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md)
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md)
 
 普通のHTMLの書き方
 ==================
@@ -1634,6 +1634,7 @@ HTML5では、`script`要素における`type`属性の初期値は`text/javascr
 
 - [@hail2u]
 - [@momdo]
+- [@techhtml]
 
 
 ライセンス
@@ -1644,4 +1645,5 @@ HTML5では、`script`要素における`type`属性の初期値は`text/javascr
 
 [@hail2u]: https://github.com/hail2u
 [@momdo]:  https://github.com/momdo
+[@techhtml]:  https://github.com/techhtml
 [CC0]:     http://creativecommons.org/publicdomain/zero/1.0/

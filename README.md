@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md)
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md)
 
 HTML Best Practices
 ===================
@@ -1650,6 +1650,7 @@ Contributors
 
 - [@hail2u]
 - [@momdo]
+- [@techhtml]
 
 
 License
@@ -1660,4 +1661,5 @@ License
 
 [@hail2u]: https://github.com/hail2u
 [@momdo]:  https://github.com/momdo
+[@techhtml]:  https://github.com/techhtml
 [CC0]:     http://creativecommons.org/publicdomain/zero/1.0/

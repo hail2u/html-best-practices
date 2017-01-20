@@ -7,18 +7,18 @@ HTML Best Practices
 
 <!-- #toc -->
 
-* [General](#general)
-  * [Start with DOCTYPE](#start-with-doctype)
-  * [Don’t use legacy or obsolete DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
-  * [Don’t use XML Declaration](#dont-use-xml-declaration)
-  * [Don’t use character references as much as possible](#dont-use-character-references-as-much-as-possible)
-  * [Escape `&`, `<`, `>`, `"`, and `'` with named character references](#escape-----and--with-named-character-references)
-  * [Use numeric character references for control or invisible characters](#use-numeric-character-references-for-control-or-invisible-characters)
-  * [Put white spaces around comment contents](#put-white-spaces-around-comment-contents)
-  * [Don’t omit closing tag](#dont-omit-closing-tag)
-  * [Don’t mix empty element format](#dont-mix-empty-element-format)
-  * [Don’t put white spaces around tags and attribute values](#dont-put-white-spaces-around-tags-and-attribute-values)
-  * [Don’t mix character cases](#dont-mix-character-cases)
+* [공통](#공통)
+  * [DOCTYPE으로 시작해라](#doctype으로-시작해라)
+  * [레거시 혹은 폐기된 DOCTYPE을 쓰지 마라](#레거시-혹은-폐기된-doctype을-쓰지-마라)
+  * [XML 선언을 쓰지 말아라](#xml-선언을-쓰지-말아라)
+  * [문자 레퍼런스를 가능한 한 사용하지 말아라](#문자-레퍼런스를-가능한-한-사용하지-말아라)
+  * [`&`, `<`, `>`, `"`, `'`를 문자 레퍼런스로 변환해라](#----를-문자-레퍼런스로-변환해라)
+  * [제어 문자나 보이지 않는 문자를 제어하기 위해 숫자 문자 레퍼런스를 사용하라](#제어-문자나-보이지-않는-문자를-제어하기-위해-숫자-문자-레퍼런스를-사용하라)
+  * [주석 내용 주위에 공백을 넣어라](#주석-내용-주위에-공백을-넣어라)
+  * [닫는 태그를 생략하지 말아라](#닫는-태그를-생략하지-말아라)
+  * [빈 요소 포맷을 섞지 마라](#빈-요소-포맷을-섞지-마라)
+  * [태그 및 속성 값 사이에 공백문자를 넣지 말아라](#태그-및-속성-값-사이에-공백문자를-넣지-말아라)
+  * [대소문자를 섞지 말아라](#대소문자를-섞지-말아라)
   * [Don’t mix quotation marks](#dont-mix-quotation-marks)
   * [Don’t separate attributes with two or more white spaces](#dont-separate-attributes-with-two-or-more-white-spaces)
   * [Omit boolean attribute value](#omit-boolean-attribute-value)
@@ -295,7 +295,7 @@ Good:
 
 ### 속성을 두개 이상의 공백 문자로 나누지 마라
 
-이상학 규칙이 누군가를 혼란하게 한다.
+이상한 규칙이 누군가를 혼란하게 한다.
 
 Bad:
 
@@ -719,7 +719,7 @@ Good:
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-그루핑 콘텐츠
+그룹 콘텐츠
 ----------------
 
 ### `pre` 요소에서 새 줄로 시작하지 말아라
@@ -753,9 +753,9 @@ Good:
     </blockquote>
 
 
-### Don’t include attribution directly in `blockquote` element
+### `blockquote` 요소 안에 직접 포함하지 마라
 
-`blockquote` element’s content is a quote.
+`blockquote` 요소의 콘텐츠는 인용구다.
 
 Bad:
 
@@ -792,10 +792,10 @@ Also good too (recommended by W3C):
     </blockquote>
 
 
-### Write one list item per line
+### 한 줄에 한 리스트 아이템을 써라
 
-Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
-line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
+기이ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ인
+라인은 너무ㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ 읽기 힘들다.
 
 Bad:
 
@@ -813,10 +813,10 @@ Good:
     </ul>
 
 
-### Use `type` attribute for `ol` element
+### `ol` 요소에 `type` 속성을 써라
 
-Sometimes marker referenced by the contents in the near. If you change marker
-with `type` attribute, you will be safe to reference.
+때로는 주변 콘텐츠에 의해 마커가 참조된다. 만약 `type`  속성으로 마커를 변경한다면,
+참조하는 것이 안전하다.
 
 Bad:
 
@@ -848,9 +848,9 @@ Good:
     </body>
 
 
-### Don’t use `dl` for dialogue
+### 다이얼로그를 위해 `dl`을 쓰지 마라
 
-`dl` element is restricted to an association list in HTML5.
+`dl` 요소는 HTML5의 연결 목록으로 제한한다.
 
 Bad:
 
@@ -881,10 +881,9 @@ Good:
     <p>Abbott: Every dollar of it.</p>
 
 
-### Place `figcaption` element as first or last child of `figure` element
+### `figcaption`  요소를 `figure` 요소의 첫째 or 마지막 자식요소로 써라
 
-Spec (WHATWG version) disallows `figcaption` element in the middle of `figure`
-element.
+스펙 (WHATWG 버전)에서 `figcaption` 요소를 `figure` 요소 중간에 두는 걸 허용하지 않는다.
 
 Bad:
 
@@ -903,9 +902,9 @@ Good:
     </figure>
 
 
-### Use `main` element
+### `main` 요소를 써라
 
-`main` element can be used wrapping contents.
+`main` 요소는 콘텐츠를 감쌀 떄 쓸 수 있다.
 
 Bad:
 
@@ -920,9 +919,9 @@ Good:
     </main>
 
 
-### Avoid `div` element as much as possible
+### `div` 요소를 가능한 한 많이 없애라
 
-`div` element is an element of last resort.
+`div` 요소는 최후의 수단이다.
 
 Bad:
 
@@ -937,13 +936,12 @@ Good:
     </section>
 
 
-Text-level semantics
+Text-level 시맨틱
 --------------------
 
-### Don’t split same link that can be grouped
+### 그룹 가능한 동일 링크를 분리하지 마라
 
-`a` element can wrap almost all elements (except interactive elements like form
-controls and `a` element itself).
+`a` 요소는 대부분의 요소를 감쌀 수 있다. (`a` 요소 자신이나 컨트롤같은 인터렉티브 요소는 제외한다)
 
 Bad:
 
@@ -960,9 +958,9 @@ Good:
     </a>
 
 
-### Use `download` attribute for downloading a resource
+### 리소스를 다운하고자 할 때 `download` 속성을 사용하라
 
-It will force browsers to download linked resource to the storage.
+브라우저에서 연결된 리소스를 스토리지에서 다운받으려 할거다.
 
 Bad:
 
@@ -973,9 +971,9 @@ Good:
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Use `rel`, `hreflang`, and `type` attribute if needed
+### 필요하다면 `rel`, `hreflang`, `type` 속성을 사용해라
 
-These hints helps applications how handle linked resource.
+이러한 힌트는 어플리케이션에서 연결된 리소스를 제어하는 데 사용한다.
 
 Bad:
 
@@ -986,9 +984,9 @@ Good:
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### Clear link text
+### 링크 텍스트를 명확히 하라
 
-Link text should be the label of its linked resource.
+링크 텍스트는 연결된 리소스의 레이블이어야한다.
 
 Bad:
 
@@ -999,9 +997,9 @@ Good:
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### Don’t use `em` element for warning or caution
+### 경고나 주의를 위해 `em`을 사용하지 말아라
 
-These are seriousness. So, `strong` element is more appropriate.
+이것들은 심각하다. 따라서 `storng` 요소가 더 적절하다.
 
 Bad:
 
@@ -1012,9 +1010,9 @@ Good:
     <strong>Caution!</strong>
 
 
-### Avoid `s`, `i`, `b`, and `u` element as much as possible
+### `s`, `i`, `b`,` u` 요소를 가능한 한 없애라
 
-These elements’ semantics is too difficult to humans.
+이 요소의 시맨틱은 사람과 아주 다르다.
 
 Bad:
 
@@ -1025,9 +1023,9 @@ Good:
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### Don’t put quotes to `q` element
+### `q` 요소에 따옴표를 넣지 말아라
 
-Quotes are provided by the browser.
+브라우저에서 제공한다.
 
 Bad:
 
@@ -1042,9 +1040,9 @@ Also good:
     “For writing maintainable and scalable HTML documents”
 
 
-### Add `title` attribute to `abbr` element
+### `abbr` 요소에 `title` 속성을 써라
 
-There is no other way to represent its expansion.
+무엇의 함축어인 지 달리 설명할 길이 없다.
 
 Bad:
 
@@ -1055,9 +1053,9 @@ Good:
     <abbr title="HTML Best Practices">HBP</abbr>
 
 
-### Markup `ruby` element verbosely
+### `ruby` 요소를 자세히 마크업해라
 
-`ruby` element support is not completed across the modern browsers.
+`ruby` 요소를 모든 모던 브라우저에서 완전하게 지원하는 게 아니다.
 
 Bad:
 
@@ -1068,10 +1066,9 @@ Good:
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Add `datetime` attribute to non-machine-readable `time` element
+### 기계가 읽을 수 없는 `time` 요소에 `datetime` 속성을 추가해라
 
-When `datetime` attribute does not present, the format of `time` element’s
-content is restricted.
+`datetime` 속성이 없을 때, `time` 요소의 포맷은 제한된다.
 
 Bad:
 
@@ -1082,9 +1079,9 @@ Good:
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Specify code language with `class` attribute prefixed with `language-`
+### `class` 속성 접두어로 `language-`를 넣어 code 언어를 정의하라
 
-This is not a formal way, but spec mentions this.
+일반적이진 않지만, spec에 언급되어있다.
 
 Bad:
 
@@ -1095,9 +1092,9 @@ Good:
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
-### Keep `kbd` element as simple as possible
+### `kbd` 요소를 가능한 한 단순하게 둬라
 
-Nesting `kbd` element is too difficult to humans.
+`kbd` 요소를 감싸는 건 사람과 다르다.
 
 Bad:
 
@@ -1108,9 +1105,9 @@ Good:
     <kbd>Ctrl+F5</kbd>
 
 
-### Avoid `span` element as much as possible
+### `span` 요소를 가능한 한 많이 제거해라.
 
-`span` element is an element of last resort.
+`span` 요소는 최후의 수단이다.
 
 Bad:
 
@@ -1121,9 +1118,9 @@ Good:
     HTML <em>Best</em> Practices
 
 
-### Break after `br` element
+### `br` 요소 뒤에 줄바꿈해라
 
-Line break should be needed where `br` element is used.
+`br` 요소를 사용하면 줄바꿈 하는 게 좋다.
 
 Bad:
 
@@ -1136,9 +1133,9 @@ Good:
     Practices</p>
 
 
-### Don’t use `br` element only for presentational purpose
+### 프레젠테이션 목적으로만 `br` 요소를 쓰지 마라
 
-`br` element is not for line breaking, it is for line breaks in the contents.
+`br` 요소는 줄바꿈을 위해서가 아니라, 콘텐츠의 라인 구분을 위해 사용한다.
 
 Bad:
 
@@ -1153,12 +1150,12 @@ Good:
     <textarea name="rule-description"></textarea></label></p>
 
 
-Edits
+에디트
 -----
 
-### Don’t stride `ins` and `del` element over other elements
+### `ins`와 `del` 요소로 다른 요소를 뛰어넘지 마라
 
-Elements cannot be overflow other elements.
+요소는 다른 요소를 넘을 수 없다.
 
 Bad:
 
@@ -1173,12 +1170,12 @@ Good:
     <del><p>Don’t trust!</p></del>
 
 
-Embedded content
+Embedded 콘텐츠
 ----------------
 
-### Provide fallback `img` element for `picture` element
+### `picture` 요소의 폴백으로 `img` 요소를 제공해라
 
-The support of `picture` element is not good yet.
+`picture` 요소 지원율이 아직 그렇게 높지 않다.
 
 Bad:
 
@@ -1199,10 +1196,9 @@ Good:
     </picture>
 
 
-### Add `alt` attrbute to `img` element if needed
+### 만약 필요하다면 `img` 요소에 `alt` 속성을 추가해라
 
-`alt` attribute helps those who cannot process images or have image loading
-disabled.
+`alt` 속성은 이미지를 처리할 수 없거나 불러오지 못했을 때 도움을 준다.
 
 Bad:
 
@@ -1213,9 +1209,9 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### Empty `alt` attribute if possible
+### 가능한 경우 `alt` 속성을 비워둬라
 
-If the image is supplemental, there is equivalent content somewhere in the near.
+본문을 보충하는 이미지라면, 근처에 동일한 콘텐츠가 있다.
 
 Bad:
 
@@ -1226,9 +1222,10 @@ Good:
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### Omit `alt` attribute if possible
+### 가능한 경우 `alt` 속성을 생략해라
 
-Sometimes you don’t know what text is suitable for `alt` attribute.
+때때로 어떤 텍스트가 alt 속성에 적합한 지 모를 수 있다.
+(역주) spec에서 `alt` 속성은 특수한 케이스가 아니라면 필수 속성이므로 빈값으로 넣어주세요.
 
 Bad:
 
@@ -1240,9 +1237,9 @@ Good:
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
-### Empty `iframe` element
+### `iframe` 요소를 비워둬라
 
-There is some restriction in its content. Being empty is always safe.
+콘텐츠에 몇가지 제한사항잉 있다. 비워두면 항상 안전하다.
 
 Bad:
 
@@ -1255,9 +1252,9 @@ Good:
     <iframe src="/ads/default.html"></iframe>
 
 
-### Markup `map` element content
+### `map` 요소 콘텐츠도 마크업해라
 
-This content presents to a screen reader.
+스크린 리더의 콘텐츠 프리셋으로 쓰인다.
 
 Bad:
 
@@ -1284,9 +1281,9 @@ Good:
     </map>
 
 
-### Provide fallback content for `audio` or `video` element
+### `audio`나 `video` 요소를 위한 폴백 콘텐츠를 제공해라.
 
-Fallback content is needed for newly introduced elements in HTML5.
+HTML5에 새로 추가된 요소들을 위해 폴백 콘텐츠가 필요하다.
 
 Bad:
 
@@ -1306,12 +1303,12 @@ Good:
     </video>
 
 
-Tabular data
+테이블 데이터
 ------------
 
-### Write one cell per line
+### 한 줄에 한 셀만 써라
 
-Long lines are hard to scan.
+긴 라인은 스캔하기 힘들다.
 
 Bad:
 
@@ -1328,9 +1325,9 @@ Good:
     </tr>
 
 
-### Use `th` element for header cell
+### `th` 요소를 헤더 셀로 써라
 
-There is no reason to avoid this.
+안 쓸 이유가 없다.
 
 Bad:
 
@@ -1381,12 +1378,12 @@ Good:
     </table>
 
 
-Forms
+폼
 -----
 
-### Wrap form control with `label` element
+### 폼 컨트로를 `label` 요소로 감싸라
 
-`label` element helps focusing form element.
+`label` 요소가 폼 요소에 포커스를 주는 데 도움을 준다
 
 Bad:
 
@@ -1397,9 +1394,9 @@ Good:
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### Omit `for` attribute if possible
+### 가능한 경우 `for` 속성을 생략해라
 
-`label` element can contain some form elements.
+`label` 요소는 몇가지 폼 요소를 감쌀 수 있다.
 
 Bad:
 
@@ -1410,9 +1407,9 @@ Good:
     <label>Query: <input name="q" type="text"></label>
 
 
-### Use appropriate `type` attribute for `input` element
+### `input` 요소에 적절한 `type` 속성을 사용해라
 
-With appropriate `type`, browsers gives a tiny features to the `input` element.
+적절한 `type`을 사용하면, 브라우저에서 `input` 요소에 작은 기능을 제공한다.
 
 Bad:
 
@@ -1423,10 +1420,9 @@ Good:
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### Add `value` attribute to `input type="submit"`
+### `input type="submit"`에 `value` 속성을 넣어라
 
-The default label for submit button is not standarized across the browser and
-languages.
+submit 버튼의 기본 레이블은 브라우저 및 언어 사이 표준이 없다.
 
 Bad:
 
@@ -1437,10 +1433,10 @@ Good:
     <input type="submit" value="Search">
 
 
-### Add `title` attribute to `input` element when there is `pattern` attribute
+### `input` 요소에 `pattern` 속성이 있는 경우 `title` 속성을 추가해라
 
-If input text does not match to `pattern` attribute, the value of `title`
-attribute will be display as a hint.
+입력한 텍스트가 `pattern` 속성과 매치하지 않는 경우,
+`title` 속성의 값이 힌트가 될거다.
 
 Bad:
 
@@ -1451,9 +1447,9 @@ Good:
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### Don’t use `placeholder` attribute for labeling
+### 레이블하기 위해 `placeholder` 속성을 쓰지 마라
 
-`label` element is for a label, `placeholder` attribute is for a short hint.
+`label` 요소가 레이블을 위한 요소고, `placeholder` 속성은 짧은 힌트를 위한 속성이다.
 
 Bad:
 
@@ -1464,9 +1460,9 @@ Good:
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### Write one `option` element per line
+### 한 줄에 한 `option` 요소만 사용해라
 
-Long lines are hard to scan.
+긴 라인은 읽기 힘들다.
 
 Bad:
 
@@ -1483,9 +1479,9 @@ Good:
     </datalist>
 
 
-### Add `max` attribute to `progress` element
+### `progress` 요소에 `max` 속성을 추가해라
 
-With `max` attribute, the `value` attribute can be write in an easy format.
+`max` 속성을 통해, `value` 속성을 쉬운 포맷으로 쓸 수 있다.
 
 Bad:
 
@@ -1496,10 +1492,9 @@ Good:
     <progress max="100" value="50"> 50%</progress>
 
 
-### Add `min` and `max` attribute to `meter` element
+### `meter` 요소에 `min`, `max` 속성을 추가해라
 
-With `min` and `max` attribute, the `value` attribute can be write in an easy
-format.
+`min`, `max` 속성을 통해, `value` 속성을 쉬운 포맷으로 쓸 수 있다.
 
 Bad:
 
@@ -1510,9 +1505,9 @@ Good:
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### Place `legend` element as the first child of `fieldset` element
+### `legend` 요소를 `fieldset` 요소의 첫번째 자식으로 둬라.
 
-Spec requires this.
+스펙 필수 사항이다.
 
 Bad:
 
@@ -1531,13 +1526,12 @@ Good:
     </fieldset>
 
 
-Scripting
+스크립트
 ---------
 
-### Omit `type` attribute for JavaScript
+### 자바스크립트를 위한 `type` 속성을 생략해라
 
-In HTML5, the default `type` attribute’s value of `script` element is
-`text/javascript`.
+HTML5에서, `script` 요소의 기본 `type` 속성값은 `text/javascript`다.
 
 Bad:
 
@@ -1552,9 +1546,9 @@ Good:
     </script>
 
 
-### Don’t comment out contents of `script` element
+### `script` 요소의 내용을 주석처리하지 마라
 
-This ritual is for the old browser.
+이는 오랜 브라우저를 위한 것이다.
 
 Bad:
 
@@ -1579,9 +1573,9 @@ Good:
     </script>
 
 
-### Don’t use script-injected `script` element
+### 스크립트가 삽입된 `script` 요소를 쓰지 마라
 
-`async` attribute is the best for both simplicity and performance.
+`async` 속성은 성능면으로나 단순성면으로나 최고다.
 
 Bad:
 
@@ -1597,12 +1591,12 @@ Good:
     <script async defer src="//example.com/widget.js"></script>
 
 
-Other
+기타
 -----
 
-### Indent consistently
+### 일관된 들여쓰기
 
-Indentation is important for readability.
+일관성은 가독성에 중요하다.
 
 Bad:
 
@@ -1627,9 +1621,9 @@ Good:
     </html>
 
 
-### Use absolute path for internal links
+### 내부 링크에 절대 경로를 사용해라
 
-An absolute path works better on your localhost without internet connection.
+절대 경로는 인터넷 연결 없이도 localhost에서도 동작한다.
 
 Bad:
 
@@ -1649,6 +1643,7 @@ Contributors
 
 - [@hail2u]
 - [@momdo]
+- [@tehchtml]
 
 
 License
@@ -1659,4 +1654,5 @@ License
 
 [@hail2u]: https://github.com/hail2u
 [@momdo]:  https://github.com/momdo
+[@techhtml]:  https://github.com/techhtml
 [CC0]:     http://creativecommons.org/publicdomain/zero/1.0/
