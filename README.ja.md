@@ -105,6 +105,7 @@ Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [�
 - [その他](#%E3%81%9D%E3%81%AE%E4%BB%96)
     - [一貫した量でインデントする](#%E4%B8%80%E8%B2%AB%E3%81%97%E3%81%9F%E9%87%8F%E3%81%A7%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%99%E3%82%8B)
     - [内部リンクには絶対パスを使う](#%E5%86%85%E9%83%A8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%AF%E7%B5%B6%E5%AF%BE%E3%83%91%E3%82%B9%E3%82%92%E4%BD%BF%E3%81%86)
+    - [外部リソースにはプロトコル相対URLを使わない](#%E5%A4%96%E9%83%A8%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AB%E3%81%AF%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E7%9B%B8%E5%AF%BEurl%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
 - [投稿者](#%E6%8A%95%E7%A8%BF%E8%80%85)
 - [ライセンス](#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
 
@@ -1627,6 +1628,19 @@ HTML5では、`script`要素における`type`属性の初期値は`text/javascr
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
+
+
+### 外部リソースにはプロトコル相対URLを使わない
+
+プロトコルを指定すると、外部リソースを確実かつ安全に読み込めます。
+
+悪い例:
+
+    <script src="//example.com/js/library.js">
+
+良い例:
+
+    <script src="https://example.com/js/library.js">
 
 
 投稿者

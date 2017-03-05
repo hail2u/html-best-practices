@@ -105,6 +105,7 @@ For writing maintainable and scalable HTML documents
 - [Other](#other)
     - [Indent consistently](#indent-consistently)
     - [Use absolute path for internal links](#use-absolute-path-for-internal-links)
+    - [Don’t use protocol-relative URL for external resources](#dont-use-protocol-relative-url-for-external-resources)
 - [Contributors](#contributors)
 - [License](#license)
 
@@ -1643,6 +1644,19 @@ Good:
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
+
+
+### Don’t use protocol-relative URL for external resources
+
+With protocol, you can load external resources reliably and safely.
+
+Bad:
+
+    <script src="//example.com/js/library.js">
+
+Good:
+
+    <script src="https://example.com/js/library.js">
 
 
 Contributors
