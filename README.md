@@ -975,7 +975,7 @@ Good:
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Use `rel`, `hreflang`, and `type` attribute if needed
+### Use `rel`, `href`, and `type` attribute if needed
 
 These hints helps applications how handle linked resource.
 
