@@ -592,7 +592,7 @@ Good:
 
 ### Use UTF-8
 
-With UTF-8, you are free to use Emoji.
+With UTF-8, you are free to use Emoji. :smiley:
 
 Bad:
 
