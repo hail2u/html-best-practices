@@ -321,7 +321,7 @@ Good:
 
 ### Omit namespaces
 
-SVG and MathML can be used directly in an HTML5 document.
+SVG and MathML can be used directly in an HTML document.
 
 Bad:
 
@@ -605,7 +605,7 @@ Good:
 
 ### Omit `type` attribute for CSS
 
-In HTML5, default `type` attribute’s value of `style` element is `text/css`.
+In HTML, default `type` attribute’s value of `style` element is `text/css`.
 
 Bad:
 
@@ -852,7 +852,7 @@ Good:
 
 ### Don’t use `dl` for dialogue
 
-`dl` element is restricted to an association list in HTML5.
+`dl` element is restricted to an association list in HTML.
 
 Bad:
 
@@ -1288,7 +1288,7 @@ Good:
 
 ### Provide fallback content for `audio` or `video` element
 
-Fallback content is needed for newly introduced elements in HTML5.
+Fallback content is needed for newly introduced elements in HTML.
 
 Bad:
 
@@ -1538,7 +1538,7 @@ Scripting
 
 ### Omit `type` attribute for JavaScript
 
-In HTML5, the default `type` attribute’s value of `script` element is
+In HTML, the default `type` attribute’s value of `script` element is
 `text/javascript`.
 
 Bad:

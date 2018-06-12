@@ -319,7 +319,7 @@ Good:
 
 ### 네임스페이스를 생략해라
 
-HTML5 문서에서 SVG와 MathML은 바로 쓸 수 있다.
+HTML 문서에서 SVG와 MathML은 바로 쓸 수 있다.
 
 Bad:
 
@@ -602,7 +602,7 @@ Good:
 
 ### CSS를 위한 `type` 속성을 생략해라
 
-HTML5에서, `style` 요소의 기본 `type` 속성 값은 `text/css`다.
+HTML에서, `style` 요소의 기본 `type` 속성 값은 `text/css`다.
 
 Bad:
 
@@ -848,7 +848,7 @@ Good:
 
 ### 다이얼로그를 위해 `dl`을 쓰지 마라
 
-`dl` 요소는 HTML5의 연결 목록으로 제한한다.
+`dl` 요소는 HTML의 연결 목록으로 제한한다.
 
 Bad:
 
@@ -1281,7 +1281,7 @@ Good:
 
 ### `audio`나 `video` 요소를 위한 폴백 콘텐츠를 제공해라.
 
-HTML5에 새로 추가된 요소들을 위해 폴백 콘텐츠가 필요하다.
+HTML에 새로 추가된 요소들을 위해 폴백 콘텐츠가 필요하다.
 
 Bad:
 
@@ -1529,7 +1529,7 @@ Good:
 
 ### 자바스크립트를 위한 `type` 속성을 생략해라
 
-HTML5에서, `script` 요소의 기본 `type` 속성값은 `text/javascript`다.
+HTML에서, `script` 요소의 기본 `type` 속성값은 `text/javascript`다.
 
 Bad:
 
