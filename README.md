@@ -1596,7 +1596,7 @@ Bad:
 
 Good:
 
-    <script async defer src="//example.com/widget.js"></script>
+    <script async defer src="https://example.com/widget.js"></script>
 
 
 Other

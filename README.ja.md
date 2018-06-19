@@ -1580,7 +1580,7 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
 
 良い例:
 
-    <script async defer src="//example.com/widget.js"></script>
+    <script async defer src="https://example.com/widget.js"></script>
 
 
 その他
