@@ -21,8 +21,4 @@
 
 仕様でもこのドメインのルートにある[`favicon.ico`というファイル読みに行く挙動][1]について明文化されています。つまりありとあらゆるツールでこの挙動が期待できるため、もはや指定する意味はほとんどないと言えるでしょう。
 
-同じことはiOS向けの`apple-touch-icon(-*).png`でも言えます。以前はAndroidがサポートしていなかったため、様々なサイズを指定する大量の`link`要素を書く必要がありましたが、今はAndroidもドメインのルートにある`apple-touch-icon(-*).png`を読むようになりました。こちらももう指定しなくても良いでしょう。必要になるファイルについては[iOS Human Interface Guidelines][2]を参照するべきです。
-
-
 [1]: https://html.spec.whatwg.org/multipage/links.html#rel-icon
-[2]: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/

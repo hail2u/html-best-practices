@@ -35,6 +35,7 @@ Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [�
     - [`base`要素を使わない](#base%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
     - [マイナーな参照先リソースのMIMEタイプを指定する](#%E3%83%9E%E3%82%A4%E3%83%8A%E3%83%BC%E3%81%AA%E5%8F%82%E7%85%A7%E5%85%88%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AEmime%E3%82%BF%E3%82%A4%E3%83%97%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
     - [`favicon.ico`へリンクしない](#faviconico%E3%81%B8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%97%E3%81%AA%E3%81%84)
+    - [`apple-touch-icon`へのリンクを書く](#apple-touch-icon%E3%81%B8%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E6%9B%B8%E3%81%8F)
     - [代替スタイルシートへ`title`属性を追加する](#%E4%BB%A3%E6%9B%BF%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E3%81%B8title%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
     - [URLには`link`要素を使う](#url%E3%81%AB%E3%81%AFlink%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
     - [文書の文字エンコーディングを指定する](#%E6%96%87%E6%9B%B8%E3%81%AE%E6%96%87%E5%AD%97%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
@@ -497,6 +498,19 @@ SVGやMathMLはHTMLの文書では直接扱えます。
 良い例:
 
     <!-- Place `favicon.ico` in the root directory. -->
+
+
+### `apple-touch-icon`へのリンクを書く
+
+デフォルトでリクエストされるタッチ・アイコンのパスは突然変わりました。
+
+Bad:
+
+    <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
+
+Good:
+
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
 
 ### 代替スタイルシートへ`title`属性を追加する

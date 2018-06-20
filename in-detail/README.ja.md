@@ -1,6 +1,7 @@
 # 索引
 
 - [必要な時は`img`要素へ`alt`属性を追加する](add-alt-attrbute-to-img-element-if-needed.ja.md)
+- [`apple-touch-icon`へのリンクを書く](add-apple-touch-icon-link.ja.md)
 - [`body`要素を書く](add-body-element.ja.md)
 - [機械的に解釈可能でない`time`要素では`datetime`属性を追加する](add-datetime-attribute-to-non-machine-readable-time-element.ja.md)
 - [`lang`属性を追加する](add-lang-attribute.ja.md)
