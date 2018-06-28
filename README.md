@@ -108,6 +108,7 @@ For writing maintainable and scalable HTML documents
     - [Use absolute path for internal links](#use-absolute-path-for-internal-links)
     - [Don’t use protocol-relative URL for external resources](#dont-use-protocol-relative-url-for-external-resources)
 - [Contributors](#contributors)
+- [Translators](#translators)
 - [License](#license)
 
 <!-- /toc -->
@@ -1678,6 +1679,11 @@ Contributors
 
 - [@hail2u]
 - [@momdo]
+
+
+Translators
+-----------
+
 - [@techhtml]
 
 
