@@ -702,7 +702,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
 
 ### `hgroup`要素のことは忘れる
 
-W3C版仕様では削除されました。
+あまり使われていません。
 
 悪い例:
 
@@ -784,7 +784,7 @@ W3C版仕様では削除されました。
     
     <p>— HTML Best Practices</p>
 
-同じく良い例（WHATWG推奨）:
+同じく良い例:
 
     <figure>
       <blockquote>
@@ -793,14 +793,6 @@ W3C版仕様では削除されました。
     
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
-
-同じく良い例（W3C推奨）:
-
-    <blockquote>
-      <p>For writing maintainable and scalable HTML documents.</p>
-    
-      <footer>— HTML Best Practices</footer>
-    </blockquote>
 
 
 ### リスト項目は1行に1つずつ書く
@@ -892,7 +884,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
 
 ### `figcaption`要素は`figure`要素の最初か最後に置く
 
-仕様（WHATWG版）では`figcaption`要素を`figure`要素の中ほどに置けません。
+仕様では`figcaption`要素を`figure`要素の中ほどに置けません。
 
 悪い例:
 

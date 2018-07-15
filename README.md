@@ -707,7 +707,7 @@ Good:
 
 ### Forget about `hgroup` element
 
-W3C spec removes this element.
+This element is not used very much.
 
 Bad:
 
@@ -790,7 +790,7 @@ Good:
     
     <p>— HTML Best Practices</p>
 
-Also good (recommended by WHATWG):
+Also good:
 
     <figure>
       <blockquote>
@@ -799,14 +799,6 @@ Also good (recommended by WHATWG):
     
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
-
-Also good too (recommended by W3C):
-
-    <blockquote>
-      <p>For writing maintainable and scalable HTML documents.</p>
-    
-      <footer>— HTML Best Practices</footer>
-    </blockquote>
 
 
 ### Write one list item per line
@@ -900,8 +892,7 @@ Good:
 
 ### Place `figcaption` element as first or last child of `figure` element
 
-Spec (WHATWG version) disallows `figcaption` element in the middle of `figure`
-element.
+Spec disallows `figcaption` element in the middle of `figure` element.
 
 Bad:
 
