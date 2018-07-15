@@ -17,7 +17,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
 
 ## 解説
 
-HTML5でもXHTML 1.1のように名前空間を指定して拡張できます。XML構文を使う必要がありますが、今まで通り`xmlns`属性を使うだけです。
+現在のHTMLでも、XHTML 1.1のように名前空間を指定して拡張できます。XML構文を使う必要がありますが、今まで通り`xmlns`属性を使うだけです。
 
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
