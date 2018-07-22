@@ -11,9 +11,6 @@
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-
-## 解説
-
 必須であるはずの`alt`属性も、ごく限られた状況では使うべきではありません。というよりも適切な`alt`属性の値がどうやっても指定できない場合には指定できません。
 
 例えばCAPTCHAの画像です。このサービスの仕組み上、その中身を機械的にたどれるようでは無意味になってしまうからです。こういった場合は良い例で挙げたように、何も指定せず、かつ別の方法でフォールバックするべきです。

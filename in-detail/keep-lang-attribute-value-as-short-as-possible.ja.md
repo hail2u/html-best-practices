@@ -10,9 +10,6 @@
 
     <html lang="ja">
 
-
-## 解説
-
 英語のHTML文書では、まず`html`要素の`lang`属性で言語タグを使って、英語であることを明示します。
 
     <html lang="en-US">

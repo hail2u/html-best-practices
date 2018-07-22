@@ -14,9 +14,6 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
       ...
     </script>
 
-
-## 解説
-
 「[CSSの`type`属性は省略する][1]」を参照してください。
 
 

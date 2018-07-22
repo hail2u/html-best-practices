@@ -12,9 +12,6 @@
 
     <iframe src="/ads/default.html"></iframe>
 
-
-## 解説
-
 HTML 4.01では、フレームをサポートしないブラウザーが考慮されていました。`iframe`要素では、代替コンテンツをそのコンテンツとして指定する、と指示されています。
 
     <iframe src="foo.html">

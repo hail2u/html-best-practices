@@ -10,9 +10,6 @@
 
     <label>Query: <input name="q" type="text"></label>
 
-
-## 解説
-
 「[フォームコントロールは`label`要素で括る][1]」を参照してください。
 
 

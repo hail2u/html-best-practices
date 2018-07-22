@@ -10,9 +10,6 @@
 
     <audio autoplay src="/audio/theme.mp3">
 
-
-## 解説
-
 属性の多くは不定の値を取りますが、中には真偽値を取る属性もあります。例えば`input`要素における`checked`属性はHTML 4.01から存在した真偽値を取る属性です。真偽値を取る属性では、その値に属性名をそのまま指定するか、空文字列を指定することで有効にできます。
 
     <input checked="checked" disabled="" type="checkbox">

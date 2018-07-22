@@ -16,9 +16,6 @@
       <option label="Sections">
     </datalist>
 
-
-## 解説
-
 「[リスト項目は1行に1つずつ書く][1]」を参照してください。
 
 

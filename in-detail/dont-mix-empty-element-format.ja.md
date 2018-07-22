@@ -12,9 +12,6 @@
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
-## 解説
-
 [XML宣言の項][1]において述べたように、現在のHTMLではXHTML 1.1の機能や特徴をいくつか取り込んでいます。空要素の書き方はその1つで、XHTML 1.1のようにスラッシュを追加して閉じても間違いではありません。
 
     <hr>

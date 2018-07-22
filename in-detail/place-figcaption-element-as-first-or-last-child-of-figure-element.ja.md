@@ -18,9 +18,6 @@
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-
-## 解説
-
 `figcaption`要素は必須ではありませんが、多くの場合は書くことでしょう。`figure`及び`figcaption`要素は図や画像の注釈にだけでなく、あるコンテンツ（群）へ明示的にキャプションを提供するためにも使われるからです。`figure`要素は複数の図を持つかもしれないので、その場合にそれぞれにキャプションを付けたくなるかもしれません。
 
     <figure>
