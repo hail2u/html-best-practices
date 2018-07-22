@@ -1,4 +1,4 @@
-# DOCTYPEを書く
+# DOCTYPEで始める
 
 DOCTYPEは標準モードを有効にするために必要です。
 
