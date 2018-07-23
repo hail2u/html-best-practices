@@ -206,8 +206,8 @@ Good:
 
 ### Put white spaces around comment contents
 
-Some character cannot be used immediately after comment open tag or before
-comment close tag.
+Some character cannot be used immediately after comment open or before comment
+close.
 
 Bad:
 
