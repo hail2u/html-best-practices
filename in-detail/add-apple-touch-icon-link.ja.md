@@ -2,11 +2,11 @@
 
 デフォルトでリクエストされるタッチ・アイコンのパスは突然変わりました。
 
-Bad:
+悪い例:
 
     <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
 
-Good:
+良い例:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
