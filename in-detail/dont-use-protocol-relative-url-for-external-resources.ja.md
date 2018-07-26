@@ -4,11 +4,11 @@
 
 悪い例:
 
-    <script src="//example.com/js/library.js">
+    <script src="//example.com/js/library.js"></script>
 
 良い例:
 
-    <script src="https://example.com/js/library.js">
+    <script src="https://example.com/js/library.js"></script>
 
 かつて、古いブラウザーが安全なリソースとそうでないリソースが混在しているという警告を、モーダル・ダイアログで出していました。こういったモーダル・ダイアログはユーザーに深刻な状況を想起させてしまうだけでなく、煩わしいものです。ウェブページ制作者としてはなんとしても避けたい事態でしょう。
 
