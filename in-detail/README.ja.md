@@ -18,7 +18,7 @@
     - [名前空間は省略する](omit-namespaces.ja.md)
     - [XML属性は使わない](dont-use-xml-attributes.ja.md)
     - [`data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない](dont-mix-data--microdata-and-rdfa-lite-attributes-with-common-attributes.ja.md)
-    - [デフォルトの暗黙的なARIAセマンティックを尊重する](prefer-default-implicit-aria-semantics.ja.md)
+    - [デフォルトの暗黙のARIAセマンティックスを尊重する](prefer-default-implicit-aria-semantics.ja.md)
 - 文書要素
     - [`lang`属性を追加する](add-lang-attribute.ja.md)
     - [`lang`属性の値はできる限り短くする](keep-lang-attribute-value-as-short-as-possible.ja.md)
