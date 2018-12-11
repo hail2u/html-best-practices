@@ -165,8 +165,8 @@ Good:
 
 ### Don’t use character references as much as possible
 
-If you write an HTML document with UTF-8, almost all charaters (including Emoji)
-can be write directly.
+If you write an HTML document with UTF-8, almost all characters (including
+Emoji) can be write directly.
 
 Bad:
 
