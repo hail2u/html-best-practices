@@ -1,4 +1,4 @@
-Çeviriler: [English (en)] · [日本語 (ja)] · [한국어 (ko)]
+Çeviriler: [İngilizce (en)](README.md) · [Japonca (ja)](README.ja.md) · [Korece (ko)](README.ko.md)
 
 # HTML'de Örnek Yöntemler
 
