@@ -1,114 +1,114 @@
-Çeviriler: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md)
+Çeviriler: [English (en)] · [日本語 (ja)] · [한국어 (ko)]
 
 # HTML'de Örnek Yöntemler
 
-For writing maintainable and scalable HTML documents
+Bakım yapılabilir ve ölçeklenebilir HTML belgeleri yazmak için
 
 <!-- #toc -->
 
-- [Genel](#genel)
-    - [DOCTYPE ile başlayın](#doctype-ile-ba%C5%9Fla)
-    - [Eskimiş yada geçersiz DOCTYPE kullanmayın](#miras-veya-eski-doktip-kullanmay%C4%B1n)
-    - [XML etiketi kullanmayın](#xml-bildirimini-kullanma)
-    - [Don’t use character references as much as possible](#dont-use-character-references-as-much-as-possible)
-    - [`&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmayın](#ka%C3%A7%C4%B1%C5%9F-ve-adland%C4%B1r%C4%B1lm%C4%B1%C5%9F-karakter-referanslar%C4%B1-ile)
-    - [Use numeric character references for control or invisible characters](#use-numeric-character-references-for-control-or-invisible-characters)
-    - [Put white spaces around comment contents](#put-white-spaces-around-comment-contents)
-    - [Don’t omit closing tag](#kapan%C4%B1%C5%9F-etiketini-atlamay%C4%B1n)
-    - [Don’t mix empty element format](#bo%C5%9F-eleman-format%C4%B1n%C4%B1-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-    - [Don’t put white spaces around tags and attribute values](#etiketlerin-etraf%C4%B1na-beyaz-bo%C5%9Fluk-koymay%C4%B1n-ve-de%C4%9Ferlerin-niteli%C4%9Fi)
-    - [Don’t mix character cases](#karakter-durumlar%C4%B1n%C4%B1-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-    - [Don’t mix quotation marks](#t%C4%B1rnak-i%C5%9Faretleri-kar%C4%B1%C5%9F%C4%B1k-de%C4%9Fil)
-    - [Don’t separate attributes with two or more white spaces](#iki-veya-daha-fazla-beyaz-bo%C5%9Fluk-i%C3%A7eren-%C3%B6znitelikleri-ay%C4%B1rmay%C4%B1n)
-    - [Omit boolean attribute value](#boolean-%C3%B6zellik-de%C4%9Ferini-atlamak)
-    - [Omit namespaces](#ad-alanlar%C4%B1n%C4%B1-atlamak)
-    - [Don’t use XML attributes](#xml-%C3%B6zniteliklerini-kullanmay%C4%B1n)
-    - [Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes](#veri-mikro-verilerini-ve-rdfa-lite-%C3%B6zniteliklerini-ortak-%C3%B6zniteliklerle-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-    - [Prefer default implicit ARIA semantics](#varsay%C4%B1lan-%C3%B6rt%C3%BCl%C3%BC-aria-semanti%C4%9Fini-tercih-et)
-- [The root element](#k%C3%B6k-eleman)
-    - [Add `lang` attribute](#lang-niteli%C4%9Fi-ekle)
-    - [Keep `lang` attribute value as short as possible](#lang-nitelik-de%C4%9Ferini-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-k%C4%B1sa-tutun)
-    - [Avoid `data-*` as much as possible](#m%C3%BCmk%C3%BCn-oldu%C4%9Funca-veri-kullanmaktan-ka%C3%A7%C4%B1n%C4%B1n)
-- [Document metadata](#belge-meta-verileri)
-    - [Add `title` element](#ba%C5%9Fl%C4%B1k-eleman%C4%B1-ekle)
-    - [Don’t use `base` element](#temel-eleman-kullanmay%C4%B1n)
-    - [Specify MIME type of minor linked resources](#k%C3%BC%C3%A7%C3%BCk-ba%C4%9Flant%C4%B1l%C4%B1-kaynaklar%C4%B1n-mime-t%C3%BCr%C3%BCn%C3%BC-belirtmek)
-    - [Don’t link to `favicon.ico`](#faviconico-ile-ba%C4%9Flant%C4%B1-kurma)
-    - [Add `apple-touch-icon` link](#elma-dokunma-simgesi-ba%C4%9Flant%C4%B1-ekle)
-    - [Add `title` attribute to alternate stylesheets](#alternatif-stil-sayfalar%C4%B1na-ba%C5%9Fl%C4%B1k-niteli%C4%9Fi-ekleyin)
-    - [For URL, use `link` element](#url-i%C3%A7in-link-element-kullan%C4%B1n)
-    - [Specify document character encoding](#belge-karakter-kodlamas%C4%B1n%C4%B1-belirtin)
-    - [Don’t use legacy character encoding format](#eski-karakter-kodlama-bi%C3%A7imini-kullanmay%C4%B1n)
-    - [Specify character encoding at first](#ilk-%C3%B6nce-karakter-kodlamas%C4%B1n%C4%B1-belirtin)
-    - [Use UTF-8](#utf-8-kullan)
-    - [Omit `type` attribute for CSS](#css-i%C3%A7in-tip-%C3%B6zniteli%C4%9Fini-atlamak)
-    - [Don’t comment out contents of `style` element](#stil-%C3%B6%C4%9Fesinin-i%C3%A7eri%C4%9Fini-yorumlamay%C4%B1n)
-    - [Don’t mix tag for CSS and JavaScript](#css-ve-javascript-i%C3%A7in-etiketi-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-- [Sections](#b%C3%B6l%C3%BCmler)
-    - [Add `body` element](#g%C3%B6vde-eleman%C4%B1-ekle)
-    - [Forget about `hgroup` element](#hgroup-elementini-unut)
-    - [Use `address` element only for contact information](#adres-%C3%B6%C4%9Fesini-yaln%C4%B1zca-ileti%C5%9Fim-bilgileri-i%C3%A7in-kullan%C4%B1n)
-- [Grouping content](#i%C3%A7eri%C4%9Fi-grupland%C4%B1rma)
-    - [Don’t start with newline in `pre` element](#%C3%B6n-elemandaki-newline-ile-ba%C5%9Flama)
-    - [Use appropriate element in `blockquote` element](#blockquote-%C3%B6%C4%9Fesinde-uygun-%C3%B6%C4%9Feyi-kullan)
-    - [Don’t include attribution directly in `blockquote` element](#do%C4%9Frudan-blockquote-%C3%B6%C4%9Fesinin-i%C3%A7ine-nitelik-eklemeyin)
-    - [Write one list item per line](#her-sat%C4%B1ra-bir-liste-%C3%B6%C4%9Fesi-yaz)
-    - [Use `type` attribute for `ol` element](#ol-element-i%C3%A7in-type-niteli%C4%9Fini-kullan%C4%B1n)
-    - [Don’t use `dl` for dialogue](#diyalog-i%C3%A7in-dl-kullanmay%C4%B1n)
-    - [Place `figcaption` element as first or last child of `figure` element](#figcaption-%C3%B6%C4%9Fesini-%C5%9Fekil-%C3%B6%C4%9Fesinin-ilk-veya-son-%C3%A7ocu%C4%9Fu-olarak-yerle%C5%9Ftir)
-    - [Use `main` element](#ana-%C3%B6%C4%9Feyi-kullan)
-    - [Avoid `div` element as much as possible](#div-elementini-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-%C3%B6nlemek)
-- [Text-level semantics](#metin-seviyesi-anlambilimi)
-    - [Don’t split same link that can be grouped](#gruplanabilecek-ayn%C4%B1-ba%C4%9Flant%C4%B1y%C4%B1-b%C3%B6lme)
-    - [Use `download` attribute for downloading a resource](#kaynak-indirmek-i%C3%A7in-indirme-%C3%B6zelli%C4%9Fini-kullan%C4%B1n)
-    - [Use `rel`, `hreflang`, and `type` attribute if needed](#rel-hreflang-kullan%C4%B1n-ve-gerekirse-yaz%C4%B1n)
-    - [Clear link text](#ba%C4%9Flant%C4%B1-metnini-temizle)
-    - [Don’t use `em` element for warning or caution](#uyar%C4%B1-veya-uyar%C4%B1-i%C3%A7in-em-eleman%C4%B1-kullanmay%C4%B1n)
-    - [Avoid `s`, `i`, `b`, and `u` element as much as possible](#sib-ve-u-elementlerini-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-%C3%B6nlemek)
-    - [Don’t put quotes to `q` element](#q-%C3%B6%C4%9Fesine-t%C4%B1rnak-koymay%C4%B1n)
-    - [Add `title` attribute to `abbr` element](#abbr-eleman%C4%B1na-title-niteli%C4%9Fi-ekle)
-    - [Markup `ruby` element verbosely](#i%C5%9Faretleme-yakut-eleman%C4%B1n%C4%B1-ayr%C4%B1nt%C4%B1l%C4%B1-olarak)
-    - [Add `datetime` attribute to non-machine-readable `time` element](#makine-taraf%C4%B1ndan-okunamayan-zaman-%C3%B6%C4%9Fesine-datetime-%C3%B6zelli%C4%9Fi-ekleyin)
-    - [Specify code language with `class` attribute prefixed with `language-`](#dil-ile-%C3%B6n-eklenmi%C5%9F-s%C4%B1n%C4%B1f-%C3%B6zniteli%C4%9Fi-ile-kod-dili-belirtin)
-    - [Keep `kbd` element as simple as possible](#kbd-%C3%B6%C4%9Fesini-m%C3%BCmk%C3%BCn-oldu%C4%9Fu-kadar-basit-tutun)
-    - [Avoid `span` element as much as possible](#yay%C4%B1lma-eleman%C4%B1n%C4%B1-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-%C3%B6nlemek)
-    - [Break after `br` element](#br-%C3%B6%C4%9Fesinden-sonra-ara)
-    - [Don’t use `br` element only for presentational purpose](#br-%C3%B6%C4%9Fesini-yaln%C4%B1zca-sunum-amac%C4%B1yla-kullanmay%C4%B1n)
-- [Edits](#d%C3%BCzenlemeler)
-    - [Don’t stride `ins` and `del` element over other elements](#ins-ve-del-eleman%C4%B1n%C4%B1-di%C4%9Fer-elemanlar%C4%B1n-%C3%BCzerine-atmay%C4%B1n)
-- [Embedded content](#g%C3%B6m%C3%BCl%C3%BC-i%C3%A7erik)
-    - [Provide fallback `img` element for `picture` element](#resim-eleman%C4%B1-i%C3%A7in-geri-d%C3%B6n%C3%BC%C5%9F-img-eleman%C4%B1-sa%C4%9Flamak)
-    - [Add `alt` attrbute to `img` element if needed](#gerekirse-img-eleman%C4%B1na-alt-attrbute-ekleyin)
-    - [Empty `alt` attribute if possible](#m%C3%BCmk%C3%BCnse-bo%C5%9F-alt-%C3%B6zelli%C4%9Fi)
-    - [Omit `alt` attribute if possible](#m%C3%BCmk%C3%BCnse-alt-niteli%C4%9Fini-atlamak)
-    - [Empty `iframe` element](#bo%C5%9F-iframe-%C3%B6%C4%9Fesi)
-    - [Markup `map` element content](#bi%C3%A7imlendirme-harita-%C3%B6%C4%9Fesi-i%C3%A7eri%C4%9Fi)
-    - [Provide fallback content for `audio` or `video` element](#ses-veya-video-%C3%B6%C4%9Fesi-i%C3%A7in-geri-d%C3%B6n%C3%BC%C5%9F-i%C3%A7eri%C4%9Fi-sa%C4%9Flama)
-- [Tabular data](#tablo-verileri)
-    - [Write one cell per line](#her-sat%C4%B1ra-bir-h%C3%BCcre-yaz)
-    - [Use `th` element for header cell](#ba%C5%9Fl%C4%B1k-h%C3%BCcresi-i%C3%A7in-th-%C3%B6%C4%9Fesini-kullan)
-- [Forms](#formlar)
-    - [Wrap form control with `label` element](#etiket-%C3%B6%C4%9Feli-form-kontrol%C3%BCn%C3%BC-kayd%C4%B1r)
-    - [Omit `for` attribute if possible](#m%C3%BCmk%C3%BCnse-niteli%C4%9Fi-atlamak)
-    - [Use appropriate `type` attribute for `input` element](#giri%C5%9F-eleman%C4%B1-i%C3%A7in-uygun-tip-%C3%B6zelli%C4%9Fini-kullan%C4%B1n)
-    - [Add `value` attribute to `input type="submit"`](#input-typesubmit'e-de%C4%9Fer-%C3%B6zelli%C4%9Fi-ekleyin)
-    - [Add `title` attribute to `input` element when there is `pattern` attribute](#desen-%C3%B6zelli%C4%9Fi-varken-giri%C5%9F-%C3%B6%C4%9Fesine-ba%C5%9Fl%C4%B1k-%C3%B6zelli%C4%9Fi-ekleyin)
-    - [Don’t use `placeholder` attribute for labeling](#etiketleme-i%C3%A7in-yer-tutucu-%C3%B6zelli%C4%9Fini-kullanma)
-    - [Write one `option` element per line](#her-sat%C4%B1ra-bir-se%C3%A7enek-eleman%C4%B1-yaz)
-    - [Add `max` attribute to `progress` element](#progress-%C3%B6%C4%9Fesine-max-niteli%C4%9Fi-ekleyin)
-    - [Add `min` and `max` attribute to `meter` element](#meter-elementine-min-ve-max-%C3%B6zelli%C4%9Fi-ekleyin)
-    - [Place `legend` element as the first child of `fieldset` element](#legend-%C3%B6%C4%9Fesini,-fieldset-%C3%B6%C4%9Fesinin-ilk-%C3%A7ocu%C4%9Fu-olarak-yerle%C5%9Ftir)
-- [Scripting](#betik)
-    - [Omit `type` attribute for JavaScript](#javascript-i%C3%A7in-t%C3%BCr-%C3%B6zniteli%C4%9Fi-atlamak)
-    - [Don’t comment out contents of `script` element](#script-%C3%B6%C4%9Fesinin-i%C3%A7eri%C4%9Fini-yorumlamay%C4%B1n)
-    - [Don’t use script-injected `script` element](#komut-dosyas%C4%B1-enjekte-komut-dosyas%C4%B1-%C3%B6%C4%9Fesini-kullanmay%C4%B1n)
-- [Other](#di%C4%9Fer)
-    - [Indent consistently](#tutarl%C4%B1-olmamak)
-    - [Use absolute path for internal links](#i%C3%A7-ba%C4%9Flant%C4%B1lar-i%C3%A7in-mutlak-yol-kullan)
-    - [Don’t use protocol-relative URL for external resources](#d%C4%B1%C5%9F-kaynaklar-i%C3%A7in-protokol-g%C3%B6reli-url-kullanmay%C4%B1n)
-- [Contributors](#katk%C4%B1da)
-- [Translators](#terc%C3%BCmanlar)
-- [License](#lisans)
+- [Genel]
+    - [DOCTYPE ile başlayın]
+    - [Eskimiş yada geçersiz DOCTYPE kullanmayın]
+    - [XML etiketi kullanmayın]
+    - [Karakter referanslarını mümkün olduğunca kullanmayın]
+    - [`&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmayın]
+    - [Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.]
+    - [Yorum içeriğinin etrafına beyaz boşluklar yerleştirin]
+    - [Don’t omit closing tag]
+    - [Don’t mix empty element format]
+    - [Don’t put white spaces around tags and attribute values]
+    - [Don’t mix character cases]
+    - [Don’t mix quotation marks]
+    - [Don’t separate attributes with two or more white spaces]
+    - [Omit boolean attribute value]
+    - [Omit namespaces]
+    - [Don’t use XML attributes]
+    - [Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes]
+    - [Prefer default implicit ARIA semantics]
+- [The root element]
+    - [Add `lang` attribute]
+    - [Keep `lang` attribute value as short as possible]
+    - [Avoid `data-*` as much as possible]
+- [Document metadata]
+    - [Add `title` element]
+    - [Don’t use `base` element]
+    - [Specify MIME type of minor linked resources]
+    - [Don’t link to `favicon.ico`]
+    - [Add `apple-touch-icon` link]
+    - [Add `title` attribute to alternate stylesheets]
+    - [For URL, use `link` element]
+    - [Specify document character encoding]
+    - [Don’t use legacy character encoding format]
+    - [Specify character encoding at first]
+    - [Use UTF-8]
+    - [Omit `type` attribute for CSS]
+    - [Don’t comment out contents of `style` element]
+    - [Don’t mix tag for CSS and JavaScript]
+- [Sections]
+    - [Add `body` element]
+    - [Forget about `hgroup` element]
+    - [Use `address` element only for contact information]
+- [Grouping content]
+    - [Don’t start with newline in `pre` element]
+    - [Use appropriate element in `blockquote` element]
+    - [Don’t include attribution directly in `blockquote` element]
+    - [Write one list item per line]
+    - [Use `type` attribute for `ol` element]
+    - [Don’t use `dl` for dialogue]
+    - [Place `figcaption` element as first or last child of `figure` element]
+    - [Use `main` element]
+    - [Avoid `div` element as much as possible]
+- [Text-level semantics]
+    - [Don’t split same link that can be grouped]
+    - [Use `download` attribute for downloading a resource]
+    - [Use `rel`, `hreflang`, and `type` attribute if needed]
+    - [Clear link text]
+    - [Don’t use `em` element for warning or caution]
+    - [Avoid `s`, `i`, `b`, and `u` element as much as possible]
+    - [Don’t put quotes to `q` element]
+    - [Add `title` attribute to `abbr` element]
+    - [Markup `ruby` element verbosely]
+    - [Add `datetime` attribute to non-machine-readable `time` element]
+    - [Specify code language with `class` attribute prefixed with `language-`]
+    - [Keep `kbd` element as simple as possible]
+    - [Avoid `span` element as much as possible]
+    - [Break after `br` element]
+    - [Don’t use `br` element only for presentational purpose]
+- [Edits]
+    - [Don’t stride `ins` and `del` element over other elements]
+- [Embedded content]
+    - [Provide fallback `img` element for `picture` element]
+    - [Add `alt` attrbute to `img` element if needed]
+    - [Empty `alt` attribute if possible]
+    - [Omit `alt` attribute if possible]
+    - [Empty `iframe` element]
+    - [Markup `map` element content]
+    - [Provide fallback content for `audio` or `video` element]
+- [Tabular data]
+    - [Write one cell per line]
+    - [Use `th` element for header cell]
+- [Forms]
+    - [Wrap form control with `label` element]
+    - [Omit `for` attribute if possible]
+    - [Use appropriate `type` attribute for `input` element]
+    - [Add `value` attribute to `input type="submit"`]
+    - [Add `title` attribute to `input` element when there is `pattern` attribute]
+    - [Don’t use `placeholder` attribute for labeling]
+    - [Write one `option` element per line]
+    - [Add `max` attribute to `progress` element]
+    - [Add `min` and `max` attribute to `meter` element]
+    - [Place `legend` element as the first child of `fieldset` element]
+- [Scripting]
+    - [Omit `type` attribute for JavaScript]
+    - [Don’t comment out contents of `script` element]
+    - [Don’t use script-injected `script` element]
+- [Other]
+    - [Indent consistently]
+    - [Use absolute path for internal links]
+    - [Don’t use protocol-relative URL for external resources]
+- [Contributors]
+- [Translators]
+- [License]
 
 <!-- /toc -->
 
@@ -137,7 +137,7 @@ Doğru:
 
 ### Eskimiş yada geçersiz DOCTYPE kullanmayın
 
-DOCTYPE is not for DTD anymore, be simple.
+DOCTYPE artık DTD için değil, basit olsun.
 
 Yanlış:
 
@@ -154,7 +154,7 @@ Doğru:
 
 ### XML etiketi kullanmayın
 
-Are you sure you want to write XHTML?
+XHTML yazmak istediğinize emin misiniz?
 
 Yanlış:
 
@@ -171,8 +171,7 @@ Doğru:
 
 ### Karakter referanslarını mümkün olduğunca kullanmayın
 
-If you write an HTML document with UTF-8, almost all characters (including
-Emoji) can be write directly.
+UTF-8 ile bir HTML belgesi yazarsanız, hemen hemen tüm karakterler (Emoji dahil) doğrudan yazılabilir.
 
 Yanlış:
 
@@ -220,8 +219,7 @@ Yanlış:
 
 ### Yorum içeriğinin etrafına boşluk karakteri yerleştirin
 
-Some character cannot be used immediately after comment open or before comment
-close.
+Bazı karakterler yorum açıldıktan hemen sonra veya yorum kapatmadan önce kullanılamaz.
 
 Yanlış:
 
@@ -257,9 +255,9 @@ Doğru:
 </html>
 ```
 
-### Don’t mix empty element format
+### Boş eleman formatını karıştırmayın
 
-Consistency is a key for readability.
+Tutarlılık, okunabilirliğin anahtarıdır.
 
 Yanlış:
 
@@ -313,7 +311,7 @@ Bu da doğru:
 <A HREF="#general">General</A>
 ```
 
-### Don’t mix quotation marks
+### Tırnak işaretlerini karıştırmayın
 
 Yukarıdaki ile aynı sebepten ötürü.
 
@@ -347,7 +345,7 @@ Doğru:
 
 ### Boolean özellik değerini yazmayın
 
-It’s easy to write, isn’t it?
+Yazması kolay, değil mi?
 
 Yanlış:
 
@@ -381,7 +379,7 @@ Doğru:
 </svg>
 ```
 
-### Don’t use XML attributes
+### XML özelliklerini kullanmayın
 
 Sadece HTML belgesi yazıyoruz.
 
@@ -437,7 +435,7 @@ Doğru:
 <hr>
 ```
 
-## The root element
+## Kök elemanı
 
 ### `lang` özelliği ekleyin
 
@@ -457,7 +455,7 @@ Doğru:
 
 ### `lang` değerini mümkün olduğunca kısa tutun
 
-Japanese is only used in Japan. So country code is not necessary.
+Japonca yalnızca Japonya'da kullanılır. Yani ülke kodu gerekli değildir.
 
 Yanlış:
 
@@ -514,9 +512,9 @@ Doğru:
 </head>
 ```
 
-### Don’t use `base` element
+### `base` elemanı kullanmayın
 
-An absolute path or URL is safer for both developers and users.
+Mutlak bir yol veya URL, hem geliştiriciler hem de kullanıcılar için daha güvenlidir.
 
 Yanlış:
 
@@ -633,7 +631,7 @@ Doğru:
 
 ### Belge karakter kodunu belirtin
 
-UTF-8 is not default in all browsers yet.
+UTF-8 henüz tüm tarayıcılarda varsayılan değil.
 
 Yanlış:
 
@@ -652,9 +650,9 @@ Doğru:
 </head>
 ```
 
-### Don’t use legacy character encoding format
+### Eski karakter kodlama formatını kullanmayın
 
-HTTP headers should be specified by a server, be simple.
+HTTP başlıkları bir sunucu tarafından belirtilmelidir, basit olmalıdır.
 
 Yanlış:
 
@@ -668,7 +666,7 @@ Doğru:
 <meta charset="UTF-8">
 ```
 
-### Specify character encoding at first
+### İlk önce karakter kodlamasını belirtin
 
 Spec, karakter kodlamasının dökümanın ilk 1024 bayt içinde belirtilmesini gerektirir.
 
@@ -692,9 +690,9 @@ Doğru:
 </head>
 ```
 
-### Use UTF-8
+### UTF-8'i kullanın
 
-With UTF-8, you are free to use Emoji.
+UTF-8 ile Emoji'yi kullanmakta özgürsünüz.
 
 Yanlış:
 
@@ -730,7 +728,7 @@ Doğru:
 
 ### `style` etiketinin içeriğini yorum içine almayın
 
-This ritual is for the old browser.
+Bu ritüel eski tarayıcı içindir.
 
 Yanlış:
 
@@ -752,7 +750,7 @@ Doğru:
 
 ### CSS ve JavaScript etiketlerini karıştırmayın
 
-Sometimes `script` element blocks DOM construction.
+Bazen `script` elemanı DOM inşasını engeller.
 
 Yanlış:
 
@@ -778,7 +776,7 @@ Bu da doğru:
 <link href="/css/screen.css" rel="stylesheet">
 ```
 
-## Sections
+## Bölümler
 
 ### `body` etiketi ekleyin
 
@@ -844,7 +842,7 @@ Doğru:
 <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 ```
 
-## Grouping content
+## İçeriği gruplama
 
 ### `pre` elemandaki satır başı ile başlamayın
 
@@ -883,7 +881,7 @@ Doğru:
 </blockquote>
 ```
 
-### Don’t include attribution directly in `blockquote` element
+### Özniteliği doğrudan `blockquote` öğesinin içine dahil etme
 
 `blockquote` içeriği bir alıntıdır.
 
@@ -919,7 +917,7 @@ Bu da doğru:
 </figure>
 ```
 
-### Write one list item per line
+### Satır başına bir liste öğesi yaz
 
 Uzuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuun bir satırı okuması çooooooooooooooooooooooooooooooooooooooooooooooooook
 zordur
@@ -981,7 +979,7 @@ Doğru:
 </body>
 ```
 
-### Don’t use `dl` for dialogue
+### Diyalog için `dl` kullanmayın
 
 `dl` etiketi, HTML'deki bir ilişkilendirme listesi ile sınırlandırılmıştır.
 
@@ -1081,7 +1079,7 @@ Doğru:
 </section>
 ```
 
-## Text-level semantics
+## Metin düzeyinde anlambilim
 
 ### Gruplandırılabilen aynı bağlantıyı bölmeyin
 
@@ -1140,7 +1138,7 @@ Doğru:
 
 ### Bağlantı metinlerini amacına uygun yapın
 
-Link text should be the label of its linked resource.
+Link metni, linklenen kaynağın etiketi olmalıdır.
 
 Yanlış:
 
@@ -1186,9 +1184,9 @@ Doğru:
 <span class="icon-search" aria-hidden="true"></span>
 ```
 
-### Don’t put quotes to `q` element
+### `q` öğesine tırnak koymayın
 
-Quotes are provided by the browser.
+Tırnaklar tarayıcı tarafından sağlanır.
 
 Yanlış:
 
@@ -1290,7 +1288,7 @@ Doğru:
 
 ### `span` etiketinden mümkün olduğunca kaçının
 
-`span` element is an element of last resort.
+`span` element son çaredir.
 
 Yanlış:
 
@@ -1322,9 +1320,9 @@ Best<br>
 Practices</p>
 ```
 
-### Don’t use `br` element only for presentational purpose
+### `br` öğesini yalnızca sunum amacıyla kullanmayın
 
-`br` element is not for line breaking, it is for line breaks in the contents.
+`br` elemanı satır kesmek için değil, içerikteki satır kesmeler içindir.
 
 Yanlış:
 
@@ -1342,7 +1340,7 @@ Doğru:
 <textarea name="rule-description"></textarea></label></p>
 ```
 
-## Edits
+## Düzenlemeler
 
 ### `ins` ve `del` etiketlerini diğer öğelerin arasında kullanmayın
 
@@ -1364,7 +1362,7 @@ Doğru:
 <del><p>Don’t trust!</p></del>
 ```
 
-## Embedded content
+## Gömülü içerik
 
 ### `picture` elemanı için yedek `img` elemanı kullanın
 
@@ -1424,7 +1422,7 @@ Doğru:
 <img alt="" src="/img/icon/help.png"> Help
 ```
 
-### Omit `alt` attribute if possible
+### Mümkünse `alt` özelliğini atlayın
 
 Bazen hangi metnin `alt` özellik için uygun olduğunu bilemezsiniz.
 
@@ -1516,9 +1514,9 @@ Doğru:
 </video>
 ```
 
-## Tabular data
+## Tablo verileri
 
-### Write one cell per line
+### Her satıra bir hücre yazın
 
 Uzun satırların taranması zordur.
 
@@ -1596,7 +1594,7 @@ Doğru:
 </table>
 ```
 
-## Forms
+## Formlar
 
 ### `label` etiketini ile form kontrolünü sağlayın
 
@@ -1669,261 +1667,125 @@ Girilen metni `pattern` niteliğiyle eşleşmiyorsa, `title` özelliğinin değe
 Yanlış:
 
 ```
-<input name="security-code" pattern="[0-9]{3}" type="text">
-```
-
-Doğru:
-
-```
-<input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
-```
-
-### Don’t use `placeholder` attribute for labeling
-
-`label` element is for a label, `placeholder` attribute is for a short hint.
-
-Yanlış:
-
-```
-<input name="email" placeholder="Email" type="text">
-```
-
-Doğru:
-
-```
-<label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-```
-
-### Her satıra bir `option` etiketi yazın
-
-Uzun satırların taranması zordur.
-
-Yanlış:
-
-```
-<datalist id="toc">
-  <option label="General"><option label="The root element"><option label="Sections">
-</datalist>
-```
-
-Doğru:
-
-```
-<datalist id="toc">
-  <option label="General">
-  <option label="The root element">
-  <option label="Sections">
-</datalist>
-```
-
-### `progress` etiketine `max` özelliği ekleyin
-
-`max` özelliği ile, `value` özelliği kolay bir biçimde yazılabilir.
-
-Yanlış:
-
-```
-<progress value="0.5"> 50%</progress>
-```
-
-Doğru:
-
-```
-<progress max="100" value="50"> 50%</progress>
-```
-
-### `meter` etiketine `min` ve `max` özelliği ekleyin
-
-`min` ve `max` özelliği ile `value` özelliği kolay bir şekilde yazılabilir.
-
-Yanlış:
-
-```
-<meter value="0.5"> 512GB used (1024GB total)</meter>
-```
-
-Doğru:
-
-```
-<meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
-```
-
-### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun
-
-Spec requires this.
-
-Yanlış:
-
-```
-<fieldset>
-  <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
-  ...
-  <legend>About "General"</legend>
-</fieldset>
-```
-
-Doğru:
-
-```
-<fieldset>
-  <legend>About "General"</legend>
-  <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
-  ...
-</fieldset>
-```
-
-## Script ekleme
-
-### JavaScript için `type` özelliğini kullanmayın
-
-HTML’de,`type` özelliğinin `script` etiketi için varsayılan değeri `text/javascript`tir.
-
-Yanlış:
-
-```
-<script type="text/javascript">
-  ...
-</script>
-```
-
-Doğru:
-
-```
-<script>
-  ...
-</script>
-```
-
-### `script` etiketinin içeriğini yorumla kapatmayın
-
-Bu ritüel eski tarayıcılar içindir.
-
-Yanlış:
-
-```
-<script>
-/*<![CDATA[*/
-  ...
-/*]]>*/
-</script>
-```
-
-Bu da kötü:
-
-```
-<script>
-<!--
-  ...
-// -->
-</script>
-```
-
-Doğru:
-
-```
-<script>
-  ...
-</script>
-```
-
-### Don’t use script-injected `script` element
-
-`async` özelliği hem sadelik hem de performans için en iyisidir.
-
-Yanlış:
-
-```
-<script>
-  var script = document.createElement("script");
-  script.async = true;
-  script.src = "//example.com/widget.js";
-  document.getElementsByTagName("head")[0].appendChild(script);
-</script>
-```
-
-Doğru:
-
-```
-<script async defer src="https://example.com/widget.js"></script>
-```
-
-## Other
-
-### Tutarlı girintiler kullanın
-
-Indentation is important for readability.
-
-Yanlış:
-
-```
-<html>
-	<head>
-	  ...
-	</head>
-  <body>
-    ...
-  </body>
-</html>
-```
-
-Doğru:
-
-```
-<html>
-  <head>
-    ...
-  </head>
-  <body>
-    ...
-  </body>
-</html>
-```
-
-### Dahili bağlantılar için mutlak yol kullanın
-
-An absolute path works better on your localhost without internet connection.
-
-Yanlış:
-
-```
-<link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
-...
-<p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
-```
-
-Doğru:
-
-```
-<link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
-...
-<p>You can find more at <a href="/contact.html">contact page</a>.</p>
-```
-
-### Don’t use protocol-relative URL for external resources
-
-With protocol, you can load external resources reliably and safely.
-
-Yanlış:
-
-```
-<script src="//example.com/js/library.js">
-```
-
-Doğru:
-
-```
-<script src="https://example.com/js/library.js">
-```
-
-## Katkıda bulunanlar
-
-- [@hail2u](https://github.com/hail2u)
-- [@momdo](https://github.com/momdo)
+<input name="security-code" pattern="[0-9]
+- [@momdo]
 
 ## Çevirmenler
 
-- [@techhtml](https://github.com/techhtml)
+- [@techhtml]
 
-## License
+## Lisans
 
-[CC0](http://creativecommons.org/publicdomain/zero/1.0/)
+[CC0]
+
+
+[English (en]: README.md
+[日本語 (ja]: README.ja.md
+[한국어 (ko]: README.ko.md
+[Genel]: #genel
+[DOCTYPE ile başlayın]: #doctype-ile-ba%C5%9Fla
+[Eskimiş yada geçersiz DOCTYPE kullanmayın]: #miras-veya-eski-doktip-kullanmay%C4%B1n
+[XML etiketi kullanmayın]: #xml-bildirimini-kullanma
+[Karakter referanslarını mümkün olduğunca kullanmayın]: #karakter-referanslar%C4%B1n%C4%B1-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-kullanmay%C4%B1n
+[`&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmayın]: #ka%C3%A7%C4%B1%C5%9F-ve-adland%C4%B1r%C4%B1lm%C4%B1%C5%9F-karakter-referanslar%C4%B1-ile
+[Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.]: #kontrol-veya-g%C3%B6r%C3%BCnmeyen-karakterler-i%C3%A7in-say%C4%B1sal-karakter-referanslar%C4%B1n%C4%B1-kullan
+[Yorum içeriğinin etrafına beyaz boşluklar yerleştirin]: #yorum-i%C3%A7eri%C4%9Finin-etraf%C4%B1na-beyaz-bo%C5%9Fluklar-yerle%C5%9Ftirin
+[Don’t omit closing tag]: #kapan%C4%B1%C5%9F-etiketini-atlamay%C4%B1n
+[Don’t mix empty element format]: #bo%C5%9F-eleman-format%C4%B1n%C4%B1-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n
+[Don’t put white spaces around tags and attribute values]: #etiketlerin-etraf%C4%B1na-beyaz-bo%C5%9Fluk-koymay%C4%B1n-ve-de%C4%9Ferlerin-niteli%C4%9Fi
+[Don’t mix character cases]: #karakter-durumlar%C4%B1n%C4%B1-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n
+[Don’t mix quotation marks]: #t%C4%B1rnak-i%C5%9Faretleri-kar%C4%B1%C5%9F%C4%B1k-de%C4%9Fil
+[Don’t separate attributes with two or more white spaces]: #iki-veya-daha-fazla-beyaz-bo%C5%9Fluk-i%C3%A7eren-%C3%B6znitelikleri-ay%C4%B1rmay%C4%B1n
+[Omit boolean attribute value]: #boolean-%C3%B6zellik-de%C4%9Ferini-atlamak
+[Omit namespaces]: #ad-alanlar%C4%B1n%C4%B1-atlamak
+[Don’t use XML attributes]: #xml-%C3%B6zniteliklerini-kullanmay%C4%B1n
+[Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes]: #veri-mikro-verilerini-ve-rdfa-lite-%C3%B6zniteliklerini-ortak-%C3%B6zniteliklerle-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n
+[Prefer default implicit ARIA semantics]: #varsay%C4%B1lan-%C3%B6rt%C3%BCl%C3%BC-aria-semanti%C4%9Fini-tercih-et
+[The root element]: #k%C3%B6k-eleman
+[Add `lang` attribute]: #lang-niteli%C4%9Fi-ekle
+[Keep `lang` attribute value as short as possible]: #lang-nitelik-de%C4%9Ferini-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-k%C4%B1sa-tutun
+[Avoid `data-*` as much as possible]: #m%C3%BCmk%C3%BCn-oldu%C4%9Funca-veri-kullanmaktan-ka%C3%A7%C4%B1n%C4%B1n
+[Document metadata]: #belge-meta-verileri
+[Add `title` element]: #ba%C5%9Fl%C4%B1k-eleman%C4%B1-ekle
+[Don’t use `base` element]: #temel-eleman-kullanmay%C4%B1n
+[Specify MIME type of minor linked resources]: #k%C3%BC%C3%A7%C3%BCk-ba%C4%9Flant%C4%B1l%C4%B1-kaynaklar%C4%B1n-mime-t%C3%BCr%C3%BCn%C3%BC-belirtmek
+[Don’t link to `favicon.ico`]: #faviconico-ile-ba%C4%9Flant%C4%B1-kurma
+[Add `apple-touch-icon` link]: #elma-dokunma-simgesi-ba%C4%9Flant%C4%B1-ekle
+[Add `title` attribute to alternate stylesheets]: #alternatif-stil-sayfalar%C4%B1na-ba%C5%9Fl%C4%B1k-niteli%C4%9Fi-ekleyin
+[For URL, use `link` element]: #url-i%C3%A7in-link-element-kullan%C4%B1n
+[Specify document character encoding]: #belge-karakter-kodlamas%C4%B1n%C4%B1-belirtin
+[Don’t use legacy character encoding format]: #eski-karakter-kodlama-bi%C3%A7imini-kullanmay%C4%B1n
+[Specify character encoding at first]: #ilk-%C3%B6nce-karakter-kodlamas%C4%B1n%C4%B1-belirtin
+[Use UTF-8]: #utf-8-kullan
+[Omit `type` attribute for CSS]: #css-i%C3%A7in-tip-%C3%B6zniteli%C4%9Fini-atlamak
+[Don’t comment out contents of `style` element]: #stil-%C3%B6%C4%9Fesinin-i%C3%A7eri%C4%9Fini-yorumlamay%C4%B1n
+[Don’t mix tag for CSS and JavaScript]: #css-ve-javascript-i%C3%A7in-etiketi-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n
+[Sections]: #b%C3%B6l%C3%BCmler
+[Add `body` element]: #g%C3%B6vde-eleman%C4%B1-ekle
+[Forget about `hgroup` element]: #hgroup-elementini-unut
+[Use `address` element only for contact information]: #adres-%C3%B6%C4%9Fesini-yaln%C4%B1zca-ileti%C5%9Fim-bilgileri-i%C3%A7in-kullan%C4%B1n
+[Grouping content]: #i%C3%A7eri%C4%9Fi-grupland%C4%B1rma
+[Don’t start with newline in `pre` element]: #%C3%B6n-elemandaki-newline-ile-ba%C5%9Flama
+[Use appropriate element in `blockquote` element]: #blockquote-%C3%B6%C4%9Fesinde-uygun-%C3%B6%C4%9Feyi-kullan
+[Don’t include attribution directly in `blockquote` element]: #do%C4%9Frudan-blockquote-%C3%B6%C4%9Fesinin-i%C3%A7ine-nitelik-eklemeyin
+[Write one list item per line]: #her-sat%C4%B1ra-bir-liste-%C3%B6%C4%9Fesi-yaz
+[Use `type` attribute for `ol` element]: #ol-element-i%C3%A7in-type-niteli%C4%9Fini-kullan%C4%B1n
+[Don’t use `dl` for dialogue]: #diyalog-i%C3%A7in-dl-kullanmay%C4%B1n
+[Place `figcaption` element as first or last child of `figure` element]: #figcaption-%C3%B6%C4%9Fesini-%C5%9Fekil-%C3%B6%C4%9Fesinin-ilk-veya-son-%C3%A7ocu%C4%9Fu-olarak-yerle%C5%9Ftir
+[Use `main` element]: #ana-%C3%B6%C4%9Feyi-kullan
+[Avoid `div` element as much as possible]: #div-elementini-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-%C3%B6nlemek
+[Text-level semantics]: #metin-seviyesi-anlambilimi
+[Don’t split same link that can be grouped]: #gruplanabilecek-ayn%C4%B1-ba%C4%9Flant%C4%B1y%C4%B1-b%C3%B6lme
+[Use `download` attribute for downloading a resource]: #kaynak-indirmek-i%C3%A7in-indirme-%C3%B6zelli%C4%9Fini-kullan%C4%B1n
+[Use `rel`, `hreflang`, and `type` attribute if needed]: #rel-hreflang-kullan%C4%B1n-ve-gerekirse-yaz%C4%B1n
+[Clear link text]: #ba%C4%9Flant%C4%B1-metnini-temizle
+[Don’t use `em` element for warning or caution]: #uyar%C4%B1-veya-uyar%C4%B1-i%C3%A7in-em-eleman%C4%B1-kullanmay%C4%B1n
+[Avoid `s`, `i`, `b`, and `u` element as much as possible]: #sib-ve-u-elementlerini-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-%C3%B6nlemek
+[Don’t put quotes to `q` element]: #q-%C3%B6%C4%9Fesine-t%C4%B1rnak-koymay%C4%B1n
+[Add `title` attribute to `abbr` element]: #abbr-eleman%C4%B1na-title-niteli%C4%9Fi-ekle
+[Markup `ruby` element verbosely]: #i%C5%9Faretleme-yakut-eleman%C4%B1n%C4%B1-ayr%C4%B1nt%C4%B1l%C4%B1-olarak
+[Add `datetime` attribute to non-machine-readable `time` element]: #makine-taraf%C4%B1ndan-okunamayan-zaman-%C3%B6%C4%9Fesine-datetime-%C3%B6zelli%C4%9Fi-ekleyin
+[Specify code language with `class` attribute prefixed with `language-`]: #dil-ile-%C3%B6n-eklenmi%C5%9F-s%C4%B1n%C4%B1f-%C3%B6zniteli%C4%9Fi-ile-kod-dili-belirtin
+[Keep `kbd` element as simple as possible]: #kbd-%C3%B6%C4%9Fesini-m%C3%BCmk%C3%BCn-oldu%C4%9Fu-kadar-basit-tutun
+[Avoid `span` element as much as possible]: #yay%C4%B1lma-eleman%C4%B1n%C4%B1-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-%C3%B6nlemek
+[Break after `br` element]: #br-%C3%B6%C4%9Fesinden-sonra-ara
+[Don’t use `br` element only for presentational purpose]: #br-%C3%B6%C4%9Fesini-yaln%C4%B1zca-sunum-amac%C4%B1yla-kullanmay%C4%B1n
+[Edits]: #d%C3%BCzenlemeler
+[Don’t stride `ins` and `del` element over other elements]: #ins-ve-del-eleman%C4%B1n%C4%B1-di%C4%9Fer-elemanlar%C4%B1n-%C3%BCzerine-atmay%C4%B1n
+[Embedded content]: #g%C3%B6m%C3%BCl%C3%BC-i%C3%A7erik
+[Provide fallback `img` element for `picture` element]: #resim-eleman%C4%B1-i%C3%A7in-geri-d%C3%B6n%C3%BC%C5%9F-img-eleman%C4%B1-sa%C4%9Flamak
+[Add `alt` attrbute to `img` element if needed]: #gerekirse-img-eleman%C4%B1na-alt-attrbute-ekleyin
+[Empty `alt` attribute if possible]: #m%C3%BCmk%C3%BCnse-bo%C5%9F-alt-%C3%B6zelli%C4%9Fi
+[Omit `alt` attribute if possible]: #m%C3%BCmk%C3%BCnse-alt-niteli%C4%9Fini-atlamak
+[Empty `iframe` element]: #bo%C5%9F-iframe-%C3%B6%C4%9Fesi
+[Markup `map` element content]: #bi%C3%A7imlendirme-harita-%C3%B6%C4%9Fesi-i%C3%A7eri%C4%9Fi
+[Provide fallback content for `audio` or `video` element]: #ses-veya-video-%C3%B6%C4%9Fesi-i%C3%A7in-geri-d%C3%B6n%C3%BC%C5%9F-i%C3%A7eri%C4%9Fi-sa%C4%9Flama
+[Tabular data]: #tablo-verileri
+[Write one cell per line]: #her-sat%C4%B1ra-bir-h%C3%BCcre-yaz
+[Use `th` element for header cell]: #ba%C5%9Fl%C4%B1k-h%C3%BCcresi-i%C3%A7in-th-%C3%B6%C4%9Fesini-kullan
+[Forms]: #formlar
+[Wrap form control with `label` element]: #etiket-%C3%B6%C4%9Feli-form-kontrol%C3%BCn%C3%BC-kayd%C4%B1r
+[Omit `for` attribute if possible]: #m%C3%BCmk%C3%BCnse-niteli%C4%9Fi-atlamak
+[Use appropriate `type` attribute for `input` element]: #giri%C5%9F-eleman%C4%B1-i%C3%A7in-uygun-tip-%C3%B6zelli%C4%9Fini-kullan%C4%B1n
+[Add `value` attribute to `input type="submit"`]: #input-typesubmit'e-de%C4%9Fer-%C3%B6zelli%C4%9Fi-ekleyin
+[Add `title` attribute to `input` element when there is `pattern` attribute]: #desen-%C3%B6zelli%C4%9Fi-varken-giri%C5%9F-%C3%B6%C4%9Fesine-ba%C5%9Fl%C4%B1k-%C3%B6zelli%C4%9Fi-ekleyin
+[Don’t use `placeholder` attribute for labeling]: #etiketleme-i%C3%A7in-yer-tutucu-%C3%B6zelli%C4%9Fini-kullanma
+[Write one `option` element per line]: #her-sat%C4%B1ra-bir-se%C3%A7enek-eleman%C4%B1-yaz
+[Add `max` attribute to `progress` element]: #progress-%C3%B6%C4%9Fesine-max-niteli%C4%9Fi-ekleyin
+[Add `min` and `max` attribute to `meter` element]: #meter-elementine-min-ve-max-%C3%B6zelli%C4%9Fi-ekleyin
+[Place `legend` element as the first child of `fieldset` element]: #legend-%C3%B6%C4%9Fesini,-fieldset-%C3%B6%C4%9Fesinin-ilk-%C3%A7ocu%C4%9Fu-olarak-yerle%C5%9Ftir
+[Scripting]: #betik
+[Omit `type` attribute for JavaScript]: #javascript-i%C3%A7in-t%C3%BCr-%C3%B6zniteli%C4%9Fi-atlamak
+[Don’t comment out contents of `script` element]: #script-%C3%B6%C4%9Fesinin-i%C3%A7eri%C4%9Fini-yorumlamay%C4%B1n
+[Don’t use script-injected `script` element]: #komut-dosyas%C4%B1-enjekte-komut-dosyas%C4%B1-%C3%B6%C4%9Fesini-kullanmay%C4%B1n
+[Other]: #di%C4%9Fer
+[Indent consistently]: #tutarl%C4%B1-olmamak
+[Use absolute path for internal links]: #i%C3%A7-ba%C4%9Flant%C4%B1lar-i%C3%A7in-mutlak-yol-kullan
+[Don’t use protocol-relative URL for external resources]: #d%C4%B1%C5%9F-kaynaklar-i%C3%A7in-protokol-g%C3%B6reli-url-kullanmay%C4%B1n
+[Contributors]: #katk%C4%B1da
+[Translators]: #terc%C3%BCmanlar
+[License]: #lisans
+[0-9]{3}" type="text">```Doğru:```<input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">```### Etiketleme için `placeholder` özelliğini kullanmayın`label` öğesi bir etiket içindir, `placeholder` özelliği kısa bir ipucu içindir.Yanlış:```<input name="email" placeholder="Email" type="text">```Doğru:```<label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>```### Her satıra bir `option` etiketi yazınUzun satırların taranması zordur.Yanlış:```<datalist id="toc">  <option label="General"><option label="The root element"><option label="Sections"></datalist>```Doğru:```<datalist id="toc">  <option label="General">  <option label="The root element">  <option label="Sections"></datalist>```### `progress` etiketine `max` özelliği ekleyin`max` özelliği ile, `value` özelliği kolay bir biçimde yazılabilir.Yanlış:```<progress value="0.5"> 50%</progress>```Doğru:```<progress max="100" value="50"> 50%</progress>```### `meter` etiketine `min` ve `max` özelliği ekleyin`min` ve `max` özelliği ile `value` özelliği kolay bir şekilde yazılabilir.Yanlış:```<meter value="0.5"> 512GB used (1024GB total</meter>```Doğru:```<meter min="0" max="1024" value="512"> 512GB used (1024GB total</meter>```### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturunSpec bunu gerektirir.Yanlış:```<fieldset>  <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>  ...  <legend>About "General"</legend></fieldset>```Doğru:```<fieldset>  <legend>About "General"</legend>  <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>  ...</fieldset>```## Script ekleme### JavaScript için `type` özelliğini kullanmayınHTML’de,`type` özelliğinin `script` etiketi için varsayılan değeri `text/javascript`tir.Yanlış:```<script type="text/javascript">  ...</script>```Doğru:```<script>  ...</script>```### `script` etiketinin içeriğini yorumla kapatmayınBu ritüel eski tarayıcılar içindir.Yanlış:```<script>/*<![CDATA[*/  .../*]]>*/</script>```Bu da kötü:```<script><!--  ...// --></script>```Doğru:```<script>  ...</script>```### Komut dosyası eklenmiş `script` öğesini kullanmayın`async` özelliği hem sadelik hem de performans için en iyisidir.Yanlış:```<script>  var script = document.createElement("script";  script.async = true;  script.src = "//example.com/widget.js";  document.getElementsByTagName("head"[0].appendChild(script;</script>```Doğru:```<script async defer src="https://example.com/widget.js"></script>```## Diğer### Tutarlı girintiler kullanınGirinti okunabilirlik için önemlidir.Yanlış:```<html>	<head>	  ...	</head>  <body>    ...  </body></html>```Doğru:```<html>  <head>    ...  </head>  <body>    ...  </body></html>```### Dahili bağlantılar için mutlak yol kullanınMutlak bir yol, internet bağlantınız olmadan localhost'ta daha iyi çalışır.Yanlış:```<link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">...<p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>```Doğru:```<link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">...<p>You can find more at <a href="/contact.html">contact page</a>.</p>```### Harici kaynaklar için protokole bağlı URL kullanmayınProtokol ile dış kaynakları güvenilir ve güvenli bir şekilde yükleyebilirsiniz.Yanlış:```<script src="//example.com/js/library.js">```Doğru:```<script src="https://example.com/js/library.js">```## Katkıda bulunanlar- [@hail2u]: https://github.com/hail2u
+[@momdo]: https://github.com/momdo
+[@techhtml]: https://github.com/techhtml
+[CC0]: http://creativecommons.org/publicdomain/zero/1.0/
