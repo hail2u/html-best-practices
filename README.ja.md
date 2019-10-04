@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md)
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Türkçe (tr)](README.tr.md)
 
 普通のHTMLの書き方
 ==================
@@ -370,7 +370,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 良い例:
@@ -378,7 +378,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
 
@@ -781,7 +781,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 同じく良い例:
@@ -790,7 +790,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
@@ -947,14 +947,14 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
 悪い例:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 良い例:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
@@ -1161,13 +1161,13 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
 悪い例:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 良い例:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
 
@@ -1661,6 +1661,7 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
 ------
 
 - [@techhtml]
+- [@umutphp]
 
 
 ライセンス
@@ -1669,7 +1670,8 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
 [CC0]
 
 
-[@hail2u]: https://github.com/hail2u
-[@momdo]:  https://github.com/momdo
-[@techhtml]:  https://github.com/techhtml
-[CC0]:     http://creativecommons.org/publicdomain/zero/1.0/
+[@hail2u]:   https://github.com/hail2u
+[@momdo]:    https://github.com/momdo
+[@techhtml]: https://github.com/techhtml
+[@umutphp]:  https://github.com/umutphp
+[CC0]:       http://creativecommons.org/publicdomain/zero/1.0/

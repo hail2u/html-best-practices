@@ -374,7 +374,7 @@ Bad:
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 Good:
@@ -382,7 +382,7 @@ Good:
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
 
@@ -787,7 +787,7 @@ Good:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 Also good:
@@ -796,7 +796,7 @@ Also good:
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
@@ -956,14 +956,14 @@ controls and `a` element itself).
 Bad:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 Good:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
@@ -1171,13 +1171,13 @@ Elements cannot be overflow other elements.
 Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
 
@@ -1676,6 +1676,7 @@ Translators
 -----------
 
 - [@techhtml]
+- [@umutphp]
 
 
 License
@@ -1684,7 +1685,8 @@ License
 [CC0]
 
 
-[@hail2u]: https://github.com/hail2u
-[@momdo]:  https://github.com/momdo
-[@techhtml]:  https://github.com/techhtml
-[CC0]:     http://creativecommons.org/publicdomain/zero/1.0/
+[@hail2u]:   https://github.com/hail2u
+[@momdo]:    https://github.com/momdo
+[@techhtml]: https://github.com/techhtml
+[@umutphp]:  https://github.com/umutphp
+[CC0]:       http://creativecommons.org/publicdomain/zero/1.0/

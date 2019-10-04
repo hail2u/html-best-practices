@@ -1,4 +1,4 @@
-Çeviriler: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Türkçe (tr)](README.tr.md)
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Türkçe (tr)](README.tr.md)
 
 # HTML'de Örnek Yöntemler
 
@@ -1749,7 +1749,7 @@ Yanlış:
 ```
 <fieldset>
   <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
-    ...  
+    ...
   <legend>About "General"</legend>
 </fieldset>
 ```
@@ -1852,7 +1852,7 @@ Doğru:
     ...
   </head>
   <body>
-    ...  
+    ...
   </body>
 </html>
 ```
@@ -1889,15 +1889,30 @@ Doğru:
 ```
 <script src="https://example.com/js/library.js">
 ```
-## Katkıda bulunanlar
 
-- [@hail2u](https://github.com/hail2u)
-- [@momdo](https://github.com/momdo)
 
-## Çeviri Yapanlar
+Katkıda bulunanlar
+------------------
 
-[@techhtml](https://github.com/techhtml)
+- [@hail2u]
+- [@momdo]
 
-## Lisans
 
-[CC0](http://creativecommons.org/publicdomain/zero/1.0/)
+Çeviri Yapanlar
+---------------
+
+- [@techhtml]
+- [@umutphp]
+
+
+Lisans
+------
+
+[CC0]
+
+
+[@hail2u]:   https://github.com/hail2u
+[@momdo]:    https://github.com/momdo
+[@techhtml]: https://github.com/techhtml
+[@umutphp]:  https://github.com/umutphp
+[CC0]:       http://creativecommons.org/publicdomain/zero/1.0/

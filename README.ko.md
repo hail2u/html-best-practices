@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md)
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Türkçe (tr)](README.tr.md)
 
 HTML Best Practices
 ===================
@@ -162,7 +162,7 @@ Good:
 
 ### 문자 레퍼런스를 가능한 한 사용하지 말아라
 
-만약 HTML문서를 UTF-8로 작성하고 있다면, 
+만약 HTML문서를 UTF-8로 작성하고 있다면,
 대부분의 문자(이모티콘 포함)를 직접적으로 쓸 수 있다.
 
 Bad:
@@ -370,7 +370,7 @@ Bad:
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 Good:
@@ -378,7 +378,7 @@ Good:
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
 
@@ -768,7 +768,7 @@ Good:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 Also good (recommended by WHATWG):
@@ -777,7 +777,7 @@ Also good (recommended by WHATWG):
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
@@ -785,7 +785,7 @@ Also good too (recommended by W3C):
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
-    
+
       <footer>— HTML Best Practices</footer>
     </blockquote>
 
@@ -944,14 +944,14 @@ Text-level 시맨틱
 Bad:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 Good:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
@@ -1158,13 +1158,13 @@ Good:
 Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
 
@@ -1641,7 +1641,13 @@ Contributors
 
 - [@hail2u]
 - [@momdo]
+
+
+Translators
+-----------
+
 - [@techhtml]
+- [@umutphp]
 
 
 License
@@ -1650,7 +1656,8 @@ License
 [CC0]
 
 
-[@hail2u]: https://github.com/hail2u
-[@momdo]:  https://github.com/momdo
-[@techhtml]:  https://github.com/techhtml
-[CC0]:     http://creativecommons.org/publicdomain/zero/1.0/
+[@hail2u]:   https://github.com/hail2u
+[@momdo]:    https://github.com/momdo
+[@techhtml]: https://github.com/techhtml
+[@umutphp]:  https://github.com/umutphp
+[CC0]:       http://creativecommons.org/publicdomain/zero/1.0/
