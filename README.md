@@ -1420,7 +1420,7 @@ Good:
 
 ### Use appropriate `type` attribute for `input` element
 
-With appropriate `type`, browsers gives a tiny features to the `input` element.
+With appropriate `type`, a browser gives tiny features to the `input` element.
 
 Bad:
 
