@@ -1,6 +1,4 @@
 {
-	"title": "HTML Best Practices",
-	"description": "For writing maintainable and scalable HTML documents",
 	"sections": [
 		{
 			"id": "general",
@@ -23,8 +21,7 @@
 				"dont-use-xml-attributes",
 				"dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes",
 				"prefer-default-implicit-aria-semantics"
-			],
-			"title": "General"
+			]
 		},
 		{
 			"id": "the-root-element",
@@ -32,8 +29,7 @@
 				"add-lang-attribute",
 				"keep-lang-attribute-value-as-short-as-possible",
 				"avoid-data-as-much-as-possible"
-			],
-			"title": "The root element"
+			]
 		},
 		{
 			"id": "document-metadata",
@@ -52,8 +48,7 @@
 				"omit-type-attribute-for-css",
 				"dont-comment-out-contents-of-style-element",
 				"dont-mix-tag-for-css-and-javascript"
-			],
-			"title": "Document metadata"
+			]
 		},
 		{
 			"id": "sections",
@@ -61,8 +56,7 @@
 				"add-body-element",
 				"forget-about-hgroup-element",
 				"use-address-element-only-for-contact-information"
-			],
-			"title": "Sections"
+			]
 		},
 		{
 			"id": "grouping-content",
@@ -76,8 +70,7 @@
 				"place-figcaption-element-as-first-or-last-child-of-figure-element",
 				"use-main-element",
 				"avoid-div-element-as-much-as-possible"
-			],
-			"title": "Grouping content"
+			]
 		},
 		{
 			"id": "text-level-semantics",
@@ -97,15 +90,13 @@
 				"avoid-span-element-as-much-as-possible",
 				"break-after-br-element",
 				"dont-use-br-element-only-for-presentational-purpose"
-			],
-			"title": "Text-level semantics"
+			]
 		},
 		{
 			"id": "edits",
 			"practices": [
 				"dont-stride-ins-and-del-element-over-other-elements"
-			],
-			"title": "Edits"
+			]
 		},
 		{
 			"id": "embedded-content",
@@ -117,16 +108,14 @@
 				"empty-iframe-element",
 				"markup-map-element-content",
 				"provide-fallback-content-for-audio-or-video-element"
-			],
-			"title": "Embedded content"
+			]
 		},
 		{
 			"id": "tabular-data",
 			"practices": [
 				"write-one-cell-per-line",
 				"use-th-element-for-header-cell"
-			],
-			"title": "Tabular data"
+			]
 		},
 		{
 			"id": "forms",
@@ -141,8 +130,7 @@
 				"add-max-attribute-to-progress-element",
 				"add-min-and-max-attribute-to-meter-element",
 				"place-legend-element-as-the-first-child-of-fieldset-element"
-			],
-			"title": "Forms"
+			]
 		},
 		{
 			"id": "scripting",
@@ -150,8 +138,7 @@
 				"omit-type-attribute-for-javascript",
 				"dont-comment-out-contents-of-script-element",
 				"dont-use-script-injected-script-element"
-			],
-			"title": "Scripting"
+			]
 		},
 		{
 			"id": "other",
@@ -159,8 +146,7 @@
 				"indent-consistently",
 				"use-absolute-path-for-internal-links",
 				"dont-use-protocol-relative-url-for-external-resources"
-			],
-			"title": "Other"
+			]
 		}
 	],
 	"contributors": [
