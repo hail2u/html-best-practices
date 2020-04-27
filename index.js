@@ -3,7 +3,7 @@ const mustache = require("mustache");
 
 const languages = ["en", "ja", "ko", "tr"];
 
-const template = fs.readFileSync("./src/readme.mustache", "utf8");
+const template = fs.readFileSync("./src/template.mustache", "utf8");
 const data = JSON.parse(fs.readFileSync("./src/data.json", "utf8"));
 
 languages.forEach((language) => {
