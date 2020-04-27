@@ -26,5 +26,11 @@ languages.forEach((language) => {
 			}
 		})
 	});
-	fs.writeFileSync(`README${language === "en" ? "" : `.${language}`}.md`, rendered);
+
+	if (language === "en") {
+		fs.writeFileSync("README.md", rendered);
+		return;
+	}
+
+	fs.writeFileSync(`README.${language}.md`, rendered);
 });
