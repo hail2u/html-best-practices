@@ -1,0 +1,14 @@
+{
+  "name": "html-best-practices",
+  "version": "0.0.0",
+  "description": "For writing maintainable and scalable HTML documents",
+	"scripts": {
+		"generate": "node index.js"
+	},
+  "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
+  "license": "CC0-1.0",
+  "private": true,
+  "devDependencies": {
+    "mustache": "^4.0.1"
+  }
+}

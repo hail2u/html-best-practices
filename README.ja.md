@@ -1,123 +1,119 @@
 Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Türkçe (tr)](README.tr.md)
 
-普通のHTMLの書き方
-==================
+# 普通のHTMLの書き方
 
 保守しやすく、規模に依存しないHTML文書のために
 
-<!-- #toc -->
 
-- [一般](#%E4%B8%80%E8%88%AC)
-    - [DOCTYPEで始める](#doctype%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8B)
-    - [置き換えられるべきまたは旧式のDOCTYPEを使わない](#%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%82%89%E3%82%8C%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%BE%E3%81%9F%E3%81%AF%E6%97%A7%E5%BC%8F%E3%81%AEdoctype%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [XML宣言を使用しない](#xml%E5%AE%A3%E8%A8%80%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%AA%E3%81%84)
-    - [文字参照はできる限り使わない](#%E6%96%87%E5%AD%97%E5%8F%82%E7%85%A7%E3%81%AF%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8A%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [`&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする](#%E3%81%A8%E3%81%AF%E5%90%8D%E5%89%8D%E6%96%87%E5%AD%97%E5%8F%82%E7%85%A7%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%97%E3%81%99%E3%82%8B)
-    - [制御文字や不可視文字は数値文字参照を使う](#%E5%88%B6%E5%BE%A1%E6%96%87%E5%AD%97%E3%82%84%E4%B8%8D%E5%8F%AF%E8%A6%96%E6%96%87%E5%AD%97%E3%81%AF%E6%95%B0%E5%80%A4%E6%96%87%E5%AD%97%E5%8F%82%E7%85%A7%E3%82%92%E4%BD%BF%E3%81%86)
-    - [コメントではその内容の前後へ空白文字を置く](#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%A7%E3%81%AF%E3%81%9D%E3%81%AE%E5%86%85%E5%AE%B9%E3%81%AE%E5%89%8D%E5%BE%8C%E3%81%B8%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%82%92%E7%BD%AE%E3%81%8F)
-    - [終了タグを省略しない](#%E7%B5%82%E4%BA%86%E3%82%BF%E3%82%B0%E3%82%92%E7%9C%81%E7%95%A5%E3%81%97%E3%81%AA%E3%81%84)
-    - [空要素の書き方を混ぜない](#%E7%A9%BA%E8%A6%81%E7%B4%A0%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
-    - [タグや属性値の前後へ空白文字を置かない](#%E3%82%BF%E3%82%B0%E3%82%84%E5%B1%9E%E6%80%A7%E5%80%A4%E3%81%AE%E5%89%8D%E5%BE%8C%E3%81%B8%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%82%92%E7%BD%AE%E3%81%8B%E3%81%AA%E3%81%84)
-    - [大文字・小文字を混ぜない](#%E5%A4%A7%E6%96%87%E5%AD%97%E5%B0%8F%E6%96%87%E5%AD%97%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
-    - [引用符を混ぜない](#%E5%BC%95%E7%94%A8%E7%AC%A6%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
-    - [属性を2文字以上の空白文字で区切らない](#%E5%B1%9E%E6%80%A7%E3%82%922%E6%96%87%E5%AD%97%E4%BB%A5%E4%B8%8A%E3%81%AE%E7%A9%BA%E7%99%BD%E6%96%87%E5%AD%97%E3%81%A7%E5%8C%BA%E5%88%87%E3%82%89%E3%81%AA%E3%81%84)
-    - [真偽値を取る属性の値は省略する](#%E7%9C%9F%E5%81%BD%E5%80%A4%E3%82%92%E5%8F%96%E3%82%8B%E5%B1%9E%E6%80%A7%E3%81%AE%E5%80%A4%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
-    - [名前空間は省略する](#%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
-    - [XML属性は使わない](#xml%E5%B1%9E%E6%80%A7%E3%81%AF%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [`data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない](#data-%E3%81%A8microdatardfa-lite%E7%94%A8%E3%81%AE%E5%B1%9E%E6%80%A7%E3%81%A8%E9%80%9A%E5%B8%B8%E3%81%AE%E5%B1%9E%E6%80%A7%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
-    - [デフォルトの暗黙のARIAセマンティックスを尊重する](#%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E6%9A%97%E9%BB%99%E3%81%AEARIA%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E5%B0%8A%E9%87%8D%E3%81%99%E3%82%8B)
-- [文書要素](#%E6%96%87%E6%9B%B8%E8%A6%81%E7%B4%A0)
-    - [`lang`属性を追加する](#lang%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [`lang`属性の値はできる限り短くする](#lang%E5%B1%9E%E6%80%A7%E3%81%AE%E5%80%A4%E3%81%AF%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8A%E7%9F%AD%E3%81%8F%E3%81%99%E3%82%8B)
-    - [できる限り`data-*`属性は避ける](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Adata-%E5%B1%9E%E6%80%A7%E3%81%AF%E9%81%BF%E3%81%91%E3%82%8B)
-- [文書メタデータ](#%E6%96%87%E6%9B%B8%E3%83%A1%E3%82%BF%E3%83%87%E3%83%BC%E3%82%BF)
-    - [`title`要素を書く](#title%E8%A6%81%E7%B4%A0%E3%82%92%E6%9B%B8%E3%81%8F)
-    - [`base`要素を使わない](#base%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [マイナーな参照先リソースのMIMEタイプを指定する](#%E3%83%9E%E3%82%A4%E3%83%8A%E3%83%BC%E3%81%AA%E5%8F%82%E7%85%A7%E5%85%88%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AEmime%E3%82%BF%E3%82%A4%E3%83%97%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
-    - [`favicon.ico`へリンクしない](#faviconico%E3%81%B8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%97%E3%81%AA%E3%81%84)
-    - [`apple-touch-icon`へのリンクを書く](#apple-touch-icon%E3%81%B8%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E6%9B%B8%E3%81%8F)
-    - [代替スタイルシートへ`title`属性を追加する](#%E4%BB%A3%E6%9B%BF%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E3%81%B8title%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [URLには`link`要素を使う](#url%E3%81%AB%E3%81%AFlink%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
-    - [文書の文字エンコーディングを指定する](#%E6%96%87%E6%9B%B8%E3%81%AE%E6%96%87%E5%AD%97%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
-    - [置き換えられるべき文字エンコーディング指定フォーマットを使わない](#%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%82%89%E3%82%8C%E3%82%8B%E3%81%B9%E3%81%8D%E6%96%87%E5%AD%97%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [最初に文字エンコーディングを指定する](#%E6%9C%80%E5%88%9D%E3%81%AB%E6%96%87%E5%AD%97%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
-    - [UTF-8を使う](#utf-8%E3%82%92%E4%BD%BF%E3%81%86)
-    - [CSSの`type`属性は省略する](#css%E3%81%AEtype%E5%B1%9E%E6%80%A7%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
-    - [`style`要素の中をコメントアウトしない](#style%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%82%92%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%81%97%E3%81%AA%E3%81%84)
-    - [CSSとJavaScriptのタグを混ぜない](#css%E3%81%A8javascript%E3%81%AE%E3%82%BF%E3%82%B0%E3%82%92%E6%B7%B7%E3%81%9C%E3%81%AA%E3%81%84)
-- [セクション](#%E3%82%BB%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3)
-    - [`body`要素を書く](#body%E8%A6%81%E7%B4%A0%E3%82%92%E6%9B%B8%E3%81%8F)
-    - [`hgroup`要素のことは忘れる](#hgroup%E8%A6%81%E7%B4%A0%E3%81%AE%E3%81%93%E3%81%A8%E3%81%AF%E5%BF%98%E3%82%8C%E3%82%8B)
-    - [`address`要素は連絡先情報にのみ使う](#address%E8%A6%81%E7%B4%A0%E3%81%AF%E9%80%A3%E7%B5%A1%E5%85%88%E6%83%85%E5%A0%B1%E3%81%AB%E3%81%AE%E3%81%BF%E4%BD%BF%E3%81%86)
-- [グルーピングコンテンツ](#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%94%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
-    - [`pre`要素は改行で始めない](#pre%E8%A6%81%E7%B4%A0%E3%81%AF%E6%94%B9%E8%A1%8C%E3%81%A7%E5%A7%8B%E3%82%81%E3%81%AA%E3%81%84)
-    - [`blockquote`要素内でも適切な要素を使う](#blockquote%E8%A6%81%E7%B4%A0%E5%86%85%E3%81%A7%E3%82%82%E9%81%A9%E5%88%87%E3%81%AA%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
-    - [`blockquote`要素内に帰属情報を含めない](#blockquote%E8%A6%81%E7%B4%A0%E5%86%85%E3%81%AB%E5%B8%B0%E5%B1%9E%E6%83%85%E5%A0%B1%E3%82%92%E5%90%AB%E3%82%81%E3%81%AA%E3%81%84)
-    - [リスト項目は1行に1つずつ書く](#%E3%83%AA%E3%82%B9%E3%83%88%E9%A0%85%E7%9B%AE%E3%81%AF1%E8%A1%8C%E3%81%AB1%E3%81%A4%E3%81%9A%E3%81%A4%E6%9B%B8%E3%81%8F)
-    - [`ol`要素では`type`属性を使う](#ol%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AFtype%E5%B1%9E%E6%80%A7%E3%82%92%E4%BD%BF%E3%81%86)
-    - [`dl`を会話のために使わない](#dl%E3%82%92%E4%BC%9A%E8%A9%B1%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [`figcaption`要素は`figure`要素の最初か最後に置く](#figcaption%E8%A6%81%E7%B4%A0%E3%81%AFfigure%E8%A6%81%E7%B4%A0%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%8B%E6%9C%80%E5%BE%8C%E3%81%AB%E7%BD%AE%E3%81%8F)
-    - [`main`要素を使う](#main%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
-    - [できる限り`div`要素は避ける](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Adiv%E8%A6%81%E7%B4%A0%E3%81%AF%E9%81%BF%E3%81%91%E3%82%8B)
-- [テキストレベルセマンティックス](#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%AC%E3%83%99%E3%83%AB%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9)
-    - [グループ化できるリンクは分割しない](#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E5%8C%96%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AF%E5%88%86%E5%89%B2%E3%81%97%E3%81%AA%E3%81%84)
-    - [リソースをダウンロードさせる場合は`download`属性を使う](#%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%95%E3%81%9B%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AFdownload%E5%B1%9E%E6%80%A7%E3%82%92%E4%BD%BF%E3%81%86)
-    - [`rel`や`hreflang`、`type`属性を必要ならば使う](#rel%E3%82%84hreflangtype%E5%B1%9E%E6%80%A7%E3%82%92%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%89%E3%81%B0%E4%BD%BF%E3%81%86)
-    - [リンク文字列は明確にする](#%E3%83%AA%E3%83%B3%E3%82%AF%E6%96%87%E5%AD%97%E5%88%97%E3%81%AF%E6%98%8E%E7%A2%BA%E3%81%AB%E3%81%99%E3%82%8B)
-    - [`em`要素を警告や注意に使わない](#em%E8%A6%81%E7%B4%A0%E3%82%92%E8%AD%A6%E5%91%8A%E3%82%84%E6%B3%A8%E6%84%8F%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [できる限り`s`や`i`、`b`、`u`要素を避ける](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8As%E3%82%84ibu%E8%A6%81%E7%B4%A0%E3%82%92%E9%81%BF%E3%81%91%E3%82%8B)
-    - [`q`要素内へ引用符は置かない](#q%E8%A6%81%E7%B4%A0%E5%86%85%E3%81%B8%E5%BC%95%E7%94%A8%E7%AC%A6%E3%81%AF%E7%BD%AE%E3%81%8B%E3%81%AA%E3%81%84)
-    - [`abbr`要素へ`title`属性を追加する](#abbr%E8%A6%81%E7%B4%A0%E3%81%B8title%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [`ruby`要素は冗長にマークアップする](#ruby%E8%A6%81%E7%B4%A0%E3%81%AF%E5%86%97%E9%95%B7%E3%81%AB%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%81%99%E3%82%8B)
-    - [機械的に解釈可能でない`time`要素では`datetime`属性を追加する](#%E6%A9%9F%E6%A2%B0%E7%9A%84%E3%81%AB%E8%A7%A3%E9%87%88%E5%8F%AF%E8%83%BD%E3%81%A7%E3%81%AA%E3%81%84time%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AFdatetime%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [コードの言語は`class`属性で`language-`で始めることで指定する](#%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E8%A8%80%E8%AA%9E%E3%81%AFclass%E5%B1%9E%E6%80%A7%E3%81%A7language-%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B)
-    - [できる限り`kbd`要素はシンプルにする](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Akbd%E8%A6%81%E7%B4%A0%E3%81%AF%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AB%E3%81%99%E3%82%8B)
-    - [できる限り`span`要素は使わない](#%E3%81%A7%E3%81%8D%E3%82%8B%E9%99%90%E3%82%8Aspan%E8%A6%81%E7%B4%A0%E3%81%AF%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [`br`要素の後ろでは改行する](#br%E8%A6%81%E7%B4%A0%E3%81%AE%E5%BE%8C%E3%82%8D%E3%81%A7%E3%81%AF%E6%94%B9%E8%A1%8C%E3%81%99%E3%82%8B)
-    - [見た目だけのために`br`要素を使わない](#%E8%A6%8B%E3%81%9F%E7%9B%AE%E3%81%A0%E3%81%91%E3%81%AE%E3%81%9F%E3%82%81%E3%81%ABbr%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-- [編集](#%E7%B7%A8%E9%9B%86)
-    - [`ins`や`del`要素は他の要素をまたがせない](#ins%E3%82%84del%E8%A6%81%E7%B4%A0%E3%81%AF%E4%BB%96%E3%81%AE%E8%A6%81%E7%B4%A0%E3%82%92%E3%81%BE%E3%81%9F%E3%81%8C%E3%81%9B%E3%81%AA%E3%81%84)
-- [エンベディッドコンテンツ](#%E3%82%A8%E3%83%B3%E3%83%99%E3%83%87%E3%82%A3%E3%83%83%E3%83%89%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)
-    - [`picture`要素ではフォールバックのための`img`要素を提供する](#picture%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AF%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEimg%E8%A6%81%E7%B4%A0%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%99%E3%82%8B)
-    - [必要な時は`img`要素へ`alt`属性を追加する](#%E5%BF%85%E8%A6%81%E3%81%AA%E6%99%82%E3%81%AFimg%E8%A6%81%E7%B4%A0%E3%81%B8alt%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [可能ならば`alt`属性は空にする](#%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%89%E3%81%B0alt%E5%B1%9E%E6%80%A7%E3%81%AF%E7%A9%BA%E3%81%AB%E3%81%99%E3%82%8B)
-    - [可能ならば`alt`属性は省略する](#%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%89%E3%81%B0alt%E5%B1%9E%E6%80%A7%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
-    - [`iframe`要素の中は空にする](#iframe%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%81%AF%E7%A9%BA%E3%81%AB%E3%81%99%E3%82%8B)
-    - [`map`要素の中はマークアップする](#map%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%81%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%81%99%E3%82%8B)
-    - [`audio`や`video`要素にフォールバックのためのコンテンツを提供する](#audio%E3%82%84video%E8%A6%81%E7%B4%A0%E3%81%AB%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%99%E3%82%8B)
-- [テーブルデータ](#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF)
-    - [1行に1つのセルを書く](#1%E8%A1%8C%E3%81%AB1%E3%81%A4%E3%81%AE%E3%82%BB%E3%83%AB%E3%82%92%E6%9B%B8%E3%81%8F)
-    - [見出しセルには`th`要素を使う](#%E8%A6%8B%E5%87%BA%E3%81%97%E3%82%BB%E3%83%AB%E3%81%AB%E3%81%AFth%E8%A6%81%E7%B4%A0%E3%82%92%E4%BD%BF%E3%81%86)
-- [フォーム](#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0)
-    - [フォームコントロールは`label`要素で括る](#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB%E3%81%AFlabel%E8%A6%81%E7%B4%A0%E3%81%A7%E6%8B%AC%E3%82%8B)
-    - [可能ならば`for`属性は省略する](#%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%89%E3%81%B0for%E5%B1%9E%E6%80%A7%E3%81%AF%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
-    - [`input`要素では適切な`type`属性を使う](#input%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AF%E9%81%A9%E5%88%87%E3%81%AAtype%E5%B1%9E%E6%80%A7%E3%82%92%E4%BD%BF%E3%81%86)
-    - [`input type="submit"`には`value`属性を追加する](#input-typesubmit%E3%81%AB%E3%81%AFvalue%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [`pattern`属性を持つ`input`要素には`title`属性を追加する](#pattern%E5%B1%9E%E6%80%A7%E3%82%92%E6%8C%81%E3%81%A4input%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AFtitle%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [`placeholder`属性をラベル付けに使わない](#placeholder%E5%B1%9E%E6%80%A7%E3%82%92%E3%83%A9%E3%83%99%E3%83%AB%E4%BB%98%E3%81%91%E3%81%AB%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-    - [`option`要素は1行に1つ書く](#option%E8%A6%81%E7%B4%A0%E3%81%AF1%E8%A1%8C%E3%81%AB1%E3%81%A4%E6%9B%B8%E3%81%8F)
-    - [`progress`要素には`max`属性を追加する](#progress%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AFmax%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [`meter`要素では`min`及び`max`属性を追加する](#meter%E8%A6%81%E7%B4%A0%E3%81%A7%E3%81%AFmin%E5%8F%8A%E3%81%B3max%E5%B1%9E%E6%80%A7%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B)
-    - [`legend`要素は`fieldset`要素の最初に置く](#legend%E8%A6%81%E7%B4%A0%E3%81%AFfieldset%E8%A6%81%E7%B4%A0%E3%81%AE%E6%9C%80%E5%88%9D%E3%81%AB%E7%BD%AE%E3%81%8F)
-- [スクリプティング](#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
-    - [JavaScriptでは`type`属性を省略する](#javascript%E3%81%A7%E3%81%AFtype%E5%B1%9E%E6%80%A7%E3%82%92%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B)
-    - [`script`要素の中をコメントアウトしない](#script%E8%A6%81%E7%B4%A0%E3%81%AE%E4%B8%AD%E3%82%92%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%81%97%E3%81%AA%E3%81%84)
-    - [`script`要素を動的に生成するテクニックを使わない](#script%E8%A6%81%E7%B4%A0%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-- [その他](#%E3%81%9D%E3%81%AE%E4%BB%96)
-    - [一貫した量でインデントする](#%E4%B8%80%E8%B2%AB%E3%81%97%E3%81%9F%E9%87%8F%E3%81%A7%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%81%99%E3%82%8B)
-    - [内部リンクには絶対パスを使う](#%E5%86%85%E9%83%A8%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%AF%E7%B5%B6%E5%AF%BE%E3%83%91%E3%82%B9%E3%82%92%E4%BD%BF%E3%81%86)
-    - [外部リソースにはプロトコル相対URLを使わない](#%E5%A4%96%E9%83%A8%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AB%E3%81%AF%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E7%9B%B8%E5%AF%BEurl%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84)
-- [投稿者](#%E6%8A%95%E7%A8%BF%E8%80%85)
-- [翻訳者](#%E7%BF%BB%E8%A8%B3%E8%80%85)
-- [ライセンス](#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
-
-<!-- /toc -->
+- [一般](#general)
+  - [DOCTYPEで始める](#start-with-doctype)
+  - [置き換えられるべきまたは旧式のDOCTYPEを使わない](#dont-use-legacy-or-obsolete-doctype)
+  - [XML宣言を使用しない](#dont-use-xml-declaration)
+  - [文字参照はできる限り使わない](#dont-use-character-references-as-much-as-possible)
+  - [`&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする](#escape-amp-lt-gt-quot-and-apos-with-named-character-references)
+  - [制御文字や不可視文字は数値文字参照を使う](#use-numeric-character-references-for-control-or-invisible-characters)
+  - [コメントではその内容の前後へ空白文字を置く](#put-white-spaces-around-comment-contents)
+  - [終了タグを省略しない](#dont-omit-closing-tag)
+  - [空要素の書き方を混ぜない](#dont-mix-empty-element-format)
+  - [タグや属性値の前後へ空白文字を置かない](#dont-put-white-spaces-around-tags-and-attribute-values)
+  - [大文字・小文字を混ぜない](#dont-mix-character-cases)
+  - [引用符を混ぜない](#dont-mix-quotation-marks)
+  - [属性を2文字以上の空白文字で区切らない](#dont-separate-attributes-with-two-or-more-white-spaces)
+  - [真偽値を取る属性の値は省略する](#omit-boolean-attribute-value)
+  - [名前空間は省略する](#omit-namespaces)
+  - [XML属性は使わない](#dont-use-xml-attributes)
+  - [`data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない](#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes)
+  - [デフォルトの暗黙のARIAセマンティックスを尊重する](#prefer-default-implicit-aria-semantics)
+- [文書要素](#the-root-element)
+  - [`lang`属性を追加する](#add-lang-attribute)
+  - [`lang`属性の値はできる限り短くする](#keep-lang-attribute-value-as-short-as-possible)
+  - [できる限り`data-*`属性は避ける](#avoid-data-as-much-as-possible)
+- [文書メタデータ](#document-metadata)
+  - [`title`要素を書く](#add-title-element)
+  - [`base`要素を使わない](#dont-use-base-element)
+  - [マイナーな参照先リソースのMIMEタイプを指定する](#specify-mime-type-of-minor-linked-resources)
+  - [`favicon.ico`へリンクしない](#dont-link-to-faviconico)
+  - [`apple-touch-icon`へのリンクを書く](#add-apple-touch-icon-link)
+  - [代替スタイルシートへ`title`属性を追加する](#add-title-attribute-to-alternate-stylesheets)
+  - [URLには`link`要素を使う](#for-url-use-link-element)
+  - [文書の文字エンコーディングを指定する](#specify-document-character-encoding)
+  - [置き換えられるべき文字エンコーディング指定フォーマットを使わない](#dont-use-legacy-character-encoding-format)
+  - [最初に文字エンコーディングを指定する](#specify-character-encoding-at-first)
+  - [UTF-8を使う](#use-utf-8)
+  - [CSSの`type`属性は省略する](#omit-type-attribute-for-css)
+  - [`style`要素の中をコメントアウトしない](#dont-comment-out-contents-of-style-element)
+  - [CSSとJavaScriptのタグを混ぜない](#dont-mix-tag-for-css-and-javascript)
+- [セクション](#sections)
+  - [`body`要素を書く](#add-body-element)
+  - [`hgroup`要素のことは忘れる](#forget-about-hgroup-element)
+  - [`address`要素は連絡先情報にのみ使う](#use-address-element-only-for-contact-information)
+- [グルーピングコンテンツ](#grouping-content)
+  - [`pre`要素は改行で始めない](#dont-start-with-newline-in-pre-element)
+  - [`blockquote`要素内でも適切な要素を使う](#use-appropriate-element-in-blockquote-element)
+  - [`blockquote`要素内に帰属情報を含めない](#dont-include-attribution-directly-in-blockquote-element)
+  - [リスト項目は1行に1つずつ書く](#write-one-list-item-per-line)
+  - [`ol`要素では`type`属性を使う](#use-type-attribute-for-ol-element)
+  - [`dl`を会話のために使わない](#dont-use-dl-for-dialogue)
+  - [`figcaption`要素は`figure`要素の最初か最後に置く](#place-figcaption-element-as-first-or-last-child-of-figure-element)
+  - [`main`要素を使う](#use-main-element)
+  - [できる限り`div`要素は避ける](#avoid-div-element-as-much-as-possible)
+- [テキストレベルセマンティックス](#text-level-semantics)
+  - [グループ化できるリンクは分割しない](#dont-split-same-link-that-can-be-grouped)
+  - [リソースをダウンロードさせる場合は`download`属性を使う](#use-download-attribute-for-downloading-a-resource)
+  - [`rel`や`hreflang`、`type`属性を必要ならば使う](#use-rel-hreflang-and-type-attribute-if-needed)
+  - [リンク文字列は明確にする](#clear-link-text)
+  - [`em`要素を警告や注意に使わない](#dont-use-em-element-for-warning-or-caution)
+  - [できる限り`s`や`i`、`b`、`u`要素を避ける](#avoid-s-i-b-and-u-element-as-much-as-possible)
+  - [`q`要素内へ引用符は置かない](#dont-put-quotes-to-q-element)
+  - [`abbr`要素へ`title`属性を追加する](#add-title-attribute-to-abbr-element)
+  - [`ruby`要素は冗長にマークアップする](#markup-ruby-element-verbosely)
+  - [機械的に解釈可能でない`time`要素では`datetime`属性を追加する](#add-datetime-attribute-to-non-machine-readable-time-element)
+  - [コードの言語は`class`属性で`language-`で始めることで指定する](#specify-code-language-with-class-attribute-prefixed-with-language)
+  - [できる限り`kbd`要素はシンプルにする](#keep-kbd-element-as-simple-as-possible)
+  - [できる限り`span`要素は使わない](#avoid-span-element-as-much-as-possible)
+  - [`br`要素の後ろでは改行する](#break-after-br-element)
+  - [見た目だけのために`br`要素を使わない](#dont-use-br-element-only-for-presentational-purpose)
+- [編集](#edits)
+  - [`ins`や`del`要素は他の要素をまたがせない](#dont-stride-ins-and-del-element-over-other-elements)
+- [エンベディッドコンテンツ](#embedded-content)
+  - [`picture`要素ではフォールバックのための`img`要素を提供する](#provide-fallback-img-element-for-picture-element)
+  - [必要な時は`img`要素へ`alt`属性を追加する](#add-alt-attrbute-to-img-element-if-needed)
+  - [可能ならば`alt`属性は空にする](#empty-alt-attribute-if-possible)
+  - [可能ならば`alt`属性は省略する](#omit-alt-attribute-if-possible)
+  - [`iframe`要素の中は空にする](#empty-iframe-element)
+  - [`map`要素の中はマークアップする](#markup-map-element-content)
+  - [`audio`や`video`要素にフォールバックのためのコンテンツを提供する](#provide-fallback-content-for-audio-or-video-element)
+- [テーブルデータ](#tabular-data)
+  - [1行に1つのセルを書く](#write-one-cell-per-line)
+  - [見出しセルには`th`要素を使う](#use-th-element-for-header-cell)
+- [フォーム](#forms)
+  - [フォームコントロールは`label`要素で括る](#wrap-form-control-with-label-element)
+  - [可能ならば`for`属性は省略する](#omit-for-attribute-if-possible)
+  - [`input`要素では適切な`type`属性を使う](#use-appropriate-type-attribute-for-input-element)
+  - [`input type="submit"`には`value`属性を追加する](#add-value-attribute-to-input-typesubmit)
+  - [`pattern`属性を持つ`input`要素には`title`属性を追加する](#add-title-attribute-to-input-element-when-there-is-pattern-attribute)
+  - [`placeholder`属性をラベル付けに使わない](#dont-use-placeholder-attribute-for-labeling)
+  - [`option`要素は1行に1つ書く](#write-one-option-element-per-line)
+  - [`progress`要素には`max`属性を追加する](#add-max-attribute-to-progress-element)
+  - [`meter`要素では`min`及び`max`属性を追加する](#add-min-and-max-attribute-to-meter-element)
+  - [`legend`要素は`fieldset`要素の最初に置く](#place-legend-element-as-the-first-child-of-fieldset-element)
+- [スクリプティング](#scripting)
+  - [JavaScriptでは`type`属性を省略する](#omit-type-attribute-for-javascript)
+  - [`script`要素の中をコメントアウトしない](#dont-comment-out-contents-of-script-element)
+  - [`script`要素を動的に生成するテクニックを使わない](#dont-use-script-injected-script-element)
+- [その他](#other)
+  - [一貫した量でインデントする](#indent-consistently)
+  - [内部リンクには絶対パスを使う](#use-absolute-path-for-internal-links)
+  - [外部リソースにはプロトコル相対URLを使わない](#dont-use-protocol-relative-url-for-external-resources)
+- [Contributors](#contributors)
+- [Translators](#translators)
+- [License](#license)
 
 
-一般
-----
+## 一般<span id="general"></span>
 
-### DOCTYPEで始める
+
+### DOCTYPEで始める<span id="start-with-doctype"></span>
 
 DOCTYPEは標準モードを有効にするために必要です。
 
@@ -135,7 +131,7 @@ DOCTYPEは標準モードを有効にするために必要です。
     </html>
 
 
-### 置き換えられるべきまたは旧式のDOCTYPEを使わない
+### 置き換えられるべきまたは旧式のDOCTYPEを使わない<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
 もはやDOCTYPEはDTDのためにあるわけではないので、シンプルにしましょう。
 
@@ -149,7 +145,7 @@ DOCTYPEは標準モードを有効にするために必要です。
     <!DOCTYPE html>
 
 
-### XML宣言を使用しない
+### XML宣言を使用しない<span id="dont-use-xml-declaration"></span>
 
 まだXHTMLを書きたいんですか？
 
@@ -163,7 +159,7 @@ DOCTYPEは標準モードを有効にするために必要です。
     <!DOCTYPE html>
 
 
-### 文字参照はできる限り使わない
+### 文字参照はできる限り使わない<span id="dont-use-character-references-as-much-as-possible"></span>
 
 UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字はそのまま書けます。
 
@@ -176,7 +172,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
-### `&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする
+### `&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
 
 バグのないHTML文書を作成するためには、これらの文字は常にエスケープされるべきです。
 
@@ -189,7 +185,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### 制御文字や不可視文字は数値文字参照を使う
+### 制御文字や不可視文字は数値文字参照を使う<span id="use-numeric-character-references-for-control-or-invisible-characters"></span>
 
 これらの文字は簡単に他の文字と間違えられてしまいます。また仕様では、これらの文字へ人間にわかりやすい名前を付けていることを保証していません。
 
@@ -202,7 +198,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <p>This book can read in 1&#xA0;hour.</p>
 
 
-### コメントではその内容の前後へ空白文字を置く
+### コメントではその内容の前後へ空白文字を置く<span id="put-white-spaces-around-comment-contents"></span>
 
 いくつかの文字はコメントの開始直後や終了直前に書けません。
 
@@ -215,7 +211,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <!-- This section is non-normative -->
 
 
-### 終了タグを省略しない
+### 終了タグを省略しない<span id="dont-omit-closing-tag"></span>
 
 多分、あなたは終了タグを省略するためのルールを理解していないでしょう。
 
@@ -234,7 +230,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     </html>
 
 
-### 空要素の書き方を混ぜない
+### 空要素の書き方を混ぜない<span id="dont-mix-empty-element-format"></span>
 
 一貫性は読みやすさのキーポイントです。
 
@@ -249,7 +245,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <hr>
 
 
-### タグや属性値の前後へ空白文字を置かない
+### タグや属性値の前後へ空白文字を置かない<span id="dont-put-white-spaces-around-tags-and-attribute-values"></span>
 
 そうする必要はまったくありません。
 
@@ -262,7 +258,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <h1 class="title">HTML Best Practices</h1>
 
 
-### 大文字・小文字を混ぜない
+### 大文字・小文字を混ぜない<span id="dont-mix-character-cases"></span>
 
 これも一貫性を与えてくれます。
 
@@ -279,7 +275,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <A HREF="#general">General</A>
 
 
-### 引用符を混ぜない
+### 引用符を混ぜない<span id="dont-mix-quotation-marks"></span>
 
 上に同じです。
 
@@ -292,7 +288,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### 属性を2文字以上の空白文字で区切らない
+### 属性を2文字以上の空白文字で区切らない<span id="dont-separate-attributes-with-two-or-more-white-spaces"></span>
 
 あなたのよくわからない整形ルールは誰かを混乱させます。
 
@@ -305,7 +301,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <input name="q" type="search">
 
 
-### 真偽値を取る属性の値は省略する
+### 真偽値を取る属性の値は省略する<span id="omit-boolean-attribute-value"></span>
 
 この方が簡単に書けますよね？
 
@@ -318,7 +314,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
     <audio autoplay src="/audio/theme.mp3">
 
 
-### 名前空間は省略する
+### 名前空間は省略する<span id="omit-namespaces"></span>
 
 SVGやMathMLはHTMLの文書では直接扱えます。
 
@@ -335,7 +331,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     </svg>
 
 
-### XML属性は使わない
+### XML属性は使わない<span id="dont-use-xml-attributes"></span>
 
 我々はHTML文書を書いています。
 
@@ -348,7 +344,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <span lang="ja">...</span>
 
 
-### `data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない
+### `data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない<span id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"></span>
 
 タグ文字列はとても複雑になりえます。こういった簡単なルールによってタグ文字列を読みやすくできるでしょう。
 
@@ -361,7 +357,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### デフォルトの暗黙のARIAセマンティックスを尊重する
+### デフォルトの暗黙のARIAセマンティックスを尊重する<span id="prefer-default-implicit-aria-semantics"></span>
 
 いくつかの要素はHTML文章において暗黙的にARIA `role`を持っているので、それは指定しないようにしましょう。
 
@@ -382,10 +378,10 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <hr>
 
 
-文書要素
---------
+## 文書要素<span id="the-root-element"></span>
 
-### `lang`属性を追加する
+
+### `lang`属性を追加する<span id="add-lang-attribute"></span>
 
 `lang`属性はHTML文書の翻訳に役立ちます。
 
@@ -398,7 +394,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <html lang="en-US">
 
 
-### `lang`属性の値はできる限り短くする
+### `lang`属性の値はできる限り短くする<span id="keep-lang-attribute-value-as-short-as-possible"></span>
 
 日本語は日本でのみ使われます。つまり国コードは必要ありません。
 
@@ -411,7 +407,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <html lang="ja">
 
 
-### できる限り`data-*`属性は避ける
+### できる限り`data-*`属性は避ける<span id="avoid-data-as-much-as-possible"></span>
 
 適切な属性は、ブラウザーがうまく扱ってくれるかもしれません。
 
@@ -428,10 +424,10 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <strong class="warning">Do not wash!</strong>
 
 
-文書メタデータ
---------------
+## 文書メタデータ<span id="document-metadata"></span>
 
-### `title`要素を書く
+
+### `title`要素を書く<span id="add-title-element"></span>
 
 `title`要素の中身は、ブラウザーに限らず、様々なアプリケーションにより利用されます。
 
@@ -449,7 +445,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     </head>
 
 
-### `base`要素を使わない
+### `base`要素を使わない<span id="dont-use-base-element"></span>
 
 絶対パスや絶対URLの方が開発者とユーザーの双方に安全です。
 
@@ -471,7 +467,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     </head>
 
 
-### マイナーな参照先リソースのMIMEタイプを指定する
+### マイナーな参照先リソースのMIMEタイプを指定する<span id="specify-mime-type-of-minor-linked-resources"></span>
 
 アプリケーションがそのリソースをどう取り扱うべきかのヒントになります。
 
@@ -488,7 +484,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### `favicon.ico`へリンクしない
+### `favicon.ico`へリンクしない<span id="dont-link-to-faviconico"></span>
 
 ほとんどのブラウザーは`/favicon.ico`を自動的に非同期で取得します。
 
@@ -501,7 +497,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
     <!-- Place `favicon.ico` in the root directory. -->
 
 
-### `apple-touch-icon`へのリンクを書く
+### `apple-touch-icon`へのリンクを書く<span id="add-apple-touch-icon-link"></span>
 
 デフォルトでリクエストされるタッチ・アイコンのパスは突然変わりました。
 
@@ -514,7 +510,7 @@ Good:
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
 
-### 代替スタイルシートへ`title`属性を追加する
+### 代替スタイルシートへ`title`属性を追加する<span id="add-title-attribute-to-alternate-stylesheets"></span>
 
 人間にわかりやすいラベルにより適切なスタイルシートを選択しやすくなります。
 
@@ -529,7 +525,7 @@ Good:
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
-### URLには`link`要素を使う
+### URLには`link`要素を使う<span id="for-url-use-link-element"></span>
 
 `href`属性の値はURLとして解決できます。
 
@@ -548,7 +544,7 @@ Good:
     </section>
 
 
-### 文書の文字エンコーディングを指定する
+### 文書の文字エンコーディングを指定する<span id="specify-document-character-encoding"></span>
 
 まだすべてのブラウザーでUTF-8がデフォルトになっていません。
 
@@ -566,7 +562,7 @@ Good:
     </head>
 
 
-### 置き換えられるべき文字エンコーディング指定フォーマットを使わない
+### 置き換えられるべき文字エンコーディング指定フォーマットを使わない<span id="dont-use-legacy-character-encoding-format"></span>
 
 HTTPヘッダーはサーバー側で指定されるべきで、簡単にしておきましょう。
 
@@ -579,7 +575,7 @@ HTTPヘッダーはサーバー側で指定されるべきで、簡単にして�
     <meta charset="UTF-8">
 
 
-### 最初に文字エンコーディングを指定する
+### 最初に文字エンコーディングを指定する<span id="specify-character-encoding-at-first"></span>
 
 仕様では文書の先頭1024バイトまでに文字エンコーディングを指定することを要求しています。
 
@@ -600,7 +596,7 @@ HTTPヘッダーはサーバー側で指定されるべきで、簡単にして�
     </head>
 
 
-### UTF-8を使う
+### UTF-8を使う<span id="use-utf-8"></span>
 
 UTF-8ならEmojiを自由に使えます。
 
@@ -613,7 +609,7 @@ UTF-8ならEmojiを自由に使えます。
     <meta charset="UTF-8">
 
 
-### CSSの`type`属性は省略する
+### CSSの`type`属性は省略する<span id="omit-type-attribute-for-css"></span>
 
 HTMLでは、`style`要素における`type`属性の初期値は`text/css`です。
 
@@ -630,7 +626,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </style>
 
 
-### `style`要素の中をコメントアウトしない
+### `style`要素の中をコメントアウトしない<span id="dont-comment-out-contents-of-style-element"></span>
 
 この儀式は古いブラウザーのためです。
 
@@ -649,7 +645,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </style>
 
 
-### CSSとJavaScriptのタグを混ぜない
+### CSSとJavaScriptのタグを混ぜない<span id="dont-mix-tag-for-css-and-javascript"></span>
 
 `script`要素はDOMの構築をブロックするかもしれません。
 
@@ -672,10 +668,10 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     <link href="/css/screen.css" rel="stylesheet">
 
 
-セクション
-----------
+## セクション<span id="sections"></span>
 
-### `body`要素を書く
+
+### `body`要素を書く<span id="add-body-element"></span>
 
 ブラウザーは思っても見ない位置へ`body`要素を補完するかもしれません。
 
@@ -700,7 +696,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </html>
 
 
-### `hgroup`要素のことは忘れる
+### `hgroup`要素のことは忘れる<span id="forget-about-hgroup-element"></span>
 
 あまり使われていません。
 
@@ -717,7 +713,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### `address`要素は連絡先情報にのみ使う
+### `address`要素は連絡先情報にのみ使う<span id="use-address-element-only-for-contact-information"></span>
 
 `address`要素はメールアドレスやSNSアカウント、住所、電話番号など、実際に利用できるあなたとの連絡手段のための要素です。
 
@@ -730,10 +726,10 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-グルーピングコンテンツ
-----------------------
+## グルーピングコンテンツ<span id="grouping-content"></span>
 
-### `pre`要素は改行で始めない
+
+### `pre`要素は改行で始めない<span id="dont-start-with-newline-in-pre-element"></span>
 
 最初の改行はブラウザーに無視されますが、2番目以降はそのまま表示されます。
 
@@ -749,7 +745,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </pre>
 
 
-### `blockquote`要素内でも適切な要素を使う
+### `blockquote`要素内でも適切な要素を使う<span id="use-appropriate-element-in-blockquote-element"></span>
 
 `blockquote`要素の中身は引用で、単なる文字の連続ではありません。
 
@@ -764,7 +760,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </blockquote>
 
 
-### `blockquote`要素内に帰属情報を含めない
+### `blockquote`要素内に帰属情報を含めない<span id="dont-include-attribution-directly-in-blockquote-element"></span>
 
 `blockquote`要素の中身は引用です。
 
@@ -795,7 +791,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </figure>
 
 
-### リスト項目は1行に1つずつ書く
+### リスト項目は1行に1つずつ書く<span id="write-one-list-item-per-line"></span>
 
 長ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーい行はとっっっっっっっっっっっっっっっっっっっっっっっっっっっても読みづらいです。
 
@@ -815,7 +811,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </ul>
 
 
-### `ol`要素では`type`属性を使う
+### `ol`要素では`type`属性を使う<span id="use-type-attribute-for-ol-element"></span>
 
 リスト・マーカーは周辺から参照される場合があります。`type`属性を使ってリスト・マーカーを変更すれば、安全に参照できるでしょう。
 
@@ -849,7 +845,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
     </body>
 
 
-### `dl`を会話のために使わない
+### `dl`を会話のために使わない<span id="dont-use-dl-for-dialogue"></span>
 
 HTMLでは`dl`要素は関連付けリストに限定されています。
 
@@ -882,7 +878,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <p>Abbott: Every dollar of it.</p>
 
 
-### `figcaption`要素は`figure`要素の最初か最後に置く
+### `figcaption`要素は`figure`要素の最初か最後に置く<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
 
 仕様では`figcaption`要素を`figure`要素の中ほどに置けません。
 
@@ -903,7 +899,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     </figure>
 
 
-### `main`要素を使う
+### `main`要素を使う<span id="use-main-element"></span>
 
 `main`要素はコンテンツをまとめるために使えます。
 
@@ -920,7 +916,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     </main>
 
 
-### できる限り`div`要素は避ける
+### できる限り`div`要素は避ける<span id="avoid-div-element-as-much-as-possible"></span>
 
 `div`要素は最後の手段です。
 
@@ -937,10 +933,10 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     </section>
 
 
-テキストレベルセマンティックス
-------------------------------
+## テキストレベルセマンティックス<span id="text-level-semantics"></span>
 
-### グループ化できるリンクは分割しない
+
+### グループ化できるリンクは分割しない<span id="dont-split-same-link-that-can-be-grouped"></span>
 
 `a`要素はほとんどの要素（フォームコントロールのようなインタラクティブ要素や`a`要素自身以外）を括れます。
 
@@ -959,7 +955,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     </a>
 
 
-### リソースをダウンロードさせる場合は`download`属性を使う
+### リソースをダウンロードさせる場合は`download`属性を使う<span id="use-download-attribute-for-downloading-a-resource"></span>
 
 こうすることでダウンロードするリンク先のリソースを確実にローカルに保存させられます。
 
@@ -972,7 +968,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### `rel`や`hreflang`、`type`属性を必要ならば使う
+### `rel`や`hreflang`、`type`属性を必要ならば使う<span id="use-rel-hreflang-and-type-attribute-if-needed"></span>
 
 これらのヒントは、アプリケーションがリンク先のリソースをどう扱えば良いのかの助けになります。
 
@@ -985,7 +981,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### リンク文字列は明確にする
+### リンク文字列は明確にする<span id="clear-link-text"></span>
 
 リンク文字列はリンク先のリソースのラベルであるべきです。
 
@@ -998,7 +994,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### `em`要素を警告や注意に使わない
+### `em`要素を警告や注意に使わない<span id="dont-use-em-element-for-warning-or-caution"></span>
 
 それらは深刻なものです。ですから`strong`要素の方がより相応しいはずです。
 
@@ -1011,7 +1007,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <strong>Caution!</strong>
 
 
-### できる限り`s`や`i`、`b`、`u`要素を避ける
+### できる限り`s`や`i`、`b`、`u`要素を避ける<span id="avoid-s-i-b-and-u-element-as-much-as-possible"></span>
 
 これらの要素のセマンティックスは人類には難しすぎます。
 
@@ -1024,7 +1020,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### `q`要素内へ引用符は置かない
+### `q`要素内へ引用符は置かない<span id="dont-put-quotes-to-q-element"></span>
 
 引用符はブラウザーが提供します。
 
@@ -1041,7 +1037,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     “For writing maintainable and scalable HTML documents”
 
 
-### `abbr`要素へ`title`属性を追加する
+### `abbr`要素へ`title`属性を追加する<span id="add-title-attribute-to-abbr-element"></span>
 
 他に完全表記を提示する方法がありません。
 
@@ -1054,7 +1050,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <abbr title="HTML Best Practices">HBP</abbr>
 
 
-### `ruby`要素は冗長にマークアップする
+### `ruby`要素は冗長にマークアップする<span id="markup-ruby-element-verbosely"></span>
 
 `ruby`要素のサポートはまだモダンブラウザー間でも完了していません。
 
@@ -1067,7 +1063,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### 機械的に解釈可能でない`time`要素では`datetime`属性を追加する
+### 機械的に解釈可能でない`time`要素では`datetime`属性を追加する<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
 
 `datetime`属性を使わない場合、`time`要素の中身は限定されます。
 
@@ -1080,7 +1076,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### コードの言語は`class`属性で`language-`で始めることで指定する
+### コードの言語は`class`属性で`language-`で始めることで指定する<span id="specify-code-language-with-class-attribute-prefixed-with-language"></span>
 
 これは正式な方法ではありませんが、仕様では言及されています。
 
@@ -1093,7 +1089,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
-### できる限り`kbd`要素はシンプルにする
+### できる限り`kbd`要素はシンプルにする<span id="keep-kbd-element-as-simple-as-possible"></span>
 
 入れ子にした`kbd`要素は人類には難しすぎます。
 
@@ -1106,7 +1102,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <kbd>Ctrl+F5</kbd>
 
 
-### できる限り`span`要素は使わない
+### できる限り`span`要素は使わない<span id="avoid-span-element-as-much-as-possible"></span>
 
 `span`要素は最後の手段です。
 
@@ -1119,7 +1115,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     HTML <em>Best</em> Practices
 
 
-### `br`要素の後ろでは改行する
+### `br`要素の後ろでは改行する<span id="break-after-br-element"></span>
 
 `br`要素が使われる場所には、間違いなく改行が必要です。
 
@@ -1134,7 +1130,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     Practices</p>
 
 
-### 見た目だけのために`br`要素を使わない
+### 見た目だけのために`br`要素を使わない<span id="dont-use-br-element-only-for-presentational-purpose"></span>
 
 `br`要素は改行のためにあるのではなく、コンテンツに必要な改行のためにあります。
 
@@ -1151,10 +1147,10 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <textarea name="rule-description"></textarea></label></p>
 
 
-編集
-----
+## 編集<span id="edits"></span>
 
-### `ins`や`del`要素は他の要素をまたがせない
+
+### `ins`や`del`要素は他の要素をまたがせない<span id="dont-stride-ins-and-del-element-over-other-elements"></span>
 
 要素は他の要素をまたげません。
 
@@ -1171,10 +1167,10 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <del><p>Don’t trust!</p></del>
 
 
-エンベディッドコンテンツ
-------------------------
+## エンベディッドコンテンツ<span id="embedded-content"></span>
 
-### `picture`要素ではフォールバックのための`img`要素を提供する
+
+### `picture`要素ではフォールバックのための`img`要素を提供する<span id="provide-fallback-img-element-for-picture-element"></span>
 
 `picture`要素のサポートはまだよくありません。
 
@@ -1197,7 +1193,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     </picture>
 
 
-### 必要な時は`img`要素へ`alt`属性を追加する
+### 必要な時は`img`要素へ`alt`属性を追加する<span id="add-alt-attrbute-to-img-element-if-needed"></span>
 
 `alt`属性は、画像を表示できなかったり、画像の読み込みを無効にしている環境へ助けになります。
 
@@ -1210,7 +1206,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### 可能ならば`alt`属性は空にする
+### 可能ならば`alt`属性は空にする<span id="empty-alt-attribute-if-possible"></span>
 
 画像が補助的なものならば、きっと周囲に同等のコンテンツが存在するはずです。
 
@@ -1223,7 +1219,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### 可能ならば`alt`属性は省略する
+### 可能ならば`alt`属性は省略する<span id="omit-alt-attribute-if-possible"></span>
 
 たまにどのような文字列が適切な`alt`属性の値かわからない場合もあります。
 
@@ -1237,7 +1233,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
-### `iframe`要素の中は空にする
+### `iframe`要素の中は空にする<span id="empty-iframe-element"></span>
 
 その内容にはいくつかの制限があります。空にすれば安全です。
 
@@ -1252,7 +1248,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     <iframe src="/ads/default.html"></iframe>
 
 
-### `map`要素の中はマークアップする
+### `map`要素の中はマークアップする<span id="markup-map-element-content"></span>
 
 その中身はスクリーン・リーダーへ提供されます。
 
@@ -1281,7 +1277,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
     </map>
 
 
-### `audio`や`video`要素にフォールバックのためのコンテンツを提供する
+### `audio`や`video`要素にフォールバックのためのコンテンツを提供する<span id="provide-fallback-content-for-audio-or-video-element"></span>
 
 HTMLで新しく作られた要素にはフォールバックのためのコンテンツが必要です。
 
@@ -1303,10 +1299,10 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     </video>
 
 
-テーブルデータ
---------------
+## テーブルデータ<span id="tabular-data"></span>
 
-### 1行に1つのセルを書く
+
+### 1行に1つのセルを書く<span id="write-one-cell-per-line"></span>
 
 長い行は把握しづらいです。
 
@@ -1325,7 +1321,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     </tr>
 
 
-### 見出しセルには`th`要素を使う
+### 見出しセルには`th`要素を使う<span id="use-th-element-for-header-cell"></span>
 
 避ける理由はないでしょう。
 
@@ -1378,10 +1374,10 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     </table>
 
 
-フォーム
---------
+## フォーム<span id="forms"></span>
 
-### フォームコントロールは`label`要素で括る
+
+### フォームコントロールは`label`要素で括る<span id="wrap-form-control-with-label-element"></span>
 
 `label`要素はフォーム要素へフォーカスを当てるのに役立ちます。
 
@@ -1394,7 +1390,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### 可能ならば`for`属性は省略する
+### 可能ならば`for`属性は省略する<span id="omit-for-attribute-if-possible"></span>
 
 `label`要素はいくつかのフォーム要素を含められます。
 
@@ -1407,7 +1403,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <label>Query: <input name="q" type="text"></label>
 
 
-### `input`要素では適切な`type`属性を使う
+### `input`要素では適切な`type`属性を使う<span id="use-appropriate-type-attribute-for-input-element"></span>
 
 適切な`type`属性により、ブラウザーは`input`要素へちょっとした機能を与えてくれます。
 
@@ -1420,7 +1416,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### `input type="submit"`には`value`属性を追加する
+### `input type="submit"`には`value`属性を追加する<span id="add-value-attribute-to-input-typesubmit"></span>
 
 送信ボタンは、そのデフォルトのラベルがブラウザーや言語設定によって変わってしまいます。
 
@@ -1433,7 +1429,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <input type="submit" value="Search">
 
 
-### `pattern`属性を持つ`input`要素には`title`属性を追加する
+### `pattern`属性を持つ`input`要素には`title`属性を追加する<span id="add-title-attribute-to-input-element-when-there-is-pattern-attribute"></span>
 
 もし入力したテキストが`pattern`属性にマッチしない場合、`title`属性の値がヒントとして表示されます。
 
@@ -1446,7 +1442,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### `placeholder`属性をラベル付けに使わない
+### `placeholder`属性をラベル付けに使わない<span id="dont-use-placeholder-attribute-for-labeling"></span>
 
 `label`要素がラベルのためにあり、`placeholder`属性は短いヒントのためにあります。
 
@@ -1459,7 +1455,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### `option`要素は1行に1つ書く
+### `option`要素は1行に1つ書く<span id="write-one-option-element-per-line"></span>
 
 長い行は把握しづらいです。
 
@@ -1478,7 +1474,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     </datalist>
 
 
-### `progress`要素には`max`属性を追加する
+### `progress`要素には`max`属性を追加する<span id="add-max-attribute-to-progress-element"></span>
 
 `max`属性があると、`value`属性を簡単な形式で書けます。
 
@@ -1491,7 +1487,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <progress max="100" value="50"> 50%</progress>
 
 
-### `meter`要素では`min`及び`max`属性を追加する
+### `meter`要素では`min`及び`max`属性を追加する<span id="add-min-and-max-attribute-to-meter-element"></span>
 
 `min`と`max`属性があると、`value`属性を簡単な形式で書けます。
 
@@ -1504,7 +1500,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### `legend`要素は`fieldset`要素の最初に置く
+### `legend`要素は`fieldset`要素の最初に置く<span id="place-legend-element-as-the-first-child-of-fieldset-element"></span>
 
 仕様がそう要求しています。
 
@@ -1525,10 +1521,10 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
     </fieldset>
 
 
-スクリプティング
-----------------
+## スクリプティング<span id="scripting"></span>
 
-### JavaScriptでは`type`属性を省略する
+
+### JavaScriptでは`type`属性を省略する<span id="omit-type-attribute-for-javascript"></span>
 
 HTMLでは、`script`要素における`type`属性の初期値は`text/javascript`です。
 
@@ -1545,7 +1541,7 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
     </script>
 
 
-### `script`要素の中をコメントアウトしない
+### `script`要素の中をコメントアウトしない<span id="dont-comment-out-contents-of-script-element"></span>
 
 この儀式は古いブラウザーのためです。
 
@@ -1572,7 +1568,7 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
     </script>
 
 
-### `script`要素を動的に生成するテクニックを使わない
+### `script`要素を動的に生成するテクニックを使わない<span id="dont-use-script-injected-script-element"></span>
 
 明快さとパフォーマンスの両面で`async`属性が最良です。
 
@@ -1590,10 +1586,10 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
     <script async defer src="https://example.com/widget.js"></script>
 
 
-その他
-------
+## その他<span id="other"></span>
 
-### 一貫した量でインデントする
+
+### 一貫した量でインデントする<span id="indent-consistently"></span>
 
 インデントは読みやすさにおいて重要です。
 
@@ -1620,7 +1616,7 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
     </html>
 
 
-### 内部リンクには絶対パスを使う
+### 内部リンクには絶対パスを使う<span id="use-absolute-path-for-internal-links"></span>
 
 絶対パスはインターネット回線のないローカルの環境でもうまく動きます。
 
@@ -1637,7 +1633,7 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
 
-### 外部リソースにはプロトコル相対URLを使わない
+### 外部リソースにはプロトコル相対URLを使わない<span id="dont-use-protocol-relative-url-for-external-resources"></span>
 
 プロトコルを指定すると、外部リソースを確実かつ安全に読み込めます。
 
@@ -1650,28 +1646,20 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
     <script src="https://example.com/js/library.js">
 
 
-投稿者
-------
-
-- [@hail2u]
-- [@momdo]
 
 
-翻訳者
-------
+## Contributors<span id="contributors"></span>
 
-- [@techhtml]
-- [@umutphp]
-
-
-ライセンス
-----------
-
-[CC0]
+- [@hail2u_](https://github.com/hail2u_)
+- [@momdo](https://github.com/momdo)
 
 
-[@hail2u]:   https://github.com/hail2u
-[@momdo]:    https://github.com/momdo
-[@techhtml]: https://github.com/techhtml
-[@umutphp]:  https://github.com/umutphp
-[CC0]:       http://creativecommons.org/publicdomain/zero/1.0/
+## Translators
+
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+
+
+## License
+
+[CC0](http://creativecommons.org/publicdomain/zero/1.0/)

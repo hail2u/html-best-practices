@@ -1,0 +1,178 @@
+{
+	"title": "HTML Best Practices",
+	"description": "For writing maintainable and scalable HTML documents",
+	"sections": [
+		{
+			"id": "general",
+			"practices": [
+				"start-with-doctype",
+				"dont-use-legacy-or-obsolete-doctype",
+				"dont-use-xml-declaration",
+				"dont-use-character-references-as-much-as-possible",
+				"escape-amp-lt-gt-quot-and-apos-with-named-character-references",
+				"use-numeric-character-references-for-control-or-invisible-characters",
+				"put-white-spaces-around-comment-contents",
+				"dont-omit-closing-tag",
+				"dont-mix-empty-element-format",
+				"dont-put-white-spaces-around-tags-and-attribute-values",
+				"dont-mix-character-cases",
+				"dont-mix-quotation-marks",
+				"dont-separate-attributes-with-two-or-more-white-spaces",
+				"omit-boolean-attribute-value",
+				"omit-namespaces",
+				"dont-use-xml-attributes",
+				"dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes",
+				"prefer-default-implicit-aria-semantics"
+			],
+			"title": "General"
+		},
+		{
+			"id": "the-root-element",
+			"practices": [
+				"add-lang-attribute",
+				"keep-lang-attribute-value-as-short-as-possible",
+				"avoid-data-as-much-as-possible"
+			],
+			"title": "The root element"
+		},
+		{
+			"id": "document-metadata",
+			"practices": [
+				"add-title-element",
+				"dont-use-base-element",
+				"specify-mime-type-of-minor-linked-resources",
+				"dont-link-to-faviconico",
+				"add-apple-touch-icon-link",
+				"add-title-attribute-to-alternate-stylesheets",
+				"for-url-use-link-element",
+				"specify-document-character-encoding",
+				"dont-use-legacy-character-encoding-format",
+				"specify-character-encoding-at-first",
+				"use-utf-8",
+				"omit-type-attribute-for-css",
+				"dont-comment-out-contents-of-style-element",
+				"dont-mix-tag-for-css-and-javascript"
+			],
+			"title": "Document metadata"
+		},
+		{
+			"id": "sections",
+			"practices": [
+				"add-body-element",
+				"forget-about-hgroup-element",
+				"use-address-element-only-for-contact-information"
+			],
+			"title": "Sections"
+		},
+		{
+			"id": "grouping-content",
+			"practices": [
+				"dont-start-with-newline-in-pre-element",
+				"use-appropriate-element-in-blockquote-element",
+				"dont-include-attribution-directly-in-blockquote-element",
+				"write-one-list-item-per-line",
+				"use-type-attribute-for-ol-element",
+				"dont-use-dl-for-dialogue",
+				"place-figcaption-element-as-first-or-last-child-of-figure-element",
+				"use-main-element",
+				"avoid-div-element-as-much-as-possible"
+			],
+			"title": "Grouping content"
+		},
+		{
+			"id": "text-level-semantics",
+			"practices": [
+				"dont-split-same-link-that-can-be-grouped",
+				"use-download-attribute-for-downloading-a-resource",
+				"use-rel-hreflang-and-type-attribute-if-needed",
+				"clear-link-text",
+				"dont-use-em-element-for-warning-or-caution",
+				"avoid-s-i-b-and-u-element-as-much-as-possible",
+				"dont-put-quotes-to-q-element",
+				"add-title-attribute-to-abbr-element",
+				"markup-ruby-element-verbosely",
+				"add-datetime-attribute-to-non-machine-readable-time-element",
+				"specify-code-language-with-class-attribute-prefixed-with-language",
+				"keep-kbd-element-as-simple-as-possible",
+				"avoid-span-element-as-much-as-possible",
+				"break-after-br-element",
+				"dont-use-br-element-only-for-presentational-purpose"
+			],
+			"title": "Text-level semantics"
+		},
+		{
+			"id": "edits",
+			"practices": [
+				"dont-stride-ins-and-del-element-over-other-elements"
+			],
+			"title": "Edits"
+		},
+		{
+			"id": "embedded-content",
+			"practices": [
+				"provide-fallback-img-element-for-picture-element",
+				"add-alt-attrbute-to-img-element-if-needed",
+				"empty-alt-attribute-if-possible",
+				"omit-alt-attribute-if-possible",
+				"empty-iframe-element",
+				"markup-map-element-content",
+				"provide-fallback-content-for-audio-or-video-element"
+			],
+			"title": "Embedded content"
+		},
+		{
+			"id": "tabular-data",
+			"practices": [
+				"write-one-cell-per-line",
+				"use-th-element-for-header-cell"
+			],
+			"title": "Tabular data"
+		},
+		{
+			"id": "forms",
+			"practices": [
+				"wrap-form-control-with-label-element",
+				"omit-for-attribute-if-possible",
+				"use-appropriate-type-attribute-for-input-element",
+				"add-value-attribute-to-input-typesubmit",
+				"add-title-attribute-to-input-element-when-there-is-pattern-attribute",
+				"dont-use-placeholder-attribute-for-labeling",
+				"write-one-option-element-per-line",
+				"add-max-attribute-to-progress-element",
+				"add-min-and-max-attribute-to-meter-element",
+				"place-legend-element-as-the-first-child-of-fieldset-element"
+			],
+			"title": "Forms"
+		},
+		{
+			"id": "scripting",
+			"practices": [
+				"omit-type-attribute-for-javascript",
+				"dont-comment-out-contents-of-script-element",
+				"dont-use-script-injected-script-element"
+			],
+			"title": "Scripting"
+		},
+		{
+			"id": "other",
+			"practices": [
+				"indent-consistently",
+				"use-absolute-path-for-internal-links",
+				"dont-use-protocol-relative-url-for-external-resources"
+			],
+			"title": "Other"
+		}
+	],
+	"contributors": [
+		"hail2u_",
+		"momdo"
+	],
+	"translators": [
+		"techhtml",
+		"umutphp"
+	],
+	"license": {
+		"name": "CC0",
+		"url": "http://creativecommons.org/publicdomain/zero/1.0/"
+	}
+}

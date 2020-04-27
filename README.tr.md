@@ -4,119 +4,116 @@ Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [�
 
 Bakım yapılabilir ve ölçeklenebilir HTML belgeleri yazmak için
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Genel](#general)
+  - [DOCTYPE ile başla](#start-with-doctype)
+  - [Eskimiş yada geçersiz DOCTYPE kullanmayın](#dont-use-legacy-or-obsolete-doctype)
+  - [XML etiketi kullanmayın](#dont-use-xml-declaration)
+  - [Karakter referanslarını mümkün olduğunca kullanmayın](#dont-use-character-references-as-much-as-possible)
+  - [`&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmaktan kaçının](#escape-amp-lt-gt-quot-and-apos-with-named-character-references)
+  - [Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.](#use-numeric-character-references-for-control-or-invisible-characters)
+  - [Yorum içeriğinin etrafına boşluk karakteri yerleştirin](#put-white-spaces-around-comment-contents)
+  - [Kapanış etiketini unutmayın](#dont-omit-closing-tag)
+  - [Boş eleman formatını karıştırmayın](#dont-mix-empty-element-format)
+  - [Etiketlerin ve özelliklerin değerlerinin etrafına boşluk karakteri koymayın](#dont-put-white-spaces-around-tags-and-attribute-values)
+  - [Büyük küçük karakterleri aynı anda kullanmayın](#dont-mix-character-cases)
+  - [Tırnak işaretlerini karıştırmayın](#dont-mix-quotation-marks)
+  - [Özellikleri iki veya daha fazla boşluk ile ayırmayın](#dont-separate-attributes-with-two-or-more-white-spaces)
+  - [Boolean özellik değerini yazmayın](#omit-boolean-attribute-value)
+  - [Ad alanlarını kullanmayın](#omit-namespaces)
+  - [XML özelliklerini kullanmayın](#dont-use-xml-attributes)
+  - [`data-*`, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın](#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes)
+  - [Varsayılan örtülü ARIA gramerini tercih edin](#prefer-default-implicit-aria-semantics)
+- [Kök elemanı](#the-root-element)
+  - [`lang` özelliği ekleyin](#add-lang-attribute)
+  - [`lang` değerini mümkün olduğunca kısa tutun](#keep-lang-attribute-value-as-short-as-possible)
+  - [Mümkün olduğunca `data-*` kullanmayın](#avoid-data-as-much-as-possible)
+- [Metadata'yı belgeleyin](#document-metadata)
+  - [`title` elemanı ekleyin](#add-title-element)
+  - [`base` elemanı kullanmayın](#dont-use-base-element)
+  - [Bağlantılı kaynakların MIME türünü belirtin](#specify-mime-type-of-minor-linked-resources)
+  - [`favicon.ico`'ya link vermeyin](#dont-link-to-faviconico)
+  - [`apple-touch-icon` ekleyin](#add-apple-touch-icon-link)
+  - [Alternatif stil sayfalarına `title` ekleyin](#add-title-attribute-to-alternate-stylesheets)
+  - [URL için `link` kullanın](#for-url-use-link-element)
+  - [Belge karakter kodunu belirtin](#specify-document-character-encoding)
+  - [Eski karakter kodlama formatını kullanmayın](#dont-use-legacy-character-encoding-format)
+  - [İlk önce karakter kodlamasını belirtin](#specify-character-encoding-at-first)
+  - [UTF-8'i kullanın](#use-utf-8)
+  - [CSS için `type` kullanmayın](#omit-type-attribute-for-css)
+  - [`style` etiketinin içeriğini yorum içine almayın](#dont-comment-out-contents-of-style-element)
+  - [CSS ve JavaScript etiketlerini karıştırmayın](#dont-mix-tag-for-css-and-javascript)
+- [Bölümler](#sections)
+  - [`body` etiketi ekleyin](#add-body-element)
+  - [`hgroup` etiketini unutun](#forget-about-hgroup-element)
+  - [`address` etiketini yalnızca iletişim bilgileri için kullanın](#use-address-element-only-for-contact-information)
+- [İçeriği gruplama](#grouping-content)
+  - [`pre` elemandaki satır başı ile başlamayın](#dont-start-with-newline-in-pre-element)
+  - [`blockquote` içinde uygun etiket kullanın](#use-appropriate-element-in-blockquote-element)
+  - [Özniteliği doğrudan `blockquote` öğesinin içine dahil etme](#dont-include-attribution-directly-in-blockquote-element)
+  - [Satır başına bir liste öğesi yaz](#write-one-list-item-per-line)
+  - [`ol` etiketi için `type` özelliğini kullanın](#use-type-attribute-for-ol-element)
+  - [Diyalog için `dl` kullanmayın](#dont-use-dl-for-dialogue)
+  - [`figcaption` etiketini, `figure` etiketinin ilk veya son çocuğu olarak yerleştirin](#place-figcaption-element-as-first-or-last-child-of-figure-element)
+  - [`main` etiketini kullanın](#use-main-element)
+  - [`div` etiketini mümkün olduğu kadar kullanmayın](#avoid-div-element-as-much-as-possible)
+- [Metin düzeyinde anlambilim](#text-level-semantics)
+  - [Gruplandırılabilen aynı bağlantıyı bölmeyin](#dont-split-same-link-that-can-be-grouped)
+  - [İndirilebilir kaynağı belirtmek için `download` özelliğini kullanın](#use-download-attribute-for-downloading-a-resource)
+  - [Gerekirse `rel` , `hreflang` ve `type` özelliklerini kullanın](#use-rel-hreflang-and-type-attribute-if-needed)
+  - [Bağlantı metinlerini amacına uygun yapın](#clear-link-text)
+  - [Uyarı vermek için `em` etiketi kullanmayın](#dont-use-em-element-for-warning-or-caution)
+  - [`s` , `i` , `b` ve `u` etiketlerinden mümkün olduğunca kaçının](#avoid-s-i-b-and-u-element-as-much-as-possible)
+  - [`q` öğesine tırnak koymayın](#dont-put-quotes-to-q-element)
+  - [`abbr` etiketine `title` özelliğini ekleyin](#add-title-attribute-to-abbr-element)
+  - [`ruby` etiketini detaylandırın](#markup-ruby-element-verbosely)
+  - [Makine tarafından okunamayacak `time` etiketine `datetime` özelliği ekleyin](#add-datetime-attribute-to-non-machine-readable-time-element)
+  - [`language-` öneki ile kod dilini `class` etiketi le belirtin](#specify-code-language-with-class-attribute-prefixed-with-language)
+  - [`kbd` etiketini mümkün olduğu kadar basit tutun](#keep-kbd-element-as-simple-as-possible)
+  - [`span` etiketinden mümkün olduğunca kaçının](#avoid-span-element-as-much-as-possible)
+  - [`br` etiketinden sonra satır sonu yapın](#break-after-br-element)
+  - [`br` öğesini yalnızca sunum amacıyla kullanmayın](#dont-use-br-element-only-for-presentational-purpose)
+- [Düzenlemeler](#edits)
+  - [`ins` ve `del` etiketlerini diğer öğelerin arasında kullanmayın](#dont-stride-ins-and-del-element-over-other-elements)
+- [Gömülü içerik](#embedded-content)
+  - [`picture` elemanı için yedek `img` elemanı kullanın](#provide-fallback-img-element-for-picture-element)
+  - [Gerekirse `img` öğesine `alt` özelliği ekleyin](#add-alt-attrbute-to-img-element-if-needed)
+  - [Mümkünse `alt` özelliğini boş olarak kullanın](#empty-alt-attribute-if-possible)
+  - [Mümkünse `alt` özelliğini atlayın](#omit-alt-attribute-if-possible)
+  - [Boş `iframe` öğesi kullanın](#empty-iframe-element)
+  - [`map` etiketinin içeriğini işaretleyin](#markup-map-element-content)
+  - [`audio` veya `video` öğesi için yedek içerik sağlayın](#provide-fallback-content-for-audio-or-video-element)
+- [Tablo verileri](#tabular-data)
+  - [Her satıra bir hücre yazın](#write-one-cell-per-line)
+  - [Başlık hücresi için `th` etiketini kullanın](#use-th-element-for-header-cell)
+- [Formlar](#forms)
+  - [`label` etiketini ile form kontrolünü sağlayın](#wrap-form-control-with-label-element)
+  - [Mümkünse `for` özelliğini kullanmayın](#omit-for-attribute-if-possible)
+  - [`input` etiketi için uygun `type` özelliğini kullanın](#use-appropriate-type-attribute-for-input-element)
+  - [`input type="submit"` elemanına `value` özelliği ekleyin](#add-value-attribute-to-input-typesubmit)
+  - [`pattern` özelliği olduğunda `input` etiketine `title` özelliği ekleyin](#add-title-attribute-to-input-element-when-there-is-pattern-attribute)
+  - [Etiketleme için `placeholder` özelliğini kullanmayın](#dont-use-placeholder-attribute-for-labeling)
+  - [Her satıra bir `option` etiketi yazın](#write-one-option-element-per-line)
+  - [`progress` etiketine `max` özelliği ekleyin](#add-max-attribute-to-progress-element)
+  - [`meter` etiketine `min` ve `max` özelliği ekleyin](#add-min-and-max-attribute-to-meter-element)
+  - [`legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun](#place-legend-element-as-the-first-child-of-fieldset-element)
+- [Script ekleme](#scripting)
+  - [JavaScript için `type` özelliğini kullanmayın](#omit-type-attribute-for-javascript)
+  - [`script` etiketinin içeriğini yorumla kapatmayın](#dont-comment-out-contents-of-script-element)
+  - [Komut dosyası eklenmiş `script` öğesini kullanmayın](#dont-use-script-injected-script-element)
+- [Diğer](#other)
+  - [Tutarlı girintiler kullanın](#indent-consistently)
+  - [Dahili bağlantılar için mutlak yol kullanın](#use-absolute-path-for-internal-links)
+  - [Harici kaynaklar için protokole bağlı URL kullanmayın](#dont-use-protocol-relative-url-for-external-resources)
+- [Contributors](#contributors)
+- [Translators](#translators)
+- [License](#license)
 
 
-- [Genel](#genel)
-  - [DOCTYPE ile başla](#doctype-ile-ba%C5%9Fla)
-  - [Eskimiş yada geçersiz DOCTYPE kullanmayın](#eskimi%C5%9F-yada-ge%C3%A7ersiz-doctype-kullanmay%C4%B1n)
-  - [XML etiketi kullanmayın](#xml-etiketi-kullanmay%C4%B1n)
-  - [Karakter referanslarını mümkün olduğunca kullanmayın](#karakter-referanslar%C4%B1n%C4%B1-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-kullanmay%C4%B1n)
-  - [`&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmaktan kaçının](#-----ve--karakter-referanslar%C4%B1n%C4%B1-oldu%C4%9Fu-gibi-kullanmaktan-ka%C3%A7%C4%B1n%C4%B1n)
-  - [Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.](#kontrol-veya-g%C3%B6r%C3%BCnmeyen-karakterler-i%C3%A7in-say%C4%B1sal-karakter-referanslar%C4%B1n%C4%B1-kullan%C4%B1n)
-  - [Yorum içeriğinin etrafına boşluk karakteri yerleştirin](#yorum-i%C3%A7eri%C4%9Finin-etraf%C4%B1na-bo%C5%9Fluk-karakteri-yerle%C5%9Ftirin)
-  - [Kapanış etiketini unutmayın](#kapan%C4%B1%C5%9F-etiketini-unutmay%C4%B1n)
-  - [Boş eleman formatını karıştırmayın](#bo%C5%9F-eleman-format%C4%B1n%C4%B1-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-  - [Etiketlerin ve özelliklerin değerlerinin etrafına boşluk karakteri koymayın](#etiketlerin-ve-%C3%B6zelliklerin-de%C4%9Ferlerinin-etraf%C4%B1na-bo%C5%9Fluk-karakteri-koymay%C4%B1n)
-  - [Büyük küçük karakterleri aynı anda kullanmayın](#b%C3%BCy%C3%BCk-k%C3%BC%C3%A7%C3%BCk-karakterleri-ayn%C4%B1-anda-kullanmay%C4%B1n)
-  - [Tırnak işaretlerini karıştırmayın](#t%C4%B1rnak-i%C5%9Faretlerini-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-  - [Özellikleri iki veya daha fazla boşluk ile ayırmayın](#%C3%B6zellikleri-iki-veya-daha-fazla-bo%C5%9Fluk-ile-ay%C4%B1rmay%C4%B1n)
-  - [Boolean özellik değerini yazmayın](#boolean-%C3%B6zellik-de%C4%9Ferini-yazmay%C4%B1n)
-  - [Ad alanlarını kullanmayın](#ad-alanlar%C4%B1n%C4%B1-kullanmay%C4%B1n)
-  - [XML özelliklerini kullanmayın](#xml-%C3%B6zelliklerini-kullanmay%C4%B1n)
-  - [`data-*`, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın](#data--microdata-ve-rdfa-lite-%C3%B6zelliklerini-ile-ortak-%C3%B6zellikleri-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-  - [Varsayılan örtülü ARIA gramerini tercih edin](#varsay%C4%B1lan-%C3%B6rt%C3%BCl%C3%BC-aria-gramerini-tercih-edin)
-- [Kök elemanı](#k%C3%B6k-eleman%C4%B1)
-  - [`lang` özelliği ekleyin](#lang-%C3%B6zelli%C4%9Fi-ekleyin)
-  - [`lang` değerini mümkün olduğunca kısa tutun](#lang-de%C4%9Ferini-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-k%C4%B1sa-tutun)
-  - [Mümkün olduğunca `data-*` kullanmayın](#m%C3%BCmk%C3%BCn-oldu%C4%9Funca-data--kullanmay%C4%B1n)
-- [Metadata'yı belgeleyin](#metadatay%C4%B1-belgeleyin)
-  - [`title` elemanı ekleyin](#title-eleman%C4%B1-ekleyin)
-  - [`base` elemanı kullanmayın](#base-eleman%C4%B1-kullanmay%C4%B1n)
-  - [Bağlantılı kaynakların MIME türünü belirtin](#ba%C4%9Flant%C4%B1l%C4%B1-kaynaklar%C4%B1n-mime-t%C3%BCr%C3%BCn%C3%BC-belirtin)
-  - [`favicon.ico`'ya link vermeyin](#faviconicoya-link-vermeyin)
-  - [`apple-touch-icon` ekleyin](#apple-touch-icon-ekleyin)
-  - [Alternatif stil sayfalarına `title` ekleyin](#alternatif-stil-sayfalar%C4%B1na-title-ekleyin)
-  - [URL için `link` kullanın](#url-i%C3%A7in-link-kullan%C4%B1n)
-  - [Belge karakter kodunu belirtin](#belge-karakter-kodunu-belirtin)
-  - [Eski karakter kodlama formatını kullanmayın](#eski-karakter-kodlama-format%C4%B1n%C4%B1-kullanmay%C4%B1n)
-  - [İlk önce karakter kodlamasını belirtin](#i%CC%87lk-%C3%B6nce-karakter-kodlamas%C4%B1n%C4%B1-belirtin)
-  - [UTF-8'i kullanın](#utf-8i-kullan%C4%B1n)
-  - [CSS için `type` kullanmayın](#css-i%C3%A7in-type-kullanmay%C4%B1n)
-  - [`style` etiketinin içeriğini yorum içine almayın](#style-etiketinin-i%C3%A7eri%C4%9Fini-yorum-i%C3%A7ine-almay%C4%B1n)
-  - [CSS ve JavaScript etiketlerini karıştırmayın](#css-ve-javascript-etiketlerini-kar%C4%B1%C5%9Ft%C4%B1rmay%C4%B1n)
-- [Bölümler](#b%C3%B6l%C3%BCmler)
-  - [`body` etiketi ekleyin](#body-etiketi-ekleyin)
-  - [`hgroup` etiketini unutun](#hgroup-etiketini-unutun)
-  - [`address` etiketini yalnızca iletişim bilgileri için kullanın](#address-etiketini-yaln%C4%B1zca-ileti%C5%9Fim-bilgileri-i%C3%A7in-kullan%C4%B1n)
-- [İçeriği gruplama](#i%CC%87%C3%A7eri%C4%9Fi-gruplama)
-  - [`pre` elemandaki satır başı ile başlamayın](#pre-elemandaki-sat%C4%B1r-ba%C5%9F%C4%B1-ile-ba%C5%9Flamay%C4%B1n)
-  - [`blockquote` içinde uygun etiket kullanın](#blockquote-i%C3%A7inde-uygun-etiket-kullan%C4%B1n)
-  - [Özniteliği doğrudan `blockquote` öğesinin içine dahil etme](#%C3%B6zniteli%C4%9Fi-do%C4%9Frudan-blockquote-%C3%B6%C4%9Fesinin-i%C3%A7ine-dahil-etme)
-  - [Satır başına bir liste öğesi yaz](#sat%C4%B1r-ba%C5%9F%C4%B1na-bir-liste-%C3%B6%C4%9Fesi-yaz)
-  - [`ol` etiketi için `type` özelliğini kullanın](#ol-etiketi-i%C3%A7in-type-%C3%B6zelli%C4%9Fini-kullan%C4%B1n)
-  - [Diyalog için `dl` kullanmayın](#diyalog-i%C3%A7in-dl-kullanmay%C4%B1n)
-  - [`figcaption` etiketini, `figure` etiketinin ilk veya son çocuğu olarak yerleştirin](#figcaption-etiketini-figure-etiketinin-ilk-veya-son-%C3%A7ocu%C4%9Fu-olarak-yerle%C5%9Ftirin)
-  - [`main` etiketini kullanın](#main-etiketini-kullan%C4%B1n)
-  - [`div` etiketini mümkün olduğu kadar kullanmayın](#div-etiketini-m%C3%BCmk%C3%BCn-oldu%C4%9Fu-kadar-kullanmay%C4%B1n)
-- [Metin düzeyinde anlambilim](#metin-d%C3%BCzeyinde-anlambilim)
-  - [Gruplandırılabilen aynı bağlantıyı bölmeyin](#grupland%C4%B1r%C4%B1labilen-ayn%C4%B1-ba%C4%9Flant%C4%B1y%C4%B1-b%C3%B6lmeyin)
-  - [İndirilebilir kaynağı belirtmek için `download` özelliğini kullanın](#i%CC%87ndirilebilir-kayna%C4%9F%C4%B1-belirtmek-i%C3%A7in-download-%C3%B6zelli%C4%9Fini-kullan%C4%B1n)
-  - [Gerekirse `rel` , `hreflang` ve `type` özelliklerini kullanın](#gerekirse-rel--hreflang-ve-type-%C3%B6zelliklerini-kullan%C4%B1n)
-  - [Bağlantı metinlerini amacına uygun yapın](#ba%C4%9Flant%C4%B1-metinlerini-amac%C4%B1na-uygun-yap%C4%B1n)
-  - [Uyarı vermek için `em` etiketi kullanmayın](#uyar%C4%B1-vermek-i%C3%A7in-em-etiketi-kullanmay%C4%B1n)
-  - [`s` , `i` , `b` ve `u` etiketlerinden mümkün olduğunca kaçının](#s--i--b-ve-u-etiketlerinden-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-ka%C3%A7%C4%B1n%C4%B1n)
-  - [`q` öğesine tırnak koymayın](#q-%C3%B6%C4%9Fesine-t%C4%B1rnak-koymay%C4%B1n)
-  - [`abbr` etiketine `title` özelliğini ekleyin](#abbr-etiketine-title-%C3%B6zelli%C4%9Fini-ekleyin)
-  - [`ruby` etiketini detaylandırın](#ruby-etiketini-detayland%C4%B1r%C4%B1n)
-  - [Makine tarafından okunamayacak `time` etiketine `datetime` özelliği ekleyin](#makine-taraf%C4%B1ndan-okunamayacak-time-etiketine-datetime-%C3%B6zelli%C4%9Fi-ekleyin)
-  - [`language-` öneki ile kod dilini `class` etiketi le belirtin](#language--%C3%B6neki-ile-kod-dilini-class-etiketi-le-belirtin)
-  - [`kbd` etiketini mümkün olduğu kadar basit tutun](#kbd-etiketini-m%C3%BCmk%C3%BCn-oldu%C4%9Fu-kadar-basit-tutun)
-  - [`span` etiketinden mümkün olduğunca kaçının](#span-etiketinden-m%C3%BCmk%C3%BCn-oldu%C4%9Funca-ka%C3%A7%C4%B1n%C4%B1n)
-  - [`br` etiketinden sonra satır sonu yapın](#br-etiketinden-sonra-sat%C4%B1r-sonu-yap%C4%B1n)
-  - [`br` öğesini yalnızca sunum amacıyla kullanmayın](#br-%C3%B6%C4%9Fesini-yaln%C4%B1zca-sunum-amac%C4%B1yla-kullanmay%C4%B1n)
-- [Düzenlemeler](#d%C3%BCzenlemeler)
-  - [`ins` ve `del` etiketlerini diğer öğelerin arasında kullanmayın](#ins-ve-del-etiketlerini-di%C4%9Fer-%C3%B6%C4%9Felerin-aras%C4%B1nda-kullanmay%C4%B1n)
-- [Gömülü içerik](#g%C3%B6m%C3%BCl%C3%BC-i%C3%A7erik)
-  - [`picture` elemanı için yedek `img` elemanı kullanın](#picture-eleman%C4%B1-i%C3%A7in-yedek-img-eleman%C4%B1-kullan%C4%B1n)
-  - [Gerekirse `img` öğesine `alt` özelliği ekleyin](#gerekirse-img-%C3%B6%C4%9Fesine-alt-%C3%B6zelli%C4%9Fi-ekleyin)
-  - [Mümkünse `alt` özelliğini boş olarak kullanın](#m%C3%BCmk%C3%BCnse-alt-%C3%B6zelli%C4%9Fini-bo%C5%9F-olarak-kullan%C4%B1n)
-  - [Mümkünse `alt` özelliğini atlayın](#m%C3%BCmk%C3%BCnse-alt-%C3%B6zelli%C4%9Fini-atlay%C4%B1n)
-  - [Boş `iframe` öğesi kullanın](#bo%C5%9F-iframe-%C3%B6%C4%9Fesi-kullan%C4%B1n)
-  - [`map` etiketinin içeriğini işaretleyin](#map-etiketinin-i%C3%A7eri%C4%9Fini-i%C5%9Faretleyin)
-  - [`audio` veya `video` öğesi için yedek içerik sağlayın](#audio-veya-video-%C3%B6%C4%9Fesi-i%C3%A7in-yedek-i%C3%A7erik-sa%C4%9Flay%C4%B1n)
-- [Tablo verileri](#tablo-verileri)
-  - [Her satıra bir hücre yazın](#her-sat%C4%B1ra-bir-h%C3%BCcre-yaz%C4%B1n)
-  - [Başlık hücresi için `th` etiketini kullanın](#ba%C5%9Fl%C4%B1k-h%C3%BCcresi-i%C3%A7in-th-etiketini-kullan%C4%B1n)
-- [Formlar](#formlar)
-  - [`label` etiketini ile form kontrolünü sağlayın](#label-etiketini-ile-form-kontrol%C3%BCn%C3%BC-sa%C4%9Flay%C4%B1n)
-  - [Mümkünse `for` özelliğini kullanmayın](#m%C3%BCmk%C3%BCnse-for-%C3%B6zelli%C4%9Fini-kullanmay%C4%B1n)
-  - [`input` etiketi için uygun `type` özelliğini kullanın](#input-etiketi-i%C3%A7in-uygun-type-%C3%B6zelli%C4%9Fini-kullan%C4%B1n)
-  - [`input type="submit"` elemanına `value` özelliği ekleyin](#input-typesubmit-eleman%C4%B1na-value-%C3%B6zelli%C4%9Fi-ekleyin)
-  - [`pattern` özelliği olduğunda `input` etiketine `title` özelliği ekleyin](#pattern-%C3%B6zelli%C4%9Fi-oldu%C4%9Funda-input-etiketine-title-%C3%B6zelli%C4%9Fi-ekleyin)
-  - [Etiketleme için `placeholder` özelliğini kullanmayın](#etiketleme-i%C3%A7in-placeholder-%C3%B6zelli%C4%9Fini-kullanmay%C4%B1n)
-  - [Her satıra bir `option` etiketi yazın](#her-sat%C4%B1ra-bir-option-etiketi-yaz%C4%B1n)
-  - [`progress` etiketine `max` özelliği ekleyin](#progress-etiketine-max-%C3%B6zelli%C4%9Fi-ekleyin)
-  - [`meter` etiketine `min` ve `max` özelliği ekleyin](#meter-etiketine-min-ve-max-%C3%B6zelli%C4%9Fi-ekleyin)
-  - [`legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun](#legend-etiketini-fieldset-etiketinin-ilk-%C3%A7ocu%C4%9Fu-olarak-eleman%C4%B1-olarak-olu%C5%9Fturun)
-- [Script ekleme](#script-ekleme)
-  - [JavaScript için `type` özelliğini kullanmayın](#javascript-i%C3%A7in-type-%C3%B6zelli%C4%9Fini-kullanmay%C4%B1n)
-  - [`script` etiketinin içeriğini yorumla kapatmayın](#script-etiketinin-i%C3%A7eri%C4%9Fini-yorumla-kapatmay%C4%B1n)
-  - [Komut dosyası eklenmiş `script` öğesini kullanmayın](#komut-dosyas%C4%B1-eklenmi%C5%9F-script-%C3%B6%C4%9Fesini-kullanmay%C4%B1n)
-- [Diğer](#di%C4%9Fer)
-  - [Tutarlı girintiler kullanın](#tutarl%C4%B1-girintiler-kullan%C4%B1n)
-  - [Dahili bağlantılar için mutlak yol kullanın](#dahili-ba%C4%9Flant%C4%B1lar-i%C3%A7in-mutlak-yol-kullan%C4%B1n)
-  - [Harici kaynaklar için protokole bağlı URL kullanmayın](#harici-kaynaklar-i%C3%A7in-protokole-ba%C4%9Fl%C4%B1-url-kullanmay%C4%B1n)
-- [Katkıda bulunanlar](#katk%C4%B1da-bulunanlar)
-- [Çeviri Yapanlar](#%C3%A7eviri-yapanlar)
-- [Lisans](#lisans)
+## Genel<span id="general"></span>
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Genel
-
-### DOCTYPE ile başla
+### DOCTYPE ile başla<span id="start-with-doctype"></span>
 
 DOCTYPE standart modu etkinleştirmek için gereklidir.
 
@@ -137,7 +134,8 @@ Doğru:
 </html>
 ```
 
-### Eskimiş yada geçersiz DOCTYPE kullanmayın
+
+### Eskimiş yada geçersiz DOCTYPE kullanmayın<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
 DOCTYPE artık DTD için değil, basit olsun.
 
@@ -154,7 +152,8 @@ Doğru:
 <!DOCTYPE html>
 ```
 
-### XML etiketi kullanmayın
+
+### XML etiketi kullanmayın<span id="dont-use-xml-declaration"></span>
 
 XHTML yazmak istediğinize emin misiniz?
 
@@ -171,7 +170,8 @@ Doğru:
 <!DOCTYPE html>
 ```
 
-### Karakter referanslarını mümkün olduğunca kullanmayın
+
+### Karakter referanslarını mümkün olduğunca kullanmayın<span id="dont-use-character-references-as-much-as-possible"></span>
 
 UTF-8 ile bir HTML belgesi yazarsanız, hemen hemen tüm karakterler (Emoji dahil) doğrudan yazılabilir.
 
@@ -187,7 +187,8 @@ Doğru:
 <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 ```
 
-### `&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmaktan kaçının
+
+### `&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmaktan kaçının<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
 
 Bu karakterlerden hatasız bir HTML belgesi için her zaman kaçınılmalıdır.
 
@@ -203,7 +204,8 @@ Doğru:
 <h1>The &quot;&amp;&quot; character</h1>
 ```
 
-### Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.
+
+### Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.<span id="use-numeric-character-references-for-control-or-invisible-characters"></span>
 
 Bu karakterler başka bir karakter için kolayca karıştırılabilir. Ayrıca spec bu karakterler için okunabilir bir isim tanımlamayı da garanti etmez.
 
@@ -219,7 +221,8 @@ Yanlış:
 <p>This book can read in 1&#xA0;hour.</p>
 ```
 
-### Yorum içeriğinin etrafına boşluk karakteri yerleştirin
+
+### Yorum içeriğinin etrafına boşluk karakteri yerleştirin<span id="put-white-spaces-around-comment-contents"></span>
 
 Bazı karakterler yorum açıldıktan hemen sonra veya yorum kapatmadan önce kullanılamaz.
 
@@ -235,7 +238,8 @@ Doğru:
 <!-- This section is non-normative -->
 ```
 
-### Kapanış etiketini unutmayın
+
+### Kapanış etiketini unutmayın<span id="dont-omit-closing-tag"></span>
 
 Kapanış etiketini atlamak için bir kural yok.
 
@@ -257,7 +261,8 @@ Doğru:
 </html>
 ```
 
-### Boş eleman formatını karıştırmayın
+
+### Boş eleman formatını karıştırmayın<span id="dont-mix-empty-element-format"></span>
 
 Tutarlılık, okunabilirliğin anahtarıdır.
 
@@ -275,7 +280,8 @@ Doğru:
 <hr>
 ```
 
-### Etiketlerin ve özelliklerin değerlerinin etrafına boşluk karakteri koymayın
+
+### Etiketlerin ve özelliklerin değerlerinin etrafına boşluk karakteri koymayın<span id="dont-put-white-spaces-around-tags-and-attribute-values"></span>
 
 Bunu yapmak için hiçbir sebep yoktur.
 
@@ -291,7 +297,8 @@ Doğru:
 <h1 class="title">HTML Best Practices</h1>
 ```
 
-### Büyük küçük karakterleri aynı anda kullanmayın
+
+### Büyük küçük karakterleri aynı anda kullanmayın<span id="dont-mix-character-cases"></span>
 
 Aynı zamanda bir tutarlılık da oluşturur.
 
@@ -313,7 +320,8 @@ Bu da doğru:
 <A HREF="#general">General</A>
 ```
 
-### Tırnak işaretlerini karıştırmayın
+
+### Tırnak işaretlerini karıştırmayın<span id="dont-mix-quotation-marks"></span>
 
 Yukarıdaki ile aynı sebepten ötürü.
 
@@ -329,7 +337,8 @@ Doğru:
 <img alt="HTML Best Practices" src="/img/logo.jpg">
 ```
 
-### Özellikleri iki veya daha fazla boşluk ile ayırmayın
+
+### Özellikleri iki veya daha fazla boşluk ile ayırmayın<span id="dont-separate-attributes-with-two-or-more-white-spaces"></span>
 
 Garip biçimlendirme kuralınız insanları şaşırtır.
 
@@ -345,7 +354,8 @@ Doğru:
 <input name="q" type="search">
 ```
 
-### Boolean özellik değerini yazmayın
+
+### Boolean özellik değerini yazmayın<span id="omit-boolean-attribute-value"></span>
 
 Yazması kolay, değil mi?
 
@@ -361,7 +371,8 @@ Doğru:
 <audio autoplay src="/audio/theme.mp3">
 ```
 
-### Ad alanlarını kullanmayın
+
+### Ad alanlarını kullanmayın<span id="omit-namespaces"></span>
 
 SVG ve MathML bir HTML belgesinde doğrudan kullanılabilir.
 
@@ -381,7 +392,8 @@ Doğru:
 </svg>
 ```
 
-### XML özelliklerini kullanmayın
+
+### XML özelliklerini kullanmayın<span id="dont-use-xml-attributes"></span>
 
 Sadece HTML belgesi yazıyoruz.
 
@@ -397,7 +409,8 @@ Doğru:
 <span lang="ja">...</span>
 ```
 
-###  `data-*`, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın
+
+### `data-*`, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın<span id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"></span>
 
 Bir etiket dizesi çok karmaşık olabilir. Bu basit kural, böyle bir etiket dizesini okumak için yardımcı olur.
 
@@ -413,7 +426,8 @@ Doğru:
 <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 ```
 
-### Varsayılan örtülü ARIA gramerini tercih edin
+
+### Varsayılan örtülü ARIA gramerini tercih edin<span id="prefer-default-implicit-aria-semantics"></span>
 
 Bazı öğelerin bir HTML belgesinde örtük olarak bir ARIA `role` değeri vardır, belirtmenize gerek yoktur.
 
@@ -437,9 +451,11 @@ Doğru:
 <hr>
 ```
 
-## Kök elemanı
 
-### `lang` özelliği ekleyin
+## Kök elemanı<span id="the-root-element"></span>
+
+
+### `lang` özelliği ekleyin<span id="add-lang-attribute"></span>
 
 `lang` özelliği HTML belgesinin çeviriminin yapılmasına yardımcı olacaktır.
 
@@ -455,7 +471,8 @@ Doğru:
 <html lang="en-US">
 ```
 
-### `lang` değerini mümkün olduğunca kısa tutun
+
+### `lang` değerini mümkün olduğunca kısa tutun<span id="keep-lang-attribute-value-as-short-as-possible"></span>
 
 Japonca yalnızca Japonya'da kullanılır. Yani ülke kodu gerekli değildir.
 
@@ -471,7 +488,8 @@ Doğru:
 <html lang="ja">
 ```
 
-### Mümkün olduğunca `data-*` kullanmayın
+
+### Mümkün olduğunca `data-*` kullanmayın<span id="avoid-data-as-much-as-possible"></span>
 
 Uygun bir özellik de tarayıcılar tarafından doğru bir şekilde ele alınabilir.
 
@@ -491,9 +509,11 @@ Doğru:
 <strong class="warning">Do not wash!</strong>
 ```
 
-## Metadata'yı belgeleyin
 
-### `title` elemanı ekleyin
+## Metadata'yı belgeleyin<span id="document-metadata"></span>
+
+
+### `title` elemanı ekleyin<span id="add-title-element"></span>
 
 `title` değeri, yalnızca tarayıcı tarafından değil, çeşitli uygulamalar tarafından da kullanılır.
 
@@ -514,7 +534,8 @@ Doğru:
 </head>
 ```
 
-### `base` elemanı kullanmayın
+
+### `base` elemanı kullanmayın<span id="dont-use-base-element"></span>
 
 Mutlak bir yol veya URL, hem geliştiriciler hem de kullanıcılar için daha güvenlidir.
 
@@ -539,7 +560,8 @@ Doğru:
 </head>
 ```
 
-### Bağlantılı kaynakların MIME türünü belirtin
+
+### Bağlantılı kaynakların MIME türünü belirtin<span id="specify-mime-type-of-minor-linked-resources"></span>
 
 Bu, uygulamanın bu kaynağı nasıl kullandığı hakkında bir ipucudur.
 
@@ -559,7 +581,8 @@ Doğru:
 <link href="/css/screen.css" rel="stylesheet">
 ```
 
-### `favicon.ico`'ya link vermeyin
+
+### `favicon.ico`'ya link vermeyin<span id="dont-link-to-faviconico"></span>
 
 Hemen hemen tüm tarayıcılar `/favicon.ico`'yu otomatik ve asenkron olarak alır.
 
@@ -575,7 +598,8 @@ Doğru:
 <!-- Place `favicon.ico` in the root directory. -->
 ```
 
-### `apple-touch-icon` ekleyin
+
+### `apple-touch-icon` ekleyin<span id="add-apple-touch-icon-link"></span>
 
 Dokunma simgesi için varsayılan istek yolu değiştirildi.
 
@@ -591,7 +615,8 @@ Doğru:
 <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 ```
 
-### Alternatif stil sayfalarına `title` ekleyin
+
+### Alternatif stil sayfalarına `title` ekleyin<span id="add-title-attribute-to-alternate-stylesheets"></span>
 
 İnsan tarafından okunabilen bir değer, insanların uygun stil sayfasını seçmelerine yardımcı olur.
 
@@ -609,7 +634,8 @@ Doğru:
 <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 ```
 
-### URL için `link` kullanın
+
+### URL için `link` kullanın<span id="for-url-use-link-element"></span>
 
 Bir `href` değeri URL olarak çözülebilir.
 
@@ -631,7 +657,8 @@ Doğru:
 </section>
 ```
 
-### Belge karakter kodunu belirtin
+
+### Belge karakter kodunu belirtin<span id="specify-document-character-encoding"></span>
 
 UTF-8 henüz tüm tarayıcılarda varsayılan değil.
 
@@ -652,7 +679,8 @@ Doğru:
 </head>
 ```
 
-### Eski karakter kodlama formatını kullanmayın
+
+### Eski karakter kodlama formatını kullanmayın<span id="dont-use-legacy-character-encoding-format"></span>
 
 HTTP başlıkları bir sunucu tarafından belirtilmelidir, basit olmalıdır.
 
@@ -668,7 +696,8 @@ Doğru:
 <meta charset="UTF-8">
 ```
 
-### İlk önce karakter kodlamasını belirtin
+
+### İlk önce karakter kodlamasını belirtin<span id="specify-character-encoding-at-first"></span>
 
 Spec, karakter kodlamasının dökümanın ilk 1024 bayt içinde belirtilmesini gerektirir.
 
@@ -692,7 +721,8 @@ Doğru:
 </head>
 ```
 
-### UTF-8'i kullanın
+
+### UTF-8'i kullanın<span id="use-utf-8"></span>
 
 UTF-8 ile Emoji'yi kullanmakta özgürsünüz.
 
@@ -708,7 +738,8 @@ Doğru:
 <meta charset="UTF-8">
 ```
 
-### CSS için `type` kullanmayın
+
+### CSS için `type` kullanmayın<span id="omit-type-attribute-for-css"></span>
 
 HTML'de, `style` etiketinin `type` özelliğinin  ön tanımlı değeri `text/css`'tir.
 
@@ -728,7 +759,8 @@ Doğru:
 </style>
 ```
 
-### `style` etiketinin içeriğini yorum içine almayın
+
+### `style` etiketinin içeriğini yorum içine almayın<span id="dont-comment-out-contents-of-style-element"></span>
 
 Bu ritüel eski tarayıcı içindir.
 
@@ -750,7 +782,8 @@ Doğru:
 </style>
 ```
 
-### CSS ve JavaScript etiketlerini karıştırmayın
+
+### CSS ve JavaScript etiketlerini karıştırmayın<span id="dont-mix-tag-for-css-and-javascript"></span>
 
 Bazen `script` elemanı DOM inşasını engeller.
 
@@ -778,9 +811,11 @@ Bu da doğru:
 <link href="/css/screen.css" rel="stylesheet">
 ```
 
-## Bölümler
 
-### `body` etiketi ekleyin
+## Bölümler<span id="sections"></span>
+
+
+### `body` etiketi ekleyin<span id="add-body-element"></span>
 
 Bazen `body` etiketi beklenmedik bir pozisyonda bir tarayıcı tarafından tamamlanmaktadır.
 
@@ -808,7 +843,8 @@ Doğru:
 </html>
 ```
 
-### `hgroup` etiketini unutun
+
+### `hgroup` etiketini unutun<span id="forget-about-hgroup-element"></span>
 
 Bu etiket çok fazla kullanılmıyor.
 
@@ -828,7 +864,8 @@ Doğru:
 <p>For writing maintainable and scalable HTML documents.</p>
 ```
 
-### `address` etiketini yalnızca iletişim bilgileri için kullanın
+
+### `address` etiketini yalnızca iletişim bilgileri için kullanın<span id="use-address-element-only-for-contact-information"></span>
 
 `address` sadece e-posta adresi, sosyal ağ hesabı, sokak adresi, telefon numarası veya iletişim kurabileceğiniz bir şey içindir.
 
@@ -844,9 +881,11 @@ Doğru:
 <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 ```
 
-## İçeriği gruplama
 
-### `pre` elemandaki satır başı ile başlamayın
+## İçeriği gruplama<span id="grouping-content"></span>
+
+
+### `pre` elemandaki satır başı ile başlamayın<span id="dont-start-with-newline-in-pre-element"></span>
 
 Tarayıcılarda ilk yeni satır yok sayılır, ancak ikinci ve sonraki satırlar oluşturulur.
 
@@ -865,7 +904,8 @@ Doğru:
 </pre>
 ```
 
-### `blockquote` içinde uygun etiket kullanın
+
+### `blockquote` içinde uygun etiket kullanın<span id="use-appropriate-element-in-blockquote-element"></span>
 
 `blockquote` bir alıntıdır, yani içeriği bir karakter kümesi değildir.
 
@@ -883,7 +923,8 @@ Doğru:
 </blockquote>
 ```
 
-### Özniteliği doğrudan `blockquote` öğesinin içine dahil etme
+
+### Özniteliği doğrudan `blockquote` öğesinin içine dahil etme<span id="dont-include-attribution-directly-in-blockquote-element"></span>
 
 `blockquote` içeriği bir alıntıdır.
 
@@ -919,7 +960,8 @@ Bu da doğru:
 </figure>
 ```
 
-### Satır başına bir liste öğesi yaz
+
+### Satır başına bir liste öğesi yaz<span id="write-one-list-item-per-line"></span>
 
 Uzuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuun bir satırı okuması çooooooooooooooooooooooooooooooooooooooooooooooooook
 zordur
@@ -943,7 +985,8 @@ Doğru:
 </ul>
 ```
 
-### `ol` etiketi için `type` özelliğini kullanın
+
+### `ol` etiketi için `type` özelliğini kullanın<span id="use-type-attribute-for-ol-element"></span>
 
 Bazen yakınlardaki içerikler referans verilir. İşaretçiyi değiştirirseniz
 `type` özelliği ile kullanırsanız güvende olacaksınız.
@@ -981,7 +1024,8 @@ Doğru:
 </body>
 ```
 
-### Diyalog için `dl` kullanmayın
+
+### Diyalog için `dl` kullanmayın<span id="dont-use-dl-for-dialogue"></span>
 
 `dl` etiketi, HTML'deki bir ilişkilendirme listesi ile sınırlandırılmıştır.
 
@@ -1017,7 +1061,8 @@ Doğru:
 <p>Abbott: Every dollar of it.</p>
 ```
 
-### `figcaption` etiketini, `figure` etiketinin ilk veya son çocuğu olarak yerleştirin
+
+### `figcaption` etiketini, `figure` etiketinin ilk veya son çocuğu olarak yerleştirin<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
 
 Spec, `figure` etiketinin ortasındaki `figcaption` etiketine izin vermez.
 
@@ -1041,7 +1086,8 @@ Doğru:
 </figure>
 ```
 
-### `main` etiketini kullanın
+
+### `main` etiketini kullanın<span id="use-main-element"></span>
 
 `main` içerikleri kapsamak için kullanılabilir.
 
@@ -1061,7 +1107,8 @@ Doğru:
 </main>
 ```
 
-### `div` etiketini mümkün olduğu kadar kullanmayın
+
+### `div` etiketini mümkün olduğu kadar kullanmayın<span id="avoid-div-element-as-much-as-possible"></span>
 
 `div` son çaredir
 
@@ -1081,9 +1128,11 @@ Doğru:
 </section>
 ```
 
-## Metin düzeyinde anlambilim
 
-### Gruplandırılabilen aynı bağlantıyı bölmeyin
+## Metin düzeyinde anlambilim<span id="text-level-semantics"></span>
+
+
+### Gruplandırılabilen aynı bağlantıyı bölmeyin<span id="dont-split-same-link-that-can-be-grouped"></span>
 
 `a` etiketi hemen hemen tüm etiketleri sarabilir (form gibi etkileşimli elemanlar hariç)
 kontroller ve `a` elemanın kendisi).
@@ -1106,7 +1155,8 @@ Doğru:
 </a>
 ```
 
-### İndirilebilir kaynağı belirtmek için `download` özelliğini kullanın
+
+### İndirilebilir kaynağı belirtmek için `download` özelliğini kullanın<span id="use-download-attribute-for-downloading-a-resource"></span>
 
 Tarayıcıları bağlı kaynakları depoya indirmeye zorlar.
 
@@ -1122,7 +1172,8 @@ Doğru:
 <a download href="/downloads/offline.zip">offline version</a>
 ```
 
-### Gerekirse `rel` , `hreflang` ve `type` özelliklerini kullanın
+
+### Gerekirse `rel` , `hreflang` ve `type` özelliklerini kullanın<span id="use-rel-hreflang-and-type-attribute-if-needed"></span>
 
 Bu ipuçları bağlantılı kaynakların nasıl işleneceğini belirterek uygulamalara yardımcı olur.
 
@@ -1138,7 +1189,8 @@ Doğru:
 <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 ```
 
-### Bağlantı metinlerini amacına uygun yapın
+
+### Bağlantı metinlerini amacına uygun yapın<span id="clear-link-text"></span>
 
 Link metni, linklenen kaynağın etiketi olmalıdır.
 
@@ -1154,7 +1206,8 @@ Doğru:
 <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 ```
 
-### Uyarı vermek için `em` etiketi kullanmayın
+
+### Uyarı vermek için `em` etiketi kullanmayın<span id="dont-use-em-element-for-warning-or-caution"></span>
 
 Bu ciddiyettir. Yani, `strong` eleman daha uygundur.
 
@@ -1170,7 +1223,8 @@ Doğru:
 <strong>Caution!</strong>
 ```
 
-### `s` , `i` , `b` ve `u` etiketlerinden mümkün olduğunca kaçının
+
+### `s` , `i` , `b` ve `u` etiketlerinden mümkün olduğunca kaçının<span id="avoid-s-i-b-and-u-element-as-much-as-possible"></span>
 
 Bu etiketlerin anlambilimi insanlar için çok zordur.
 
@@ -1186,7 +1240,8 @@ Doğru:
 <span class="icon-search" aria-hidden="true"></span>
 ```
 
-### `q` öğesine tırnak koymayın
+
+### `q` öğesine tırnak koymayın<span id="dont-put-quotes-to-q-element"></span>
 
 Tırnaklar tarayıcı tarafından sağlanır.
 
@@ -1208,7 +1263,8 @@ Bu da doğru:
 “For writing maintainable and scalable HTML documents”
 ```
 
-### `abbr` etiketine `title` özelliğini ekleyin
+
+### `abbr` etiketine `title` özelliğini ekleyin<span id="add-title-attribute-to-abbr-element"></span>
 
 Açıklamasını temsil etmenin başka bir yolu yoktur.
 
@@ -1224,7 +1280,8 @@ Doğru:
 <abbr title="HTML Best Practices">HBP</abbr>
 ```
 
-### `ruby` etiketini detaylandırın
+
+### `ruby` etiketini detaylandırın<span id="markup-ruby-element-verbosely"></span>
 
 Modern tarayıcılarda `ruby` etiketi desteği henğz tamamlanmadı.
 
@@ -1240,7 +1297,8 @@ Doğru:
 <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 ```
 
-### Makine tarafından okunamayacak `time` etiketine `datetime` özelliği ekleyin
+
+### Makine tarafından okunamayacak `time` etiketine `datetime` özelliği ekleyin<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
 
 `datetime` özelliği bulunmadığında, `time` öğesinin içeriğinin biçimi kısıtlıdır.
 
@@ -1256,7 +1314,8 @@ Doğru:
 <time datetime="2014-12-19">Dec 19, 2014</time>
 ```
 
-### `language-` öneki ile kod dilini `class` etiketi le belirtin
+
+### `language-` öneki ile kod dilini `class` etiketi le belirtin<span id="specify-code-language-with-class-attribute-prefixed-with-language"></span>
 
 Bu kesin bir yol değil, ancak spec bundan bahseder.
 
@@ -1272,7 +1331,8 @@ Doğru:
 <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 ```
 
-### `kbd` etiketini mümkün olduğu kadar basit tutun
+
+### `kbd` etiketini mümkün olduğu kadar basit tutun<span id="keep-kbd-element-as-simple-as-possible"></span>
 
 `kbd` etiketini iç içe kullanmak insanlar için çok zor.
 
@@ -1288,7 +1348,8 @@ Doğru:
 <kbd>Ctrl+F5</kbd>
 ```
 
-### `span` etiketinden mümkün olduğunca kaçının
+
+### `span` etiketinden mümkün olduğunca kaçının<span id="avoid-span-element-as-much-as-possible"></span>
 
 `span` element son çaredir.
 
@@ -1304,7 +1365,8 @@ Doğru:
 HTML <em>Best</em> Practices
 ```
 
-### `br` etiketinden sonra satır sonu yapın
+
+### `br` etiketinden sonra satır sonu yapın<span id="break-after-br-element"></span>
 
 `br` etiketi kullanıldığında satır sonu gereklidir.
 
@@ -1322,7 +1384,8 @@ Best<br>
 Practices</p>
 ```
 
-### `br` öğesini yalnızca sunum amacıyla kullanmayın
+
+### `br` öğesini yalnızca sunum amacıyla kullanmayın<span id="dont-use-br-element-only-for-presentational-purpose"></span>
 
 `br` elemanı satır kesmek için değil, içerikteki satır kesmeler içindir.
 
@@ -1342,9 +1405,11 @@ Doğru:
 <textarea name="rule-description"></textarea></label></p>
 ```
 
-## Düzenlemeler
 
-### `ins` ve `del` etiketlerini diğer öğelerin arasında kullanmayın
+## Düzenlemeler<span id="edits"></span>
+
+
+### `ins` ve `del` etiketlerini diğer öğelerin arasında kullanmayın<span id="dont-stride-ins-and-del-element-over-other-elements"></span>
 
 Etiketler diğer etidektlere taşamaz.
 
@@ -1364,9 +1429,11 @@ Doğru:
 <del><p>Don’t trust!</p></del>
 ```
 
-## Gömülü içerik
 
-### `picture` elemanı için yedek `img` elemanı kullanın
+## Gömülü içerik<span id="embedded-content"></span>
+
+
+### `picture` elemanı için yedek `img` elemanı kullanın<span id="provide-fallback-img-element-for-picture-element"></span>
 
 `picture` etiketinin desteği henüz iyi değil.
 
@@ -1392,7 +1459,8 @@ Doğru:
 </picture>
 ```
 
-### Gerekirse `img` öğesine `alt` özelliği ekleyin
+
+### Gerekirse `img` öğesine `alt` özelliği ekleyin<span id="add-alt-attrbute-to-img-element-if-needed"></span>
 
 `alt` niteliği, görüntüleri işleyemeyen veya görüntü yüklemesi engelli olanlara yardımcı olur.
 
@@ -1408,7 +1476,8 @@ Doğru:
 <img alt="HTML Best Practices" src="/img/logo.png">
 ```
 
-### Mümkünse `alt` özelliğini boş olarak kullanın
+
+### Mümkünse `alt` özelliğini boş olarak kullanın<span id="empty-alt-attribute-if-possible"></span>
 
 Resim tamamlayıcı ise, yakınlarda bir yerde eşdeğer içerik vardır.
 
@@ -1424,7 +1493,8 @@ Doğru:
 <img alt="" src="/img/icon/help.png"> Help
 ```
 
-### Mümkünse `alt` özelliğini atlayın
+
+### Mümkünse `alt` özelliğini atlayın<span id="omit-alt-attribute-if-possible"></span>
 
 Bazen hangi metnin `alt` özellik için uygun olduğunu bilemezsiniz.
 
@@ -1441,7 +1511,8 @@ Doğru:
 (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 ```
 
-### Boş `iframe` öğesi kullanın
+
+### Boş `iframe` öğesi kullanın<span id="empty-iframe-element"></span>
 
 İçeriği için bazı kısıtlamalar vardır. Boş olması her zaman güvenlidir.
 
@@ -1459,7 +1530,8 @@ Doğru:
 <iframe src="/ads/default.html"></iframe>
 ```
 
-### `map` etiketinin içeriğini işaretleyin
+
+### `map` etiketinin içeriğini işaretleyin<span id="markup-map-element-content"></span>
 
 Bu içerik bir ekran okuyucu sunar.
 
@@ -1491,7 +1563,8 @@ Doğru:
 </map>
 ```
 
-### `audio` veya `video` öğesi için yedek içerik sağlayın
+
+### `audio` veya `video` öğesi için yedek içerik sağlayın<span id="provide-fallback-content-for-audio-or-video-element"></span>
 
 HTML’de yeni tanıtılan öğeler için yedek içerik gereklidir.
 
@@ -1516,9 +1589,11 @@ Doğru:
 </video>
 ```
 
-## Tablo verileri
 
-### Her satıra bir hücre yazın
+## Tablo verileri<span id="tabular-data"></span>
+
+
+### Her satıra bir hücre yazın<span id="write-one-cell-per-line"></span>
 
 Uzun satırların taranması zordur.
 
@@ -1540,7 +1615,8 @@ Doğru:
 </tr>
 ```
 
-### Başlık hücresi için `th` etiketini kullanın
+
+### Başlık hücresi için `th` etiketini kullanın<span id="use-th-element-for-header-cell"></span>
 
 Bundan kaçınmak için hiçbir sebep yoktur.
 
@@ -1596,9 +1672,11 @@ Doğru:
 </table>
 ```
 
-## Formlar
 
-### `label` etiketini ile form kontrolünü sağlayın
+## Formlar<span id="forms"></span>
+
+
+### `label` etiketini ile form kontrolünü sağlayın<span id="wrap-form-control-with-label-element"></span>
 
 `label` etiketi form öğesinin odaklanmasına yardımcı olur.
 
@@ -1614,7 +1692,8 @@ Doğru:
 <p><label>Query: <input name="q" type="text"></label></p>
 ```
 
-### Mümkünse `for` özelliğini kullanmayın
+
+### Mümkünse `for` özelliğini kullanmayın<span id="omit-for-attribute-if-possible"></span>
 
 `label` etiketi bazı form etiketlerini içerebilir.
 
@@ -1630,7 +1709,8 @@ Doğru:
 <label>Query: <input name="q" type="text"></label>
 ```
 
-### `input` etiketi için uygun `type` özelliğini kullanın
+
+### `input` etiketi için uygun `type` özelliğini kullanın<span id="use-appropriate-type-attribute-for-input-element"></span>
 
 Uygun `type` özelliği ile, tarayıcılar `input` elemanına küçük özellikler kazandırır.
 
@@ -1646,7 +1726,8 @@ Doğru:
 <label>Search keyword: <input name="q" type="search"></label>
 ```
 
-### `input type="submit"` elemanına `value` özelliği ekleyin
+
+### `input type="submit"` elemanına `value` özelliği ekleyin<span id="add-value-attribute-to-input-typesubmit"></span>
 
 Gönderme düğmesi için varsayılan etiket tarayıcılarda ve dillerde standardize edilmemiştir.
 
@@ -1662,7 +1743,8 @@ Doğru:
 <input type="submit" value="Search">
 ```
 
-### `pattern` özelliği olduğunda `input` etiketine `title` özelliği ekleyin
+
+### `pattern` özelliği olduğunda `input` etiketine `title` özelliği ekleyin<span id="add-title-attribute-to-input-element-when-there-is-pattern-attribute"></span>
 
 Girilen metni `pattern` niteliğiyle eşleşmiyorsa, `title` özelliğinin değeri ipucu olarak görüntülenecektir.
 
@@ -1677,7 +1759,8 @@ Doğru:
 <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 ```
 
-### Etiketleme için `placeholder` özelliğini kullanmayın
+
+### Etiketleme için `placeholder` özelliğini kullanmayın<span id="dont-use-placeholder-attribute-for-labeling"></span>
 
 `label` öğesi bir etiket içindir, `placeholder` özelliği kısa bir ipucu içindir.
 
@@ -1693,7 +1776,8 @@ Doğru:
 <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 ```
 
-### Her satıra bir `option` etiketi yazın
+
+### Her satıra bir `option` etiketi yazın<span id="write-one-option-element-per-line"></span>
 
 Uzun satırların taranması zordur.
 
@@ -1709,7 +1793,8 @@ Doğru:
 <datalist id="toc">  <option label="General">  <option label="The root element">  <option label="Sections"></datalist>
 ```
 
-### `progress` etiketine `max` özelliği ekleyin
+
+### `progress` etiketine `max` özelliği ekleyin<span id="add-max-attribute-to-progress-element"></span>
 
 `max` özelliği ile, `value` özelliği kolay bir biçimde yazılabilir.
 
@@ -1725,7 +1810,8 @@ Doğru:
 <progress max="100" value="50"> 50%</progress>
 ```
 
-### `meter` etiketine `min` ve `max` özelliği ekleyin
+
+### `meter` etiketine `min` ve `max` özelliği ekleyin<span id="add-min-and-max-attribute-to-meter-element"></span>
 
 `min` ve `max` özelliği ile `value` özelliği kolay bir şekilde yazılabilir.
 
@@ -1740,7 +1826,8 @@ Doğru:
 <meter min="0" max="1024" value="512"> 512GB used (1024GB total</meter>
 ```
 
-### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun
+
+### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun<span id="place-legend-element-as-the-first-child-of-fieldset-element"></span>
 
 Spec bunu gerektirir.
 
@@ -1764,9 +1851,11 @@ Doğru:
 </fieldset>
 ```
 
-## Script ekleme
 
-### JavaScript için `type` özelliğini kullanmayın
+## Script ekleme<span id="scripting"></span>
+
+
+### JavaScript için `type` özelliğini kullanmayın<span id="omit-type-attribute-for-javascript"></span>
 
 HTML’de,`type` özelliğinin `script` etiketi için varsayılan değeri `text/javascript`tir.
 
@@ -1782,7 +1871,8 @@ Doğru:
 <script>  ...</script>
 ```
 
-### `script` etiketinin içeriğini yorumla kapatmayın
+
+### `script` etiketinin içeriğini yorumla kapatmayın<span id="dont-comment-out-contents-of-script-element"></span>
 
 Bu ritüel eski tarayıcılar içindir.
 
@@ -1804,7 +1894,8 @@ Doğru:
 <script>  ...</script>
 ```
 
-### Komut dosyası eklenmiş `script` öğesini kullanmayın
+
+### Komut dosyası eklenmiş `script` öğesini kullanmayın<span id="dont-use-script-injected-script-element"></span>
 
 `async` özelliği hem sadelik hem de performans için en iyisidir.
 
@@ -1825,9 +1916,11 @@ Doğru:
 <script async defer src="https://example.com/widget.js"></script>
 ```
 
-## Diğer
 
-### Tutarlı girintiler kullanın
+## Diğer<span id="other"></span>
+
+
+### Tutarlı girintiler kullanın<span id="indent-consistently"></span>
 
 Girinti okunabilirlik için önemlidir.
 
@@ -1858,7 +1951,7 @@ Doğru:
 ```
 
 
-### Dahili bağlantılar için mutlak yol kullanın
+### Dahili bağlantılar için mutlak yol kullanın<span id="use-absolute-path-for-internal-links"></span>
 
 Mutlak bir yol, internet bağlantınız olmadan localhost'ta daha iyi çalışır.
 
@@ -1874,7 +1967,8 @@ Doğru:
 <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">...<p>You can find more at <a href="/contact.html">contact page</a>.</p>
 ```
 
-### Harici kaynaklar için protokole bağlı URL kullanmayın
+
+### Harici kaynaklar için protokole bağlı URL kullanmayın<span id="dont-use-protocol-relative-url-for-external-resources"></span>
 
 Protokol ile dış kaynakları güvenilir ve güvenli bir şekilde yükleyebilirsiniz.
 
@@ -1891,28 +1985,20 @@ Doğru:
 ```
 
 
-Katkıda bulunanlar
-------------------
-
-- [@hail2u]
-- [@momdo]
 
 
-Çeviri Yapanlar
----------------
+## Contributors<span id="contributors"></span>
 
-- [@techhtml]
-- [@umutphp]
-
-
-Lisans
-------
-
-[CC0]
+- [@hail2u_](https://github.com/hail2u_)
+- [@momdo](https://github.com/momdo)
 
 
-[@hail2u]:   https://github.com/hail2u
-[@momdo]:    https://github.com/momdo
-[@techhtml]: https://github.com/techhtml
-[@umutphp]:  https://github.com/umutphp
-[CC0]:       http://creativecommons.org/publicdomain/zero/1.0/
+## Translators
+
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+
+
+## License
+
+[CC0](http://creativecommons.org/publicdomain/zero/1.0/)

@@ -1,0 +1,51 @@
+Translations: [English (en)](README.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Türkçe (tr)](README.tr.md)
+
+# {{{title}}}
+
+{{{description}}}
+
+
+{{#sections}}
+- [{{{title}}}](#{{{id}}})
+{{#practices}}
+  - [{{{title}}}](#{{{id}}})
+{{/practices}}
+{{/sections}}
+- [Contributors](#contributors)
+- [Translators](#translators)
+- [License](#license)
+
+
+{{#sections}}
+## {{{title}}}<span id="{{id}}"></span>
+
+
+{{#practices}}
+### {{{title}}}<span id="{{{id}}}"></span>
+
+{{{body}}}
+
+
+{{/practices}}
+{{/sections}}
+
+
+## Contributors<span id="contributors"></span>
+
+{{#contributors}}
+- [@{{{.}}}](https://github.com/{{{.}}})
+{{/contributors}}
+
+
+## Translators
+
+{{#translators}}
+- [@{{{.}}}](https://github.com/{{{.}}})
+{{/translators}}
+
+
+## License
+
+{{#license}}
+[{{{name}}}]({{{url}}})
+{{/license}}
