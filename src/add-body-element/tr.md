@@ -4,24 +4,20 @@ Bazen `body` etiketi beklenmedik bir pozisyonda bir tarayıcı tarafından tamam
 
 Yanlış:
 
-```
-<html>
-  <head>
-    ...
-  </head>
-  ...
-</html>
-```
+    <html>
+      <head>
+        ...
+      </head>
+      ...
+    </html>
 
 Doğru:
 
-```
-<html>
-  <head>
-    ...
-  </head>
-  <body>
-    ...
-  </body>
-</html>
-```
+    <html>
+      <head>
+        ...
+      </head>
+      <body>
+        ...
+      </body>
+    </html>

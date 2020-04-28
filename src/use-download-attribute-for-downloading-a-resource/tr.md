@@ -4,12 +4,8 @@ Tarayıcıları bağlı kaynakları depoya indirmeye zorlar.
 
 Yanlış:
 
-```
-<a href="/downloads/offline.zip">offline version</a>
-```
+    <a href="/downloads/offline.zip">offline version</a>
 
 Doğru:
 
-```
-<a download href="/downloads/offline.zip">offline version</a>
-```
+    <a download href="/downloads/offline.zip">offline version</a>

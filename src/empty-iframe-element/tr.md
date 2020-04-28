@@ -12,6 +12,4 @@ Yanlış:
 
 Doğru:
 
-```
-<iframe src="/ads/default.html"></iframe>
-```
+    <iframe src="/ads/default.html"></iframe>

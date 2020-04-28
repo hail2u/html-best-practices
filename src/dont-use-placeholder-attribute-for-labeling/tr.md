@@ -4,12 +4,8 @@
 
 Yanlış:
 
-```
-<input name="email" placeholder="Email" type="text">
-```
+    <input name="email" placeholder="Email" type="text">
 
 Doğru:
 
-```
-<label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-```
+    <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>

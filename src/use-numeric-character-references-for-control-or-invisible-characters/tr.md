@@ -4,12 +4,8 @@ Bu karakterler başka bir karakter için kolayca karıştırılabilir. Ayrıca s
 
 Yanlış:
 
-```
-<p>This book can read in 1 hour.</p>
-```
+    <p>This book can read in 1 hour.</p>
 
 <p>This book can read in 1 hour.</p>
 
-```
-<p>This book can read in 1&#xA0;hour.</p>
-```
+    <p>This book can read in 1&#xA0;hour.</p>

@@ -4,16 +4,12 @@ Uygun bir özellik de tarayıcılar tarafından doğru bir şekilde ele alınabi
 
 Yanlış:
 
-```
-<span data-language="french">chemises</span>
-...
-<strong data-type="warning">Do not wash!</strong>
-```
+    <span data-language="french">chemises</span>
+    ...
+    <strong data-type="warning">Do not wash!</strong>
 
 Doğru:
 
-```
-<span title="French"><span lang="fr-FR">chemises</span></span>
-...
-<strong class="warning">Do not wash!</strong>
-```
+    <span title="French"><span lang="fr-FR">chemises</span></span>
+    ...
+    <strong class="warning">Do not wash!</strong>

@@ -4,17 +4,13 @@ DOCTYPE standart modu etkinleştirmek için gereklidir.
 
 Yanlış:
 
-```
-<html>
-  ...
-</html>
-```
+    <html>
+      ...
+    </html>
 
 Doğru:
 
-```
-<!DOCTYPE html>
-<html>
-  ...
-</html>
-```
+    <!DOCTYPE html>
+    <html>
+      ...
+    </html>

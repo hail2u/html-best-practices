@@ -11,6 +11,4 @@ Yanlış:
 
 Doğru:
 
-```
-<!DOCTYPE html>
-```
+    <!DOCTYPE html>

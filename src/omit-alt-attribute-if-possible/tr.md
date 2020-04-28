@@ -4,9 +4,7 @@ Bazen hangi metnin `alt` özellik için uygun olduğunu bilemezsiniz.
 
 Yanlış:
 
-```
-<img alt="CAPTCHA" src="captcha.cgi?id=82174">
-```
+    <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
 Doğru:
 

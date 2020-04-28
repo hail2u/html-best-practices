@@ -4,18 +4,12 @@ Bu ritüel eski tarayıcılar içindir.
 
 Yanlış:
 
-```
-<script>/*<![CDATA[*/  .../*]]>*/</script>
-```
+    <script>/*<![CDATA[*/  .../*]]>*/</script>
 
 Bu da kötü:
 
-```
-<script><!--  ...// --></script>
-```
+    <script><!--  ...// --></script>
 
 Doğru:
 
-```
-<script>  ...</script>
-```
+    <script>  ...</script>

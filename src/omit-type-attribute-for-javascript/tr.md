@@ -4,12 +4,8 @@ HTML’de,`type` özelliğinin `script` etiketi için varsayılan değeri `text/
 
 Yanlış:
 
-```
-<script type="text/javascript">  ...</script>
-```
+    <script type="text/javascript">  ...</script>
 
 Doğru:
 
-```
-<script>  ...</script>
-```
+    <script>  ...</script>

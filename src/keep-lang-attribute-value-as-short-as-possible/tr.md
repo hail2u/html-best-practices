@@ -4,12 +4,8 @@ Japonca yalnızca Japonya'da kullanılır. Yani ülke kodu gerekli değildir.
 
 Yanlış:
 
-```
-<html lang="ja-JP">
-```
+    <html lang="ja-JP">
 
 Doğru:
 
-```
-<html lang="ja">
-```
+    <html lang="ja">

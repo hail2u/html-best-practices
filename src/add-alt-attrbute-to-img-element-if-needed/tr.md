@@ -4,12 +4,8 @@
 
 Yanlış:
 
-```
-<img src="/img/logo.png">
-```
+    <img src="/img/logo.png">
 
 Doğru:
 
-```
-<img alt="HTML Best Practices" src="/img/logo.png">
-```
+    <img alt="HTML Best Practices" src="/img/logo.png">

@@ -4,14 +4,10 @@
 
 Yanlış:
 
-```
-<link href="/css/screen.css" rel="stylesheet">
-<link href="/css/high-contrast.css" rel="alternate stylesheet">
-```
+    <link href="/css/screen.css" rel="stylesheet">
+    <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
 Doğru:
 
-```
-<link href="/css/screen.css" rel="stylesheet">
-<link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
-```
+    <link href="/css/screen.css" rel="stylesheet">
+    <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">

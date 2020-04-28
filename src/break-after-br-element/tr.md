@@ -4,9 +4,7 @@
 
 Yanlış:
 
-```
-<p>HTML<br>Best<br>Practices</p>
-```
+    <p>HTML<br>Best<br>Practices</p>
 
 Doğru:
 

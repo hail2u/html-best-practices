@@ -4,12 +4,8 @@
 
 Yanlış:
 
-```
-HTML <span class="best">Best</span> Practices
-```
+    HTML <span class="best">Best</span> Practices
 
 Doğru:
 
-```
-HTML <em>Best</em> Practices
-```
+    HTML <em>Best</em> Practices

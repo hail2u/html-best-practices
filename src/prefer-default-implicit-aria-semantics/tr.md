@@ -4,20 +4,16 @@ Bazı öğelerin bir HTML belgesinde örtük olarak bir ARIA `role` değeri vard
 
 Yanlış:
 
-```
-<nav role="navigation">
-  ...
-</nav>
-
-<hr role="separator">
-```
+    <nav role="navigation">
+      ...
+    </nav>
+    
+    <hr role="separator">
 
 Doğru:
 
-```
-<nav>
-  ...
-</nav>
-
-<hr>
-```
+    <nav>
+      ...
+    </nav>
+    
+    <hr>

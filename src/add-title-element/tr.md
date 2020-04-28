@@ -4,17 +4,13 @@
 
 Yanlış:
 
-```
-<head>
-  <meta charset="UTF-8">
-</head>
-```
+    <head>
+      <meta charset="UTF-8">
+    </head>
 
 Doğru:
 
-```
-<head>
-  <meta charset="UTF-8">
-  <title>HTML Best Practices</title>
-</head>
-```
+    <head>
+      <meta charset="UTF-8">
+      <title>HTML Best Practices</title>
+    </head>

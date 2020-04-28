@@ -15,6 +15,4 @@ Yanlış:
 
 Doğru:
 
-```
-<script async defer src="https://example.com/widget.js"></script>
-```
+    <script async defer src="https://example.com/widget.js"></script>

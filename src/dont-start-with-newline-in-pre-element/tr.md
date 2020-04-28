@@ -4,15 +4,11 @@ Tarayıcılarda ilk yeni satır yok sayılır, ancak ikinci ve sonraki satırlar
 
 Yanlış:
 
-```
-<pre>
-&lt;!DOCTYPE html&gt;
-</pre>
-```
+    <pre>
+    &lt;!DOCTYPE html&gt;
+    </pre>
 
 Doğru:
 
-```
-<pre>&lt;!DOCTYPE html&gt;
-</pre>
-```
+    <pre>&lt;!DOCTYPE html&gt;
+    </pre>

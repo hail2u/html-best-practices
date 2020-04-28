@@ -4,16 +4,12 @@ HTML'de, `style` etiketinin `type` özelliğinin  ön tanımlı değeri `text/cs
 
 Yanlış:
 
-```
-<style type="text/css">
-  ...
-</style>
-```
+    <style type="text/css">
+      ...
+    </style>
 
 Doğru:
 
-```
-<style>
-  ...
-</style>
-```
+    <style>
+      ...
+    </style>

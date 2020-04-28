@@ -4,12 +4,8 @@ Garip biçimlendirme kuralınız insanları şaşırtır.
 
 Yanlış:
 
-```
-<input   name="q"  type="search">
-```
+    <input   name="q"  type="search">
 
 Doğru:
 
-```
-<input name="q" type="search">
-```
+    <input name="q" type="search">

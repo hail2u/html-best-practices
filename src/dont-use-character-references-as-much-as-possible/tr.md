@@ -4,12 +4,8 @@ UTF-8 ile bir HTML belgesi yazarsanız, hemen hemen tüm karakterler (Emoji dahi
 
 Yanlış:
 
-```
-<p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
-```
+    <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
 Doğru:
 
-```
-<p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
-```
+    <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>

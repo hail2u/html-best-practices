@@ -4,12 +4,8 @@ Bu ipuçları bağlantılı kaynakların nasıl işleneceğini belirterek uygula
 
 Yanlış:
 
-```
-<a href="/ja/pdf">Japanese PDF version</a>
-```
+    <a href="/ja/pdf">Japanese PDF version</a>
 
 Doğru:
 
-```
-<a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
-```
+    <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>

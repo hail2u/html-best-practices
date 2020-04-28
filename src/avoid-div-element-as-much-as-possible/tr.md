@@ -4,16 +4,12 @@
 
 Yanlış:
 
-```
-<div class="chapter">
-  ...
-</div>
-```
+    <div class="chapter">
+      ...
+    </div>
 
 Doğru:
 
-```
-<section>
-  ...
-</section>
-```
+    <section>
+      ...
+    </section>

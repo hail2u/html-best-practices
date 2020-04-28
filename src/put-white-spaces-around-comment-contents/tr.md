@@ -4,12 +4,8 @@ Bazı karakterler yorum açıldıktan hemen sonra veya yorum kapatmadan önce ku
 
 Yanlış:
 
-```
-<!--This section is non-normative-->
-```
+    <!--This section is non-normative-->
 
 Doğru:
 
-```
-<!-- This section is non-normative -->
-```
+    <!-- This section is non-normative -->

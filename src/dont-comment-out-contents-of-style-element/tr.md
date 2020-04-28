@@ -4,18 +4,14 @@ Bu ritüel eski tarayıcı içindir.
 
 Yanlış:
 
-```
-<style>
-<!--
-  ...
-  -->
-</style>
-```
+    <style>
+    <!--
+      ...
+      -->
+    </style>
 
 Doğru:
 
-```
-<style>
-  ...
-</style>
-```
+    <style>
+      ...
+    </style>

@@ -5,19 +5,15 @@ zordur
 
 Yanlış:
 
-```
-<ul>
-  <li>General</li><li>The root Element</li><li>Sections</li>...
-</ul>
-```
+    <ul>
+      <li>General</li><li>The root Element</li><li>Sections</li>...
+    </ul>
 
 Doğru:
 
-```
-<ul>
-  <li>General</li>
-  <li>The root Element</li>
-  <li>Sections</li>
-  ...
-</ul>
-```
+    <ul>
+      <li>General</li>
+      <li>The root Element</li>
+      <li>Sections</li>
+      ...
+    </ul>

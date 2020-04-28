@@ -4,12 +4,8 @@ Bu etiketlerin anlambilimi insanlar için çok zordur.
 
 Yanlış:
 
-```
-<i class="icon-search"></i>
-```
+    <i class="icon-search"></i>
 
 Doğru:
 
-```
-<span class="icon-search" aria-hidden="true"></span>
-```
+    <span class="icon-search" aria-hidden="true"></span>

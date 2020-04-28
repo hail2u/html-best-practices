@@ -4,16 +4,12 @@
 
 Yanlış:
 
-```
-<div id="content">
-  ...
-</div>
-```
+    <div id="content">
+      ...
+    </div>
 
 Doğru:
 
-```
-<main>
-  ...
-</main>
-```
+    <main>
+      ...
+    </main>

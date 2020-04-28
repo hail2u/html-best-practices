@@ -4,18 +4,14 @@ Kapanış etiketini atlamak için bir kural yok.
 
 Yanlış:
 
-```
-<html>
-  <body>
-    ...
-```
+    <html>
+      <body>
+        ...
 
 Doğru:
 
-```
-<html>
-  <body>
-    ...
-  </body>
-</html>
-```
+    <html>
+      <body>
+        ...
+      </body>
+    </html>

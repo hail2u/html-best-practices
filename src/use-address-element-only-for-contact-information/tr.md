@@ -4,12 +4,8 @@
 
 Yanlış:
 
-```
-<address>No rights reserved.</address>
-```
+    <address>No rights reserved.</address>
 
 Doğru:
 
-```
-<address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
-```
+    <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>

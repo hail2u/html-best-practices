@@ -4,12 +4,8 @@ Protokol ile dış kaynakları güvenilir ve güvenli bir şekilde yükleyebilir
 
 Yanlış:
 
-```
-<script src="//example.com/js/library.js">
-```
+    <script src="//example.com/js/library.js">
 
 Doğru:
 
-```
-<script src="https://example.com/js/library.js">
-```
+    <script src="https://example.com/js/library.js">

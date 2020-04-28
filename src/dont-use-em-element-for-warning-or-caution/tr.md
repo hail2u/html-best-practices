@@ -4,12 +4,8 @@ Bu ciddiyettir. Yani, `strong` eleman daha uygundur.
 
 Yanlış:
 
-```
-<em>Caution!</em>
-```
+    <em>Caution!</em>
 
 Doğru:
 
-```
-<strong>Caution!</strong>
-```
+    <strong>Caution!</strong>

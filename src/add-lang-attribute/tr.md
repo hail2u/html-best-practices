@@ -4,12 +4,8 @@
 
 Yanlış:
 
-```
-<html>
-```
+    <html>
 
 Doğru:
 
-```
-<html lang="en-US">
-```
+    <html lang="en-US">

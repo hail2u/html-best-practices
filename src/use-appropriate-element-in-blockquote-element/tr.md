@@ -4,9 +4,7 @@
 
 Yanlış:
 
-```
-<blockquote>For writing maintainable and scalable HTML documents.</blockquote>
-```
+    <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
 Doğru:
 

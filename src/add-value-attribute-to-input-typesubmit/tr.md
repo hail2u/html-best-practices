@@ -4,12 +4,8 @@ Gönderme düğmesi için varsayılan etiket tarayıcılarda ve dillerde standar
 
 Yanlış:
 
-```
-<input type="submit">
-```
+    <input type="submit">
 
 Doğru:
 
-```
-<input type="submit" value="Search">
-```
+    <input type="submit" value="Search">

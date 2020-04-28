@@ -4,18 +4,12 @@ Aynı zamanda bir tutarlılık da oluşturur.
 
 Yanlış:
 
-```
-<a HREF="#general">General</A>
-```
+    <a HREF="#general">General</A>
 
 Doğru:
 
-```
-<a href="#general">General</a>
-```
+    <a href="#general">General</a>
 
 Bu da doğru:
 
-```
-<A HREF="#general">General</A>
-```
+    <A HREF="#general">General</A>

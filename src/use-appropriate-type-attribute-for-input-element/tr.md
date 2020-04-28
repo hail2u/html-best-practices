@@ -4,12 +4,8 @@ Uygun `type` özelliği ile, tarayıcılar `input` elemanına küçük özellikl
 
 Yanlış:
 
-```
-<label>Search keyword: <input name="q" type="text"></label>
-```
+    <label>Search keyword: <input name="q" type="text"></label>
 
 Doğru:
 
-```
-<label>Search keyword: <input name="q" type="search"></label>
-```
+    <label>Search keyword: <input name="q" type="search"></label>

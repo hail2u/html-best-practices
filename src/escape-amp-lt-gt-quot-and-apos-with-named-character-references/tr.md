@@ -4,12 +4,8 @@ Bu karakterlerden hatasız bir HTML belgesi için her zaman kaçınılmalıdır.
 
 Yanlış:
 
-```
-<h1>The "&" character</h1>
-```
+    <h1>The "&" character</h1>
 
 Doğru:
 
-```
-<h1>The &quot;&amp;&quot; character</h1>
-```
+    <h1>The &quot;&amp;&quot; character</h1>

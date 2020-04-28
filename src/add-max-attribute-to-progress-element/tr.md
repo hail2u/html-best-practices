@@ -4,12 +4,8 @@
 
 Yanlış:
 
-```
-<progress value="0.5"> 50%</progress>
-```
+    <progress value="0.5"> 50%</progress>
 
 Doğru:
 
-```
-<progress max="100" value="50"> 50%</progress>
-```
+    <progress max="100" value="50"> 50%</progress>

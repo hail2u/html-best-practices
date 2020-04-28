@@ -4,12 +4,8 @@ Açıklamasını temsil etmenin başka bir yolu yoktur.
 
 Yanlış:
 
-```
-<abbr>HBP</abbr>
-```
+    <abbr>HBP</abbr>
 
 Doğru:
 
-```
-<abbr title="HTML Best Practices">HBP</abbr>
-```
+    <abbr title="HTML Best Practices">HBP</abbr>

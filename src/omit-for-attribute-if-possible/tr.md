@@ -4,12 +4,8 @@
 
 Yanlış:
 
-```
-<label for="q">Query: </label><input id="q" name="q" type="text">
-```
+    <label for="q">Query: </label><input id="q" name="q" type="text">
 
 Doğru:
 
-```
-<label>Query: <input name="q" type="text"></label>
-```
+    <label>Query: <input name="q" type="text"></label>
