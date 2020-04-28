@@ -1,36 +1,58 @@
-const fs = require("fs");
-const mustache = require("mustache");
+import fs from "fs/promises";
+import mustache from "mustache";
 
 const languages = ["en", "ja", "ko", "tr"];
 
-const template = fs.readFileSync("./src/template.mustache", "utf8");
-const data = JSON.parse(fs.readFileSync("./src/data.json", "utf8"));
+const readJSONFile = async (file) => {
+	const content = await fs.readFile(file, "utf8");
+	return JSON.parse(content);
+};
 
-languages.forEach((language) => {
-	const extradata = JSON.parse(fs.readFileSync(`./src/${language}.json`, "utf8"));
+const extendPractice = async (language, practice) => {
+	const content = await fs.readFile(`./src/${practice}/${language}.md`, "utf8");
+	const [title, ...body] = content.split("\n");
+	return {
+		body: body.join("\n").trim(),
+		id: practice,
+		title: title.trim().replace(/^# /, "")
+	};
+};
+
+const extendSection = async (language, extradata, section, index) => {
+	const practices = await Promise.all(section.practices.map(extendPractice.bind(null, language)));
+	return {
+		...section,
+		...extradata.sections[index],
+		practices: practices
+	};
+};
+
+const build = async (template, data, language) => {
+	const extradata = await readJSONFile(`./src/${language}.json`);
+	const sections = await Promise.all(data.sections.map(extendSection.bind(null, language, extradata)));
 	const rendered = mustache.render(template, {
 		...data,
 		...extradata,
-		sections: data.sections.map((section, i) => {
-			return {
-				...section,
-				...extradata.sections[i],
-				practices: section.practices.map((practice) => {
-					const [title, ...body] = fs.readFileSync(`./src/${practice}/${language}.md`, "utf8").split("\n");
-					return {
-						body: body.join("\n").trim(),
-						id: practice,
-						title: title.trim().replace(/^# /, "")
-					}
-				})
-			}
-		})
+		sections: sections
 	});
 
 	if (language === "en") {
-		fs.writeFileSync("README.md", rendered);
+		await fs.writeFile("README.md", rendered);
 		return;
 	}
 
-	fs.writeFileSync(`README.${language}.md`, rendered);
+	await fs.writeFile(`README.${language}.md`, rendered);
+};
+
+const main = async () => {
+	const [template, data] = await Promise.all([
+		fs.readFile("./src/template.mustache", "utf8"),
+		readJSONFile("./src/data.json")
+	]);
+	await Promise.all(languages.map(build.bind(null, template, data)));
+};
+
+main().catch((e) => {
+	console.trace(e);
+	process.exitCode = 1;
 });
