@@ -1,8 +1,6 @@
 import fs from "fs/promises";
 import mustache from "mustache";
 
-const languages = ["en", "ja", "ko", "tr"];
-
 const readJSONFile = async (file) => {
 	const content = await fs.readFile(file, "utf8");
 	return JSON.parse(content);
@@ -28,20 +26,14 @@ const extendSection = async (language, extradata, section, index) => {
 };
 
 const build = async (template, data, language) => {
-	const extradata = await readJSONFile(`./src/${language}.json`);
-	const sections = await Promise.all(data.sections.map(extendSection.bind(null, language, extradata)));
+	const extradata = await readJSONFile(`./src/${language.code}.json`);
+	const sections = await Promise.all(data.sections.map(extendSection.bind(null, language.code, extradata)));
 	const rendered = mustache.render(template, {
 		...data,
 		...extradata,
 		sections: sections
 	});
-
-	if (language === "en") {
-		await fs.writeFile("README.md", rendered);
-		return;
-	}
-
-	await fs.writeFile(`README.${language}.md`, rendered);
+	await fs.writeFile(`README${language.ext}.md`, rendered);
 };
 
 const main = async () => {
@@ -49,7 +41,7 @@ const main = async () => {
 		fs.readFile("./src/template.mustache", "utf8"),
 		readJSONFile("./src/data.json")
 	]);
-	await Promise.all(languages.map(build.bind(null, template, data)));
+	await Promise.all(data.languages.map(build.bind(null, template, data)));
 };
 
 main().catch((e) => {

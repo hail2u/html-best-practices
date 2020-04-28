@@ -1,4 +1,26 @@
 {
+	"languages": [
+		{
+			"code": "en",
+			"ext": "",
+			"name": "English"
+		},
+		{
+			"code": "ja",
+			"ext": ".ja",
+			"name": "日本語"
+		},
+		{
+			"code": "ko",
+			"ext": ".ko",
+			"name": "한국어"
+		},
+		{
+			"code": "tr",
+			"ext": ".tr",
+			"name": "Türkçe"
+		}
+	],
 	"sections": [
 		{
 			"id": "general",
