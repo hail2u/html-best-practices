@@ -8,8 +8,6 @@ Yanlış:
 
 Doğru:
 
-```
-<blockquote>
-  <p>For writing maintainable and scalable HTML documents.</p>
-</blockquote>
-```
+    <blockquote>
+      <p>For writing maintainable and scalable HTML documents.</p>
+    </blockquote>

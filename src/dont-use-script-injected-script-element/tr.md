@@ -4,14 +4,12 @@
 
 Yanlış:
 
-```
-<script>
-  var script = document.createElement("script";
-  script.async = true;
-  script.src = "//example.com/widget.js";
-  document.getElementsByTagName("head"[0].appendChild(script);
-</script>
-```
+    <script>
+      var script = document.createElement("script";
+      script.async = true;
+      script.src = "//example.com/widget.js";
+      document.getElementsByTagName("head"[0].appendChild(script);
+    </script>
 
 Doğru:
 

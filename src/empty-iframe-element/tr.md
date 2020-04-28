@@ -4,11 +4,9 @@
 
 Yanlış:
 
-```
-<iframe src="/ads/default.html">
-  <p>If your browser support inline frame, ads are displayed here.</p>
-</iframe>
-```
+    <iframe src="/ads/default.html">
+      <p>If your browser support inline frame, ads are displayed here.</p>
+    </iframe>
 
 Doğru:
 

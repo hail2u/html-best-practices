@@ -137,10 +137,8 @@ DOCTYPE artık DTD için değil, basit olsun.
 
 Yanlış:
 
-```
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-  "http://www.w3.org/TR/html4/strict.dtd">
-```
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+      "http://www.w3.org/TR/html4/strict.dtd">
 
 Doğru:
 
@@ -153,10 +151,8 @@ XHTML yazmak istediğinize emin misiniz?
 
 Yanlış:
 
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!DOCTYPE html>
-```
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <!DOCTYPE html>
 
 Doğru:
 
@@ -759,11 +755,9 @@ Yanlış:
 
 Doğru:
 
-```
-<blockquote>
-  <p>For writing maintainable and scalable HTML documents.</p>
-</blockquote>
-```
+    <blockquote>
+      <p>For writing maintainable and scalable HTML documents.</p>
+    </blockquote>
 
 
 ### Özniteliği doğrudan `blockquote` öğesinin içine dahil etme<span id="dont-include-attribution-directly-in-blockquote-element"></span>
@@ -1134,11 +1128,9 @@ Yanlış:
 
 Doğru:
 
-```
-<p>HTML<br>
-Best<br>
-Practices</p>
-```
+    <p>HTML<br>
+    Best<br>
+    Practices</p>
 
 
 ### `br` öğesini yalnızca sunum amacıyla kullanmayın<span id="dont-use-br-element-only-for-presentational-purpose"></span>
@@ -1240,10 +1232,8 @@ Yanlış:
 
 Doğru:
 
-```
-<img src="captcha.cgi?id=82174" title="CAPTCHA">
-(If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
-```
+    <img src="captcha.cgi?id=82174" title="CAPTCHA">
+    (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
 ### Boş `iframe` öğesi kullanın<span id="empty-iframe-element"></span>
@@ -1252,11 +1242,9 @@ Doğru:
 
 Yanlış:
 
-```
-<iframe src="/ads/default.html">
-  <p>If your browser support inline frame, ads are displayed here.</p>
-</iframe>
-```
+    <iframe src="/ads/default.html">
+      <p>If your browser support inline frame, ads are displayed here.</p>
+    </iframe>
 
 Doğru:
 
@@ -1571,14 +1559,12 @@ Doğru:
 
 Yanlış:
 
-```
-<script>
-  var script = document.createElement("script";
-  script.async = true;
-  script.src = "//example.com/widget.js";
-  document.getElementsByTagName("head"[0].appendChild(script);
-</script>
-```
+    <script>
+      var script = document.createElement("script";
+      script.async = true;
+      script.src = "//example.com/widget.js";
+      document.getElementsByTagName("head"[0].appendChild(script);
+    </script>
 
 Doğru:
 

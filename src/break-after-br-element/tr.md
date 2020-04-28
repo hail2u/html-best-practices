@@ -8,8 +8,6 @@ Yanlış:
 
 Doğru:
 
-```
-<p>HTML<br>
-Best<br>
-Practices</p>
-```
+    <p>HTML<br>
+    Best<br>
+    Practices</p>
