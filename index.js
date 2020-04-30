@@ -17,7 +17,10 @@ const extendPractice = async (language, id) => {
 	};
 	return {
 		...practice,
-		bodyHTML: marked(practice.body)
+		bodyHTML: marked(practice.body),
+		titleHTML: marked(practice.title)
+			.trim()
+			.replace(/^<p>(.*?)<\/p>$/, "$1")
 	};
 };
 

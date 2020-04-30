@@ -36,7 +36,7 @@
 
 						<ol>
 							{{#practices}}
-								<li><a href="#{{id}}">{{title}}</a>
+								<li><a href="#{{id}}">{{{titleHTML}}}</a>
 							{{/practices}}
 						</ol>
 					</li>
@@ -55,7 +55,7 @@
 
 					{{#practices}}
 						<section id="{{id}}">
-							<h3>{{title}}</h3>
+							<h3>{{{titleHTML}}}</h3>
 
 							{{{bodyHTML}}}
 						</section>
