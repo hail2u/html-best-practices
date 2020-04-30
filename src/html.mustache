@@ -1,0 +1,95 @@
+<html lang="{{#language}}{{code}}{{/language}}">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>{{title}}—{{description}}</title>
+
+		<meta content="{{description}}" name="description">
+		<meta content="width=device-width" name=viewport>
+
+		<link href="/index{{#language}}{{ext}}{{/language}}.html" rel="canonical">
+	</head>
+
+	<body>
+		<nav>
+			<h4>Translations</h4>
+
+			<ul>
+				{{#languages}}
+					<li><a href="/index{{ext}}.html">{{name}} ({{code}})</a></li>
+				{{/languages}}
+			</ul>
+		</nav>
+
+		<header>
+			<h1>{{title}}</h1>
+
+			<p>{{description}}</p>
+		</header>
+
+		<nav>
+			<h4><abbr title="Table of Contents">ToC</abbr></h4>
+
+			<ol>
+				{{#sections}}
+					<li><a href="#{{id}}">{{title}}</a>
+
+						<ol>
+							{{#practices}}
+								<li><a href="#{{id}}">{{title}}</a>
+							{{/practices}}
+						</ol>
+					</li>
+				{{/sections}}
+
+				<li><a href="#contributors">Contributors</a></li>
+				<li><a href="#translators">Translators</a></li>
+				<li><a href="#license">License</a></li>
+			</ol>
+		</nav>
+
+		<main>
+			{{#sections}}
+				<section id="{{id}}">
+					<h2>{{title}}</h2>
+
+					{{#practices}}
+						<section id="{{id}}">
+							<h3>{{title}}</h3>
+
+							{{{bodyHTML}}}
+						</section>
+					{{/practices}}
+				</section>
+			{{/sections}}
+
+			<section id="contributors">
+				<h2>Contributors</h2>
+
+				<ul>
+					{{#contributors}}
+						<li><a href="https://github.com/@{{.}}">{{.}}</a></li>
+					{{/contributors}}
+				</ul>
+			</section>
+
+			<section id="translators">
+				<h2>Translators</h2>
+
+				<ul>
+					{{#translators}}
+						<li><a href="https://github.com/@{{.}}">{{.}}</a></li>
+					{{/translators}}
+				</ul>
+			</section>
+
+			<sections id="license">
+				<h2>License</h2>
+
+				{{#license}}
+					<p><a href="{{url}}">{{name}}</a></p>
+				{{/license}}
+			</section>
+		</main>
+	</body>
+</html>

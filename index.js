@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import marked from "marked";
 import mustache from "mustache";
 
 const readJSONFile = async (file) => {
@@ -6,13 +7,17 @@ const readJSONFile = async (file) => {
 	return JSON.parse(content);
 };
 
-const extendPractice = async (language, practice) => {
-	const content = await fs.readFile(`./src/${practice}/${language}.md`, "utf8");
+const extendPractice = async (language, id) => {
+	const content = await fs.readFile(`./src/${id}/${language}.md`, "utf8");
 	const [title, ...body] = content.split("\n");
-	return {
+	const practice = {
 		body: body.join("\n").trim(),
-		id: practice,
+		id: id,
 		title: title.trim().replace(/^# /, "")
+	};
+	return {
+		...practice,
+		bodyHTML: marked(practice.body)
 	};
 };
 
@@ -25,23 +30,30 @@ const extendSection = async (language, extradata, section, index) => {
 	};
 };
 
-const build = async (template, data, language) => {
+const build = async (src, data, dest) => {
+	const template = await fs.readFile(src, "utf8");
+	const rendered = mustache.render(template, data);
+	await fs.writeFile(dest, rendered);
+};
+
+const generate = async (data, language) => {
 	const extradata = await readJSONFile(`./src/${language.code}.json`);
 	const sections = await Promise.all(data.sections.map(extendSection.bind(null, language.code, extradata)));
-	const rendered = mustache.render(template, {
+	const extended = {
 		...data,
 		...extradata,
+		language: language,
 		sections: sections
-	});
-	await fs.writeFile(`README${language.ext}.md`, rendered);
+	};
+	await Promise.all([
+		build("./src/md.mustache", extended, `./README${language.ext}.md`),
+		build("./src/html.mustache", extended, `./docs/index${language.ext}.html`)
+	]);
 };
 
 const main = async () => {
-	const [template, data] = await Promise.all([
-		fs.readFile("./src/template.mustache", "utf8"),
-		readJSONFile("./src/data.json")
-	]);
-	await Promise.all(data.languages.map(build.bind(null, template, data)));
+	const data = await readJSONFile("./src/data.json");
+	await Promise.all(data.languages.map(generate.bind(null, data)));
 };
 
 main().catch((e) => {

@@ -3,15 +3,16 @@
   "version": "0.0.0",
   "description": "For writing maintainable and scalable HTML documents",
   "scripts": {
-		"build": "node index.js",
-		"test": "eslint index.js"
+    "build": "node index.js",
+    "test": "eslint index.js"
   },
   "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
   "license": "CC0-1.0",
   "devDependencies": {
-		"eslint": "^6.8.0",
+    "eslint": "^6.8.0",
+    "marked": "^1.0.0",
     "mustache": "^4.0.1"
-	},
-	"private": true,
-	"type": "module"
+  },
+  "private": true,
+  "type": "module"
 }
