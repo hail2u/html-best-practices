@@ -8,6 +8,43 @@
 		<meta content="width=device-width" name=viewport>
 
 		<link href="./index.tr.html" rel="canonical">
+
+		<style>
+			body {
+				font-family: sans-serif;
+				line-height: 1.5;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 42em;
+				padding-left: 1em;
+				padding-right: 1em;
+			}
+
+			h2 {
+				margin-top: 4em;
+			}
+
+			h3 {
+				margin-top: 3em;
+			}
+
+			p {
+				overflow-wrap: break-word;
+			}
+
+			pre,
+			code {
+				font-family: monospace, monospace;
+				font-size: 1em;
+			}
+
+			pre {
+				background-color: whitesmoke;
+				overflow-wrap: break-word;
+				padding: 0.5em;
+				white-space: pre-wrap;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -39,7 +76,7 @@
 								<li><a href="#dont-use-legacy-or-obsolete-doctype">Eskimiş yada geçersiz DOCTYPE kullanmayın</a>
 								<li><a href="#dont-use-xml-declaration">XML etiketi kullanmayın</a>
 								<li><a href="#dont-use-character-references-as-much-as-possible">Karakter referanslarını mümkün olduğunca kullanmayın</a>
-								<li><a href="#escape-amp-lt-gt-quot-and-apos-with-named-character-references">&#x60;&amp;&#x60;, &#x60;&lt;&#x60;, &#x60;&gt;&#x60; , &#x60;&quot;&#x60;, ve &#x60;&#39;&#x60; karakter referanslarını olduğu gibi kullanmaktan kaçının</a>
+								<li><a href="#escape-amp-lt-gt-quot-and-apos-with-named-character-references"><code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code> , <code>&quot;</code>, ve <code>&#39;</code> karakter referanslarını olduğu gibi kullanmaktan kaçının</a>
 								<li><a href="#use-numeric-character-references-for-control-or-invisible-characters">Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.</a>
 								<li><a href="#put-white-spaces-around-comment-contents">Yorum içeriğinin etrafına boşluk karakteri yerleştirin</a>
 								<li><a href="#dont-omit-closing-tag">Kapanış etiketini unutmayın</a>
@@ -51,125 +88,125 @@
 								<li><a href="#omit-boolean-attribute-value">Boolean özellik değerini yazmayın</a>
 								<li><a href="#omit-namespaces">Ad alanlarını kullanmayın</a>
 								<li><a href="#dont-use-xml-attributes">XML özelliklerini kullanmayın</a>
-								<li><a href="#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes">&#x60;data-*&#x60;, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın</a>
+								<li><a href="#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"><code>data-*</code>, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın</a>
 								<li><a href="#prefer-default-implicit-aria-semantics">Varsayılan örtülü ARIA gramerini tercih edin</a>
 						</ol>
 					</li>
 					<li><a href="#the-root-element">Kök elemanı</a>
 
 						<ol>
-								<li><a href="#add-lang-attribute">&#x60;lang&#x60; özelliği ekleyin</a>
-								<li><a href="#keep-lang-attribute-value-as-short-as-possible">&#x60;lang&#x60; değerini mümkün olduğunca kısa tutun</a>
-								<li><a href="#avoid-data-as-much-as-possible">Mümkün olduğunca &#x60;data-*&#x60; kullanmayın</a>
+								<li><a href="#add-lang-attribute"><code>lang</code> özelliği ekleyin</a>
+								<li><a href="#keep-lang-attribute-value-as-short-as-possible"><code>lang</code> değerini mümkün olduğunca kısa tutun</a>
+								<li><a href="#avoid-data-as-much-as-possible">Mümkün olduğunca <code>data-*</code> kullanmayın</a>
 						</ol>
 					</li>
 					<li><a href="#document-metadata">Metadata&#39;yı belgeleyin</a>
 
 						<ol>
-								<li><a href="#add-title-element">&#x60;title&#x60; elemanı ekleyin</a>
-								<li><a href="#dont-use-base-element">&#x60;base&#x60; elemanı kullanmayın</a>
+								<li><a href="#add-title-element"><code>title</code> elemanı ekleyin</a>
+								<li><a href="#dont-use-base-element"><code>base</code> elemanı kullanmayın</a>
 								<li><a href="#specify-mime-type-of-minor-linked-resources">Bağlantılı kaynakların MIME türünü belirtin</a>
-								<li><a href="#dont-link-to-faviconico">&#x60;favicon.ico&#x60;&#39;ya link vermeyin</a>
-								<li><a href="#add-apple-touch-icon-link">&#x60;apple-touch-icon&#x60; ekleyin</a>
-								<li><a href="#add-title-attribute-to-alternate-stylesheets">Alternatif stil sayfalarına &#x60;title&#x60; ekleyin</a>
-								<li><a href="#for-url-use-link-element">URL için &#x60;link&#x60; kullanın</a>
+								<li><a href="#dont-link-to-faviconico"><code>favicon.ico</code>&#39;ya link vermeyin</a>
+								<li><a href="#add-apple-touch-icon-link"><code>apple-touch-icon</code> ekleyin</a>
+								<li><a href="#add-title-attribute-to-alternate-stylesheets">Alternatif stil sayfalarına <code>title</code> ekleyin</a>
+								<li><a href="#for-url-use-link-element">URL için <code>link</code> kullanın</a>
 								<li><a href="#specify-document-character-encoding">Belge karakter kodunu belirtin</a>
 								<li><a href="#dont-use-legacy-character-encoding-format">Eski karakter kodlama formatını kullanmayın</a>
 								<li><a href="#specify-character-encoding-at-first">İlk önce karakter kodlamasını belirtin</a>
 								<li><a href="#use-utf-8">UTF-8&#39;i kullanın</a>
-								<li><a href="#omit-type-attribute-for-css">CSS için &#x60;type&#x60; kullanmayın</a>
-								<li><a href="#dont-comment-out-contents-of-style-element">&#x60;style&#x60; etiketinin içeriğini yorum içine almayın</a>
+								<li><a href="#omit-type-attribute-for-css">CSS için <code>type</code> kullanmayın</a>
+								<li><a href="#dont-comment-out-contents-of-style-element"><code>style</code> etiketinin içeriğini yorum içine almayın</a>
 								<li><a href="#dont-mix-tag-for-css-and-javascript">CSS ve JavaScript etiketlerini karıştırmayın</a>
 						</ol>
 					</li>
 					<li><a href="#sections">Bölümler</a>
 
 						<ol>
-								<li><a href="#add-body-element">&#x60;body&#x60; etiketi ekleyin</a>
-								<li><a href="#forget-about-hgroup-element">&#x60;hgroup&#x60; etiketini unutun</a>
-								<li><a href="#use-address-element-only-for-contact-information">&#x60;address&#x60; etiketini yalnızca iletişim bilgileri için kullanın</a>
+								<li><a href="#add-body-element"><code>body</code> etiketi ekleyin</a>
+								<li><a href="#forget-about-hgroup-element"><code>hgroup</code> etiketini unutun</a>
+								<li><a href="#use-address-element-only-for-contact-information"><code>address</code> etiketini yalnızca iletişim bilgileri için kullanın</a>
 						</ol>
 					</li>
 					<li><a href="#grouping-content">İçeriği gruplama</a>
 
 						<ol>
-								<li><a href="#dont-start-with-newline-in-pre-element">&#x60;pre&#x60; elemandaki satır başı ile başlamayın</a>
-								<li><a href="#use-appropriate-element-in-blockquote-element">&#x60;blockquote&#x60; içinde uygun etiket kullanın</a>
-								<li><a href="#dont-include-attribution-directly-in-blockquote-element">Özniteliği doğrudan &#x60;blockquote&#x60; öğesinin içine dahil etme</a>
+								<li><a href="#dont-start-with-newline-in-pre-element"><code>pre</code> elemandaki satır başı ile başlamayın</a>
+								<li><a href="#use-appropriate-element-in-blockquote-element"><code>blockquote</code> içinde uygun etiket kullanın</a>
+								<li><a href="#dont-include-attribution-directly-in-blockquote-element">Özniteliği doğrudan <code>blockquote</code> öğesinin içine dahil etme</a>
 								<li><a href="#write-one-list-item-per-line">Satır başına bir liste öğesi yaz</a>
-								<li><a href="#use-type-attribute-for-ol-element">&#x60;ol&#x60; etiketi için &#x60;type&#x60; özelliğini kullanın</a>
-								<li><a href="#dont-use-dl-for-dialogue">Diyalog için &#x60;dl&#x60; kullanmayın</a>
-								<li><a href="#place-figcaption-element-as-first-or-last-child-of-figure-element">&#x60;figcaption&#x60; etiketini, &#x60;figure&#x60; etiketinin ilk veya son çocuğu olarak yerleştirin</a>
-								<li><a href="#use-main-element">&#x60;main&#x60; etiketini kullanın</a>
-								<li><a href="#avoid-div-element-as-much-as-possible">&#x60;div&#x60; etiketini mümkün olduğu kadar kullanmayın</a>
+								<li><a href="#use-type-attribute-for-ol-element"><code>ol</code> etiketi için <code>type</code> özelliğini kullanın</a>
+								<li><a href="#dont-use-dl-for-dialogue">Diyalog için <code>dl</code> kullanmayın</a>
+								<li><a href="#place-figcaption-element-as-first-or-last-child-of-figure-element"><code>figcaption</code> etiketini, <code>figure</code> etiketinin ilk veya son çocuğu olarak yerleştirin</a>
+								<li><a href="#use-main-element"><code>main</code> etiketini kullanın</a>
+								<li><a href="#avoid-div-element-as-much-as-possible"><code>div</code> etiketini mümkün olduğu kadar kullanmayın</a>
 						</ol>
 					</li>
 					<li><a href="#text-level-semantics">Metin düzeyinde anlambilim</a>
 
 						<ol>
 								<li><a href="#dont-split-same-link-that-can-be-grouped">Gruplandırılabilen aynı bağlantıyı bölmeyin</a>
-								<li><a href="#use-download-attribute-for-downloading-a-resource">İndirilebilir kaynağı belirtmek için &#x60;download&#x60; özelliğini kullanın</a>
-								<li><a href="#use-rel-hreflang-and-type-attribute-if-needed">Gerekirse &#x60;rel&#x60; , &#x60;hreflang&#x60; ve &#x60;type&#x60; özelliklerini kullanın</a>
+								<li><a href="#use-download-attribute-for-downloading-a-resource">İndirilebilir kaynağı belirtmek için <code>download</code> özelliğini kullanın</a>
+								<li><a href="#use-rel-hreflang-and-type-attribute-if-needed">Gerekirse <code>rel</code> , <code>hreflang</code> ve <code>type</code> özelliklerini kullanın</a>
 								<li><a href="#clear-link-text">Bağlantı metinlerini amacına uygun yapın</a>
-								<li><a href="#dont-use-em-element-for-warning-or-caution">Uyarı vermek için &#x60;em&#x60; etiketi kullanmayın</a>
-								<li><a href="#avoid-s-i-b-and-u-element-as-much-as-possible">&#x60;s&#x60; , &#x60;i&#x60; , &#x60;b&#x60; ve &#x60;u&#x60; etiketlerinden mümkün olduğunca kaçının</a>
-								<li><a href="#dont-put-quotes-to-q-element">&#x60;q&#x60; öğesine tırnak koymayın</a>
-								<li><a href="#add-title-attribute-to-abbr-element">&#x60;abbr&#x60; etiketine &#x60;title&#x60; özelliğini ekleyin</a>
-								<li><a href="#markup-ruby-element-verbosely">&#x60;ruby&#x60; etiketini detaylandırın</a>
-								<li><a href="#add-datetime-attribute-to-non-machine-readable-time-element">Makine tarafından okunamayacak &#x60;time&#x60; etiketine &#x60;datetime&#x60; özelliği ekleyin</a>
-								<li><a href="#specify-code-language-with-class-attribute-prefixed-with-language">&#x60;language-&#x60; öneki ile kod dilini &#x60;class&#x60; etiketi le belirtin</a>
-								<li><a href="#keep-kbd-element-as-simple-as-possible">&#x60;kbd&#x60; etiketini mümkün olduğu kadar basit tutun</a>
-								<li><a href="#avoid-span-element-as-much-as-possible">&#x60;span&#x60; etiketinden mümkün olduğunca kaçının</a>
-								<li><a href="#break-after-br-element">&#x60;br&#x60; etiketinden sonra satır sonu yapın</a>
-								<li><a href="#dont-use-br-element-only-for-presentational-purpose">&#x60;br&#x60; öğesini yalnızca sunum amacıyla kullanmayın</a>
+								<li><a href="#dont-use-em-element-for-warning-or-caution">Uyarı vermek için <code>em</code> etiketi kullanmayın</a>
+								<li><a href="#avoid-s-i-b-and-u-element-as-much-as-possible"><code>s</code> , <code>i</code> , <code>b</code> ve <code>u</code> etiketlerinden mümkün olduğunca kaçının</a>
+								<li><a href="#dont-put-quotes-to-q-element"><code>q</code> öğesine tırnak koymayın</a>
+								<li><a href="#add-title-attribute-to-abbr-element"><code>abbr</code> etiketine <code>title</code> özelliğini ekleyin</a>
+								<li><a href="#markup-ruby-element-verbosely"><code>ruby</code> etiketini detaylandırın</a>
+								<li><a href="#add-datetime-attribute-to-non-machine-readable-time-element">Makine tarafından okunamayacak <code>time</code> etiketine <code>datetime</code> özelliği ekleyin</a>
+								<li><a href="#specify-code-language-with-class-attribute-prefixed-with-language"><code>language-</code> öneki ile kod dilini <code>class</code> etiketi le belirtin</a>
+								<li><a href="#keep-kbd-element-as-simple-as-possible"><code>kbd</code> etiketini mümkün olduğu kadar basit tutun</a>
+								<li><a href="#avoid-span-element-as-much-as-possible"><code>span</code> etiketinden mümkün olduğunca kaçının</a>
+								<li><a href="#break-after-br-element"><code>br</code> etiketinden sonra satır sonu yapın</a>
+								<li><a href="#dont-use-br-element-only-for-presentational-purpose"><code>br</code> öğesini yalnızca sunum amacıyla kullanmayın</a>
 						</ol>
 					</li>
 					<li><a href="#edits">Düzenlemeler</a>
 
 						<ol>
-								<li><a href="#dont-stride-ins-and-del-element-over-other-elements">&#x60;ins&#x60; ve &#x60;del&#x60; etiketlerini diğer öğelerin arasında kullanmayın</a>
+								<li><a href="#dont-stride-ins-and-del-element-over-other-elements"><code>ins</code> ve <code>del</code> etiketlerini diğer öğelerin arasında kullanmayın</a>
 						</ol>
 					</li>
 					<li><a href="#embedded-content">Gömülü içerik</a>
 
 						<ol>
-								<li><a href="#provide-fallback-img-element-for-picture-element">&#x60;picture&#x60; elemanı için yedek &#x60;img&#x60; elemanı kullanın</a>
-								<li><a href="#add-alt-attrbute-to-img-element-if-needed">Gerekirse &#x60;img&#x60; öğesine &#x60;alt&#x60; özelliği ekleyin</a>
-								<li><a href="#empty-alt-attribute-if-possible">Mümkünse &#x60;alt&#x60; özelliğini boş olarak kullanın</a>
-								<li><a href="#omit-alt-attribute-if-possible">Mümkünse &#x60;alt&#x60; özelliğini atlayın</a>
-								<li><a href="#empty-iframe-element">Boş &#x60;iframe&#x60; öğesi kullanın</a>
-								<li><a href="#markup-map-element-content">&#x60;map&#x60; etiketinin içeriğini işaretleyin</a>
-								<li><a href="#provide-fallback-content-for-audio-or-video-element">&#x60;audio&#x60; veya &#x60;video&#x60; öğesi için yedek içerik sağlayın</a>
+								<li><a href="#provide-fallback-img-element-for-picture-element"><code>picture</code> elemanı için yedek <code>img</code> elemanı kullanın</a>
+								<li><a href="#add-alt-attrbute-to-img-element-if-needed">Gerekirse <code>img</code> öğesine <code>alt</code> özelliği ekleyin</a>
+								<li><a href="#empty-alt-attribute-if-possible">Mümkünse <code>alt</code> özelliğini boş olarak kullanın</a>
+								<li><a href="#omit-alt-attribute-if-possible">Mümkünse <code>alt</code> özelliğini atlayın</a>
+								<li><a href="#empty-iframe-element">Boş <code>iframe</code> öğesi kullanın</a>
+								<li><a href="#markup-map-element-content"><code>map</code> etiketinin içeriğini işaretleyin</a>
+								<li><a href="#provide-fallback-content-for-audio-or-video-element"><code>audio</code> veya <code>video</code> öğesi için yedek içerik sağlayın</a>
 						</ol>
 					</li>
 					<li><a href="#tabular-data">Tablo verileri</a>
 
 						<ol>
 								<li><a href="#write-one-cell-per-line">Her satıra bir hücre yazın</a>
-								<li><a href="#use-th-element-for-header-cell">Başlık hücresi için &#x60;th&#x60; etiketini kullanın</a>
+								<li><a href="#use-th-element-for-header-cell">Başlık hücresi için <code>th</code> etiketini kullanın</a>
 						</ol>
 					</li>
 					<li><a href="#forms">Formlar</a>
 
 						<ol>
-								<li><a href="#wrap-form-control-with-label-element">&#x60;label&#x60; etiketini ile form kontrolünü sağlayın</a>
-								<li><a href="#omit-for-attribute-if-possible">Mümkünse &#x60;for&#x60; özelliğini kullanmayın</a>
-								<li><a href="#use-appropriate-type-attribute-for-input-element">&#x60;input&#x60; etiketi için uygun &#x60;type&#x60; özelliğini kullanın</a>
-								<li><a href="#add-value-attribute-to-input-typesubmit">&#x60;input type&#x3D;&quot;submit&quot;&#x60; elemanına &#x60;value&#x60; özelliği ekleyin</a>
-								<li><a href="#add-title-attribute-to-input-element-when-there-is-pattern-attribute">&#x60;pattern&#x60; özelliği olduğunda &#x60;input&#x60; etiketine &#x60;title&#x60; özelliği ekleyin</a>
-								<li><a href="#dont-use-placeholder-attribute-for-labeling">Etiketleme için &#x60;placeholder&#x60; özelliğini kullanmayın</a>
-								<li><a href="#write-one-option-element-per-line">Her satıra bir &#x60;option&#x60; etiketi yazın</a>
-								<li><a href="#add-max-attribute-to-progress-element">&#x60;progress&#x60; etiketine &#x60;max&#x60; özelliği ekleyin</a>
-								<li><a href="#add-min-and-max-attribute-to-meter-element">&#x60;meter&#x60; etiketine &#x60;min&#x60; ve &#x60;max&#x60; özelliği ekleyin</a>
-								<li><a href="#place-legend-element-as-the-first-child-of-fieldset-element">&#x60;legend&#x60; etiketini &#x60;fieldset&#x60; etiketinin ilk çocuğu olarak elemanı olarak oluşturun</a>
+								<li><a href="#wrap-form-control-with-label-element"><code>label</code> etiketini ile form kontrolünü sağlayın</a>
+								<li><a href="#omit-for-attribute-if-possible">Mümkünse <code>for</code> özelliğini kullanmayın</a>
+								<li><a href="#use-appropriate-type-attribute-for-input-element"><code>input</code> etiketi için uygun <code>type</code> özelliğini kullanın</a>
+								<li><a href="#add-value-attribute-to-input-typesubmit"><code>input type=&quot;submit&quot;</code> elemanına <code>value</code> özelliği ekleyin</a>
+								<li><a href="#add-title-attribute-to-input-element-when-there-is-pattern-attribute"><code>pattern</code> özelliği olduğunda <code>input</code> etiketine <code>title</code> özelliği ekleyin</a>
+								<li><a href="#dont-use-placeholder-attribute-for-labeling">Etiketleme için <code>placeholder</code> özelliğini kullanmayın</a>
+								<li><a href="#write-one-option-element-per-line">Her satıra bir <code>option</code> etiketi yazın</a>
+								<li><a href="#add-max-attribute-to-progress-element"><code>progress</code> etiketine <code>max</code> özelliği ekleyin</a>
+								<li><a href="#add-min-and-max-attribute-to-meter-element"><code>meter</code> etiketine <code>min</code> ve <code>max</code> özelliği ekleyin</a>
+								<li><a href="#place-legend-element-as-the-first-child-of-fieldset-element"><code>legend</code> etiketini <code>fieldset</code> etiketinin ilk çocuğu olarak elemanı olarak oluşturun</a>
 						</ol>
 					</li>
 					<li><a href="#scripting">Script ekleme</a>
 
 						<ol>
-								<li><a href="#omit-type-attribute-for-javascript">JavaScript için &#x60;type&#x60; özelliğini kullanmayın</a>
-								<li><a href="#dont-comment-out-contents-of-script-element">&#x60;script&#x60; etiketinin içeriğini yorumla kapatmayın</a>
-								<li><a href="#dont-use-script-injected-script-element">Komut dosyası eklenmiş &#x60;script&#x60; öğesini kullanmayın</a>
+								<li><a href="#omit-type-attribute-for-javascript">JavaScript için <code>type</code> özelliğini kullanmayın</a>
+								<li><a href="#dont-comment-out-contents-of-script-element"><code>script</code> etiketinin içeriğini yorumla kapatmayın</a>
+								<li><a href="#dont-use-script-injected-script-element">Komut dosyası eklenmiş <code>script</code> öğesini kullanmayın</a>
 						</ol>
 					</li>
 					<li><a href="#other">Diğer</a>
@@ -231,7 +268,7 @@
 <pre><code>&lt;p&gt;&lt;small&gt;Copyright © 2014 W3C&lt;sup&gt;®&lt;/sup&gt;&lt;/small&gt;&lt;/p&gt;</code></pre>
 						</section>
 						<section id="escape-amp-lt-gt-quot-and-apos-with-named-character-references">
-							<h3>&#x60;&amp;&#x60;, &#x60;&lt;&#x60;, &#x60;&gt;&#x60; , &#x60;&quot;&#x60;, ve &#x60;&#39;&#x60; karakter referanslarını olduğu gibi kullanmaktan kaçının</h3>
+							<h3><code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code> , <code>&quot;</code>, ve <code>&#39;</code> karakter referanslarını olduğu gibi kullanmaktan kaçının</h3>
 
 							<p>Bu karakterlerden hatasız bir HTML belgesi için her zaman kaçınılmalıdır.</p>
 <p>Yanlış:</p>
@@ -341,7 +378,7 @@
 <pre><code>&lt;span lang=&quot;ja&quot;&gt;...&lt;/span&gt;</code></pre>
 						</section>
 						<section id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes">
-							<h3>&#x60;data-*&#x60;, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın</h3>
+							<h3><code>data-*</code>, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın</h3>
 
 							<p>Bir etiket dizesi çok karmaşık olabilir. Bu basit kural, böyle bir etiket dizesini okumak için yardımcı olur.</p>
 <p>Yanlış:</p>
@@ -369,7 +406,7 @@
 					<h2>Kök elemanı</h2>
 
 						<section id="add-lang-attribute">
-							<h3>&#x60;lang&#x60; özelliği ekleyin</h3>
+							<h3><code>lang</code> özelliği ekleyin</h3>
 
 							<p><code>lang</code> özelliği HTML belgesinin çeviriminin yapılmasına yardımcı olacaktır.</p>
 <p>Yanlış:</p>
@@ -377,7 +414,7 @@
 <pre><code>&lt;html lang=&quot;en-US&quot;&gt;</code></pre>
 						</section>
 						<section id="keep-lang-attribute-value-as-short-as-possible">
-							<h3>&#x60;lang&#x60; değerini mümkün olduğunca kısa tutun</h3>
+							<h3><code>lang</code> değerini mümkün olduğunca kısa tutun</h3>
 
 							<p>Japonca yalnızca Japonya&#39;da kullanılır. Yani ülke kodu gerekli değildir.</p>
 <p>Yanlış:</p>
@@ -385,7 +422,7 @@
 <pre><code>&lt;html lang=&quot;ja&quot;&gt;</code></pre>
 						</section>
 						<section id="avoid-data-as-much-as-possible">
-							<h3>Mümkün olduğunca &#x60;data-*&#x60; kullanmayın</h3>
+							<h3>Mümkün olduğunca <code>data-*</code> kullanmayın</h3>
 
 							<p>Uygun bir özellik de tarayıcılar tarafından doğru bir şekilde ele alınabilir.</p>
 <p>Yanlış:</p>
@@ -401,7 +438,7 @@
 					<h2>Metadata&#39;yı belgeleyin</h2>
 
 						<section id="add-title-element">
-							<h3>&#x60;title&#x60; elemanı ekleyin</h3>
+							<h3><code>title</code> elemanı ekleyin</h3>
 
 							<p><code>title</code> değeri, yalnızca tarayıcı tarafından değil, çeşitli uygulamalar tarafından da kullanılır.</p>
 <p>Yanlış:</p>
@@ -414,7 +451,7 @@
 &lt;/head&gt;</code></pre>
 						</section>
 						<section id="dont-use-base-element">
-							<h3>&#x60;base&#x60; elemanı kullanmayın</h3>
+							<h3><code>base</code> elemanı kullanmayın</h3>
 
 							<p>Mutlak bir yol veya URL, hem geliştiriciler hem de kullanıcılar için daha güvenlidir.</p>
 <p>Yanlış:</p>
@@ -443,7 +480,7 @@
 &lt;link href=&quot;/css/screen.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
 						</section>
 						<section id="dont-link-to-faviconico">
-							<h3>&#x60;favicon.ico&#x60;&#39;ya link vermeyin</h3>
+							<h3><code>favicon.ico</code>&#39;ya link vermeyin</h3>
 
 							<p>Hemen hemen tüm tarayıcılar <code>/favicon.ico</code>&#39;yu otomatik ve asenkron olarak alır.</p>
 <p>Yanlış:</p>
@@ -451,7 +488,7 @@
 <pre><code>&lt;!-- Place `favicon.ico` in the root directory. --&gt;</code></pre>
 						</section>
 						<section id="add-apple-touch-icon-link">
-							<h3>&#x60;apple-touch-icon&#x60; ekleyin</h3>
+							<h3><code>apple-touch-icon</code> ekleyin</h3>
 
 							<p>Dokunma simgesi için varsayılan istek yolu değiştirildi.</p>
 <p>Yanlış:</p>
@@ -459,7 +496,7 @@
 <pre><code>&lt;link href=&quot;/apple-touch-icon.png&quot; rel=&quot;apple-touch-icon&quot;&gt;</code></pre>
 						</section>
 						<section id="add-title-attribute-to-alternate-stylesheets">
-							<h3>Alternatif stil sayfalarına &#x60;title&#x60; ekleyin</h3>
+							<h3>Alternatif stil sayfalarına <code>title</code> ekleyin</h3>
 
 							<p>İnsan tarafından okunabilen bir değer, insanların uygun stil sayfasını seçmelerine yardımcı olur.</p>
 <p>Yanlış:</p>
@@ -469,7 +506,7 @@
 &lt;link href=&quot;/css/high-contrast.css&quot; rel=&quot;alternate stylesheet&quot; title=&quot;High contrast&quot;&gt;</code></pre>
 						</section>
 						<section id="for-url-use-link-element">
-							<h3>URL için &#x60;link&#x60; kullanın</h3>
+							<h3>URL için <code>link</code> kullanın</h3>
 
 							<p>Bir <code>href</code> değeri URL olarak çözülebilir.</p>
 <p>Yanlış:</p>
@@ -528,7 +565,7 @@
 <pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
 						</section>
 						<section id="omit-type-attribute-for-css">
-							<h3>CSS için &#x60;type&#x60; kullanmayın</h3>
+							<h3>CSS için <code>type</code> kullanmayın</h3>
 
 							<p>HTML&#39;de, <code>style</code> etiketinin <code>type</code> özelliğinin  ön tanımlı değeri <code>text/css</code>&#39;tir.</p>
 <p>Yanlış:</p>
@@ -540,7 +577,7 @@
 &lt;/style&gt;</code></pre>
 						</section>
 						<section id="dont-comment-out-contents-of-style-element">
-							<h3>&#x60;style&#x60; etiketinin içeriğini yorum içine almayın</h3>
+							<h3><code>style</code> etiketinin içeriğini yorum içine almayın</h3>
 
 							<p>Bu ritüel eski tarayıcı içindir.</p>
 <p>Yanlış:</p>
@@ -573,7 +610,7 @@
 					<h2>Bölümler</h2>
 
 						<section id="add-body-element">
-							<h3>&#x60;body&#x60; etiketi ekleyin</h3>
+							<h3><code>body</code> etiketi ekleyin</h3>
 
 							<p>Bazen <code>body</code> etiketi beklenmedik bir pozisyonda bir tarayıcı tarafından tamamlanmaktadır.</p>
 <p>Yanlış:</p>
@@ -593,7 +630,7 @@
 &lt;/html&gt;</code></pre>
 						</section>
 						<section id="forget-about-hgroup-element">
-							<h3>&#x60;hgroup&#x60; etiketini unutun</h3>
+							<h3><code>hgroup</code> etiketini unutun</h3>
 
 							<p>Bu etiket çok fazla kullanılmıyor.</p>
 <p>Yanlış:</p>
@@ -605,7 +642,7 @@
 &lt;p&gt;For writing maintainable and scalable HTML documents.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="use-address-element-only-for-contact-information">
-							<h3>&#x60;address&#x60; etiketini yalnızca iletişim bilgileri için kullanın</h3>
+							<h3><code>address</code> etiketini yalnızca iletişim bilgileri için kullanın</h3>
 
 							<p><code>address</code> sadece e-posta adresi, sosyal ağ hesabı, sokak adresi, telefon numarası veya iletişim kurabileceğiniz bir şey içindir.</p>
 <p>Yanlış:</p>
@@ -617,7 +654,7 @@
 					<h2>İçeriği gruplama</h2>
 
 						<section id="dont-start-with-newline-in-pre-element">
-							<h3>&#x60;pre&#x60; elemandaki satır başı ile başlamayın</h3>
+							<h3><code>pre</code> elemandaki satır başı ile başlamayın</h3>
 
 							<p>Tarayıcılarda ilk yeni satır yok sayılır, ancak ikinci ve sonraki satırlar oluşturulur.</p>
 <p>Yanlış:</p>
@@ -628,7 +665,7 @@
 &lt;/pre&gt;</code></pre>
 						</section>
 						<section id="use-appropriate-element-in-blockquote-element">
-							<h3>&#x60;blockquote&#x60; içinde uygun etiket kullanın</h3>
+							<h3><code>blockquote</code> içinde uygun etiket kullanın</h3>
 
 							<p><code>blockquote</code> bir alıntıdır, yani içeriği bir karakter kümesi değildir.</p>
 <p>Yanlış:</p>
@@ -638,7 +675,7 @@
 &lt;/blockquote&gt;</code></pre>
 						</section>
 						<section id="dont-include-attribution-directly-in-blockquote-element">
-							<h3>Özniteliği doğrudan &#x60;blockquote&#x60; öğesinin içine dahil etme</h3>
+							<h3>Özniteliği doğrudan <code>blockquote</code> öğesinin içine dahil etme</h3>
 
 							<p><code>blockquote</code> içeriği bir alıntıdır.</p>
 <p>Yanlış:</p>
@@ -677,7 +714,7 @@ zordur</p>
 &lt;/ul&gt;</code></pre>
 						</section>
 						<section id="use-type-attribute-for-ol-element">
-							<h3>&#x60;ol&#x60; etiketi için &#x60;type&#x60; özelliğini kullanın</h3>
+							<h3><code>ol</code> etiketi için <code>type</code> özelliğini kullanın</h3>
 
 							<p>Bazen yakınlardaki içerikler referans verilir. İşaretçiyi değiştirirseniz
 <code>type</code> özelliği ile kullanırsanız güvende olacaksınız.</p>
@@ -707,7 +744,7 @@ zordur</p>
 &lt;/body&gt;</code></pre>
 						</section>
 						<section id="dont-use-dl-for-dialogue">
-							<h3>Diyalog için &#x60;dl&#x60; kullanmayın</h3>
+							<h3>Diyalog için <code>dl</code> kullanmayın</h3>
 
 							<p><code>dl</code> etiketi, HTML&#39;deki bir ilişkilendirme listesi ile sınırlandırılmıştır.</p>
 <p>Yanlış:</p>
@@ -735,7 +772,7 @@ zordur</p>
 &lt;p&gt;Abbott: Every dollar of it.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="place-figcaption-element-as-first-or-last-child-of-figure-element">
-							<h3>&#x60;figcaption&#x60; etiketini, &#x60;figure&#x60; etiketinin ilk veya son çocuğu olarak yerleştirin</h3>
+							<h3><code>figcaption</code> etiketini, <code>figure</code> etiketinin ilk veya son çocuğu olarak yerleştirin</h3>
 
 							<p>Spec, <code>figure</code> etiketinin ortasındaki <code>figcaption</code> etiketine izin vermez.</p>
 <p>Yanlış:</p>
@@ -751,7 +788,7 @@ zordur</p>
 &lt;/figure&gt;</code></pre>
 						</section>
 						<section id="use-main-element">
-							<h3>&#x60;main&#x60; etiketini kullanın</h3>
+							<h3><code>main</code> etiketini kullanın</h3>
 
 							<p><code>main</code> içerikleri kapsamak için kullanılabilir.</p>
 <p>Yanlış:</p>
@@ -763,7 +800,7 @@ zordur</p>
 &lt;/main&gt;</code></pre>
 						</section>
 						<section id="avoid-div-element-as-much-as-possible">
-							<h3>&#x60;div&#x60; etiketini mümkün olduğu kadar kullanmayın</h3>
+							<h3><code>div</code> etiketini mümkün olduğu kadar kullanmayın</h3>
 
 							<p><code>div</code> son çaredir</p>
 <p>Yanlış:</p>
@@ -794,7 +831,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 &lt;/a&gt;</code></pre>
 						</section>
 						<section id="use-download-attribute-for-downloading-a-resource">
-							<h3>İndirilebilir kaynağı belirtmek için &#x60;download&#x60; özelliğini kullanın</h3>
+							<h3>İndirilebilir kaynağı belirtmek için <code>download</code> özelliğini kullanın</h3>
 
 							<p>Tarayıcıları bağlı kaynakları depoya indirmeye zorlar.</p>
 <p>Yanlış:</p>
@@ -802,7 +839,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;a download href=&quot;/downloads/offline.zip&quot;&gt;offline version&lt;/a&gt;</code></pre>
 						</section>
 						<section id="use-rel-hreflang-and-type-attribute-if-needed">
-							<h3>Gerekirse &#x60;rel&#x60; , &#x60;hreflang&#x60; ve &#x60;type&#x60; özelliklerini kullanın</h3>
+							<h3>Gerekirse <code>rel</code> , <code>hreflang</code> ve <code>type</code> özelliklerini kullanın</h3>
 
 							<p>Bu ipuçları bağlantılı kaynakların nasıl işleneceğini belirterek uygulamalara yardımcı olur.</p>
 <p>Yanlış:</p>
@@ -818,7 +855,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;p&gt;&lt;a href=&quot;/pdf&quot; rel=&quot;alternate&quot; type=&quot;application/pdf&quot;&gt;PDF version&lt;/a&gt; is also available.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="dont-use-em-element-for-warning-or-caution">
-							<h3>Uyarı vermek için &#x60;em&#x60; etiketi kullanmayın</h3>
+							<h3>Uyarı vermek için <code>em</code> etiketi kullanmayın</h3>
 
 							<p>Bu ciddiyettir. Yani, <code>strong</code> eleman daha uygundur.</p>
 <p>Yanlış:</p>
@@ -826,7 +863,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;strong&gt;Caution!&lt;/strong&gt;</code></pre>
 						</section>
 						<section id="avoid-s-i-b-and-u-element-as-much-as-possible">
-							<h3>&#x60;s&#x60; , &#x60;i&#x60; , &#x60;b&#x60; ve &#x60;u&#x60; etiketlerinden mümkün olduğunca kaçının</h3>
+							<h3><code>s</code> , <code>i</code> , <code>b</code> ve <code>u</code> etiketlerinden mümkün olduğunca kaçının</h3>
 
 							<p>Bu etiketlerin anlambilimi insanlar için çok zordur.</p>
 <p>Yanlış:</p>
@@ -834,7 +871,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;span class=&quot;icon-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</code></pre>
 						</section>
 						<section id="dont-put-quotes-to-q-element">
-							<h3>&#x60;q&#x60; öğesine tırnak koymayın</h3>
+							<h3><code>q</code> öğesine tırnak koymayın</h3>
 
 							<p>Tırnaklar tarayıcı tarafından sağlanır.</p>
 <p>Yanlış:</p>
@@ -843,7 +880,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>“For writing maintainable and scalable HTML documents”</code></pre>
 						</section>
 						<section id="add-title-attribute-to-abbr-element">
-							<h3>&#x60;abbr&#x60; etiketine &#x60;title&#x60; özelliğini ekleyin</h3>
+							<h3><code>abbr</code> etiketine <code>title</code> özelliğini ekleyin</h3>
 
 							<p>Açıklamasını temsil etmenin başka bir yolu yoktur.</p>
 <p>Yanlış:</p>
@@ -851,7 +888,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;abbr title=&quot;HTML Best Practices&quot;&gt;HBP&lt;/abbr&gt;</code></pre>
 						</section>
 						<section id="markup-ruby-element-verbosely">
-							<h3>&#x60;ruby&#x60; etiketini detaylandırın</h3>
+							<h3><code>ruby</code> etiketini detaylandırın</h3>
 
 							<p>Modern tarayıcılarda <code>ruby</code> etiketi desteği henğz tamamlanmadı.</p>
 <p>Yanlış:</p>
@@ -859,7 +896,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;ruby&gt;HTML&lt;rp&gt; (&lt;/rp&gt;&lt;rt&gt;えいちてぃーえむえる&lt;/rt&gt;&lt;rp&gt;) &lt;/rp&gt;&lt;/ruby&gt;</code></pre>
 						</section>
 						<section id="add-datetime-attribute-to-non-machine-readable-time-element">
-							<h3>Makine tarafından okunamayacak &#x60;time&#x60; etiketine &#x60;datetime&#x60; özelliği ekleyin</h3>
+							<h3>Makine tarafından okunamayacak <code>time</code> etiketine <code>datetime</code> özelliği ekleyin</h3>
 
 							<p><code>datetime</code> özelliği bulunmadığında, <code>time</code> öğesinin içeriğinin biçimi kısıtlıdır.</p>
 <p>Yanlış:</p>
@@ -867,7 +904,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;time datetime=&quot;2014-12-19&quot;&gt;Dec 19, 2014&lt;/time&gt;</code></pre>
 						</section>
 						<section id="specify-code-language-with-class-attribute-prefixed-with-language">
-							<h3>&#x60;language-&#x60; öneki ile kod dilini &#x60;class&#x60; etiketi le belirtin</h3>
+							<h3><code>language-</code> öneki ile kod dilini <code>class</code> etiketi le belirtin</h3>
 
 							<p>Bu kesin bir yol değil, ancak spec bundan bahseder.</p>
 <p>Yanlış:</p>
@@ -875,7 +912,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;</code></pre>
 						</section>
 						<section id="keep-kbd-element-as-simple-as-possible">
-							<h3>&#x60;kbd&#x60; etiketini mümkün olduğu kadar basit tutun</h3>
+							<h3><code>kbd</code> etiketini mümkün olduğu kadar basit tutun</h3>
 
 							<p><code>kbd</code> etiketini iç içe kullanmak insanlar için çok zor.</p>
 <p>Yanlış:</p>
@@ -883,7 +920,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>&lt;kbd&gt;Ctrl+F5&lt;/kbd&gt;</code></pre>
 						</section>
 						<section id="avoid-span-element-as-much-as-possible">
-							<h3>&#x60;span&#x60; etiketinden mümkün olduğunca kaçının</h3>
+							<h3><code>span</code> etiketinden mümkün olduğunca kaçının</h3>
 
 							<p><code>span</code> element son çaredir.</p>
 <p>Yanlış:</p>
@@ -891,7 +928,7 @@ kontroller ve <code>a</code> elemanın kendisi).</p>
 <pre><code>HTML &lt;em&gt;Best&lt;/em&gt; Practices</code></pre>
 						</section>
 						<section id="break-after-br-element">
-							<h3>&#x60;br&#x60; etiketinden sonra satır sonu yapın</h3>
+							<h3><code>br</code> etiketinden sonra satır sonu yapın</h3>
 
 							<p><code>br</code> etiketi kullanıldığında satır sonu gereklidir.</p>
 <p>Yanlış:</p>
@@ -901,7 +938,7 @@ Best&lt;br&gt;
 Practices&lt;/p&gt;</code></pre>
 						</section>
 						<section id="dont-use-br-element-only-for-presentational-purpose">
-							<h3>&#x60;br&#x60; öğesini yalnızca sunum amacıyla kullanmayın</h3>
+							<h3><code>br</code> öğesini yalnızca sunum amacıyla kullanmayın</h3>
 
 							<p><code>br</code> elemanı satır kesmek için değil, içerikteki satır kesmeler içindir.</p>
 <p>Yanlış:</p>
@@ -917,7 +954,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>Düzenlemeler</h2>
 
 						<section id="dont-stride-ins-and-del-element-over-other-elements">
-							<h3>&#x60;ins&#x60; ve &#x60;del&#x60; etiketlerini diğer öğelerin arasında kullanmayın</h3>
+							<h3><code>ins</code> ve <code>del</code> etiketlerini diğer öğelerin arasında kullanmayın</h3>
 
 							<p>Etiketler diğer etidektlere taşamaz.</p>
 <p>Yanlış:</p>
@@ -933,7 +970,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>Gömülü içerik</h2>
 
 						<section id="provide-fallback-img-element-for-picture-element">
-							<h3>&#x60;picture&#x60; elemanı için yedek &#x60;img&#x60; elemanı kullanın</h3>
+							<h3><code>picture</code> elemanı için yedek <code>img</code> elemanı kullanın</h3>
 
 							<p><code>picture</code> etiketinin desteği henüz iyi değil.</p>
 <p>Yanlış:</p>
@@ -951,7 +988,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/picture&gt;</code></pre>
 						</section>
 						<section id="add-alt-attrbute-to-img-element-if-needed">
-							<h3>Gerekirse &#x60;img&#x60; öğesine &#x60;alt&#x60; özelliği ekleyin</h3>
+							<h3>Gerekirse <code>img</code> öğesine <code>alt</code> özelliği ekleyin</h3>
 
 							<p><code>alt</code> niteliği, görüntüleri işleyemeyen veya görüntü yüklemesi engelli olanlara yardımcı olur.</p>
 <p>Yanlış:</p>
@@ -959,7 +996,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;img alt=&quot;HTML Best Practices&quot; src=&quot;/img/logo.png&quot;&gt;</code></pre>
 						</section>
 						<section id="empty-alt-attribute-if-possible">
-							<h3>Mümkünse &#x60;alt&#x60; özelliğini boş olarak kullanın</h3>
+							<h3>Mümkünse <code>alt</code> özelliğini boş olarak kullanın</h3>
 
 							<p>Resim tamamlayıcı ise, yakınlarda bir yerde eşdeğer içerik vardır.</p>
 <p>Yanlış:</p>
@@ -967,7 +1004,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;img alt=&quot;&quot; src=&quot;/img/icon/help.png&quot;&gt; Help</code></pre>
 						</section>
 						<section id="omit-alt-attribute-if-possible">
-							<h3>Mümkünse &#x60;alt&#x60; özelliğini atlayın</h3>
+							<h3>Mümkünse <code>alt</code> özelliğini atlayın</h3>
 
 							<p>Bazen hangi metnin <code>alt</code> özellik için uygun olduğunu bilemezsiniz.</p>
 <p>Yanlış:</p>
@@ -976,7 +1013,7 @@ Practices&lt;/p&gt;</code></pre>
 (If you cannot see the image, you can use an &lt;a href=&quot;?audio&quot;&gt;audio&lt;/a&gt; test instead.)</code></pre>
 						</section>
 						<section id="empty-iframe-element">
-							<h3>Boş &#x60;iframe&#x60; öğesi kullanın</h3>
+							<h3>Boş <code>iframe</code> öğesi kullanın</h3>
 
 							<p>İçeriği için bazı kısıtlamalar vardır. Boş olması her zaman güvenlidir.</p>
 <p>Yanlış:</p>
@@ -986,7 +1023,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;iframe src=&quot;/ads/default.html&quot;&gt;&lt;/iframe&gt;</code></pre>
 						</section>
 						<section id="markup-map-element-content">
-							<h3>&#x60;map&#x60; etiketinin içeriğini işaretleyin</h3>
+							<h3><code>map</code> etiketinin içeriğini işaretleyin</h3>
 
 							<p>Bu içerik bir ekran okuyucu sunar.</p>
 <p>Yanlış:</p>
@@ -1010,7 +1047,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/map&gt;</code></pre>
 						</section>
 						<section id="provide-fallback-content-for-audio-or-video-element">
-							<h3>&#x60;audio&#x60; veya &#x60;video&#x60; öğesi için yedek içerik sağlayın</h3>
+							<h3><code>audio</code> veya <code>video</code> öğesi için yedek içerik sağlayın</h3>
 
 							<p>HTML’de yeni tanıtılan öğeler için yedek içerik gereklidir.</p>
 <p>Yanlış:</p>
@@ -1045,7 +1082,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/tr&gt;</code></pre>
 						</section>
 						<section id="use-th-element-for-header-cell">
-							<h3>Başlık hücresi için &#x60;th&#x60; etiketini kullanın</h3>
+							<h3>Başlık hücresi için <code>th</code> etiketini kullanın</h3>
 
 							<p>Bundan kaçınmak için hiçbir sebep yoktur.</p>
 <p>Yanlış:</p>
@@ -1097,7 +1134,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>Formlar</h2>
 
 						<section id="wrap-form-control-with-label-element">
-							<h3>&#x60;label&#x60; etiketini ile form kontrolünü sağlayın</h3>
+							<h3><code>label</code> etiketini ile form kontrolünü sağlayın</h3>
 
 							<p><code>label</code> etiketi form öğesinin odaklanmasına yardımcı olur.</p>
 <p>Yanlış:</p>
@@ -1105,7 +1142,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;p&gt;&lt;label&gt;Query: &lt;input name=&quot;q&quot; type=&quot;text&quot;&gt;&lt;/label&gt;&lt;/p&gt;</code></pre>
 						</section>
 						<section id="omit-for-attribute-if-possible">
-							<h3>Mümkünse &#x60;for&#x60; özelliğini kullanmayın</h3>
+							<h3>Mümkünse <code>for</code> özelliğini kullanmayın</h3>
 
 							<p><code>label</code> etiketi bazı form etiketlerini içerebilir.</p>
 <p>Yanlış:</p>
@@ -1113,7 +1150,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;label&gt;Query: &lt;input name=&quot;q&quot; type=&quot;text&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="use-appropriate-type-attribute-for-input-element">
-							<h3>&#x60;input&#x60; etiketi için uygun &#x60;type&#x60; özelliğini kullanın</h3>
+							<h3><code>input</code> etiketi için uygun <code>type</code> özelliğini kullanın</h3>
 
 							<p>Uygun <code>type</code> özelliği ile, tarayıcılar <code>input</code> elemanına küçük özellikler kazandırır.</p>
 <p>Yanlış:</p>
@@ -1121,7 +1158,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;label&gt;Search keyword: &lt;input name=&quot;q&quot; type=&quot;search&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="add-value-attribute-to-input-typesubmit">
-							<h3>&#x60;input type&#x3D;&quot;submit&quot;&#x60; elemanına &#x60;value&#x60; özelliği ekleyin</h3>
+							<h3><code>input type=&quot;submit&quot;</code> elemanına <code>value</code> özelliği ekleyin</h3>
 
 							<p>Gönderme düğmesi için varsayılan etiket tarayıcılarda ve dillerde standardize edilmemiştir.</p>
 <p>Yanlış:</p>
@@ -1129,7 +1166,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Search&quot;&gt;</code></pre>
 						</section>
 						<section id="add-title-attribute-to-input-element-when-there-is-pattern-attribute">
-							<h3>&#x60;pattern&#x60; özelliği olduğunda &#x60;input&#x60; etiketine &#x60;title&#x60; özelliği ekleyin</h3>
+							<h3><code>pattern</code> özelliği olduğunda <code>input</code> etiketine <code>title</code> özelliği ekleyin</h3>
 
 							<p>Girilen metni <code>pattern</code> niteliğiyle eşleşmiyorsa, <code>title</code> özelliğinin değeri ipucu olarak görüntülenecektir.</p>
 <p>Yanlış:</p>
@@ -1138,7 +1175,7 @@ Practices&lt;/p&gt;</code></pre>
 
 						</section>
 						<section id="dont-use-placeholder-attribute-for-labeling">
-							<h3>Etiketleme için &#x60;placeholder&#x60; özelliğini kullanmayın</h3>
+							<h3>Etiketleme için <code>placeholder</code> özelliğini kullanmayın</h3>
 
 							<p><code>label</code> öğesi bir etiket içindir, <code>placeholder</code> özelliği kısa bir ipucu içindir.</p>
 <p>Yanlış:</p>
@@ -1146,7 +1183,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;label&gt;Email: &lt;input name=&quot;email&quot; placeholder=&quot;john.doe@example.com&quot; type=&quot;text&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="write-one-option-element-per-line">
-							<h3>Her satıra bir &#x60;option&#x60; etiketi yazın</h3>
+							<h3>Her satıra bir <code>option</code> etiketi yazın</h3>
 
 							<p>Uzun satırların taranması zordur.</p>
 <p>Yanlış:</p>
@@ -1158,7 +1195,7 @@ Practices&lt;/p&gt;</code></pre>
     &lt;/datalist&gt;</code></pre>
 						</section>
 						<section id="add-max-attribute-to-progress-element">
-							<h3>&#x60;progress&#x60; etiketine &#x60;max&#x60; özelliği ekleyin</h3>
+							<h3><code>progress</code> etiketine <code>max</code> özelliği ekleyin</h3>
 
 							<p><code>max</code> özelliği ile, <code>value</code> özelliği kolay bir biçimde yazılabilir.</p>
 <p>Yanlış:</p>
@@ -1166,7 +1203,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;progress max=&quot;100&quot; value=&quot;50&quot;&gt; 50%&lt;/progress&gt;</code></pre>
 						</section>
 						<section id="add-min-and-max-attribute-to-meter-element">
-							<h3>&#x60;meter&#x60; etiketine &#x60;min&#x60; ve &#x60;max&#x60; özelliği ekleyin</h3>
+							<h3><code>meter</code> etiketine <code>min</code> ve <code>max</code> özelliği ekleyin</h3>
 
 							<p><code>min</code> ve <code>max</code> özelliği ile <code>value</code> özelliği kolay bir şekilde yazılabilir.</p>
 <p>Yanlış:</p>
@@ -1175,7 +1212,7 @@ Practices&lt;/p&gt;</code></pre>
 
 						</section>
 						<section id="place-legend-element-as-the-first-child-of-fieldset-element">
-							<h3>&#x60;legend&#x60; etiketini &#x60;fieldset&#x60; etiketinin ilk çocuğu olarak elemanı olarak oluşturun</h3>
+							<h3><code>legend</code> etiketini <code>fieldset</code> etiketinin ilk çocuğu olarak elemanı olarak oluşturun</h3>
 
 							<p>Spec bunu gerektirir.</p>
 <p>Yanlış:</p>
@@ -1195,7 +1232,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>Script ekleme</h2>
 
 						<section id="omit-type-attribute-for-javascript">
-							<h3>JavaScript için &#x60;type&#x60; özelliğini kullanmayın</h3>
+							<h3>JavaScript için <code>type</code> özelliğini kullanmayın</h3>
 
 							<p>HTML’de,<code>type</code> özelliğinin <code>script</code> etiketi için varsayılan değeri <code>text/javascript</code>tir.</p>
 <p>Yanlış:</p>
@@ -1203,7 +1240,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;script&gt;  ...&lt;/script&gt;</code></pre>
 						</section>
 						<section id="dont-comment-out-contents-of-script-element">
-							<h3>&#x60;script&#x60; etiketinin içeriğini yorumla kapatmayın</h3>
+							<h3><code>script</code> etiketinin içeriğini yorumla kapatmayın</h3>
 
 							<p>Bu ritüel eski tarayıcılar içindir.</p>
 <p>Yanlış:</p>
@@ -1212,7 +1249,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;script&gt;  ...&lt;/script&gt;</code></pre>
 						</section>
 						<section id="dont-use-script-injected-script-element">
-							<h3>Komut dosyası eklenmiş &#x60;script&#x60; öğesini kullanmayın</h3>
+							<h3>Komut dosyası eklenmiş <code>script</code> öğesini kullanmayın</h3>
 
 							<p><code>async</code> özelliği hem sadelik hem de performans için en iyisidir.</p>
 <p>Yanlış:</p>

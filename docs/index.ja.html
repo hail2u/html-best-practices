@@ -8,6 +8,43 @@
 		<meta content="width=device-width" name=viewport>
 
 		<link href="./index.ja.html" rel="canonical">
+
+		<style>
+			body {
+				font-family: sans-serif;
+				line-height: 1.5;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 42em;
+				padding-left: 1em;
+				padding-right: 1em;
+			}
+
+			h2 {
+				margin-top: 4em;
+			}
+
+			h3 {
+				margin-top: 3em;
+			}
+
+			p {
+				overflow-wrap: break-word;
+			}
+
+			pre,
+			code {
+				font-family: monospace, monospace;
+				font-size: 1em;
+			}
+
+			pre {
+				background-color: whitesmoke;
+				overflow-wrap: break-word;
+				padding: 0.5em;
+				white-space: pre-wrap;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -39,7 +76,7 @@
 								<li><a href="#dont-use-legacy-or-obsolete-doctype">置き換えられるべきまたは旧式のDOCTYPEを使わない</a>
 								<li><a href="#dont-use-xml-declaration">XML宣言を使用しない</a>
 								<li><a href="#dont-use-character-references-as-much-as-possible">文字参照はできる限り使わない</a>
-								<li><a href="#escape-amp-lt-gt-quot-and-apos-with-named-character-references">&#x60;&amp;&#x60;と&#x60;&lt;&#x60;、&#x60;&gt;&#x60;、&#x60;&quot;&#x60;、&#x60;&#39;&#x60;は名前文字参照を使ってエスケープする</a>
+								<li><a href="#escape-amp-lt-gt-quot-and-apos-with-named-character-references"><code>&amp;</code>と<code>&lt;</code>、<code>&gt;</code>、<code>&quot;</code>、<code>&#39;</code>は名前文字参照を使ってエスケープする</a>
 								<li><a href="#use-numeric-character-references-for-control-or-invisible-characters">制御文字や不可視文字は数値文字参照を使う</a>
 								<li><a href="#put-white-spaces-around-comment-contents">コメントではその内容の前後へ空白文字を置く</a>
 								<li><a href="#dont-omit-closing-tag">終了タグを省略しない</a>
@@ -51,125 +88,125 @@
 								<li><a href="#omit-boolean-attribute-value">真偽値を取る属性の値は省略する</a>
 								<li><a href="#omit-namespaces">名前空間は省略する</a>
 								<li><a href="#dont-use-xml-attributes">XML属性は使わない</a>
-								<li><a href="#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes">&#x60;data-*&#x60;とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない</a>
+								<li><a href="#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"><code>data-*</code>とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない</a>
 								<li><a href="#prefer-default-implicit-aria-semantics">デフォルトの暗黙のARIAセマンティックスを尊重する</a>
 						</ol>
 					</li>
 					<li><a href="#the-root-element">文書要素</a>
 
 						<ol>
-								<li><a href="#add-lang-attribute">&#x60;lang&#x60;属性を追加する</a>
-								<li><a href="#keep-lang-attribute-value-as-short-as-possible">&#x60;lang&#x60;属性の値はできる限り短くする</a>
-								<li><a href="#avoid-data-as-much-as-possible">できる限り&#x60;data-*&#x60;属性は避ける</a>
+								<li><a href="#add-lang-attribute"><code>lang</code>属性を追加する</a>
+								<li><a href="#keep-lang-attribute-value-as-short-as-possible"><code>lang</code>属性の値はできる限り短くする</a>
+								<li><a href="#avoid-data-as-much-as-possible">できる限り<code>data-*</code>属性は避ける</a>
 						</ol>
 					</li>
 					<li><a href="#document-metadata">文書メタデータ</a>
 
 						<ol>
-								<li><a href="#add-title-element">&#x60;title&#x60;要素を書く</a>
-								<li><a href="#dont-use-base-element">&#x60;base&#x60;要素を使わない</a>
+								<li><a href="#add-title-element"><code>title</code>要素を書く</a>
+								<li><a href="#dont-use-base-element"><code>base</code>要素を使わない</a>
 								<li><a href="#specify-mime-type-of-minor-linked-resources">マイナーな参照先リソースのMIMEタイプを指定する</a>
-								<li><a href="#dont-link-to-faviconico">&#x60;favicon.ico&#x60;へリンクしない</a>
-								<li><a href="#add-apple-touch-icon-link">&#x60;apple-touch-icon&#x60;へのリンクを書く</a>
-								<li><a href="#add-title-attribute-to-alternate-stylesheets">代替スタイルシートへ&#x60;title&#x60;属性を追加する</a>
-								<li><a href="#for-url-use-link-element">URLには&#x60;link&#x60;要素を使う</a>
+								<li><a href="#dont-link-to-faviconico"><code>favicon.ico</code>へリンクしない</a>
+								<li><a href="#add-apple-touch-icon-link"><code>apple-touch-icon</code>へのリンクを書く</a>
+								<li><a href="#add-title-attribute-to-alternate-stylesheets">代替スタイルシートへ<code>title</code>属性を追加する</a>
+								<li><a href="#for-url-use-link-element">URLには<code>link</code>要素を使う</a>
 								<li><a href="#specify-document-character-encoding">文書の文字エンコーディングを指定する</a>
 								<li><a href="#dont-use-legacy-character-encoding-format">置き換えられるべき文字エンコーディング指定フォーマットを使わない</a>
 								<li><a href="#specify-character-encoding-at-first">最初に文字エンコーディングを指定する</a>
 								<li><a href="#use-utf-8">UTF-8を使う</a>
-								<li><a href="#omit-type-attribute-for-css">CSSの&#x60;type&#x60;属性は省略する</a>
-								<li><a href="#dont-comment-out-contents-of-style-element">&#x60;style&#x60;要素の中をコメントアウトしない</a>
+								<li><a href="#omit-type-attribute-for-css">CSSの<code>type</code>属性は省略する</a>
+								<li><a href="#dont-comment-out-contents-of-style-element"><code>style</code>要素の中をコメントアウトしない</a>
 								<li><a href="#dont-mix-tag-for-css-and-javascript">CSSとJavaScriptのタグを混ぜない</a>
 						</ol>
 					</li>
 					<li><a href="#sections">セクション</a>
 
 						<ol>
-								<li><a href="#add-body-element">&#x60;body&#x60;要素を書く</a>
-								<li><a href="#forget-about-hgroup-element">&#x60;hgroup&#x60;要素のことは忘れる</a>
-								<li><a href="#use-address-element-only-for-contact-information">&#x60;address&#x60;要素は連絡先情報にのみ使う</a>
+								<li><a href="#add-body-element"><code>body</code>要素を書く</a>
+								<li><a href="#forget-about-hgroup-element"><code>hgroup</code>要素のことは忘れる</a>
+								<li><a href="#use-address-element-only-for-contact-information"><code>address</code>要素は連絡先情報にのみ使う</a>
 						</ol>
 					</li>
 					<li><a href="#grouping-content">グルーピングコンテンツ</a>
 
 						<ol>
-								<li><a href="#dont-start-with-newline-in-pre-element">&#x60;pre&#x60;要素は改行で始めない</a>
-								<li><a href="#use-appropriate-element-in-blockquote-element">&#x60;blockquote&#x60;要素内でも適切な要素を使う</a>
-								<li><a href="#dont-include-attribution-directly-in-blockquote-element">&#x60;blockquote&#x60;要素内に帰属情報を含めない</a>
+								<li><a href="#dont-start-with-newline-in-pre-element"><code>pre</code>要素は改行で始めない</a>
+								<li><a href="#use-appropriate-element-in-blockquote-element"><code>blockquote</code>要素内でも適切な要素を使う</a>
+								<li><a href="#dont-include-attribution-directly-in-blockquote-element"><code>blockquote</code>要素内に帰属情報を含めない</a>
 								<li><a href="#write-one-list-item-per-line">リスト項目は1行に1つずつ書く</a>
-								<li><a href="#use-type-attribute-for-ol-element">&#x60;ol&#x60;要素では&#x60;type&#x60;属性を使う</a>
-								<li><a href="#dont-use-dl-for-dialogue">&#x60;dl&#x60;を会話のために使わない</a>
-								<li><a href="#place-figcaption-element-as-first-or-last-child-of-figure-element">&#x60;figcaption&#x60;要素は&#x60;figure&#x60;要素の最初か最後に置く</a>
-								<li><a href="#use-main-element">&#x60;main&#x60;要素を使う</a>
-								<li><a href="#avoid-div-element-as-much-as-possible">できる限り&#x60;div&#x60;要素は避ける</a>
+								<li><a href="#use-type-attribute-for-ol-element"><code>ol</code>要素では<code>type</code>属性を使う</a>
+								<li><a href="#dont-use-dl-for-dialogue"><code>dl</code>を会話のために使わない</a>
+								<li><a href="#place-figcaption-element-as-first-or-last-child-of-figure-element"><code>figcaption</code>要素は<code>figure</code>要素の最初か最後に置く</a>
+								<li><a href="#use-main-element"><code>main</code>要素を使う</a>
+								<li><a href="#avoid-div-element-as-much-as-possible">できる限り<code>div</code>要素は避ける</a>
 						</ol>
 					</li>
 					<li><a href="#text-level-semantics">テキストレベルセマンティックス</a>
 
 						<ol>
 								<li><a href="#dont-split-same-link-that-can-be-grouped">グループ化できるリンクは分割しない</a>
-								<li><a href="#use-download-attribute-for-downloading-a-resource">リソースをダウンロードさせる場合は&#x60;download&#x60;属性を使う</a>
-								<li><a href="#use-rel-hreflang-and-type-attribute-if-needed">&#x60;rel&#x60;や&#x60;hreflang&#x60;、&#x60;type&#x60;属性を必要ならば使う</a>
+								<li><a href="#use-download-attribute-for-downloading-a-resource">リソースをダウンロードさせる場合は<code>download</code>属性を使う</a>
+								<li><a href="#use-rel-hreflang-and-type-attribute-if-needed"><code>rel</code>や<code>hreflang</code>、<code>type</code>属性を必要ならば使う</a>
 								<li><a href="#clear-link-text">リンク文字列は明確にする</a>
-								<li><a href="#dont-use-em-element-for-warning-or-caution">&#x60;em&#x60;要素を警告や注意に使わない</a>
-								<li><a href="#avoid-s-i-b-and-u-element-as-much-as-possible">できる限り&#x60;s&#x60;や&#x60;i&#x60;、&#x60;b&#x60;、&#x60;u&#x60;要素を避ける</a>
-								<li><a href="#dont-put-quotes-to-q-element">&#x60;q&#x60;要素内へ引用符は置かない</a>
-								<li><a href="#add-title-attribute-to-abbr-element">&#x60;abbr&#x60;要素へ&#x60;title&#x60;属性を追加する</a>
-								<li><a href="#markup-ruby-element-verbosely">&#x60;ruby&#x60;要素は冗長にマークアップする</a>
-								<li><a href="#add-datetime-attribute-to-non-machine-readable-time-element">機械的に解釈可能でない&#x60;time&#x60;要素では&#x60;datetime&#x60;属性を追加する</a>
-								<li><a href="#specify-code-language-with-class-attribute-prefixed-with-language">コードの言語は&#x60;class&#x60;属性で&#x60;language-&#x60;で始めることで指定する</a>
-								<li><a href="#keep-kbd-element-as-simple-as-possible">できる限り&#x60;kbd&#x60;要素はシンプルにする</a>
-								<li><a href="#avoid-span-element-as-much-as-possible">できる限り&#x60;span&#x60;要素は使わない</a>
-								<li><a href="#break-after-br-element">&#x60;br&#x60;要素の後ろでは改行する</a>
-								<li><a href="#dont-use-br-element-only-for-presentational-purpose">見た目だけのために&#x60;br&#x60;要素を使わない</a>
+								<li><a href="#dont-use-em-element-for-warning-or-caution"><code>em</code>要素を警告や注意に使わない</a>
+								<li><a href="#avoid-s-i-b-and-u-element-as-much-as-possible">できる限り<code>s</code>や<code>i</code>、<code>b</code>、<code>u</code>要素を避ける</a>
+								<li><a href="#dont-put-quotes-to-q-element"><code>q</code>要素内へ引用符は置かない</a>
+								<li><a href="#add-title-attribute-to-abbr-element"><code>abbr</code>要素へ<code>title</code>属性を追加する</a>
+								<li><a href="#markup-ruby-element-verbosely"><code>ruby</code>要素は冗長にマークアップする</a>
+								<li><a href="#add-datetime-attribute-to-non-machine-readable-time-element">機械的に解釈可能でない<code>time</code>要素では<code>datetime</code>属性を追加する</a>
+								<li><a href="#specify-code-language-with-class-attribute-prefixed-with-language">コードの言語は<code>class</code>属性で<code>language-</code>で始めることで指定する</a>
+								<li><a href="#keep-kbd-element-as-simple-as-possible">できる限り<code>kbd</code>要素はシンプルにする</a>
+								<li><a href="#avoid-span-element-as-much-as-possible">できる限り<code>span</code>要素は使わない</a>
+								<li><a href="#break-after-br-element"><code>br</code>要素の後ろでは改行する</a>
+								<li><a href="#dont-use-br-element-only-for-presentational-purpose">見た目だけのために<code>br</code>要素を使わない</a>
 						</ol>
 					</li>
 					<li><a href="#edits">編集</a>
 
 						<ol>
-								<li><a href="#dont-stride-ins-and-del-element-over-other-elements">&#x60;ins&#x60;や&#x60;del&#x60;要素は他の要素をまたがせない</a>
+								<li><a href="#dont-stride-ins-and-del-element-over-other-elements"><code>ins</code>や<code>del</code>要素は他の要素をまたがせない</a>
 						</ol>
 					</li>
 					<li><a href="#embedded-content">エンベディッドコンテンツ</a>
 
 						<ol>
-								<li><a href="#provide-fallback-img-element-for-picture-element">&#x60;picture&#x60;要素ではフォールバックのための&#x60;img&#x60;要素を提供する</a>
-								<li><a href="#add-alt-attrbute-to-img-element-if-needed">必要な時は&#x60;img&#x60;要素へ&#x60;alt&#x60;属性を追加する</a>
-								<li><a href="#empty-alt-attribute-if-possible">可能ならば&#x60;alt&#x60;属性は空にする</a>
-								<li><a href="#omit-alt-attribute-if-possible">可能ならば&#x60;alt&#x60;属性は省略する</a>
-								<li><a href="#empty-iframe-element">&#x60;iframe&#x60;要素の中は空にする</a>
-								<li><a href="#markup-map-element-content">&#x60;map&#x60;要素の中はマークアップする</a>
-								<li><a href="#provide-fallback-content-for-audio-or-video-element">&#x60;audio&#x60;や&#x60;video&#x60;要素にフォールバックのためのコンテンツを提供する</a>
+								<li><a href="#provide-fallback-img-element-for-picture-element"><code>picture</code>要素ではフォールバックのための<code>img</code>要素を提供する</a>
+								<li><a href="#add-alt-attrbute-to-img-element-if-needed">必要な時は<code>img</code>要素へ<code>alt</code>属性を追加する</a>
+								<li><a href="#empty-alt-attribute-if-possible">可能ならば<code>alt</code>属性は空にする</a>
+								<li><a href="#omit-alt-attribute-if-possible">可能ならば<code>alt</code>属性は省略する</a>
+								<li><a href="#empty-iframe-element"><code>iframe</code>要素の中は空にする</a>
+								<li><a href="#markup-map-element-content"><code>map</code>要素の中はマークアップする</a>
+								<li><a href="#provide-fallback-content-for-audio-or-video-element"><code>audio</code>や<code>video</code>要素にフォールバックのためのコンテンツを提供する</a>
 						</ol>
 					</li>
 					<li><a href="#tabular-data">テーブルデータ</a>
 
 						<ol>
 								<li><a href="#write-one-cell-per-line">1行に1つのセルを書く</a>
-								<li><a href="#use-th-element-for-header-cell">見出しセルには&#x60;th&#x60;要素を使う</a>
+								<li><a href="#use-th-element-for-header-cell">見出しセルには<code>th</code>要素を使う</a>
 						</ol>
 					</li>
 					<li><a href="#forms">フォーム</a>
 
 						<ol>
-								<li><a href="#wrap-form-control-with-label-element">フォームコントロールは&#x60;label&#x60;要素で括る</a>
-								<li><a href="#omit-for-attribute-if-possible">可能ならば&#x60;for&#x60;属性は省略する</a>
-								<li><a href="#use-appropriate-type-attribute-for-input-element">&#x60;input&#x60;要素では適切な&#x60;type&#x60;属性を使う</a>
-								<li><a href="#add-value-attribute-to-input-typesubmit">&#x60;input type&#x3D;&quot;submit&quot;&#x60;には&#x60;value&#x60;属性を追加する</a>
-								<li><a href="#add-title-attribute-to-input-element-when-there-is-pattern-attribute">&#x60;pattern&#x60;属性を持つ&#x60;input&#x60;要素には&#x60;title&#x60;属性を追加する</a>
-								<li><a href="#dont-use-placeholder-attribute-for-labeling">&#x60;placeholder&#x60;属性をラベル付けに使わない</a>
-								<li><a href="#write-one-option-element-per-line">&#x60;option&#x60;要素は1行に1つ書く</a>
-								<li><a href="#add-max-attribute-to-progress-element">&#x60;progress&#x60;要素には&#x60;max&#x60;属性を追加する</a>
-								<li><a href="#add-min-and-max-attribute-to-meter-element">&#x60;meter&#x60;要素では&#x60;min&#x60;及び&#x60;max&#x60;属性を追加する</a>
-								<li><a href="#place-legend-element-as-the-first-child-of-fieldset-element">&#x60;legend&#x60;要素は&#x60;fieldset&#x60;要素の最初に置く</a>
+								<li><a href="#wrap-form-control-with-label-element">フォームコントロールは<code>label</code>要素で括る</a>
+								<li><a href="#omit-for-attribute-if-possible">可能ならば<code>for</code>属性は省略する</a>
+								<li><a href="#use-appropriate-type-attribute-for-input-element"><code>input</code>要素では適切な<code>type</code>属性を使う</a>
+								<li><a href="#add-value-attribute-to-input-typesubmit"><code>input type=&quot;submit&quot;</code>には<code>value</code>属性を追加する</a>
+								<li><a href="#add-title-attribute-to-input-element-when-there-is-pattern-attribute"><code>pattern</code>属性を持つ<code>input</code>要素には<code>title</code>属性を追加する</a>
+								<li><a href="#dont-use-placeholder-attribute-for-labeling"><code>placeholder</code>属性をラベル付けに使わない</a>
+								<li><a href="#write-one-option-element-per-line"><code>option</code>要素は1行に1つ書く</a>
+								<li><a href="#add-max-attribute-to-progress-element"><code>progress</code>要素には<code>max</code>属性を追加する</a>
+								<li><a href="#add-min-and-max-attribute-to-meter-element"><code>meter</code>要素では<code>min</code>及び<code>max</code>属性を追加する</a>
+								<li><a href="#place-legend-element-as-the-first-child-of-fieldset-element"><code>legend</code>要素は<code>fieldset</code>要素の最初に置く</a>
 						</ol>
 					</li>
 					<li><a href="#scripting">スクリプティング</a>
 
 						<ol>
-								<li><a href="#omit-type-attribute-for-javascript">JavaScriptでは&#x60;type&#x60;属性を省略する</a>
-								<li><a href="#dont-comment-out-contents-of-script-element">&#x60;script&#x60;要素の中をコメントアウトしない</a>
-								<li><a href="#dont-use-script-injected-script-element">&#x60;script&#x60;要素を動的に生成するテクニックを使わない</a>
+								<li><a href="#omit-type-attribute-for-javascript">JavaScriptでは<code>type</code>属性を省略する</a>
+								<li><a href="#dont-comment-out-contents-of-script-element"><code>script</code>要素の中をコメントアウトしない</a>
+								<li><a href="#dont-use-script-injected-script-element"><code>script</code>要素を動的に生成するテクニックを使わない</a>
 						</ol>
 					</li>
 					<li><a href="#other">その他</a>
@@ -231,7 +268,7 @@
 <pre><code>&lt;p&gt;&lt;small&gt;Copyright © 2014 W3C&lt;sup&gt;®&lt;/sup&gt;&lt;/small&gt;&lt;/p&gt;</code></pre>
 						</section>
 						<section id="escape-amp-lt-gt-quot-and-apos-with-named-character-references">
-							<h3>&#x60;&amp;&#x60;と&#x60;&lt;&#x60;、&#x60;&gt;&#x60;、&#x60;&quot;&#x60;、&#x60;&#39;&#x60;は名前文字参照を使ってエスケープする</h3>
+							<h3><code>&amp;</code>と<code>&lt;</code>、<code>&gt;</code>、<code>&quot;</code>、<code>&#39;</code>は名前文字参照を使ってエスケープする</h3>
 
 							<p>バグのないHTML文書を作成するためには、これらの文字は常にエスケープされるべきです。</p>
 <p>悪い例:</p>
@@ -340,7 +377,7 @@
 <pre><code>&lt;span lang=&quot;ja&quot;&gt;...&lt;/span&gt;</code></pre>
 						</section>
 						<section id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes">
-							<h3>&#x60;data-*&#x60;とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない</h3>
+							<h3><code>data-*</code>とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない</h3>
 
 							<p>タグ文字列はとても複雑になりえます。こういった簡単なルールによってタグ文字列を読みやすくできるでしょう。</p>
 <p>悪い例:</p>
@@ -368,7 +405,7 @@
 					<h2>文書要素</h2>
 
 						<section id="add-lang-attribute">
-							<h3>&#x60;lang&#x60;属性を追加する</h3>
+							<h3><code>lang</code>属性を追加する</h3>
 
 							<p><code>lang</code>属性はHTML文書の翻訳に役立ちます。</p>
 <p>悪い例:</p>
@@ -376,7 +413,7 @@
 <pre><code>&lt;html lang=&quot;en-US&quot;&gt;</code></pre>
 						</section>
 						<section id="keep-lang-attribute-value-as-short-as-possible">
-							<h3>&#x60;lang&#x60;属性の値はできる限り短くする</h3>
+							<h3><code>lang</code>属性の値はできる限り短くする</h3>
 
 							<p>日本語は日本でのみ使われます。つまり国コードは必要ありません。</p>
 <p>悪い例:</p>
@@ -384,7 +421,7 @@
 <pre><code>&lt;html lang=&quot;ja&quot;&gt;</code></pre>
 						</section>
 						<section id="avoid-data-as-much-as-possible">
-							<h3>できる限り&#x60;data-*&#x60;属性は避ける</h3>
+							<h3>できる限り<code>data-*</code>属性は避ける</h3>
 
 							<p>適切な属性は、ブラウザーがうまく扱ってくれるかもしれません。</p>
 <p>悪い例:</p>
@@ -400,7 +437,7 @@
 					<h2>文書メタデータ</h2>
 
 						<section id="add-title-element">
-							<h3>&#x60;title&#x60;要素を書く</h3>
+							<h3><code>title</code>要素を書く</h3>
 
 							<p><code>title</code>要素の中身は、ブラウザーに限らず、様々なアプリケーションにより利用されます。</p>
 <p>悪い例:</p>
@@ -413,7 +450,7 @@
 &lt;/head&gt;</code></pre>
 						</section>
 						<section id="dont-use-base-element">
-							<h3>&#x60;base&#x60;要素を使わない</h3>
+							<h3><code>base</code>要素を使わない</h3>
 
 							<p>絶対パスや絶対URLの方が開発者とユーザーの双方に安全です。</p>
 <p>悪い例:</p>
@@ -442,7 +479,7 @@
 &lt;link href=&quot;/css/screen.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
 						</section>
 						<section id="dont-link-to-faviconico">
-							<h3>&#x60;favicon.ico&#x60;へリンクしない</h3>
+							<h3><code>favicon.ico</code>へリンクしない</h3>
 
 							<p>ほとんどのブラウザーは<code>/favicon.ico</code>を自動的に非同期で取得します。</p>
 <p>悪い例:</p>
@@ -450,7 +487,7 @@
 <pre><code>&lt;!-- Place `favicon.ico` in the root directory. --&gt;</code></pre>
 						</section>
 						<section id="add-apple-touch-icon-link">
-							<h3>&#x60;apple-touch-icon&#x60;へのリンクを書く</h3>
+							<h3><code>apple-touch-icon</code>へのリンクを書く</h3>
 
 							<p>デフォルトでリクエストされるタッチ・アイコンのパスは突然変わりました。</p>
 <p>Bad:</p>
@@ -458,7 +495,7 @@
 <pre><code>&lt;link href=&quot;/apple-touch-icon.png&quot; rel=&quot;apple-touch-icon&quot;&gt;</code></pre>
 						</section>
 						<section id="add-title-attribute-to-alternate-stylesheets">
-							<h3>代替スタイルシートへ&#x60;title&#x60;属性を追加する</h3>
+							<h3>代替スタイルシートへ<code>title</code>属性を追加する</h3>
 
 							<p>人間にわかりやすいラベルにより適切なスタイルシートを選択しやすくなります。</p>
 <p>悪い例:</p>
@@ -468,7 +505,7 @@
 &lt;link href=&quot;/css/high-contrast.css&quot; rel=&quot;alternate stylesheet&quot; title=&quot;High contrast&quot;&gt;</code></pre>
 						</section>
 						<section id="for-url-use-link-element">
-							<h3>URLには&#x60;link&#x60;要素を使う</h3>
+							<h3>URLには<code>link</code>要素を使う</h3>
 
 							<p><code>href</code>属性の値はURLとして解決できます。</p>
 <p>悪い例:</p>
@@ -527,7 +564,7 @@
 <pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
 						</section>
 						<section id="omit-type-attribute-for-css">
-							<h3>CSSの&#x60;type&#x60;属性は省略する</h3>
+							<h3>CSSの<code>type</code>属性は省略する</h3>
 
 							<p>HTMLでは、<code>style</code>要素における<code>type</code>属性の初期値は<code>text/css</code>です。</p>
 <p>悪い例:</p>
@@ -539,7 +576,7 @@
 &lt;/style&gt;</code></pre>
 						</section>
 						<section id="dont-comment-out-contents-of-style-element">
-							<h3>&#x60;style&#x60;要素の中をコメントアウトしない</h3>
+							<h3><code>style</code>要素の中をコメントアウトしない</h3>
 
 							<p>この儀式は古いブラウザーのためです。</p>
 <p>悪い例:</p>
@@ -572,7 +609,7 @@
 					<h2>セクション</h2>
 
 						<section id="add-body-element">
-							<h3>&#x60;body&#x60;要素を書く</h3>
+							<h3><code>body</code>要素を書く</h3>
 
 							<p>ブラウザーは思っても見ない位置へ<code>body</code>要素を補完するかもしれません。</p>
 <p>悪い例:</p>
@@ -592,7 +629,7 @@
 &lt;/html&gt;</code></pre>
 						</section>
 						<section id="forget-about-hgroup-element">
-							<h3>&#x60;hgroup&#x60;要素のことは忘れる</h3>
+							<h3><code>hgroup</code>要素のことは忘れる</h3>
 
 							<p>あまり使われていません。</p>
 <p>悪い例:</p>
@@ -604,7 +641,7 @@
 &lt;p&gt;For writing maintainable and scalable HTML documents.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="use-address-element-only-for-contact-information">
-							<h3>&#x60;address&#x60;要素は連絡先情報にのみ使う</h3>
+							<h3><code>address</code>要素は連絡先情報にのみ使う</h3>
 
 							<p><code>address</code>要素はメールアドレスやSNSアカウント、住所、電話番号など、実際に利用できるあなたとの連絡手段のための要素です。</p>
 <p>悪い例:</p>
@@ -616,7 +653,7 @@
 					<h2>グルーピングコンテンツ</h2>
 
 						<section id="dont-start-with-newline-in-pre-element">
-							<h3>&#x60;pre&#x60;要素は改行で始めない</h3>
+							<h3><code>pre</code>要素は改行で始めない</h3>
 
 							<p>最初の改行はブラウザーに無視されますが、2番目以降はそのまま表示されます。</p>
 <p>悪い例:</p>
@@ -627,7 +664,7 @@
 &lt;/pre&gt;</code></pre>
 						</section>
 						<section id="use-appropriate-element-in-blockquote-element">
-							<h3>&#x60;blockquote&#x60;要素内でも適切な要素を使う</h3>
+							<h3><code>blockquote</code>要素内でも適切な要素を使う</h3>
 
 							<p><code>blockquote</code>要素の中身は引用で、単なる文字の連続ではありません。</p>
 <p>悪い例:</p>
@@ -637,7 +674,7 @@
 &lt;/blockquote&gt;</code></pre>
 						</section>
 						<section id="dont-include-attribution-directly-in-blockquote-element">
-							<h3>&#x60;blockquote&#x60;要素内に帰属情報を含めない</h3>
+							<h3><code>blockquote</code>要素内に帰属情報を含めない</h3>
 
 							<p><code>blockquote</code>要素の中身は引用です。</p>
 <p>悪い例:</p>
@@ -675,7 +712,7 @@
 &lt;/ul&gt;</code></pre>
 						</section>
 						<section id="use-type-attribute-for-ol-element">
-							<h3>&#x60;ol&#x60;要素では&#x60;type&#x60;属性を使う</h3>
+							<h3><code>ol</code>要素では<code>type</code>属性を使う</h3>
 
 							<p>リスト・マーカーは周辺から参照される場合があります。<code>type</code>属性を使ってリスト・マーカーを変更すれば、安全に参照できるでしょう。</p>
 <p>悪い例:</p>
@@ -704,7 +741,7 @@
 &lt;/body&gt;</code></pre>
 						</section>
 						<section id="dont-use-dl-for-dialogue">
-							<h3>&#x60;dl&#x60;を会話のために使わない</h3>
+							<h3><code>dl</code>を会話のために使わない</h3>
 
 							<p>HTMLでは<code>dl</code>要素は関連付けリストに限定されています。</p>
 <p>悪い例:</p>
@@ -732,7 +769,7 @@
 &lt;p&gt;Abbott: Every dollar of it.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="place-figcaption-element-as-first-or-last-child-of-figure-element">
-							<h3>&#x60;figcaption&#x60;要素は&#x60;figure&#x60;要素の最初か最後に置く</h3>
+							<h3><code>figcaption</code>要素は<code>figure</code>要素の最初か最後に置く</h3>
 
 							<p>仕様では<code>figcaption</code>要素を<code>figure</code>要素の中ほどに置けません。</p>
 <p>悪い例:</p>
@@ -748,7 +785,7 @@
 &lt;/figure&gt;</code></pre>
 						</section>
 						<section id="use-main-element">
-							<h3>&#x60;main&#x60;要素を使う</h3>
+							<h3><code>main</code>要素を使う</h3>
 
 							<p><code>main</code>要素はコンテンツをまとめるために使えます。</p>
 <p>悪い例:</p>
@@ -760,7 +797,7 @@
 &lt;/main&gt;</code></pre>
 						</section>
 						<section id="avoid-div-element-as-much-as-possible">
-							<h3>できる限り&#x60;div&#x60;要素は避ける</h3>
+							<h3>できる限り<code>div</code>要素は避ける</h3>
 
 							<p><code>div</code>要素は最後の手段です。</p>
 <p>悪い例:</p>
@@ -790,7 +827,7 @@
 &lt;/a&gt;</code></pre>
 						</section>
 						<section id="use-download-attribute-for-downloading-a-resource">
-							<h3>リソースをダウンロードさせる場合は&#x60;download&#x60;属性を使う</h3>
+							<h3>リソースをダウンロードさせる場合は<code>download</code>属性を使う</h3>
 
 							<p>こうすることでダウンロードするリンク先のリソースを確実にローカルに保存させられます。</p>
 <p>悪い例:</p>
@@ -798,7 +835,7 @@
 <pre><code>&lt;a download href=&quot;/downloads/offline.zip&quot;&gt;offline version&lt;/a&gt;</code></pre>
 						</section>
 						<section id="use-rel-hreflang-and-type-attribute-if-needed">
-							<h3>&#x60;rel&#x60;や&#x60;hreflang&#x60;、&#x60;type&#x60;属性を必要ならば使う</h3>
+							<h3><code>rel</code>や<code>hreflang</code>、<code>type</code>属性を必要ならば使う</h3>
 
 							<p>これらのヒントは、アプリケーションがリンク先のリソースをどう扱えば良いのかの助けになります。</p>
 <p>悪い例:</p>
@@ -814,7 +851,7 @@
 <pre><code>&lt;p&gt;&lt;a href=&quot;/pdf&quot; rel=&quot;alternate&quot; type=&quot;application/pdf&quot;&gt;PDF version&lt;/a&gt; is also available.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="dont-use-em-element-for-warning-or-caution">
-							<h3>&#x60;em&#x60;要素を警告や注意に使わない</h3>
+							<h3><code>em</code>要素を警告や注意に使わない</h3>
 
 							<p>それらは深刻なものです。ですから<code>strong</code>要素の方がより相応しいはずです。</p>
 <p>悪い例:</p>
@@ -822,7 +859,7 @@
 <pre><code>&lt;strong&gt;Caution!&lt;/strong&gt;</code></pre>
 						</section>
 						<section id="avoid-s-i-b-and-u-element-as-much-as-possible">
-							<h3>できる限り&#x60;s&#x60;や&#x60;i&#x60;、&#x60;b&#x60;、&#x60;u&#x60;要素を避ける</h3>
+							<h3>できる限り<code>s</code>や<code>i</code>、<code>b</code>、<code>u</code>要素を避ける</h3>
 
 							<p>これらの要素のセマンティックスは人類には難しすぎます。</p>
 <p>悪い例:</p>
@@ -830,7 +867,7 @@
 <pre><code>&lt;span class=&quot;icon-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</code></pre>
 						</section>
 						<section id="dont-put-quotes-to-q-element">
-							<h3>&#x60;q&#x60;要素内へ引用符は置かない</h3>
+							<h3><code>q</code>要素内へ引用符は置かない</h3>
 
 							<p>引用符はブラウザーが提供します。</p>
 <p>悪い例:</p>
@@ -839,7 +876,7 @@
 <pre><code>“For writing maintainable and scalable HTML documents”</code></pre>
 						</section>
 						<section id="add-title-attribute-to-abbr-element">
-							<h3>&#x60;abbr&#x60;要素へ&#x60;title&#x60;属性を追加する</h3>
+							<h3><code>abbr</code>要素へ<code>title</code>属性を追加する</h3>
 
 							<p>他に完全表記を提示する方法がありません。</p>
 <p>悪い例:</p>
@@ -847,7 +884,7 @@
 <pre><code>&lt;abbr title=&quot;HTML Best Practices&quot;&gt;HBP&lt;/abbr&gt;</code></pre>
 						</section>
 						<section id="markup-ruby-element-verbosely">
-							<h3>&#x60;ruby&#x60;要素は冗長にマークアップする</h3>
+							<h3><code>ruby</code>要素は冗長にマークアップする</h3>
 
 							<p><code>ruby</code>要素のサポートはまだモダンブラウザー間でも完了していません。</p>
 <p>悪い例:</p>
@@ -855,7 +892,7 @@
 <pre><code>&lt;ruby&gt;HTML&lt;rp&gt; (&lt;/rp&gt;&lt;rt&gt;えいちてぃーえむえる&lt;/rt&gt;&lt;rp&gt;) &lt;/rp&gt;&lt;/ruby&gt;</code></pre>
 						</section>
 						<section id="add-datetime-attribute-to-non-machine-readable-time-element">
-							<h3>機械的に解釈可能でない&#x60;time&#x60;要素では&#x60;datetime&#x60;属性を追加する</h3>
+							<h3>機械的に解釈可能でない<code>time</code>要素では<code>datetime</code>属性を追加する</h3>
 
 							<p><code>datetime</code>属性を使わない場合、<code>time</code>要素の中身は限定されます。</p>
 <p>悪い例:</p>
@@ -863,7 +900,7 @@
 <pre><code>&lt;time datetime=&quot;2014-12-19&quot;&gt;Dec 19, 2014&lt;/time&gt;</code></pre>
 						</section>
 						<section id="specify-code-language-with-class-attribute-prefixed-with-language">
-							<h3>コードの言語は&#x60;class&#x60;属性で&#x60;language-&#x60;で始めることで指定する</h3>
+							<h3>コードの言語は<code>class</code>属性で<code>language-</code>で始めることで指定する</h3>
 
 							<p>これは正式な方法ではありませんが、仕様では言及されています。</p>
 <p>悪い例:</p>
@@ -871,7 +908,7 @@
 <pre><code>&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;</code></pre>
 						</section>
 						<section id="keep-kbd-element-as-simple-as-possible">
-							<h3>できる限り&#x60;kbd&#x60;要素はシンプルにする</h3>
+							<h3>できる限り<code>kbd</code>要素はシンプルにする</h3>
 
 							<p>入れ子にした<code>kbd</code>要素は人類には難しすぎます。</p>
 <p>悪い例:</p>
@@ -879,7 +916,7 @@
 <pre><code>&lt;kbd&gt;Ctrl+F5&lt;/kbd&gt;</code></pre>
 						</section>
 						<section id="avoid-span-element-as-much-as-possible">
-							<h3>できる限り&#x60;span&#x60;要素は使わない</h3>
+							<h3>できる限り<code>span</code>要素は使わない</h3>
 
 							<p><code>span</code>要素は最後の手段です。</p>
 <p>悪い例:</p>
@@ -887,7 +924,7 @@
 <pre><code>HTML &lt;em&gt;Best&lt;/em&gt; Practices</code></pre>
 						</section>
 						<section id="break-after-br-element">
-							<h3>&#x60;br&#x60;要素の後ろでは改行する</h3>
+							<h3><code>br</code>要素の後ろでは改行する</h3>
 
 							<p><code>br</code>要素が使われる場所には、間違いなく改行が必要です。</p>
 <p>悪い例:</p>
@@ -897,7 +934,7 @@ Best&lt;br&gt;
 Practices&lt;/p&gt;</code></pre>
 						</section>
 						<section id="dont-use-br-element-only-for-presentational-purpose">
-							<h3>見た目だけのために&#x60;br&#x60;要素を使わない</h3>
+							<h3>見た目だけのために<code>br</code>要素を使わない</h3>
 
 							<p><code>br</code>要素は改行のためにあるのではなく、コンテンツに必要な改行のためにあります。</p>
 <p>悪い例:</p>
@@ -913,7 +950,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>編集</h2>
 
 						<section id="dont-stride-ins-and-del-element-over-other-elements">
-							<h3>&#x60;ins&#x60;や&#x60;del&#x60;要素は他の要素をまたがせない</h3>
+							<h3><code>ins</code>や<code>del</code>要素は他の要素をまたがせない</h3>
 
 							<p>要素は他の要素をまたげません。</p>
 <p>悪い例:</p>
@@ -929,7 +966,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>エンベディッドコンテンツ</h2>
 
 						<section id="provide-fallback-img-element-for-picture-element">
-							<h3>&#x60;picture&#x60;要素ではフォールバックのための&#x60;img&#x60;要素を提供する</h3>
+							<h3><code>picture</code>要素ではフォールバックのための<code>img</code>要素を提供する</h3>
 
 							<p><code>picture</code>要素のサポートはまだよくありません。</p>
 <p>悪い例:</p>
@@ -947,7 +984,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/picture&gt;</code></pre>
 						</section>
 						<section id="add-alt-attrbute-to-img-element-if-needed">
-							<h3>必要な時は&#x60;img&#x60;要素へ&#x60;alt&#x60;属性を追加する</h3>
+							<h3>必要な時は<code>img</code>要素へ<code>alt</code>属性を追加する</h3>
 
 							<p><code>alt</code>属性は、画像を表示できなかったり、画像の読み込みを無効にしている環境へ助けになります。</p>
 <p>悪い例:</p>
@@ -955,7 +992,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;img alt=&quot;HTML Best Practices&quot; src=&quot;/img/logo.png&quot;&gt;</code></pre>
 						</section>
 						<section id="empty-alt-attribute-if-possible">
-							<h3>可能ならば&#x60;alt&#x60;属性は空にする</h3>
+							<h3>可能ならば<code>alt</code>属性は空にする</h3>
 
 							<p>画像が補助的なものならば、きっと周囲に同等のコンテンツが存在するはずです。</p>
 <p>悪い例:</p>
@@ -963,7 +1000,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;img alt=&quot;&quot; src=&quot;/img/icon/help.png&quot;&gt; Help</code></pre>
 						</section>
 						<section id="omit-alt-attribute-if-possible">
-							<h3>可能ならば&#x60;alt&#x60;属性は省略する</h3>
+							<h3>可能ならば<code>alt</code>属性は省略する</h3>
 
 							<p>たまにどのような文字列が適切な<code>alt</code>属性の値かわからない場合もあります。</p>
 <p>悪い例:</p>
@@ -972,7 +1009,7 @@ Practices&lt;/p&gt;</code></pre>
 (If you cannot see the image, you can use an &lt;a href=&quot;?audio&quot;&gt;audio&lt;/a&gt; test instead.)</code></pre>
 						</section>
 						<section id="empty-iframe-element">
-							<h3>&#x60;iframe&#x60;要素の中は空にする</h3>
+							<h3><code>iframe</code>要素の中は空にする</h3>
 
 							<p>その内容にはいくつかの制限があります。空にすれば安全です。</p>
 <p>悪い例:</p>
@@ -982,7 +1019,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;iframe src=&quot;/ads/default.html&quot;&gt;&lt;/iframe&gt;</code></pre>
 						</section>
 						<section id="markup-map-element-content">
-							<h3>&#x60;map&#x60;要素の中はマークアップする</h3>
+							<h3><code>map</code>要素の中はマークアップする</h3>
 
 							<p>その中身はスクリーン・リーダーへ提供されます。</p>
 <p>悪い例:</p>
@@ -1006,7 +1043,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/map&gt;</code></pre>
 						</section>
 						<section id="provide-fallback-content-for-audio-or-video-element">
-							<h3>&#x60;audio&#x60;や&#x60;video&#x60;要素にフォールバックのためのコンテンツを提供する</h3>
+							<h3><code>audio</code>や<code>video</code>要素にフォールバックのためのコンテンツを提供する</h3>
 
 							<p>HTMLで新しく作られた要素にはフォールバックのためのコンテンツが必要です。</p>
 <p>悪い例:</p>
@@ -1041,7 +1078,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/tr&gt;</code></pre>
 						</section>
 						<section id="use-th-element-for-header-cell">
-							<h3>見出しセルには&#x60;th&#x60;要素を使う</h3>
+							<h3>見出しセルには<code>th</code>要素を使う</h3>
 
 							<p>避ける理由はないでしょう。</p>
 <p>悪い例:</p>
@@ -1093,7 +1130,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>フォーム</h2>
 
 						<section id="wrap-form-control-with-label-element">
-							<h3>フォームコントロールは&#x60;label&#x60;要素で括る</h3>
+							<h3>フォームコントロールは<code>label</code>要素で括る</h3>
 
 							<p><code>label</code>要素はフォーム要素へフォーカスを当てるのに役立ちます。</p>
 <p>悪い例:</p>
@@ -1101,7 +1138,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;p&gt;&lt;label&gt;Query: &lt;input name=&quot;q&quot; type=&quot;text&quot;&gt;&lt;/label&gt;&lt;/p&gt;</code></pre>
 						</section>
 						<section id="omit-for-attribute-if-possible">
-							<h3>可能ならば&#x60;for&#x60;属性は省略する</h3>
+							<h3>可能ならば<code>for</code>属性は省略する</h3>
 
 							<p><code>label</code>要素はいくつかのフォーム要素を含められます。</p>
 <p>悪い例:</p>
@@ -1109,7 +1146,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;label&gt;Query: &lt;input name=&quot;q&quot; type=&quot;text&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="use-appropriate-type-attribute-for-input-element">
-							<h3>&#x60;input&#x60;要素では適切な&#x60;type&#x60;属性を使う</h3>
+							<h3><code>input</code>要素では適切な<code>type</code>属性を使う</h3>
 
 							<p>適切な<code>type</code>属性により、ブラウザーは<code>input</code>要素へちょっとした機能を与えてくれます。</p>
 <p>悪い例:</p>
@@ -1117,7 +1154,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;label&gt;Search keyword: &lt;input name=&quot;q&quot; type=&quot;search&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="add-value-attribute-to-input-typesubmit">
-							<h3>&#x60;input type&#x3D;&quot;submit&quot;&#x60;には&#x60;value&#x60;属性を追加する</h3>
+							<h3><code>input type=&quot;submit&quot;</code>には<code>value</code>属性を追加する</h3>
 
 							<p>送信ボタンは、そのデフォルトのラベルがブラウザーや言語設定によって変わってしまいます。</p>
 <p>悪い例:</p>
@@ -1125,7 +1162,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Search&quot;&gt;</code></pre>
 						</section>
 						<section id="add-title-attribute-to-input-element-when-there-is-pattern-attribute">
-							<h3>&#x60;pattern&#x60;属性を持つ&#x60;input&#x60;要素には&#x60;title&#x60;属性を追加する</h3>
+							<h3><code>pattern</code>属性を持つ<code>input</code>要素には<code>title</code>属性を追加する</h3>
 
 							<p>もし入力したテキストが<code>pattern</code>属性にマッチしない場合、<code>title</code>属性の値がヒントとして表示されます。</p>
 <p>悪い例:</p>
@@ -1133,7 +1170,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;input name=&quot;security-code&quot; pattern=&quot;[0-9]{3}&quot; title=&quot;A security code is a number in three figures.&quot; type=&quot;text&quot;&gt;</code></pre>
 						</section>
 						<section id="dont-use-placeholder-attribute-for-labeling">
-							<h3>&#x60;placeholder&#x60;属性をラベル付けに使わない</h3>
+							<h3><code>placeholder</code>属性をラベル付けに使わない</h3>
 
 							<p><code>label</code>要素がラベルのためにあり、<code>placeholder</code>属性は短いヒントのためにあります。</p>
 <p>悪い例:</p>
@@ -1141,7 +1178,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;label&gt;Email: &lt;input name=&quot;email&quot; placeholder=&quot;john.doe@example.com&quot; type=&quot;text&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="write-one-option-element-per-line">
-							<h3>&#x60;option&#x60;要素は1行に1つ書く</h3>
+							<h3><code>option</code>要素は1行に1つ書く</h3>
 
 							<p>長い行は把握しづらいです。</p>
 <p>悪い例:</p>
@@ -1155,7 +1192,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/datalist&gt;</code></pre>
 						</section>
 						<section id="add-max-attribute-to-progress-element">
-							<h3>&#x60;progress&#x60;要素には&#x60;max&#x60;属性を追加する</h3>
+							<h3><code>progress</code>要素には<code>max</code>属性を追加する</h3>
 
 							<p><code>max</code>属性があると、<code>value</code>属性を簡単な形式で書けます。</p>
 <p>悪い例:</p>
@@ -1163,7 +1200,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;progress max=&quot;100&quot; value=&quot;50&quot;&gt; 50%&lt;/progress&gt;</code></pre>
 						</section>
 						<section id="add-min-and-max-attribute-to-meter-element">
-							<h3>&#x60;meter&#x60;要素では&#x60;min&#x60;及び&#x60;max&#x60;属性を追加する</h3>
+							<h3><code>meter</code>要素では<code>min</code>及び<code>max</code>属性を追加する</h3>
 
 							<p><code>min</code>と<code>max</code>属性があると、<code>value</code>属性を簡単な形式で書けます。</p>
 <p>悪い例:</p>
@@ -1171,7 +1208,7 @@ Practices&lt;/p&gt;</code></pre>
 <pre><code>&lt;meter min=&quot;0&quot; max=&quot;1024&quot; value=&quot;512&quot;&gt; 512GB used (1024GB total)&lt;/meter&gt;</code></pre>
 						</section>
 						<section id="place-legend-element-as-the-first-child-of-fieldset-element">
-							<h3>&#x60;legend&#x60;要素は&#x60;fieldset&#x60;要素の最初に置く</h3>
+							<h3><code>legend</code>要素は<code>fieldset</code>要素の最初に置く</h3>
 
 							<p>仕様がそう要求しています。</p>
 <p>悪い例:</p>
@@ -1191,7 +1228,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>スクリプティング</h2>
 
 						<section id="omit-type-attribute-for-javascript">
-							<h3>JavaScriptでは&#x60;type&#x60;属性を省略する</h3>
+							<h3>JavaScriptでは<code>type</code>属性を省略する</h3>
 
 							<p>HTMLでは、<code>script</code>要素における<code>type</code>属性の初期値は<code>text/javascript</code>です。</p>
 <p>悪い例:</p>
@@ -1203,7 +1240,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/script&gt;</code></pre>
 						</section>
 						<section id="dont-comment-out-contents-of-script-element">
-							<h3>&#x60;script&#x60;要素の中をコメントアウトしない</h3>
+							<h3><code>script</code>要素の中をコメントアウトしない</h3>
 
 							<p>この儀式は古いブラウザーのためです。</p>
 <p>悪い例:</p>
@@ -1222,7 +1259,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/script&gt;</code></pre>
 						</section>
 						<section id="dont-use-script-injected-script-element">
-							<h3>&#x60;script&#x60;要素を動的に生成するテクニックを使わない</h3>
+							<h3><code>script</code>要素を動的に生成するテクニックを使わない</h3>
 
 							<p>明快さとパフォーマンスの両面で<code>async</code>属性が最良です。</p>
 <p>悪い例:</p>

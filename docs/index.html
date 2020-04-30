@@ -8,6 +8,43 @@
 		<meta content="width=device-width" name=viewport>
 
 		<link href="./index.html" rel="canonical">
+
+		<style>
+			body {
+				font-family: sans-serif;
+				line-height: 1.5;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 42em;
+				padding-left: 1em;
+				padding-right: 1em;
+			}
+
+			h2 {
+				margin-top: 4em;
+			}
+
+			h3 {
+				margin-top: 3em;
+			}
+
+			p {
+				overflow-wrap: break-word;
+			}
+
+			pre,
+			code {
+				font-family: monospace, monospace;
+				font-size: 1em;
+			}
+
+			pre {
+				background-color: whitesmoke;
+				overflow-wrap: break-word;
+				padding: 0.5em;
+				white-space: pre-wrap;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -39,7 +76,7 @@
 								<li><a href="#dont-use-legacy-or-obsolete-doctype">Don’t use legacy or obsolete DOCTYPE</a>
 								<li><a href="#dont-use-xml-declaration">Don’t use XML Declaration</a>
 								<li><a href="#dont-use-character-references-as-much-as-possible">Don’t use character references as much as possible</a>
-								<li><a href="#escape-amp-lt-gt-quot-and-apos-with-named-character-references">Escape &#x60;&amp;&#x60;, &#x60;&lt;&#x60;, &#x60;&gt;&#x60;, &#x60;&quot;&#x60;, and &#x60;&#39;&#x60; with named character references</a>
+								<li><a href="#escape-amp-lt-gt-quot-and-apos-with-named-character-references">Escape <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&quot;</code>, and <code>&#39;</code> with named character references</a>
 								<li><a href="#use-numeric-character-references-for-control-or-invisible-characters">Use numeric character references for control or invisible characters</a>
 								<li><a href="#put-white-spaces-around-comment-contents">Put white spaces around comment contents</a>
 								<li><a href="#dont-omit-closing-tag">Don’t omit closing tag</a>
@@ -51,125 +88,125 @@
 								<li><a href="#omit-boolean-attribute-value">Omit boolean attribute value</a>
 								<li><a href="#omit-namespaces">Omit namespaces</a>
 								<li><a href="#dont-use-xml-attributes">Don’t use XML attributes</a>
-								<li><a href="#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes">Don’t mix &#x60;data-*&#x60;, Microdata, and RDFa Lite attributes with common attributes</a>
+								<li><a href="#dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes">Don’t mix <code>data-*</code>, Microdata, and RDFa Lite attributes with common attributes</a>
 								<li><a href="#prefer-default-implicit-aria-semantics">Prefer default implicit ARIA semantics</a>
 						</ol>
 					</li>
 					<li><a href="#the-root-element">The root element</a>
 
 						<ol>
-								<li><a href="#add-lang-attribute">Add &#x60;lang&#x60; attribute</a>
-								<li><a href="#keep-lang-attribute-value-as-short-as-possible">Keep &#x60;lang&#x60; attribute value as short as possible</a>
-								<li><a href="#avoid-data-as-much-as-possible">Avoid &#x60;data-*&#x60; as much as possible</a>
+								<li><a href="#add-lang-attribute">Add <code>lang</code> attribute</a>
+								<li><a href="#keep-lang-attribute-value-as-short-as-possible">Keep <code>lang</code> attribute value as short as possible</a>
+								<li><a href="#avoid-data-as-much-as-possible">Avoid <code>data-*</code> as much as possible</a>
 						</ol>
 					</li>
 					<li><a href="#document-metadata">Document metadata</a>
 
 						<ol>
-								<li><a href="#add-title-element">Add &#x60;title&#x60; element</a>
-								<li><a href="#dont-use-base-element">Don’t use &#x60;base&#x60; element</a>
+								<li><a href="#add-title-element">Add <code>title</code> element</a>
+								<li><a href="#dont-use-base-element">Don’t use <code>base</code> element</a>
 								<li><a href="#specify-mime-type-of-minor-linked-resources">Specify MIME type of minor linked resources</a>
-								<li><a href="#dont-link-to-faviconico">Don’t link to &#x60;favicon.ico&#x60;</a>
-								<li><a href="#add-apple-touch-icon-link">Add &#x60;apple-touch-icon&#x60; link</a>
-								<li><a href="#add-title-attribute-to-alternate-stylesheets">Add &#x60;title&#x60; attribute to alternate stylesheets</a>
-								<li><a href="#for-url-use-link-element">For URL, use &#x60;link&#x60; element</a>
+								<li><a href="#dont-link-to-faviconico">Don’t link to <code>favicon.ico</code></a>
+								<li><a href="#add-apple-touch-icon-link">Add <code>apple-touch-icon</code> link</a>
+								<li><a href="#add-title-attribute-to-alternate-stylesheets">Add <code>title</code> attribute to alternate stylesheets</a>
+								<li><a href="#for-url-use-link-element">For URL, use <code>link</code> element</a>
 								<li><a href="#specify-document-character-encoding">Specify document character encoding</a>
 								<li><a href="#dont-use-legacy-character-encoding-format">Don’t use legacy character encoding format</a>
 								<li><a href="#specify-character-encoding-at-first">Specify character encoding at first</a>
 								<li><a href="#use-utf-8">Use UTF-8</a>
-								<li><a href="#omit-type-attribute-for-css">Omit &#x60;type&#x60; attribute for CSS</a>
-								<li><a href="#dont-comment-out-contents-of-style-element">Don’t comment out contents of &#x60;style&#x60; element</a>
+								<li><a href="#omit-type-attribute-for-css">Omit <code>type</code> attribute for CSS</a>
+								<li><a href="#dont-comment-out-contents-of-style-element">Don’t comment out contents of <code>style</code> element</a>
 								<li><a href="#dont-mix-tag-for-css-and-javascript">Don’t mix tag for CSS and JavaScript</a>
 						</ol>
 					</li>
 					<li><a href="#sections">Sections</a>
 
 						<ol>
-								<li><a href="#add-body-element">Add &#x60;body&#x60; element</a>
-								<li><a href="#forget-about-hgroup-element">Forget about &#x60;hgroup&#x60; element</a>
-								<li><a href="#use-address-element-only-for-contact-information">Use &#x60;address&#x60; element only for contact information</a>
+								<li><a href="#add-body-element">Add <code>body</code> element</a>
+								<li><a href="#forget-about-hgroup-element">Forget about <code>hgroup</code> element</a>
+								<li><a href="#use-address-element-only-for-contact-information">Use <code>address</code> element only for contact information</a>
 						</ol>
 					</li>
 					<li><a href="#grouping-content">Grouping content</a>
 
 						<ol>
-								<li><a href="#dont-start-with-newline-in-pre-element">Don’t start with newline in &#x60;pre&#x60; element</a>
-								<li><a href="#use-appropriate-element-in-blockquote-element">Use appropriate element in &#x60;blockquote&#x60; element</a>
-								<li><a href="#dont-include-attribution-directly-in-blockquote-element">Don’t include attribution directly in &#x60;blockquote&#x60; element</a>
+								<li><a href="#dont-start-with-newline-in-pre-element">Don’t start with newline in <code>pre</code> element</a>
+								<li><a href="#use-appropriate-element-in-blockquote-element">Use appropriate element in <code>blockquote</code> element</a>
+								<li><a href="#dont-include-attribution-directly-in-blockquote-element">Don’t include attribution directly in <code>blockquote</code> element</a>
 								<li><a href="#write-one-list-item-per-line">Write one list item per line</a>
-								<li><a href="#use-type-attribute-for-ol-element">Use &#x60;type&#x60; attribute for &#x60;ol&#x60; element</a>
-								<li><a href="#dont-use-dl-for-dialogue">Don’t use &#x60;dl&#x60; for dialogue</a>
-								<li><a href="#place-figcaption-element-as-first-or-last-child-of-figure-element">Place &#x60;figcaption&#x60; element as first or last child of &#x60;figure&#x60; element</a>
-								<li><a href="#use-main-element">Use &#x60;main&#x60; element</a>
-								<li><a href="#avoid-div-element-as-much-as-possible">Avoid &#x60;div&#x60; element as much as possible</a>
+								<li><a href="#use-type-attribute-for-ol-element">Use <code>type</code> attribute for <code>ol</code> element</a>
+								<li><a href="#dont-use-dl-for-dialogue">Don’t use <code>dl</code> for dialogue</a>
+								<li><a href="#place-figcaption-element-as-first-or-last-child-of-figure-element">Place <code>figcaption</code> element as first or last child of <code>figure</code> element</a>
+								<li><a href="#use-main-element">Use <code>main</code> element</a>
+								<li><a href="#avoid-div-element-as-much-as-possible">Avoid <code>div</code> element as much as possible</a>
 						</ol>
 					</li>
 					<li><a href="#text-level-semantics">Text-level semantics</a>
 
 						<ol>
 								<li><a href="#dont-split-same-link-that-can-be-grouped">Don’t split same link that can be grouped</a>
-								<li><a href="#use-download-attribute-for-downloading-a-resource">Use &#x60;download&#x60; attribute for downloading a resource</a>
-								<li><a href="#use-rel-hreflang-and-type-attribute-if-needed">Use &#x60;rel&#x60;, &#x60;hreflang&#x60;, and &#x60;type&#x60; attribute if needed</a>
+								<li><a href="#use-download-attribute-for-downloading-a-resource">Use <code>download</code> attribute for downloading a resource</a>
+								<li><a href="#use-rel-hreflang-and-type-attribute-if-needed">Use <code>rel</code>, <code>hreflang</code>, and <code>type</code> attribute if needed</a>
 								<li><a href="#clear-link-text">Clear link text</a>
-								<li><a href="#dont-use-em-element-for-warning-or-caution">Don’t use &#x60;em&#x60; element for warning or caution</a>
-								<li><a href="#avoid-s-i-b-and-u-element-as-much-as-possible">Avoid &#x60;s&#x60;, &#x60;i&#x60;, &#x60;b&#x60;, and &#x60;u&#x60; element as much as possible</a>
-								<li><a href="#dont-put-quotes-to-q-element">Don’t put quotes to &#x60;q&#x60; element</a>
-								<li><a href="#add-title-attribute-to-abbr-element">Add &#x60;title&#x60; attribute to &#x60;abbr&#x60; element</a>
-								<li><a href="#markup-ruby-element-verbosely">Markup &#x60;ruby&#x60; element verbosely</a>
-								<li><a href="#add-datetime-attribute-to-non-machine-readable-time-element">Add &#x60;datetime&#x60; attribute to non-machine-readable &#x60;time&#x60; element</a>
-								<li><a href="#specify-code-language-with-class-attribute-prefixed-with-language">Specify code language with &#x60;class&#x60; attribute prefixed with &#x60;language-&#x60;</a>
-								<li><a href="#keep-kbd-element-as-simple-as-possible">Keep &#x60;kbd&#x60; element as simple as possible</a>
-								<li><a href="#avoid-span-element-as-much-as-possible">Avoid &#x60;span&#x60; element as much as possible</a>
-								<li><a href="#break-after-br-element">Break after &#x60;br&#x60; element</a>
-								<li><a href="#dont-use-br-element-only-for-presentational-purpose">Don’t use &#x60;br&#x60; element only for presentational purpose</a>
+								<li><a href="#dont-use-em-element-for-warning-or-caution">Don’t use <code>em</code> element for warning or caution</a>
+								<li><a href="#avoid-s-i-b-and-u-element-as-much-as-possible">Avoid <code>s</code>, <code>i</code>, <code>b</code>, and <code>u</code> element as much as possible</a>
+								<li><a href="#dont-put-quotes-to-q-element">Don’t put quotes to <code>q</code> element</a>
+								<li><a href="#add-title-attribute-to-abbr-element">Add <code>title</code> attribute to <code>abbr</code> element</a>
+								<li><a href="#markup-ruby-element-verbosely">Markup <code>ruby</code> element verbosely</a>
+								<li><a href="#add-datetime-attribute-to-non-machine-readable-time-element">Add <code>datetime</code> attribute to non-machine-readable <code>time</code> element</a>
+								<li><a href="#specify-code-language-with-class-attribute-prefixed-with-language">Specify code language with <code>class</code> attribute prefixed with <code>language-</code></a>
+								<li><a href="#keep-kbd-element-as-simple-as-possible">Keep <code>kbd</code> element as simple as possible</a>
+								<li><a href="#avoid-span-element-as-much-as-possible">Avoid <code>span</code> element as much as possible</a>
+								<li><a href="#break-after-br-element">Break after <code>br</code> element</a>
+								<li><a href="#dont-use-br-element-only-for-presentational-purpose">Don’t use <code>br</code> element only for presentational purpose</a>
 						</ol>
 					</li>
 					<li><a href="#edits">Edits</a>
 
 						<ol>
-								<li><a href="#dont-stride-ins-and-del-element-over-other-elements">Don’t stride &#x60;ins&#x60; and &#x60;del&#x60; element over other elements</a>
+								<li><a href="#dont-stride-ins-and-del-element-over-other-elements">Don’t stride <code>ins</code> and <code>del</code> element over other elements</a>
 						</ol>
 					</li>
 					<li><a href="#embedded-content">Embedded content</a>
 
 						<ol>
-								<li><a href="#provide-fallback-img-element-for-picture-element">Provide fallback &#x60;img&#x60; element for &#x60;picture&#x60; element</a>
-								<li><a href="#add-alt-attrbute-to-img-element-if-needed">Add &#x60;alt&#x60; attrbute to &#x60;img&#x60; element if needed</a>
-								<li><a href="#empty-alt-attribute-if-possible">Empty &#x60;alt&#x60; attribute if possible</a>
-								<li><a href="#omit-alt-attribute-if-possible">Omit &#x60;alt&#x60; attribute if possible</a>
-								<li><a href="#empty-iframe-element">Empty &#x60;iframe&#x60; element</a>
-								<li><a href="#markup-map-element-content">Markup &#x60;map&#x60; element content</a>
-								<li><a href="#provide-fallback-content-for-audio-or-video-element">Provide fallback content for &#x60;audio&#x60; or &#x60;video&#x60; element</a>
+								<li><a href="#provide-fallback-img-element-for-picture-element">Provide fallback <code>img</code> element for <code>picture</code> element</a>
+								<li><a href="#add-alt-attrbute-to-img-element-if-needed">Add <code>alt</code> attrbute to <code>img</code> element if needed</a>
+								<li><a href="#empty-alt-attribute-if-possible">Empty <code>alt</code> attribute if possible</a>
+								<li><a href="#omit-alt-attribute-if-possible">Omit <code>alt</code> attribute if possible</a>
+								<li><a href="#empty-iframe-element">Empty <code>iframe</code> element</a>
+								<li><a href="#markup-map-element-content">Markup <code>map</code> element content</a>
+								<li><a href="#provide-fallback-content-for-audio-or-video-element">Provide fallback content for <code>audio</code> or <code>video</code> element</a>
 						</ol>
 					</li>
 					<li><a href="#tabular-data">Tabular data</a>
 
 						<ol>
 								<li><a href="#write-one-cell-per-line">Write one cell per line</a>
-								<li><a href="#use-th-element-for-header-cell">Use &#x60;th&#x60; element for header cell</a>
+								<li><a href="#use-th-element-for-header-cell">Use <code>th</code> element for header cell</a>
 						</ol>
 					</li>
 					<li><a href="#forms">Forms</a>
 
 						<ol>
-								<li><a href="#wrap-form-control-with-label-element">Wrap form control with &#x60;label&#x60; element</a>
-								<li><a href="#omit-for-attribute-if-possible">Omit &#x60;for&#x60; attribute if possible</a>
-								<li><a href="#use-appropriate-type-attribute-for-input-element">Use appropriate &#x60;type&#x60; attribute for &#x60;input&#x60; element</a>
-								<li><a href="#add-value-attribute-to-input-typesubmit">Add &#x60;value&#x60; attribute to &#x60;input type&#x3D;&quot;submit&quot;&#x60;</a>
-								<li><a href="#add-title-attribute-to-input-element-when-there-is-pattern-attribute">Add &#x60;title&#x60; attribute to &#x60;input&#x60; element when there is &#x60;pattern&#x60; attribute</a>
-								<li><a href="#dont-use-placeholder-attribute-for-labeling">Don’t use &#x60;placeholder&#x60; attribute for labeling</a>
-								<li><a href="#write-one-option-element-per-line">Write one &#x60;option&#x60; element per line</a>
-								<li><a href="#add-max-attribute-to-progress-element">Add &#x60;max&#x60; attribute to &#x60;progress&#x60; element</a>
-								<li><a href="#add-min-and-max-attribute-to-meter-element">Add &#x60;min&#x60; and &#x60;max&#x60; attribute to &#x60;meter&#x60; element</a>
-								<li><a href="#place-legend-element-as-the-first-child-of-fieldset-element">Place &#x60;legend&#x60; element as the first child of &#x60;fieldset&#x60; element</a>
+								<li><a href="#wrap-form-control-with-label-element">Wrap form control with <code>label</code> element</a>
+								<li><a href="#omit-for-attribute-if-possible">Omit <code>for</code> attribute if possible</a>
+								<li><a href="#use-appropriate-type-attribute-for-input-element">Use appropriate <code>type</code> attribute for <code>input</code> element</a>
+								<li><a href="#add-value-attribute-to-input-typesubmit">Add <code>value</code> attribute to <code>input type=&quot;submit&quot;</code></a>
+								<li><a href="#add-title-attribute-to-input-element-when-there-is-pattern-attribute">Add <code>title</code> attribute to <code>input</code> element when there is <code>pattern</code> attribute</a>
+								<li><a href="#dont-use-placeholder-attribute-for-labeling">Don’t use <code>placeholder</code> attribute for labeling</a>
+								<li><a href="#write-one-option-element-per-line">Write one <code>option</code> element per line</a>
+								<li><a href="#add-max-attribute-to-progress-element">Add <code>max</code> attribute to <code>progress</code> element</a>
+								<li><a href="#add-min-and-max-attribute-to-meter-element">Add <code>min</code> and <code>max</code> attribute to <code>meter</code> element</a>
+								<li><a href="#place-legend-element-as-the-first-child-of-fieldset-element">Place <code>legend</code> element as the first child of <code>fieldset</code> element</a>
 						</ol>
 					</li>
 					<li><a href="#scripting">Scripting</a>
 
 						<ol>
-								<li><a href="#omit-type-attribute-for-javascript">Omit &#x60;type&#x60; attribute for JavaScript</a>
-								<li><a href="#dont-comment-out-contents-of-script-element">Don’t comment out contents of &#x60;script&#x60; element</a>
-								<li><a href="#dont-use-script-injected-script-element">Don’t use script-injected &#x60;script&#x60; element</a>
+								<li><a href="#omit-type-attribute-for-javascript">Omit <code>type</code> attribute for JavaScript</a>
+								<li><a href="#dont-comment-out-contents-of-script-element">Don’t comment out contents of <code>script</code> element</a>
+								<li><a href="#dont-use-script-injected-script-element">Don’t use script-injected <code>script</code> element</a>
 						</ol>
 					</li>
 					<li><a href="#other">Other</a>
@@ -232,7 +269,7 @@ Emoji) can be write directly.</p>
 <pre><code>&lt;p&gt;&lt;small&gt;Copyright © 2014 W3C&lt;sup&gt;®&lt;/sup&gt;&lt;/small&gt;&lt;/p&gt;</code></pre>
 						</section>
 						<section id="escape-amp-lt-gt-quot-and-apos-with-named-character-references">
-							<h3>Escape &#x60;&amp;&#x60;, &#x60;&lt;&#x60;, &#x60;&gt;&#x60;, &#x60;&quot;&#x60;, and &#x60;&#39;&#x60; with named character references</h3>
+							<h3>Escape <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&quot;</code>, and <code>&#39;</code> with named character references</h3>
 
 							<p>These characters should escape always for a bug-free HTML document.</p>
 <p>Bad:</p>
@@ -343,7 +380,7 @@ close.</p>
 <pre><code>&lt;span lang=&quot;ja&quot;&gt;...&lt;/span&gt;</code></pre>
 						</section>
 						<section id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes">
-							<h3>Don’t mix &#x60;data-*&#x60;, Microdata, and RDFa Lite attributes with common attributes</h3>
+							<h3>Don’t mix <code>data-*</code>, Microdata, and RDFa Lite attributes with common attributes</h3>
 
 							<p>A tag string can be very complicated. This simple rule helps reading such tag
 string.</p>
@@ -372,7 +409,7 @@ string.</p>
 					<h2>The root element</h2>
 
 						<section id="add-lang-attribute">
-							<h3>Add &#x60;lang&#x60; attribute</h3>
+							<h3>Add <code>lang</code> attribute</h3>
 
 							<p><code>lang</code> attribute will help translating an HTML document.</p>
 <p>Bad:</p>
@@ -380,7 +417,7 @@ string.</p>
 <pre><code>&lt;html lang=&quot;en-US&quot;&gt;</code></pre>
 						</section>
 						<section id="keep-lang-attribute-value-as-short-as-possible">
-							<h3>Keep &#x60;lang&#x60; attribute value as short as possible</h3>
+							<h3>Keep <code>lang</code> attribute value as short as possible</h3>
 
 							<p>Japanese is only used in Japan. So country code is not necessary.</p>
 <p>Bad:</p>
@@ -388,7 +425,7 @@ string.</p>
 <pre><code>&lt;html lang=&quot;ja&quot;&gt;</code></pre>
 						</section>
 						<section id="avoid-data-as-much-as-possible">
-							<h3>Avoid &#x60;data-*&#x60; as much as possible</h3>
+							<h3>Avoid <code>data-*</code> as much as possible</h3>
 
 							<p>An appropriate attribute can be handled properly by browsers.</p>
 <p>Bad:</p>
@@ -404,7 +441,7 @@ string.</p>
 					<h2>Document metadata</h2>
 
 						<section id="add-title-element">
-							<h3>Add &#x60;title&#x60; element</h3>
+							<h3>Add <code>title</code> element</h3>
 
 							<p>A value for <code>title</code> element is used by various application not only a browser.</p>
 <p>Bad:</p>
@@ -417,7 +454,7 @@ string.</p>
 &lt;/head&gt;</code></pre>
 						</section>
 						<section id="dont-use-base-element">
-							<h3>Don’t use &#x60;base&#x60; element</h3>
+							<h3>Don’t use <code>base</code> element</h3>
 
 							<p>An absolute path or URL is safer for both developers and users.</p>
 <p>Bad:</p>
@@ -446,7 +483,7 @@ string.</p>
 &lt;link href=&quot;/css/screen.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
 						</section>
 						<section id="dont-link-to-faviconico">
-							<h3>Don’t link to &#x60;favicon.ico&#x60;</h3>
+							<h3>Don’t link to <code>favicon.ico</code></h3>
 
 							<p>Almost all browsers fetch <code>/favicon.ico</code> automatically and asynchronously.</p>
 <p>Bad:</p>
@@ -454,7 +491,7 @@ string.</p>
 <pre><code>&lt;!-- Place `favicon.ico` in the root directory. --&gt;</code></pre>
 						</section>
 						<section id="add-apple-touch-icon-link">
-							<h3>Add &#x60;apple-touch-icon&#x60; link</h3>
+							<h3>Add <code>apple-touch-icon</code> link</h3>
 
 							<p>A default request path for touch icon was changed suddenly.</p>
 <p>Bad:</p>
@@ -462,7 +499,7 @@ string.</p>
 <pre><code>&lt;link href=&quot;/apple-touch-icon.png&quot; rel=&quot;apple-touch-icon&quot;&gt;</code></pre>
 						</section>
 						<section id="add-title-attribute-to-alternate-stylesheets">
-							<h3>Add &#x60;title&#x60; attribute to alternate stylesheets</h3>
+							<h3>Add <code>title</code> attribute to alternate stylesheets</h3>
 
 							<p>A human readable label helps people selecting proper stylesheet.</p>
 <p>Bad:</p>
@@ -472,7 +509,7 @@ string.</p>
 &lt;link href=&quot;/css/high-contrast.css&quot; rel=&quot;alternate stylesheet&quot; title=&quot;High contrast&quot;&gt;</code></pre>
 						</section>
 						<section id="for-url-use-link-element">
-							<h3>For URL, use &#x60;link&#x60; element</h3>
+							<h3>For URL, use <code>link</code> element</h3>
 
 							<p>A value of <code>href</code> attribute can be resolved as URL.</p>
 <p>Bad:</p>
@@ -532,7 +569,7 @@ the document.</p>
 <pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
 						</section>
 						<section id="omit-type-attribute-for-css">
-							<h3>Omit &#x60;type&#x60; attribute for CSS</h3>
+							<h3>Omit <code>type</code> attribute for CSS</h3>
 
 							<p>In HTML, default <code>type</code> attribute’s value of <code>style</code> element is <code>text/css</code>.</p>
 <p>Bad:</p>
@@ -544,7 +581,7 @@ the document.</p>
 &lt;/style&gt;</code></pre>
 						</section>
 						<section id="dont-comment-out-contents-of-style-element">
-							<h3>Don’t comment out contents of &#x60;style&#x60; element</h3>
+							<h3>Don’t comment out contents of <code>style</code> element</h3>
 
 							<p>This ritual is for the old browser.</p>
 <p>Bad:</p>
@@ -577,7 +614,7 @@ the document.</p>
 					<h2>Sections</h2>
 
 						<section id="add-body-element">
-							<h3>Add &#x60;body&#x60; element</h3>
+							<h3>Add <code>body</code> element</h3>
 
 							<p>Sometimes <code>body</code> element is complemented in unexpected position by a browser.</p>
 <p>Bad:</p>
@@ -597,7 +634,7 @@ the document.</p>
 &lt;/html&gt;</code></pre>
 						</section>
 						<section id="forget-about-hgroup-element">
-							<h3>Forget about &#x60;hgroup&#x60; element</h3>
+							<h3>Forget about <code>hgroup</code> element</h3>
 
 							<p>This element is not used very much.</p>
 <p>Bad:</p>
@@ -609,7 +646,7 @@ the document.</p>
 &lt;p&gt;For writing maintainable and scalable HTML documents.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="use-address-element-only-for-contact-information">
-							<h3>Use &#x60;address&#x60; element only for contact information</h3>
+							<h3>Use <code>address</code> element only for contact information</h3>
 
 							<p><code>address</code> element is for email address, social network account, street address,
 telephone number, or something you can get in touch with.</p>
@@ -622,7 +659,7 @@ telephone number, or something you can get in touch with.</p>
 					<h2>Grouping content</h2>
 
 						<section id="dont-start-with-newline-in-pre-element">
-							<h3>Don’t start with newline in &#x60;pre&#x60; element</h3>
+							<h3>Don’t start with newline in <code>pre</code> element</h3>
 
 							<p>A first newline will ignored in the browsers, but second and later are rendered.</p>
 <p>Bad:</p>
@@ -633,7 +670,7 @@ telephone number, or something you can get in touch with.</p>
 &lt;/pre&gt;</code></pre>
 						</section>
 						<section id="use-appropriate-element-in-blockquote-element">
-							<h3>Use appropriate element in &#x60;blockquote&#x60; element</h3>
+							<h3>Use appropriate element in <code>blockquote</code> element</h3>
 
 							<p><code>blockquote</code> element’s content is a quote, not a chunks of characters.</p>
 <p>Bad:</p>
@@ -643,7 +680,7 @@ telephone number, or something you can get in touch with.</p>
 &lt;/blockquote&gt;</code></pre>
 						</section>
 						<section id="dont-include-attribution-directly-in-blockquote-element">
-							<h3>Don’t include attribution directly in &#x60;blockquote&#x60; element</h3>
+							<h3>Don’t include attribution directly in <code>blockquote</code> element</h3>
 
 							<p><code>blockquote</code> element’s content is a quote.</p>
 <p>Bad:</p>
@@ -682,7 +719,7 @@ line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
 &lt;/ul&gt;</code></pre>
 						</section>
 						<section id="use-type-attribute-for-ol-element">
-							<h3>Use &#x60;type&#x60; attribute for &#x60;ol&#x60; element</h3>
+							<h3>Use <code>type</code> attribute for <code>ol</code> element</h3>
 
 							<p>Sometimes marker referenced by the contents in the near. If you change marker
 with <code>type</code> attribute, you will be safe to reference.</p>
@@ -712,7 +749,7 @@ with <code>type</code> attribute, you will be safe to reference.</p>
 &lt;/body&gt;</code></pre>
 						</section>
 						<section id="dont-use-dl-for-dialogue">
-							<h3>Don’t use &#x60;dl&#x60; for dialogue</h3>
+							<h3>Don’t use <code>dl</code> for dialogue</h3>
 
 							<p><code>dl</code> element is restricted to an association list in HTML.</p>
 <p>Bad:</p>
@@ -740,7 +777,7 @@ with <code>type</code> attribute, you will be safe to reference.</p>
 &lt;p&gt;Abbott: Every dollar of it.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="place-figcaption-element-as-first-or-last-child-of-figure-element">
-							<h3>Place &#x60;figcaption&#x60; element as first or last child of &#x60;figure&#x60; element</h3>
+							<h3>Place <code>figcaption</code> element as first or last child of <code>figure</code> element</h3>
 
 							<p>Spec disallows <code>figcaption</code> element in the middle of <code>figure</code> element.</p>
 <p>Bad:</p>
@@ -756,7 +793,7 @@ with <code>type</code> attribute, you will be safe to reference.</p>
 &lt;/figure&gt;</code></pre>
 						</section>
 						<section id="use-main-element">
-							<h3>Use &#x60;main&#x60; element</h3>
+							<h3>Use <code>main</code> element</h3>
 
 							<p><code>main</code> element can be used wrapping contents.</p>
 <p>Bad:</p>
@@ -768,7 +805,7 @@ with <code>type</code> attribute, you will be safe to reference.</p>
 &lt;/main&gt;</code></pre>
 						</section>
 						<section id="avoid-div-element-as-much-as-possible">
-							<h3>Avoid &#x60;div&#x60; element as much as possible</h3>
+							<h3>Avoid <code>div</code> element as much as possible</h3>
 
 							<p><code>div</code> element is an element of last resort.</p>
 <p>Bad:</p>
@@ -799,7 +836,7 @@ controls and <code>a</code> element itself).</p>
 &lt;/a&gt;</code></pre>
 						</section>
 						<section id="use-download-attribute-for-downloading-a-resource">
-							<h3>Use &#x60;download&#x60; attribute for downloading a resource</h3>
+							<h3>Use <code>download</code> attribute for downloading a resource</h3>
 
 							<p>It will force browsers to download linked resource to the storage.</p>
 <p>Bad:</p>
@@ -807,7 +844,7 @@ controls and <code>a</code> element itself).</p>
 <pre><code>&lt;a download href=&quot;/downloads/offline.zip&quot;&gt;offline version&lt;/a&gt;</code></pre>
 						</section>
 						<section id="use-rel-hreflang-and-type-attribute-if-needed">
-							<h3>Use &#x60;rel&#x60;, &#x60;hreflang&#x60;, and &#x60;type&#x60; attribute if needed</h3>
+							<h3>Use <code>rel</code>, <code>hreflang</code>, and <code>type</code> attribute if needed</h3>
 
 							<p>These hints helps applications how handle linked resource.</p>
 <p>Bad:</p>
@@ -823,7 +860,7 @@ controls and <code>a</code> element itself).</p>
 <pre><code>&lt;p&gt;&lt;a href=&quot;/pdf&quot; rel=&quot;alternate&quot; type=&quot;application/pdf&quot;&gt;PDF version&lt;/a&gt; is also available.&lt;/p&gt;</code></pre>
 						</section>
 						<section id="dont-use-em-element-for-warning-or-caution">
-							<h3>Don’t use &#x60;em&#x60; element for warning or caution</h3>
+							<h3>Don’t use <code>em</code> element for warning or caution</h3>
 
 							<p>These are seriousness. So, <code>strong</code> element is more appropriate.</p>
 <p>Bad:</p>
@@ -831,7 +868,7 @@ controls and <code>a</code> element itself).</p>
 <pre><code>&lt;strong&gt;Caution!&lt;/strong&gt;</code></pre>
 						</section>
 						<section id="avoid-s-i-b-and-u-element-as-much-as-possible">
-							<h3>Avoid &#x60;s&#x60;, &#x60;i&#x60;, &#x60;b&#x60;, and &#x60;u&#x60; element as much as possible</h3>
+							<h3>Avoid <code>s</code>, <code>i</code>, <code>b</code>, and <code>u</code> element as much as possible</h3>
 
 							<p>These elements’ semantics is too difficult to humans.</p>
 <p>Bad:</p>
@@ -839,7 +876,7 @@ controls and <code>a</code> element itself).</p>
 <pre><code>&lt;span class=&quot;icon-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</code></pre>
 						</section>
 						<section id="dont-put-quotes-to-q-element">
-							<h3>Don’t put quotes to &#x60;q&#x60; element</h3>
+							<h3>Don’t put quotes to <code>q</code> element</h3>
 
 							<p>Quotes are provided by the browser.</p>
 <p>Bad:</p>
@@ -848,7 +885,7 @@ controls and <code>a</code> element itself).</p>
 <pre><code>“For writing maintainable and scalable HTML documents”</code></pre>
 						</section>
 						<section id="add-title-attribute-to-abbr-element">
-							<h3>Add &#x60;title&#x60; attribute to &#x60;abbr&#x60; element</h3>
+							<h3>Add <code>title</code> attribute to <code>abbr</code> element</h3>
 
 							<p>There is no other way to represent its expansion.</p>
 <p>Bad:</p>
@@ -856,7 +893,7 @@ controls and <code>a</code> element itself).</p>
 <pre><code>&lt;abbr title=&quot;HTML Best Practices&quot;&gt;HBP&lt;/abbr&gt;</code></pre>
 						</section>
 						<section id="markup-ruby-element-verbosely">
-							<h3>Markup &#x60;ruby&#x60; element verbosely</h3>
+							<h3>Markup <code>ruby</code> element verbosely</h3>
 
 							<p><code>ruby</code> element support is not completed across the modern browsers.</p>
 <p>Bad:</p>
@@ -864,7 +901,7 @@ controls and <code>a</code> element itself).</p>
 <pre><code>&lt;ruby&gt;HTML&lt;rp&gt; (&lt;/rp&gt;&lt;rt&gt;えいちてぃーえむえる&lt;/rt&gt;&lt;rp&gt;) &lt;/rp&gt;&lt;/ruby&gt;</code></pre>
 						</section>
 						<section id="add-datetime-attribute-to-non-machine-readable-time-element">
-							<h3>Add &#x60;datetime&#x60; attribute to non-machine-readable &#x60;time&#x60; element</h3>
+							<h3>Add <code>datetime</code> attribute to non-machine-readable <code>time</code> element</h3>
 
 							<p>When <code>datetime</code> attribute does not present, the format of <code>time</code> element’s
 content is restricted.</p>
@@ -873,7 +910,7 @@ content is restricted.</p>
 <pre><code>&lt;time datetime=&quot;2014-12-19&quot;&gt;Dec 19, 2014&lt;/time&gt;</code></pre>
 						</section>
 						<section id="specify-code-language-with-class-attribute-prefixed-with-language">
-							<h3>Specify code language with &#x60;class&#x60; attribute prefixed with &#x60;language-&#x60;</h3>
+							<h3>Specify code language with <code>class</code> attribute prefixed with <code>language-</code></h3>
 
 							<p>This is not a formal way, but spec mentions this.</p>
 <p>Bad:</p>
@@ -881,7 +918,7 @@ content is restricted.</p>
 <pre><code>&lt;code class=&quot;language-html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;</code></pre>
 						</section>
 						<section id="keep-kbd-element-as-simple-as-possible">
-							<h3>Keep &#x60;kbd&#x60; element as simple as possible</h3>
+							<h3>Keep <code>kbd</code> element as simple as possible</h3>
 
 							<p>Nesting <code>kbd</code> element is too difficult to humans.</p>
 <p>Bad:</p>
@@ -889,7 +926,7 @@ content is restricted.</p>
 <pre><code>&lt;kbd&gt;Ctrl+F5&lt;/kbd&gt;</code></pre>
 						</section>
 						<section id="avoid-span-element-as-much-as-possible">
-							<h3>Avoid &#x60;span&#x60; element as much as possible</h3>
+							<h3>Avoid <code>span</code> element as much as possible</h3>
 
 							<p><code>span</code> element is an element of last resort.</p>
 <p>Bad:</p>
@@ -897,7 +934,7 @@ content is restricted.</p>
 <pre><code>HTML &lt;em&gt;Best&lt;/em&gt; Practices</code></pre>
 						</section>
 						<section id="break-after-br-element">
-							<h3>Break after &#x60;br&#x60; element</h3>
+							<h3>Break after <code>br</code> element</h3>
 
 							<p>Line break should be needed where <code>br</code> element is used.</p>
 <p>Bad:</p>
@@ -907,7 +944,7 @@ Best&lt;br&gt;
 Practices&lt;/p&gt;</code></pre>
 						</section>
 						<section id="dont-use-br-element-only-for-presentational-purpose">
-							<h3>Don’t use &#x60;br&#x60; element only for presentational purpose</h3>
+							<h3>Don’t use <code>br</code> element only for presentational purpose</h3>
 
 							<p><code>br</code> element is not for line breaking, it is for line breaks in the contents.</p>
 <p>Bad:</p>
@@ -923,7 +960,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>Edits</h2>
 
 						<section id="dont-stride-ins-and-del-element-over-other-elements">
-							<h3>Don’t stride &#x60;ins&#x60; and &#x60;del&#x60; element over other elements</h3>
+							<h3>Don’t stride <code>ins</code> and <code>del</code> element over other elements</h3>
 
 							<p>Elements cannot be overflow other elements.</p>
 <p>Bad:</p>
@@ -939,7 +976,7 @@ Practices&lt;/p&gt;</code></pre>
 					<h2>Embedded content</h2>
 
 						<section id="provide-fallback-img-element-for-picture-element">
-							<h3>Provide fallback &#x60;img&#x60; element for &#x60;picture&#x60; element</h3>
+							<h3>Provide fallback <code>img</code> element for <code>picture</code> element</h3>
 
 							<p>The support of <code>picture</code> element is not good yet.</p>
 <p>Bad:</p>
@@ -957,7 +994,7 @@ Practices&lt;/p&gt;</code></pre>
 &lt;/picture&gt;</code></pre>
 						</section>
 						<section id="add-alt-attrbute-to-img-element-if-needed">
-							<h3>Add &#x60;alt&#x60; attrbute to &#x60;img&#x60; element if needed</h3>
+							<h3>Add <code>alt</code> attrbute to <code>img</code> element if needed</h3>
 
 							<p><code>alt</code> attribute helps those who cannot process images or have image loading
 disabled.</p>
@@ -966,7 +1003,7 @@ disabled.</p>
 <pre><code>&lt;img alt=&quot;HTML Best Practices&quot; src=&quot;/img/logo.png&quot;&gt;</code></pre>
 						</section>
 						<section id="empty-alt-attribute-if-possible">
-							<h3>Empty &#x60;alt&#x60; attribute if possible</h3>
+							<h3>Empty <code>alt</code> attribute if possible</h3>
 
 							<p>If the image is supplemental, there is equivalent content somewhere in the near.</p>
 <p>Bad:</p>
@@ -974,7 +1011,7 @@ disabled.</p>
 <pre><code>&lt;img alt=&quot;&quot; src=&quot;/img/icon/help.png&quot;&gt; Help</code></pre>
 						</section>
 						<section id="omit-alt-attribute-if-possible">
-							<h3>Omit &#x60;alt&#x60; attribute if possible</h3>
+							<h3>Omit <code>alt</code> attribute if possible</h3>
 
 							<p>Sometimes you don’t know what text is suitable for <code>alt</code> attribute.</p>
 <p>Bad:</p>
@@ -983,7 +1020,7 @@ disabled.</p>
 (If you cannot see the image, you can use an &lt;a href=&quot;?audio&quot;&gt;audio&lt;/a&gt; test instead.)</code></pre>
 						</section>
 						<section id="empty-iframe-element">
-							<h3>Empty &#x60;iframe&#x60; element</h3>
+							<h3>Empty <code>iframe</code> element</h3>
 
 							<p>There is some restriction in its content. Being empty is always safe.</p>
 <p>Bad:</p>
@@ -993,7 +1030,7 @@ disabled.</p>
 <pre><code>&lt;iframe src=&quot;/ads/default.html&quot;&gt;&lt;/iframe&gt;</code></pre>
 						</section>
 						<section id="markup-map-element-content">
-							<h3>Markup &#x60;map&#x60; element content</h3>
+							<h3>Markup <code>map</code> element content</h3>
 
 							<p>This content presents to a screen reader.</p>
 <p>Bad:</p>
@@ -1017,7 +1054,7 @@ disabled.</p>
 &lt;/map&gt;</code></pre>
 						</section>
 						<section id="provide-fallback-content-for-audio-or-video-element">
-							<h3>Provide fallback content for &#x60;audio&#x60; or &#x60;video&#x60; element</h3>
+							<h3>Provide fallback content for <code>audio</code> or <code>video</code> element</h3>
 
 							<p>Fallback content is needed for newly introduced elements in HTML.</p>
 <p>Bad:</p>
@@ -1052,7 +1089,7 @@ disabled.</p>
 &lt;/tr&gt;</code></pre>
 						</section>
 						<section id="use-th-element-for-header-cell">
-							<h3>Use &#x60;th&#x60; element for header cell</h3>
+							<h3>Use <code>th</code> element for header cell</h3>
 
 							<p>There is no reason to avoid this.</p>
 <p>Bad:</p>
@@ -1104,7 +1141,7 @@ disabled.</p>
 					<h2>Forms</h2>
 
 						<section id="wrap-form-control-with-label-element">
-							<h3>Wrap form control with &#x60;label&#x60; element</h3>
+							<h3>Wrap form control with <code>label</code> element</h3>
 
 							<p><code>label</code> element helps focusing form element.</p>
 <p>Bad:</p>
@@ -1112,7 +1149,7 @@ disabled.</p>
 <pre><code>&lt;p&gt;&lt;label&gt;Query: &lt;input name=&quot;q&quot; type=&quot;text&quot;&gt;&lt;/label&gt;&lt;/p&gt;</code></pre>
 						</section>
 						<section id="omit-for-attribute-if-possible">
-							<h3>Omit &#x60;for&#x60; attribute if possible</h3>
+							<h3>Omit <code>for</code> attribute if possible</h3>
 
 							<p><code>label</code> element can contain some form elements.</p>
 <p>Bad:</p>
@@ -1120,7 +1157,7 @@ disabled.</p>
 <pre><code>&lt;label&gt;Query: &lt;input name=&quot;q&quot; type=&quot;text&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="use-appropriate-type-attribute-for-input-element">
-							<h3>Use appropriate &#x60;type&#x60; attribute for &#x60;input&#x60; element</h3>
+							<h3>Use appropriate <code>type</code> attribute for <code>input</code> element</h3>
 
 							<p>With appropriate <code>type</code>, a browser gives tiny features to the <code>input</code> element.</p>
 <p>Bad:</p>
@@ -1128,7 +1165,7 @@ disabled.</p>
 <pre><code>&lt;label&gt;Search keyword: &lt;input name=&quot;q&quot; type=&quot;search&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="add-value-attribute-to-input-typesubmit">
-							<h3>Add &#x60;value&#x60; attribute to &#x60;input type&#x3D;&quot;submit&quot;&#x60;</h3>
+							<h3>Add <code>value</code> attribute to <code>input type=&quot;submit&quot;</code></h3>
 
 							<p>The default label for submit button is not standarized across the browser and
 languages.</p>
@@ -1137,7 +1174,7 @@ languages.</p>
 <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Search&quot;&gt;</code></pre>
 						</section>
 						<section id="add-title-attribute-to-input-element-when-there-is-pattern-attribute">
-							<h3>Add &#x60;title&#x60; attribute to &#x60;input&#x60; element when there is &#x60;pattern&#x60; attribute</h3>
+							<h3>Add <code>title</code> attribute to <code>input</code> element when there is <code>pattern</code> attribute</h3>
 
 							<p>If input text does not match to <code>pattern</code> attribute, the value of <code>title</code>
 attribute will be display as a hint.</p>
@@ -1146,7 +1183,7 @@ attribute will be display as a hint.</p>
 <pre><code>&lt;input name=&quot;security-code&quot; pattern=&quot;[0-9]{3}&quot; title=&quot;A security code is a number in three figures.&quot; type=&quot;text&quot;&gt;</code></pre>
 						</section>
 						<section id="dont-use-placeholder-attribute-for-labeling">
-							<h3>Don’t use &#x60;placeholder&#x60; attribute for labeling</h3>
+							<h3>Don’t use <code>placeholder</code> attribute for labeling</h3>
 
 							<p><code>label</code> element is for a label, <code>placeholder</code> attribute is for a short hint.</p>
 <p>Bad:</p>
@@ -1154,7 +1191,7 @@ attribute will be display as a hint.</p>
 <pre><code>&lt;label&gt;Email: &lt;input name=&quot;email&quot; placeholder=&quot;john.doe@example.com&quot; type=&quot;text&quot;&gt;&lt;/label&gt;</code></pre>
 						</section>
 						<section id="write-one-option-element-per-line">
-							<h3>Write one &#x60;option&#x60; element per line</h3>
+							<h3>Write one <code>option</code> element per line</h3>
 
 							<p>Long lines are hard to scan.</p>
 <p>Bad:</p>
@@ -1168,7 +1205,7 @@ attribute will be display as a hint.</p>
 &lt;/datalist&gt;</code></pre>
 						</section>
 						<section id="add-max-attribute-to-progress-element">
-							<h3>Add &#x60;max&#x60; attribute to &#x60;progress&#x60; element</h3>
+							<h3>Add <code>max</code> attribute to <code>progress</code> element</h3>
 
 							<p>With <code>max</code> attribute, the <code>value</code> attribute can be write in an easy format.</p>
 <p>Bad:</p>
@@ -1176,7 +1213,7 @@ attribute will be display as a hint.</p>
 <pre><code>&lt;progress max=&quot;100&quot; value=&quot;50&quot;&gt; 50%&lt;/progress&gt;</code></pre>
 						</section>
 						<section id="add-min-and-max-attribute-to-meter-element">
-							<h3>Add &#x60;min&#x60; and &#x60;max&#x60; attribute to &#x60;meter&#x60; element</h3>
+							<h3>Add <code>min</code> and <code>max</code> attribute to <code>meter</code> element</h3>
 
 							<p>With <code>min</code> and <code>max</code> attribute, the <code>value</code> attribute can be write in an easy
 format.</p>
@@ -1185,7 +1222,7 @@ format.</p>
 <pre><code>&lt;meter min=&quot;0&quot; max=&quot;1024&quot; value=&quot;512&quot;&gt; 512GB used (1024GB total)&lt;/meter&gt;</code></pre>
 						</section>
 						<section id="place-legend-element-as-the-first-child-of-fieldset-element">
-							<h3>Place &#x60;legend&#x60; element as the first child of &#x60;fieldset&#x60; element</h3>
+							<h3>Place <code>legend</code> element as the first child of <code>fieldset</code> element</h3>
 
 							<p>Spec requires this.</p>
 <p>Bad:</p>
@@ -1205,7 +1242,7 @@ format.</p>
 					<h2>Scripting</h2>
 
 						<section id="omit-type-attribute-for-javascript">
-							<h3>Omit &#x60;type&#x60; attribute for JavaScript</h3>
+							<h3>Omit <code>type</code> attribute for JavaScript</h3>
 
 							<p>In HTML, the default <code>type</code> attribute’s value of <code>script</code> element is
 <code>text/javascript</code>.</p>
@@ -1218,7 +1255,7 @@ format.</p>
 &lt;/script&gt;</code></pre>
 						</section>
 						<section id="dont-comment-out-contents-of-script-element">
-							<h3>Don’t comment out contents of &#x60;script&#x60; element</h3>
+							<h3>Don’t comment out contents of <code>script</code> element</h3>
 
 							<p>This ritual is for the old browser.</p>
 <p>Bad:</p>
@@ -1237,7 +1274,7 @@ format.</p>
 &lt;/script&gt;</code></pre>
 						</section>
 						<section id="dont-use-script-injected-script-element">
-							<h3>Don’t use script-injected &#x60;script&#x60; element</h3>
+							<h3>Don’t use script-injected <code>script</code> element</h3>
 
 							<p><code>async</code> attribute is the best for both simplicity and performance.</p>
 <p>Bad:</p>
