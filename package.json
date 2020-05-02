@@ -4,7 +4,10 @@
   "description": "For writing maintainable and scalable HTML documents",
   "scripts": {
     "build": "node index.js",
-    "test": "eslint index.js"
+    "postversion": "git push origin master --tags",
+    "preversion": "npm ci && npm test",
+    "test": "eslint index.js",
+    "version": "npm run build && git add --all ./docs/"
   },
   "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
   "license": "CC0-1.0",
