@@ -9,7 +9,7 @@
     "test": "eslint index.js",
     "version": "npm run build && git add --all ./docs/"
   },
-  "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
+  "author": "Kyo Nagashima <hail2u@gmail.com> (https://hail2u.net/)",
   "license": "CC0-1.0",
   "devDependencies": {
     "eslint": "^6.8.0",
