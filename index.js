@@ -12,24 +12,26 @@ const extendPractice = async (language, id) => {
 	const [title, ...body] = content.split("\n");
 	const practice = {
 		body: body.join("\n").trim(),
-		id: id,
-		title: title.trim().replace(/^# /, "")
+		id,
+		title: title.trim().replace(/^# /u, ""),
 	};
 	return {
 		...practice,
 		bodyHTML: marked(practice.body),
 		titleHTML: marked(practice.title)
 			.trim()
-			.replace(/^<p>(.*?)<\/p>$/, "$1")
+			.replace(/^<p>(.*?)<\/p>$/u, "$1"),
 	};
 };
 
 const extendSection = async (language, extradata, section, index) => {
-	const practices = await Promise.all(section.practices.map(extendPractice.bind(null, language)));
+	const practices = await Promise.all(
+		section.practices.map(extendPractice.bind(null, language))
+	);
 	return {
 		...section,
 		...extradata.sections[index],
-		practices: practices
+		practices,
 	};
 };
 
@@ -41,16 +43,18 @@ const build = async (src, data, dest) => {
 
 const generate = async (data, language) => {
 	const extradata = await readJSONFile(`./src/${language.code}.json`);
-	const sections = await Promise.all(data.sections.map(extendSection.bind(null, language.code, extradata)));
+	const sections = await Promise.all(
+		data.sections.map(extendSection.bind(null, language.code, extradata))
+	);
 	const extended = {
 		...data,
 		...extradata,
-		language: language,
-		sections: sections
+		language,
+		sections,
 	};
 	await Promise.all([
 		build("./src/md.mustache", extended, `./README${language.ext}.md`),
-		build("./src/html.mustache", extended, `./docs/index${language.ext}.html`)
+		build("./src/html.mustache", extended, `./docs/index${language.ext}.html`),
 	]);
 };
 

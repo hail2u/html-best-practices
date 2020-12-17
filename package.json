@@ -1,21 +1,21 @@
 {
-  "name": "html-best-practices",
-  "version": "2.0.0",
-  "description": "For writing maintainable and scalable HTML documents",
-  "scripts": {
-    "build": "node index.js",
-    "postversion": "git push origin master --tags",
-    "preversion": "npm ci && npm test",
-    "test": "eslint index.js",
-    "version": "npm run build && git add --all ./docs/"
-  },
-  "author": "Kyo Nagashima <hail2u@gmail.com> (https://hail2u.net/)",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "marked": "^1.0.0",
-    "mustache": "^4.0.1"
-  },
-  "private": true,
-  "type": "module"
+	"name": "html-best-practices",
+	"version": "2.0.0",
+	"description": "For writing maintainable and scalable HTML documents",
+	"license": "CC0-1.0",
+	"author": "Kyo Nagashima <hail2u@gmail.com> (https://hail2u.net/)",
+	"scripts": {
+		"build": "node index.js",
+		"postversion": "git push origin master --tags",
+		"preversion": "npm ci && npm test",
+		"test": "eslint index.js",
+		"version": "npm run build && git add --all ./docs/"
+	},
+	"devDependencies": {
+		"eslint": "7.15.0",
+		"marked": "1.2.7",
+		"mustache": "4.1.0"
+	},
+	"private": true,
+	"type": "module"
 }
