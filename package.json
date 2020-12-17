@@ -7,12 +7,9 @@
 	"scripts": {
 		"build": "node index.js",
 		"postversion": "git push origin master --tags",
-		"preversion": "npm ci && npm test",
-		"test": "eslint index.js",
 		"version": "npm run build && git add --all ./docs/"
 	},
 	"devDependencies": {
-		"eslint": "7.15.0",
 		"marked": "1.2.7",
 		"mustache": "4.1.0"
 	},
