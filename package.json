@@ -10,7 +10,7 @@
 		"version": "npm run build && git add --all ./docs/"
 	},
 	"devDependencies": {
-		"marked": "1.2.7",
+		"marked": "2.0.0",
 		"mustache": "4.1.0"
 	},
 	"private": true,
