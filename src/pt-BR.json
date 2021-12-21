@@ -1,0 +1,42 @@
+{
+	"title": "Boas Práticas HTML",
+	"description": "Para escrever documentos HTML sustentáveis e escaláveis.",
+	"sections": [
+		{
+			"title": "Geral"
+		},
+		{
+			"title": "O elemento raiz"
+		},
+		{
+			"title": "Metadados do documento"
+		},
+		{
+			"title": "Seções"
+		},
+		{
+			"title": "Agrupando conteúdos"
+		},
+		{
+			"title": "Semanticas a nível de texto"
+		},
+		{
+			"title": "Edições"
+		},
+		{
+			"title": "Conteúdo embutido"
+		},
+		{
+			"title": "Dados tabulares"
+		},
+		{
+			"title": "Formulários"
+		},
+		{
+			"title": "Scripts"
+		},
+		{
+			"title": "Outro"
+		}
+	]
+}
