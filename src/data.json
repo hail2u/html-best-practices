@@ -19,6 +19,11 @@
 			"code": "tr",
 			"ext": ".tr",
 			"name": "Türkçe"
+		},
+		{
+			"code": "pt-BR",
+			"ext": ".pt-BR",
+			"name": "Português brasileiro"
 		}
 	],
 	"sections": [
