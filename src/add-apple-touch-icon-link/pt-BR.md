@@ -1,10 +1,10 @@
 # Adicione `apple-touch-icon` ao link
 
-Informa qual icone as plataformas do iOS utilizaram para representar o site.
+Informa qual ícone as plataformas do iOS utilizam para representar o site.
 
 Ruim:
 
-    <!-- Olá Maça! Por faça o download `/apple-touch-icon.png`! -->
+    <!-- Olá Maçã! Por faça o download de `/apple-touch-icon.png`! -->
 
 Bom:
 
