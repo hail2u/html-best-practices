@@ -115,7 +115,7 @@ For writing maintainable and scalable HTML documents
 
 ### Start with DOCTYPE<span id="start-with-doctype"></span>
 
-DOCTYPE is required for activating standard mode.
+DOCTYPE is required for activating no-quirks mode.
 
 Bad:
 
