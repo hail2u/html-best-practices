@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # Boas Práticas HTML
 
@@ -82,7 +82,7 @@ Bom:
 
 ### Use referência numérica de caracteres para controle ou caracteres invisíveis
 
-Esses caracteres podem ser facilmente confundidos com outros caracteres. 
+Esses caracteres podem ser facilmente confundidos com outros caracteres.
 Nem a especificação garante que esses caracteres tenham nomes amigáveis ​​para humanos.
 
 Ruim:
@@ -640,6 +640,7 @@ Bom:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+### Use de forma apropriada o elemento `blockquote`<span id="use-appropriate-element-in-blockquote-element"></span>
 
 ### Use de forma apropriada  o elemento `blockquote`
 
@@ -1094,7 +1095,6 @@ Bom:
 
 O atributo `alt` auxilia quem não pode processar imagens ou está com o carregamento de imagens desabilitado.
 
-
 Ruim:
 
     <img src="/img/logo.png">
@@ -1277,7 +1277,7 @@ Bom:
 
 ### Envolva um controle de formulário com o elemento `label`
 
-O elemento `label` auxilia o focar no elemento do formulário 
+O elemento `label` auxilia o focar no elemento do formulário
 
 Ruim:
 
@@ -1329,7 +1329,7 @@ Bom:
 
 ### Adicione o atributo `title` ao elemento input `input` quando existir o atributo `pattern`
 
-Se um input não estiver de acordo com a `pattern`  indicada, o conteúdo do atributo `title` será apresentado como uma dica.
+Se um input não estiver de acordo com a `pattern` indicada, o conteúdo do atributo `title` será apresentado como uma dica.
 
 Ruim:
 
@@ -1492,7 +1492,7 @@ Bom:
 
 ### Indentação consistente
 
-A indentação  é importante na legibilidade do código.
+A indentação é importante na legibilidade do código.
 
 Ruim:
 
@@ -1551,16 +1551,15 @@ Bom:
 
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
+- [@kobyborali](https://github.com/kobyborali)
 
 ## License
 

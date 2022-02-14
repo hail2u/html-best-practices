@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # HTML Best Practices
 
@@ -720,7 +720,7 @@ Good:
 
 ### `ol` 요소에 `type` 속성을 써라
 
-때로는 주변 콘텐츠에 의해 마커가 참조된다. 만약 `type`  속성으로 마커를 변경한다면,
+때로는 주변 콘텐츠에 의해 마커가 참조된다. 만약 `type` 속성으로 마커를 변경한다면,
 참조하는 것이 안전하다.
 
 Bad:
@@ -1560,16 +1560,15 @@ Good:
 
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
+- [@kobyborali](https://github.com/kobyborali)
 
 ## License
 

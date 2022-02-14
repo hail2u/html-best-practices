@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # HTML'de Örnek Yöntemler
 
@@ -261,7 +261,7 @@ Yanlış:
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 Doğru:
@@ -269,7 +269,7 @@ Doğru:
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
 
@@ -506,7 +506,7 @@ Doğru:
 
 ### CSS için `type` kullanmayın
 
-HTML'de, `style` etiketinin `type` özelliğinin  ön tanımlı değeri `text/css`'tir.
+HTML'de, `style` etiketinin `type` özelliğinin ön tanımlı değeri `text/css`'tir.
 
 Yanlış:
 
@@ -663,7 +663,7 @@ Yanlış:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
-    
+
       <p>— HTML Best Practices</p>
     </blockquote>
 
@@ -672,7 +672,7 @@ Doğru:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 Bu da doğru:
@@ -681,7 +681,7 @@ Bu da doğru:
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
@@ -841,14 +841,14 @@ kontroller ve `a` elemanın kendisi).
 Yanlış:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 Doğru:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
@@ -1055,13 +1055,13 @@ Etiketler diğer etidektlere taşamaz.
 Yanlış:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 Doğru:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
 
@@ -1336,8 +1336,7 @@ Yanlış:
     <input name="security-code" pattern="[0-9] type="text">
 
 Doğru:
-    <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
-
+<input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 ### Etiketleme için `placeholder` özelliğini kullanmayın
 
@@ -1363,11 +1362,10 @@ Yanlış:
 Doğru:
 
     <datalist id="toc">
-		  <option label="General">
-			<option label="The root element">
-			<option label="Sections">
-		</datalist>
-
+    	  <option label="General">
+    		<option label="The root element">
+    		<option label="Sections">
+    	</datalist>
 
 ### `progress` etiketine `max` özelliği ekleyin
 
@@ -1391,8 +1389,7 @@ Yanlış:
     <meter value="0.5"> 512GB used (1024GB total</meter>
 
 Doğru:
-    <meter min="0" max="1024" value="512"> 512GB used (1024GB total</meter>
-
+<meter min="0" max="1024" value="512"> 512GB used (1024GB total</meter>
 
 ### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun
 
@@ -1526,16 +1523,15 @@ Doğru:
 
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
+- [@kobyborali](https://github.com/kobyborali)
 
 ## License
 

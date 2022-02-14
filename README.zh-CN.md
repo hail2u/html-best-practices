@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # HTML 最佳实践
 
@@ -261,7 +261,7 @@ Bad:
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 Good:
@@ -269,7 +269,7 @@ Good:
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
 
@@ -641,7 +641,6 @@ Good:
 
 `blockquote` 元素的内容是引用，而不仅仅是一堆字符。
 
-
 Bad:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
@@ -661,7 +660,7 @@ Bad:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
-    
+
       <p>— HTML Best Practices</p>
     </blockquote>
 
@@ -670,7 +669,7 @@ Good:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 Also good:
@@ -679,7 +678,7 @@ Also good:
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
@@ -836,14 +835,14 @@ Good:
 Bad:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 Good:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
@@ -1050,13 +1049,13 @@ Good:
 Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
 
@@ -1543,16 +1542,15 @@ Good:
 
 ## 贡献者
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## 译者
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
+- [@kobyborali](https://github.com/kobyborali)
 
 ## 许可证
 

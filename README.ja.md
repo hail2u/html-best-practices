@@ -1,9 +1,8 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
-# 普通のHTMLの書き方
+# 普通の HTML の書き方
 
-保守しやすく、規模に依存しないHTML文書のために
-
+保守しやすく、規模に依存しない HTML 文書のために
 
 ## 一般
 
@@ -25,6 +24,7 @@ DOCTYPEは標準モードを有効にするために必要です。
       ...
     </html>
 
+### 置き換えられるべきまたは旧式の DOCTYPE を使わない<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
 ### 置き換えられるべきまたは旧式のDOCTYPEを使わない
 
@@ -39,6 +39,7 @@ DOCTYPEは標準モードを有効にするために必要です。
 
     <!DOCTYPE html>
 
+### XML 宣言を使用しない<span id="dont-use-xml-declaration"></span>
 
 ### XML宣言を使用しない
 
@@ -56,7 +57,7 @@ DOCTYPEは標準モードを有効にするために必要です。
 
 ### 文字参照はできる限り使わない
 
-UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字はそのまま書けます。
+UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる文字はそのまま書けます。
 
 悪い例:
 
@@ -69,7 +70,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
 
 ### `&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする
 
-バグのないHTML文書を作成するためには、これらの文字は常にエスケープされるべきです。
+バグのない HTML 文書を作成するためには、これらの文字は常にエスケープされるべきです。
 
 悪い例:
 
@@ -211,7 +212,7 @@ UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字
 
 ### 名前空間は省略する
 
-SVGやMathMLはHTMLの文書では直接扱えます。
+SVG や MathML は HTML の文書では直接扱えます。
 
 悪い例:
 
@@ -225,6 +226,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
       ...
     </svg>
 
+### XML 属性は使わない<span id="dont-use-xml-attributes"></span>
 
 ### XML属性は使わない
 
@@ -251,6 +253,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
+### デフォルトの暗黙の ARIA セマンティックスを尊重する<span id="prefer-default-implicit-aria-semantics"></span>
 
 ### デフォルトの暗黙のARIAセマンティックスを尊重する
 
@@ -278,7 +281,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
 
 ### `lang`属性を追加する
 
-`lang`属性はHTML文書の翻訳に役立ちます。
+`lang`属性は HTML 文書の翻訳に役立ちます。
 
 悪い例:
 
@@ -342,7 +345,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
 
 ### `base`要素を使わない
 
-絶対パスや絶対URLの方が開発者とユーザーの双方に安全です。
+絶対パスや絶対 URL の方が開発者とユーザーの双方に安全です。
 
 悪い例:
 
@@ -419,6 +422,7 @@ Good:
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
+### URL には`link`要素を使う<span id="for-url-use-link-element"></span>
 
 ### URLには`link`要素を使う
 
@@ -441,7 +445,7 @@ Good:
 
 ### 文書の文字エンコーディングを指定する
 
-まだすべてのブラウザーでUTF-8がデフォルトになっていません。
+まだすべてのブラウザーで UTF-8 がデフォルトになっていません。
 
 悪い例:
 
@@ -459,7 +463,7 @@ Good:
 
 ### 置き換えられるべき文字エンコーディング指定フォーマットを使わない
 
-HTTPヘッダーはサーバー側で指定されるべきで、簡単にしておきましょう。
+HTTP ヘッダーはサーバー側で指定されるべきで、簡単にしておきましょう。
 
 悪い例:
 
@@ -472,7 +476,7 @@ HTTPヘッダーはサーバー側で指定されるべきで、簡単にして�
 
 ### 最初に文字エンコーディングを指定する
 
-仕様では文書の先頭1024バイトまでに文字エンコーディングを指定することを要求しています。
+仕様では文書の先頭 1024 バイトまでに文字エンコーディングを指定することを要求しています。
 
 悪い例:
 
@@ -490,6 +494,7 @@ HTTPヘッダーはサーバー側で指定されるべきで、簡単にして�
       ...
     </head>
 
+### UTF-8 を使う<span id="use-utf-8"></span>
 
 ### UTF-8を使う
 
@@ -503,6 +508,7 @@ UTF-8ならEmojiを自由に使えます。
 
     <meta charset="UTF-8">
 
+### CSS の`type`属性は省略する<span id="omit-type-attribute-for-css"></span>
 
 ### CSSの`type`属性は省略する
 
@@ -539,6 +545,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
       ...
     </style>
 
+### CSS と JavaScript のタグを混ぜない<span id="dont-mix-tag-for-css-and-javascript"></span>
 
 ### CSSとJavaScriptのタグを混ぜない
 
@@ -610,7 +617,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
 
 ### `address`要素は連絡先情報にのみ使う
 
-`address`要素はメールアドレスやSNSアカウント、住所、電話番号など、実際に利用できるあなたとの連絡手段のための要素です。
+`address`要素はメールアドレスや SNS アカウント、住所、電話番号など、実際に利用できるあなたとの連絡手段のための要素です。
 
 悪い例:
 
@@ -626,7 +633,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
 
 ### `pre`要素は改行で始めない
 
-最初の改行はブラウザーに無視されますが、2番目以降はそのまま表示されます。
+最初の改行はブラウザーに無視されますが、2 番目以降はそのまま表示されます。
 
 悪い例:
 
@@ -742,7 +749,7 @@ HTMLでは、`style`要素における`type`属性の初期値は`text/css`で�
 
 ### `dl`を会話のために使わない
 
-HTMLでは`dl`要素は関連付けリストに限定されています。
+HTML では`dl`要素は関連付けリストに限定されています。
 
 悪い例:
 
@@ -1174,7 +1181,7 @@ HTMLでは`dl`要素は関連付けリストに限定されています。
 
 ### `audio`や`video`要素にフォールバックのためのコンテンツを提供する
 
-HTMLで新しく作られた要素にはフォールバックのためのコンテンツが必要です。
+HTML で新しく作られた要素にはフォールバックのためのコンテンツが必要です。
 
 悪い例:
 
@@ -1418,6 +1425,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
 
 ## スクリプティング
 
+### JavaScript では`type`属性を省略する<span id="omit-type-attribute-for-javascript"></span>
 
 ### JavaScriptでは`type`属性を省略する
 
@@ -1545,16 +1553,15 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
 
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
+- [@kobyborali](https://github.com/kobyborali)
 
 ## License
 
