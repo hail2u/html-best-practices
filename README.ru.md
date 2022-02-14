@@ -9,7 +9,7 @@ Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국�
   - [Не используйте устаревший или недействительный DOCTYPE](#dont-use-legacy-or-obsolete-doctype)
   - [Не используйте XML Declaration](#dont-use-xml-declaration)
   - [По возможности избегайте использования ссылок на символы](#dont-use-character-references-as-much-as-possible)
-  - [Escape `&`, `<`, `>`, `"`, and `'` with named character references](#escape-amp-lt-gt-quot-and-apos-with-named-character-references)
+  - [Экранирование `&`, `<`, `>`, `"` и `'` с именованными ссылками на символы](#escape-amp-lt-gt-quot-and-apos-with-named-character-references)
   - [Используйте числовые ссылки на символы управления или невидимые символы](#use-numeric-character-references-for-control-or-invisible-characters)
   - [Поместите пробелы вокруг содержимого комментария](#put-white-spaces-around-comment-contents)
   - [Не пропускайте закрывающий тег](#dont-omit-closing-tag)
@@ -127,9 +127,9 @@ DOCTYPE требуется для активации стандартного р
       ...
     </html>
 
-### Don’t use legacy or obsolete DOCTYPE<span id="dont-use-legacy-or-obsolete-doctype"></span>
+### Не используйте устаревший или недействительный DOCTYPE<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
-DOCTYPE is not for DTD anymore, be simple.
+DOCTYPE больше не предназначен для DTD, будьте проще.
 
 Плохо:
 
@@ -140,9 +140,9 @@ DOCTYPE is not for DTD anymore, be simple.
 
     <!DOCTYPE html>
 
-### Don’t use XML Declaration<span id="dont-use-xml-declaration"></span>
+### Не используйте XML Declaration<span id="dont-use-xml-declaration"></span>
 
-Are you sure you want to write XHTML?
+Вы уверены, что хотите писать XHTML?
 
 Плохо:
 
@@ -153,10 +153,10 @@ Are you sure you want to write XHTML?
 
     <!DOCTYPE html>
 
-### Don’t use character references as much as possible<span id="dont-use-character-references-as-much-as-possible"></span>
+### По возможности избегайте использования ссылок на символы<span id="dont-use-character-references-as-much-as-possible"></span>
 
-If you write an HTML document with UTF-8, almost all characters (including
-Emoji) can be write directly.
+Если вы пишете HTML-документ с использованием UTF-8, почти все символы (включая
+Emoji) могут быть записаны напрямую.
 
 Плохо:
 
@@ -166,9 +166,9 @@ Emoji) can be write directly.
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
-### Escape `&`, `<`, `>`, `"`, and `'` with named character references<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
+### Экранирование `&`, `<`, `>`, `"` и `'` с именованными ссылками на символы<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
 
-These characters should escape always for a bug-free HTML document.
+Чтобы HTML-документ не содержал ошибок, эти символы следует всегда экранировать.
 
 Плохо:
 
@@ -180,8 +180,8 @@ These characters should escape always for a bug-free HTML document.
 
 ### Используйте числовые ссылки на символы управления или невидимые символы<span id="use-numeric-character-references-for-control-or-invisible-characters"></span>
 
-These characters are easily mistaken for another character. And also spec does
-not guarantee to define a human readable name for these characters.
+Эти символы легко перепутать с другим символом. Кроме того, спецификация
+не гарантирует определение человеко-понятного имени для этих символов.
 
 Плохо:
 
@@ -193,8 +193,7 @@ not guarantee to define a human readable name for these characters.
 
 ### Поместите пробелы вокруг содержимого комментария<span id="put-white-spaces-around-comment-contents"></span>
 
-Some character cannot be used immediately after comment open or before comment
-close.
+Некоторые символы нельзя использовать сразу после открытия комментария или до закрытия комментария.
 
 Плохо:
 
@@ -206,7 +205,7 @@ close.
 
 ### Не пропускайте закрывающий тег<span id="dont-omit-closing-tag"></span>
 
-I think you don’t understand a rule for omitting closing tag.
+Я думаю, вы не понимаете правила пропуска закрывающего тега.
 
 Плохо:
 
@@ -224,7 +223,7 @@ I think you don’t understand a rule for omitting closing tag.
 
 ### Не смешивайте пустой формат элемента<span id="dont-mix-empty-element-format"></span>
 
-Consistency is a key for readability.
+Последовательность - залог удобоного чтения.
 
 Плохо:
 
@@ -238,7 +237,7 @@ Consistency is a key for readability.
 
 ### Не ставьте пробелы вокруг тегов и значений атрибутов<span id="dont-put-white-spaces-around-tags-and-attribute-values"></span>
 
-There is no reason for doing this.
+Для этого нет никаких причин.
 
 Плохо:
 
@@ -250,7 +249,7 @@ There is no reason for doing this.
 
 ### Не смешивайте регистры символов<span id="dont-mix-character-cases"></span>
 
-It gives a consistency also.
+Он также придает консистенцию.
 
 Плохо:
 
@@ -266,7 +265,7 @@ It gives a consistency also.
 
 ### Не смешивайте кавычки<span id="dont-mix-quotation-marks"></span>
 
-Same as above.
+То же, что и выше.
 
 Плохо:
 
@@ -278,7 +277,7 @@ Same as above.
 
 ### Не разделяйте атрибуты двумя или более пробелами<span id="dont-separate-attributes-with-two-or-more-white-spaces"></span>
 
-Your weird formatting rule confuses someone.
+Ваше странное правило форматирования сбивает кого-то с толку.
 
 Плохо:
 
@@ -290,7 +289,7 @@ Your weird formatting rule confuses someone.
 
 ### Пропустите логическое значение атрибута<span id="omit-boolean-attribute-value"></span>
 
-It’s easy to write, isn’t it?
+Писать легко, не так ли?
 
 Плохо:
 
@@ -302,7 +301,7 @@ It’s easy to write, isn’t it?
 
 ### Опустите пространства имен<span id="omit-namespaces"></span>
 
-SVG and MathML can be used directly in an HTML document.
+SVG и MathML можно использовать непосредственно в HTML-документе.
 
 Плохо:
 
@@ -318,7 +317,7 @@ SVG and MathML can be used directly in an HTML document.
 
 ### Не используйте атрибуты XML<span id="dont-use-xml-attributes"></span>
 
-We write an HTML document.
+Мы пишем HTML-документ.
 
 Плохо:
 
@@ -330,8 +329,7 @@ We write an HTML document.
 
 ### Не смешивай `data-*`, Microdata, и RDFa Lite атрибуты с обычными атрибутами<span id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"></span>
 
-A tag string can be very complicated. This simple rule helps reading such tag
-string.
+Строка тега может быть очень сложной. Это простое правило поможет прочитать такую строку тегов.
 
 Плохо:
 
@@ -343,7 +341,7 @@ string.
 
 ### Предпочитайте неявную семантику ARIA по умолчанию<span id="prefer-default-implicit-aria-semantics"></span>
 
-Some element has an ARIA `role` implicitly in an HTML document, don’t specify it.
+Какой-то элемент имеет ARIA `role` неявно в HTML-документе, не указывайте его.
 
 Плохо:
 
@@ -361,11 +359,11 @@ Some element has an ARIA `role` implicitly in an HTML document, don’t specify 
 
     <hr>
 
-## TКорневой элемент<span id="the-root-element"></span>
+## Корневой элемент<span id="the-root-element"></span>
 
 ### Добавьте атрибут `lang`<span id="add-lang-attribute"></span>
 
-`lang` attribute will help translating an HTML document.
+Атрибут `lang` поможет перевести HTML-документ.
 
 Плохо:
 
@@ -377,7 +375,7 @@ Some element has an ARIA `role` implicitly in an HTML document, don’t specify 
 
 ### Держите значение атрибута `lang` как можно короче<span id="keep-lang-attribute-value-as-short-as-possible"></span>
 
-Japanese is only used in Japan. So country code is not necessary.
+Японский язык используется только в Японии. Поэтому код страны не нужен.
 
 Плохо:
 
@@ -389,7 +387,7 @@ Japanese is only used in Japan. So country code is not necessary.
 
 ### По возможности избегайте `data-*`<span id="avoid-data-as-much-as-possible"></span>
 
-An appropriate attribute can be handled properly by browsers.
+Соответствующий атрибут может быть правильно обработан браузерами.
 
 Плохо:
 
@@ -407,7 +405,7 @@ An appropriate attribute can be handled properly by browsers.
 
 ### Добавить элемент `title`<span id="add-title-element"></span>
 
-A value for `title` element is used by various application not only a browser.
+Значение для элемента `title` используется различными приложениями, не только браузером.
 
 Плохо:
 
@@ -424,7 +422,7 @@ A value for `title` element is used by various application not only a browser.
 
 ### Не используйте элемент `base`<span id="dont-use-base-element"></span>
 
-An absolute path or URL is safer for both developers and users.
+Абсолютный путь или URL безопаснее как для разработчиков, так и для пользователей.
 
 Плохо:
 
@@ -445,7 +443,7 @@ An absolute path or URL is safer for both developers and users.
 
 ### Укажите MIME-тип второстепенных связанных ресурсов<span id="specify-mime-type-of-minor-linked-resources"></span>
 
-This is a hint how application handles this resource.
+Это подсказка о том, как приложение работает с этим ресурсом.
 
 Плохо:
 
@@ -461,7 +459,7 @@ This is a hint how application handles this resource.
 
 ### Не ссылайтесь на `favicon.ico`<span id="dont-link-to-faviconico"></span>
 
-Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
+Почти все браузеры получают `/favicon.ico` автоматически и асинхронно.
 
 Плохо:
 
@@ -473,7 +471,7 @@ Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
 
 ### Добавьте ссылку на `apple-touch-icon`<span id="add-apple-touch-icon-link"></span>
 
-A default request path for touch icon was changed suddenly.
+Путь запроса по умолчанию для сенсорного значка был неожиданно изменен.
 
 Плохо:
 
@@ -485,7 +483,7 @@ A default request path for touch icon was changed suddenly.
 
 ### Добавьте атрибут `title` к альтернативным таблицам стилей<span id="add-title-attribute-to-alternate-stylesheets"></span>
 
-A human readable label helps people selecting proper stylesheet.
+Удобная для понимания человеком метка помогает людям выбрать подходящую таблицу стилей.
 
 Плохо:
 
@@ -499,7 +497,7 @@ A human readable label helps people selecting proper stylesheet.
 
 ### Для URL используйте элемент `link`<span id="for-url-use-link-element"></span>
 
-A value of `href` attribute can be resolved as URL.
+Значение атрибута `href` может быть преобразовано в URL.
 
 Плохо:
 
@@ -517,7 +515,7 @@ A value of `href` attribute can be resolved as URL.
 
 ### Укажите кодировку символов документа<span id="specify-document-character-encoding"></span>
 
-UTF-8 is not default in all browsers yet.
+UTF-8 пока не используется по умолчанию во всех браузерах.
 
 Плохо:
 
@@ -534,7 +532,7 @@ UTF-8 is not default in all browsers yet.
 
 ### Не используйте устаревший формат кодирования символов<span id="dont-use-legacy-character-encoding-format"></span>
 
-HTTP headers should be specified by a server, be simple.
+HTTP-заголовки должны задаваться сервером, будь проще.
 
 Плохо:
 
@@ -546,8 +544,7 @@ HTTP headers should be specified by a server, be simple.
 
 ### Сначала укажите кодировку символов<span id="specify-character-encoding-at-first"></span>
 
-Spec requires the character encoding is specified within the first 1024 bytes of
-the document.
+Спецификация требует, чтобы кодировка символов была указана в первых 1024 байтах документа.
 
 Плохо:
 
@@ -567,7 +564,7 @@ the document.
 
 ### Используйте UTF-8<span id="use-utf-8"></span>
 
-With UTF-8, you are free to use Emoji.
+При использовании UTF-8 вы можете свободно использовать Emoji.
 
 Плохо:
 
@@ -579,7 +576,7 @@ With UTF-8, you are free to use Emoji.
 
 ### Для URL используйте элемент `link`<span id="omit-type-attribute-for-css"></span>
 
-In HTML, default `type` attribute’s value of `style` element is `text/css`.
+В HTML значение атрибута `type` элемента `style` по умолчанию равно `text/css`.
 
 Плохо:
 
@@ -595,7 +592,7 @@ In HTML, default `type` attribute’s value of `style` element is `text/css`.
 
 ### Не комментируйте содержимое элемента `style`<span id="dont-comment-out-contents-of-style-element"></span>
 
-This ritual is for the old browser.
+Этот ритуал предназначен для старого браузера.
 
 Плохо:
 
@@ -613,7 +610,7 @@ This ritual is for the old browser.
 
 ### Не смешивайте теги для CSS и JavaScript<span id="dont-mix-tag-for-css-and-javascript"></span>
 
-Sometimes `script` element blocks DOM construction.
+Иногда элемент `script` блокирует построение DOM.
 
 Плохо:
 
@@ -637,7 +634,7 @@ Sometimes `script` element blocks DOM construction.
 
 ### Добавить элемент `body`<span id="add-body-element"></span>
 
-Sometimes `body` element is complemented in unexpected position by a browser.
+Иногда элемент `body` дополняется браузером в неожиданном месте.
 
 Плохо:
 
@@ -661,7 +658,7 @@ Sometimes `body` element is complemented in unexpected position by a browser.
 
 ### Забудьте об элементе `hgroup`<span id="forget-about-hgroup-element"></span>
 
-This element is not used very much.
+Этот элемент используется нечасто.
 
 Плохо:
 
@@ -677,8 +674,7 @@ This element is not used very much.
 
 ### Используйте элемент `address` только для контактной информации<span id="use-address-element-only-for-contact-information"></span>
 
-`address` element is for email address, social network account, street address,
-telephone number, or something you can get in touch with.
+Элемент `address` предназначен для адреса электронной почты, аккаунта в социальной сети, адреса улицы, номер телефона или что-то, с чем вы можете связаться.
 
 Плохо:
 
@@ -692,7 +688,7 @@ telephone number, or something you can get in touch with.
 
 ### Не начинайте с новой строки в элементе `pre`<span id="dont-start-with-newline-in-pre-element"></span>
 
-A first newline will ignored in the browsers, but second and later are rendered.
+Первая новая строка игнорируется браузерами, но вторая и последующие строки отображаются.
 
 Плохо:
 
@@ -707,7 +703,7 @@ A first newline will ignored in the browsers, but second and later are rendered.
 
 ### Используйте соответствующий элемент в элементе `blockquote`<span id="use-appropriate-element-in-blockquote-element"></span>
 
-`blockquote` element’s content is a quote, not a chunks of characters.
+Содержимое элемента `blockquote` - это цитата, а не куски символов.
 
 Плохо:
 
@@ -721,7 +717,7 @@ A first newline will ignored in the browsers, but second and later are rendered.
 
 ### Не включайте атрибуцию непосредственно в элемент `blockquote`<span id="dont-include-attribution-directly-in-blockquote-element"></span>
 
-`blockquote` element’s content is a quote.
+Содержимое элемента `blockquote` - это цитата.
 
 Плохо:
 
@@ -751,8 +747,8 @@ A first newline will ignored in the browsers, but second and later are rendered.
 
 ### Напишите по одному элементу списка в строке<span id="write-one-list-item-per-line"></span>
 
-Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
-line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
+Длиннyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyю
+строку тяжело читааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааать.
 
 Плохо:
 
@@ -771,8 +767,7 @@ line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
 
 ### Используйте атрибут `type` для элемента `ol`<span id="use-type-attribute-for-ol-element"></span>
 
-Sometimes marker referenced by the contents in the near. If you change marker
-with `type` attribute, you will be safe to reference.
+Иногда на маркер ссылается содержимое в ближней части. Если вы измените маркер с помощью атрибута `type`, вы будете в безопасности для ссылок.
 
 Плохо:
 
@@ -805,7 +800,7 @@ with `type` attribute, you will be safe to reference.
 
 ### Не используйте `dl` для диалога<span id="dont-use-dl-for-dialogue"></span>
 
-`dl` element is restricted to an association list in HTML.
+Элемент `dl` ограничен ассоциативным списком в HTML.
 
 Плохо:
 
@@ -837,7 +832,7 @@ with `type` attribute, you will be safe to reference.
 
 ### Поместите элемент `figcaption` в качестве первого или последнего дочернего элемента `figure`<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
 
-Spec disallows `figcaption` element in the middle of `figure` element.
+Спецификация не позволяет использовать элемент `figcaption` в середине элемента `figure`.
 
 Плохо:
 
@@ -857,7 +852,7 @@ Spec disallows `figcaption` element in the middle of `figure` element.
 
 ### Используйте элемент `main`<span id="use-main-element"></span>
 
-`main` element can be used wrapping contents.
+Элемент `main` может быть использован для обертывания содержимого.
 
 Плохо:
 
@@ -873,7 +868,7 @@ Spec disallows `figcaption` element in the middle of `figure` element.
 
 ### По возможности избегайте элемента `div`<span id="avoid-div-element-as-much-as-possible"></span>
 
-`div` element is an element of last resort.
+Элемент `div` - это элемент последней надежды.
 
 Плохо:
 
@@ -891,8 +886,7 @@ Spec disallows `figcaption` element in the middle of `figure` element.
 
 ### Не разделяйте одинаковые ссылки, которые можно сгруппировать<span id="dont-split-same-link-that-can-be-grouped"></span>
 
-`a` element can wrap almost all elements (except interactive elements like form
-controls and `a` element itself).
+Элемент `a` может обернуть практически все элементы (кроме интерактивных элементов, таких как элементы управления формой и сам элемент `a`).
 
 Плохо:
 
@@ -910,7 +904,7 @@ controls and `a` element itself).
 
 ### Используйте атрибут `download` для загрузки ресурса<span id="use-download-attribute-for-downloading-a-resource"></span>
 
-It will force browsers to download linked resource to the storage.
+Это заставит браузеры загрузить связанный ресурс в хранилище.
 
 Плохо:
 
@@ -922,7 +916,7 @@ It will force browsers to download linked resource to the storage.
 
 ### Используйте атрибуты `rel`, `hreflang` и `type` при необходимости<span id="use-rel-hreflang-and-type-attribute-if-needed"></span>
 
-These hints helps applications how handle linked resource.
+Эти подсказки помогают приложениям работать со связанным ресурсом.
 
 Плохо:
 
@@ -934,7 +928,7 @@ These hints helps applications how handle linked resource.
 
 ### Четкий текст ссылки<span id="clear-link-text"></span>
 
-Link text should be the label of its linked resource.
+Текст ссылки должен представлять собой метку связанного с ней ресурса.
 
 Плохо:
 
@@ -946,7 +940,7 @@ Link text should be the label of its linked resource.
 
 ### Не используйте элемент `em` для предупреждения или предостережения<span id="dont-use-em-element-for-warning-or-caution"></span>
 
-These are seriousness. So, `strong` element is more appropriate.
+Это серьезно! Поэтому элемент `strong` подходит больше.
 
 Плохо:
 
@@ -958,7 +952,7 @@ These are seriousness. So, `strong` element is more appropriate.
 
 ### По возможности избегайте элементов `s`, `i`, `b` и `u`<span id="avoid-s-i-b-and-u-element-as-much-as-possible"></span>
 
-These elements’ semantics is too difficult to humans.
+Семантика этих элементов слишком сложна для человека.
 
 Плохо:
 
@@ -970,7 +964,7 @@ These elements’ semantics is too difficult to humans.
 
 ### Не ставьте кавычки для элемента `q`<span id="dont-put-quotes-to-q-element"></span>
 
-Quotes are provided by the browser.
+Кавычки предоставляются браузером.
 
 Плохо:
 
@@ -986,7 +980,7 @@ Quotes are provided by the browser.
 
 ### Добавить атрибут `title` к элементу `abbr`<span id="add-title-attribute-to-abbr-element"></span>
 
-There is no other way to represent its expansion.
+Нет другого способа представить его полную форму.
 
 Плохо:
 
@@ -998,7 +992,7 @@ There is no other way to represent its expansion.
 
 ### Разметка элемента `ruby` в развернутом виде<span id="markup-ruby-element-verbosely"></span>
 
-`ruby` element support is not completed across the modern browsers.
+Поддержка элемента `ruby` не завершена в современных браузерах.
 
 Плохо:
 
@@ -1010,8 +1004,7 @@ There is no other way to represent its expansion.
 
 ### Добавьте атрибут `datetime` к элементу `time`, не поддающемуся машинному чтению<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
 
-When `datetime` attribute does not present, the format of `time` element’s
-content is restricted.
+Когда атрибут `datetime` не присутствует, формат содержимого элемента `time` ограничивается.
 
 Плохо:
 
@@ -1023,7 +1016,7 @@ content is restricted.
 
 ### Укажите язык кода с помощью атрибута `class` с префиксом `language-`<span id="specify-code-language-with-class-attribute-prefixed-with-language"></span>
 
-This is not a formal way, but spec mentions this.
+Это не формальный способ, но в спецификации он упоминается.
 
 Плохо:
 
@@ -1035,7 +1028,7 @@ This is not a formal way, but spec mentions this.
 
 ### Максимально упростите элемент `kbd`<span id="keep-kbd-element-as-simple-as-possible"></span>
 
-Nesting `kbd` element is too difficult to humans.
+Вложенность элемента `kbd` слишком сложна для человека.
 
 Плохо:
 
@@ -1047,7 +1040,7 @@ Nesting `kbd` element is too difficult to humans.
 
 ### По возможности избегайте элемента `span`<span id="avoid-span-element-as-much-as-possible"></span>
 
-`span` element is an element of last resort.
+Элемент `span` - это элемент последней надежды.
 
 Плохо:
 
@@ -1059,7 +1052,7 @@ Nesting `kbd` element is too difficult to humans.
 
 ### Разрыв после элемента `br`<span id="break-after-br-element"></span>
 
-Line break should be needed where `br` element is used.
+Перевод строки должен быть необходим там, где используется элемент `br`.
 
 Плохо:
 
@@ -1073,7 +1066,7 @@ Line break should be needed where `br` element is used.
 
 ### Не используйте элемент `br` только в презентационных целях<span id="dont-use-br-element-only-for-presentational-purpose"></span>
 
-`br` element is not for line breaking, it is for line breaks in the contents.
+Элемент `br` не предназначен для декоративного перевода строки, он предназначен для перевода строки в содержимом.
 
 Плохо:
 
@@ -1091,7 +1084,7 @@ Line break should be needed where `br` element is used.
 
 ### Не накладывайте элементы `ins` и `del` на другие элементы<span id="dont-stride-ins-and-del-element-over-other-elements"></span>
 
-Elements cannot be overflow other elements.
+Элементы не могут быть переполнены другими элементами.
 
 Плохо:
 
@@ -1109,7 +1102,7 @@ Elements cannot be overflow other elements.
 
 ### Предоставьте резервные ресурсы элемента `img` для элемента `picture`<span id="provide-fallback-img-element-for-picture-element"></span>
 
-The support of `picture` element is not good yet.
+Поддержка элемента `picture` пока не очень хороша.
 
 Плохо:
 
@@ -1131,8 +1124,7 @@ The support of `picture` element is not good yet.
 
 ### Добавьте атрибут `alt` к элементу `img`, если это необходимо<span id="add-alt-attrbute-to-img-element-if-needed"></span>
 
-`alt` attribute helps those who cannot process images or have image loading
-disabled.
+Атрибут `alt` помогает тем, кто не может обрабатывать изображения или у кого загрузка изображений отключена.
 
 Плохо:
 
@@ -1144,7 +1136,7 @@ disabled.
 
 ### Пустой атрибут `alt`, если это возможно<span id="empty-alt-attribute-if-possible"></span>
 
-If the image is supplemental, there is equivalent content somewhere in the near.
+Если изображение является дополнительным, значит, где-то рядом находится эквивалентный контент.
 
 Плохо:
 
@@ -1156,7 +1148,7 @@ If the image is supplemental, there is equivalent content somewhere in the near.
 
 ### Опустите атрибут `alt`, если это возможно<span id="omit-alt-attribute-if-possible"></span>
 
-Sometimes you don’t know what text is suitable for `alt` attribute.
+Иногда вы не знаете, какой текст подходит для атрибута `alt`.
 
 Плохо:
 
@@ -1169,7 +1161,7 @@ Sometimes you don’t know what text is suitable for `alt` attribute.
 
 ### Пустой элемент `iframe`<span id="empty-iframe-element"></span>
 
-There is some restriction in its content. Being empty is always safe.
+Существует некоторое ограничение в его содержании. Быть пустым всегда безопасно.
 
 Плохо:
 
@@ -1183,7 +1175,7 @@ There is some restriction in its content. Being empty is always safe.
 
 ### Разметка содержимого элемента `map`<span id="markup-map-element-content"></span>
 
-This content presents to a screen reader.
+Этот контент предназначен для программ читающих с экрана.
 
 Плохо:
 
@@ -1211,7 +1203,7 @@ This content presents to a screen reader.
 
 ### Предоставьте резервное содержимое для элемента `audio` или `video`<span id="provide-fallback-content-for-audio-or-video-element"></span>
 
-Fallback content is needed for newly introduced elements in HTML.
+Вспомогательный контент необходим для вновь введенных элементов в HTML.
 
 Плохо:
 
@@ -1234,7 +1226,7 @@ Fallback content is needed for newly introduced elements in HTML.
 
 ### Напишите по одной ячейке в строке<span id="write-one-cell-per-line"></span>
 
-Long lines are hard to scan.
+Длинные строки трудно сканировать.
 
 Плохо:
 
@@ -1252,7 +1244,7 @@ Long lines are hard to scan.
 
 ### Используйте элемент `th` для ячейки заголовка<span id="use-th-element-for-header-cell"></span>
 
-There is no reason to avoid this.
+Нет причин избегать этого.
 
 Плохо:
 
@@ -1306,7 +1298,7 @@ There is no reason to avoid this.
 
 ### Обернуть элемент управления формой элементом `label`<span id="wrap-form-control-with-label-element"></span>
 
-`label` element helps focusing form element.
+Элемент `label` помогает сфокусировать элемент формы.
 
 Плохо:
 
@@ -1318,7 +1310,7 @@ There is no reason to avoid this.
 
 ### По возможности опустите атрибут `for`<span id="omit-for-attribute-if-possible"></span>
 
-`label` element can contain some form elements.
+Элемент `label` может содержать некоторые элементы формы.
 
 Плохо:
 
@@ -1330,7 +1322,7 @@ There is no reason to avoid this.
 
 ### Используйте соответствующий атрибут `type` для элемента `input`<span id="use-appropriate-type-attribute-for-input-element"></span>
 
-With appropriate `type`, a browser gives tiny features to the `input` element.
+С помощью соответствующего `type` браузер наделяет элемент `input` крошечными возможностями.
 
 Плохо:
 
@@ -1342,8 +1334,7 @@ With appropriate `type`, a browser gives tiny features to the `input` element.
 
 ### Добавьте атрибут `value` к `input type="submit"`<span id="add-value-attribute-to-input-typesubmit"></span>
 
-The default label for submit button is not standarized across the browser and
-languages.
+Метка по умолчанию для кнопки submit не стандартизирована для разных браузеров и языков.
 
 Плохо:
 
@@ -1355,8 +1346,7 @@ languages.
 
 ### Добавьте атрибут `title` в элемент `input` при наличии атрибута `pattern`<span id="add-title-attribute-to-input-element-when-there-is-pattern-attribute"></span>
 
-If input text does not match to `pattern` attribute, the value of `title`
-attribute will be display as a hint.
+Если вводимый текст не соответствует атрибуту `pattern`, значение атрибута `title` будет отображаться в качестве подсказки.
 
 Плохо:
 
@@ -1368,7 +1358,7 @@ attribute will be display as a hint.
 
 ### Не используйте атрибут `placeholder` для маркировки<span id="dont-use-placeholder-attribute-for-labeling"></span>
 
-`label` element is for a label, `placeholder` attribute is for a short hint.
+Элемент `label` предназначен для метки, атрибут `placeholder` - для короткой подсказки.
 
 Плохо:
 
@@ -1380,7 +1370,7 @@ attribute will be display as a hint.
 
 ### Запишите один элемент `option` в строке<span id="write-one-option-element-per-line"></span>
 
-Long lines are hard to scan.
+Длинные строки трудно сканировать.
 
 Плохо:
 
@@ -1398,7 +1388,7 @@ Long lines are hard to scan.
 
 ### Добавьте атрибут `max` к элементу `progress`<span id="add-max-attribute-to-progress-element"></span>
 
-With `max` attribute, the `value` attribute can be write in an easy format.
+С помощью атрибута `max` атрибут `value` может быть записан в удобном формате.
 
 Плохо:
 
@@ -1410,8 +1400,7 @@ With `max` attribute, the `value` attribute can be write in an easy format.
 
 ### Добавьте атрибуты `min` и `max` к элементу `meter`<span id="add-min-and-max-attribute-to-meter-element"></span>
 
-With `min` and `max` attribute, the `value` attribute can be write in an easy
-format.
+С помощью атрибутов `min` и `max` атрибут `value` может быть записан в удобном формате.
 
 Плохо:
 
@@ -1423,7 +1412,7 @@ format.
 
 ### Поместите элемент `legend` в качестве первого дочернего элемента `fieldset`<span id="place-legend-element-as-the-first-child-of-fieldset-element"></span>
 
-Spec requires this.
+Спецификация требует этого.
 
 Плохо:
 
@@ -1445,8 +1434,7 @@ Spec requires this.
 
 ### Опустите атрибут `type` для JavaScript<span id="omit-type-attribute-for-javascript"></span>
 
-In HTML, the default `type` attribute’s value of `script` element is
-`text/javascript`.
+В HTML значение атрибута `type` элемента `script` по умолчанию равно `text/javascript`.
 
 Плохо:
 
@@ -1462,7 +1450,7 @@ In HTML, the default `type` attribute’s value of `script` element is
 
 ### Не комментируйте содержимое элемента `script`<span id="dont-comment-out-contents-of-script-element"></span>
 
-This ritual is for the old browser.
+Этот ритуал предназначен для старого браузера.
 
 Плохо:
 
@@ -1488,7 +1476,7 @@ This ritual is for the old browser.
 
 ### Не используйте внедренный скриптом элемент `script`<span id="dont-use-script-injected-script-element"></span>
 
-`async` attribute is the best for both simplicity and performance.
+Атрибут `async` является лучшим как по простоте, так и по производительности.
 
 Плохо:
 
@@ -1507,7 +1495,7 @@ This ritual is for the old browser.
 
 ### Последовательный отступ<span id="indent-consistently"></span>
 
-Indentation is important for readability.
+Отступы важны для удобоного чтения.
 
 Плохо:
 
@@ -1533,7 +1521,7 @@ Indentation is important for readability.
 
 ### Используйте абсолютный путь для внутренних ссылок<span id="use-absolute-path-for-internal-links"></span>
 
-An absolute path works better on your localhost without internet connection.
+Абсолютный путь лучше работает на локальном хосте без подключения к Интернету.
 
 Плохо:
 
@@ -1549,7 +1537,7 @@ An absolute path works better on your localhost without internet connection.
 
 ### Укажите протокл URL для внешних ресурсов<span id="dont-use-protocol-relative-url-for-external-resources"></span>
 
-With protocol, you can load external resources reliably and safely.
+С помощью протокола вы можете надежно и безопасно загружать внешние ресурсы.
 
 Плохо:
 
@@ -1569,6 +1557,7 @@ With protocol, you can load external resources reliably and safely.
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
+- [@kobyborali](https://github.com/kobyborali)
 
 ## Лицензия
 
