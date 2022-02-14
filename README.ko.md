@@ -1,9 +1,8 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # HTML Best Practices
 
 유지보수 및 확장할 수 있는 HTML 문서를 만들기 위해
-
 
 - [공통](#general)
   - [DOCTYPE으로 시작해라](#start-with-doctype)
@@ -54,7 +53,7 @@ Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국�
   - [한 줄에 한 리스트 아이템을 써라](#write-one-list-item-per-line)
   - [`ol` 요소에 `type` 속성을 써라](#use-type-attribute-for-ol-element)
   - [다이얼로그를 위해 `dl`을 쓰지 마라](#dont-use-dl-for-dialogue)
-  - [`figcaption`  요소를 `figure` 요소의 첫째 or 마지막 자식요소로 써라](#place-figcaption-element-as-first-or-last-child-of-figure-element)
+  - [`figcaption` 요소를 `figure` 요소의 첫째 or 마지막 자식요소로 써라](#place-figcaption-element-as-first-or-last-child-of-figure-element)
   - [`main` 요소를 써라](#use-main-element)
   - [`div` 요소를 가능한 한 많이 없애라](#avoid-div-element-as-much-as-possible)
 - [Text-level 시맨틱](#text-level-semantics)
@@ -109,9 +108,7 @@ Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국�
 - [Translators](#translators)
 - [License](#license)
 
-
 ## 공통<span id="general"></span>
-
 
 ### DOCTYPE으로 시작해라<span id="start-with-doctype"></span>
 
@@ -130,7 +127,6 @@ Good:
       ...
     </html>
 
-
 ### 레거시 혹은 폐기된 DOCTYPE을 쓰지 마라<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
 DOCTYPE은 더 이상 DTD가 아니다, 간단해져라
@@ -143,7 +139,6 @@ Bad:
 Good:
 
     <!DOCTYPE html>
-
 
 ### XML 선언을 쓰지 말아라<span id="dont-use-xml-declaration"></span>
 
@@ -158,7 +153,6 @@ Good:
 
     <!DOCTYPE html>
 
-
 ### 문자 레퍼런스를 가능한 한 사용하지 말아라<span id="dont-use-character-references-as-much-as-possible"></span>
 
 만약 HTML문서를 UTF-8로 작성하고 있다면,
@@ -172,7 +166,6 @@ Good:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
-
 ### `&`, `<`, `>`, `"`, `'`를 문자 레퍼런스로 변환해라<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
 
 이 문자들은 버그가 없는 HTML 문서를 만들기위해 반드시 변환해두어야한다.
@@ -184,7 +177,6 @@ Bad:
 Good:
 
     <h1>The &quot;&amp;&quot; character</h1>
-
 
 ### 제어 문자나 보이지 않는 문자를 제어하기 위해 숫자 문자 레퍼런스를 사용하라<span id="use-numeric-character-references-for-control-or-invisible-characters"></span>
 
@@ -199,7 +191,6 @@ Good:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-
 ### 주석 내용 주위에 공백을 넣어라<span id="put-white-spaces-around-comment-contents"></span>
 
 일부 문자는 주석의 여는 태그 바로 뒤나 닫는 태그 바로 앞에 붙어서 넣을 수 없다.
@@ -211,7 +202,6 @@ Bad:
 Good:
 
     <!-- This section is non-normative -->
-
 
 ### 닫는 태그를 생략하지 말아라<span id="dont-omit-closing-tag"></span>
 
@@ -231,7 +221,6 @@ Good:
       </body>
     </html>
 
-
 ### 빈 요소 포맷을 섞지 마라<span id="dont-mix-empty-element-format"></span>
 
 일관성은 가독성의 핵심이다.
@@ -246,7 +235,6 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
 ### 태그 및 속성 값 사이에 공백문자를 넣지 말아라<span id="dont-put-white-spaces-around-tags-and-attribute-values"></span>
 
 그럴 이유가 없다.
@@ -258,7 +246,6 @@ Bad:
 Good:
 
     <h1 class="title">HTML Best Practices</h1>
-
 
 ### 대소문자를 섞지 말아라<span id="dont-mix-character-cases"></span>
 
@@ -276,7 +263,6 @@ Also Good:
 
     <A HREF="#general">General</A>
 
-
 ### 인용 부호를 섞지 말아라<span id="dont-mix-quotation-marks"></span>
 
 위와 같다.
@@ -288,7 +274,6 @@ Bad:
 Good:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
-
 
 ### 속성을 두개 이상의 공백 문자로 나누지 마라<span id="dont-separate-attributes-with-two-or-more-white-spaces"></span>
 
@@ -302,7 +287,6 @@ Good:
 
     <input name="q" type="search">
 
-
 ### 불리언 속성값을 생략해라<span id="omit-boolean-attribute-value"></span>
 
 작성하기 쉽다, 안그래?
@@ -314,7 +298,6 @@ Bad:
 Good:
 
     <audio autoplay src="/audio/theme.mp3">
-
 
 ### 네임스페이스를 생략해라<span id="omit-namespaces"></span>
 
@@ -332,7 +315,6 @@ Good:
       ...
     </svg>
 
-
 ### XML 속성을 쓰지 마라<span id="dont-use-xml-attributes"></span>
 
 우린 HTML 문서를 쓰고있다.
@@ -344,7 +326,6 @@ Bad:
 Good:
 
     <span lang="ja">...</span>
-
 
 ### `data-*`, 마이크로데이터, RDFa Lite 속성을 일반 속성과 섞어쓰지 마라<span id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"></span>
 
@@ -358,7 +339,6 @@ Bad:
 Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
-
 
 ### 기본 암시적 ARIA 시맨틱을 선호하라<span id="prefer-default-implicit-aria-semantics"></span>
 
@@ -380,9 +360,7 @@ Good:
 
     <hr>
 
-
 ## 루트 요소<span id="the-root-element"></span>
-
 
 ### `lang` 속성을 추가해라<span id="add-lang-attribute"></span>
 
@@ -396,7 +374,6 @@ Good:
 
     <html lang="en-US">
 
-
 ### `lang` 속성을 가능하면 짧게 유지해라<span id="keep-lang-attribute-value-as-short-as-possible"></span>
 
 일본어는 Japan만 사용해라. 국가 코드는 필요없다.
@@ -408,7 +385,6 @@ Bad:
 Good:
 
     <html lang="ja">
-
 
 ### `data-*`을 가능한 한 없애라<span id="avoid-data-as-much-as-possible"></span>
 
@@ -426,9 +402,7 @@ Good:
     ...
     <strong class="warning">Do not wash!</strong>
 
-
 ## 문서 메타데이터<span id="document-metadata"></span>
-
 
 ### `title` 요소를 넣어라<span id="add-title-element"></span>
 
@@ -446,7 +420,6 @@ Good:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
-
 
 ### `base` 요소를 쓰지 마라<span id="dont-use-base-element"></span>
 
@@ -469,7 +442,6 @@ Good:
       ...
     </head>
 
-
 ### 마이너한 링크 리소스에 MIME 타입을 정의해라<span id="specify-mime-type-of-minor-linked-resources"></span>
 
 어플리케이션에서 리소스를 어떻게 처리하는 가에 대한 힌트다.
@@ -486,7 +458,6 @@ Good:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ### `favicon.ico` 링크하지 마라<span id="dont-link-to-faviconico"></span>
 
 대부분의 브라우저에서 `/favicon.ico`를 자동으로 비동기방식으로 가져온다.
@@ -499,7 +470,6 @@ Good:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-
 ### Add `apple-touch-icon` link<span id="add-apple-touch-icon-link"></span>
 
 A default request path for touch icon was changed suddenly.
@@ -511,7 +481,6 @@ Bad:
 Good:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-
 
 ### 대체 스타일시트에 `title` 속성을 넣어라<span id="add-title-attribute-to-alternate-stylesheets"></span>
 
@@ -526,7 +495,6 @@ Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
-
 
 ### URL을 위해서 `link` 요소를 써라<span id="for-url-use-link-element"></span>
 
@@ -546,7 +514,6 @@ Good:
       ...
     </section>
 
-
 ### 문서의 문자 인코딩을 정의해라<span id="specify-document-character-encoding"></span>
 
 아직 UTF-8이 모든 브라우저에서 기본이 아니다.
@@ -564,7 +531,6 @@ Good:
       <title>HTML Best Practices</title>
     </head>
 
-
 ### 레거시 인코딩 포맷을 쓰지 마라<span id="dont-use-legacy-character-encoding-format"></span>
 
 HTTP 헤더는 서버에서 정의해야하며, 아주 쉽다.
@@ -576,7 +542,6 @@ Bad:
 Good:
 
     <meta charset="UTF-8">
-
 
 ### 문자 인코딩을 처음으로 선언해라<span id="specify-character-encoding-at-first"></span>
 
@@ -598,7 +563,6 @@ Good:
       ...
     </head>
 
-
 ### UTF-8을 써라<span id="use-utf-8"></span>
 
 UTF-8과 함께라면, 이모티콘을 자유롭게 쓸 수 있다.
@@ -610,7 +574,6 @@ Bad:
 Good:
 
     <meta charset="UTF-8">
-
 
 ### CSS를 위한 `type` 속성을 생략해라<span id="omit-type-attribute-for-css"></span>
 
@@ -627,7 +590,6 @@ Good:
     <style>
       ...
     </style>
-
 
 ### `style` 요소의 내용을 주석처리하지 마라<span id="dont-comment-out-contents-of-style-element"></span>
 
@@ -646,7 +608,6 @@ Good:
     <style>
       ...
     </style>
-
 
 ### CSS와 JavaScript 태그를 섞지 말아라<span id="dont-mix-tag-for-css-and-javascript"></span>
 
@@ -670,9 +631,7 @@ Also good:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ## 섹션<span id="sections"></span>
-
 
 ### `body` 요소를 넣어라<span id="add-body-element"></span>
 
@@ -698,7 +657,6 @@ Good:
       </body>
     </html>
 
-
 ### `hgroup` 요소는 잊어라<span id="forget-about-hgroup-element"></span>
 
 W3C 스펙에서 삭제되었다.
@@ -715,7 +673,6 @@ Good:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-
 ### `address` 요소는 콘택트 정보를 제공하는 데만 써라<span id="use-address-element-only-for-contact-information"></span>
 
 `address` 요소는 이메일 주소, 소셜 네트워크 계정, 주소, 전화번호 등 직접 연락할 수 있는 항목이다.
@@ -728,9 +685,7 @@ Good:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-
 ## 그룹 콘텐츠<span id="grouping-content"></span>
-
 
 ### `pre` 요소에서 새 줄로 시작하지 말아라<span id="dont-start-with-newline-in-pre-element"></span>
 
@@ -747,7 +702,6 @@ Good:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
-
 ### `blockquote` 요소에 적절한 요소를 써라<span id="use-appropriate-element-in-blockquote-element"></span>
 
 `blockquote` 요소의 콘텐츠는 인용한 내용이지, 문장 덩어리가 아니다.
@@ -761,7 +715,6 @@ Good:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-
 
 ### `blockquote` 요소 안에 직접 포함하지 마라<span id="dont-include-attribution-directly-in-blockquote-element"></span>
 
@@ -801,7 +754,6 @@ Also good too (recommended by W3C):
       <footer>— HTML Best Practices</footer>
     </blockquote>
 
-
 ### 한 줄에 한 리스트 아이템을 써라<span id="write-one-list-item-per-line"></span>
 
 기이ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ인
@@ -822,10 +774,9 @@ Good:
       ...
     </ul>
 
-
 ### `ol` 요소에 `type` 속성을 써라<span id="use-type-attribute-for-ol-element"></span>
 
-때로는 주변 콘텐츠에 의해 마커가 참조된다. 만약 `type`  속성으로 마커를 변경한다면,
+때로는 주변 콘텐츠에 의해 마커가 참조된다. 만약 `type` 속성으로 마커를 변경한다면,
 참조하는 것이 안전하다.
 
 Bad:
@@ -856,7 +807,6 @@ Good:
         ...
       </ol>
     </body>
-
 
 ### 다이얼로그를 위해 `dl`을 쓰지 마라<span id="dont-use-dl-for-dialogue"></span>
 
@@ -890,8 +840,7 @@ Good:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-
-### `figcaption`  요소를 `figure` 요소의 첫째 or 마지막 자식요소로 써라<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
+### `figcaption` 요소를 `figure` 요소의 첫째 or 마지막 자식요소로 써라<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
 
 스펙 (WHATWG 버전)에서 `figcaption` 요소를 `figure` 요소 중간에 두는 걸 허용하지 않는다.
 
@@ -911,7 +860,6 @@ Good:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-
 ### `main` 요소를 써라<span id="use-main-element"></span>
 
 `main` 요소는 콘텐츠를 감쌀 때 쓸 수 있다.
@@ -927,7 +875,6 @@ Good:
     <main>
       ...
     </main>
-
 
 ### `div` 요소를 가능한 한 많이 없애라<span id="avoid-div-element-as-much-as-possible"></span>
 
@@ -945,9 +892,7 @@ Good:
       ...
     </section>
 
-
 ## Text-level 시맨틱<span id="text-level-semantics"></span>
-
 
 ### 그룹 가능한 동일 링크를 분리하지 마라<span id="dont-split-same-link-that-can-be-grouped"></span>
 
@@ -967,7 +912,6 @@ Good:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-
 ### 리소스를 다운하고자 할 때 `download` 속성을 사용하라<span id="use-download-attribute-for-downloading-a-resource"></span>
 
 브라우저에서 연결된 리소스를 스토리지에서 다운받으려 할거다.
@@ -979,7 +923,6 @@ Bad:
 Good:
 
     <a download href="/downloads/offline.zip">offline version</a>
-
 
 ### 필요하다면 `rel`, `hreflang`, `type` 속성을 사용해라<span id="use-rel-hreflang-and-type-attribute-if-needed"></span>
 
@@ -993,7 +936,6 @@ Good:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
-
 ### 링크 텍스트를 명확히 하라<span id="clear-link-text"></span>
 
 링크 텍스트는 연결된 리소스의 레이블이어야한다.
@@ -1005,7 +947,6 @@ Bad:
 Good:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
-
 
 ### 경고나 주의를 위해 `em`을 사용하지 말아라<span id="dont-use-em-element-for-warning-or-caution"></span>
 
@@ -1019,7 +960,6 @@ Good:
 
     <strong>Caution!</strong>
 
-
 ### `s`, `i`, `b`, `u` 요소를 가능한 한 없애라<span id="avoid-s-i-b-and-u-element-as-much-as-possible"></span>
 
 이 요소의 시맨틱은 사람과 아주 다르다.
@@ -1031,7 +971,6 @@ Bad:
 Good:
 
     <span class="icon-search" aria-hidden="true"></span>
-
 
 ### `q` 요소에 따옴표를 넣지 말아라<span id="dont-put-quotes-to-q-element"></span>
 
@@ -1049,7 +988,6 @@ Also good:
 
     “For writing maintainable and scalable HTML documents”
 
-
 ### `abbr` 요소에 `title` 속성을 써라<span id="add-title-attribute-to-abbr-element"></span>
 
 무엇의 함축어인 지 달리 설명할 길이 없다.
@@ -1061,7 +999,6 @@ Bad:
 Good:
 
     <abbr title="HTML Best Practices">HBP</abbr>
-
 
 ### `ruby` 요소를 자세히 마크업해라<span id="markup-ruby-element-verbosely"></span>
 
@@ -1075,7 +1012,6 @@ Good:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-
 ### 기계가 읽을 수 없는 `time` 요소에 `datetime` 속성을 추가해라<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
 
 `datetime` 속성이 없을 때, `time` 요소의 포맷은 제한된다.
@@ -1087,7 +1023,6 @@ Bad:
 Good:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
-
 
 ### `class` 속성 접두어로 `language-`를 넣어 code 언어를 정의하라<span id="specify-code-language-with-class-attribute-prefixed-with-language"></span>
 
@@ -1101,7 +1036,6 @@ Good:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-
 ### `kbd` 요소를 가능한 한 단순하게 둬라<span id="keep-kbd-element-as-simple-as-possible"></span>
 
 `kbd` 요소를 감싸는 건 사람과 다르다.
@@ -1114,7 +1048,6 @@ Good:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### `span` 요소를 가능한 한 많이 제거해라.<span id="avoid-span-element-as-much-as-possible"></span>
 
 `span` 요소는 최후의 수단이다.
@@ -1126,7 +1059,6 @@ Bad:
 Good:
 
     HTML <em>Best</em> Practices
-
 
 ### `br` 요소 뒤에 줄바꿈해라<span id="break-after-br-element"></span>
 
@@ -1141,7 +1073,6 @@ Good:
     <p>HTML<br>
     Best<br>
     Practices</p>
-
 
 ### 프레젠테이션 목적으로만 `br` 요소를 쓰지 마라<span id="dont-use-br-element-only-for-presentational-purpose"></span>
 
@@ -1159,9 +1090,7 @@ Good:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-
 ## 에디트<span id="edits"></span>
-
 
 ### `ins`와 `del` 요소로 다른 요소를 뛰어넘지 마라<span id="dont-stride-ins-and-del-element-over-other-elements"></span>
 
@@ -1179,9 +1108,7 @@ Good:
 
     <del><p>Don’t trust!</p></del>
 
-
 ## Embedded 콘텐츠<span id="embedded-content"></span>
-
 
 ### `picture` 요소의 폴백으로 `img` 요소를 제공해라<span id="provide-fallback-img-element-for-picture-element"></span>
 
@@ -1205,7 +1132,6 @@ Good:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### 만약 필요하다면 `img` 요소에 `alt` 속성을 추가해라<span id="add-alt-attrbute-to-img-element-if-needed"></span>
 
 `alt` 속성은 이미지를 처리할 수 없거나 불러오지 못했을 때 도움을 준다.
@@ -1218,7 +1144,6 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-
 ### 가능한 경우 `alt` 속성을 비워둬라<span id="empty-alt-attribute-if-possible"></span>
 
 본문을 보충하는 이미지라면, 근처에 동일한 콘텐츠가 있다.
@@ -1230,7 +1155,6 @@ Bad:
 Good:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### 가능한 경우 `alt` 속성을 생략해라<span id="omit-alt-attribute-if-possible"></span>
 
@@ -1246,7 +1170,6 @@ Good:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-
 ### `iframe` 요소를 비워둬라<span id="empty-iframe-element"></span>
 
 콘텐츠에 몇가지 제한사항이 있다. 비워두면 항상 안전하다.
@@ -1260,7 +1183,6 @@ Bad:
 Good:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### `map` 요소 콘텐츠도 마크업해라<span id="markup-map-element-content"></span>
 
@@ -1290,7 +1212,6 @@ Good:
       </p>
     </map>
 
-
 ### `audio`나 `video` 요소를 위한 폴백 콘텐츠를 제공해라.<span id="provide-fallback-content-for-audio-or-video-element"></span>
 
 HTML에 새로 추가된 요소들을 위해 폴백 콘텐츠가 필요하다.
@@ -1312,9 +1233,7 @@ Good:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## 테이블 데이터<span id="tabular-data"></span>
-
 
 ### 한 줄에 한 셀만 써라<span id="write-one-cell-per-line"></span>
 
@@ -1333,7 +1252,6 @@ Good:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### `th` 요소를 헤더 셀로 써라<span id="use-th-element-for-header-cell"></span>
 
@@ -1387,9 +1305,7 @@ Good:
       </tbody>
     </table>
 
-
 ## 폼<span id="forms"></span>
-
 
 ### 폼 컨트롤을 `label` 요소로 감싸라<span id="wrap-form-control-with-label-element"></span>
 
@@ -1403,7 +1319,6 @@ Good:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-
 ### 가능한 경우 `for` 속성을 생략해라<span id="omit-for-attribute-if-possible"></span>
 
 `label` 요소는 몇가지 폼 요소를 감쌀 수 있다.
@@ -1415,7 +1330,6 @@ Bad:
 Good:
 
     <label>Query: <input name="q" type="text"></label>
-
 
 ### `input` 요소에 적절한 `type` 속성을 사용해라<span id="use-appropriate-type-attribute-for-input-element"></span>
 
@@ -1429,7 +1343,6 @@ Good:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
-
 ### `input type="submit"`에 `value` 속성을 넣어라<span id="add-value-attribute-to-input-typesubmit"></span>
 
 submit 버튼의 기본 레이블은 브라우저 및 언어 사이 표준이 없다.
@@ -1441,7 +1354,6 @@ Bad:
 Good:
 
     <input type="submit" value="Search">
-
 
 ### `input` 요소에 `pattern` 속성이 있는 경우 `title` 속성을 추가해라<span id="add-title-attribute-to-input-element-when-there-is-pattern-attribute"></span>
 
@@ -1456,7 +1368,6 @@ Good:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-
 ### 레이블하기 위해 `placeholder` 속성을 쓰지 마라<span id="dont-use-placeholder-attribute-for-labeling"></span>
 
 `label` 요소가 레이블을 위한 요소고, `placeholder` 속성은 짧은 힌트를 위한 속성이다.
@@ -1468,7 +1379,6 @@ Bad:
 Good:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-
 
 ### 한 줄에 한 `option` 요소만 사용해라<span id="write-one-option-element-per-line"></span>
 
@@ -1488,7 +1398,6 @@ Good:
       <option label="Sections">
     </datalist>
 
-
 ### `progress` 요소에 `max` 속성을 추가해라<span id="add-max-attribute-to-progress-element"></span>
 
 `max` 속성을 통해, `value` 속성을 쉬운 포맷으로 쓸 수 있다.
@@ -1501,7 +1410,6 @@ Good:
 
     <progress max="100" value="50"> 50%</progress>
 
-
 ### `meter` 요소에 `min`, `max` 속성을 추가해라<span id="add-min-and-max-attribute-to-meter-element"></span>
 
 `min`, `max` 속성을 통해, `value` 속성을 쉬운 포맷으로 쓸 수 있다.
@@ -1513,7 +1421,6 @@ Bad:
 Good:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
-
 
 ### `legend` 요소를 `fieldset` 요소의 첫번째 자식으로 둬라.<span id="place-legend-element-as-the-first-child-of-fieldset-element"></span>
 
@@ -1535,9 +1442,7 @@ Good:
       ...
     </fieldset>
 
-
 ## 스크립트<span id="scripting"></span>
-
 
 ### 자바스크립트를 위한 `type` 속성을 생략해라<span id="omit-type-attribute-for-javascript"></span>
 
@@ -1554,7 +1459,6 @@ Good:
     <script>
       ...
     </script>
-
 
 ### `script` 요소의 내용을 주석처리하지 마라<span id="dont-comment-out-contents-of-script-element"></span>
 
@@ -1582,7 +1486,6 @@ Good:
       ...
     </script>
 
-
 ### 스크립트가 삽입된 `script` 요소를 쓰지 마라<span id="dont-use-script-injected-script-element"></span>
 
 `async` 속성은 성능면으로나 단순성면으로나 최고다.
@@ -1600,9 +1503,7 @@ Good:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## 기타<span id="other"></span>
-
 
 ### 일관된 들여쓰기<span id="indent-consistently"></span>
 
@@ -1630,7 +1531,6 @@ Good:
       </body>
     </html>
 
-
 ### 내부 링크에 절대 경로를 사용해라<span id="use-absolute-path-for-internal-links"></span>
 
 절대 경로는 인터넷 연결 없이도 localhost에서도 동작한다.
@@ -1647,7 +1547,6 @@ Good:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-
 ### Don’t use protocol-relative URL for external resources<span id="dont-use-protocol-relative-url-for-external-resources"></span>
 
 With protocol, you can load external resources reliably and safely.
@@ -1660,21 +1559,16 @@ Good:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## Contributors<span id="contributors"></span>
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
 
 ## License
 

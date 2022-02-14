@@ -1,9 +1,8 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # HTML 最佳实践
 
 编写易于维护与扩展的 HTML 文档。
-
 
 - [全局](#general)
   - [以 DOCTYPE 为开头](#start-with-doctype)
@@ -111,7 +110,6 @@ Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국�
 
 ## 全局<span id="general"></span>
 
-
 ### 以 DOCTYPE 为开头<span id="start-with-doctype"></span>
 
 激活标准模式需要 DOCTYPE。
@@ -129,7 +127,6 @@ Good:
       ...
     </html>
 
-
 ### 不要使用过时的 DOCTYPE<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
 DOCTYPE 不需要再引用 DTD 了，简单点就行。
@@ -142,7 +139,6 @@ Bad:
 Good:
 
     <!DOCTYPE html>
-
 
 ### 不要使用 XML 作为声明<span id="dont-use-xml-declaration"></span>
 
@@ -157,7 +153,6 @@ Good:
 
     <!DOCTYPE html>
 
-
 ### 不要什么字符都转义<span id="dont-use-character-references-as-much-as-possible"></span>
 
 如果你使用 UTF-8 编写 HTML 文档，那么几乎所有字符（包括表情）都可以直接写。
@@ -169,7 +164,6 @@ Bad:
 Good:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
-
 
 ### 使用字符实体引用来转义 `&`、`<`、`>`、`"` 和 `'`<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
 
@@ -183,7 +177,6 @@ Good:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-
 ### 使用字符值引用来转义控制或隐藏字符<span id="use-numeric-character-references-for-control-or-invisible-characters"></span>
 
 这些字符很容易被误认为是其它字符，而且规范也不保证这些字符具有人类可读的名称。
@@ -196,7 +189,6 @@ Good:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-
 ### 在注释内容周围添加空格<span id="put-white-spaces-around-comment-contents"></span>
 
 某些字符不能紧接在注释开始或结束的位置上。
@@ -208,7 +200,6 @@ Bad:
 Good:
 
     <!-- This section is non-normative -->
-
 
 ### 别忘了关闭标签<span id="dont-omit-closing-tag"></span>
 
@@ -228,7 +219,6 @@ Good:
       </body>
     </html>
 
-
 ### 不要杂糅空元素的格式<span id="dont-mix-empty-element-format"></span>
 
 一致性是可读性的关键。
@@ -243,7 +233,6 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
 ### 不要在标签和属性值周围添加空格<span id="dont-put-white-spaces-around-tags-and-attribute-values"></span>
 
 不需要理由。
@@ -255,7 +244,6 @@ Bad:
 Good:
 
     <h1 class="title">HTML Best Practices</h1>
-
 
 ### 不要杂糅大小写<span id="dont-mix-character-cases"></span>
 
@@ -273,7 +261,6 @@ Also Good:
 
     <A HREF="#general">General</A>
 
-
 ### 不要杂糅单双引号<span id="dont-mix-quotation-marks"></span>
 
 同上。
@@ -285,7 +272,6 @@ Bad:
 Good:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
-
 
 ### 不要用多个空格间隔属性<span id="dont-separate-attributes-with-two-or-more-white-spaces"></span>
 
@@ -299,7 +285,6 @@ Good:
 
     <input name="q" type="search">
 
-
 ### 省略布尔型属性值<span id="omit-boolean-attribute-value"></span>
 
 这么写更简单，对吧？
@@ -311,7 +296,6 @@ Bad:
 Good:
 
     <audio autoplay src="/audio/theme.mp3">
-
 
 ### 省略命名空间<span id="omit-namespaces"></span>
 
@@ -329,7 +313,6 @@ Good:
       ...
     </svg>
 
-
 ### 不要使用 XML 属性<span id="dont-use-xml-attributes"></span>
 
 我们是在写 HTML 文档。
@@ -341,7 +324,6 @@ Bad:
 Good:
 
     <span lang="ja">...</span>
-
 
 ### 别把 `data-*`、Microdata、RDFa Lite 属性和普通属性混在一起<span id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"></span>
 
@@ -355,7 +337,6 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
-
 ### 首选默认隐式 ARIA 语义<span id="prefer-default-implicit-aria-semantics"></span>
 
 有些元素在 HTML 文档中隐含了某种 ARIA 语义，不要特意把它们指出来。
@@ -365,7 +346,7 @@ Bad:
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 Good:
@@ -373,12 +354,10 @@ Good:
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
-
 ## 根元素<span id="the-root-element"></span>
-
 
 ### 添加 `lang` 属性<span id="add-lang-attribute"></span>
 
@@ -392,7 +371,6 @@ Good:
 
     <html lang="en-US">
 
-
 ### 保持 `lang` 属性值尽可能简短<span id="keep-lang-attribute-value-as-short-as-possible"></span>
 
 日语只在日本使用，所以国家代码不是必须的。
@@ -404,7 +382,6 @@ Bad:
 Good:
 
     <html lang="ja">
-
 
 ### 尽可能避开 `data-*`<span id="avoid-data-as-much-as-possible"></span>
 
@@ -420,9 +397,7 @@ Good:
     <span title="French"><span lang="fr-FR">chemises</span></span>
     ...
 
-
 ## 文档元数据<span id="document-metadata"></span>
-
 
 ### 添加 `title` 元素<span id="add-title-element"></span>
 
@@ -440,7 +415,6 @@ Good:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
-
 
 ### 不要使用 `base` 元素<span id="dont-use-base-element"></span>
 
@@ -463,7 +437,6 @@ Good:
       ...
     </head>
 
-
 ### 指定次要链接资源的 MIME 类型<span id="specify-mime-type-of-minor-linked-resources"></span>
 
 这提示了应用要怎么处理这项资源。
@@ -480,7 +453,6 @@ Good:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ### 别链接到 `favicon.ico`<span id="dont-link-to-faviconico"></span>
 
 几乎所有浏览器都会自动异步获取 `/favicon.ico`。
@@ -493,7 +465,6 @@ Good:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-
 ### 添加 `apple-touch-icon`<span id="add-apple-touch-icon-link"></span>
 
 触摸图标的默认请求路径突然改变了。
@@ -505,7 +476,6 @@ Bad:
 Good:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-
 
 ### 给备用样式表添加 `title` 属性<span id="add-title-attribute-to-alternate-stylesheets"></span>
 
@@ -520,7 +490,6 @@ Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
-
 
 ### 使用 `link` 元素指向 URL<span id="for-url-use-link-element"></span>
 
@@ -540,7 +509,6 @@ Good:
       ...
     </section>
 
-
 ### 指定文档字符编码格式<span id="specify-document-character-encoding"></span>
 
 UTF-8 暂时还不是所有浏览器的默认值。
@@ -558,7 +526,6 @@ Good:
       <title>HTML Best Practices</title>
     </head>
 
-
 ### 不要使用过时的字符编码格式<span id="dont-use-legacy-character-encoding-format"></span>
 
 HTTP 报文头部应该由服务器指定，简单点。
@@ -570,7 +537,6 @@ Bad:
 Good:
 
     <meta charset="UTF-8">
-
 
 ### 一开始就指定字符编码<span id="specify-character-encoding-at-first"></span>
 
@@ -592,7 +558,6 @@ Good:
       ...
     </head>
 
-
 ### 使用 UTF-8<span id="use-utf-8"></span>
 
 有了 UTF-8，你可以随心使用表情。
@@ -604,7 +569,6 @@ Bad:
 Good:
 
     <meta charset="UTF-8">
-
 
 ### 省略 CSS 的 `type` 属性<span id="omit-type-attribute-for-css"></span>
 
@@ -621,7 +585,6 @@ Good:
     <style>
       ...
     </style>
-
 
 ### 不要给 `style` 元素内容写注释<span id="dont-comment-out-contents-of-style-element"></span>
 
@@ -640,7 +603,6 @@ Good:
     <style>
       ...
     </style>
-
 
 ### 不要杂糅 CSS 和 JavaScript 的标签<span id="dont-mix-tag-for-css-and-javascript"></span>
 
@@ -664,9 +626,7 @@ Also good:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ## 区块<span id="sections"></span>
-
 
 ### 添加 `body` 元素<span id="add-body-element"></span>
 
@@ -692,7 +652,6 @@ Good:
       </body>
     </html>
 
-
 ### 不要使用 `hgroup` 元素<span id="forget-about-hgroup-element"></span>
 
 这个元素不怎么用。
@@ -709,7 +668,6 @@ Good:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-
 ### `address` 元素仅用于联系方式<span id="use-address-element-only-for-contact-information"></span>
 
 `address` 元素是给邮箱、社交账户、街道地址、电话号码等联系方式准备的。
@@ -722,9 +680,7 @@ Good:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-
 ## 分组内容<span id="grouping-content"></span>
-
 
 ### 不要在 `pre` 元素里新起一行<span id="dont-start-with-newline-in-pre-element"></span>
 
@@ -745,7 +701,6 @@ Good:
 
 `blockquote` 元素的内容是引用，而不仅仅是一堆字符。
 
-
 Bad:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
@@ -756,7 +711,6 @@ Good:
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
-
 ### 不要直接在 `blockquote` 中注明来源<span id="dont-include-attribution-directly-in-blockquote-element"></span>
 
 `blockquote` 元素的内容是引用的话。
@@ -765,7 +719,7 @@ Bad:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
-    
+
       <p>— HTML Best Practices</p>
     </blockquote>
 
@@ -774,7 +728,7 @@ Good:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 Also good:
@@ -783,10 +737,9 @@ Also good:
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
-
 
 ### 一行只写一个列表项<span id="write-one-list-item-per-line"></span>
 
@@ -806,7 +759,6 @@ Good:
       <li>Sections</li>
       ...
     </ul>
-
 
 ### 使用 `ol` 元素的 `type` 属性<span id="use-type-attribute-for-ol-element"></span>
 
@@ -841,7 +793,6 @@ Good:
       </ol>
     </body>
 
-
 ### 不要用 `dl` 表示对话<span id="dont-use-dl-for-dialogue"></span>
 
 `dl` 元素仅限于表示 HTML 中的关联列表。
@@ -874,7 +825,6 @@ Good:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-
 ### 把 `figcaption` 作为 `figure` 的首或尾元素<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
 
 规范不允许 `figcaption` 元素卡在 `figure` 元素的中间。
@@ -895,7 +845,6 @@ Good:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-
 ### 使用 `main` 元素<span id="use-main-element"></span>
 
 `main` 元素可以用来包裹内容。
@@ -911,7 +860,6 @@ Good:
     <main>
       ...
     </main>
-
 
 ### 尽可能避免 `div` 元素<span id="avoid-div-element-as-much-as-possible"></span>
 
@@ -929,9 +877,7 @@ Good:
       ...
     </section>
 
-
 ## 文本语义<span id="text-level-semantics"></span>
-
 
 ### 不要把一个链接拆成两半<span id="dont-split-same-link-that-can-be-grouped"></span>
 
@@ -940,17 +886,16 @@ Good:
 Bad:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 Good:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
-
 
 ### 使用 `download` 属性指向下载资源<span id="use-download-attribute-for-downloading-a-resource"></span>
 
@@ -964,7 +909,6 @@ Good:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
-
 ### 按需使用 `rel`、`hreflang` 和 `type` 属性<span id="use-rel-hreflang-and-type-attribute-if-needed"></span>
 
 它们有助于提示应用怎么处理链接到的资源。
@@ -976,7 +920,6 @@ Bad:
 Good:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
-
 
 ### 明确的链接文本<span id="clear-link-text"></span>
 
@@ -990,7 +933,6 @@ Good:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
-
 ### 不要使用 `em` 元素表示警告<span id="dont-use-em-element-for-warning-or-caution"></span>
 
 警告是很严肃的事情，所以 `strong` 元素更合适。
@@ -1003,7 +945,6 @@ Good:
 
     <strong>Caution!</strong>
 
-
 ### 尽可能避免 `s`、`i`、`b` 和 `u` 元素<span id="avoid-s-i-b-and-u-element-as-much-as-possible"></span>
 
 这些元素的语义太难解读。
@@ -1015,7 +956,6 @@ Bad:
 Good:
 
     <span class="icon-search" aria-hidden="true"></span>
-
 
 ### 不要在 `q` 元素外使用引号<span id="dont-put-quotes-to-q-element"></span>
 
@@ -1033,7 +973,6 @@ Also good:
 
     “For writing maintainable and scalable HTML documents”
 
-
 ### 给 `abbr` 元素添加 `title` 属性<span id="add-title-attribute-to-abbr-element"></span>
 
 这是显示全称的唯一方式。
@@ -1045,7 +984,6 @@ Bad:
 Good:
 
     <abbr title="HTML Best Practices">HBP</abbr>
-
 
 ### 详细标记 `ruby` 元素<span id="markup-ruby-element-verbosely"></span>
 
@@ -1059,7 +997,6 @@ Good:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-
 ### 给电脑无法识别的 `time` 元素添加 `datetime` 属性<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
 
 当 `datetime` 属性不存在，`time` 元素内容的格式会受限制。
@@ -1071,7 +1008,6 @@ Bad:
 Good:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
-
 
 ### 使用 `language-` 前缀的 `class` 属性指定代码语言<span id="specify-code-language-with-class-attribute-prefixed-with-language"></span>
 
@@ -1085,7 +1021,6 @@ Good:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-
 ### `kbd` 元素越简单越好<span id="keep-kbd-element-as-simple-as-possible"></span>
 
 嵌套的 `kbd` 元素很难以阅读。
@@ -1098,7 +1033,6 @@ Good:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### 尽可能避免 `span` 元素<span id="avoid-span-element-as-much-as-possible"></span>
 
 实在没办法了，才用 `span`。
@@ -1110,7 +1044,6 @@ Bad:
 Good:
 
     HTML <em>Best</em> Practices
-
 
 ### 在 `br` 元素后换行<span id="break-after-br-element"></span>
 
@@ -1125,7 +1058,6 @@ Good:
     <p>HTML<br>
     Best<br>
     Practices</p>
-
 
 ### 不要只为了格式好看就用 `br` 元素<span id="dont-use-br-element-only-for-presentational-purpose"></span>
 
@@ -1143,9 +1075,7 @@ Good:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-
 ## 编辑<span id="edits"></span>
-
 
 ### 不要跨元素使用 `ins` 和 `del`<span id="dont-stride-ins-and-del-element-over-other-elements"></span>
 
@@ -1154,18 +1084,16 @@ Good:
 Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
-
 ## 内嵌内容<span id="embedded-content"></span>
-
 
 ### 为 `picture` 元素提供备用 `img` 元素<span id="provide-fallback-img-element-for-picture-element"></span>
 
@@ -1189,7 +1117,6 @@ Good:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### 按需为 `img` 元素添加 `alt` 属性<span id="add-alt-attrbute-to-img-element-if-needed"></span>
 
 `alt` 属性对那些无法处理图片或禁用了图片加载的人很有帮助。
@@ -1202,7 +1129,6 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-
 ### 若有可能则留空 `alt` 属性<span id="empty-alt-attribute-if-possible"></span>
 
 如果图片是用作补充说明，那么附近应该有与 `alt` 等价的内容。
@@ -1214,7 +1140,6 @@ Bad:
 Good:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### 若有可能则省略 `alt` 属性<span id="omit-alt-attribute-if-possible"></span>
 
@@ -1229,7 +1154,6 @@ Good:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-
 ### 留空 `iframe` 内容<span id="empty-iframe-element"></span>
 
 `iframe` 的内容是受限的，留空比较安全。
@@ -1243,7 +1167,6 @@ Bad:
 Good:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### 标记 `map` 元素内容<span id="markup-map-element-content"></span>
 
@@ -1273,7 +1196,6 @@ Good:
       </p>
     </map>
 
-
 ### 为 `audio` 和 `video` 元素提供备用内容<span id="provide-fallback-content-for-audio-or-video-element"></span>
 
 HTML 新引进的元素需要备用内容，以防旧版浏览器不支持。
@@ -1295,9 +1217,7 @@ Good:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## 表格数据<span id="tabular-data"></span>
-
 
 ### 一行写一个单元格<span id="write-one-cell-per-line"></span>
 
@@ -1316,7 +1236,6 @@ Good:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### 使用 `th` 元素表示标题格<span id="use-th-element-for-header-cell"></span>
 
@@ -1370,9 +1289,7 @@ Good:
       </tbody>
     </table>
 
-
 ## 表单<span id="forms"></span>
-
 
 ### 使用 `label` 元素包裹表单控制元素<span id="wrap-form-control-with-label-element"></span>
 
@@ -1386,7 +1303,6 @@ Good:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-
 ### 若有可能则省略 `for` 属性<span id="omit-for-attribute-if-possible"></span>
 
 `label` 元素可以包含表单元素。
@@ -1398,7 +1314,6 @@ Bad:
 Good:
 
     <label>Query: <input name="q" type="text"></label>
-
 
 ### 为 `input` 元素选择合适的 `type` 属性<span id="use-appropriate-type-attribute-for-input-element"></span>
 
@@ -1412,7 +1327,6 @@ Good:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
-
 ### 给 `input type="submit"` 添加 `value` 属性<span id="add-value-attribute-to-input-typesubmit"></span>
 
 在不同浏览器和不同语言环境下，提交按钮的默认标签是不同的。
@@ -1424,7 +1338,6 @@ Bad:
 Good:
 
     <input type="submit" value="Search">
-
 
 ### 给有 `pattern` 属性的 `input` 元素添加 `title` 属性<span id="add-title-attribute-to-input-element-when-there-is-pattern-attribute"></span>
 
@@ -1438,7 +1351,6 @@ Good:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-
 ### 不要把 `placeholder` 作为标签<span id="dont-use-placeholder-attribute-for-labeling"></span>
 
 `label` 元素用于提供标签，`placeholder` 属性用于简短提示。
@@ -1450,7 +1362,6 @@ Bad:
 Good:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-
 
 ### 每行只写一个 `option` 元素<span id="write-one-option-element-per-line"></span>
 
@@ -1470,7 +1381,6 @@ Good:
       <option label="Sections">
     </datalist>
 
-
 ### 为 `progress` 元素添加 `max` 属性<span id="add-max-attribute-to-progress-element"></span>
 
 有了 `max` 属性，`value` 属性就易于编写。
@@ -1483,7 +1393,6 @@ Good:
 
     <progress max="100" value="50"> 50%</progress>
 
-
 ### 为 `meter` 元素添加 `min` 和 `max` 属性<span id="add-min-and-max-attribute-to-meter-element"></span>
 
 有了 `min` 和 `max` 属性，`value` 属性就易于编写。
@@ -1495,7 +1404,6 @@ Bad:
 Good:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
-
 
 ### 将 `legend` 作为 `fieldset` 的第一个子元素<span id="place-legend-element-as-the-first-child-of-fieldset-element"></span>
 
@@ -1517,9 +1425,7 @@ Good:
       ...
     </fieldset>
 
-
 ## 脚本<span id="scripting"></span>
-
 
 ### 省略 JavaScript 的 `type` 属性<span id="omit-type-attribute-for-javascript"></span>
 
@@ -1536,7 +1442,6 @@ Good:
     <script>
       ...
     </script>
-
 
 ### 不要为 `script‵ 元素的内容编写注释<span id="dont-comment-out-contents-of-script-element"></span>
 
@@ -1564,7 +1469,6 @@ Good:
       ...
     </script>
 
-
 ### 不要使用注入脚本的 `script` 元素<span id="dont-use-script-injected-script-element"></span>
 
 `async` 属性既简单又高效。
@@ -1582,9 +1486,7 @@ Good:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## 其它<span id="other"></span>
-
 
 ### 一致的缩进<span id="indent-consistently"></span>
 
@@ -1612,7 +1514,6 @@ Good:
       </body>
     </html>
 
-
 ### 使用相对路径引用内部链接<span id="use-absolute-path-for-internal-links"></span>
 
 无网络链接时，相对链接在本机有更好的表现。
@@ -1629,7 +1530,6 @@ Good:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-
 ### 不要使用无协议的 URL 引用外部资源<span id="dont-use-protocol-relative-url-for-external-resources"></span>
 
 有了协议，外部资源的加载更可靠、更安全。
@@ -1642,21 +1542,16 @@ Good:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## 贡献者<span id="contributors"></span>
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## 译者
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
 
 ## 许可证
 

@@ -1,9 +1,8 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # HTML'de Örnek Yöntemler
 
 Bakım yapılabilir ve ölçeklenebilir HTML belgeleri yazmak için
-
 
 - [Genel](#general)
   - [DOCTYPE ile başla](#start-with-doctype)
@@ -109,9 +108,7 @@ Bakım yapılabilir ve ölçeklenebilir HTML belgeleri yazmak için
 - [Translators](#translators)
 - [License](#license)
 
-
 ## Genel<span id="general"></span>
-
 
 ### DOCTYPE ile başla<span id="start-with-doctype"></span>
 
@@ -130,7 +127,6 @@ Doğru:
       ...
     </html>
 
-
 ### Eskimiş yada geçersiz DOCTYPE kullanmayın<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
 DOCTYPE artık DTD için değil, basit olsun.
@@ -143,7 +139,6 @@ Yanlış:
 Doğru:
 
     <!DOCTYPE html>
-
 
 ### XML etiketi kullanmayın<span id="dont-use-xml-declaration"></span>
 
@@ -158,7 +153,6 @@ Doğru:
 
     <!DOCTYPE html>
 
-
 ### Karakter referanslarını mümkün olduğunca kullanmayın<span id="dont-use-character-references-as-much-as-possible"></span>
 
 UTF-8 ile bir HTML belgesi yazarsanız, hemen hemen tüm karakterler (Emoji dahil) doğrudan yazılabilir.
@@ -170,7 +164,6 @@ Yanlış:
 Doğru:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
-
 
 ### `&`, `<`, `>` , `"`, ve `'` karakter referanslarını olduğu gibi kullanmaktan kaçının<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
 
@@ -184,7 +177,6 @@ Doğru:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-
 ### Kontrol veya görünmeyen karakterler için sayısal karakter referanslarını kullanın.<span id="use-numeric-character-references-for-control-or-invisible-characters"></span>
 
 Bu karakterler başka bir karakter için kolayca karıştırılabilir. Ayrıca spec bu karakterler için okunabilir bir isim tanımlamayı da garanti etmez.
@@ -197,7 +189,6 @@ Yanlış:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-
 ### Yorum içeriğinin etrafına boşluk karakteri yerleştirin<span id="put-white-spaces-around-comment-contents"></span>
 
 Bazı karakterler yorum açıldıktan hemen sonra veya yorum kapatmadan önce kullanılamaz.
@@ -209,7 +200,6 @@ Yanlış:
 Doğru:
 
     <!-- This section is non-normative -->
-
 
 ### Kapanış etiketini unutmayın<span id="dont-omit-closing-tag"></span>
 
@@ -229,7 +219,6 @@ Doğru:
       </body>
     </html>
 
-
 ### Boş eleman formatını karıştırmayın<span id="dont-mix-empty-element-format"></span>
 
 Tutarlılık, okunabilirliğin anahtarıdır.
@@ -244,7 +233,6 @@ Doğru:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
 ### Etiketlerin ve özelliklerin değerlerinin etrafına boşluk karakteri koymayın<span id="dont-put-white-spaces-around-tags-and-attribute-values"></span>
 
 Bunu yapmak için hiçbir sebep yoktur.
@@ -256,7 +244,6 @@ Yanlış:
 Doğru:
 
     <h1 class="title">HTML Best Practices</h1>
-
 
 ### Büyük küçük karakterleri aynı anda kullanmayın<span id="dont-mix-character-cases"></span>
 
@@ -274,7 +261,6 @@ Bu da doğru:
 
     <A HREF="#general">General</A>
 
-
 ### Tırnak işaretlerini karıştırmayın<span id="dont-mix-quotation-marks"></span>
 
 Yukarıdaki ile aynı sebepten ötürü.
@@ -286,7 +272,6 @@ Yanlış:
 Doğru:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
-
 
 ### Özellikleri iki veya daha fazla boşluk ile ayırmayın<span id="dont-separate-attributes-with-two-or-more-white-spaces"></span>
 
@@ -300,7 +285,6 @@ Doğru:
 
     <input name="q" type="search">
 
-
 ### Boolean özellik değerini yazmayın<span id="omit-boolean-attribute-value"></span>
 
 Yazması kolay, değil mi?
@@ -312,7 +296,6 @@ Yanlış:
 Doğru:
 
     <audio autoplay src="/audio/theme.mp3">
-
 
 ### Ad alanlarını kullanmayın<span id="omit-namespaces"></span>
 
@@ -330,7 +313,6 @@ Doğru:
       ...
     </svg>
 
-
 ### XML özelliklerini kullanmayın<span id="dont-use-xml-attributes"></span>
 
 Sadece HTML belgesi yazıyoruz.
@@ -342,7 +324,6 @@ Yanlış:
 Doğru:
 
     <span lang="ja">...</span>
-
 
 ### `data-*`, Microdata ve RDFa Lite özelliklerini ile ortak özellikleri karıştırmayın<span id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"></span>
 
@@ -356,7 +337,6 @@ Doğru:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
-
 ### Varsayılan örtülü ARIA gramerini tercih edin<span id="prefer-default-implicit-aria-semantics"></span>
 
 Bazı öğelerin bir HTML belgesinde örtük olarak bir ARIA `role` değeri vardır, belirtmenize gerek yoktur.
@@ -366,7 +346,7 @@ Yanlış:
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 Doğru:
@@ -374,12 +354,10 @@ Doğru:
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
-
 ## Kök elemanı<span id="the-root-element"></span>
-
 
 ### `lang` özelliği ekleyin<span id="add-lang-attribute"></span>
 
@@ -393,7 +371,6 @@ Doğru:
 
     <html lang="en-US">
 
-
 ### `lang` değerini mümkün olduğunca kısa tutun<span id="keep-lang-attribute-value-as-short-as-possible"></span>
 
 Japonca yalnızca Japonya'da kullanılır. Yani ülke kodu gerekli değildir.
@@ -405,7 +382,6 @@ Yanlış:
 Doğru:
 
     <html lang="ja">
-
 
 ### Mümkün olduğunca `data-*` kullanmayın<span id="avoid-data-as-much-as-possible"></span>
 
@@ -423,9 +399,7 @@ Doğru:
     ...
     <strong class="warning">Do not wash!</strong>
 
-
 ## Metadata'yı belgeleyin<span id="document-metadata"></span>
-
 
 ### `title` elemanı ekleyin<span id="add-title-element"></span>
 
@@ -443,7 +417,6 @@ Doğru:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
-
 
 ### `base` elemanı kullanmayın<span id="dont-use-base-element"></span>
 
@@ -466,7 +439,6 @@ Doğru:
       ...
     </head>
 
-
 ### Bağlantılı kaynakların MIME türünü belirtin<span id="specify-mime-type-of-minor-linked-resources"></span>
 
 Bu, uygulamanın bu kaynağı nasıl kullandığı hakkında bir ipucudur.
@@ -483,7 +455,6 @@ Doğru:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ### `favicon.ico`'ya link vermeyin<span id="dont-link-to-faviconico"></span>
 
 Hemen hemen tüm tarayıcılar `/favicon.ico`'yu otomatik ve asenkron olarak alır.
@@ -496,7 +467,6 @@ Doğru:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-
 ### `apple-touch-icon` ekleyin<span id="add-apple-touch-icon-link"></span>
 
 Dokunma simgesi için varsayılan istek yolu değiştirildi.
@@ -508,7 +478,6 @@ Yanlış:
 Doğru:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-
 
 ### Alternatif stil sayfalarına `title` ekleyin<span id="add-title-attribute-to-alternate-stylesheets"></span>
 
@@ -523,7 +492,6 @@ Doğru:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
-
 
 ### URL için `link` kullanın<span id="for-url-use-link-element"></span>
 
@@ -543,7 +511,6 @@ Doğru:
       ...
     </section>
 
-
 ### Belge karakter kodunu belirtin<span id="specify-document-character-encoding"></span>
 
 UTF-8 henüz tüm tarayıcılarda varsayılan değil.
@@ -561,7 +528,6 @@ Doğru:
       <title>HTML Best Practices</title>
     </head>
 
-
 ### Eski karakter kodlama formatını kullanmayın<span id="dont-use-legacy-character-encoding-format"></span>
 
 HTTP başlıkları bir sunucu tarafından belirtilmelidir, basit olmalıdır.
@@ -573,7 +539,6 @@ Yanlış:
 Doğru:
 
     <meta charset="UTF-8">
-
 
 ### İlk önce karakter kodlamasını belirtin<span id="specify-character-encoding-at-first"></span>
 
@@ -595,7 +560,6 @@ Doğru:
       ...
     </head>
 
-
 ### UTF-8'i kullanın<span id="use-utf-8"></span>
 
 UTF-8 ile Emoji'yi kullanmakta özgürsünüz.
@@ -608,10 +572,9 @@ Doğru:
 
     <meta charset="UTF-8">
 
-
 ### CSS için `type` kullanmayın<span id="omit-type-attribute-for-css"></span>
 
-HTML'de, `style` etiketinin `type` özelliğinin  ön tanımlı değeri `text/css`'tir.
+HTML'de, `style` etiketinin `type` özelliğinin ön tanımlı değeri `text/css`'tir.
 
 Yanlış:
 
@@ -624,7 +587,6 @@ Doğru:
     <style>
       ...
     </style>
-
 
 ### `style` etiketinin içeriğini yorum içine almayın<span id="dont-comment-out-contents-of-style-element"></span>
 
@@ -643,7 +605,6 @@ Doğru:
     <style>
       ...
     </style>
-
 
 ### CSS ve JavaScript etiketlerini karıştırmayın<span id="dont-mix-tag-for-css-and-javascript"></span>
 
@@ -667,9 +628,7 @@ Bu da doğru:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ## Bölümler<span id="sections"></span>
-
 
 ### `body` etiketi ekleyin<span id="add-body-element"></span>
 
@@ -695,7 +654,6 @@ Doğru:
       </body>
     </html>
 
-
 ### `hgroup` etiketini unutun<span id="forget-about-hgroup-element"></span>
 
 Bu etiket çok fazla kullanılmıyor.
@@ -712,7 +670,6 @@ Doğru:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-
 ### `address` etiketini yalnızca iletişim bilgileri için kullanın<span id="use-address-element-only-for-contact-information"></span>
 
 `address` sadece e-posta adresi, sosyal ağ hesabı, sokak adresi, telefon numarası veya iletişim kurabileceğiniz bir şey içindir.
@@ -725,9 +682,7 @@ Doğru:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-
 ## İçeriği gruplama<span id="grouping-content"></span>
-
 
 ### `pre` elemandaki satır başı ile başlamayın<span id="dont-start-with-newline-in-pre-element"></span>
 
@@ -744,7 +699,6 @@ Doğru:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
-
 ### `blockquote` içinde uygun etiket kullanın<span id="use-appropriate-element-in-blockquote-element"></span>
 
 `blockquote` bir alıntıdır, yani içeriği bir karakter kümesi değildir.
@@ -759,7 +713,6 @@ Doğru:
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
-
 ### Özniteliği doğrudan `blockquote` öğesinin içine dahil etme<span id="dont-include-attribution-directly-in-blockquote-element"></span>
 
 `blockquote` içeriği bir alıntıdır.
@@ -768,7 +721,7 @@ Yanlış:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
-    
+
       <p>— HTML Best Practices</p>
     </blockquote>
 
@@ -777,7 +730,7 @@ Doğru:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 Bu da doğru:
@@ -786,10 +739,9 @@ Bu da doğru:
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
-
 
 ### Satır başına bir liste öğesi yaz<span id="write-one-list-item-per-line"></span>
 
@@ -810,7 +762,6 @@ Doğru:
       <li>Sections</li>
       ...
     </ul>
-
 
 ### `ol` etiketi için `type` özelliğini kullanın<span id="use-type-attribute-for-ol-element"></span>
 
@@ -846,7 +797,6 @@ Doğru:
       </ol>
     </body>
 
-
 ### Diyalog için `dl` kullanmayın<span id="dont-use-dl-for-dialogue"></span>
 
 `dl` etiketi, HTML'deki bir ilişkilendirme listesi ile sınırlandırılmıştır.
@@ -879,7 +829,6 @@ Doğru:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-
 ### `figcaption` etiketini, `figure` etiketinin ilk veya son çocuğu olarak yerleştirin<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
 
 Spec, `figure` etiketinin ortasındaki `figcaption` etiketine izin vermez.
@@ -900,7 +849,6 @@ Doğru:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-
 ### `main` etiketini kullanın<span id="use-main-element"></span>
 
 `main` içerikleri kapsamak için kullanılabilir.
@@ -916,7 +864,6 @@ Doğru:
     <main>
       ...
     </main>
-
 
 ### `div` etiketini mümkün olduğu kadar kullanmayın<span id="avoid-div-element-as-much-as-possible"></span>
 
@@ -934,9 +881,7 @@ Doğru:
       ...
     </section>
 
-
 ## Metin düzeyinde anlambilim<span id="text-level-semantics"></span>
-
 
 ### Gruplandırılabilen aynı bağlantıyı bölmeyin<span id="dont-split-same-link-that-can-be-grouped"></span>
 
@@ -946,17 +891,16 @@ kontroller ve `a` elemanın kendisi).
 Yanlış:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 Doğru:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
-
 
 ### İndirilebilir kaynağı belirtmek için `download` özelliğini kullanın<span id="use-download-attribute-for-downloading-a-resource"></span>
 
@@ -970,7 +914,6 @@ Doğru:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
-
 ### Gerekirse `rel` , `hreflang` ve `type` özelliklerini kullanın<span id="use-rel-hreflang-and-type-attribute-if-needed"></span>
 
 Bu ipuçları bağlantılı kaynakların nasıl işleneceğini belirterek uygulamalara yardımcı olur.
@@ -982,7 +925,6 @@ Yanlış:
 Doğru:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
-
 
 ### Bağlantı metinlerini amacına uygun yapın<span id="clear-link-text"></span>
 
@@ -996,7 +938,6 @@ Doğru:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
-
 ### Uyarı vermek için `em` etiketi kullanmayın<span id="dont-use-em-element-for-warning-or-caution"></span>
 
 Bu ciddiyettir. Yani, `strong` eleman daha uygundur.
@@ -1009,7 +950,6 @@ Doğru:
 
     <strong>Caution!</strong>
 
-
 ### `s` , `i` , `b` ve `u` etiketlerinden mümkün olduğunca kaçının<span id="avoid-s-i-b-and-u-element-as-much-as-possible"></span>
 
 Bu etiketlerin anlambilimi insanlar için çok zordur.
@@ -1021,7 +961,6 @@ Yanlış:
 Doğru:
 
     <span class="icon-search" aria-hidden="true"></span>
-
 
 ### `q` öğesine tırnak koymayın<span id="dont-put-quotes-to-q-element"></span>
 
@@ -1039,7 +978,6 @@ Bu da doğru:
 
     “For writing maintainable and scalable HTML documents”
 
-
 ### `abbr` etiketine `title` özelliğini ekleyin<span id="add-title-attribute-to-abbr-element"></span>
 
 Açıklamasını temsil etmenin başka bir yolu yoktur.
@@ -1051,7 +989,6 @@ Yanlış:
 Doğru:
 
     <abbr title="HTML Best Practices">HBP</abbr>
-
 
 ### `ruby` etiketini detaylandırın<span id="markup-ruby-element-verbosely"></span>
 
@@ -1065,7 +1002,6 @@ Doğru:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-
 ### Makine tarafından okunamayacak `time` etiketine `datetime` özelliği ekleyin<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
 
 `datetime` özelliği bulunmadığında, `time` öğesinin içeriğinin biçimi kısıtlıdır.
@@ -1077,7 +1013,6 @@ Yanlış:
 Doğru:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
-
 
 ### `language-` öneki ile kod dilini `class` etiketi le belirtin<span id="specify-code-language-with-class-attribute-prefixed-with-language"></span>
 
@@ -1091,7 +1026,6 @@ Doğru:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-
 ### `kbd` etiketini mümkün olduğu kadar basit tutun<span id="keep-kbd-element-as-simple-as-possible"></span>
 
 `kbd` etiketini iç içe kullanmak insanlar için çok zor.
@@ -1104,7 +1038,6 @@ Doğru:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### `span` etiketinden mümkün olduğunca kaçının<span id="avoid-span-element-as-much-as-possible"></span>
 
 `span` element son çaredir.
@@ -1116,7 +1049,6 @@ Yanlış:
 Doğru:
 
     HTML <em>Best</em> Practices
-
 
 ### `br` etiketinden sonra satır sonu yapın<span id="break-after-br-element"></span>
 
@@ -1131,7 +1063,6 @@ Doğru:
     <p>HTML<br>
     Best<br>
     Practices</p>
-
 
 ### `br` öğesini yalnızca sunum amacıyla kullanmayın<span id="dont-use-br-element-only-for-presentational-purpose"></span>
 
@@ -1149,9 +1080,7 @@ Doğru:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-
 ## Düzenlemeler<span id="edits"></span>
-
 
 ### `ins` ve `del` etiketlerini diğer öğelerin arasında kullanmayın<span id="dont-stride-ins-and-del-element-over-other-elements"></span>
 
@@ -1160,18 +1089,16 @@ Etiketler diğer etidektlere taşamaz.
 Yanlış:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 Doğru:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
-
 ## Gömülü içerik<span id="embedded-content"></span>
-
 
 ### `picture` elemanı için yedek `img` elemanı kullanın<span id="provide-fallback-img-element-for-picture-element"></span>
 
@@ -1195,7 +1122,6 @@ Doğru:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### Gerekirse `img` öğesine `alt` özelliği ekleyin<span id="add-alt-attrbute-to-img-element-if-needed"></span>
 
 `alt` niteliği, görüntüleri işleyemeyen veya görüntü yüklemesi engelli olanlara yardımcı olur.
@@ -1208,7 +1134,6 @@ Doğru:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-
 ### Mümkünse `alt` özelliğini boş olarak kullanın<span id="empty-alt-attribute-if-possible"></span>
 
 Resim tamamlayıcı ise, yakınlarda bir yerde eşdeğer içerik vardır.
@@ -1220,7 +1145,6 @@ Yanlış:
 Doğru:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### Mümkünse `alt` özelliğini atlayın<span id="omit-alt-attribute-if-possible"></span>
 
@@ -1235,7 +1159,6 @@ Doğru:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-
 ### Boş `iframe` öğesi kullanın<span id="empty-iframe-element"></span>
 
 İçeriği için bazı kısıtlamalar vardır. Boş olması her zaman güvenlidir.
@@ -1249,7 +1172,6 @@ Yanlış:
 Doğru:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### `map` etiketinin içeriğini işaretleyin<span id="markup-map-element-content"></span>
 
@@ -1279,7 +1201,6 @@ Doğru:
       </p>
     </map>
 
-
 ### `audio` veya `video` öğesi için yedek içerik sağlayın<span id="provide-fallback-content-for-audio-or-video-element"></span>
 
 HTML’de yeni tanıtılan öğeler için yedek içerik gereklidir.
@@ -1301,9 +1222,7 @@ Doğru:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## Tablo verileri<span id="tabular-data"></span>
-
 
 ### Her satıra bir hücre yazın<span id="write-one-cell-per-line"></span>
 
@@ -1322,7 +1241,6 @@ Doğru:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### Başlık hücresi için `th` etiketini kullanın<span id="use-th-element-for-header-cell"></span>
 
@@ -1376,9 +1294,7 @@ Doğru:
       </tbody>
     </table>
 
-
 ## Formlar<span id="forms"></span>
-
 
 ### `label` etiketini ile form kontrolünü sağlayın<span id="wrap-form-control-with-label-element"></span>
 
@@ -1392,7 +1308,6 @@ Doğru:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-
 ### Mümkünse `for` özelliğini kullanmayın<span id="omit-for-attribute-if-possible"></span>
 
 `label` etiketi bazı form etiketlerini içerebilir.
@@ -1404,7 +1319,6 @@ Yanlış:
 Doğru:
 
     <label>Query: <input name="q" type="text"></label>
-
 
 ### `input` etiketi için uygun `type` özelliğini kullanın<span id="use-appropriate-type-attribute-for-input-element"></span>
 
@@ -1418,7 +1332,6 @@ Doğru:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
-
 ### `input type="submit"` elemanına `value` özelliği ekleyin<span id="add-value-attribute-to-input-typesubmit"></span>
 
 Gönderme düğmesi için varsayılan etiket tarayıcılarda ve dillerde standardize edilmemiştir.
@@ -1431,7 +1344,6 @@ Doğru:
 
     <input type="submit" value="Search">
 
-
 ### `pattern` özelliği olduğunda `input` etiketine `title` özelliği ekleyin<span id="add-title-attribute-to-input-element-when-there-is-pattern-attribute"></span>
 
 Girilen metni `pattern` niteliğiyle eşleşmiyorsa, `title` özelliğinin değeri ipucu olarak görüntülenecektir.
@@ -1441,8 +1353,7 @@ Yanlış:
     <input name="security-code" pattern="[0-9] type="text">
 
 Doğru:
-    <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
-
+<input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 ### Etiketleme için `placeholder` özelliğini kullanmayın<span id="dont-use-placeholder-attribute-for-labeling"></span>
 
@@ -1456,7 +1367,6 @@ Doğru:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
-
 ### Her satıra bir `option` etiketi yazın<span id="write-one-option-element-per-line"></span>
 
 Uzun satırların taranması zordur.
@@ -1468,11 +1378,10 @@ Yanlış:
 Doğru:
 
     <datalist id="toc">
-		  <option label="General">
-			<option label="The root element">
-			<option label="Sections">
-		</datalist>
-
+    	  <option label="General">
+    		<option label="The root element">
+    		<option label="Sections">
+    	</datalist>
 
 ### `progress` etiketine `max` özelliği ekleyin<span id="add-max-attribute-to-progress-element"></span>
 
@@ -1486,7 +1395,6 @@ Doğru:
 
     <progress max="100" value="50"> 50%</progress>
 
-
 ### `meter` etiketine `min` ve `max` özelliği ekleyin<span id="add-min-and-max-attribute-to-meter-element"></span>
 
 `min` ve `max` özelliği ile `value` özelliği kolay bir şekilde yazılabilir.
@@ -1496,8 +1404,7 @@ Yanlış:
     <meter value="0.5"> 512GB used (1024GB total</meter>
 
 Doğru:
-    <meter min="0" max="1024" value="512"> 512GB used (1024GB total</meter>
-
+<meter min="0" max="1024" value="512"> 512GB used (1024GB total</meter>
 
 ### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun<span id="place-legend-element-as-the-first-child-of-fieldset-element"></span>
 
@@ -1519,9 +1426,7 @@ Doğru:
           ...
     </fieldset>
 
-
 ## Script ekleme<span id="scripting"></span>
-
 
 ### JavaScript için `type` özelliğini kullanmayın<span id="omit-type-attribute-for-javascript"></span>
 
@@ -1534,7 +1439,6 @@ Yanlış:
 Doğru:
 
     <script>  ...</script>
-
 
 ### `script` etiketinin içeriğini yorumla kapatmayın<span id="dont-comment-out-contents-of-script-element"></span>
 
@@ -1551,7 +1455,6 @@ Bu da kötü:
 Doğru:
 
     <script>  ...</script>
-
 
 ### Komut dosyası eklenmiş `script` öğesini kullanmayın<span id="dont-use-script-injected-script-element"></span>
 
@@ -1570,9 +1473,7 @@ Doğru:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## Diğer<span id="other"></span>
-
 
 ### Tutarlı girintiler kullanın<span id="indent-consistently"></span>
 
@@ -1600,7 +1501,6 @@ Doğru:
       </body>
     </html>
 
-
 ### Dahili bağlantılar için mutlak yol kullanın<span id="use-absolute-path-for-internal-links"></span>
 
 Mutlak bir yol, internet bağlantınız olmadan localhost'ta daha iyi çalışır.
@@ -1612,7 +1512,6 @@ Yanlış:
 Doğru:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">...<p>You can find more at <a href="/contact.html">contact page</a>.</p>
-
 
 ### Harici kaynaklar için protokole bağlı URL kullanmayın<span id="dont-use-protocol-relative-url-for-external-resources"></span>
 
@@ -1626,21 +1525,16 @@ Doğru:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## Contributors<span id="contributors"></span>
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
 
 ## License
 

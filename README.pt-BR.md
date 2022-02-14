@@ -1,9 +1,8 @@
-Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
 
 # Boas Práticas HTML
 
 Para escrever documentos HTML sustentáveis e escaláveis.
-
 
 - [Geral](#general)
   - [Comece com DOCTYPE](#start-with-doctype)
@@ -49,7 +48,7 @@ Para escrever documentos HTML sustentáveis e escaláveis.
   - [Use o elemento `address` apenas para informações de contato](#use-address-element-only-for-contact-information)
 - [Agrupando conteúdos](#grouping-content)
   - [Não comece uma nova linha com o elemento `pre`](#dont-start-with-newline-in-pre-element)
-  - [Use de forma apropriada  o elemento `blockquote`](#use-appropriate-element-in-blockquote-element)
+  - [Use de forma apropriada o elemento `blockquote`](#use-appropriate-element-in-blockquote-element)
   - [Não inclua a atribuição direto no elemento `blockquote`](#dont-include-attribution-directly-in-blockquote-element)
   - [Escreva um elemento da lista por linha](#write-one-list-item-per-line)
   - [Use o atributo `type` para o elemento `ol`](#use-type-attribute-for-ol-element)
@@ -67,7 +66,7 @@ Para escrever documentos HTML sustentáveis e escaláveis.
   - [Não coloque aspas no texto do elemento `q`](#dont-put-quotes-to-q-element)
   - [Adicione o atributo `title` ao elemento `abbr`](#add-title-attribute-to-abbr-element)
   - [Marque o elemento `ruby` detalhadamente](#markup-ruby-element-verbosely)
-  - [Use o atributo `datetime`  em formatos não reconhecidos por máquina no elemento `time`](#add-datetime-attribute-to-non-machine-readable-time-element)
+  - [Use o atributo `datetime` em formatos não reconhecidos por máquina no elemento `time`](#add-datetime-attribute-to-non-machine-readable-time-element)
   - [Especifique a linguagem do código com o atributo `class` prefixado com `language-`](#specify-code-language-with-class-attribute-prefixed-with-language)
   - [Mantenha o elemento `kbd` o mais simples possível](#keep-kbd-element-as-simple-as-possible)
   - [Evite o elemento `span` sempre que possível](#avoid-span-element-as-much-as-possible)
@@ -109,9 +108,7 @@ Para escrever documentos HTML sustentáveis e escaláveis.
 - [Translators](#translators)
 - [License](#license)
 
-
 ## Geral<span id="general"></span>
-
 
 ### Comece com DOCTYPE<span id="start-with-doctype"></span>
 
@@ -130,7 +127,6 @@ Bom:
       ...
     </html>
 
-
 ### Não utilize DOCTYPE legado ou obsoleto<span id="dont-use-legacy-or-obsolete-doctype"></span>
 
 DOCTYPE não é mais para DTD, seja simples.
@@ -143,7 +139,6 @@ Ruim:
 Bom:
 
     <!DOCTYPE html>
-
 
 ### Não utilize declaração de XML<span id="dont-use-xml-declaration"></span>
 
@@ -158,7 +153,6 @@ Bom:
 
     <!DOCTYPE html>
 
-
 ### Não utilizar referências de caracteres sempre que possível<span id="dont-use-character-references-as-much-as-possible"></span>
 
 Se você estiver utilizando um documento HTML com UTF-8, quase todos caracteres (inclusive Emoji) podem ser escritos diretamente.
@@ -170,7 +164,6 @@ Ruim:
 Bom:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
-
 
 ### Utilize as entidades dos caracteres `&`, `<`, `>`, `"`, e `'`<span id="escape-amp-lt-gt-quot-and-apos-with-named-character-references"></span>
 
@@ -184,10 +177,9 @@ Bom:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-
 ### Use referência numérica de caracteres para controle ou caracteres invisíveis<span id="use-numeric-character-references-for-control-or-invisible-characters"></span>
 
-Esses caracteres podem ser facilmente confundidos com outros caracteres. 
+Esses caracteres podem ser facilmente confundidos com outros caracteres.
 Nem a especificação garante que esses caracteres tenham nomes amigáveis ​​para humanos.
 
 Ruim:
@@ -197,7 +189,6 @@ Ruim:
 Bom:
 
     <p>This book can read in 1&#xA0;hour.</p>
-
 
 ### Coloque espaços envolta do conteúdo dos seus comentários<span id="put-white-spaces-around-comment-contents"></span>
 
@@ -210,7 +201,6 @@ Ruim:
 Bom:
 
     <!-- This section is non-normative -->
-
 
 ### Não esqueça da tag de fechamento<span id="dont-omit-closing-tag"></span>
 
@@ -230,7 +220,6 @@ Bom:
       </body>
     </html>
 
-
 ### Não misture as formatações de elementos vazios<span id="dont-mix-empty-element-format"></span>
 
 A consistência é a chave para a legibilidade.
@@ -245,7 +234,6 @@ Bom:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
 ### Não coloque espaços em branco em volta das tags e valores dos atributos<span id="dont-put-white-spaces-around-tags-and-attribute-values"></span>
 
 Não tem motivo para fazer isso.
@@ -257,7 +245,6 @@ Ruim:
 Bom:
 
     <h1 class="title">HTML Best Practices</h1>
-
 
 ### Não misture caracteres em maiúsculo e minúsculo<span id="dont-mix-character-cases"></span>
 
@@ -275,7 +262,6 @@ Bom também:
 
     <A HREF="#geral">Geral</A>
 
-
 ### Não misture as aspas<span id="dont-mix-quotation-marks"></span>
 
 O mesmo que acima.
@@ -287,7 +273,6 @@ Ruim:
 Bom:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
-
 
 ### Não separe os atributos com dois o mais espaços<span id="dont-separate-attributes-with-two-or-more-white-spaces"></span>
 
@@ -301,7 +286,6 @@ Bom:
 
     <input name="q" type="search">
 
-
 ### Omita o valor de um atributo booleano<span id="omit-boolean-attribute-value"></span>
 
 É mais fácil escrever assim, não é?
@@ -313,7 +297,6 @@ Ruim:
 Bom:
 
     <audio autoplay src="/audio/theme.mp3">
-
 
 ### Omita os namespaces<span id="omit-namespaces"></span>
 
@@ -331,7 +314,6 @@ Bom:
       ...
     </svg>
 
-
 ### Não utilize atributos de XML<span id="dont-use-xml-attributes"></span>
 
 Nós escrevemos um documento HTML.
@@ -344,7 +326,6 @@ Bom:
 
     <span lang="ja">...</span>
 
-
 ### Não misture atributos com prefixo `data-*`, Microdata e RDFa Lite com atributos comuns<span id="dont-mix-data-microdata-and-rdfa-lite-attributes-with-common-attributes"></span>
 
 O texto de uma tag pode ser muito complicado. Essa regra simples ajuda na leitura de tal tag.
@@ -356,7 +337,6 @@ Ruim:
 Bom:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
-
 
 ### Prefira o padrão das semânticas do ARIA<span id="prefer-default-implicit-aria-semantics"></span>
 
@@ -378,9 +358,7 @@ Bom:
 
     <hr>
 
-
 ## O elemento raiz<span id="the-root-element"></span>
-
 
 ### Adicione o atributo `lang`<span id="add-lang-attribute"></span>
 
@@ -394,7 +372,6 @@ Bom:
 
     <html lang="pt-BR">
 
-
 ### Mantenha o valor do atributo `lang` o mais curto possível<span id="keep-lang-attribute-value-as-short-as-possible"></span>
 
 Japonês é utilizado apenas no Japão, então o código do país não é necessário.
@@ -406,7 +383,6 @@ Ruim:
 Bom:
 
     <html lang="ja">
-
 
 ### Evite atributos com prefixo `data-*` sempre que possível<span id="avoid-data-as-much-as-possible"></span>
 
@@ -424,9 +400,7 @@ Bom:
     ...
     <strong class="warning">Do not wash!</strong>
 
-
 ## Metadados do documento<span id="document-metadata"></span>
-
 
 ### Adicione o elemento `title`<span id="add-title-element"></span>
 
@@ -444,7 +418,6 @@ Bom:
       <meta charset="UTF-8">
       <title>Boas práticas de HTML</title>
     </head>
-
 
 ### Não utilize o elemento `base`<span id="dont-use-base-element"></span>
 
@@ -467,7 +440,6 @@ Bom:
       ...
     </head>
 
-
 ### Especifique o tipo do MIME dos recursos linkados<span id="specify-mime-type-of-minor-linked-resources"></span>
 
 Isso é uma dica para aplicação lidar com esse recurso.
@@ -484,7 +456,6 @@ Bom:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ### Não crie um link para o `favicon.ico`<span id="dont-link-to-faviconico"></span>
 
 Quase todos os navegadores modernos fazem a requisição para `/favicon.ico` automaticamente e assíncrono.
@@ -497,7 +468,6 @@ Bom:
 
     <!-- Coloque `favicon.ico` na raiz do diretório. -->
 
-
 ### Adicione `apple-touch-icon` ao link<span id="add-apple-touch-icon-link"></span>
 
 Informa qual ícone as plataformas do iOS utilizam para representar o site.
@@ -509,7 +479,6 @@ Ruim:
 Bom:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-
 
 ### Adicione o atributo `title` em folhas de estilo alternativas<span id="add-title-attribute-to-alternate-stylesheets"></span>
 
@@ -524,7 +493,6 @@ Bom:
 
     <link href="/css/tela.css" rel="stylesheet">
     <link href="/css/alto-contraste.css" rel="stylesheet alternativo" title="Alto contraste">
-
 
 ### Para URL use o elemento `link`<span id="for-url-use-link-element"></span>
 
@@ -544,7 +512,6 @@ Bom:
       ...
     </section>
 
-
 ### Especifique a codificação dos caracteres do documento<span id="specify-document-character-encoding"></span>
 
 UTF-8 não é o padrão em todos os navegadores ainda.
@@ -562,7 +529,6 @@ Bom:
       <title>HTML Best Practices</title>
     </head>
 
-
 ### Não utilize formato codificação legado<span id="dont-use-legacy-character-encoding-format"></span>
 
 Cabeçalhos do HTTP devem ser especificados por um servidor, seja simples.
@@ -574,7 +540,6 @@ Ruim:
 Bom:
 
     <meta charset="UTF-8">
-
 
 ### Especifique a codificação dos caracteres logo no início<span id="specify-character-encoding-at-first"></span>
 
@@ -596,7 +561,6 @@ Bom:
       ...
     </head>
 
-
 ### Use UTF-8<span id="use-utf-8"></span>
 
 Com UTF-8, você pode usar Emoji à vontade.
@@ -608,7 +572,6 @@ Ruim:
 Bom:
 
     <meta charset="UTF-8">
-
 
 ### Omita o atributo `type` para CSS<span id="omit-type-attribute-for-css"></span>
 
@@ -625,7 +588,6 @@ Bom:
     <style>
       ...
     </style>
-
 
 ### Não comente os conteúdos do elemento `style`<span id="dont-comment-out-contents-of-style-element"></span>
 
@@ -644,7 +606,6 @@ Bom:
     <style>
       ...
     </style>
-
 
 ### Não misture tags de CSS com JavaScript<span id="dont-mix-tag-for-css-and-javascript"></span>
 
@@ -668,9 +629,7 @@ Bom também:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ## Seções<span id="sections"></span>
-
 
 ### Adicione o elemento `body`<span id="add-body-element"></span>
 
@@ -696,7 +655,6 @@ Bom:
       </body>
     </html>
 
-
 ### Esqueça o elemento `hgroup`<span id="forget-about-hgroup-element"></span>
 
 Esse elemento não é muito utilizado.
@@ -713,7 +671,6 @@ Bom:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-
 ### Use o elemento `address` apenas para informações de contato<span id="use-address-element-only-for-contact-information"></span>
 
 O elemento `address` é para o endereço de email, contas em redes sociais, endereço físico, número de telefone e ou algum modo de entrar em contato com.
@@ -726,9 +683,7 @@ Bom:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-
 ## Agrupando conteúdos<span id="grouping-content"></span>
-
 
 ### Não comece uma nova linha com o elemento `pre`<span id="dont-start-with-newline-in-pre-element"></span>
 
@@ -745,10 +700,9 @@ Bom:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+### Use de forma apropriada o elemento `blockquote`<span id="use-appropriate-element-in-blockquote-element"></span>
 
-### Use de forma apropriada  o elemento `blockquote`<span id="use-appropriate-element-in-blockquote-element"></span>
-
-O conteúdo do elemento `blockquote` é uma citação, e não vários blocos de caracteres. 
+O conteúdo do elemento `blockquote` é uma citação, e não vários blocos de caracteres.
 
 Ruim:
 
@@ -759,7 +713,6 @@ Bom:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-
 
 ### Não inclua a atribuição direto no elemento `blockquote`<span id="dont-include-attribution-directly-in-blockquote-element"></span>
 
@@ -791,7 +744,6 @@ Bom também:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-
 ### Escreva um elemento da lista por linha<span id="write-one-list-item-per-line"></span>
 
 Listas looooooooooooooooooooooooooooooooooooooooogas
@@ -811,7 +763,6 @@ Bom:
       <li>Sections</li>
       ...
     </ul>
-
 
 ### Use o atributo `type` para o elemento `ol`<span id="use-type-attribute-for-ol-element"></span>
 
@@ -846,7 +797,6 @@ Bom:
       </ol>
     </body>
 
-
 ### Não use `dl` para diálogos<span id="dont-use-dl-for-dialogue"></span>
 
 O elemento `dl` é restrito para associação com listas em HTML.
@@ -879,7 +829,6 @@ Bom:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-
 ### Coloque um elemento `figcaption` como primeiro ou último filho do elemento `figure`<span id="place-figcaption-element-as-first-or-last-child-of-figure-element"></span>
 
 A especificação não permite o elemento `figcaption` no meio de um elemento `figure`.
@@ -900,7 +849,6 @@ Bom:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-
 ### Use o elemento `main`<span id="use-main-element"></span>
 
 O elemento `main` pode ser utilizado para envolver conteúdos
@@ -916,7 +864,6 @@ Bom:
     <main>
       ...
     </main>
-
 
 ### Evite utilizar `div` sempre que possível<span id="avoid-div-element-as-much-as-possible"></span>
 
@@ -934,9 +881,7 @@ Bom:
       ...
     </section>
 
-
 ## Semânticas a nível de texto<span id="text-level-semantics"></span>
-
 
 ### Não divida o mesmo link que pode estar agrupado<span id="dont-split-same-link-that-can-be-grouped"></span>
 
@@ -956,7 +901,6 @@ Bom:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-
 ### Use o atributo `download` para baixar um recurso<span id="use-download-attribute-for-downloading-a-resource"></span>
 
 Ele vai forçar os navegadores baixarem o recurso linkado para o armazenamento.
@@ -968,7 +912,6 @@ Ruim:
 Bom:
 
     <a download href="/downloads/offline.zip">offline version</a>
-
 
 ### Use os atributos `rel`, `hreflang`, e `type` quando necessário<span id="use-rel-hreflang-and-type-attribute-if-needed"></span>
 
@@ -982,7 +925,6 @@ Bom:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
-
 ### Texto do link evidente<span id="clear-link-text"></span>
 
 O texto do link deve ser o rótulo do recurso que ele aponta.
@@ -994,7 +936,6 @@ Ruim:
 Bom:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Versão em PDF</a> também disponível.</p>
-
 
 ### Não utilize o elemento `em` para avisos ou cuidado<span id="dont-use-em-element-for-warning-or-caution"></span>
 
@@ -1008,7 +949,6 @@ Bom:
 
     <strong>Caution!</strong>
 
-
 ### Evite os elementos `s`, `i`, `b`, e `u` sempre que possível<span id="avoid-s-i-b-and-u-element-as-much-as-possible"></span>
 
 A semântica desses elementos é muito difícil para humanos.
@@ -1020,7 +960,6 @@ Ruim:
 Bom:
 
     <span class="icone-busca" aria-hidden="true"></span>
-
 
 ### Não coloque aspas no texto do elemento `q`<span id="dont-put-quotes-to-q-element"></span>
 
@@ -1038,7 +977,6 @@ Bom também:
 
     “For writing maintainable and scalable HTML documents”
 
-
 ### Adicione o atributo `title` ao elemento `abbr`<span id="add-title-attribute-to-abbr-element"></span>
 
 Não existe outra forma para representar sua forma completa.
@@ -1050,7 +988,6 @@ Ruim:
 Bom:
 
     <abbr title="Boas práticas de HTML">HBP</abbr>
-
 
 ### Marque o elemento `ruby` detalhadamente<span id="markup-ruby-element-verbosely"></span>
 
@@ -1064,8 +1001,7 @@ Bom:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-
-### Use o atributo `datetime`  em formatos não reconhecidos por máquina no elemento `time`<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
+### Use o atributo `datetime` em formatos não reconhecidos por máquina no elemento `time`<span id="add-datetime-attribute-to-non-machine-readable-time-element"></span>
 
 Quando o atributo `datetime` não é informado, o formato do conteúdo elemento `time` é restrito.
 
@@ -1076,7 +1012,6 @@ Ruim:
 Bom:
 
     <time datetime="2014-12-19">Dez 19, 2014</time>
-
 
 ### Especifique a linguagem do código com o atributo `class` prefixado com `language-`<span id="specify-code-language-with-class-attribute-prefixed-with-language"></span>
 
@@ -1090,7 +1025,6 @@ Bom:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-
 ### Mantenha o elemento `kbd` o mais simples possível<span id="keep-kbd-element-as-simple-as-possible"></span>
 
 Aninhar o elemento `kbd` torna dificil para os humanos.
@@ -1103,7 +1037,6 @@ Bom:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### Evite o elemento `span` sempre que possível<span id="avoid-span-element-as-much-as-possible"></span>
 
 O `span` é um elemento de última instância.
@@ -1115,7 +1048,6 @@ Ruim:
 Bom:
 
     HTML <em>Best</em> Practices
-
 
 ### Quebre a linha depois do elemento `br`<span id="break-after-br-element"></span>
 
@@ -1130,7 +1062,6 @@ Bom:
     <p>HTML<br>
     Best<br>
     Practices</p>
-
 
 ### Não utilize o elemento `br` apenas para propósito visual<span id="dont-use-br-element-only-for-presentational-purpose"></span>
 
@@ -1148,9 +1079,7 @@ Bom:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-
 ## Edições<span id="edits"></span>
-
 
 ### Não insira elementos `ins` e `del` entre outros elementos<span id="dont-stride-ins-and-del-element-over-other-elements"></span>
 
@@ -1168,9 +1097,7 @@ Bom:
 
     <del><p>Don’t trust!</p></del>
 
-
 ## Conteúdo embutido<span id="embedded-content"></span>
-
 
 ### Garanta um um elemento `img` como substituto para um elemento `picture`<span id="provide-fallback-img-element-for-picture-element"></span>
 
@@ -1194,11 +1121,9 @@ Bom:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### Adicione o atributo `alt` em uma `img` se necessário<span id="add-alt-attrbute-to-img-element-if-needed"></span>
 
 O atributo `alt` auxilia quem não pode processar imagens ou está com o carregamento de imagens desabilitado.
-
 
 Ruim:
 
@@ -1207,7 +1132,6 @@ Ruim:
 Bom:
 
     <img alt="Boas Práticas de HTML" src="/img/logo.png">
-
 
 ### Deixe vazio o atributo `alt` sempre que possível<span id="empty-alt-attribute-if-possible"></span>
 
@@ -1220,7 +1144,6 @@ Ruim:
 Bom:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### Omita o atributo `alt` se possível<span id="omit-alt-attribute-if-possible"></span>
 
@@ -1235,7 +1158,6 @@ Bom:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (Se você não consegue ver a imagem, você poderia utilizar um teste <a href="?audio">audio</a>)
 
-
 ### Elemento `iframe` vazio<span id="empty-iframe-element"></span>
 
 Se tiver alguma restrição no conteúdo, é sempre bom manter o `iframe` vazio.
@@ -1249,7 +1171,6 @@ Ruim:
 Bom:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### Marque o conteúdo do elemento `map`<span id="markup-map-element-content"></span>
 
@@ -1279,7 +1200,6 @@ Bom:
       </p>
     </map>
 
-
 ### Disponibilize um conteúdo substituto para os elementos `audio` e `video`<span id="provide-fallback-content-for-audio-or-video-element"></span>
 
 O conteúdo substituto é necessário para novos elementos introduzidos no HTML.
@@ -1301,9 +1221,7 @@ Bom:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## Dados tabulares<span id="tabular-data"></span>
-
 
 ### Escreve uma célula por linha<span id="write-one-cell-per-line"></span>
 
@@ -1322,7 +1240,6 @@ Bom:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### Use o elemento `th` para o cabeçalho da célula<span id="use-th-element-for-header-cell"></span>
 
@@ -1376,13 +1293,11 @@ Bom:
       </tbody>
     </table>
 
-
 ## Formulários<span id="forms"></span>
-
 
 ### Envolva um controle de formulário com o elemento `label`<span id="wrap-form-control-with-label-element"></span>
 
-O elemento `label` auxilia o focar no elemento do formulário 
+O elemento `label` auxilia o focar no elemento do formulário
 
 Ruim:
 
@@ -1391,7 +1306,6 @@ Ruim:
 Bom:
 
     <p><label>Query: <input name="q" type="text"></label></p>
-
 
 ### Omita o atributo `for` se possível<span id="omit-for-attribute-if-possible"></span>
 
@@ -1405,7 +1319,6 @@ Bom:
 
     <label>Query: <input name="q" type="text"></label>
 
-
 ### Use o atributo `type` apropriado para o element `input`<span id="use-appropriate-type-attribute-for-input-element"></span>
 
 Com a `type` apropriado o navegador adiciona pequenas funções ao elemento `input`
@@ -1417,7 +1330,6 @@ Ruim:
 Bom:
 
     <label>Search keyword: <input name="q" type="search"></label>
-
 
 ### Adicione o atributo `value` ao elemento `input type="submit"`<span id="add-value-attribute-to-input-typesubmit"></span>
 
@@ -1431,10 +1343,9 @@ Bom:
 
     <input type="submit" value="Procurar">
 
-
 ### Adicione o atributo `title` ao elemento input `input` quando existir o atributo `pattern`<span id="add-title-attribute-to-input-element-when-there-is-pattern-attribute"></span>
 
-Se um input não estiver de acordo com a `pattern`  indicada, o conteúdo do atributo `title` será apresentado como uma dica.
+Se um input não estiver de acordo com a `pattern` indicada, o conteúdo do atributo `title` será apresentado como uma dica.
 
 Ruim:
 
@@ -1443,7 +1354,6 @@ Ruim:
 Bom:
 
     <input name="codigo-de-seguranca" pattern="[0-9]{3}" title="O Código de segurança é um número de três dígitos." type="text">
-
 
 ### Não utilize o atributo `placeholder` como um rótulo<span id="dont-use-placeholder-attribute-for-labeling"></span>
 
@@ -1456,7 +1366,6 @@ Ruim:
 Bom:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-
 
 ### Escreva um elemento `option` por linha<span id="write-one-option-element-per-line"></span>
 
@@ -1476,7 +1385,6 @@ Bom:
       <option label="Sections">
     </datalist>
 
-
 ### Adicione o atributo `max` ao elemento de `progress`<span id="add-max-attribute-to-progress-element"></span>
 
 Com o atributo `max`, o atributo `value` pode ser preenchido em um formato mais acessível.
@@ -1488,7 +1396,6 @@ Ruim:
 Bom:
 
     <progress max="100" value="50"> 50%</progress>
-
 
 ### Adicione os atributos `min` e `max` ao elemento `meter`<span id="add-min-and-max-attribute-to-meter-element"></span>
 
@@ -1504,7 +1411,6 @@ Ruim:
 Bom:
 
     <meter min="0" max="1024" value="512"> 512GB usado (1024GB total)</meter>
-
 
 ### Coloque o elemento `legend` como o primeiro filho do elemento `fieldset`<span id="place-legend-element-as-the-first-child-of-fieldset-element"></span>
 
@@ -1526,9 +1432,7 @@ Bom:
       ...
     </fieldset>
 
-
 ## Scripts<span id="scripting"></span>
-
 
 ### Omita o atributo `type` para JavaScript<span id="omit-type-attribute-for-javascript"></span>
 
@@ -1545,7 +1449,6 @@ Bom:
     <script>
       ...
     </script>
-
 
 ### Não comente os conteúdos do elemento `script`<span id="dont-comment-out-contents-of-script-element"></span>
 
@@ -1573,7 +1476,6 @@ Bom:
       ...
     </script>
 
-
 ### Não utilzie elementos `script` injetados por script<span id="dont-use-script-injected-script-element"></span>
 
 Utilizar o atributo `async` é o melhor tanto para simplicidade como para performance.
@@ -1591,13 +1493,11 @@ Bom:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## Outro<span id="other"></span>
-
 
 ### Indentação consistente<span id="indent-consistently"></span>
 
-A indentação  é importante na legibilidade do código.
+A indentação é importante na legibilidade do código.
 
 Ruim:
 
@@ -1621,7 +1521,6 @@ Bom:
       </body>
     </html>
 
-
 ### Use caminhos absolutos para links internos<span id="use-absolute-path-for-internal-links"></span>
 
 Um caminho absoluto funciona melhor no seu localhost sem conexão com a internet.
@@ -1638,7 +1537,6 @@ Bom:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-
 ### Não utilize protocolo relativo em URL para recursos externos<span id="dont-use-protocol-relative-url-for-external-resources"></span>
 
 Com o protocolo você pode carregar recursos externos com seguração e estabilidade.
@@ -1651,21 +1549,16 @@ Bom:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## Contributors<span id="contributors"></span>
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
-
 
 ## License
 
