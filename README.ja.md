@@ -1554,6 +1554,7 @@ HTML では、`script`要素における`type`属性の初期値は`text/javascr
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@mrcaidev](https://github.com/mrcaidev)
+- [@kobyborali](https://github.com/kobyborali)
 
 ## License
 
