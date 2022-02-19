@@ -1528,7 +1528,7 @@ Good:
 
 ### Use Relative path for internal links
 
-An Relative path works better on your localhost without internet connection.
+A Relative path works better on your localhost without internet connection.
 
 Bad:
 
