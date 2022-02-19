@@ -1526,9 +1526,9 @@ Good:
     </html>
 
 
-### Use absolute path for internal links
+### Use Relative path for internal links
 
-An absolute path works better on your localhost without internet connection.
+An Relative path works better on your localhost without internet connection.
 
 Bad:
 
