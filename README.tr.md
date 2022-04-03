@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) [Español (es)](README.es.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Türkçe (tr)](README.tr.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [简体中文 (zh-CN)](README.zh-CN.md) [Русский (ru)](README.ru.md)
+Translations: [English (en)](README.md) [Deutsch (de)](README.de.md) [Español (es)](README.es.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [Русский (ru)](README.ru.md) [Türkçe (tr)](README.tr.md) [简体中文 (zh-CN)](README.zh-CN.md)
 
 # HTML'de Örnek Yöntemler
 
@@ -1532,12 +1532,13 @@ Doğru:
 
 ## Translators
 
+- [@edgar-avila](https://github.com/edgar-avila)
+- [@kobyborali](https://github.com/kobyborali)
+- [@mrcaidev](https://github.com/mrcaidev)
+- [@sahilmaniyar](https://github.com/sahilmaniyar)
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
-- [@mrcaidev](https://github.com/mrcaidev)
-- [@kobyborali](https://github.com/kobyborali)
 - [@wesleynepo](https://github.com/wesleynepo)
-- [@edgar-avila](https://github.com/edgar-avila)
 
 
 ## License
