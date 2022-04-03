@@ -1,125 +1,116 @@
 Translations: [English (en)](README.md) [Deutsch (de)](README.de.md) [Español (es)](README.es.md) [日本語 (ja)](README.ja.md) [한국어 (ko)](README.ko.md) [Português brasileiro (pt-BR)](README.pt-BR.md) [Русский (ru)](README.ru.md) [Türkçe (tr)](README.tr.md) [简体中文 (zh-CN)](README.zh-CN.md)
 
-# HTML Best Practices
+# Bewährte Verfahren für HTML
 
-For writing maintainable and scalable HTML documents
+Zum Schreiben wartbarer und skalierbarer HTML-Dokumente
 
+## Allgemein
 
-## General
+### Beginnen Sie mit DOCTYPE
 
+DOCTYPE wird zum Aktivieren des No-Quirks-Modus benötigt.
 
-### Start with DOCTYPE
-
-DOCTYPE is required for activating no-quirks mode.
-
-Bad:
+Schlecht:
 
     <html>
       ...
     </html>
 
-Good:
+Gut:
 
     <!DOCTYPE html>
     <html>
       ...
     </html>
 
+### Verwenden Sie kein veraltetes oder veraltetes DOCTYPE
 
-### Don’t use legacy or obsolete DOCTYPE
+DOCTYPE ist nicht mehr für DTD, seien Sie einfach.
 
-DOCTYPE is not for DTD anymore, be simple.
-
-Bad:
+Schlecht:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Good:
+Gut:
 
     <!DOCTYPE html>
 
+### Verwenden Sie keine XML-Deklaration
 
-### Don’t use XML Declaration
+Sind Sie sicher, dass Sie XHTML schreiben möchten?
 
-Are you sure you want to write XHTML?
-
-Bad:
+Schlecht:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Good:
+Gut:
 
     <!DOCTYPE html>
 
-
 ### Don’t use character references as much as possible
 
-If you write an HTML document with UTF-8, almost all characters (including
-Emoji) can be written directly.
+Wenn Sie ein HTML-Dokument mit UTF-8 schreiben, werden fast alle Zeichen (einschließlich
+Emoji) können direkt geschrieben werden.
 
-Bad:
+Schlecht:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Good:
+Gut:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
+### Escape `&`, `<`, `>`, `"` und `'` mit benannten Zeichenreferenzen
 
-### Escape `&`, `<`, `>`, `"`, and `'` with named character references
+Diese Zeichen sollten für ein fehlerfreies HTML-Dokument immer maskiert werden.
 
-These characters should escape always for a bug-free HTML document.
-
-Bad:
+Schlecht:
 
     <h1>The "&" character</h1>
 
-Good:
+Gut:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
+### Verwenden Sie numerische Zeichenreferenzen für Steuerzeichen oder unsichtbare Zeichen
 
-### Use numeric character references for control or invisible characters
+Diese Zeichen werden leicht mit anderen Zeichen verwechselt. Und auch spec tut
+garantiert nicht, einen für Menschen lesbaren Namen für diese Zeichen zu definieren.
 
-These characters are easily mistaken for another character. And also spec does
-not guarantee to define a human readable name for these characters.
-
-Bad:
+Schlecht:
 
     <p>This book can read in 1 hour.</p>
 
-Good:
+Gut:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
+### Platzieren Sie Leerzeichen um Kommentarinhalte
 
-### Put white spaces around comment contents
+Einige Zeichen können nicht unmittelbar nach dem Öffnen des Kommentars oder vor dem Kommentar verwendet werden
+nah dran.
 
-Some character cannot be used immediately after comment open or before comment
-close.
-
-Bad:
+Schlecht:
 
     <!--This section is non-normative-->
 
-Good:
+Gut:
 
     <!-- This section is non-normative -->
 
+### Lassen Sie das schließende Tag nicht aus
 
-### Don’t omit closing tag
+Ich glaube, Sie verstehen eine Regel zum Weglassen des schließenden Tags nicht.
 
-I think you don’t understand a rule for omitting closing tag.
-
-Bad:
+Schlecht:
 
     <html>
       <body>
         ...
 
-Good:
+Gut:
 
     <html>
       <body>
@@ -127,140 +118,130 @@ Good:
       </body>
     </html>
 
+### Mischen Sie kein leeres Elementformat
 
-### Don’t mix empty element format
+Konsistenz ist ein Schlüssel zur Lesbarkeit.
 
-Consistency is a key for readability.
-
-Bad:
+Schlecht:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Good:
+Gut:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+### Platzieren Sie keine Leerzeichen um Tags und Attributwerte
 
-### Don’t put white spaces around tags and attribute values
+Es gibt keinen Grund, dies zu tun.
 
-There is no reason for doing this.
-
-Bad:
+Schlecht:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Good:
+Gut:
 
     <h1 class="title">HTML Best Practices</h1>
 
+### Mischen Sie keine Groß- und Kleinschreibung
 
-### Don’t mix character cases
+Es gibt auch eine Konsistenz.
 
-It gives a consistency also.
-
-Bad:
+Schlecht:
 
     <a HREF="#general">General</A>
 
-Good:
+Gut:
 
     <a href="#general">General</a>
 
-Also Good:
+Also Gut:
 
     <A HREF="#general">General</A>
 
+### Mischen Sie keine Anführungszeichen
 
-### Don’t mix quotation marks
+Das gleiche wie oben.
 
-Same as above.
-
-Bad:
+Schlecht:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Good:
+Gut:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
+### Trennen Sie Attribute nicht durch zwei oder mehr Leerzeichen
 
-### Don’t separate attributes with two or more white spaces
+Ihre seltsame Formatierungsregel verwirrt jemanden.
 
-Your weird formatting rule confuses someone.
-
-Bad:
+Schlecht:
 
     <input   name="q"  type="search">
 
-Good:
+Gut:
 
     <input name="q" type="search">
 
+### Booleschen Attributwert weglassen
 
-### Omit boolean attribute value
+Es ist einfach zu schreiben, nicht wahr?
 
-It’s easy to write, isn’t it?
-
-Bad:
+Schlecht:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Good:
+Gut:
 
     <audio autoplay src="/audio/theme.mp3">
 
+### Namensräume weglassen
 
-### Omit namespaces
+SVG und MathML können direkt in einem HTML-Dokument verwendet werden.
 
-SVG and MathML can be used directly in an HTML document.
-
-Bad:
+Schlecht:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Good:
+Gut:
 
     <svg>
       ...
     </svg>
 
+### Verwenden Sie keine XML-Attribute
 
-### Don’t use XML attributes
+Wir schreiben ein HTML-Dokument.
 
-We write an HTML document.
-
-Bad:
+Schlecht:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Good:
+Gut:
 
     <span lang="ja">...</span>
 
+### Mischen Sie die Attribute `data-*`, Mikrodaten und RDFa Lite nicht mit gemeinsamen Attributen
 
-### Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
+Ein Tag-String kann sehr kompliziert sein. Diese einfache Regel hilft beim Lesen eines solchen Tags
+Schnur.
 
-A tag string can be very complicated. This simple rule helps reading such tag
-string.
-
-Bad:
+Schlecht:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Good:
+Gut:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
+### Implizite ARIA-Standardsemantik bevorzugen
 
-### Prefer default implicit ARIA semantics
+Einige Elemente haben implizit eine ARIA- `role` in einem HTML-Dokument, geben Sie sie nicht an.
 
-Some element has an ARIA `role` implicitly in an HTML document, don’t specify it.
-
-Bad:
+Schlecht:
 
     <nav role="navigation">
       ...
@@ -268,7 +249,7 @@ Bad:
 
     <hr role="separator">
 
-Good:
+Gut:
 
     <nav>
       ...
@@ -276,79 +257,72 @@ Good:
 
     <hr>
 
+## Das Wurzelelement
 
-## The root element
+### Fügen Sie das Attribut „lang“ hinzu
 
+Das Attribut `lang` hilft beim Übersetzen eines HTML-Dokuments.
 
-### Add `lang` attribute
-
-`lang` attribute will help translating an HTML document.
-
-Bad:
+Schlecht:
 
     <html>
 
-Good:
+Gut:
 
     <html lang="en-US">
 
+### Halten Sie den Attributwert `lang` so kurz wie möglich
 
-### Keep `lang` attribute value as short as possible
+Japanisch wird nur in Japan verwendet. Der Ländercode ist also nicht erforderlich.
 
-Japanese is only used in Japan. So country code is not necessary.
-
-Bad:
+Schlecht:
 
     <html lang="ja-JP">
 
-Good:
+Gut:
 
     <html lang="ja">
 
+### Vermeiden Sie `data-*` so weit wie möglich
 
-### Avoid `data-*` as much as possible
+Ein entsprechendes Attribut kann von Browsern richtig gehandhabt werden.
 
-An appropriate attribute can be handled properly by browsers.
-
-Bad:
+Schlecht:
 
     <span data-language="french">chemises</span>
     ...
     <strong data-type="warning">Do not wash!</strong>
 
-Good:
+Gut:
 
     <span title="French"><span lang="fr-FR">chemises</span></span>
     ...
     <strong class="warning">Do not wash!</strong>
 
+## Dokument-Metadaten
 
-## Document metadata
+### Fügen Sie das Element `title` hinzu
 
+Ein Wert für das Element `title` wird von verschiedenen Anwendungen verwendet, nicht nur von einem Browser.
 
-### Add `title` element
-
-A value for `title` element is used by various application not only a browser.
-
-Bad:
+Schlecht:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Good:
+Gut:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
+### Verwenden Sie kein `base`-Element
 
-### Don’t use `base` element
+Ein absoluter Pfad oder eine URL ist sowohl für Entwickler als auch für Benutzer sicherer.
 
-An absolute path or URL is safer for both developers and users.
-
-Bad:
+Schlecht:
 
     <head>
       ...
@@ -357,7 +331,7 @@ Bad:
       ...
     </head>
 
-Good:
+Gut:
 
     <head>
       ...
@@ -365,121 +339,113 @@ Good:
       ...
     </head>
 
+### Geben Sie den MIME-Typ der untergeordneten verknüpften Ressourcen an
 
-### Specify MIME type of minor linked resources
+Dies ist ein Hinweis darauf, wie die Anwendung mit dieser Ressource umgeht.
 
-This is a hint how application handles this resource.
-
-Bad:
+Schlecht:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Good:
+Gut:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+### Verlinken Sie nicht auf `favicon.ico`
 
-### Don’t link to `favicon.ico`
+Fast alle Browser holen `/favicon.ico` automatisch und asynchron.
 
-Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
-
-Bad:
+Schlecht:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Good:
+Gut:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
+### Fügen Sie den Link `apple-touch-icon` hinzu
 
-### Add `apple-touch-icon` link
+Ein Standardanforderungspfad für das Touch-Symbol wurde plötzlich geändert.
 
-A default request path for touch icon was changed suddenly.
-
-Bad:
+Schlecht:
 
     <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
 
-Good:
+Gut:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
+### Fügen Sie das Attribut `title` zu alternativen Stylesheets hinzu
 
-### Add `title` attribute to alternate stylesheets
+Ein für Menschen lesbares Etikett hilft Menschen bei der Auswahl des richtigen Stylesheets.
 
-A human readable label helps people selecting proper stylesheet.
-
-Bad:
+Schlecht:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Good:
+Gut:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
+### Verwenden Sie als URL das Element `link`.
 
-### For URL, use `link` element
+Ein Wert des Attributs `href` kann als URL aufgelöst werden.
 
-A value of `href` attribute can be resolved as URL.
-
-Bad:
+Schlecht:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Good:
+Gut:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
       ...
     </section>
 
+### Geben Sie die Zeichencodierung des Dokuments an
 
-### Specify document character encoding
+UTF-8 ist noch nicht in allen Browsern voreingestellt.
 
-UTF-8 is not default in all browsers yet.
-
-Bad:
+Schlecht:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Good:
+Gut:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
+### Verwenden Sie kein altes Zeichenkodierungsformat
 
-### Don’t use legacy character encoding format
+HTTP-Header sollten von einem Server angegeben werden, einfach sein.
 
-HTTP headers should be specified by a server, be simple.
-
-Bad:
+Schlecht:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Good:
+Gut:
 
     <meta charset="UTF-8">
 
+### Geben Sie zuerst die Zeichenkodierung an
 
-### Specify character encoding at first
+Spec erfordert, dass die Zeichencodierung innerhalb der ersten 1024 Bytes angegeben wird
+das Dokument.
 
-Spec requires the character encoding is specified within the first 1024 bytes of
-the document.
-
-Bad:
+Schlecht:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -487,7 +453,7 @@ Bad:
       ...
     </head>
 
-Good:
+Gut:
 
     <head>
       <meta charset="UTF-8">
@@ -495,42 +461,39 @@ Good:
       ...
     </head>
 
+### Verwenden Sie UTF-8
 
-### Use UTF-8
+Mit UTF-8 können Sie Emoji frei verwenden.
 
-With UTF-8, you are free to use Emoji.
-
-Bad:
+Schlecht:
 
     <meta charset="Shift_JIS">
 
-Good:
+Gut:
 
     <meta charset="UTF-8">
 
+### Lassen Sie das Attribut `type` für CSS weg
 
-### Omit `type` attribute for CSS
+In HTML ist der Standardwert des `type`-Attributs des `style`-Elements `text/css`.
 
-In HTML, default `type` attribute’s value of `style` element is `text/css`.
-
-Bad:
+Schlecht:
 
     <style type="text/css">
       ...
     </style>
 
-Good:
+Gut:
 
     <style>
       ...
     </style>
 
+### Kommentieren Sie den Inhalt des Elements `style` nicht aus
 
-### Don’t comment out contents of `style` element
+Dieses Ritual ist für den alten Browser.
 
-This ritual is for the old browser.
-
-Bad:
+Schlecht:
 
     <style>
     <!--
@@ -538,44 +501,41 @@ Bad:
       -->
     </style>
 
-Good:
+Gut:
 
     <style>
       ...
     </style>
 
+### Vermische kein Tag für CSS und JavaScript
 
-### Don’t mix tag for CSS and JavaScript
+Manchmal blockiert das `script`-Element die DOM-Konstruktion.
 
-Sometimes `script` element blocks DOM construction.
-
-Bad:
+Schlecht:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Good:
+Gut:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Also good:
+Also Gut:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+## Abschnitte
 
-## Sections
+### Fügen Sie das Element `body` hinzu
 
+Manchmal wird das `body`-Element von einem Browser an einer unerwarteten Position ergänzt.
 
-### Add `body` element
-
-Sometimes `body` element is complemented in unexpected position by a browser.
-
-Bad:
+Schlecht:
 
     <html>
       <head>
@@ -584,7 +544,7 @@ Bad:
       ...
     </html>
 
-Good:
+Gut:
 
     <html>
       <head>
@@ -595,77 +555,71 @@ Good:
       </body>
     </html>
 
+### Vergessen Sie das `hgroup`-Element
 
-### Forget about `hgroup` element
+Dieses Element wird nicht sehr oft verwendet.
 
-This element is not used very much.
-
-Bad:
+Schlecht:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Good:
+Gut:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+### Verwenden Sie das Element `address` nur für Kontaktinformationen
 
-### Use `address` element only for contact information
+Das Element `address` ist für E-Mail-Adresse, Konto bei sozialen Netzwerken, Adresse,
+Telefonnummer oder etwas, mit dem Sie sich in Verbindung setzen können.
 
-`address` element is for email address, social network account, street address,
-telephone number, or something you can get in touch with.
-
-Bad:
+Schlecht:
 
     <address>No rights reserved.</address>
 
-Good:
+Gut:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+## Inhalte gruppieren
 
-## Grouping content
+### Beginnen Sie nicht mit einem Zeilenumbruch im `pre`-Element
 
+Ein erster Zeilenumbruch wird in den Browsern ignoriert, aber der zweite und spätere werden gerendert.
 
-### Don’t start with newline in `pre` element
-
-A first newline will ignored in the browsers, but second and later are rendered.
-
-Bad:
+Schlecht:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Good:
+Gut:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+### Verwenden Sie das entsprechende Element im Element `blockquote`.
 
-### Use appropriate element in `blockquote` element
+Der Inhalt des `blockquote`-Elements ist ein Zitat, keine Aneinanderreihung von Zeichen.
 
-`blockquote` element’s content is a quote, not a chunks of characters.
-
-Bad:
+Schlecht:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Good:
+Gut:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
+### Fügen Sie die Quellenangabe nicht direkt in das Element `blockquote` ein
 
-### Don’t include attribution directly in `blockquote` element
+Der Inhalt des Elements `blockquote` ist ein Zitat.
 
-`blockquote` element’s content is a quote.
-
-Bad:
+Schlecht:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -673,7 +627,7 @@ Bad:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Good:
+Gut:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -681,7 +635,7 @@ Good:
 
     <p>— HTML Best Practices</p>
 
-Also good:
+Also Gut:
 
     <figure>
       <blockquote>
@@ -691,19 +645,18 @@ Also good:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
+### Schreiben Sie einen Listenpunkt pro Zeile
 
-### Write one list item per line
+Laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaang
+Zeile ist schwer zuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu lesen
 
-Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
-line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
-
-Bad:
+Schlecht:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Good:
+Gut:
 
     <ul>
       <li>General</li>
@@ -712,13 +665,12 @@ Good:
       ...
     </ul>
 
+### Verwenden Sie das Attribut `type` für das Element `ol`.
 
-### Use `type` attribute for `ol` element
+Manchmal wird durch den Inhalt in der Nähe auf eine Markierung verwiesen. Wenn Sie die Markierung ändern
+Mit dem Attribut `type` können Sie sicher referenzieren.
 
-Sometimes marker referenced by the contents in the near. If you change marker
-with `type` attribute, you will be safe to reference.
-
-Bad:
+Schlecht:
 
     <head>
       <style>
@@ -736,7 +688,7 @@ Bad:
       </ol>
     </body>
 
-Good:
+Gut:
 
     <body>
       <ol type="I">
@@ -747,12 +699,11 @@ Good:
       </ol>
     </body>
 
+### Verwenden Sie `dl` nicht für Dialoge
 
-### Don’t use `dl` for dialogue
+Das `dl`-Element ist auf eine Assoziationsliste in HTML beschränkt.
 
-`dl` element is restricted to an association list in HTML.
-
-Bad:
+Schlecht:
 
     <dl>
       <dt>Costello</dt>
@@ -770,7 +721,7 @@ Bad:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Good:
+Gut:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -780,12 +731,11 @@ Good:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
+### Platzieren Sie das Element `figcaption` als erstes oder letztes untergeordnetes Element des Elements `figure`.
 
-### Place `figcaption` element as first or last child of `figure` element
+Die Spezifikation verbietet das `figcaption`-Element in der Mitte des `figure`-Elements.
 
-Spec disallows `figcaption` element in the middle of `figure` element.
-
-Bad:
+Schlecht:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -793,7 +743,7 @@ Bad:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Good:
+Gut:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -801,56 +751,52 @@ Good:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
+### Verwenden Sie das `Haupt`-Element
 
-### Use `main` element
+Das `main`-Element kann verwendet werden, um den Inhalt zu umhüllen.
 
-`main` element can be used wrapping contents.
-
-Bad:
+Schlecht:
 
     <div id="content">
       ...
     </div>
 
-Good:
+Gut:
 
     <main>
       ...
     </main>
 
+### Vermeiden Sie das `div`-Element so weit wie möglich
 
-### Avoid `div` element as much as possible
+Das `div`-Element ist ein Element der letzten Instanz.
 
-`div` element is an element of last resort.
-
-Bad:
+Schlecht:
 
     <div class="chapter">
       ...
     </div>
 
-Good:
+Gut:
 
     <section>
       ...
     </section>
 
+## Semantik auf Textebene
 
-## Text-level semantics
+### Teilen Sie nicht denselben Link, der gruppiert werden kann
 
+Das `a`-Element kann fast alle Elemente umschließen (außer interaktiven Elementen wie form
+Steuerelemente und `a` Element selbst).
 
-### Don’t split same link that can be grouped
-
-`a` element can wrap almost all elements (except interactive elements like form
-controls and `a` element itself).
-
-Bad:
+Schlecht:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Good:
+Gut:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
@@ -858,228 +804,209 @@ Good:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
+### Verwenden Sie das Attribut `download`, um eine Ressource herunterzuladen
 
-### Use `download` attribute for downloading a resource
+Es zwingt Browser, verknüpfte Ressourcen in den Speicher herunterzuladen.
 
-It will force browsers to download linked resource to the storage.
-
-Bad:
+Schlecht:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Good:
+Gut:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
+### Verwenden Sie bei Bedarf die Attribute `rel`, `hreflang` und `type`
 
-### Use `rel`, `hreflang`, and `type` attribute if needed
+Diese Hinweise helfen Anwendungen beim Umgang mit verknüpften Ressourcen.
 
-These hints helps applications how handle linked resource.
-
-Bad:
+Schlecht:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Good:
+Gut:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
+### Linktext löschen
 
-### Clear link text
+Der Linktext sollte die Bezeichnung der verlinkten Ressource sein.
 
-Link text should be the label of its linked resource.
-
-Bad:
+Schlecht:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Good:
+Gut:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
+### Verwenden Sie das Element „em“ nicht zur Warnung oder Warnung
 
-### Don’t use `em` element for warning or caution
+Das sind Ernsthaftigkeit. Daher ist das `strong` Element angemessener.
 
-These are seriousness. So, `strong` element is more appropriate.
-
-Bad:
+Schlecht:
 
     <em>Caution!</em>
 
-Good:
+Gut:
 
     <strong>Caution!</strong>
 
+### Vermeiden Sie die Elemente `s`, `i`, `b` und `u` so weit wie möglich
 
-### Avoid `s`, `i`, `b`, and `u` element as much as possible
+Die Semantik dieser Elemente ist für Menschen zu schwierig.
 
-These elements’ semantics is too difficult to humans.
-
-Bad:
+Schlecht:
 
     <i class="icon-search"></i>
 
-Good:
+Gut:
 
     <span class="icon-search" aria-hidden="true"></span>
 
+### Setzen Sie keine Anführungszeichen in das `q`-Element
 
-### Don’t put quotes to `q` element
+Kurse werden vom Browser bereitgestellt.
 
-Quotes are provided by the browser.
-
-Bad:
+Schlecht:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Good:
+Gut:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Also good:
+Also Gut:
 
     “For writing maintainable and scalable HTML documents”
 
+### Attribut `title` zum Element `abbr` hinzufügen
 
-### Add `title` attribute to `abbr` element
+Es gibt keine andere Möglichkeit, seine Expansion darzustellen.
 
-There is no other way to represent its expansion.
-
-Bad:
+Schlecht:
 
     <abbr>HBP</abbr>
 
-Good:
+Gut:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
+### Markieren Sie das `ruby`-Element ausführlich
 
-### Markup `ruby` element verbosely
+Die Unterstützung für `ruby`-Elemente ist in den modernen Browsern nicht abgeschlossen.
 
-`ruby` element support is not completed across the modern browsers.
-
-Bad:
+Schlecht:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Good:
+Gut:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
+### Fügen Sie dem nicht maschinenlesbaren Element `time` das Attribut `datetime` hinzu
 
-### Add `datetime` attribute to non-machine-readable `time` element
+Wenn das Attribut `datetime` nicht vorhanden ist, das Format des Elements `time`.
+Inhalte sind eingeschränkt.
 
-When `datetime` attribute does not present, the format of `time` element’s
-content is restricted.
-
-Bad:
+Schlecht:
 
     <time>Dec 19, 2014</time>
 
-Good:
+Gut:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
+### Geben Sie die Codesprache mit dem Attribut `class` mit dem Präfix `language-` an
 
-### Specify code language with `class` attribute prefixed with `language-`
+Dies ist kein formaler Weg, aber die Spezifikation erwähnt dies.
 
-This is not a formal way, but spec mentions this.
-
-Bad:
+Schlecht:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Good:
+Gut:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
+### Halten Sie das `kbd`-Element so einfach wie möglich
 
-### Keep `kbd` element as simple as possible
+Das Verschachteln des `kbd`-Elements ist für Menschen zu schwierig.
 
-Nesting `kbd` element is too difficult to humans.
-
-Bad:
+Schlecht:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
-Good:
+Gut:
 
     <kbd>Ctrl+F5</kbd>
 
+### Vermeiden Sie das Element `span` so weit wie möglich
 
-### Avoid `span` element as much as possible
+Das `span`-Element ist ein Element der letzten Instanz.
 
-`span` element is an element of last resort.
-
-Bad:
+Schlecht:
 
     HTML <span class="best">Best</span> Practices
 
-Good:
+Gut:
 
     HTML <em>Best</em> Practices
 
+### Umbruch nach `br`-Element
 
-### Break after `br` element
-
-Line break should be needed where `br` element is used.
-
-Bad:
+Ein Zeilenumbruch sollte erforderlich sein, wenn das Element `br` verwendet wird.
+Schlecht:
 
     <p>HTML<br>Best<br>Practices</p>
 
-Good:
+Gut:
 
     <p>HTML<br>
     Best<br>
     Practices</p>
 
+### Verwenden Sie das `br`-Element nicht nur zu Präsentationszwecken
 
-### Don’t use `br` element only for presentational purpose
+Das `br`-Element dient nicht dem Zeilenumbruch, sondern dem Zeilenumbruch im Inhalt.
 
-`br` element is not for line breaking, it is for line breaks in the contents.
-
-Bad:
+Schlecht:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Good:
+Gut:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
+## Bearbeitungen
 
-## Edits
+### Überschreiten Sie nicht die Elemente `ins` und `del` über andere Elemente
 
+Elemente können andere Elemente nicht überlaufen lassen.
 
-### Don’t stride `ins` and `del` element over other elements
-
-Elements cannot be overflow other elements.
-
-Bad:
+Schlecht:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
 
     <p>Don’t trust!</p></del>
 
-Good:
+Gut:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
 
     <del><p>Don’t trust!</p></del>
 
+## Eingebetteter Inhalt
 
-## Embedded content
+### Stellen Sie das Fallback-Element `img` für das Element `picture` bereit
 
+Die Unterstützung des `Bild`-Elements ist noch nicht gut.
 
-### Provide fallback `img` element for `picture` element
-
-The support of `picture` element is not good yet.
-
-Bad:
+Schlecht:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1088,7 +1015,7 @@ Bad:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Good:
+Gut:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1097,68 +1024,63 @@ Good:
       <img src="/img/logo.jpg">
     </picture>
 
+### Fügen Sie bei Bedarf das Attribut `alt` zum Element `img` hinzu
 
-### Add `alt` attrbute to `img` element if needed
+Das Attribut `alt` hilft denen, die keine Bilder verarbeiten oder Bilder laden können
+deaktiviert.
 
-`alt` attribute helps those who cannot process images or have image loading
-disabled.
-
-Bad:
+Schlecht:
 
     <img src="/img/logo.png">
 
-Good:
+Gut:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
+### Leeres `alt`-Attribut wenn möglich
 
-### Empty `alt` attribute if possible
+Wenn das Bild ergänzend ist, gibt es irgendwo in der Nähe äquivalenten Inhalt.
 
-If the image is supplemental, there is equivalent content somewhere in the near.
-
-Bad:
+Schlecht:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Good:
+Gut:
 
     <img alt="" src="/img/icon/help.png"> Help
 
+### Lassen Sie das Attribut `alt` weg, wenn möglich
 
-### Omit `alt` attribute if possible
+Manchmal wissen Sie nicht, welcher Text für das Attribut `alt` geeignet ist.
 
-Sometimes you don’t know what text is suitable for `alt` attribute.
-
-Bad:
+Schlecht:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Good:
+Gut:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
+### Leeres `iframe`-Element
 
-### Empty `iframe` element
+Inhaltlich gibt es einige Einschränkungen. Leer zu sein ist immer sicher.
 
-There is some restriction in its content. Being empty is always safe.
-
-Bad:
+Schlecht:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Good:
+Gut:
 
     <iframe src="/ads/default.html"></iframe>
 
+### Markieren Sie den Inhalt des `map`-Elements
 
-### Markup `map` element content
+Dieser Inhalt wird einem Screenreader angezeigt.
 
-This content presents to a screen reader.
-
-Bad:
+Schlecht:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1169,7 +1091,7 @@ Bad:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Good:
+Gut:
 
     <map name="toc">
       <p>
@@ -1182,12 +1104,11 @@ Good:
       </p>
     </map>
 
+### Bereitstellen von Fallback-Inhalten für `audio`- oder `video`-Elemente
 
-### Provide fallback content for `audio` or `video` element
+Fallback-Content wird für neu eingeführte Elemente in HTML benötigt.
 
-Fallback content is needed for newly introduced elements in HTML.
-
-Bad:
+Schlecht:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1195,7 +1116,7 @@ Bad:
       ...
     </video>
 
-Good:
+Gut:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1204,21 +1125,19 @@ Good:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
+## Tabellendaten
 
-## Tabular data
+### Schreiben Sie eine Zelle pro Zeile
 
+Lange Zeilen sind schwer zu scannen.
 
-### Write one cell per line
-
-Long lines are hard to scan.
-
-Bad:
+Schlecht:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Good:
+Gut:
 
     <tr>
       <td>General</td>
@@ -1226,12 +1145,11 @@ Good:
       <td>Sections</td>
     </tr>
 
+### Verwenden Sie das `th`-Element für die Kopfzelle
 
-### Use `th` element for header cell
+Es gibt keinen Grund, dies zu vermeiden.
 
-There is no reason to avoid this.
-
-Bad:
+Schlecht:
 
     <table>
       <thead>
@@ -1255,7 +1173,7 @@ Bad:
       </tbody>
     </table>
 
-Good:
+Gut:
 
     <table>
       <thead>
@@ -1279,101 +1197,93 @@ Good:
       </tbody>
     </table>
 
+## Formen
 
-## Forms
+### Formsteuerelement mit `label`-Element umschließen
 
+Das `label`-Element hilft beim Fokussieren des Formularelements.
 
-### Wrap form control with `label` element
-
-`label` element helps focusing form element.
-
-Bad:
+Schlecht:
 
     <p>Query: <input name="q" type="text"></p>
 
-Good:
+Gut:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
+### Lassen Sie das `for`-Attribut wenn möglich weg
 
-### Omit `for` attribute if possible
+Das `label`-Element kann einige Formularelemente enthalten.
 
-`label` element can contain some form elements.
-
-Bad:
+Schlecht:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Good:
+Gut:
 
     <label>Query: <input name="q" type="text"></label>
 
+### Verwenden Sie das geeignete `type`-Attribut für das `input`-Element
 
-### Use appropriate `type` attribute for `input` element
+Mit entsprechendem `type` verleiht ein Browser dem `input`-Element winzige Funktionen.
 
-With appropriate `type`, a browser gives tiny features to the `input` element.
-
-Bad:
+Schlecht:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Good:
+Gut:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
+### Attribut `value` zu ​​`input type="submit"` hinzufügen
 
-### Add `value` attribute to `input type="submit"`
+Die Standardbezeichnung für die Schaltfläche Senden ist nicht im Browser standardisiert und
+Sprachen.
 
-The default label for submit button is not standarized across the browser and
-languages.
-
-Bad:
+Schlecht:
 
     <input type="submit">
 
-Good:
+Gut:
 
     <input type="submit" value="Search">
 
+### Attribut `title` zum `input`-Element hinzufügen, wenn Attribut `pattern` vorhanden ist
 
-### Add `title` attribute to `input` element when there is `pattern` attribute
+Wenn der Eingabetext nicht mit dem Attribut `pattern` übereinstimmt, wird der Wert von `title` angezeigt
+Attribut wird als Hinweis angezeigt.
 
-If input text does not match to `pattern` attribute, the value of `title`
-attribute will be display as a hint.
-
-Bad:
+Schlecht:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
 
-Good:
+Gut:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
+### Verwenden Sie kein `placeholder`-Attribut für die Beschriftung
 
-### Don’t use `placeholder` attribute for labeling
+Das `label`-Element steht für eine Beschriftung, das `placeholder`-Attribut für einen kurzen Hinweis.
 
-`label` element is for a label, `placeholder` attribute is for a short hint.
-
-Bad:
+Schlecht:
 
     <input name="email" placeholder="Email" type="text">
 
-Good:
+Gut:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
+### Schreiben Sie ein `option`-Element pro Zeile
 
-### Write one `option` element per line
+Lange Zeilen sind schwer zu scannen.
 
-Long lines are hard to scan.
-
-Bad:
+Schlecht:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Good:
+Gut:
 
     <datalist id="toc">
       <option label="General">
@@ -1381,39 +1291,35 @@ Good:
       <option label="Sections">
     </datalist>
 
+### Fügen Sie das Attribut `max` zum Element `progress` hinzu
 
-### Add `max` attribute to `progress` element
-
-With `max` attribute, the `value` attribute can be write in an easy format.
-
-Bad:
+Mit dem Attribut `max` kann das Attribut `value` in einem einfachen Format geschrieben werden.
+Schlecht:
 
     <progress value="0.5"> 50%</progress>
 
-Good:
+Gut:
 
     <progress max="100" value="50"> 50%</progress>
 
+### Fügen Sie die Attribute `min` und `max` zum Element `meter` hinzu
 
-### Add `min` and `max` attribute to `meter` element
+Mit `min` und `max` Attribut kann das `value` Attribut einfach geschrieben werden
+Format.
 
-With `min` and `max` attribute, the `value` attribute can be write in an easy
-format.
-
-Bad:
+Schlecht:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-Good:
+Gut:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
+### Platzieren Sie das `legend`-Element als erstes untergeordnetes Element des `fieldset`-Elements
 
-### Place `legend` element as the first child of `fieldset` element
+Spec erfordert dies.
 
-Spec requires this.
-
-Bad:
+Schlecht:
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1421,7 +1327,7 @@ Bad:
       <legend>About "General"</legend>
     </fieldset>
 
-Good:
+Gut:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1429,33 +1335,30 @@ Good:
       ...
     </fieldset>
 
+## Skripterstellung
 
-## Scripting
+### Lassen Sie das `type`-Attribut für JavaScript weg
 
-
-### Omit `type` attribute for JavaScript
-
-In HTML, the default `type` attribute’s value of `script` element is
+In HTML ist der Standardwert des Attributs `type` des Elements `script`
 `text/javascript`.
 
-Bad:
+Schlecht:
 
     <script type="text/javascript">
       ...
     </script>
 
-Good:
+Gut:
 
     <script>
       ...
     </script>
 
+### Inhalt des `script`-Elements nicht auskommentieren
 
-### Don’t comment out contents of `script` element
+Dieses Ritual ist für den alten Browser.
 
-This ritual is for the old browser.
-
-Bad:
+Schlecht:
 
     <script>
     /*<![CDATA[*/
@@ -1463,7 +1366,7 @@ Bad:
     /*]]>*/
     </script>
 
-Also bad:
+Also Schlecht:
 
     <script>
     <!--
@@ -1471,18 +1374,17 @@ Also bad:
     // -->
     </script>
 
-Good:
+Gut:
 
     <script>
       ...
     </script>
 
+### Verwenden Sie kein Skript-injiziertes `script`-Element
 
-### Don’t use script-injected `script` element
+Das Attribut `async` ist das Beste für Einfachheit und Leistung.
 
-`async` attribute is the best for both simplicity and performance.
-
-Bad:
+Schlecht:
 
     <script>
       var script = document.createElement("script");
@@ -1491,19 +1393,17 @@ Bad:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Good:
+Gut:
 
     <script async defer src="https://example.com/widget.js"></script>
 
+## Andere
 
-## Other
+### Konsequent einrücken
 
+Die Einrückung ist wichtig für die Lesbarkeit.
 
-### Indent consistently
-
-Indentation is important for readability.
-
-Bad:
+Schlecht:
 
     <html>
     	<head>
@@ -1514,7 +1414,7 @@ Bad:
       </body>
     </html>
 
-Good:
+Gut:
 
     <html>
       <head>
@@ -1525,33 +1425,31 @@ Good:
       </body>
     </html>
 
+### Absoluten Pfad für interne Links verwenden
 
-### Use absolute path for internal links
+Ein absoluter Pfad funktioniert besser auf Ihrem Localhost ohne Internetverbindung.
 
-An absolute path works better on your localhost without internet connection.
-
-Bad:
+Schlecht:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Good:
+Gut:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
+### Verwenden Sie keine protokollrelative URL für externe Ressourcen
 
-### Don’t use protocol-relative URL for external resources
+Mit dem Protokoll können Sie externe Ressourcen zuverlässig und sicher laden.
 
-With protocol, you can load external resources reliably and safely.
-
-Bad:
+Schlecht:
 
     <script src="//example.com/js/library.js">
 
-Good:
+Gut:
 
     <script src="https://example.com/js/library.js">
 
