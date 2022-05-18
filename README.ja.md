@@ -314,7 +314,7 @@ SVGやMathMLはHTMLの文書では直接扱えます。
 
 良い例:
 
-    <span title="French"><span lang="fr-FR">chemises</span></span>
+    <span title="French"><span lang="fr">chemises</span></span>
     ...
     <strong class="warning">Do not wash!</strong>
 
