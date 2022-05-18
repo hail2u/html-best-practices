@@ -313,7 +313,7 @@ Bad:
 
 Good:
 
-    <span title="French"><span lang="fr-FR">chemises</span></span>
+    <span title="French"><span lang="fr">chemises</span></span>
     ...
 
 
