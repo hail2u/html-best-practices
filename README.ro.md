@@ -1,24 +1,24 @@
-Translations: [English (en)](README.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Romanian (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Traduceri: [English (en)](README.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Romanian (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [简体中文 (zh-CN)](README.zh-CN.md)
 
-# HTML 最佳实践
+# Bune practici în HTML
 
-编写易于维护与扩展的 HTML 文档。
-
-
-## 全局
+Pentru o scriere scalabilă și ușoară de întreținut în HTML
 
 
-### 以 DOCTYPE 为开头
+## Generalitați
 
-激活标准模式需要 DOCTYPE。
 
-Bad:
+### Începe cu DOCTYPE
+
+DOCTYPE este necesar pentru a activa modul "no-quirks".
+
+Greșit: 
 
     <html>
       ...
     </html>
 
-Good:
+Corect:
 
     <!DOCTYPE html>
     <html>
@@ -26,97 +26,100 @@ Good:
     </html>
 
 
-### 不要使用过时的 DOCTYPE
+### Nu folosiți expresii învechite DOCTYPE
 
-DOCTYPE 不需要再引用 DTD 了，简单点就行。
+DOCTYPE nu mai este un DTD (Document Type Definition).
 
-Bad:
+Greșit:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Good:
+Corect:
 
     <!DOCTYPE html>
 
 
-### 不要使用 XML 作为声明
+### Nu folosiți declarații XML 
 
-你确定想写 XHTML?
+Ești sigur că vrei să scrii XHTML?
 
-Bad:
+Greșit:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Good:
+Corect:
 
     <!DOCTYPE html>
 
 
-### 不要什么字符都转义
+### Nu folosiți caractere de referință
 
-如果你使用 UTF-8 编写 HTML 文档，那么几乎所有字符（包括表情）都可以直接写。
+Dacă scrii un document HTML în UTF-8, aproape toate caracterele (inclusiv 
+Emoji) pot fi scrise direct.
 
-Bad:
+Greșit:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Good:
+Corect:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
-### 使用字符实体引用来转义 `&`、`<`、`>`、`"` 和 `'`
+### Nu folosiți `&`, `<`, `>`, `"`, și `'`, folosiți caractere de referință
 
-为了 HTML 文档不出错，这些字符应当始终被转义。
+Pentru evitarea erorilor în HTML, aceste caractere nu trebuie folosite.
 
-Bad:
+Greșit:
 
     <h1>The "&" character</h1>
 
-Good:
+Corect:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### 使用字符值引用来转义控制或隐藏字符
+### Folosiți caractere de referință numerice, pentru caracterele invizibile sau de control 
 
-这些字符很容易被误认为是其它字符，而且规范也不保证这些字符具有人类可读的名称。
+Aceste caractere sunt ușor de confundat cu alte caractere. De asemenea specificațiile 
+nu garantează să definească un limbaj uman pentru aceste caractere.
 
-Bad:
+Greșit:
 
     <p>This book can read in 1 hour.</p>
 
-Good:
+Corect:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
 
-### 在注释内容周围添加空格
+### Lasă spații libere înainte și după comenturi
 
-某些字符不能紧接在注释开始或结束的位置上。
+Unele caractere nu pot fi folosite imediat după începutul și sfârșitul comentului.
 
-Bad:
+
+Greșit:
 
     <!--This section is non-normative-->
 
-Good:
+Corect:
 
     <!-- This section is non-normative -->
 
 
-### 别忘了关闭标签
+### Nu omiteți închiderea tag-ului
 
-我觉得你不一定知道省略标签关闭的规则。
+E posibil să nu înțelegi regula dacă uitați să închideți tag-ul.
 
-Bad:
+Greșit:
 
     <html>
       <body>
         ...
 
-Good:
+Corect:
 
     <html>
       <body>
@@ -125,212 +128,216 @@ Good:
     </html>
 
 
-### 不要杂糅空元素的格式
+### Păstrează același tip de format pentru elementele deschise
 
-一致性是可读性的关键。
+Consistența este cheia lizibilității.
 
-Bad:
+Greșit:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Good:
+Corect:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
 
-### 不要在标签和属性值周围添加空格
+### Nu lăsa spații libere în jurul tag-urilor sau valorilor atributelor
 
-不需要理由。
+Nu există vreun motiv pentru a lăsa aceste spații.
 
-Bad:
+Greșit:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Good:
+Corect:
 
     <h1 class="title">HTML Best Practices</h1>
 
 
-### 不要杂糅大小写
+### Nu amesteca tipul de caractere
 
-也是为了一致性。
 
-Bad:
+Oferă consistență.
+
+Greșit:
 
     <a HREF="#general">General</A>
 
-Good:
+Corect:
 
     <a href="#general">General</a>
 
-Also Good:
+De asemenea corect, dar de preferat varianta de mai sus:
 
     <A HREF="#general">General</A>
 
 
-### 不要杂糅单双引号
+### Nu amesteca semnele de apostrof
 
-同上。
+La fel ca mai sus.
 
-Bad:
+Greșit:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Good:
+Corect:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### 不要用多个空格间隔属性
+### Nu despărții atributele prin două sau mai multe spații libere 
 
-奇怪的格式会把人搞晕的。
+Formatarea atipică poate crea confuzie celorlalți.
 
-Bad:
+Greșit:
 
     <input   name="q"  type="search">
 
-Good:
+Corect:
 
     <input name="q" type="search">
 
 
-### 省略布尔型属性值
+### Omite atributele cu valoare booleană
 
-这么写更简单，对吧？
+Este mult mai ușor de scris.
 
-Bad:
+Greșit:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Good:
+Corect:
 
     <audio autoplay src="/audio/theme.mp3">
 
 
-### 省略命名空间
+### Omite "namespaces"
 
-SVG 和 MathML 可以直接在 HTML 文档中使用。
+SVG și MathML pot fi folosite direct in HTML.
 
-Bad:
+Greșit:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Good:
+Corect:
 
     <svg>
       ...
     </svg>
 
 
-### 不要使用 XML 属性
+### Nu folosiți atribute XML
 
-我们是在写 HTML 文档。
+Scriem un document HTML.
 
-Bad:
+Greșit:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Good:
+Corect:
 
     <span lang="ja">...</span>
 
 
-### 别把 `data-*`、Microdata、RDFa Lite 属性和普通属性混在一起
+### Nu amesteca atributele de tip `data-*`, `Microdata` și `RDFa Lite` cu atributele comune
 
-标签串可以变得很复杂。这条简单的规则有助于阅读这样的标签串。
+Șirul de atribute din `tag` poate fi foarte complicat. Aceasta simplă regulă poate duce la 
+o citire mult mai ușoară a șirului.
 
-Bad:
+Greșit:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Good:
+Corect:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### 首选默认隐式 ARIA 语义
+### Folosiți semantica implicită ARIA 
 
-有些元素在 HTML 文档中隐含了某种 ARIA 语义，不要特意把它们指出来。
+Unele elemente au un ARIA `role` implicit, nu îl specifica din nou.
 
-Bad:
+Greșit:
 
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
-Good:
+Corect:
 
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
 
-## 根元素
+## Elementul `root`
 
 
-### 添加 `lang` 属性
+### Adaugă atributul `lang`
 
-`lang` 属性有助于翻译 HTML 文档。
+Atributul `lang` va ajuta la traducerea documentului HTML.
 
-Bad:
+Greșit:
 
     <html>
 
-Good:
+Corect:
 
     <html lang="en-US">
 
 
-### 保持 `lang` 属性值尽可能简短
+### Folosiți valoarea cât mai scurtă a atributului `lang`
 
-日语只在日本使用，所以国家代码不是必须的。
+Limba Japoneză este folosită doar în Japonia, de aceea codul țării nu este necesar.
 
-Bad:
+Greșit:
 
     <html lang="ja-JP">
 
-Good:
+Corect:
 
     <html lang="ja">
 
 
-### 尽可能避开 `data-*`
+### Evită pe cât de mult posibil atributele de tip `data-*` 
 
-恰当的属性可以被浏览器正确处理。
+Un atribut adecvat poate fi gestionat corect de către browser.
 
-Bad:
+Greșit:
 
     <span data-language="french">chemises</span>
     ...
+    <strong data-type="warning">Do not wash!</strong>
 
-Good:
+Corect:
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
+    <strong class="warning">Do not wash!</strong>
 
 
-## 文档元数据
+## Metadatele documentului
 
 
-### 添加 `title` 元素
+### Adaugă elementul `title`
 
-`title` 元素的值会被很多应用使用，而不仅仅是浏览器。
+Valoarea elementului `title` este folosit de diverse aplicații, nu numai de browser.
 
-Bad:
+Greșit:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Good:
+Corect:
 
     <head>
       <meta charset="UTF-8">
@@ -338,11 +345,11 @@ Good:
     </head>
 
 
-### 不要使用 `base` 元素
+### Nu folosiți elementul `base`
 
-绝对路径或 URL 对开发者和用户来说都更安全。
+O cale de tip absolut sau URL este mult mai sigură atât pentru developer cât și pentru user.
 
-Bad:
+Greșit:
 
     <head>
       ...
@@ -351,7 +358,7 @@ Bad:
       ...
     </head>
 
-Good:
+Corect:
 
     <head>
       ...
@@ -360,76 +367,76 @@ Good:
     </head>
 
 
-### 指定次要链接资源的 MIME 类型
+### Specifică atașamentelor, tipul de resursă `MIME` (Media Type)
 
-这提示了应用要怎么处理这项资源。
+Acesta oferă un indiciu aplicației în a gestiona resursa.
 
-Bad:
+Greșit:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Good:
+Corect:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### 别链接到 `favicon.ico`
+### Nu face legatura cu `favicon.ico`
 
-几乎所有浏览器都会自动异步获取 `/favicon.ico`。
+Aproape toate browserele preiau `/favicon.ico` automat și asincron.
 
-Bad:
+Greșit:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Good:
+Corect:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
 
-### 添加 `apple-touch-icon`
+### Adaugă `apple-touch-icon`
 
-触摸图标的默认请求路径突然改变了。
+Valoarea implicită a căii pentru `touch icon` a fost schimbată.
 
-Bad:
+Greșit:
 
     <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
 
-Good:
+Corect:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
 
-### 给备用样式表添加 `title` 属性
+### Pentru stylesheet-uri alternative, adaugă atributul `title`
 
-易读的标签有助于人们选择合适的样式表。
+Eticheta poate ajuta userul la selectarea stylesheet-ului corespunzător.
 
-Bad:
+Greșit:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Good:
+Corect:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
-### 使用 `link` 元素指向 URL
+### Pentru URL-uri, folosiți elementul `link`
 
-`href` 属性的值可以被解析为 URL。
+O valoarea a atributului `href` poate fi rezolvată ca URL.
 
-Bad:
+Greșit:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Good:
+Corect:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
@@ -437,17 +444,17 @@ Good:
     </section>
 
 
-### 指定文档字符编码格式
+### Specifică tipul de codificare a caracterelor
 
-UTF-8 暂时还不是所有浏览器的默认值。
+UTF-8 nu este încă folosit ca valoare inițială de toate browserele.
 
-Bad:
+Greșit:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Good:
+Corect:
 
     <head>
       <meta charset="UTF-8">
@@ -455,24 +462,26 @@ Good:
     </head>
 
 
-### 不要使用过时的字符编码格式
+### Nu folosiți formate învechite de codificare a caracterelor
 
-HTTP 报文头部应该由服务器指定，简单点。
+Header-ul HTTP ar trebui specificat de un server.
 
-Bad:
+Greșit:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Good:
+Corect:
 
     <meta charset="UTF-8">
 
 
-### 一开始就指定字符编码
+### Declarați mai intăi tipul de codificare al caracterlor
 
-规范要求字符编码必须在文档的前 1024 字节中被指定。
+Conform specificațiilor este necesară declararea tipului de codificare a caracterelor în primi 
+1024 biți ai documentului.
 
-Bad:
+
+Greșit:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -480,7 +489,7 @@ Bad:
       ...
     </head>
 
-Good:
+Corect:
 
     <head>
       <meta charset="UTF-8">
@@ -489,41 +498,41 @@ Good:
     </head>
 
 
-### 使用 UTF-8
+### Folosiți UTF-8
 
-有了 UTF-8，你可以随心使用表情。
+Cu UTF-8, sunteți liber să utilizați Emoji.
 
-Bad:
+Greșit:
 
     <meta charset="Shift_JIS">
 
-Good:
+Corect:
 
     <meta charset="UTF-8">
 
 
-### 省略 CSS 的 `type` 属性
+### Omite atributul `type` pentru CSS
 
-在 HTML 中，`style` 元素的默认 `type` 属性值就是 `text/css`。
+În HTML, valoarea inițială a atributului `type` pentru elementele de tip `style` sunt în format `text/css`
 
-Bad:
+Greșit:
 
     <style type="text/css">
       ...
     </style>
 
-Good:
+Corect:
 
     <style>
       ...
     </style>
 
 
-### 不要给 `style` 元素内容写注释
+### Nu comentați conținutul elementului „style”.
 
-此规则适用于旧版浏览器。
+Acestă practică este pentru versiuni mai vechi de browsere.
 
-Bad:
+Greșit:
 
     <style>
     <!--
@@ -531,44 +540,44 @@ Bad:
       -->
     </style>
 
-Good:
+Corect:
 
     <style>
       ...
     </style>
 
 
-### 不要杂糅 CSS 和 JavaScript 的标签
+### Nu amesteca tag-urile de CSS cu cele de Javascript 
 
-有时 `script` 元素会阻塞 DOM 树的构建。
+Uneori elementele `script` blochează construcția DOM-ului.
 
-Bad:
+Greșit:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Good:
+Corect:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Also good:
+De asemenea corect:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
 
-## 区块
+## Secțiuni
 
 
-### 添加 `body` 元素
+### Adaugă elementul `body`
 
-有时浏览器会在预料之外的地方补充 `body` 元素。
+Uneori elementul `body` dacă nu este declarat, este complementat automat de către browser în zone neașteptate.
 
-Bad:
+Greșit:
 
     <html>
       <head>
@@ -577,7 +586,7 @@ Bad:
       ...
     </html>
 
-Good:
+Corect:
 
     <html>
       <head>
@@ -589,112 +598,114 @@ Good:
     </html>
 
 
-### 不要使用 `hgroup` 元素
+###  Nu folosiți elementul `hgroup`
 
-这个元素不怎么用。
+Acest element nu se mai folosește.
 
-Bad:
+Greșit:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Good:
+Corect:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### `address` 元素仅用于联系方式
+### Folosiți elementul `address` doar pentru informațiile de contact
 
-`address` 元素是给邮箱、社交账户、街道地址、电话号码等联系方式准备的。
+Elementul `address` se folosește doar pentru adresa de e-mail, conturile sociale,
+adresă, număr de telefon, sau orice altă informație referitoare la contact.
 
-Bad:
+Greșit:
 
     <address>No rights reserved.</address>
 
-Good:
+Corect:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-## 分组内容
+## Gruparea conținutului
 
 
-### 不要在 `pre` 元素里新起一行
+### Nu începe cu un rând gol în elementul `pre`
 
-第一行会被浏览器忽略，第二行及之后会被渲染。
+Un rând nou liber va fi complet ignorat de către browser.
 
-Bad:
+Greșit:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Good:
+Corect:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
-### 在 `blockquote` 元素中使用恰当的元素
 
-`blockquote` 元素的内容是引用，而不仅仅是一堆字符。
+### Folosiți elemente corespunzătoare în interiorul elementului `blockquote`
 
+Conținutul elementului `blockquote` este un citat, nu un grup de caractere.
 
-Bad:
+Greșit:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Good:
+Corect:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
 
-### 不要直接在 `blockquote` 中注明来源
+### Nu includeți atribuirea, direct în elementul `blockquote`
 
-`blockquote` 元素的内容是引用的话。
+Conținutul elementului `blockquote` este un citat.
 
-Bad:
+Greșit:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
-    
+
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Good:
+Corect:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
-Also good:
+De asemenea corect:
 
     <figure>
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
 
-### 一行只写一个列表项
+### Declară doar un obiect (item) din listă per rând
 
-很很很很很很长长长长长长长长长长长长长长长的行很很很很很难难难难难难难难难难难难难难难难难难难难阅读。
+Rândurile luuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuungi
+sunt greuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu de citit.
 
-Bad:
+Greșit:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Good:
+Corect:
 
     <ul>
       <li>General</li>
@@ -704,11 +715,12 @@ Good:
     </ul>
 
 
-### 使用 `ol` 元素的 `type` 属性
+### Pentru elementel `ol` folosiți atributul `type`
 
-有时标记会被附近的内容引用。如果使用 `type` 属性更改标记，就可以安全地引用。
+Sometimes marker referenced by the contents in the near. If you change marker
+with `type` attribute, you will be safe to reference.
 
-Bad:
+Greșit:
 
     <head>
       <style>
@@ -726,7 +738,7 @@ Bad:
       </ol>
     </body>
 
-Good:
+Corect:
 
     <body>
       <ol type="I">
@@ -738,11 +750,11 @@ Good:
     </body>
 
 
-### 不要用 `dl` 表示对话
+### Nu folosiți `dl` pentru dialoguri
 
-`dl` 元素仅限于表示 HTML 中的关联列表。
+Elementul `dl` este folosit în HTML doar pentru asocierea listelor.
 
-Bad:
+Greșit:
 
     <dl>
       <dt>Costello</dt>
@@ -760,7 +772,7 @@ Bad:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Good:
+Corect:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -771,11 +783,12 @@ Good:
     <p>Abbott: Every dollar of it.</p>
 
 
-### 把 `figcaption` 作为 `figure` 的首或尾元素
+### Declară elementul `figcaption` ca fiind primul sau ultimul descendent din elementul `figure`
 
-规范不允许 `figcaption` 元素卡在 `figure` 元素的中间。
+Specificațiile interzic folosirea elementului `figcaption` în mijlocul elementului `figure`.
 
-Bad:
+
+Greșit:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -783,7 +796,7 @@ Bad:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Good:
+Corect:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -792,201 +805,205 @@ Good:
     </figure>
 
 
-### 使用 `main` 元素
+### Folosiți elementul `main`
 
-`main` 元素可以用来包裹内容。
+Elementul `main` poate fi folosit pentru a înfășura conținutul.
 
-Bad:
+Greșit:
 
     <div id="content">
       ...
     </div>
 
-Good:
+Corect:
 
     <main>
       ...
     </main>
 
 
-### 尽可能避免 `div` 元素
+### Evitați cât mai mult posibil elementul `div`
 
-实在没办法了，才用 `div` 元素。
+Elementul `div` este un element de ultimă instanță.
 
-Bad:
+
+Greșit:
 
     <div class="chapter">
       ...
     </div>
 
-Good:
+Corect:
 
     <section>
       ...
     </section>
 
 
-## 文本语义
+## Semantică la nivel de text
 
 
-### 不要把一个链接拆成两半
+### Nu împărți același link dacă se poate grupa
 
-`a` 元素可以包裹几乎所有元素（除了表单控制等交互性元素和 `a` 元素自身）。
+Elementul `a` poate înfășura aproape toate elementele (mai puțin elementele interactive
+cum ar fi `form controls` și însuși elementul `a`).
 
-Bad:
+Greșit:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Good:
+Corect:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
 
-### 使用 `download` 属性指向下载资源
+### Folosiți atributul `download` pentru a descărca o resursă 
 
-这会迫使浏览器下载链接到的资源。
+Va forța browserul să descarce resursa în locația dorită.
 
-Bad:
+Greșit:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Good:
+Corect:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### 按需使用 `rel`、`hreflang` 和 `type` 属性
+### Folosiți atributele `rel`, `hreflang` și `type`  dacă este necesar
 
-它们有助于提示应用怎么处理链接到的资源。
+Aceste indicii ajută aplicațiile să gestioneze resursele.
 
-Bad:
+Greșit:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Good:
+Corect:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### 明确的链接文本
+### Textul link-ului trebuie să fie concis / clar 
 
-链接文本应该是对应资源的名称。
+Textul link-ului trebuie să fie eticheta resursei asociate.
 
-Bad:
+Greșit:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Good:
+Corect:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### 不要使用 `em` 元素表示警告
+### Nu folosiți elementul `em` pentru avertizare sau atenționare
 
-警告是很严肃的事情，所以 `strong` 元素更合适。
+În acest caz elementul `strong` este mult mai potrivit.
 
-Bad:
+
+Greșit:
 
     <em>Caution!</em>
 
-Good:
+Corect:
 
     <strong>Caution!</strong>
 
 
-### 尽可能避免 `s`、`i`、`b` 和 `u` 元素
+### Evită folosirea elementelor `s`, `i`, `b` și `u` pe cât posibil
 
-这些元素的语义太难解读。
+Nu au o semantică bună.
 
-Bad:
+Greșit:
 
     <i class="icon-search"></i>
 
-Good:
+Corect:
 
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### 不要在 `q` 元素外使用引号
+### Nu cita elementul `q`
 
-浏览器会自动加上引号。
+Ghilimelele sunt furnizate de către browser.
 
-Bad:
+Greșit:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Good:
+Corect:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Also good:
+De asemenea corect:
 
     “For writing maintainable and scalable HTML documents”
 
 
-### 给 `abbr` 元素添加 `title` 属性
+### Adăugați elementului `abbr` atributul `title`
 
-这是显示全称的唯一方式。
+Nu există o altă modalitate de a vedea expansiunea abrevierii.
 
-Bad:
+Greșit:
 
     <abbr>HBP</abbr>
 
-Good:
+Corect:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
+### Marcați în mod verbos elementul `ruby`
 
-### 详细标记 `ruby` 元素
+Suportul pentru elementul `ruby` nu este finalizat în browserele moderne.
 
-现代浏览器对 `ruby` 元素的支持还不完整。
-
-Bad:
+Greșit:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Good:
+Corect:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### 给电脑无法识别的 `time` 元素添加 `datetime` 属性
+### Adăugați elementului `time` atributul `datetime` 
 
-当 `datetime` 属性不存在，`time` 元素内容的格式会受限制。
 
-Bad:
+Dacă atributul `datetime` nu este prezent, accestul la formatul elementului `time`
+este restricționat.
+
+Greșit:
 
     <time>Dec 19, 2014</time>
 
-Good:
+Corect:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### 使用 `language-` 前缀的 `class` 属性指定代码语言
+### Specificați limbajul codului cu atributul `class` având ca prefix `language-`
 
-没有统一的实现方式，但规范中有提及。
+Aceasta nu este o modalitate formală, dar specificațiile menționează acest lucru.
 
-Bad:
+Greșit:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Good:
+Corect:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
-### `kbd` 元素越简单越好
+### Păstrați elementul `kbd` cât mai simplu posibil
 
-嵌套的 `kbd` 元素很难以阅读。
+Nestarea multiplă a acestuia îngreunează citirea.
 
-Bad:
+Greșit:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
@@ -995,24 +1012,24 @@ Good:
     <kbd>Ctrl+F5</kbd>
 
 
-### 尽可能避免 `span` 元素
+### Evitați cât mai mult posibil elementul `span`
 
-实在没办法了，才用 `span`。
+Elementul `span` este un element de ultimă instanță.
 
-Bad:
+Greșit:
 
     HTML <span class="best">Best</span> Practices
 
-Good:
+Corect:
 
     HTML <em>Best</em> Practices
 
 
-### 在 `br` 元素后换行
+### Rând nou după elementul `br`
 
-使用 `br` 元素后应当换行。
+Este necesar saltul la un rând nou după folosirea elementului `br`.
 
-Bad:
+Greșit:
 
     <p>HTML<br>Best<br>Practices</p>
 
@@ -1023,51 +1040,50 @@ Good:
     Practices</p>
 
 
-### 不要只为了格式好看就用 `br` 元素
+### Nu utilizați elementul `br` doar în scop de prezentare
 
-`br` 元素不是用来给所有元素换行的，是用来在文本内容中换行的。
+Elementul `br` se folosește la întreruperile de linie din conținut.
 
-Bad:
+Greșit:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Good:
+Corect:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
 
-## 编辑
+## Editări
 
+### Nu săriți cu elementele `ins` și `del` peste alte elemente
 
-### 不要跨元素使用 `ins` 和 `del`
+Elementele nu pot sări peste alte elemente.
 
-元素不能越界。
-
-Bad:
+Greșit:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
-Good:
+Corect:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
 
-## 内嵌内容
+## Conținut `Embedded`
 
 
-### 为 `picture` 元素提供备用 `img` 元素
+### Pentru elementul `picture` furnizați întotdeauna ca element de rezervă `img`
 
-对 `picture` 元素的支持还不是很好。
+Suportul pentru elementul `picture` nu este încă foarte bun.
 
-Bad:
+Greșit:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1076,7 +1092,7 @@ Bad:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Good:
+Corect:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1086,66 +1102,67 @@ Good:
     </picture>
 
 
-### 按需为 `img` 元素添加 `alt` 属性
+### Adăugați atributul `alt` la elementul `img` dacă este necesar
 
-`alt` 属性对那些无法处理图片或禁用了图片加载的人很有帮助。
+Atributul `alt` oferă informații text adiționale în caz ca imaginile nu pot fi accesate
+sau este dezactivată încărcarea acestora.
 
-Bad:
+Greșit:
 
     <img src="/img/logo.png">
 
-Good:
+Corect:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### 若有可能则留空 `alt` 属性
+### Omite conținutul atributului `alt` atunci când este cazul
 
-如果图片是用作补充说明，那么附近应该有与 `alt` 等价的内容。
+Dacă imaginea este suplimentară și există conținut echivalent undeva în apropiere.
 
-Bad:
+Greșit:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Good:
+Corect:
 
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### 若有可能则省略 `alt` 属性
+### Omite atributul `alt` dacă este posibil
 
-有时你不一定知道 `alt` 要写什么。
+Uneori nu știți ce text este potrivit pentru atributul `alt`.
 
-Bad:
+Greșit:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Good:
+Corect:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
-### 留空 `iframe` 内容
+### Elementul `iframe` deschis 
 
-`iframe` 的内容是受限的，留空比较安全。
+Există anumite restricții în conținutul său. A fi gol este întotdeauna în siguranță.
 
-Bad:
+Greșit:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Good:
+Corect:
 
     <iframe src="/ads/default.html"></iframe>
 
 
-### 标记 `map` 元素内容
+### Marcați conținutul elementului `map`.
 
-这样屏幕阅读器可以知道 `map` 的内容。
+Conținutul acestuia este prezentat de către un cititor de ecran.
 
-Bad:
+Greșit:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1156,7 +1173,7 @@ Bad:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Good:
+Corect:
 
     <map name="toc">
       <p>
@@ -1170,11 +1187,11 @@ Good:
     </map>
 
 
-### 为 `audio` 和 `video` 元素提供备用内容
+### Furnizați conținut alternativ pentru elementul `audio` sau `video`
 
-HTML 新引进的元素需要备用内容，以防旧版浏览器不支持。
+Conținutul de rezervă este necesar pentru noile elementele introduse în HTML.
 
-Bad:
+Greșit:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1182,7 +1199,7 @@ Bad:
       ...
     </video>
 
-Good:
+Corect:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1192,20 +1209,20 @@ Good:
     </video>
 
 
-## 表格数据
+## Date tabulare
 
 
-### 一行写一个单元格
+### Scrieți doar câte o celulă a tabelului pe fiecare rând
 
-长行难以浏览。
+Randurile lungi sunt greu de urmărit.
 
-Bad:
+Greșit:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Good:
+Corect:
 
     <tr>
       <td>General</td>
@@ -1214,11 +1231,11 @@ Good:
     </tr>
 
 
-### 使用 `th` 元素表示标题格
+### Utilizați elementul `th` pentru antetul celulei
 
-就应该这样。
+Nu există vreun motiv să nu faci acest lucru.
 
-Bad:
+Greșit:
 
     <table>
       <thead>
@@ -1242,7 +1259,7 @@ Bad:
       </tbody>
     </table>
 
-Good:
+Corect:
 
     <table>
       <thead>
@@ -1267,98 +1284,100 @@ Good:
     </table>
 
 
-## 表单
+## Form
 
+### Înfășoară `form control` cu elementul `label`
 
-### 使用 `label` 元素包裹表单控制元素
+Elementul `label` ajută la focalizarea elementului de formular.
 
-`label` 元素有助于表单元素的聚焦。
-
-Bad:
+Greșit:
 
     <p>Query: <input name="q" type="text"></p>
 
-Good:
+Corect:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### 若有可能则省略 `for` 属性
+### Omite atributul `for` dacă este posibil
 
-`label` 元素可以包含表单元素。
+Elementul `label` poate conține un tip de formă.
 
-Bad:
+Greșit:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Good:
+Corect:
 
     <label>Query: <input name="q" type="text"></label>
 
 
-### 为 `input` 元素选择合适的 `type` 属性
+### Utilizați atributul `type` adecvat pentru elementul `input`
 
-使用 `type` 属性后，浏览器会赋予 `input` 元素一些新功能。
+Prin folosirea atributului `type` adecvat, browserul ofera niște caracteristici elementului `input`
 
-Bad:
+Greșit:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Good:
+Corect:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### 给 `input type="submit"` 添加 `value` 属性
+### Adăugați atributul `value` la `input type="submit"`
 
-在不同浏览器和不同语言环境下，提交按钮的默认标签是不同的。
+Valoarea implicita a `label-ului` pentru butonul `submit` nu este standardizat 
+în rândul browserelor și limbajelor.
 
-Bad:
+Greșit:
 
     <input type="submit">
 
-Good:
+Corect:
 
     <input type="submit" value="Search">
 
 
-### 给有 `pattern` 属性的 `input` 元素添加 `title` 属性
+### Adăugați atributul `title` la elementul `input` atunci când există atributul `pattern`
 
-如果输入文本与 `pattern` 属性不匹配，`title` 属性的值就会被显示为提示。
+Dacă textul introdus nu se potrivește cu atributul `pattern`, valoarea atributului `title`
+va fi afișat ca indiciu.
 
-Bad:
+Greșit:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
 
-Good:
+Corect:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### 不要把 `placeholder` 作为标签
+### Nu folosiți atributul `placeholder` pentru etichetare
 
-`label` 元素用于提供标签，`placeholder` 属性用于简短提示。
+Elementul `label` este folosit pentru etichetare, iar elementul `placeholder` este folosit drept scurt indiciu.
 
-Bad:
+Greșit:
 
     <input name="email" placeholder="Email" type="text">
 
-Good:
+Corect:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### 每行只写一个 `option` 元素
+### Scrieți câte un element `option` per rând.
 
-长行难以浏览。
+Rândurile lungi sunt greu de scanat.
 
-Bad:
+
+Greșit:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Good:
+Corect:
 
     <datalist id="toc">
       <option label="General">
@@ -1367,37 +1386,38 @@ Good:
     </datalist>
 
 
-### 为 `progress` 元素添加 `max` 属性
+### Adăugați atributul `max` la elementul `progress`
 
-有了 `max` 属性，`value` 属性就易于编写。
+Cu atributul `max`, atributul `value` poate fi scris într-un format simplu.
 
-Bad:
+Greșit:
 
     <progress value="0.5"> 50%</progress>
 
-Good:
+Corect:
 
     <progress max="100" value="50"> 50%</progress>
 
 
-### 为 `meter` 元素添加 `min` 和 `max` 属性
+### Adăugați atributele `min` și `max` la elementul `meter`
 
-有了 `min` 和 `max` 属性，`value` 属性就易于编写。
+Cu atributele `min` și `max`, atributul `value` poate fi scris într-un format ușor.
 
-Bad:
+
+Greșit:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-Good:
+Corect:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### 将 `legend` 作为 `fieldset` 的第一个子元素
+### Plasați elementul `legend` ca prim descendent al elementului `fieldset`
 
-这是规范的要求。
+Specificațiile cer acest lucru.
 
-Bad:
+Greșit:
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1405,7 +1425,7 @@ Bad:
       <legend>About "General"</legend>
     </fieldset>
 
-Good:
+Corect:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1414,31 +1434,31 @@ Good:
     </fieldset>
 
 
-## 脚本
+## Scriptare
 
 
-### 省略 JavaScript 的 `type` 属性
+### Omite atributul `type` pentru Javascript
 
-在 HTML 中，`script` 元素的默认 `type` 属性值就是 `text/javascript`。
+În HTML, valoarea inițială a atributului `type` pentru elementul `script` este `text/javascript`.
 
-Bad:
+Greșit:
 
     <script type="text/javascript">
       ...
     </script>
 
-Good:
+Corect:
 
     <script>
       ...
     </script>
 
 
-### 不要为 `script‵ 元素的内容编写注释
+### Nu comentați conținutul elementului `script`  
 
-这条规则适用于旧版浏览器。
+Acestă practică este pentru versiuni mai vechi de browsere.
 
-Bad:
+Greșit:
 
     <script>
     /*<![CDATA[*/
@@ -1446,7 +1466,7 @@ Bad:
     /*]]>*/
     </script>
 
-Also bad:
+De asemenea greșit:
 
     <script>
     <!--
@@ -1454,18 +1474,18 @@ Also bad:
     // -->
     </script>
 
-Good:
+Corect:
 
     <script>
       ...
     </script>
 
 
-### 不要使用注入脚本的 `script` 元素
+### Nu folosi "script-injected" în elementul `script`
 
-`async` 属性既简单又高效。
+Atributul `async` este cel mai bun atât pentru simplitate, cât și pentru performanță.
 
-Bad:
+Greșit:
 
     <script>
       var script = document.createElement("script");
@@ -1474,19 +1494,19 @@ Bad:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Good:
+Corect:
 
     <script async defer src="https://example.com/widget.js"></script>
 
 
-## 其它
+## Alte
 
 
-### 一致的缩进
+### Indentează în mod constant
 
-缩进对可读性影响很大。
+Indentarea este importantă pentru lizibilitate.
 
-Bad:
+Greșit:
 
     <html>
     	<head>
@@ -1497,7 +1517,7 @@ Bad:
       </body>
     </html>
 
-Good:
+Corect:
 
     <html>
       <head>
@@ -1509,45 +1529,46 @@ Good:
     </html>
 
 
-### 使用相对路径引用内部链接
+### Pentru linkurile interne folosiți căi absolute
 
-无网络链接时，相对链接在本机有更好的表现。
+O cale absolută funcționează mai bine pe localhost fără conexiune la internet.
 
-Bad:
+Greșit:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Good:
+Corect:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
 
-### 不要使用无协议的 URL 引用外部资源
+###  Nu folosiți adrese protocol relative URL pentru resurse externe
 
-有了协议，外部资源的加载更可靠、更安全。
 
-Bad:
+Prin protocol puteți încărca resurse externe în mod fiabil și în siguranță.
+
+Greșit:
 
     <script src="//example.com/js/library.js">
 
-Good:
+Corect:
 
     <script src="https://example.com/js/library.js">
 
 
 
 
-## 贡献者
+## Contribuitori
 
 - [@hail2u_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
 
 
-## 译者
+## Traducători
 
 - [@edgar-avila](https://github.com/edgar-avila)
 - [@kobyborali](https://github.com/kobyborali)
@@ -1559,6 +1580,6 @@ Good:
 - [@costinlotreanu](https://github.com/costinlotreanu)
 
 
-## 许可证
+## Licență
 
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/)

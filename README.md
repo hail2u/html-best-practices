@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Romanian (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [简体中文 (zh-CN)](README.zh-CN.md)
 
 # HTML Best Practices
 
@@ -1573,6 +1573,7 @@ Good:
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@wesleynepo](https://github.com/wesleynepo)
+- [@costinlotreanu](https://github.com/costinlotreanu)
 
 
 ## License
