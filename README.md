@@ -895,7 +895,7 @@ Bad:
 
 Good:
 
-    <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+    <a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> <label> is also available.</label>
 
 
 ### Don’t use `em` element for warning or caution
