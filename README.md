@@ -1384,7 +1384,7 @@ Good:
 
 ### Add `max` attribute to `progress` element
 
-With `max` attribute, the `value` attribute can be write in an easy format.
+With `max` attribute, the `value` attribute can be written in an easy format.
 
 Bad:
 
@@ -1397,7 +1397,7 @@ Good:
 
 ### Add `min` and `max` attribute to `meter` element
 
-With `min` and `max` attribute, the `value` attribute can be write in an easy
+With `min` and `max` attribute, the `value` attribute can be written in an easy
 format.
 
 Bad:
