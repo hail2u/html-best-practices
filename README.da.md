@@ -1,24 +1,24 @@
-Traduceri: [English (en)](README.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [简体中文 (zh-CN)](README.zh-CN.md) · [Dansk (da)](README.da.md) 
+Translations: [English (en)](README.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [简体中文 (zh-CN)](README.zh-CN.md) · [Dansk (da)](README.da.md) 
 
-# Bune practici în HTML
+# HTML Best Practices
 
-Pentru o scriere scalabilă și ușoară de întreținut în HTML
-
-
-## Generalitați
+For writing maintainable and scalable HTML documents
 
 
-### Începe cu DOCTYPE
+## General
 
-DOCTYPE este necesar pentru a activa modul "no-quirks".
 
-Greșit:
+### Start with DOCTYPE
+
+DOCTYPE er påkrævet for at aktivere no-quirks mode.
+
+Dårligt:
 
     <html>
       ...
     </html>
 
-Corect:
+Godt:
 
     <!DOCTYPE html>
     <html>
@@ -26,100 +26,97 @@ Corect:
     </html>
 
 
-### Nu folosiți expresii învechite DOCTYPE
+### Undgå forældet DOCTYPE
 
-DOCTYPE nu mai este un DTD (Document Type Definition).
+DOCTYPE bruges ikke længere til DTD. Gør det simpelt!
 
-Greșit:
+Dårligt:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Corect:
+Godt:
 
     <!DOCTYPE html>
 
 
-### Nu folosiți declarații XML
+### Undgå at deklarere XML Declaration
 
-Ești sigur că vrei să scrii XHTML?
+Are you sure you want to write XHTML?
 
-Greșit:
+Dårligt:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Corect:
+Godt:
 
     <!DOCTYPE html>
 
 
-### Nu folosiți caractere de referință
+### Undgå for så vidt muligt at referere til karakterer med HTML
 
-Dacă scrii un document HTML în UTF-8, aproape toate caracterele (inclusiv
-Emoji) pot fi scrise direct.
+Hvis du skriver et HTML dokument med UTF-8 encoding, vil næsten alle karakterer (Emojis inkluderet) kunne anvendes direkte
 
-Greșit:
+Dårligt:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Corect:
+Godt:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
-### Nu folosiți `&`, `<`, `>`, `"`, și `'`, folosiți caractere de referință
+### Escape `&`, `<`, `>`, `"`, og `'` med navngivne referencer til karakterer
 
-Pentru evitarea erorilor în HTML, aceste caractere nu trebuie folosite.
+Disse karakterer bær altid "escapes" (med tilsvarende HTML) for at sikre HTML uden bugs.
 
-Greșit:
+Dårligt:
 
     <h1>The "&" character</h1>
 
-Corect:
+Godt:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### Folosiți caractere de referință numerice, pentru caracterele invizibile sau de control
+### Anvend numeriske karakterreferencer til kontrol- eller "usynlige" karakterer
 
-Aceste caractere sunt ușor de confundat cu alte caractere. De asemenea specificațiile
-nu garantează să definească un limbaj uman pentru aceste caractere.
+Disse karakterer er ofte nemt forvekslet med andre karakterer. Endvidere, HTML specifikationen garanterer ikke en menneskevenlig definition for disse karakterer
 
-Greșit:
+Dårligt:
 
     <p>This book can read in 1 hour.</p>
 
-Corect:
+Godt:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
 
-### Lasă spații libere înainte și după comenturi
+### Tilføj mellemrum før og efter kommentarindhold
 
-Unele caractere nu pot fi folosite imediat după începutul și sfârșitul comentului.
+Nogle karakterer kan ikke anvendes som første og sidste karakter i en HTML kommentar.
 
-
-Greșit:
+Dårligt:
 
     <!--This section is non-normative-->
 
-Corect:
+Godt:
 
     <!-- This section is non-normative -->
 
 
-### Nu omiteți închiderea tag-ului
+### Husk at lukke ethvert HTML-element med et "lukke-tag"
 
-E posibil să nu înțelegi regula dacă uitați să închideți tag-ul.
+Ethvert HTML-element skal lukkes korrekt for at sikre læsbarhed
 
-Greșit:
+Dårligt:
 
     <html>
       <body>
         ...
 
-Corect:
+Godt:
 
     <html>
       <body>
@@ -128,140 +125,136 @@ Corect:
     </html>
 
 
-### Păstrează același tip de format pentru elementele deschise
+### Husk at lukke "tomme" HTML-elementer
 
-Consistența este cheia lizibilității.
+Sikrer læsbarhed.
 
-Greșit:
+Dårligt:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Corect:
+Godt:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
 
-### Nu lăsa spații libere în jurul tag-urilor sau valorilor atributelor
+### Undgå overflødige mellemrum i HTML-elementers tags og værdier
 
-Nu există vreun motiv pentru a lăsa aceste spații.
+Det er der ikke nogen grund til.
 
-Greșit:
+Dårligt:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Corect:
+Godt:
 
     <h1 class="title">HTML Best Practices</h1>
 
 
-### Nu amesteca tipul de caractere
+### Undgå at blande store og små bogstaver
 
+Sikrer konsistens
 
-Oferă consistență.
-
-Greșit:
+Dårligt:
 
     <a HREF="#general">General</A>
 
-Corect:
+Godt:
 
     <a href="#general">General</a>
 
-De asemenea corect, dar de preferat varianta de mai sus:
+OgsågGodt:
 
     <A HREF="#general">General</A>
 
 
-### Nu amesteca semnele de apostrof
+### Undgå at blande typer af anførselstegn
 
-La fel ca mai sus.
+Samme som ovenfor
 
-Greșit:
+Dårligt:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Corect:
+Godt:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### Nu despărții atributele prin două sau mai multe spații libere
+### Undgå at separere attributter med to eller flere mellemrum
 
-Formatarea atipică poate crea confuzie celorlalți.
-
-Greșit:
+Dårligt:
 
     <input   name="q"  type="search">
 
-Corect:
+Godt:
 
     <input name="q" type="search">
 
 
-### Omite atributele cu valoare booleană
+### Undlad booleansk attributværdier
 
-Este mult mai ușor de scris.
+Det er møj' nemmere blot at skrive attributtens key, såfremt den er sand.
 
-Greșit:
+Dårligt:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Corect:
+Godt:
 
     <audio autoplay src="/audio/theme.mp3">
 
 
-### Omite "namespaces"
+### Undlad namespaces
 
-SVG și MathML pot fi folosite direct in HTML.
+SVG and MathML kan anvendes direkte i et HTML dokument.
 
-Greșit:
+Dårligt:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Corect:
+Godt:
 
     <svg>
       ...
     </svg>
 
 
-### Nu folosiți atribute XML
+### Undgå at bruge XML-attributter
 
-Scriem un document HTML.
+Det er HTML vi skriver!
 
-Greșit:
+Dårligt:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Corect:
+Godt:
 
     <span lang="ja">...</span>
 
 
-### Nu amesteca atributele de tip `data-*`, `Microdata` și `RDFa Lite` cu atributele comune
+### Undgå at blande `data-*`, Microdata og RDFa Lite attributter med gængse attributter
 
-Șirul de atribute din `tag` poate fi foarte complicat. Aceasta simplă regulă poate duce la
-o citire mult mai ușoară a șirului.
+for at sikre læsbarhed, bør de ovennævnte attribut-typer grupperes for sig.
 
-Greșit:
+Dårligt:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Corect:
+Godt:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### Folosiți semantica implicită ARIA
+### Foretræk at anvende den implicitte standard-semantik
 
-Unele elemente au un ARIA `role` implicit, nu îl specifica din nou.
+Nogle elementer har en implicit ARIA `role`-attribut. Undlad at specificere dem unødigt.
 
-Greșit:
+Dårligt:
 
     <nav role="navigation">
       ...
@@ -269,7 +262,7 @@ Greșit:
 
     <hr role="separator">
 
-Corect:
+Godt:
 
     <nav>
       ...
@@ -278,66 +271,66 @@ Corect:
     <hr>
 
 
-## Elementul `root`
+## root-elementet
 
 
-### Adaugă atributul `lang`
+### Tilføj `lang`-attribut
 
-Atributul `lang` va ajuta la traducerea documentului HTML.
+`lang` attributten hjælper med at oversætte et HTML-dokument.
 
-Greșit:
+Dårligt:
 
     <html>
 
-Corect:
+Godt:
 
-    <html lang="en-US">
-
-
-### Folosiți valoarea cât mai scurtă a atributului `lang`
-
-Limba Japoneză este folosită doar în Japonia, de aceea codul țării nu este necesar.
-
-Greșit:
-
-    <html lang="ja-JP">
-
-Corect:
-
-    <html lang="ja">
+    <html lang="da-DK">
 
 
-### Evită pe cât de mult posibil atributele de tip `data-*`
+### Hold `lang` attributten så kort som mulig
 
-Un atribut adecvat poate fi gestionat corect de către browser.
+Dansk er ofte kun brugt i Danmark. Landekoden er derfor ikke nødvendig.
 
-Greșit:
+Dårligt:
+
+    <html lang="da-DK">
+
+Godt:
+
+    <html lang="da">
+
+
+### Undgå `data-*` attributter i videst muligt omfang
+
+En passende attribut håndteres bedre af browseren
+
+Dårligt:
 
     <span data-language="french">chemises</span>
     ...
     <strong data-type="warning">Do not wash!</strong>
 
-Corect:
+Godt:
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
     <strong class="warning">Do not wash!</strong>
 
 
-## Metadatele documentului
+## Document metadata
 
 
-### Adaugă elementul `title`
+### Tilføj `title`-element
 
-Valoarea elementului `title` este folosit de diverse aplicații, nu numai de browser.
+Et `title`-element bruges af adskillige applikationer - ikke kun browseren.
 
-Greșit:
+Dårligt:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Corect:
+Godt:
 
     <head>
       <meta charset="UTF-8">
@@ -345,11 +338,11 @@ Corect:
     </head>
 
 
-### Nu folosiți elementul `base`
+### Undgå `base`-element
 
-O cale de tip absolut sau URL este mult mai sigură atât pentru developer cât și pentru user.
+En absolut sti eller URL er mere sikker for både udviklere og brugere
 
-Greșit:
+Dårligt:
 
     <head>
       ...
@@ -358,7 +351,7 @@ Greșit:
       ...
     </head>
 
-Corect:
+Godt:
 
     <head>
       ...
@@ -367,76 +360,76 @@ Corect:
     </head>
 
 
-### Specifică atașamentelor, tipul de resursă `MIME` (Media Type)
+### Specificer MIME-type af linket indhold
 
-Acesta oferă un indiciu aplicației în a gestiona resursa.
+Dette giver applikationen eller browser et hint om hvad det linkede indholds type er
 
-Greșit:
+Dårligt:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Corect:
+Godt:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### Nu face legatura cu `favicon.ico`
+### Undgå at linke til `favicon.ico`
 
-Aproape toate browserele preiau `/favicon.ico` automat și asincron.
+Stortset alle browsere henter automatisk `/favicon.ico` asynkront.
 
-Greșit:
+Dårligt:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Corect:
+Godt:
 
-    <!-- Place `favicon.ico` in the root directory. -->
+    <!-- Placer `favicon.ico` i serverens rod. -->
 
 
-### Adaugă `apple-touch-icon`
+### Tilføj [`apple-touch-icon`](https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/) link
 
-Valoarea implicită a căii pentru `touch icon` a fost schimbată.
+Standard-stien for request af touch icon blev ændret efter iOS 8, og Safari henter ikke automatisk fra den gamle standard-sti i roden af et website.
 
-Greșit:
+Dårligt:
 
-    <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
+    <!-- Hey Apple! Please download `/apple-touch-icon-precomposed.png`! -->
 
-Corect:
+Godt:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
 
-### Pentru stylesheet-uri alternative, adaugă atributul `title`
+### Tilføj `title`-attribut til alternative stylesheets
 
-Eticheta poate ajuta userul la selectarea stylesheet-ului corespunzător.
+En label der er læselig for mennesker hjælper bla. folk med fx synshandicap til at vælge et passende stylesheet.
 
-Greșit:
+Dårligt:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Corect:
+Godt:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
-### Pentru URL-uri, folosiți elementul `link`
+### For en URL, anvend `link`-element
 
-O valoarea a atributului `href` poate fi rezolvată ca URL.
+En værdi af en `href`-attibut læses som en URL
 
-Greșit:
+Dårligt:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Corect:
+Godt:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
@@ -444,17 +437,17 @@ Corect:
     </section>
 
 
-### Specifică tipul de codificare a caracterelor
+### Specificer et dokuments character encoding
 
-UTF-8 nu este încă folosit ca valoare inițială de toate browserele.
+UTF-8 er ikke standarden i alle browsere (endnu).
 
-Greșit:
+Dårligt:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Corect:
+Godt:
 
     <head>
       <meta charset="UTF-8">
@@ -462,26 +455,24 @@ Corect:
     </head>
 
 
-### Nu folosiți formate învechite de codificare a caracterelor
+### Undgå at ancende forældede character encoding formater
 
-Header-ul HTTP ar trebui specificat de un server.
+HTTP-headers bør specificeres af serveren.
 
-Greșit:
+Dårligt:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Corect:
+Godt:
 
     <meta charset="UTF-8">
 
 
-### Declarați mai intăi tipul de codificare al caracterlor
+### Specificer character encoding som det første
 
-Conform specificațiilor este necesară declararea tipului de codificare a caracterelor în primi
-1024 biți ai documentului.
+Specifikationen forventer, at character encoding specificeres inden for de første 1024 bytes af dokumentet
 
-
-Greșit:
+Dårligt:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -489,7 +480,7 @@ Greșit:
       ...
     </head>
 
-Corect:
+Godt:
 
     <head>
       <meta charset="UTF-8">
@@ -498,41 +489,41 @@ Corect:
     </head>
 
 
-### Folosiți UTF-8
+### Brug UTF-8 😎
 
-Cu UTF-8, sunteți liber să utilizați Emoji.
+Med UTF-8, kan du frit bruge emojis.
 
-Greșit:
+Dårligt:
 
     <meta charset="Shift_JIS">
 
-Corect:
+Godt:
 
     <meta charset="UTF-8">
 
 
-### Omite atributul `type` pentru CSS
+### Undlad unødvendig `type`-attribut for CSS
 
-În HTML, valoarea inițială a atributului `type` pentru elementele de tip `style` sunt în format `text/css`
+I HTML er standardværdien af `type` attributten `text/css`.
 
-Greșit:
+Dårligt:
 
     <style type="text/css">
       ...
     </style>
 
-Corect:
+Godt:
 
     <style>
       ...
     </style>
 
 
-### Nu comentați conținutul elementului „style”.
+### Undlad at udkommentere `style` element
 
-Acestă practică este pentru versiuni mai vechi de browsere.
+Dette er "gammel strøm" der stammer fra gamle browsere
 
-Greșit:
+Dårligt:
 
     <style>
     <!--
@@ -540,44 +531,44 @@ Greșit:
       -->
     </style>
 
-Corect:
+Godt:
 
     <style>
       ...
     </style>
 
 
-### Nu amesteca tag-urile de CSS cu cele de Javascript
+### Undlad at blande tags for CSS og JavaScript
 
-Uneori elementele `script` blochează construcția DOM-ului.
+I særlige tilfælde vil `script`-elementer blokere for konstruktionen af DOM.
 
-Greșit:
+Dårligt:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Corect:
+Godt:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-De asemenea corect:
+Også Godt:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
 
-## Secțiuni
+## Sections
 
 
-### Adaugă elementul `body`
+### Tilføj `body` element
 
-Uneori elementul `body` dacă nu este declarat, este complementat automat de către browser în zone neașteptate.
+Af og til vil `body` elementet blive suppleret uventet af en browser.
 
-Greșit:
+Dårligt:
 
     <html>
       <head>
@@ -586,7 +577,7 @@ Greșit:
       ...
     </html>
 
-Corect:
+Godt:
 
     <html>
       <head>
@@ -598,76 +589,75 @@ Corect:
     </html>
 
 
-###  Nu folosiți elementul `hgroup`
+### Glem alt om `hgroup`-elementet
 
-Acest element nu se mai folosește.
+Dette element bruges ikke særlig ofte.
 
-Greșit:
+Dårligt:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Corect:
+Godt:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### Folosiți elementul `address` doar pentru informațiile de contact
+### Brug kun `address`-elementet til kontaktinformation
 
-Elementul `address` se folosește doar pentru adresa de e-mail, conturile sociale,
-adresă, număr de telefon, sau orice altă informație referitoare la contact.
+`address`-element er til email-adresser, social media konti, fysisk addresse, telefonnummer eller noget der kan bruges til at kontakte med
 
-Greșit:
+Dårligt:
 
     <address>No rights reserved.</address>
 
-Corect:
+Godt:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-## Gruparea conținutului
+## Indholdsgruppering
 
 
-### Nu începe cu un rând gol în elementul `pre`
+### Undlad at starte ned et linjeskift (newline) i et `pre`-element
 
-Un rând nou liber va fi complet ignorat de către browser.
+Det første linjeskift bliver ignoreret i browseren, men andet og senere linjer bliver anvendt.
 
-Greșit:
+Dårligt:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Corect:
+Godt:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
 
-### Folosiți elemente corespunzătoare în interiorul elementului `blockquote`
+### Brug passende element i et `blockquote` element
 
-Conținutul elementului `blockquote` este un citat, nu un grup de caractere.
+`blockquote`-elementers indhold forventes at være et citat. Ikke blot en bunke karakterer.
 
-Greșit:
+Dårligt:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Corect:
+Godt:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
 
-### Nu includeți atribuirea, direct în elementul `blockquote`
+### Undlad at inkludere citatets ophavsperson direkte i `blockquote` element
 
-Conținutul elementului `blockquote` este un citat.
+`blockquote`-elementets indhold er blot et citat
 
-Greșit:
+Dårligt:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -675,7 +665,7 @@ Greșit:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Corect:
+Godt:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -683,7 +673,7 @@ Corect:
 
     <p>— HTML Best Practices</p>
 
-De asemenea corect:
+Også Godt:
 
     <figure>
       <blockquote>
@@ -694,18 +684,18 @@ De asemenea corect:
     </figure>
 
 
-### Declară doar un obiect (item) din listă per rând
+### Skriv elementer i en liste på hver sin linje
 
-Rândurile luuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuungi
-sunt greuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu de citit.
+Laaaaaaaaaaaaaaaaaaaaaaaaaaaaaannnnnnnnnnnnnnnnnnnnge
+linjer er svære at lææææææææææææææææææææææææææææææææææææææææææææææææse
 
-Greșit:
+Dårligt:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Corect:
+Godt:
 
     <ul>
       <li>General</li>
@@ -715,12 +705,11 @@ Corect:
     </ul>
 
 
-### Pentru elementel `ol` folosiți atributul `type`
+### Brug `type`-attribut for `ol`-elementer
 
-Sometimes marker referenced by the contents in the near. If you change marker
-with `type` attribute, you will be safe to reference.
+Brug `type`-attributten til at bestemme hvilken type markering hver linje i en liste skal anvende, for at sikre fremtidige referencer.
 
-Greșit:
+Dårligt:
 
     <head>
       <style>
@@ -738,7 +727,7 @@ Greșit:
       </ol>
     </body>
 
-Corect:
+Godt:
 
     <body>
       <ol type="I">
@@ -750,11 +739,11 @@ Corect:
     </body>
 
 
-### Nu folosiți `dl` pentru dialoguri
+### Undgå at bruge `dl` til dialog
 
-Elementul `dl` este folosit în HTML doar pentru asocierea listelor.
+`dl`-element er begrænset til association list i HTML.
 
-Greșit:
+Dårligt:
 
     <dl>
       <dt>Costello</dt>
@@ -772,7 +761,7 @@ Greșit:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Corect:
+Godt:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -783,12 +772,11 @@ Corect:
     <p>Abbott: Every dollar of it.</p>
 
 
-### Declară elementul `figcaption` ca fiind primul sau ultimul descendent din elementul `figure`
+### Placer `figcaption` element som det første eller sidste child af et `figure` element
 
-Specificațiile interzic folosirea elementului `figcaption` în mijlocul elementului `figure`.
+HTML specifikationen foryder at placere `figcaption`inden i et `figure` element.
 
-
-Greșit:
+Dårligt:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -796,7 +784,7 @@ Greșit:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Corect:
+Godt:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -805,56 +793,54 @@ Corect:
     </figure>
 
 
-### Folosiți elementul `main`
+### Brug `main` element
 
-Elementul `main` poate fi folosit pentru a înfășura conținutul.
+`main` elementet ckan bruges til at omslutte det generelle indhold.
 
-Greșit:
+Dårligt:
 
     <div id="content">
       ...
     </div>
 
-Corect:
+Godt:
 
     <main>
       ...
     </main>
 
 
-### Evitați cât mai mult posibil elementul `div`
+### Undgå `div` element i videst muligt omfang
 
-Elementul `div` este un element de ultimă instanță.
+`div` elementet er en sidste udvej
 
-
-Greșit:
+Dårligt:
 
     <div class="chapter">
       ...
     </div>
 
-Corect:
+Godt:
 
     <section>
       ...
     </section>
 
 
-## Semantică la nivel de text
+## Text-level semantik
 
 
-### Nu împărți același link dacă se poate grupa
+### Undgå at splitte det samme link som kan grupperes
 
-Elementul `a` poate înfășura aproape toate elementele (mai puțin elementele interactive
-cum ar fi `form controls` și însuși elementul `a`).
+`a` elementer kan omkranse næsten alle elementer (undtagen interaktive elementer som en form-kontrol eller et andet `a` element) .
 
-Greșit:
+Dårligt:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Corect:
+Godt:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
@@ -863,227 +849,226 @@ Corect:
     </a>
 
 
-### Folosiți atributul `download` pentru a descărca o resursă
+### Brug `download`-attribut hvis der kan downloades en resource
 
-Va forța browserul să descarce resursa în locația dorită.
+Det tvinger browseren til at downloade en linked sti til enhedens lager
 
-Greșit:
+Dårligt:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Corect:
+Godt:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Folosiți atributele `rel`, `hreflang` și `type`  dacă este necesar
+### Brug `rel`, `hreflang`, og `type` attributter hvis nødvendigt
 
-Aceste indicii ajută aplicațiile să gestioneze resursele.
+Disse hints hjælper apps med at håndtere en linked resurse
 
-Greșit:
+Dårligt:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Corect:
+Godt:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### Textul link-ului trebuie să fie concis / clar
+### Link tekst skal være til at gennemskue
 
-Textul link-ului trebuie să fie eticheta resursei asociate.
+Label til et link bør beskrive hvad der linkes til.
 
-Greșit:
+Dårligt:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Corect:
+Godt:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### Nu folosiți elementul `em` pentru avertizare sau atenționare
+### Undgå at bruge `em` elementer til en advarsel
 
-În acest caz elementul `strong` este mult mai potrivit.
+Disse omhandler vigtighed og seriøsitet. Derfor er et `strong` element mere passende
 
-
-Greșit:
+Dårligt:
 
     <em>Caution!</em>
 
-Corect:
+Godt:
 
     <strong>Caution!</strong>
 
 
-### Evită folosirea elementelor `s`, `i`, `b` și `u` pe cât posibil
+### Undgå `s`, `i`, `b`, and `u` elementer i videst muligt omfang
 
-Nu au o semantică bună.
+disse elementers semantik er for vanskelige at læse for mennesker (udviklere)
 
-Greșit:
+Dårligt:
 
     <i class="icon-search"></i>
 
-Corect:
+Godt:
 
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### Nu cita elementul `q`
+### Undlad at tilføje anførselstegn til et `q` element
 
-Ghilimelele sunt furnizate de către browser.
+Anførselstegn bliver tilføjet af browseren.
 
-Greșit:
+Dårligt:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Corect:
+Godt:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-De asemenea corect:
+Også Godt:
 
     “For writing maintainable and scalable HTML documents”
 
 
-### Adăugați elementului `abbr` atributul `title`
+### tilføj `title` attribut til `abbr` element
 
-Nu există o altă modalitate de a vedea expansiunea abrevierii.
+Der er ikke nogen anden måde at repræsentere dens udvidelse
 
-Greșit:
+Dårligt:
 
     <abbr>HBP</abbr>
 
-Corect:
+Godt:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
-### Marcați în mod verbos elementul `ruby`
 
-Suportul pentru elementul `ruby` nu este finalizat în browserele moderne.
+### Skriv `ruby` element helt ud
 
-Greșit:
+`ruby` element er ikke understøttet på tværs af moderne browsere.
+
+Dårligt:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Corect:
+Godt:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Adăugați elementului `time` atributul `datetime`
+### Tilføj `datetime` attribut to ikke-maskin-læseligt `time` element
 
+når `datetime` attribut ikke eksisterer, er formatet af `time` elementets indhold begrænset
 
-Dacă atributul `datetime` nu este prezent, accestul la formatul elementului `time`
-este restricționat.
-
-Greșit:
+Dårligt:
 
     <time>Dec 19, 2014</time>
 
-Corect:
+Godt:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Specificați limbajul codului cu atributul `class` având ca prefix `language-`
+### Udspecificer kodesprog med `class` attribut, anført med `language-`
 
-Aceasta nu este o modalitate formală, dar specificațiile menționează acest lucru.
+Dette er ikke en formel måde, men spec nævner det.
 
-Greșit:
+Dårligt:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Corect:
+Godt:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
-### Păstrați elementul `kbd` cât mai simplu posibil
+### Hold `kbd` element så simpelt som muligt
 
-Nestarea multiplă a acestuia îngreunează citirea.
+Indlejring af `kbd` elementer i rekursive niveauer er for svært for mennesker at læse
 
-Greșit:
+Dårligt:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
-Good:
+Godt:
 
     <kbd>Ctrl+F5</kbd>
 
 
-### Evitați cât mai mult posibil elementul `span`
+### Undgå `span` elementet i videst muligt omfang
 
-Elementul `span` este un element de ultimă instanță.
+`span` element er en sidste udvej.
 
-Greșit:
+Dårligt:
 
     HTML <span class="best">Best</span> Practices
 
-Corect:
+Godt:
 
     HTML <em>Best</em> Practices
 
 
-### Rând nou după elementul `br`
+### Linjeskift efter `br` element
 
-Este necesar saltul la un rând nou după folosirea elementului `br`.
+Linjeskift bør tilføjes når der anvendes et `br` element. Læsbarhed.
 
-Greșit:
+Dårligt:
 
     <p>HTML<br>Best<br>Practices</p>
 
-Good:
+Godt:
 
-    <p>HTML<br>
-    Best<br>
+    <p>HTML<br/>
+    Best<br/>
     Practices</p>
 
 
-### Nu utilizați elementul `br` doar în scop de prezentare
+### Brug ikke `br` element kun af præsentationsmæssige årsager
 
-Elementul `br` se folosește la întreruperile de linie din conținut.
+`br` elementet er ikke til linjeskift af synsmæssige årsager, men til at lave ophold i indhold.
 
-Greșit:
+Dårligt:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Corect:
+Godt:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
 
-## Editări
+## Redaktionelle overvejelser
 
-### Nu săriți cu elementele `ins` și `del` peste alte elemente
 
-Elementele nu pot sări peste alte elemente.
+### Undlad `ins` og `del` elementer på tværs af andre elementer
 
-Greșit:
+Elementet kan ikke strække sig til andre elementer.
+
+Dårligt:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
 
     <p>Don’t trust!</p></del>
 
-Corect:
+Godt:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
 
     <del><p>Don’t trust!</p></del>
 
 
-## Conținut `Embedded`
+## Embedded (indlejret) indhold  
 
 
-### Pentru elementul `picture` furnizați întotdeauna ca element de rezervă `img`
+### Angiv et `img` element der kan faldes tilbage på for `picture` element
 
-Suportul pentru elementul `picture` nu este încă foarte bun.
+Understøttelsen af `picture` element er ikke gennemført endnu.
 
-Greșit:
+Dårligt:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1092,7 +1077,7 @@ Greșit:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Corect:
+Godt:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1102,67 +1087,67 @@ Corect:
     </picture>
 
 
-### Adăugați atributul `alt` la elementul `img` dacă este necesar
+### Tilføj `alt` attribut til `img` element hvis nødvendigt
 
-Atributul `alt` oferă informații text adiționale în caz ca imaginile nu pot fi accesate
-sau este dezactivată încărcarea acestora.
+`alt` attribut helps those who cannot process images or have image loading disabled.
+`alt` attribut hjælper dem der ikke kan processere billedindhold eller har hentning af billedindhold slået fra.
 
-Greșit:
+Dårligt:
 
     <img src="/img/logo.png">
 
-Corect:
+Godt:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### Omite conținutul atributului `alt` atunci când este cazul
+### Undgå overflødig `alt` attribut
 
-Dacă imaginea este suplimentară și există conținut echivalent undeva în apropiere.
+Hvis billedet blot supplementerer indholdet, kan ekvivalent indhold findes i nærdheden af billedet. Anvendes fx for screenreaders af tilgængelighedshensyn (synshandicap.)
 
-Greșit:
+Dårligt:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Corect:
+Godt:
 
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### Omite atributul `alt` dacă este posibil
+### Undgå `alt` attribut hvis muligt
 
-Uneori nu știți ce text este potrivit pentru atributul `alt`.
+Af og til vides det korrekte indhold til en `alt` attribut ikke.
 
-Greșit:
+Dårligt:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Corect:
+Godt:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
-    (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
+    (Hvis du ikke kan se billedet, kan du bruge en <a href="?audio">audio</a> test istedet.)
 
 
-### Elementul `iframe` deschis
+### tomt `iframe` element
 
-Există anumite restricții în conținutul său. A fi gol este întotdeauna în siguranță.
+Der er nogle begrænsninger i indholdet af en `iframe`. Det er altid sikkert at lade denne være tom.
 
-Greșit:
+Dårligt:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Corect:
+Godt:
 
     <iframe src="/ads/default.html"></iframe>
 
 
-### Marcați conținutul elementului `map`.
+### Opmærk indhold i `map` element
 
-Conținutul acestuia este prezentat de către un cititor de ecran.
+Dette indhold bliver præsenteret for en screen reader (skærmlæser, for folk med synshandicap)
 
-Greșit:
+Dårligt:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1173,7 +1158,7 @@ Greșit:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Corect:
+Godt:
 
     <map name="toc">
       <p>
@@ -1187,11 +1172,11 @@ Corect:
     </map>
 
 
-### Furnizați conținut alternativ pentru elementul `audio` sau `video`
+### Angiv indhold at falde tilbage på for `audio` og `video` elementer
 
-Conținutul de rezervă este necesar pentru noile elementele introduse în HTML.
+Indhold der kan faldes tilbage på sikrer bagudkompatibilitet for indholdstyper der for nyligt er tilføjet til HTML.
 
-Greșit:
+Dårligt:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1199,7 +1184,7 @@ Greșit:
       ...
     </video>
 
-Corect:
+Godt:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1209,20 +1194,20 @@ Corect:
     </video>
 
 
-## Date tabulare
+## Data på tabelform
 
 
-### Scrieți doar câte o celulă a tabelului pe fiecare rând
+### Skriv en celle per linje
 
-Randurile lungi sunt greu de urmărit.
+Lange linjer er svære at læse og overskue.
 
-Greșit:
+Dårligt:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Corect:
+Godt:
 
     <tr>
       <td>General</td>
@@ -1231,11 +1216,11 @@ Corect:
     </tr>
 
 
-### Utilizați elementul `th` pentru antetul celulei
+### Brug `th` elementet til et beskrivende tebelhoved
 
-Nu există vreun motiv să nu faci acest lucru.
+Dette bør ikke undlades
 
-Greșit:
+Dårligt:
 
     <table>
       <thead>
@@ -1259,7 +1244,7 @@ Greșit:
       </tbody>
     </table>
 
-Corect:
+Godt:
 
     <table>
       <thead>
@@ -1284,100 +1269,98 @@ Corect:
     </table>
 
 
-## Form
+## Formularer
 
-### Înfășoară `form control` cu elementul `label`
 
-Elementul `label` ajută la focalizarea elementului de formular.
+### Omkrans form controls med `label` element
 
-Greșit:
+`label` elementet hjælper brugeren med at fokusere på elementet
+
+Dårligt:
 
     <p>Query: <input name="q" type="text"></p>
 
-Corect:
+Godt:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### Omite atributul `for` dacă este posibil
+### Undlad `for` attribut hvis muligt
 
-Elementul `label` poate conține un tip de formă.
+`label` element can contain some form elements.
 
-Greșit:
+Dårligt:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Corect:
+Godt:
 
     <label>Query: <input name="q" type="text"></label>
 
 
-### Utilizați atributul `type` adecvat pentru elementul `input`
+### Brug passende `type` attribut til `input` element
 
-Prin folosirea atributului `type` adecvat, browserul ofera niște caracteristici elementului `input`
+Med passende `type`, giver browseren relevante features til `input` elementer.
 
-Greșit:
+Dårligt:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Corect:
+Godt:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### Adăugați atributul `value` la `input type="submit"`
+### Tilføj `value` attribut til `input type="submit"`
 
-Valoarea implicita a `label-ului` pentru butonul `submit` nu este standardizat
-în rândul browserelor și limbajelor.
+Standardlabel for en submit-knap er ikke standardiseret på tværs af browsere og sprog.
 
-Greșit:
+Dårligt:
 
     <input type="submit">
 
-Corect:
+Godt:
 
-    <input type="submit" value="Search">
+    <input type="submit" value="Søg">
 
 
-### Adăugați atributul `title` la elementul `input` atunci când există atributul `pattern`
+### tilføj `title` attribut til `input` element når der er en `pattern` attribut
 
-Dacă textul introdus nu se potrivește cu atributul `pattern`, valoarea atributului `title`
-va fi afișat ca indiciu.
+Hvis input tekst ikke stemmer overens med `pattern` attribut, skal værdien af en `title` attribut vises som et hint.
 
-Greșit:
+Dårligt:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
 
-Corect:
+Godt:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### Nu folosiți atributul `placeholder` pentru etichetare
+### Undlad at bruge `placeholder` attribut som etiket
 
-Elementul `label` este folosit pentru etichetare, iar elementul `placeholder` este folosit drept scurt indiciu.
+`label` element anvendes til etiketter, `placeholder` attribut er til et kort hint.
 
-Greșit:
+Dårligt:
 
     <input name="email" placeholder="Email" type="text">
 
-Corect:
+Godt:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### Scrieți câte un element `option` per rând.
+### Skriv én `option` element per line
 
-Rândurile lungi sunt greu de scanat.
+Lange linjer er svære at overskue.
 
-
-Greșit:
+Dårligt:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Corect:
+Godt:
 
     <datalist id="toc">
       <option label="General">
@@ -1386,38 +1369,35 @@ Corect:
     </datalist>
 
 
-### Adăugați atributul `max` la elementul `progress`
+### Tilføj `max` attribut til `progress` element
 
-Cu atributul `max`, atributul `value` poate fi scris într-un format simplu.
+Med `max` attribut, kan `value` attributten blive skrevet i et nemt og mere passende format.
 
-Greșit:
+Dårligt:
 
     <progress value="0.5"> 50%</progress>
 
-Corect:
+Godt:
 
     <progress max="100" value="50"> 50%</progress>
 
 
-### Adăugați atributele `min` și `max` la elementul `meter`
+### Tilføj `min` and `max` attribut til `meter` element
 
-Cu atributele `min` și `max`, atributul `value` poate fi scris într-un format ușor.
+Med `min` and `max` attributterne, kan `value` attributterne blive skrevet i et nemt og mere passende format.
 
-
-Greșit:
+Dårligt:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-Corect:
+Godt:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### Plasați elementul `legend` ca prim descendent al elementului `fieldset`
+### Placer `legend` element som det første element af et `fieldset` element
 
-Specificațiile cer acest lucru.
-
-Greșit:
+Dårligt:
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1425,7 +1405,7 @@ Greșit:
       <legend>About "General"</legend>
     </fieldset>
 
-Corect:
+Godt:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1434,31 +1414,32 @@ Corect:
     </fieldset>
 
 
-## Scriptare
+## Scripting
 
 
-### Omite atributul `type` pentru Javascript
+### Undlad `type` attribut for JavaScript
 
-În HTML, valoarea inițială a atributului `type` pentru elementul `script` este `text/javascript`.
+I HTML er standardværdien af en `type` attribut i et `script` element
+`text/javascript`.
 
-Greșit:
+Dårligt:
 
     <script type="text/javascript">
       ...
     </script>
 
-Corect:
+Godt:
 
     <script>
       ...
     </script>
 
 
-### Nu comentați conținutul elementului `script`
+### Undlad at udkommentere indhold af et `script` element
 
-Acestă practică este pentru versiuni mai vechi de browsere.
+Dette er gammel strøm fra gamle browsere
 
-Greșit:
+Dårligt:
 
     <script>
     /*<![CDATA[*/
@@ -1466,7 +1447,7 @@ Greșit:
     /*]]>*/
     </script>
 
-De asemenea greșit:
+Also Dårligt:
 
     <script>
     <!--
@@ -1474,18 +1455,19 @@ De asemenea greșit:
     // -->
     </script>
 
-Corect:
+Godt:
 
     <script>
       ...
     </script>
 
 
-### Nu folosi "script-injected" în elementul `script`
+### Don’t use script-injected `script` element
+### Undlad at bruge script-injected `script` element
 
-Atributul `async` este cel mai bun atât pentru simplitate, cât și pentru performanță.
+`async` attribut er det bedste for både simplicitet of performance.
 
-Greșit:
+Dårligt:
 
     <script>
       var script = document.createElement("script");
@@ -1494,30 +1476,30 @@ Greșit:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Corect:
+Godt:
 
     <script async defer src="https://example.com/widget.js"></script>
 
 
-## Alte
+## Other
 
 
-### Indentează în mod constant
+### Konsistens med indentering
 
-Indentarea este importantă pentru lizibilitate.
+Korrekt indentering er vigtig for læsbarhed.
 
-Greșit:
+Dårligt:
 
     <html>
-	<head>
-	  ...
-	</head>
+    	<head>
+    	  ...
+    	</head>
       <body>
         ...
       </body>
     </html>
 
-Corect:
+Godt:
 
     <html>
       <head>
@@ -1529,46 +1511,45 @@ Corect:
     </html>
 
 
-### Pentru linkurile interne folosiți căi absolute
+### Anvend absolut sti til interne links
 
-O cale absolută funcționează mai bine pe localhost fără conexiune la internet.
+En absolut sti virker bedre på en lokal maskine uden internetforbindelse.
 
-Greșit:
+Dårligt:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Corect:
+Godt:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
 
-###  Nu folosiți adrese protocol relative URL pentru resurse externe
+### Undlad at anvende protokol-relative URL til eksterne resurser
 
+Med den korrekte protokol kan man loade eksterne resurser pålideligt og sikkert.
 
-Prin protocol puteți încărca resurse externe în mod fiabil și în siguranță.
-
-Greșit:
+Dårligt:
 
     <script src="//example.com/js/library.js">
 
-Corect:
+Godt:
 
     <script src="https://example.com/js/library.js">
 
 
 
 
-## Contribuitori
+## Contributors
 
 - [@hail2u_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
 
 
-## Traducători
+## Translators
 
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
@@ -1578,8 +1559,9 @@ Corect:
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@wesleynepo](https://github.com/wesleynepo)
+- [@stenbaek](https://github.com/stenbaek)
 
 
-## Licență
+## License
 
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
