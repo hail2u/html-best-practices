@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
 
 # Mejores Prácticas de HTML
 
@@ -1560,6 +1560,7 @@ Bien:
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
 - [@kobyborali](https://github.com/kobyborali)
+- [@m1nhnv](https://github.com/m1nhnv)
 - [@mrcaidev](https://github.com/mrcaidev)
 - [@sahilmaniyar](https://github.com/sahilmaniyar)
 - [@stenbaek](https://github.com/stenbaek)
