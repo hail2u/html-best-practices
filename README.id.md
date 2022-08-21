@@ -1,116 +1,125 @@
 Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
 
-# Bewährte Verfahren für HTML
+# Penerapan HTML Terbaik
 
-Zum Schreiben wartbarer und skalierbarer HTML-Dokumente
+Untuk menulis dokumen HTML yang dapat dikelola dan diukur
 
-## Allgemein
 
-### Beginnen Sie mit DOCTYPE
+## Umum
 
-DOCTYPE wird zum Aktivieren des No-Quirks-Modus benötigt.
 
-Schlecht:
+### Dimulai dengan DOCTYPE
+
+DOCTYPE diperlukan untuk mengaktifkan mode standar.
+
+Buruk:
 
     <html>
       ...
     </html>
 
-Gut:
+Baik:
 
     <!DOCTYPE html>
     <html>
       ...
     </html>
 
-### Verwenden Sie kein veraltetes oder veraltetes DOCTYPE
 
-DOCTYPE ist nicht mehr für DTD, seien Sie einfach.
+### Gunakan DOCTYPE versi terbaru
 
-Schlecht:
+DOCTYPE bukan untuk DTD lagi.
+
+Buruk:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Gut:
+Baik:
 
     <!DOCTYPE html>
 
-### Verwenden Sie keine XML-Deklaration
 
-Sind Sie sicher, dass Sie XHTML schreiben möchten?
+### Jangan gunakan deklarasi XML
 
-Schlecht:
+Anda yakin ingin menulis XHTML?
+
+Buruk:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Gut:
+Baik:
 
     <!DOCTYPE html>
 
-### Don’t use character references as much as possible
 
-Wenn Sie ein HTML-Dokument mit UTF-8 schreiben, werden fast alle Zeichen (einschließlich
-Emoji) können direkt geschrieben werden.
+### Hindari penggunaan referensi karakter sebisa mungkin
 
-Schlecht:
+Jika anda menulis dokumen HTML dengan pengkodean UTF-8, sebagian besar karakter (termasuk
+Emoji) dapat ditulis secara langsung.
+
+Buruk:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Gut:
+Baik:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
-### Escape `&`, `<`, `>`, `"` und `'` mit benannten Zeichenreferenzen
 
-Diese Zeichen sollten für ein fehlerfreies HTML-Dokument immer maskiert werden.
+### Hindari penggunaan referensi karakter bernama seperti `&`, `<`, `>`, `"`, dan `'`
 
-Schlecht:
+Karakter ini harus dihindari agar dokumen HTML aman dari bug.
+
+Buruk:
 
     <h1>The "&" character</h1>
 
-Gut:
+Baik:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-### Verwenden Sie numerische Zeichenreferenzen für Steuerzeichen oder unsichtbare Zeichen
 
-Diese Zeichen werden leicht mit anderen Zeichen verwechselt. Und auch spec tut
-garantiert nicht, einen für Menschen lesbaren Namen für diese Zeichen zu definieren.
+### Gunakan referensi karakter numerik untuk karakter kontrol atau karakter tidak terlihat
 
-Schlecht:
+Karakter ini sering disalahartikan sebagai karakter lain. Dan juga spec
+tidak menjamin nama yang dapat dibaca oleh manusia untuk karakter ini.
+
+Buruk:
 
     <p>This book can read in 1 hour.</p>
 
-Gut:
+Baik:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-### Platzieren Sie Leerzeichen um Kommentarinhalte
 
-Einige Zeichen können nicht unmittelbar nach dem Öffnen des Kommentars oder vor dem Kommentar verwendet werden
-nah dran.
+### Berikan spasi di sekitar konten komentar
 
-Schlecht:
+Beberapa karakter tidak dapat digunakan seketika setelah komentar di buka
+atau sebelum komentar di tutup.
+
+Buruk:
 
     <!--This section is non-normative-->
 
-Gut:
+Baik:
 
     <!-- This section is non-normative -->
 
-### Lassen Sie das schließende Tag nicht aus
 
-Ich glaube, Sie verstehen eine Regel zum Weglassen des schließenden Tags nicht.
+### Jangan menghapus tag penutup
 
-Schlecht:
+Anda harus memahami aturan dalam penghapusan tag penutup.
+
+Buruk:
 
     <html>
       <body>
         ...
 
-Gut:
+Baik:
 
     <html>
       <body>
@@ -118,130 +127,140 @@ Gut:
       </body>
     </html>
 
-### Mischen Sie kein leeres Elementformat
 
-Konsistenz ist ein Schlüssel zur Lesbarkeit.
+### Jangan mencampurkan format elemen kosong
 
-Schlecht:
+Konsistensi adalah kunci agar mudah dibaca.
+
+Buruk:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Gut:
+Baik:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-### Platzieren Sie keine Leerzeichen um Tags und Attributwerte
 
-Es gibt keinen Grund, dies zu tun.
+### Jangan beri spasi di sekitar tag dan nilai pada atribut
 
-Schlecht:
+Tidak ada alasan untuk melakukan ini.
+
+Buruk:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Gut:
+Baik:
 
     <h1 class="title">HTML Best Practices</h1>
 
-### Mischen Sie keine Groß- und Kleinschreibung
 
-Es gibt auch eine Konsistenz.
+### Jangan mencampurkan karakter besar dan kecil
 
-Schlecht:
+Juga untuk memberikan konsistensi.
+
+Buruk:
 
     <a HREF="#general">General</A>
 
-Gut:
+Baik:
 
     <a href="#general">General</a>
 
-Also Gut:
+Juga baik:
 
     <A HREF="#general">General</A>
 
-### Mischen Sie keine Anführungszeichen
 
-Das gleiche wie oben.
+### Jangan mencampurkan tanda kutip
 
-Schlecht:
+Sama seperti di atas.
+
+Buruk:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Gut:
+Baik:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
-### Trennen Sie Attribute nicht durch zwei oder mehr Leerzeichen
 
-Ihre seltsame Formatierungsregel verwirrt jemanden.
+### Jangan pisahkan atribut dengan dua atau lebih spasi
 
-Schlecht:
+Aturan format aneh anda membuat orang lain kebingungan.
+
+Buruk:
 
     <input   name="q"  type="search">
 
-Gut:
+Baik:
 
     <input name="q" type="search">
 
-### Booleschen Attributwert weglassen
 
-Es ist einfach zu schreiben, nicht wahr?
+### Menghapus nilai atribut boolean
 
-Schlecht:
+Sangat mudah untuk ditulis, bukan?
+
+Buruk:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Gut:
+Baik:
 
     <audio autoplay src="/audio/theme.mp3">
 
-### Namensräume weglassen
 
-SVG und MathML können direkt in einem HTML-Dokument verwendet werden.
+### Menghapus namespaces
 
-Schlecht:
+SVG dan MathML dapat digunakan secara langsung pada dokumen HTML.
+
+Buruk:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Gut:
+Baik:
 
     <svg>
       ...
     </svg>
 
-### Verwenden Sie keine XML-Attribute
 
-Wir schreiben ein HTML-Dokument.
+### Jangan gunakan atribut XML
 
-Schlecht:
+Kita menulis dokumen HTML.
+
+Buruk:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Gut:
+Baik:
 
     <span lang="ja">...</span>
 
-### Mischen Sie die Attribute `data-*`, Mikrodaten und RDFa Lite nicht mit gemeinsamen Attributen
 
-Ein Tag-String kann sehr kompliziert sein. Diese einfache Regel hilft beim Lesen eines solchen Tags
-Schnur.
+### Jangan mencampurkan atribut `data-x`, Microdata, dan RDFa Lite dengan atribut yang umum
 
-Schlecht:
+Sebuah tag string dapat menjadi kompleks. Aturan ini dapat membantu dalam membaca
+tag string tersebut.
+
+Buruk:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Gut:
+Baik:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
-### Implizite ARIA-Standardsemantik bevorzugen
 
-Einige Elemente haben implizit eine ARIA- `role` in einem HTML-Dokument, geben Sie sie nicht an.
+### Lebih menyukai semantik ARIA implisit bawaan
 
-Schlecht:
+Beberapa element memiliki `role` ARIA implisit dalam dokumen HTML, jangan dispesifikasikan.
+
+Buruk:
 
     <nav role="navigation">
       ...
@@ -249,7 +268,7 @@ Schlecht:
 
     <hr role="separator">
 
-Gut:
+Baik:
 
     <nav>
       ...
@@ -257,72 +276,79 @@ Gut:
 
     <hr>
 
-## Das Wurzelelement
 
-### Fügen Sie das Attribut „lang“ hinzu
+## Elemen root
 
-Das Attribut `lang` hilft beim Übersetzen eines HTML-Dokuments.
 
-Schlecht:
+### Tambahkan atribut `lang`
+
+Atribut `lang` akan membantu dalam penerjemahan dokumen HTML.
+
+Buruk:
 
     <html>
 
-Gut:
+Baik:
 
     <html lang="en-US">
 
-### Halten Sie den Attributwert `lang` so kurz wie möglich
 
-Japanisch wird nur in Japan verwendet. Der Ländercode ist also nicht erforderlich.
+### Buat nilai atribut `lang` sesingkat mungkin
 
-Schlecht:
+Bahasa Jepang hanya digunakan di Jepang. Sehingga kode negara tidak diperlukan.
+
+Buruk:
 
     <html lang="ja-JP">
 
-Gut:
+Baik:
 
     <html lang="ja">
 
-### Vermeiden Sie `data-*` so weit wie möglich
 
-Ein entsprechendes Attribut kann von Browsern richtig gehandhabt werden.
+### Hindari penggunaan `data-x` jika memungkinkan
 
-Schlecht:
+Atribut yang sesuai dapat diatasi dengan baik oleh browser.
+
+Buruk:
 
     <span data-language="french">chemises</span>
     ...
     <strong data-type="warning">Do not wash!</strong>
 
-Gut:
+Baik:
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
     <strong class="warning">Do not wash!</strong>
 
-## Dokument-Metadaten
 
-### Fügen Sie das Element `title` hinzu
+## Metadata dokumen
 
-Ein Wert für das Element `title` wird von verschiedenen Anwendungen verwendet, nicht nur von einem Browser.
 
-Schlecht:
+### Tambahkan elemen `title`
+
+Nilai dari elemen `title` digunakan oleh berbagai aplikasi tidak hanya browser.
+
+Buruk:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Gut:
+Baik:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
-### Verwenden Sie kein `base`-Element
 
-Ein absoluter Pfad oder eine URL ist sowohl für Entwickler als auch für Benutzer sicherer.
+### Jangan gunakan elemen `base`
 
-Schlecht:
+Path absolut atau URL lebih aman untuk developer dan pengguna.
+
+Buruk:
 
     <head>
       ...
@@ -331,7 +357,7 @@ Schlecht:
       ...
     </head>
 
-Gut:
+Baik:
 
     <head>
       ...
@@ -339,113 +365,121 @@ Gut:
       ...
     </head>
 
-### Geben Sie den MIME-Typ der untergeordneten verknüpften Ressourcen an
 
-Dies ist ein Hinweis darauf, wie die Anwendung mit dieser Ressource umgeht.
+### Spesifikasikan MIME type pada minor linked resources
 
-Schlecht:
+Ini adalah petunjuk bagaimana aplikasi mengatasi resource tersebut.
+
+Buruk:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Gut:
+Baik:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-### Verlinken Sie nicht auf `favicon.ico`
 
-Fast alle Browser holen `/favicon.ico` automatisch und asynchron.
+### Jangan membuat link untuk `favicon.ico`
 
-Schlecht:
+Hampir semua browser mengambil `/favicon.ico` secara otomatis dan asinkronus.
+
+Buruk:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Gut:
+Baik:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-### Fügen Sie den Link `apple-touch-icon` hinzu
 
-Ein Standardanforderungspfad für das Touch-Symbol wurde plötzlich geändert.
+### Tambahkan link `apple-touch-icon`
 
-Schlecht:
+Request path bawaan pada touch icon telah diubah.
+
+Buruk:
 
     <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
 
-Gut:
+Baik:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
-### Fügen Sie das Attribut `title` zu alternativen Stylesheets hinzu
 
-Ein für Menschen lesbares Etikett hilft Menschen bei der Auswahl des richtigen Stylesheets.
+### Tambahkan atribut `title` pada stylesheet alternatif
 
-Schlecht:
+Label yang dapat dibaca manusia akan membantu pengguna menentukan stylesheet yang tepat.
+
+Buruk:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Gut:
+Baik:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
-### Verwenden Sie als URL das Element `link`.
 
-Ein Wert des Attributs `href` kann als URL aufgelöst werden.
+### Untuk URL, gunakan elemen `link`
 
-Schlecht:
+Nilai dari atribut `href` dapat ditetapkan sebagai URL.
+
+Buruk:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Gut:
+Baik:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
       ...
     </section>
 
-### Geben Sie die Zeichencodierung des Dokuments an
 
-UTF-8 ist noch nicht in allen Browsern voreingestellt.
+### Spesifikasikan pengkodean karakter dokumen
 
-Schlecht:
+UTF-8 belum menjadi pengkodean bawaan pada semua browser.
+
+Buruk:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Gut:
+Baik:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
-### Verwenden Sie kein altes Zeichenkodierungsformat
 
-HTTP-Header sollten von einem Server angegeben werden, einfach sein.
+### Gunakan format pengkodean karakter terbaru
 
-Schlecht:
+HTTP headers harus dispesifikasikan oleh server.
+
+Buruk:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Gut:
+Baik:
 
     <meta charset="UTF-8">
 
-### Geben Sie zuerst die Zeichenkodierung an
 
-Spec erfordert, dass die Zeichencodierung innerhalb der ersten 1024 Bytes angegeben wird
-das Dokument.
+### Spesifikasikan pengkodean karakter di awal dokumen
 
-Schlecht:
+Spec diperlukan agar pengkodean karakter ditentukan dalam 1024 bytes
+pertama dokumen.
+
+Buruk:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -453,7 +487,7 @@ Schlecht:
       ...
     </head>
 
-Gut:
+Baik:
 
     <head>
       <meta charset="UTF-8">
@@ -461,39 +495,42 @@ Gut:
       ...
     </head>
 
-### Verwenden Sie UTF-8
 
-Mit UTF-8 können Sie Emoji frei verwenden.
+### Gunakan UTF-8
 
-Schlecht:
+Dengan UTF-8, anda dapat menggunakan Emoji.
+
+Buruk:
 
     <meta charset="Shift_JIS">
 
-Gut:
+Baik:
 
     <meta charset="UTF-8">
 
-### Lassen Sie das Attribut `type` für CSS weg
 
-In HTML ist der Standardwert des `type`-Attributs des `style`-Elements `text/css`.
+### Menghapus atribut `type` untuk CSS
 
-Schlecht:
+Pada HTML, nilai bawaan dari atribut `type` untuk elemen `style` adalah `text/css`.
+
+Buruk:
 
     <style type="text/css">
       ...
     </style>
 
-Gut:
+Baik:
 
     <style>
       ...
     </style>
 
-### Kommentieren Sie den Inhalt des Elements `style` nicht aus
 
-Dieses Ritual ist für den alten Browser.
+### Jangan memberikan komentar pada konten dari elemen `style`
 
-Schlecht:
+Ini hanya digunakan oleh browser versi lama.
+
+Buruk:
 
     <style>
     <!--
@@ -501,41 +538,44 @@ Schlecht:
       -->
     </style>
 
-Gut:
+Baik:
 
     <style>
       ...
     </style>
 
-### Vermische kein Tag für CSS und JavaScript
 
-Manchmal blockiert das `script`-Element die DOM-Konstruktion.
+### Jangan mencampurkan tag untuk CSS dan JavaScript
 
-Schlecht:
+Kadang-kadang elemen `script` memblokir konstruksi DOM.
+
+Buruk:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Gut:
+Baik:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Also Gut:
+Juga baik:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-## Abschnitte
 
-### Fügen Sie das Element `body` hinzu
+## Sections
 
-Manchmal wird das `body`-Element von einem Browser an einer unerwarteten Position ergänzt.
 
-Schlecht:
+### Tambahkan elemen `body`
+
+Kadang-kadang elemen `body` diletakkan diposisi yang salah oleh browser.
+
+Buruk:
 
     <html>
       <head>
@@ -544,7 +584,7 @@ Schlecht:
       ...
     </html>
 
-Gut:
+Baik:
 
     <html>
       <head>
@@ -555,71 +595,77 @@ Gut:
       </body>
     </html>
 
-### Vergessen Sie das `hgroup`-Element
 
-Dieses Element wird nicht sehr oft verwendet.
+### Lupakan elemen `hgroup`
 
-Schlecht:
+Elemen ini tidak digunakan lagi.
+
+Buruk:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Gut:
+Baik:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-### Verwenden Sie das Element `address` nur für Kontaktinformationen
 
-Das Element `address` ist für E-Mail-Adresse, Konto bei sozialen Netzwerken, Adresse,
-Telefonnummer oder etwas, mit dem Sie sich in Verbindung setzen können.
+### Gunakan elemen `address` hanya untuk informasi kontak
 
-Schlecht:
+Elemen `address` digunakan untuk email, akun sosial media, alamat, nomor telepon, atau sesuatu
+yang dapat menghubungi anda.
+
+Buruk:
 
     <address>No rights reserved.</address>
 
-Gut:
+Baik:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-## Inhalte gruppieren
 
-### Beginnen Sie nicht mit einem Zeilenumbruch im `pre`-Element
+## Pengelompokkan konten
 
-Ein erster Zeilenumbruch wird in den Browsern ignoriert, aber der zweite und spätere werden gerendert.
 
-Schlecht:
+### Jangan memulai dengan baris baru pada elemen `pre`
+
+Baris baru pertama akan diabaikan oleh browser, tetapi tidak untuk baris berikutnya.
+
+Buruk:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Gut:
+Baik:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
-### Verwenden Sie das entsprechende Element im Element `blockquote`.
 
-Der Inhalt des `blockquote`-Elements ist ein Zitat, keine Aneinanderreihung von Zeichen.
+### Gunakan elemen yang sesuai pada elemen `blockquote`
 
-Schlecht:
+Konten dari elemmen `blockquote` adalah kutipan, bukan kumpulan karakter.
+
+Buruk:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Gut:
+Baik:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
-### Fügen Sie die Quellenangabe nicht direkt in das Element `blockquote` ein
 
-Der Inhalt des Elements `blockquote` ist ein Zitat.
+### Jangan tambahkan caption secara langsung pada elemen `blockquote`
 
-Schlecht:
+Konten dari elemen `blockquote` adalah kutipan.
+
+Buruk:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -627,7 +673,7 @@ Schlecht:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Gut:
+Baik:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -635,7 +681,7 @@ Gut:
 
     <p>— HTML Best Practices</p>
 
-Also Gut:
+Juga baik:
 
     <figure>
       <blockquote>
@@ -645,18 +691,19 @@ Also Gut:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-### Schreiben Sie einen Listenpunkt pro Zeile
 
-Laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaang
-Zeile ist schwer zuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu lesen
+### Tuliskan satu daftar data per baris
 
-Schlecht:
+Baris yang panjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaang akan
+sangaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat sulit untuk dibaca.
+
+Buruk:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Gut:
+Baik:
 
     <ul>
       <li>General</li>
@@ -665,12 +712,13 @@ Gut:
       ...
     </ul>
 
-### Verwenden Sie das Attribut `type` für das Element `ol`.
 
-Manchmal wird durch den Inhalt in der Nähe auf eine Markierung verwiesen. Wenn Sie die Markierung ändern
-Mit dem Attribut `type` können Sie sicher referenzieren.
+### Gunakan atribut `type` untuk elemen `ol`
 
-Schlecht:
+Kadang-kadang penanda akan direferensikan oleh konten di dekatnya. Jika anda mengubah penanda menggunakan atribut `type`,
+anda dapat dengan aman untuk mereferensikannya.
+
+Buruk:
 
     <head>
       <style>
@@ -688,7 +736,7 @@ Schlecht:
       </ol>
     </body>
 
-Gut:
+Baik:
 
     <body>
       <ol type="I">
@@ -699,11 +747,12 @@ Gut:
       </ol>
     </body>
 
-### Verwenden Sie `dl` nicht für Dialoge
 
-Das `dl`-Element ist auf eine Assoziationsliste in HTML beschränkt.
+### Jangan gunakan `dl` untuk dialog
 
-Schlecht:
+Elemen `dl` hanya dibatasi untuk daftar asosiasi di HTML.
+
+Buruk:
 
     <dl>
       <dt>Costello</dt>
@@ -721,7 +770,7 @@ Schlecht:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Gut:
+Baik:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -731,11 +780,12 @@ Gut:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-### Platzieren Sie das Element `figcaption` als erstes oder letztes untergeordnetes Element des Elements `figure`.
 
-Die Spezifikation verbietet das `figcaption`-Element in der Mitte des `figure`-Elements.
+### Letakkan elemen `figcaption` sebagai anak pertama atau terakhir dari elemen `figure`
 
-Schlecht:
+Spec melarang elemen `figcaption` berada di tengah elemen `figure`.
+
+Buruk:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -743,7 +793,7 @@ Schlecht:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Gut:
+Baik:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -751,52 +801,56 @@ Gut:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-### Verwenden Sie das `Haupt`-Element
 
-Das `main`-Element kann verwendet werden, um den Inhalt zu umhüllen.
+### Gunakan elemen `main`
 
-Schlecht:
+Elemen `main` dapat digunakan untuk membungkus konten.
+
+Buruk:
 
     <div id="content">
       ...
     </div>
 
-Gut:
+Baik:
 
     <main>
       ...
     </main>
 
-### Vermeiden Sie das `div`-Element so weit wie möglich
 
-Das `div`-Element ist ein Element der letzten Instanz.
+### Hindari penggunaan elemen `div` jika memungkinkan
 
-Schlecht:
+Elemen `div` hanya digunakan sebagai langkah terakhir.
+
+Buruk:
 
     <div class="chapter">
       ...
     </div>
 
-Gut:
+Baik:
 
     <section>
       ...
     </section>
 
-## Semantik auf Textebene
 
-### Teilen Sie nicht denselben Link, der gruppiert werden kann
+## Semantik tingkat teks
 
-Das `a`-Element kann fast alle Elemente umschließen (außer interaktiven Elementen wie form
-Steuerelemente und `a` Element selbst).
 
-Schlecht:
+### Jangan pisahkan link yang dapat di kelompokkan
+
+Elemen `a` dapat membungkus hampir semua elemen (kecuali elemen interaktif seperti elemen kontrol
+form dan elemen `a` itu sendiri).
+
+Buruk:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Gut:
+Baik:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
@@ -804,209 +858,228 @@ Gut:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-### Verwenden Sie das Attribut `download`, um eine Ressource herunterzuladen
 
-Es zwingt Browser, verknüpfte Ressourcen in den Speicher herunterzuladen.
+### Gunakan atribut `download` untuk mengunduh sebuah resource
 
-Schlecht:
+Itu akan memaksa browser untuk mengunduh linked resource ke tempat penyimpanan.
+
+Buruk:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Gut:
+Baik:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
-### Verwenden Sie bei Bedarf die Attribute `rel`, `hreflang` und `type`
 
-Diese Hinweise helfen Anwendungen beim Umgang mit verknüpften Ressourcen.
+### Gunakan atribut `rel`, `hreflang`, dan `type` jika diperlukan
 
-Schlecht:
+Petunjuk ini membantu aplikasi mengatasi linked resource.
+
+Buruk:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Gut:
+Baik:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
-### Linktext löschen
 
-Der Linktext sollte die Bezeichnung der verlinkten Ressource sein.
+### Menghapus link text
 
-Schlecht:
+Link text harus berupa label untuk linked resourcenya sendiri.
+
+Buruk:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Gut:
+Baik:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
-### Verwenden Sie das Element „em“ nicht zur Warnung oder Warnung
 
-Das sind Ernsthaftigkeit. Daher ist das `strong` Element angemessener.
+### Jangan gunakan elemen `em` sebagai peringatan
 
-Schlecht:
+Elemen `strong` lebih sesuai untuk menunjukkan keseriusan.
+
+Buruk:
 
     <em>Caution!</em>
 
-Gut:
+Baik:
 
     <strong>Caution!</strong>
 
-### Vermeiden Sie die Elemente `s`, `i`, `b` und `u` so weit wie möglich
 
-Die Semantik dieser Elemente ist für Menschen zu schwierig.
+### Hindari penggunaan elemen `s`, `i`, `b`, dan `u` jika memungkinkan
 
-Schlecht:
+Elemen ini tidak cukup semantik untuk manusia.
+
+Buruk:
 
     <i class="icon-search"></i>
 
-Gut:
+Baik:
 
     <span class="icon-search" aria-hidden="true"></span>
 
-### Setzen Sie keine Anführungszeichen in das `q`-Element
 
-Kurse werden vom Browser bereitgestellt.
+### Jangan berikan kutipan pada elemen `q`
 
-Schlecht:
+Kutipan disediakan oleh browser.
+
+Buruk:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Gut:
+Baik:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Also Gut:
+Juga baik:
 
     “For writing maintainable and scalable HTML documents”
 
-### Attribut `title` zum Element `abbr` hinzufügen
 
-Es gibt keine andere Möglichkeit, seine Expansion darzustellen.
+### Tambahkan atribut `title` pada elemen `abbr`
 
-Schlecht:
+Hanya dengan cara ini untuk mengetahui singkatannya.
+
+Buruk:
 
     <abbr>HBP</abbr>
 
-Gut:
+Baik:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
-### Markieren Sie das `ruby`-Element ausführlich
 
-Die Unterstützung für `ruby`-Elemente ist in den modernen Browsern nicht abgeschlossen.
+### Markup elemen `ruby` hingga bertele-tele
 
-Schlecht:
+Support pada elemen `ruby` belum dimiliki oleh semua browser modern.
+
+Buruk:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Gut:
+Baik:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-### Fügen Sie dem nicht maschinenlesbaren Element `time` das Attribut `datetime` hinzu
 
-Wenn das Attribut `datetime` nicht vorhanden ist, das Format des Elements `time`.
-Inhalte sind eingeschränkt.
+### Tambahkan atribut `datetime` pada elemen `time` yang tidak dapat dibaca oleh mesin
 
-Schlecht:
+Ketika tidak ada atribut `datetime`, format konten dari elemen `time` akan
+dibatasi.
+
+Buruk:
 
     <time>Dec 19, 2014</time>
 
-Gut:
+Baik:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
-### Geben Sie die Codesprache mit dem Attribut `class` mit dem Präfix `language-` an
 
-Dies ist kein formaler Weg, aber die Spezifikation erwähnt dies.
+### Spesifikasikan bahasa kode dengan atribut `class` yang diawali dengan `language-`
 
-Schlecht:
+Ini bukan cara yang formal, tetapi lebih baik ditambahkan
+
+Buruk:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Gut:
+Baik:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-### Halten Sie das `kbd`-Element so einfach wie möglich
 
-Das Verschachteln des `kbd`-Elements ist für Menschen zu schwierig.
+### Buat elemen `kbd` sesingkat mungkin
 
-Schlecht:
+Elemen `kbd` bersarang sangat sulit untuk dibaca oleh manusia.
+
+Buruk:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
-Gut:
+Baik:
 
     <kbd>Ctrl+F5</kbd>
 
-### Vermeiden Sie das Element `span` so weit wie möglich
 
-Das `span`-Element ist ein Element der letzten Instanz.
+### Hindari penggunaan elemen `span` jika memungkinkan
 
-Schlecht:
+Elemen `span` hanya digunakan sebagai langkah terakhir.
+
+Buruk:
 
     HTML <span class="best">Best</span> Practices
 
-Gut:
+Baik:
 
     HTML <em>Best</em> Practices
 
-### Umbruch nach `br`-Element
 
-Ein Zeilenumbruch sollte erforderlich sein, wenn das Element `br` verwendet wird.
-Schlecht:
+### Jeda baris setelah elemen `br`
+
+Jeda baris diperlukan ketika elemen `br` digunakan.
+
+Buruk:
 
     <p>HTML<br>Best<br>Practices</p>
 
-Gut:
+Baik:
 
     <p>HTML<br>
     Best<br>
     Practices</p>
 
-### Verwenden Sie das `br`-Element nicht nur zu Präsentationszwecken
 
-Das `br`-Element dient nicht dem Zeilenumbruch, sondern dem Zeilenumbruch im Inhalt.
+### Jangan gunakan elemen `br` hanya untuk tujuan presentasi
 
-Schlecht:
+Elemen `br` tiidak digunakan untuk memberikan jeda baris pada elemen, tetapi untuk memberikan jeda baris pada konten.
+
+Buruk:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Gut:
+Baik:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-## Bearbeitungen
 
-### Überschreiten Sie nicht die Elemente `ins` und `del` über andere Elemente
+## Edits
 
-Elemente können andere Elemente nicht überlaufen lassen.
 
-Schlecht:
+### Jangan menumpukkan elemen `ins` dan `del` diatas elemen lain
+
+Elemen tidak dapat ditumpuk dengan elemen lain.
+
+Buruk:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
 
     <p>Don’t trust!</p></del>
 
-Gut:
+Baik:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
 
     <del><p>Don’t trust!</p></del>
 
-## Eingebetteter Inhalt
 
-### Stellen Sie das Fallback-Element `img` für das Element `picture` bereit
+## Konten yang ditanam
 
-Die Unterstützung des `Bild`-Elements ist noch nicht gut.
 
-Schlecht:
+### Berikan elemen `img` pada elemen `picture` sebagai alternatif
+
+Support untuk elemen `picture` masih belum cukup baik.
+
+Buruk:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1015,7 +1088,7 @@ Schlecht:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Gut:
+Baik:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1024,63 +1097,68 @@ Gut:
       <img src="/img/logo.jpg">
     </picture>
 
-### Fügen Sie bei Bedarf das Attribut `alt` zum Element `img` hinzu
 
-Das Attribut `alt` hilft denen, die keine Bilder verarbeiten oder Bilder laden können
-deaktiviert.
+### Tambahkan atribut `alt` pada elemen `img` jika diperlukan
 
-Schlecht:
+Atribut `alt` membantu browser jika browser tidak dapat mengolah gambar atau fitur pemuatan gambarnya
+dimatikan.
+
+Buruk:
 
     <img src="/img/logo.png">
 
-Gut:
+Baik:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-### Leeres `alt`-Attribut wenn möglich
 
-Wenn das Bild ergänzend ist, gibt es irgendwo in der Nähe äquivalenten Inhalt.
+### Gunakan atribut `alt` kosong jika memungkinkan
 
-Schlecht:
+Jika gambar hanya sebagai tambahan, pasti ada konten yang memberikan informasi mengenai gambar tersebut.
+
+Buruk:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Gut:
+Baik:
 
     <img alt="" src="/img/icon/help.png"> Help
 
-### Lassen Sie das Attribut `alt` weg, wenn möglich
 
-Manchmal wissen Sie nicht, welcher Text für das Attribut `alt` geeignet ist.
+### Menghapus atribut `alt` jika memungkinkan
 
-Schlecht:
+Kadang-kadang anda tidak tahu teks apa yang cocok untuk atribut `alt`.
+
+Buruk:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Gut:
+Baik:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-### Leeres `iframe`-Element
 
-Inhaltlich gibt es einige Einschränkungen. Leer zu sein ist immer sicher.
+### elemen `iframe` kosong
 
-Schlecht:
+Kontennya dibatasi. Kosong adalah yang paling aman.
+
+Buruk:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Gut:
+Baik:
 
     <iframe src="/ads/default.html"></iframe>
 
-### Markieren Sie den Inhalt des `map`-Elements
 
-Dieser Inhalt wird einem Screenreader angezeigt.
+### Markup konten elemen `map`
 
-Schlecht:
+Konten ini dipresentasikan untuk screen reader.
+
+Buruk:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1091,7 +1169,7 @@ Schlecht:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Gut:
+Baik:
 
     <map name="toc">
       <p>
@@ -1104,11 +1182,12 @@ Gut:
       </p>
     </map>
 
-### Bereitstellen von Fallback-Inhalten für `audio`- oder `video`-Elemente
 
-Fallback-Content wird für neu eingeführte Elemente in HTML benötigt.
+### Berikan konten alternatif untuk elemen `audio` atau `video`
 
-Schlecht:
+Konten alternatif dibutuhkan untuk elemen yang baru diperkenalkan di dalam HTML.
+
+Buruk:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1116,7 +1195,7 @@ Schlecht:
       ...
     </video>
 
-Gut:
+Baik:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1125,19 +1204,21 @@ Gut:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-## Tabellendaten
 
-### Schreiben Sie eine Zelle pro Zeile
+## Data tabel
 
-Lange Zeilen sind schwer zu scannen.
 
-Schlecht:
+### Tulis satu kolom per baris
+
+Baris yang panjang akan sulit untuk dibaca.
+
+Buruk:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Gut:
+Baik:
 
     <tr>
       <td>General</td>
@@ -1145,11 +1226,12 @@ Gut:
       <td>Sections</td>
     </tr>
 
-### Verwenden Sie das `th`-Element für die Kopfzelle
 
-Es gibt keinen Grund, dies zu vermeiden.
+### Gunakan elemen `th` untuk kolom header
 
-Schlecht:
+Tidak ada alasan untuk tidak melakukan ini.
+
+Buruk:
 
     <table>
       <thead>
@@ -1173,7 +1255,7 @@ Schlecht:
       </tbody>
     </table>
 
-Gut:
+Baik:
 
     <table>
       <thead>
@@ -1197,93 +1279,101 @@ Gut:
       </tbody>
     </table>
 
-## Formen
 
-### Formsteuerelement mit `label`-Element umschließen
+## Formulir
 
-Das `label`-Element hilft beim Fokussieren des Formularelements.
 
-Schlecht:
+### Bungkus kontrol form dengan elemen `label`
+
+Elemen `label` membantu dalam mengatur fokus pada elemen kontrol form.
+
+Buruk:
 
     <p>Query: <input name="q" type="text"></p>
 
-Gut:
+Baik:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-### Lassen Sie das `for`-Attribut wenn möglich weg
 
-Das `label`-Element kann einige Formularelemente enthalten.
+### Menghapus atribut `for` jika memungkinkan
 
-Schlecht:
+Elemen `label` dapat mengandung beberapa elemen kontrol form.
+
+Buruk:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Gut:
+Baik:
 
     <label>Query: <input name="q" type="text"></label>
 
-### Verwenden Sie das geeignete `type`-Attribut für das `input`-Element
 
-Mit entsprechendem `type` verleiht ein Browser dem `input`-Element winzige Funktionen.
+### Gunakan atribut `type` yang tepat untuk elemen `input`
 
-Schlecht:
+Dengan atribut `type` yang tepat, browser dapat memberikan fitur tambahan pada elemen `input`.
+
+Buruk:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Gut:
+Baik:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
-### Attribut `value` zu ​​`input type="submit"` hinzufügen
 
-Die Standardbezeichnung für die Schaltfläche Senden ist nicht im Browser standardisiert und
-Sprachen.
+### Tambahkan atribut `value` pada `input type="submit"`
 
-Schlecht:
+Label bawaan pada tombol submit tidak terstandarisasi di seluruh browser dan
+bahasa.
+
+Buruk:
 
     <input type="submit">
 
-Gut:
+Baik:
 
     <input type="submit" value="Search">
 
-### Attribut `title` zum `input`-Element hinzufügen, wenn Attribut `pattern` vorhanden ist
 
-Wenn der Eingabetext nicht mit dem Attribut `pattern` übereinstimmt, wird der Wert von `title` angezeigt
-Attribut wird als Hinweis angezeigt.
+### Tambahkan atribut `title` pada elemen `input` ketika terdapat atribut `pattern`
 
-Schlecht:
+Jika teks yang dimasukkan tidak sesuai dengan atribut `pattern`, nilai dari atribut
+`value` akan muncul sebagai petunjuk.
+
+Buruk:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
 
-Gut:
+Baik:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-### Verwenden Sie kein `placeholder`-Attribut für die Beschriftung
 
-Das `label`-Element steht für eine Beschriftung, das `placeholder`-Attribut für einen kurzen Hinweis.
+### Jangan gunakan atribut `placeholder` sebagai label
 
-Schlecht:
+Elemen `label` digunakan sebagai label, atribut `placeholder` digunakan sebagai petunjuk kecil.
+
+Buruk:
 
     <input name="email" placeholder="Email" type="text">
 
-Gut:
+Baik:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
-### Schreiben Sie ein `option`-Element pro Zeile
 
-Lange Zeilen sind schwer zu scannen.
+### Tulis satu elemen `option` per baris
 
-Schlecht:
+Baris yang panjang akan sulit untuk dibaca.
+
+Buruk:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Gut:
+Baik:
 
     <datalist id="toc">
       <option label="General">
@@ -1291,35 +1381,39 @@ Gut:
       <option label="Sections">
     </datalist>
 
-### Fügen Sie das Attribut `max` zum Element `progress` hinzu
 
-Mit dem Attribut `max` kann das Attribut `value` in einem einfachen Format geschrieben werden.
-Schlecht:
+### Tambahkan atribut `max` untuk elemen `progress`
+
+Dengan atribut `max`, atribut `value` dapat ditulis dengan format yang mudah.
+
+Buruk:
 
     <progress value="0.5"> 50%</progress>
 
-Gut:
+Baik:
 
     <progress max="100" value="50"> 50%</progress>
 
-### Fügen Sie die Attribute `min` und `max` zum Element `meter` hinzu
 
-Mit `min` und `max` Attribut kann das `value` Attribut einfach geschrieben werden
-Format.
+### Tambahkan atribut `min` dan `max` pada elemen `meter`
 
-Schlecht:
+Dengan atribut `min` dan `max`, atribut `value` dapat ditulis dengan format
+yang mudah.
+
+Buruk:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-Gut:
+Baik:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
-### Platzieren Sie das `legend`-Element als erstes untergeordnetes Element des `fieldset`-Elements
 
-Spec erfordert dies.
+### Letakkan elemen `legend` sebagai anak pertama dari elemen `fieldset`
 
-Schlecht:
+Spec memerlukan ini.
+
+Buruk:
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1327,7 +1421,7 @@ Schlecht:
       <legend>About "General"</legend>
     </fieldset>
 
-Gut:
+Baik:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1335,30 +1429,33 @@ Gut:
       ...
     </fieldset>
 
-## Skripterstellung
 
-### Lassen Sie das `type`-Attribut für JavaScript weg
+## Scripting
 
-In HTML ist der Standardwert des Attributs `type` des Elements `script`
+
+### Menghapus atribut `type` pada JavaScript
+
+Dalam HTML, nilai atribut `type` bawaan untuk elemen `script` adalah
 `text/javascript`.
 
-Schlecht:
+Buruk:
 
     <script type="text/javascript">
       ...
     </script>
 
-Gut:
+Baik:
 
     <script>
       ...
     </script>
 
-### Inhalt des `script`-Elements nicht auskommentieren
 
-Dieses Ritual ist für den alten Browser.
+### Jangan memberikan komentar pada konten dari elemen `script`
 
-Schlecht:
+Hanya untuk browser versi lama.
+
+Buruk:
 
     <script>
     /*<![CDATA[*/
@@ -1366,7 +1463,7 @@ Schlecht:
     /*]]>*/
     </script>
 
-Also Schlecht:
+Juga buruk:
 
     <script>
     <!--
@@ -1374,17 +1471,18 @@ Also Schlecht:
     // -->
     </script>
 
-Gut:
+Baik:
 
     <script>
       ...
     </script>
 
-### Verwenden Sie kein Skript-injiziertes `script`-Element
 
-Das Attribut `async` ist das Beste für Einfachheit und Leistung.
+### Jangan gunakan elemen `script` yang disuntikkan
 
-Schlecht:
+Atribut `async` adalah pilihan terbaik untuk kesederhanaan dan kinerja.
+
+Buruk:
 
     <script>
       var script = document.createElement("script");
@@ -1393,17 +1491,19 @@ Schlecht:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Gut:
+Baik:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-## Andere
 
-### Konsequent einrücken
+## Lainnya
 
-Die Einrückung ist wichtig für die Lesbarkeit.
 
-Schlecht:
+### Konsistensi pada indentasi
+
+Indentasi sangat penting agar mudah dibaca.
+
+Buruk:
 
     <html>
     	<head>
@@ -1414,7 +1514,7 @@ Schlecht:
       </body>
     </html>
 
-Gut:
+Baik:
 
     <html>
       <head>
@@ -1425,44 +1525,46 @@ Gut:
       </body>
     </html>
 
-### Absoluten Pfad für interne Links verwenden
 
-Ein absoluter Pfad funktioniert besser auf Ihrem Localhost ohne Internetverbindung.
+### Gunakan path absolut untuk link internal
 
-Schlecht:
+Path absolut dapat bekerja dengan baik pada localhost tanpa koneksi internet.
+
+Buruk:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Gut:
+Baik:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-### Verwenden Sie keine protokollrelative URL für externe Ressourcen
 
-Mit dem Protokoll können Sie externe Ressourcen zuverlässig und sicher laden.
+### Jangan gunakan URL yang bersifat relatif-protokol untuk resource eksternal
 
-Schlecht:
+Dengan protokol, anda dapat memuat resource eksternal dengan aman.
+
+Buruk:
 
     <script src="//example.com/js/library.js">
 
-Gut:
+Baik:
 
     <script src="https://example.com/js/library.js">
 
 
 
 
-## Contributors
+## Kontributor
 
 - [@hail2u_](https://github.com/hail2u_)
 - [@momdo](https://github.com/momdo)
 
 
-## Translators
+## Penerjemah
 
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
@@ -1477,6 +1579,6 @@ Gut:
 - [@wesleynepo](https://github.com/wesleynepo)
 
 
-## License
+## Lisensi
 
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/)

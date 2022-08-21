@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
 
 # Cách viết HTML tối ưu nhất
 
@@ -10,7 +10,7 @@ Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsc
 
 ### Bắt đầu với DOCTYPE
 
-DOCTYPE là bắt buộc để kích hoạt chế độ no-quirks. 
+DOCTYPE là bắt buộc để kích hoạt chế độ no-quirks.
 
 Tồi:
 
@@ -632,7 +632,7 @@ Tốt:
 
 ### Đừng quên bắt đầu với dòng mới trong phần tử `pre`
 
-Dòng mới đầu tiên sẽ bị trình duyệt bỏ qua, nhưng dòng thứ hai trở đi sẽ được 
+Dòng mới đầu tiên sẽ bị trình duyệt bỏ qua, nhưng dòng thứ hai trở đi sẽ được
 hiển thị.
 
 Tồi:
@@ -782,7 +782,7 @@ Tốt:
     <p>Abbott: Every dollar of it.</p>
 
 
-### Đặt phần tử `figcaption` là phần tử đầu hoặc cuối của phần tử `figure` 
+### Đặt phần tử `figcaption` là phần tử đầu hoặc cuối của phần tử `figure`
 
 Tài liệu không cho phép phần tử `figcaption` ở giữa phần tử `figure`.
 
@@ -842,7 +842,7 @@ Tốt:
 
 ### Đừng chia thành nhiều liên kết giống nhau mà có thể nhóm lại
 
-Phần tử `a` có thể bao bọc hầu hết tất cả các phần tử (ngoại trừ các phần tử 
+Phần tử `a` có thể bao bọc hầu hết tất cả các phần tử (ngoại trừ các phần tử
 tương tác như biểu mẫu và chính nó).
 
 Tồi:
@@ -1323,7 +1323,7 @@ Tốt:
 
 ### Thêm thuộc tính `value` cho `input type="submit`
 
-Nhãn mặc định cho nút gởi là không tiêu chuẩn hóa trên trình duyệt và ngôn ngữ. 
+Nhãn mặc định cho nút gởi là không tiêu chuẩn hóa trên trình duyệt và ngôn ngữ.
 
 Tồi:
 
@@ -1336,7 +1336,7 @@ Tốt:
 
 ### Thêm thuộc tính `title` cho phần tử `input` khi có thuộc tính `pattern`
 
-Nếu văn bản đầu vào không khớp cho thuộc tính `parttern`, thì giá trị của 
+Nếu văn bản đầu vào không khớp cho thuộc tính `parttern`, thì giá trị của
 thuộc tính `title` sẽ được hiển thị như một gợi ý.
 
 Tồi:
@@ -1395,7 +1395,7 @@ Tốt:
 
 ### Thêm thuộc tính `min` và `max` cho phần tử `meter`
 
-Với thuộc tính `min` và `max`, thuộc tính `value` có thể được viết ở một 
+Với thuộc tính `min` và `max`, thuộc tính `value` có thể được viết ở một
 định dạng dễ hiểu.
 
 Tồi:
@@ -1526,7 +1526,7 @@ Tốt:
 
 ### Sử dụng đường dẫn tuyệt đối cho các liên kết nội bộ
 
-Một đường dẫn tuyệt đối làm việc tốt hơn trên máy chủ cục bộ của bạn mà 
+Một đường dẫn tuyệt đối làm việc tốt hơn trên máy chủ cục bộ của bạn mà
 không cần kết nối internet.
 
 Tồi:
@@ -1570,6 +1570,7 @@ Tốt:
 - [@kobyborali](https://github.com/kobyborali)
 - [@m1nhnv](https://github.com/m1nhnv)
 - [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https//github.com/naufalk25)
 - [@sahilmaniyar](https://github.com/sahilmaniyar)
 - [@stenbaek](https://github.com/stenbaek)
 - [@techhtml](https://github.com/techhtml)

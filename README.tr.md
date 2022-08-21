@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
 
 # HTML'de Örnek Yöntemler
 
@@ -261,7 +261,7 @@ Yanlış:
     <nav role="navigation">
       ...
     </nav>
-    
+
     <hr role="separator">
 
 Doğru:
@@ -269,7 +269,7 @@ Doğru:
     <nav>
       ...
     </nav>
-    
+
     <hr>
 
 
@@ -663,7 +663,7 @@ Yanlış:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
-    
+
       <p>— HTML Best Practices</p>
     </blockquote>
 
@@ -672,7 +672,7 @@ Doğru:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-    
+
     <p>— HTML Best Practices</p>
 
 Bu da doğru:
@@ -681,7 +681,7 @@ Bu da doğru:
       <blockquote>
         <p>For writing maintainable and scalable HTML documents.</p>
       </blockquote>
-    
+
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
@@ -841,14 +841,14 @@ kontroller ve `a` elemanın kendisi).
 Yanlış:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
-    
+
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
 Doğru:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
-    
+
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
@@ -1055,13 +1055,13 @@ Etiketler diğer etidektlere taşamaz.
 Yanlış:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
-    
+
     <p>Don’t trust!</p></del>
 
 Doğru:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
-    
+
     <del><p>Don’t trust!</p></del>
 
 
@@ -1537,6 +1537,7 @@ Doğru:
 - [@kobyborali](https://github.com/kobyborali)
 - [@m1nhnv](https://github.com/m1nhnv)
 - [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https//github.com/naufalk25)
 - [@sahilmaniyar](https://github.com/sahilmaniyar)
 - [@stenbaek](https://github.com/stenbaek)
 - [@techhtml](https://github.com/techhtml)
