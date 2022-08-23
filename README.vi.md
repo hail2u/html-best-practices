@@ -1570,7 +1570,7 @@ Tốt:
 - [@kobyborali](https://github.com/kobyborali)
 - [@m1nhnv](https://github.com/m1nhnv)
 - [@mrcaidev](https://github.com/mrcaidev)
-- [@naufalk25](https//github.com/naufalk25)
+- [@naufalk25](https://github.com/naufalk25)
 - [@sahilmaniyar](https://github.com/sahilmaniyar)
 - [@stenbaek](https://github.com/stenbaek)
 - [@techhtml](https://github.com/techhtml)
