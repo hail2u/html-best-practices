@@ -11,6 +11,8 @@ For writing maintainable and scalable HTML documents
 ### Start with DOCTYPE
 
 DOCTYPE is required for activating no-quirks mode.
+Quirks mode means your page is running without a document type declared,the document type is defined at the top of a page 
+and it denotes how browser should read the html.
 
 Bad:
 
@@ -28,7 +30,7 @@ Good:
 
 ### Don’t use legacy or obsolete DOCTYPE
 
-DOCTYPE is not for DTD anymore, be simple.
+DOCTYPE is not for DTD anymore, be simple.DTD stands for document type definition.
 
 Bad:
 
@@ -258,7 +260,7 @@ Good:
 
 ### Prefer default implicit ARIA semantics
 
-Some elements have an ARIA `role` implicitly in an HTML document, don’t specify them.
+Some elements have an ARIA `role` implicitly in an HTML document, don’t specify them. ARIA stands for Accessible Rich Internet Applications.
 
 Bad:
 
