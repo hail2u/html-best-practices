@@ -1545,7 +1545,7 @@ Godt:
 
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
 
 

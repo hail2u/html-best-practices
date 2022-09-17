@@ -1545,7 +1545,7 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
 
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u_)
+- [@hail2u_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
 
 

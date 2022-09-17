@@ -1546,7 +1546,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
 ## Авторы
 
-- [@hail2u\_](https://github.com/hail2u_)
+- [@hail2u\_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
 
 
