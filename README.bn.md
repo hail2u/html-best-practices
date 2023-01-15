@@ -1,24 +1,24 @@
 Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Français (fr)](README.fr.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md) . [বাংলা(bn)](README.bn.md) 
 
-# Boas Práticas HTML
+# HTML Best Practices
 
-Para escrever documentos HTML sustentáveis e escaláveis.
-
-
-## Geral
+সহজে ম্যানেজ এবং স্কেল HTML ডকুমেন্ট লেখার জন্য
 
 
-### Comece com DOCTYPE
+## সাধারন
 
-DOCTYPE é necessário para ativar o modo padrão.
 
-Ruim:
+### DOCTYPE দিয়ে শুরু করুন
+
+`No-quirks` মোড সক্রিয় করার জন্য DOCTYPE প্রয়োজন৷
+
+ভালো না:
 
     <html>
       ...
     </html>
 
-Bom:
+ভালো:
 
     <!DOCTYPE html>
     <html>
@@ -26,98 +26,99 @@ Bom:
     </html>
 
 
-### Não utilize DOCTYPE legado ou obsoleto
+### অনেক পুরাতন অথবা উত্তরাধিকার DOCTYPE ব্যবহার করবেন না।
 
-DOCTYPE não é mais para DTD, seja simples.
+DOCTYPE এখন আর DTD-এর জন্য ব্যবহার হয় না, সহজ হোন।
 
-Ruim:
+ভালো না:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Bom:
+ভালো:
 
     <!DOCTYPE html>
 
 
-### Não utilize declaração de XML
+### XML ঘোষণা ব্যবহার করবেন না
 
-Você tem certeza que quer escrever um XHTML?
+আপনি কি XHTML লিখতে চান?
 
-Ruim:
+ভালো না:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Bom:
+ভালো:
 
     <!DOCTYPE html>
 
 
-### Não utilizar referências de caracteres sempre que possível
+### অক্ষর রেফারেন্স যতটা সম্ভব ব্যবহার করবেন না
 
-Se você estiver utilizando um documento HTML com UTF-8, quase todos caracteres (inclusive Emoji) podem ser escritos diretamente.
+আপনি যদি UTF-8 দিয়ে একটি HTML ডকুমেন্ট লেখেন, প্রায় সব অক্ষর (ইমোজি সহ) সরাসরি লেখা যাবে।
 
-Ruim:
+ভালো না:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Bom:
+ভালো:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
-### Utilize as entidades dos caracteres `&`, `<`, `>`, `"`, e `'`
+### Escape `&`, `<`, `>`, `"`, and `'` with named character references
 
-Esses caracteres devem ser utilizados com suas entidades para evitar problemas no documento HTML.
+These characters should escape always for a bug-free HTML document.
 
-Ruim:
+ভালো না:
 
     <h1>The "&" character</h1>
 
-Bom:
+ভালো:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### Use referência numérica de caracteres para controle ou caracteres invisíveis
+### Use numeric character references for control or invisible characters
 
-Esses caracteres podem ser facilmente confundidos com outros caracteres.
-Nem a especificação garante que esses caracteres tenham nomes amigáveis ​​para humanos.
+These characters are easily mistaken for another character. And also spec does
+not guarantee to define a human readable name for these characters.
 
-Ruim:
+ভালো না:
 
     <p>This book can read in 1 hour.</p>
 
-Bom:
+ভালো:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
 
-### Coloque espaços envolta do conteúdo dos seus comentários
+### Put white spaces around comment contents
 
-Alguns caracteres não podem ser utilizados imediatamente após ou antes do fim do comentário.
+Some character cannot be used immediately after comment open or before comment
+close.
 
-Ruim:
+ভালো না:
 
     <!--This section is non-normative-->
 
-Bom:
+ভালো:
 
     <!-- This section is non-normative -->
 
 
-### Não esqueça da tag de fechamento
+### Don’t omit closing tag
 
-Talvez você não tenha entendido quando fechar ou não as tags.
+I think you don’t understand a rule for omitting closing tag.
 
-Ruim:
+ভালো না:
 
     <html>
       <body>
         ...
 
-Bom:
+ভালো:
 
     <html>
       <body>
@@ -126,138 +127,139 @@ Bom:
     </html>
 
 
-### Não misture as formatações de elementos vazios
+### Don’t mix empty element format
 
-A consistência é a chave para a legibilidade.
+Consistency is a key for readability.
 
-Ruim:
+ভালো না:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Bom:
+ভালো:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
 
-### Não coloque espaços em branco em volta das tags e valores dos atributos
+### Don’t put white spaces around tags and attribute values
 
-Não tem motivo para fazer isso.
+There is no reason for doing this.
 
-Ruim:
+ভালো না:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Bom:
+ভালো:
 
     <h1 class="title">HTML Best Practices</h1>
 
 
-### Não misture caracteres em maiúsculo e minúsculo
+### Don’t mix character cases
 
-Torna o código mais consistente.
+It gives a consistency also.
 
-Ruim:
+ভালো না:
 
-    <a HREF="#geral">Geral</A>
+    <a HREF="#general">General</A>
 
-Bom:
+ভালো:
 
-    <a href="#geral">Geral</a>
+    <a href="#general">General</a>
 
-Bom também:
+Also ভালো:
 
-    <A HREF="#geral">Geral</A>
+    <A HREF="#general">General</A>
 
 
-### Não misture as aspas
+### Don’t mix quotation marks
 
-O mesmo que acima.
+Same as above.
 
-Ruim:
+ভালো না:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Bom:
+ভালো:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### Não separe os atributos com dois o mais espaços
+### Don’t separate attributes with two or more white spaces
 
-Sua regra de formatação estranha pode confundir outra pessoa.
+Your weird formatting rule confuses someone.
 
-Ruim:
+ভালো না:
 
     <input   name="q"  type="search">
 
-Bom:
+ভালো:
 
     <input name="q" type="search">
 
 
-### Omita o valor de um atributo booleano
+### Omit boolean attribute value
 
-É mais fácil escrever assim, não é?
+It’s easy to write, isn’t it?
 
-Ruim:
+ভালো না:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Bom:
+ভালো:
 
     <audio autoplay src="/audio/theme.mp3">
 
 
-### Omita os namespaces
+### Omit namespaces
 
-SVG e MathML podem ser usados diretamente em um documento HTML
+SVG and MathML can be used directly in an HTML document.
 
-Ruim:
+ভালো না:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Bom:
+ভালো:
 
     <svg>
       ...
     </svg>
 
 
-### Não utilize atributos de XML
+### Don’t use XML attributes
 
-Nós escrevemos um documento HTML.
+We write an HTML document.
 
-Ruim:
+ভালো না:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Bom:
+ভালো:
 
     <span lang="ja">...</span>
 
 
-### Não misture atributos com prefixo `data-*`, Microdata e RDFa Lite com atributos comuns
+### Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
 
-O texto de uma tag pode ser muito complicado. Essa regra simples ajuda na leitura de tal tag.
+A tag string can be very complicated. This simple rule helps reading such tag
+string.
 
-Ruim:
+ভালো না:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Bom:
+ভালো:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### Prefira o padrão das semânticas do ARIA
+### Prefer default implicit ARIA semantics
 
-Alguns elementos tem um ARIA `role` implícito no documento HTML, não especifique isso.
+Some elements have an ARIA `role` implicitly in an HTML document, don’t specify them.
 
-Ruim:
+ভালো না:
 
     <nav role="navigation">
       ...
@@ -265,7 +267,7 @@ Ruim:
 
     <hr role="separator">
 
-Bom:
+ভালো:
 
     <nav>
       ...
@@ -274,78 +276,78 @@ Bom:
     <hr>
 
 
-## O elemento raiz
+## The root element
 
 
-### Adicione o atributo `lang`
+### Add `lang` attribute
 
-Utilizar o `lang` auxilia os tradutores automáticos de página a identificar a língua do conteúdo.
+`lang` attribute will help translating an HTML document.
 
-Ruim:
+ভালো না:
 
     <html>
 
-Bom:
+ভালো:
 
-    <html lang="pt-BR">
+    <html lang="en-US">
 
 
-### Mantenha o valor do atributo `lang` o mais curto possível
+### Keep `lang` attribute value as short as possible
 
-Japonês é utilizado apenas no Japão, então o código do país não é necessário.
+Japanese is only used in Japan. So country code is not necessary.
 
-Ruim:
+ভালো না:
 
     <html lang="ja-JP">
 
-Bom:
+ভালো:
 
     <html lang="ja">
 
 
-### Evite atributos com prefixo `data-*` sempre que possível
+### Avoid `data-*` as much as possible
 
-Utilize de atributos que podem ser tratados corretamente pelos navegadores.
+An appropriate attribute can be handled properly by browsers.
 
-Ruim:
+ভালো না:
 
     <span data-language="french">chemises</span>
     ...
     <strong data-type="warning">Do not wash!</strong>
 
-Bom:
+ভালো:
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
     <strong class="warning">Do not wash!</strong>
 
 
-## Metadados do documento
+## Document metadata
 
 
-### Adicione o elemento `title`
+### Add `title` element
 
-O valor do elemento `title` é usado para várias aplicações não se limitando apenas ao navegador.
+A value for `title` element is used by various application not only a browser.
 
-Ruim:
+ভালো না:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Bom:
+ভালো:
 
     <head>
       <meta charset="UTF-8">
-      <title>Boas práticas de HTML</title>
+      <title>HTML Best Practices</title>
     </head>
 
 
-### Não utilize o elemento `base`
+### Don’t use `base` element
 
-Um caminho absoluto ou URL é mais seguro, tanto para os desenvolvedores como para os usuários.
+An absolute path or URL is safer for both developers and users.
 
-Ruim:
+ভালো না:
 
     <head>
       ...
@@ -354,7 +356,7 @@ Ruim:
       ...
     </head>
 
-Bom:
+ভালো:
 
     <head>
       ...
@@ -363,76 +365,76 @@ Bom:
     </head>
 
 
-### Especifique o tipo do MIME dos recursos linkados
+### Specify MIME type of minor linked resources
 
-Isso é uma dica para aplicação lidar com esse recurso.
+This is a hint how application handles this resource.
 
-Ruim:
+ভালো না:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Bom:
+ভালো:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### Não crie um link para o `favicon.ico`
+### Don’t link to `favicon.ico`
 
-Quase todos os navegadores modernos fazem a requisição para `/favicon.ico` automaticamente e assíncrono.
+Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
 
-Ruim:
+ভালো না:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Bom:
+ভালো:
 
-    <!-- Coloque `favicon.ico` na raiz do diretório. -->
+    <!-- Place `favicon.ico` in the root directory. -->
 
 
-### Adicione `apple-touch-icon` ao link
+### Add `apple-touch-icon` link
 
-Informa qual ícone as plataformas do iOS utilizam para representar o site.
+A default request path for touch icon was changed suddenly.
 
-Ruim:
+ভালো না:
 
-    <!-- Olá Maçã! Por faça o download de `/apple-touch-icon.png`! -->
+    <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
 
-Bom:
+ভালো:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
 
-### Adicione o atributo `title` em folhas de estilo alternativas
+### Add `title` attribute to alternate stylesheets
 
-Uma legenda entendível por humanos ajuda as pessoas a selecionar a folha de estilos apropriada.
+A human readable label helps people selecting proper stylesheet.
 
-Ruim:
+ভালো না:
 
-    <link href="/css/tela.css" rel="stylesheet">
-    <link href="/css/alto-contraste.css" rel="stylesheet alternativo">
+    <link href="/css/screen.css" rel="stylesheet">
+    <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Bom:
+ভালো:
 
-    <link href="/css/tela.css" rel="stylesheet">
-    <link href="/css/alto-contraste.css" rel="stylesheet alternativo" title="Alto contraste">
+    <link href="/css/screen.css" rel="stylesheet">
+    <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
-### Para URL use o elemento `link`
+### For URL, use `link` element
 
-Quando o valor do atributo `href` puder ser resolvido como URL.
+A value of `href` attribute can be resolved as URL.
 
-Ruim:
+ভালো না:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Bom:
+ভালো:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
@@ -440,17 +442,17 @@ Bom:
     </section>
 
 
-### Especifique a codificação dos caracteres do documento
+### Specify document character encoding
 
-UTF-8 não é o padrão em todos os navegadores ainda.
+UTF-8 is not default in all browsers yet.
 
-Ruim:
+ভালো না:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Bom:
+ভালো:
 
     <head>
       <meta charset="UTF-8">
@@ -458,24 +460,25 @@ Bom:
     </head>
 
 
-### Não utilize formato codificação legado
+### Don’t use legacy character encoding format
 
-Cabeçalhos do HTTP devem ser especificados por um servidor, seja simples.
+HTTP headers should be specified by a server, be simple.
 
-Ruim:
+ভালো না:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Bom:
+ভালো:
 
     <meta charset="UTF-8">
 
 
-### Especifique a codificação dos caracteres logo no início
+### Specify character encoding at first
 
-A especificação pede para que a codificação dos caracteres seja identificada nos primeiros 1024 bytes do documento.
+Spec requires the character encoding is specified within the first 1024 bytes of
+the document.
 
-Ruim:
+ভালো না:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -483,7 +486,7 @@ Ruim:
       ...
     </head>
 
-Bom:
+ভালো:
 
     <head>
       <meta charset="UTF-8">
@@ -494,39 +497,39 @@ Bom:
 
 ### Use UTF-8
 
-Com UTF-8, você pode usar Emoji à vontade.
+With UTF-8, you are free to use Emoji.
 
-Ruim:
+ভালো না:
 
     <meta charset="Shift_JIS">
 
-Bom:
+ভালো:
 
     <meta charset="UTF-8">
 
 
-### Omita o atributo `type` para CSS
+### Omit `type` attribute for CSS
 
-Em HTML, por padrão o atributo `type` do elemento `style` ja é `text/css`.
+In HTML, default `type` attribute’s value of `style` element is `text/css`.
 
-Ruim:
+ভালো না:
 
     <style type="text/css">
       ...
     </style>
 
-Bom:
+ভালো:
 
     <style>
       ...
     </style>
 
 
-### Não comente os conteúdos do elemento `style`
+### Don’t comment out contents of `style` element
 
-Apenas nos navegadores antigos era necessário.
+This ritual is for the old browser.
 
-Ruim:
+ভালো না:
 
     <style>
     <!--
@@ -534,44 +537,44 @@ Ruim:
       -->
     </style>
 
-Bom:
+ভালো:
 
     <style>
       ...
     </style>
 
 
-### Não misture tags de CSS com JavaScript
+### Don’t mix tag for CSS and JavaScript
 
-Alguns elementos `script` bloqueiam a construção do DOM
+Sometimes `script` element blocks DOM construction.
 
-Ruim:
+ভালো না:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Bom:
+ভালো:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Bom também:
+Also ভালো:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
 
-## Seções
+## Sections
 
 
-### Adicione o elemento `body`
+### Add `body` element
 
-Ao não utilizar o elemento `body` para envolver o conteúdo da página pode causar comportamentos não esperados nos navegadores.
+Sometimes `body` element is complemented in unexpected position by a browser.
 
-Ruim:
+ভালো না:
 
     <html>
       <head>
@@ -580,7 +583,7 @@ Ruim:
       ...
     </html>
 
-Bom:
+ভালো:
 
     <html>
       <head>
@@ -592,75 +595,76 @@ Bom:
     </html>
 
 
-### Esqueça o elemento `hgroup`
+### Forget about `hgroup` element
 
-Esse elemento não é muito utilizado.
+This element is not used very much.
 
-Ruim:
+ভালো না:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Bom:
+ভালো:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### Use o elemento `address` apenas para informações de contato
+### Use `address` element only for contact information
 
-O elemento `address` é para o endereço de email, contas em redes sociais, endereço físico, número de telefone e ou algum modo de entrar em contato com.
+`address` element is for email address, social network account, street address,
+telephone number, or something you can get in touch with.
 
-Ruim:
+ভালো না:
 
     <address>No rights reserved.</address>
 
-Bom:
+ভালো:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-## Agrupando conteúdos
+## Grouping content
 
 
-### Não comece uma nova linha com o elemento `pre`
+### Don’t start with newline in `pre` element
 
-A primera quebra de linha vai ser ignorada nos navegadores, porém a segunda em diante são renderizadas.
+A first newline will ignored in the browsers, but second and later are rendered.
 
-Ruim:
+ভালো না:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Bom:
+ভালো:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
 
-### Use de forma apropriada  o elemento `blockquote`
+### Use appropriate element in `blockquote` element
 
-O conteúdo do elemento `blockquote` é uma citação, e não vários blocos de caracteres.
+`blockquote` element’s content is a quote, not a chunks of characters.
 
-Ruim:
+ভালো না:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Bom:
+ভালো:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
 
-### Não inclua a atribuição direto no elemento `blockquote`
+### Don’t include attribution directly in `blockquote` element
 
-O conteúdo do elemento `blockquote` é apenas um parágrafo.
+`blockquote` element’s content is a quote.
 
-Ruim:
+ভালো না:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -668,7 +672,7 @@ Ruim:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Bom:
+ভালো:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -676,7 +680,7 @@ Bom:
 
     <p>— HTML Best Practices</p>
 
-Bom também:
+Also ভালো:
 
     <figure>
       <blockquote>
@@ -687,18 +691,18 @@ Bom também:
     </figure>
 
 
-### Escreva um elemento da lista por linha
+### Write one list item per line
 
-Listas looooooooooooooooooooooooooooooooooooooooogas
-são difíceis deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee ler
+Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
+line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
 
-Ruim:
+ভালো না:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Bom:
+ভালো:
 
     <ul>
       <li>General</li>
@@ -708,11 +712,12 @@ Bom:
     </ul>
 
 
-### Use o atributo `type` para o elemento `ol`
+### Use `type` attribute for `ol` element
 
-Com a utilização do atributo `type` você não precisa utilizar uma classe e definir o estilo da lista ordenada, pode se referir diretamente.
+Sometimes marker referenced by the contents in the near. If you change marker
+with `type` attribute, you will be safe to reference.
 
-Ruim:
+ভালো না:
 
     <head>
       <style>
@@ -730,7 +735,7 @@ Ruim:
       </ol>
     </body>
 
-Bom:
+ভালো:
 
     <body>
       <ol type="I">
@@ -742,11 +747,11 @@ Bom:
     </body>
 
 
-### Não use `dl` para diálogos
+### Don’t use `dl` for dialogue
 
-O elemento `dl` é restrito para associação com listas em HTML.
+`dl` element is restricted to an association list in HTML.
 
-Ruim:
+ভালো না:
 
     <dl>
       <dt>Costello</dt>
@@ -764,7 +769,7 @@ Ruim:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Bom:
+ভালো:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -775,11 +780,11 @@ Bom:
     <p>Abbott: Every dollar of it.</p>
 
 
-### Coloque um elemento `figcaption` como primeiro ou último filho do elemento `figure`
+### Place `figcaption` element as first or last child of `figure` element
 
-A especificação não permite o elemento `figcaption` no meio de um elemento `figure`.
+Spec disallows `figcaption` element in the middle of `figure` element.
 
-Ruim:
+ভালো না:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -787,7 +792,7 @@ Ruim:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Bom:
+ভালো:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -796,54 +801,55 @@ Bom:
     </figure>
 
 
-### Use o elemento `main`
+### Use `main` element
 
-O elemento `main` pode ser utilizado para envolver conteúdos
+`main` element can be used wrapping contents.
 
-Ruim:
+ভালো না:
 
     <div id="content">
       ...
     </div>
 
-Bom:
+ভালো:
 
     <main>
       ...
     </main>
 
 
-### Evite utilizar `div` sempre que possível
+### Avoid `div` element as much as possible
 
-A `div` é um elemento de última instância.
+`div` element is an element of last resort.
 
-Ruim:
+ভালো না:
 
-    <div class="capitulo">
+    <div class="chapter">
       ...
     </div>
 
-Bom:
+ভালো:
 
     <section>
       ...
     </section>
 
 
-## Semânticas a nível de texto
+## Text-level semantics
 
 
-### Não divida o mesmo link que pode estar agrupado
+### Don’t split same link that can be grouped
 
-O elemento `a` pode envolver quase todos elementos (exceto elementos interativos como controles de formulário e um elemento `a` igual ele)
+`a` element can wrap almost all elements (except interactive elements like form
+controls and `a` element itself).
 
-Ruim:
+ভালো না:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Bom:
+ভালো:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
@@ -852,226 +858,227 @@ Bom:
     </a>
 
 
-### Use o atributo `download` para baixar um recurso
+### Use `download` attribute for downloading a resource
 
-Ele vai forçar os navegadores baixarem o recurso linkado para o armazenamento.
+It will force browsers to download linked resource to the storage.
 
-Ruim:
+ভালো না:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Bom:
+ভালো:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Use os atributos `rel`, `hreflang`, e `type` quando necessário
+### Use `rel`, `hreflang`, and `type` attribute if needed
 
-Esses atributos auxiliam o navegador a como lidar com o conteúdo indicado pelo link.
+These hints helps applications how handle linked resource.
 
-Ruim:
+ভালো না:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Bom:
+ভালো:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### Texto do link evidente
+### Clear link text
 
-O texto do link deve ser o rótulo do recurso que ele aponta.
+Link text should be the label of its linked resource.
 
-Ruim:
+ভালো না:
 
-    <p><a href="/pdf" rel="alternate" type="application/pdf">Clique aqui</a> para ver a versão em PDF.</p>
+    <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Bom:
+ভালো:
 
-    <p><a href="/pdf" rel="alternate" type="application/pdf">Versão em PDF</a> também disponível.</p>
+    <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### Não utilize o elemento `em` para avisos ou cuidado
+### Don’t use `em` element for warning or caution
 
-Isso é sério. Então utilize o elemento `strong` por ser mais apropriado.
+These are seriousness. So, `strong` element is more appropriate.
 
-Ruim:
+ভালো না:
 
     <em>Caution!</em>
 
-Bom:
+ভালো:
 
     <strong>Caution!</strong>
 
 
-### Evite os elementos `s`, `i`, `b`, e `u` sempre que possível
+### Avoid `s`, `i`, `b`, and `u` element as much as possible
 
-A semântica desses elementos é muito difícil para humanos.
+These elements’ semantics is too difficult to humans.
 
-Ruim:
+ভালো না:
 
-    <i class="icone-busca"></i>
+    <i class="icon-search"></i>
 
-Bom:
+ভালো:
 
-    <span class="icone-busca" aria-hidden="true"></span>
+    <span class="icon-search" aria-hidden="true"></span>
 
 
-### Não coloque aspas no texto do elemento `q`
+### Don’t put quotes to `q` element
 
-As aspas são inseridas automaticamente pelo navegador.
+Quotes are provided by the browser.
 
-Ruim:
+ভালো না:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Bom:
+ভালো:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Bom também:
+Also ভালো:
 
     “For writing maintainable and scalable HTML documents”
 
 
-### Adicione o atributo `title` ao elemento `abbr`
+### Add `title` attribute to `abbr` element
 
-Não existe outra forma para representar sua forma completa.
+There is no other way to represent its expansion.
 
-Ruim:
+ভালো না:
 
-    <abbr>BPH</abbr>
+    <abbr>HBP</abbr>
 
-Bom:
+ভালো:
 
-    <abbr title="Boas práticas de HTML">HBP</abbr>
+    <abbr title="HTML Best Practices">HBP</abbr>
 
 
-### Marque o elemento `ruby` detalhadamente
+### Markup `ruby` element verbosely
 
-O suporte para elemento `ruby` não é completo nos navegadores modernos.
+`ruby` element support is not completed across the modern browsers.
 
-Ruim:
+ভালো না:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Bom:
+ভালো:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Use o atributo `datetime`  em formatos não reconhecidos por máquina no elemento `time`
+### Add `datetime` attribute to non-machine-readable `time` element
 
-Quando o atributo `datetime` não é informado, o formato do conteúdo elemento `time` é restrito.
+When `datetime` attribute does not present, the format of `time` element’s
+content is restricted.
 
-Ruim:
+ভালো না:
 
-    <time>Dez 19, 2014</time>
+    <time>Dec 19, 2014</time>
 
-Bom:
+ভালো:
 
-    <time datetime="2014-12-19">Dez 19, 2014</time>
+    <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Especifique a linguagem do código com o atributo `class` prefixado com `language-`
+### Specify code language with `class` attribute prefixed with `language-`
 
-Não é um método comum, mas as especificações mencionam.
+This is not a formal way, but spec mentions this.
 
-Ruim:
+ভালো না:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Bom:
+ভালো:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
-### Mantenha o elemento `kbd` o mais simples possível
+### Keep `kbd` element as simple as possible
 
-Aninhar o elemento `kbd` torna dificil para os humanos.
+Nesting `kbd` element is too difficult to humans.
 
-Ruim:
+ভালো না:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
-Bom:
+ভালো:
 
     <kbd>Ctrl+F5</kbd>
 
 
-### Evite o elemento `span` sempre que possível
+### Avoid `span` element as much as possible
 
-O `span` é um elemento de última instância.
+`span` element is an element of last resort.
 
-Ruim:
+ভালো না:
 
     HTML <span class="best">Best</span> Practices
 
-Bom:
+ভালো:
 
     HTML <em>Best</em> Practices
 
 
-### Quebre a linha depois do elemento `br`
+### Break after `br` element
 
-Uma quebra de linha é necessária quando o elemento `br` é utilizado.
+Line break should be needed where `br` element is used.
 
-Ruim:
+ভালো না:
 
     <p>HTML<br>Best<br>Practices</p>
 
-Bom:
+ভালো:
 
     <p>HTML<br>
     Best<br>
     Practices</p>
 
 
-### Não utilize o elemento `br` apenas para propósito visual
+### Don’t use `br` element only for presentational purpose
 
-O elemento `br` não é para quebrar linhas, é para quebrar linhas dos conteúdos.
+`br` element is not for line breaking, it is for line breaks in the contents.
 
-Ruim:
+ভালো না:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Bom:
+ভালো:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
 
-## Edições
+## Edits
 
 
-### Não insira elementos `ins` e `del` entre outros elementos
+### Don’t stride `ins` and `del` element over other elements
 
-Elementos não podem transbordar para outros elementos.
+Elements cannot be overflow other elements.
 
-Ruim:
+ভালো না:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
 
     <p>Don’t trust!</p></del>
 
-Bom:
+ভালো:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
 
     <del><p>Don’t trust!</p></del>
 
 
-## Conteúdo embutido
+## Embedded content
 
 
-### Garanta um um elemento `img` como substituto para um elemento `picture`
+### Provide fallback `img` element for `picture` element
 
-O suporte para o elemento `picture` ainda não é tão vasto.
+The support of `picture` element is not ভালো yet.
 
-Ruim:
+ভালো না:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1080,7 +1087,7 @@ Ruim:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Bom:
+ভালো:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1090,67 +1097,67 @@ Bom:
     </picture>
 
 
-### Adicione o atributo `alt` em uma `img` se necessário
+### Add `alt` attrbute to `img` element if needed
 
-O atributo `alt` auxilia quem não pode processar imagens ou está com o carregamento de imagens desabilitado.
+`alt` attribute helps those who cannot process images or have image loading
+disabled.
 
-
-Ruim:
+ভালো না:
 
     <img src="/img/logo.png">
 
-Bom:
+ভালো:
 
-    <img alt="Boas Práticas de HTML" src="/img/logo.png">
+    <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### Deixe vazio o atributo `alt` sempre que possível
+### Empty `alt` attribute if possible
 
-Se a imagem é suplementar, ou tem um conteúdo equivalente perto da mesma.
+If the image is supplemental, there is equivalent content somewhere in the near.
 
-Ruim:
+ভালো না:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Bom:
+ভালো:
 
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### Omita o atributo `alt` se possível
+### Omit `alt` attribute if possible
 
-As vezes você não sabe um algo que seja adequado ao atributo `alt`.
+Sometimes you don’t know what text is suitable for `alt` attribute.
 
-Ruim:
+ভালো না:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Bom:
+ভালো:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
-    (Se você não consegue ver a imagem, você poderia utilizar um teste <a href="?audio">audio</a>)
+    (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
-### Elemento `iframe` vazio
+### Empty `iframe` element
 
-Se tiver alguma restrição no conteúdo, é sempre bom manter o `iframe` vazio.
+There is some restriction in its content. Being empty is always safe.
 
-Ruim:
+ভালো না:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Bom:
+ভালো:
 
     <iframe src="/ads/default.html"></iframe>
 
 
-### Marque o conteúdo do elemento `map`
+### Markup `map` element content
 
-Esse conteúdo é apresentado por um leitor de tela.
+This content presents to a screen reader.
 
-Ruim:
+ভালো না:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1161,7 +1168,7 @@ Ruim:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Bom:
+ভালো:
 
     <map name="toc">
       <p>
@@ -1175,11 +1182,11 @@ Bom:
     </map>
 
 
-### Disponibilize um conteúdo substituto para os elementos `audio` e `video`
+### Provide fallback content for `audio` or `video` element
 
-O conteúdo substituto é necessário para novos elementos introduzidos no HTML.
+Fallback content is needed for newly introduced elements in HTML.
 
-Ruim:
+ভালো না:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1187,7 +1194,7 @@ Ruim:
       ...
     </video>
 
-Bom:
+ভালো:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1197,20 +1204,20 @@ Bom:
     </video>
 
 
-## Dados tabulares
+## Tabular data
 
 
-### Escreve uma célula por linha
+### Write one cell per line
 
-Linhas longas são díficeis de ler.
+Long lines are hard to scan.
 
-Ruim:
+ভালো না:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Bom:
+ভালো:
 
     <tr>
       <td>General</td>
@@ -1219,11 +1226,11 @@ Bom:
     </tr>
 
 
-### Use o elemento `th` para o cabeçalho da célula
+### Use `th` element for header cell
 
-Não existe motivo para evitar o uso.
+There is no reason to avoid this.
 
-Ruim:
+ভালো না:
 
     <table>
       <thead>
@@ -1247,7 +1254,7 @@ Ruim:
       </tbody>
     </table>
 
-Bom:
+ভালো:
 
     <table>
       <thead>
@@ -1272,98 +1279,100 @@ Bom:
     </table>
 
 
-## Formulários
+## Forms
 
 
-### Envolva um controle de formulário com o elemento `label`
+### Wrap form control with `label` element
 
-O elemento `label` auxilia o focar no elemento do formulário
+`label` element helps focusing form element.
 
-Ruim:
+ভালো না:
 
     <p>Query: <input name="q" type="text"></p>
 
-Bom:
+ভালো:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### Omita o atributo `for` se possível
+### Omit `for` attribute if possible
 
-O elemento `label` pode conter alguns elementos de formulário.
+`label` element can contain some form elements.
 
-Ruim:
+ভালো না:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Bom:
+ভালো:
 
     <label>Query: <input name="q" type="text"></label>
 
 
-### Use o atributo `type` apropriado para o element `input`
+### Use appropriate `type` attribute for `input` element
 
-Com a `type` apropriado o navegador adiciona pequenas funções ao elemento `input`
+With appropriate `type`, a browser gives tiny features to the `input` element.
 
-Ruim:
+ভালো না:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Bom:
+ভালো:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### Adicione o atributo `value` ao elemento `input type="submit"`
+### Add `value` attribute to `input type="submit"`
 
-O rótulo padrão para o botão de submissão não é padronizado pelos navegadores e linguagens.
+The default label for submit button is not standarized across the browser and
+languages.
 
-Ruim:
+ভালো না:
 
     <input type="submit">
 
-Bom:
+ভালো:
 
-    <input type="submit" value="Procurar">
-
-
-### Adicione o atributo `title` ao elemento input `input` quando existir o atributo `pattern`
-
-Se um input não estiver de acordo com a `pattern`  indicada, o conteúdo do atributo `title` será apresentado como uma dica.
-
-Ruim:
-
-    <input name="codigo-de-seguranca" pattern="[0-9]{3}" type="text">
-
-Bom:
-
-    <input name="codigo-de-seguranca" pattern="[0-9]{3}" title="O Código de segurança é um número de três dígitos." type="text">
+    <input type="submit" value="Search">
 
 
-### Não utilize o atributo `placeholder` como um rótulo
+### Add `title` attribute to `input` element when there is `pattern` attribute
 
-O elemento `label` é para rotular, o atributo `placeholder` é para uma breve dica do campo.
+If input text does not match to `pattern` attribute, the value of `title`
+attribute will be display as a hint.
 
-Ruim:
+ভালো না:
+
+    <input name="security-code" pattern="[0-9]{3}" type="text">
+
+ভালো:
+
+    <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
+
+
+### Don’t use `placeholder` attribute for labeling
+
+`label` element is for a label, `placeholder` attribute is for a short hint.
+
+ভালো না:
 
     <input name="email" placeholder="Email" type="text">
 
-Bom:
+ভালো:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### Escreva um elemento `option` por linha
+### Write one `option` element per line
 
-Linhas longas são difíceis de serem lidas.
+Long lines are hard to scan.
 
-Ruim:
+ভালো না:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Bom:
+ভালো:
 
     <datalist id="toc">
       <option label="General">
@@ -1372,40 +1381,38 @@ Bom:
     </datalist>
 
 
-### Adicione o atributo `max` ao elemento de `progress`
+### Add `max` attribute to `progress` element
 
-Com o atributo `max`, o atributo `value` pode ser preenchido em um formato mais acessível.
+With `max` attribute, the `value` attribute can be written in an easy format.
 
-Ruim:
+ভালো না:
 
     <progress value="0.5"> 50%</progress>
 
-Bom:
+ভালো:
 
     <progress max="100" value="50"> 50%</progress>
 
 
-### Adicione os atributos `min` e `max` ao elemento `meter`
+### Add `min` and `max` attribute to `meter` element
 
-With `min` and `max` attribute, the `value` attribute can be write in an easy
+With `min` and `max` attribute, the `value` attribute can be written in an easy
 format.
 
-Com os atributos `min` e `max`, o `value` pode ser preenchido em um formato mais acessível.
+ভালো না:
 
-Ruim:
+    <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-    <meter value="0.5"> 512GB usado (1024GB total)</meter>
+ভালো:
 
-Bom:
-
-    <meter min="0" max="1024" value="512"> 512GB usado (1024GB total)</meter>
+    <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### Coloque o elemento `legend` como o primeiro filho do elemento `fieldset`
+### Place `legend` element as the first child of `fieldset` element
 
-A especificação pede dessa forma.
+Spec requires this.
 
-Ruim:
+ভালো না:
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1413,7 +1420,7 @@ Ruim:
       <legend>About "General"</legend>
     </fieldset>
 
-Bom:
+ভালো:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1422,31 +1429,32 @@ Bom:
     </fieldset>
 
 
-## Scripts
+## Scripting
 
 
-### Omita o atributo `type` para JavaScript
+### Omit `type` attribute for JavaScript
 
-Em HTML, o atributo `type` do elemento `script` é por padrão `text/javascript`.
+HTML এর ভিতরে,  ডিফল্ট `type` attribute’s value of `script` element is
+`text/javascript`.
 
-Ruim:
+ভালো না:
 
     <script type="text/javascript">
       ...
     </script>
 
-Bom:
+ভালো:
 
     <script>
       ...
     </script>
 
 
-### Não comente os conteúdos do elemento `script`
+### `script` ইলিমেন্ট এর কনটেন্ট এর উপর মন্তব্য করবেন না
 
-Apenas nos navegadores antigos era necessário.
+এই  ব্যবহারটি সুধু পুরানো ব্রাউজারের জন্য।
 
-Ruim:
+ভালো না:
 
     <script>
     /*<![CDATA[*/
@@ -1454,7 +1462,7 @@ Ruim:
     /*]]>*/
     </script>
 
-Ruim também:
+এটাও ভালো না:
 
     <script>
     <!--
@@ -1462,18 +1470,18 @@ Ruim também:
     // -->
     </script>
 
-Bom:
+ভালো:
 
     <script>
       ...
     </script>
 
 
-### Não utilzie elementos `script` injetados por script
+### script-injected `script` ইলিমেন্ট ব্যবহার করবেন না।
 
-Utilizar o atributo `async` é o melhor tanto para simplicidade como para performance.
+সিম্পল রাখা এবং ভালো পারফরমেন্স দুইটার জন্যই `async` এট্রিবিউট সব থেকে ভালো। 
 
-Ruim:
+ভালো না:
 
     <script>
       var script = document.createElement("script");
@@ -1482,19 +1490,19 @@ Ruim:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Bom:
+ভালো:
 
     <script async defer src="https://example.com/widget.js"></script>
 
 
-## Outro
+## অন্যান্য
 
 
-### Indentação consistente
+### ধারাবাহিকভাবে ইন্ডেন্ট করুন
 
-A indentação  é importante na legibilidade do código.
+রিডেবিলিটি বাড়ানোর জন্য ইন্ডেন্টেশন গুরুত্বপূর্ণ।
 
-Ruim:
+ভালো না:
 
     <html>
     	<head>
@@ -1505,7 +1513,7 @@ Ruim:
       </body>
     </html>
 
-Bom:
+ভালো:
 
     <html>
       <head>
@@ -1517,45 +1525,46 @@ Bom:
     </html>
 
 
-### Use caminhos absolutos para links internos
+### অভ্যন্তরীণ লিঙ্কের জন্য এবসুলেট পাথ ব্যবহার করুন
 
-Um caminho absoluto funciona melhor no seu localhost sem conexão com a internet.
+একটি এবসুলেট পাথ আপনার লোকালহোস্টে আরও ভাল কাজ করে ইন্টারনেট সংযোগ ছাড়াই ।
 
-Ruim:
+ভালো না:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Bom:
+ভালো:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
 
-### Não utilize protocolo relativo em URL para recursos externos
+### বাহ্যিক রিসোর্স এর জন্য প্রোটোকল-সম্পর্কিত URL ব্যবহার করবেন না
 
-Com o protocolo você pode carregar recursos externos com seguração e estabilidade.
 
-Ruim:
+প্রোটোকলের সাহায্যে, আপনি নিরাপদে এবং নির্ভরযোগ্যভাবে বাহ্যিক সংস্থানগুলি লোড করতে পারেন৷
+
+ভালো না:
 
     <script src="//example.com/js/library.js">
 
-Bom:
+ভালো:
 
     <script src="https://example.com/js/library.js">
 
 
 
 
-## Contributors
+## অবদানকারী
 
 - [@hail2u_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
 
 
-## Translators
+## অনুবাদক
 
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
@@ -1569,8 +1578,8 @@ Bom:
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar-nayin](https://github.com/zulkar29)
 
-
-## License
+## লাইসেন্স
 
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
