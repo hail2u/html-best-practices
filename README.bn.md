@@ -67,9 +67,9 @@ DOCTYPE এখন আর DTD-এর জন্য ব্যবহার হয় �
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
-### Escape `&`, `<`, `>`, `"`, and `'` with named character references
+### নামযুক্ত অক্ষর এর সাথে `&`, `<`, `>`, `"`, এবং `'` মুক্ত রাখুন
 
-These characters should escape always for a bug-free HTML document.
+একটি বাগ-মুক্ত HTML নথির জন্য এই অক্ষরগুলি সর্বদা পালানো উচিত।
 
 ভালো না:
 
@@ -80,10 +80,9 @@ These characters should escape always for a bug-free HTML document.
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### Use numeric character references for control or invisible characters
+### নিয়ন্ত্রণ বা অদৃশ্য অক্ষরের জন্য সংখ্যাসূচক অক্ষর রেফারেন্স ব্যবহার করুন
 
-These characters are easily mistaken for another character. And also spec does
-not guarantee to define a human readable name for these characters.
+এই অক্ষরগুলি সহজেই অন্য চরিত্রের জন্য ভুল হয়। এবং বিশেষত্ব এই অক্ষরগুলির জন্য একটি মানুষের পাঠযোগ্য নাম সংজ্ঞায়িত করার গ্যারান্টি দেয় না।
 
 ভালো না:
 
@@ -94,10 +93,9 @@ not guarantee to define a human readable name for these characters.
     <p>This book can read in 1&#xA0;hour.</p>
 
 
-### Put white spaces around comment contents
+### মন্তব্য বিষয়বস্তু চারপাশে সাদা স্থান রাখুন
 
-Some character cannot be used immediately after comment open or before comment
-close.
+কিছু অক্ষর কমেন্ট খোলার সাথে সাথে বা মন্তব্য বন্ধ করার আগে ব্যবহার করা যাবে না।
 
 ভালো না:
 
@@ -108,9 +106,9 @@ close.
     <!-- This section is non-normative -->
 
 
-### Don’t omit closing tag
+### ক্লোজিং ট্যাগ বাদ দেবেন না
 
-I think you don’t understand a rule for omitting closing tag.
+আমি মনে করি আপনি ক্লোজিং ট্যাগ বাদ দেওয়ার নিয়ম বুঝতে পারছেন না।
 
 ভালো না:
 
@@ -127,9 +125,9 @@ I think you don’t understand a rule for omitting closing tag.
     </html>
 
 
-### Don’t mix empty element format
+### খালি এলিমেন্টে বিন্যাস মিশ্রিত করবেন না
 
-Consistency is a key for readability.
+সুসংগত তা পঠনযোগ্যতার জন্য একটি চাবিকাঠি।
 
 ভালো না:
 
@@ -142,9 +140,9 @@ Consistency is a key for readability.
     <hr>
 
 
-### Don’t put white spaces around tags and attribute values
+### ট্যাগ এবং অ্যাট্রিবিউট মানের চারপাশে সাদা স্পেস রাখবেন না
 
-There is no reason for doing this.
+এটা করার কোন কারণ নেই।
 
 ভালো না:
 
@@ -155,9 +153,9 @@ There is no reason for doing this.
     <h1 class="title">HTML Best Practices</h1>
 
 
-### Don’t mix character cases
+### ক্যাকেটার কেস মিশ্রিত করবেন না
 
-It gives a consistency also.
+এটি একটি ধারাবাহিকতাও দেয়।
 
 ভালো না:
 
@@ -167,14 +165,14 @@ It gives a consistency also.
 
     <a href="#general">General</a>
 
-Also ভালো:
+এটাও ভালো:
 
     <A HREF="#general">General</A>
 
 
-### Don’t mix quotation marks
+### উদ্ধৃতি চিহ্ন মিশ্রিত করবেন না
 
-Same as above.
+উপরের মতই ।
 
 ভালো না:
 
@@ -185,9 +183,9 @@ Same as above.
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### Don’t separate attributes with two or more white spaces
+### দুই বা তার বেশি সাদা স্পেস দিয়ে অ্যাট্রিবিউট আলাদা করবেন না
 
-Your weird formatting rule confuses someone.
+আপনার অদ্ভুত ফর্ম্যাটিং নিয়ম কাউকে বিভ্রান্ত করে।
 
 ভালো না:
 
@@ -198,9 +196,9 @@ Your weird formatting rule confuses someone.
     <input name="q" type="search">
 
 
-### Omit boolean attribute value
+### বুলিয়ান অ্যাট্রিবিউট মান বাদ দিন
 
-It’s easy to write, isn’t it?
+এটা লেখা সহজ, তাই না?
 
 ভালো না:
 
@@ -211,9 +209,9 @@ It’s easy to write, isn’t it?
     <audio autoplay src="/audio/theme.mp3">
 
 
-### Omit namespaces
+### নেমস্পেস বাদ দিন
 
-SVG and MathML can be used directly in an HTML document.
+SVG এবং MathML সরাসরি একটি HTML নথিতে ব্যবহার করা যেতে পারে।
 
 ভালো না:
 
@@ -228,9 +226,9 @@ SVG and MathML can be used directly in an HTML document.
     </svg>
 
 
-### Don’t use XML attributes
+### XML অ্যাট্রিবিউট ব্যবহার করবেন না
 
-We write an HTML document.
+আমরা একটি HTML নথি লিখি।
 
 ভালো না:
 
@@ -241,10 +239,9 @@ We write an HTML document.
     <span lang="ja">...</span>
 
 
-### Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
+### `data-*` বৈশিষ্ট্যগুলির সাথে , মাইক্রোডেটা এবং RDFa Lite বৈশিষ্ট্যগুলিকে মিশ্রিত করবেন না ৷
 
-A tag string can be very complicated. This simple rule helps reading such tag
-string.
+একটি ট্যাগ স্ট্রিং খুব জটিল হতে পারে। এই সহজ নিয়ম এই ধরনের ট্যাগ স্ট্রিং পড়তে সাহায্য করে।
 
 ভালো না:
 
@@ -255,9 +252,9 @@ string.
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### Prefer default implicit ARIA semantics
+### ডিফল্ট অন্তর্নিহিত ARIA পছন্দ করুন
 
-Some elements have an ARIA `role` implicitly in an HTML document, don’t specify them.
+কিছু এলিমেন্টে একটি ARIA `role` অন্তর্নিহিতভাবে HTML নথিতে থাকে, সেগুলি নির্দিষ্ট করবেন না ৷
 
 ভালো না:
 
@@ -276,12 +273,12 @@ Some elements have an ARIA `role` implicitly in an HTML document, don’t specif
     <hr>
 
 
-## The root element
+## মূল উপাদান
 
 
-### Add `lang` attribute
+### `lang` অ্যাট্রিবিউট যোগ করুন
 
-`lang` attribute will help translating an HTML document.
+`lang` অ্যাট্রিবিউট একটি HTML নথি অনুবাদ করতে সাহায্য করবে।
 
 ভালো না:
 
@@ -292,9 +289,9 @@ Some elements have an ARIA `role` implicitly in an HTML document, don’t specif
     <html lang="en-US">
 
 
-### Keep `lang` attribute value as short as possible
+### `lang` অ্যাট্রিবিউট মান যতটা সম্ভব ছোট রাখুন
 
-Japanese is only used in Japan. So country code is not necessary.
+জাপানি শুধুমাত্র জাপানে ব্যবহৃত হয়। তাই দেশের কোডের প্রয়োজন নেই।
 
 ভালো না:
 
@@ -305,9 +302,9 @@ Japanese is only used in Japan. So country code is not necessary.
     <html lang="ja">
 
 
-### Avoid `data-*` as much as possible
+### `data-*` যতটা সম্ভব এড়িয়ে চলুন
 
-An appropriate attribute can be handled properly by browsers.
+একটি উপযুক্ত বৈশিষ্ট্য ব্রাউজার দ্বারা সঠিকভাবে পরিচালনা করা যেতে পারে।
 
 ভালো না:
 
@@ -322,12 +319,12 @@ An appropriate attribute can be handled properly by browsers.
     <strong class="warning">Do not wash!</strong>
 
 
-## Document metadata
+## ডকুমেন্ট মেটাডেটা
 
 
-### Add `title` element
+### `title` এলিমেন্টে যোগ করুন
 
-A value for `title` element is used by various application not only a browser.
+`title` এলিমেন্টে এর ভ্যালু শুধুমাত্র একটি ব্রাউজার নয় বিভিন্ন অ্যাপ্লিকেশন দ্বারাও ব্যবহৃত হয়।
 
 ভালো না:
 
@@ -343,9 +340,9 @@ A value for `title` element is used by various application not only a browser.
     </head>
 
 
-### Don’t use `base` element
+### `base` এলিমেন্টে ব্যবহার করবেন না
 
-An absolute path or URL is safer for both developers and users.
+একটি নিখুঁত পথ বা URL ডেভেলপার এবং ব্যবহারকারী উভয়ের জন্যই নিরাপদ।
 
 ভালো না:
 
@@ -365,9 +362,9 @@ An absolute path or URL is safer for both developers and users.
     </head>
 
 
-### Specify MIME type of minor linked resources
+### MIME ধরনের ক্ষুদ্র লিঙ্কযুক্ত সংস্থানগুলি নির্দিষ্ট করুন৷
 
-This is a hint how application handles this resource.
+এটি একটি ইঙ্গিত কিভাবে অ্যাপ্লিকেশন এই সম্পদ পরিচালনা করে।
 
 ভালো না:
 
@@ -382,9 +379,9 @@ This is a hint how application handles this resource.
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### Don’t link to `favicon.ico`
+### `favicon.ico` এ লিঙ্ক করবেন না
 
-Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
+প্রায় সব ব্যাউজার `/favicon.ico`স্বয়ংক্রিয়ভাবে এবং অ্যাসিঙ্ক্রোনাসভাবে নিয়ে আসে।
 
 ভালো না:
 
@@ -395,9 +392,9 @@ Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
     <!-- Place `favicon.ico` in the root directory. -->
 
 
-### Add `apple-touch-icon` link
+### `apple-touch-icon` লিংক যোগ করুন
 
-A default request path for touch icon was changed suddenly.
+টাচ আইকনের জন্য একটি ডিফল্ট অনুরোধের পথ হঠাৎ পরিবর্তন করা হয়েছে৷
 
 ভালো না:
 
@@ -408,9 +405,9 @@ A default request path for touch icon was changed suddenly.
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
 
-### Add `title` attribute to alternate stylesheets
+### `title` অ্যাট্রিবিউট এর বিকল্প স্টাইলশীটে যোগ করুন
 
-A human readable label helps people selecting proper stylesheet.
+একটি মানুষের পাঠযোগ্য লেবেল সঠিক স্টাইলশীট নির্বাচন করতে সাহায্য করে।
 
 ভালো না:
 
@@ -423,9 +420,9 @@ A human readable label helps people selecting proper stylesheet.
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
-### For URL, use `link` element
+### URL এর জন্য, `link` অ্যাট্রিবিউট ব্যবহার করুন
 
-A value of `href` attribute can be resolved as URL.
+`href` অ্যাট্রিবিউট এর ভ্যালু URL হিসাবে সমাধান করা যেতে পারে।
 
 ভালো না:
 
@@ -442,9 +439,9 @@ A value of `href` attribute can be resolved as URL.
     </section>
 
 
-### Specify document character encoding
+### ডকুমেন্টের অক্ষর এনকোডিং নির্দিষ্ট করুন
 
-UTF-8 is not default in all browsers yet.
+UTF-8 এখনও সব ব্রাউজারে ডিফল্ট নয়।
 
 ভালো না:
 
@@ -460,9 +457,9 @@ UTF-8 is not default in all browsers yet.
     </head>
 
 
-### Don’t use legacy character encoding format
+### এনকোডিং ফরম্যাট এ লিগ্যাসি অক্ষর ব্যবহার করবেন না
 
-HTTP headers should be specified by a server, be simple.
+HTTP হেডার একটি সার্ভার দ্বারা নির্দিষ্ট করা উচিত, সহজ হতে হবে ।
 
 ভালো না:
 
@@ -473,10 +470,9 @@ HTTP headers should be specified by a server, be simple.
     <meta charset="UTF-8">
 
 
-### Specify character encoding at first
+### প্রথমে অক্ষর এনকোডিং নির্দিষ্ট করুন
 
-Spec requires the character encoding is specified within the first 1024 bytes of
-the document.
+স্পেকের জন্য নথির প্রথম 1024 বাইটের মধ্যে অক্ষর এনকোডিং নির্দিষ্ট করা প্রয়োজন।
 
 ভালো না:
 
@@ -495,9 +491,9 @@ the document.
     </head>
 
 
-### Use UTF-8
+### UTF-8 ব্যবহার করুন
 
-With UTF-8, you are free to use Emoji.
+UTF-8 এর সাথে, আপনি ইমোজি ব্যবহার করতে পারবেন।
 
 ভালো না:
 
@@ -508,9 +504,9 @@ With UTF-8, you are free to use Emoji.
     <meta charset="UTF-8">
 
 
-### Omit `type` attribute for CSS
+### CSS-এর জন্য `type` অ্যাট্রিবিউট বাদ দিন
 
-In HTML, default `type` attribute’s value of `style` element is `text/css`.
+HTML এ,  `style` এর ডিফল্ট `type` অ্যাট্রিবিউট ভ্যালু হলো `text/css` ।
 
 ভালো না:
 
@@ -525,9 +521,9 @@ In HTML, default `type` attribute’s value of `style` element is `text/css`.
     </style>
 
 
-### Don’t comment out contents of `style` element
+### `style` এলিমেন্টে বিষয়বস্তু উপর মন্তব্য করবেন না
 
-This ritual is for the old browser.
+এইটা পুরাতন ব্যাউজারের জন্য ।
 
 ভালো না:
 
@@ -544,9 +540,9 @@ This ritual is for the old browser.
     </style>
 
 
-### Don’t mix tag for CSS and JavaScript
+### CSS এবং JavaScript এর ট্যাগ এক সাথে মিশাবেন না
 
-Sometimes `script` element blocks DOM construction.
+কখনও কখনও `script` এলিমেন্টে DOM তৈরি ব্লক করে।
 
 ভালো না:
 
@@ -560,19 +556,19 @@ Sometimes `script` element blocks DOM construction.
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Also ভালো:
+এটাও ভালো:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
 
-## Sections
+## বিভাগসমূহ
 
 
-### Add `body` element
+### `body` এলিমেন্টে যোগ করুন
 
-Sometimes `body` element is complemented in unexpected position by a browser.
+কখনও কখনও `body` এলিমেন্টে একটি ব্রাউজার দ্বারা অপ্রত্যাশিত অবস্থানে পরিপূরক হয়।
 
 ভালো না:
 
@@ -595,9 +591,9 @@ Sometimes `body` element is complemented in unexpected position by a browser.
     </html>
 
 
-### Forget about `hgroup` element
+### `hgroup` এলিমেন্টে সম্পর্কে ভুলে যান
 
-This element is not used very much.
+এই এলিমেন্টে খুব বেশি ব্যবহার করা হয় না।
 
 ভালো না:
 
@@ -612,10 +608,9 @@ This element is not used very much.
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### Use `address` element only for contact information
+### `address` এলিমেন্টে শুধুমাত্র যোগাযোগের তথ্যের জন্য উপাদান ব্যবহার করুন
 
-`address` element is for email address, social network account, street address,
-telephone number, or something you can get in touch with.
+`address` এলিমেন্টে হল ইমেল ঠিকানা, সামাজিক নেটওয়ার্ক অ্যাকাউন্ট, রাস্তার ঠিকানা, টেলিফোন নম্বর বা এমন কিছুর জন্য যার সাথে আপনি যোগাযোগ করতে পারেন।
 
 ভালো না:
 
@@ -626,12 +621,12 @@ telephone number, or something you can get in touch with.
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-## Grouping content
+## গ্রুপিং বিষয়বস্তু
 
 
-### Don’t start with newline in `pre` element
+### `pre` এলিমেন্টে নতুন লাইন দিয়ে শুরু করবেন না
 
-A first newline will ignored in the browsers, but second and later are rendered.
+ব্রাউজারগুলিতে একটি প্রথম নতুন লাইন উপেক্ষা করা হবে, তবে দ্বিতীয় এবং পরে রেন্ডার করা হবে।
 
 ভালো না:
 
@@ -645,9 +640,9 @@ A first newline will ignored in the browsers, but second and later are rendered.
     </pre>
 
 
-### Use appropriate element in `blockquote` element
+### `blockquote` এলিমেন্টের উপযুক্ত এলিমেন্টের ব্যবহার করুন
 
-`blockquote` element’s content is a quote, not a chunks of characters.
+`blockquote`  এলিমেন্টের বিষয়বস্তু একটি উদ্ধৃতি, অক্ষরের একটি অংশ নয়।
 
 ভালো না:
 
@@ -660,9 +655,9 @@ A first newline will ignored in the browsers, but second and later are rendered.
     </blockquote>
 
 
-### Don’t include attribution directly in `blockquote` element
+### `blockquote` এলিমেন্টের রে ভিতরে সরাসরি অ্যাট্রিবিউশন অন্তর্ভুক্ত করবেন না
 
-`blockquote` element’s content is a quote.
+`blockquote` এলিমেন্টের এর এর বিষয়বস্তু একটি উদ্ধৃতি ।
 
 ভালো না:
 
@@ -680,7 +675,7 @@ A first newline will ignored in the browsers, but second and later are rendered.
 
     <p>— HTML Best Practices</p>
 
-Also ভালো:
+এটাও ভালো:
 
     <figure>
       <blockquote>
@@ -691,10 +686,10 @@ Also ভালো:
     </figure>
 
 
-### Write one list item per line
+### প্রতি লাইনে একটি তালিকা আইটেম লিখুন
 
-Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
-line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
+লম্বাঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅঅ
+লাইন পড়ার জনননননননননননননননননননননন্য কঠিন ।
 
 ভালো না:
 
@@ -712,10 +707,9 @@ line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
     </ul>
 
 
-### Use `type` attribute for `ol` element
+### `ol` এলিমেন্টের এর সাথে `type` অ্যাট্রিবিউট ব্যবহার করুন
 
-Sometimes marker referenced by the contents in the near. If you change marker
-with `type` attribute, you will be safe to reference.
+আপনি যদি `type` অ্যাট্রিবিউট এর সাথে মার্কার পরিবর্তন করেন, তাহলে আপনি আপনি রেফারেন্সে নিরাপদ থাকবেন।
 
 ভালো না:
 
@@ -747,9 +741,9 @@ with `type` attribute, you will be safe to reference.
     </body>
 
 
-### Don’t use `dl` for dialogue
+### সংলাপের জন্য `dl` এলিমেন্টের ব্যবহার করবেন না
 
-`dl` element is restricted to an association list in HTML.
+`dl` এলিমেন্টের এইচটিএমএল-এ একটি অ্যাসোসিয়েশন তালিকায় সীমাবদ্ধ ।
 
 ভালো না:
 
@@ -780,9 +774,9 @@ with `type` attribute, you will be safe to reference.
     <p>Abbott: Every dollar of it.</p>
 
 
-### Place `figcaption` element as first or last child of `figure` element
+### `figcaption` এলিমেন্টের প্রথম বা শেষ চাইল্ড হিসাবে `figure` এলিমেন্ট রাখুন
 
-Spec disallows `figcaption` element in the middle of `figure` element.
+স্পেক `figure` এলিমেন্টের মাঝখানে `figcaption` এলিমেন্টকে অনুমতি দেয় না।
 
 ভালো না:
 
@@ -801,9 +795,9 @@ Spec disallows `figcaption` element in the middle of `figure` element.
     </figure>
 
 
-### Use `main` element
+### `main` ইলিমেন্টে ব্যবহার করুন
 
-`main` element can be used wrapping contents.
+`main` ইলিমেন্টে অন্য কনটেন্ট মোড়ানোর কাজে ব্যবহার করা যেতে পারে ।
 
 ভালো না:
 
@@ -818,9 +812,9 @@ Spec disallows `figcaption` element in the middle of `figure` element.
     </main>
 
 
-### Avoid `div` element as much as possible
+### যত বেশী সম্ভব `div` ইলিমেন্টে এড়িয়ে চলুন
 
-`div` element is an element of last resort.
+`div` ইলিমেন্টে শেষ অবলম্বন একটি উপাদান ।
 
 ভালো না:
 
@@ -835,13 +829,12 @@ Spec disallows `figcaption` element in the middle of `figure` element.
     </section>
 
 
-## Text-level semantics
+## টেক্সট-লেভেল সিমানটিক
 
 
-### Don’t split same link that can be grouped
+### একই লিঙ্ক বিভক্ত করবেন না যা গ্রুপ করা যেতে পারে
 
-`a` element can wrap almost all elements (except interactive elements like form
-controls and `a` element itself).
+`a` ইলিমেন্টে প্রায় সব অন্য ইলিমেন্টে কে মোড়ায়ি রাখতে যারে ( ফর্ম নিয়ন্ত্রণ এবং ইলিমেন্টে মতো ইন্টারেক্টিভ উপাদানগুলি ছাড়া এবং `a` ইলিমেন্টে নিজেকে).
 
 ভালো না:
 
@@ -858,9 +851,9 @@ controls and `a` element itself).
     </a>
 
 
-### Use `download` attribute for downloading a resource
+### কোন রিসোর্স ডাউনলোড দিতে `download` অ্যাট্রিবিউট ব্যবহার করুন
 
-It will force browsers to download linked resource to the storage.
+এটা ব্যাউজারকে লিংক রিসোর্স মেমরীতে ডাওনলোড হতে বাধ্য করবে ।
 
 ভালো না:
 
@@ -871,9 +864,9 @@ It will force browsers to download linked resource to the storage.
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Use `rel`, `hreflang`, and `type` attribute if needed
+### প্রয়োজন হলে `rel`, `hreflang`, এবং `type` অ্যাট্রিবিউট ব্যবহার করুন
 
-These hints helps applications how handle linked resource.
+অ্যাপ্লিকেশনে কিভাবে লিংক রিসোর্স কিভাবে ম্যানেজ করতেেএটা তার হিন্ট দিতে সাহায্য করে ।
 
 ভালো না:
 
@@ -884,9 +877,9 @@ These hints helps applications how handle linked resource.
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### Clear link text
+### লিঙ্ক এর টেক্সট পরিষ্কার রাখুন
 
-Link text should be the label of its linked resource.
+লিঙ্ক টেক্সট এর লিঙ্ক করা সম্পদের লেবেল হওয়া উচিত।
 
 ভালো না:
 
@@ -897,9 +890,9 @@ Link text should be the label of its linked resource.
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### Don’t use `em` element for warning or caution
+### সতর্কতা বা সতর্কতার জন্য `em` ইলিমেন্টে ব্যবহার করবেন না
 
-These are seriousness. So, `strong` element is more appropriate.
+এগুলো সিরিয়াসনেস। সুতরাং, `strong` ইলিমেন্টে আরো বেশী উপযুক্ত.
 
 ভালো না:
 
@@ -910,9 +903,9 @@ These are seriousness. So, `strong` element is more appropriate.
     <strong>Caution!</strong>
 
 
-### Avoid `s`, `i`, `b`, and `u` element as much as possible
+### `s`, `i`, `b`, এবং `u` ইলিমেন্টে যতটা সম্ভব এড়িয়ে চলুন
 
-These elements’ semantics is too difficult to humans.
+এই ইলিমেন্টে গুলার শব্দার্থবিদ্যা মানুষের পক্ষে খুব কঠিন।
 
 ভালো না:
 
@@ -923,9 +916,9 @@ These elements’ semantics is too difficult to humans.
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### Don’t put quotes to `q` element
+### `q` ইলিমেন্টে এর ভিতরে উদ্ধৃতি রাখবেন না 
 
-Quotes are provided by the browser.
+উদ্ধৃতি ব্রাউজার দ্বারা প্রদান করা হয় ।
 
 ভালো না:
 
@@ -935,14 +928,14 @@ Quotes are provided by the browser.
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Also ভালো:
+এটাও ভালো:
 
     “For writing maintainable and scalable HTML documents”
 
 
-### Add `title` attribute to `abbr` element
+### `abbr` ইলিমেন্টে এর `title` অ্যাট্রিবিউট যোগ করুন 
 
-There is no other way to represent its expansion.
+এর সম্প্রসারণ প্রতিনিধিত্ব করার অন্য কোন উপায় নেই।
 
 ভালো না:
 
@@ -953,9 +946,9 @@ There is no other way to represent its expansion.
     <abbr title="HTML Best Practices">HBP</abbr>
 
 
-### Markup `ruby` element verbosely
+### `ruby` মার্কআপ ইলিমেন্টে কম ব্যবহার করুন
 
-`ruby` element support is not completed across the modern browsers.
+`ruby` ইলিমেন্টে আধুনিক সব ব্যাউজার এখনো সাপোর্ট করে না ।
 
 ভালো না:
 
@@ -966,10 +959,9 @@ There is no other way to represent its expansion.
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Add `datetime` attribute to non-machine-readable `time` element
+### মেশিন পাঠ অযোগ্য `time` ইলিমেন্টে এ `datetime` অ্যাট্রিবিউট যোগ করুন
 
-When `datetime` attribute does not present, the format of `time` element’s
-content is restricted.
+যখন datetime অ্যাট্রিবিউট বৈশিষ্ট্য উপস্থিত হয় না, তখন `time` ইলিমেন্টে এর বিষয়বস্তুর বিন্যাস সীমাবদ্ধ।
 
 ভালো না:
 
@@ -980,9 +972,9 @@ content is restricted.
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Specify code language with `class` attribute prefixed with `language-`
+### কোড ল্যাংগুয়েজ লেখার সময় `class` অ্যাট্রিবিউট এর নাম এর আগে `language-` রাখুন
 
-This is not a formal way, but spec mentions this.
+এটি একটি আনুষ্ঠানিক উপায় নয়, তবে স্পেক এটি উল্লেখ করে।
 
 ভালো না:
 
@@ -993,9 +985,9 @@ This is not a formal way, but spec mentions this.
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
-### Keep `kbd` element as simple as possible
+### `kbd` ইলিমেন্টে যতটা সম্ভব সাধারন রাখুন
 
-Nesting `kbd` element is too difficult to humans.
+নেস্টিং `kbd` ইলিমেন্টে মানুষের জন্য খুব কঠিন ।
 
 ভালো না:
 
@@ -1006,9 +998,9 @@ Nesting `kbd` element is too difficult to humans.
     <kbd>Ctrl+F5</kbd>
 
 
-### Avoid `span` element as much as possible
+### `span` ইলিমেন্টে যতটা সম্ভব এড়িয়ে চলুন
 
-`span` element is an element of last resort.
+`span` ইলিমেন্টে হলো  একটি উপাদান এর শেষ অবলম্বন ।
 
 ভালো না:
 
@@ -1019,9 +1011,9 @@ Nesting `kbd` element is too difficult to humans.
     HTML <em>Best</em> Practices
 
 
-### Break after `br` element
+### `br` ইলিমেন্টে এর পরে বিরতি
 
-Line break should be needed where `br` element is used.
+`br` ইলিমেন্টে যেখানে ব্যবহার করা হয় সেখানে লাইন বিরতি প্রয়োজন ।
 
 ভালো না:
 
@@ -1034,9 +1026,9 @@ Line break should be needed where `br` element is used.
     Practices</p>
 
 
-### Don’t use `br` element only for presentational purpose
+### শুধুমাত্র উপস্থাপনামূলক উদ্দেশ্যে `br` উপাদান ইলিমেন্টে করবেন না
 
-`br` element is not for line breaking, it is for line breaks in the contents.
+`br` ইলিমেন্টে লাইন ব্রেকিং এর জন্য নয়, এটি বিষয়বস্তু লাইন বিরতি জন্য ।
 
 ভালো না:
 
@@ -1051,12 +1043,12 @@ Line break should be needed where `br` element is used.
     <textarea name="rule-description"></textarea></label></p>
 
 
-## Edits
+## সম্পাদনা
 
 
-### Don’t stride `ins` and `del` element over other elements
+### `ins` এবং `del` ইলিমেন্টে এর ভিতরে অন্য ইলিমেন্টে ব্যবহার করবেন না
 
-Elements cannot be overflow other elements.
+ইলিমেন্টে অন্য ইলিমেন্টে এর উপরে ওভারফ্লো হতে পারে না।
 
 ভালো না:
 
@@ -1071,12 +1063,12 @@ Elements cannot be overflow other elements.
     <del><p>Don’t trust!</p></del>
 
 
-## Embedded content
+## এম্বেড করা বিষয়বস্তু
 
 
-### Provide fallback `img` element for `picture` element
+### `img` ইলিমেন্টে এর জন্য ফলব্যাক `picture` ইলিমেন্টে প্রদান করুন
 
-The support of `picture` element is not ভালো yet.
+ব্যাউজারে `picture` ইলিমেন্টে এর সাপোর্ট এখনো ভালো না ।
 
 ভালো না:
 
@@ -1097,10 +1089,9 @@ The support of `picture` element is not ভালো yet.
     </picture>
 
 
-### Add `alt` attrbute to `img` element if needed
+### যদি দরকার হয় তাহলে `img` ইলিমেন্টে `alt` অ্যাট্রিবিউট যোগ করুন
 
-`alt` attribute helps those who cannot process images or have image loading
-disabled.
+`alt` অ্যাট্রিবিউট তাদের সাহায্য করে যারা ছবি প্রসেস করতে পারে না বা ইমেজ লোডিং অক্ষম আছে।
 
 ভালো না:
 
@@ -1111,9 +1102,9 @@ disabled.
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### Empty `alt` attribute if possible
+### সম্ভব হলে খালি `alt` বৈশিষ্ট্য
 
-If the image is supplemental, there is equivalent content somewhere in the near.
+যদি চিত্রটি সম্পূরক হয়, তাহলে কাছাকাছি কোথাও সমতুল্য সামগ্রী রয়েছে।
 
 ভালো না:
 
@@ -1124,9 +1115,9 @@ If the image is supplemental, there is equivalent content somewhere in the near.
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### Omit `alt` attribute if possible
+### সম্বব হলে `alt` অ্যাট্রিবিউট বাদ দিন 
 
-Sometimes you don’t know what text is suitable for `alt` attribute.
+কখনও কখনও আপনি জানেন না কোন টেক্সট `alt` অ্যাট্রিবিউটের জন্য উপযুক্ত।
 
 ভালো না:
 
@@ -1138,9 +1129,9 @@ Sometimes you don’t know what text is suitable for `alt` attribute.
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
-### Empty `iframe` element
+### খালি `iframe` ইলিমেন্ট
 
-There is some restriction in its content. Being empty is always safe.
+এর বিষয়বস্তুতে কিছু সীমাবদ্ধতা রয়েছে। খালি থাকা সবসময় নিরাপদ।
 
 ভালো না:
 
@@ -1153,9 +1144,9 @@ There is some restriction in its content. Being empty is always safe.
     <iframe src="/ads/default.html"></iframe>
 
 
-### Markup `map` element content
+### মার্কআপ `map` ইলিমেন্ট এর কনটেন্ট
 
-This content presents to a screen reader.
+এই বিষয়বস্তু একটি স্ক্রিন রিডারকে উপস্থাপন করে।
 
 ভালো না:
 
@@ -1182,9 +1173,9 @@ This content presents to a screen reader.
     </map>
 
 
-### Provide fallback content for `audio` or `video` element
+### `audio` অথবা `video` উপাদানের জন্য ফলব্যাক সামগ্রী প্রদান করুন
 
-Fallback content is needed for newly introduced elements in HTML.
+এইচটিএমএলে নতুন প্রবর্তিত উপাদানগুলির জন্য ফলব্যাক সামগ্রী প্রয়োজন ৷
 
 ভালো না:
 
@@ -1204,12 +1195,12 @@ Fallback content is needed for newly introduced elements in HTML.
     </video>
 
 
-## Tabular data
+## ট্যাবুলার ডেটা
 
 
-### Write one cell per line
+### প্রতি লাইনে একটি সেল লিখুন
 
-Long lines are hard to scan.
+লম্বা লাইন স্ক্যান করা কঠিন।
 
 ভালো না:
 
@@ -1226,9 +1217,9 @@ Long lines are hard to scan.
     </tr>
 
 
-### Use `th` element for header cell
+### হেডার সেল এর জন্য `th` ইলিমেন্ট ব্যবহার করুন
 
-There is no reason to avoid this.
+এটা এড়িয়ে যাওয়ার কোনো কারণ নেই।
 
 ভালো না:
 
@@ -1282,9 +1273,9 @@ There is no reason to avoid this.
 ## Forms
 
 
-### Wrap form control with `label` element
+### `label` ইলিমেন্ট দিয়ে ফর্ম কন্ট্রোলকে ঘিরে রাখুন
 
-`label` element helps focusing form element.
+`label` ইলিমেন্ট ফর্ম ইলিমেন্ট এ ফোকাস করতে সাহায্য করে।
 
 ভালো না:
 
@@ -1295,9 +1286,9 @@ There is no reason to avoid this.
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### Omit `for` attribute if possible
+### সম্বব হলে `for` অ্যাট্রিবিউট বাদ দিন
 
-`label` element can contain some form elements.
+`label` ইলিমেন্ট এর সাথে কিছু form ইলিমেন্ট থাকতে পারে ।
 
 ভালো না:
 
@@ -1308,9 +1299,9 @@ There is no reason to avoid this.
     <label>Query: <input name="q" type="text"></label>
 
 
-### Use appropriate `type` attribute for `input` element
+### `input` ইলিমেন্ট এর জন্য সঠিক `type` অ্যাট্রিবিউট ব্যবহার করুন
 
-With appropriate `type`, a browser gives tiny features to the `input` element.
+উপযুক্ত  `type` এর জন্য , একটি ব্যাউজার `input` ইলিমেন্ট কে ক্ষুদ্র বৈশিষ্ট্য দেয় ।
 
 ভালো না:
 
@@ -1321,10 +1312,9 @@ With appropriate `type`, a browser gives tiny features to the `input` element.
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### Add `value` attribute to `input type="submit"`
+###  `input type="submit"` তে `value` অ্যাট্রিবিউট যোগ করুন
 
-The default label for submit button is not standarized across the browser and
-languages.
+সাবমিট বটিনের জন্য ডিফল্ট লেবেল , ব্রাউজার এবং ভাষা জুড়ে মানসম্মত নয়।
 
 ভালো না:
 
@@ -1335,10 +1325,9 @@ languages.
     <input type="submit" value="Search">
 
 
-### Add `title` attribute to `input` element when there is `pattern` attribute
+### `title` অ্যাট্রিবিউট `input` ইলিমেন্ট এ যোগ করুন যেখানে `pattern` অ্যাট্রিবিউট আছে
 
-If input text does not match to `pattern` attribute, the value of `title`
-attribute will be display as a hint.
+যদি ইনপুট টেক্সট এর সাথে `pattern` অ্যাট্রিবিউট না মিলে, তাহলে `title` অ্যাট্রিবিউট  ইঙ্গিত হিসাবে প্রদর্শিত হবে।
 
 ভালো না:
 
@@ -1349,9 +1338,9 @@ attribute will be display as a hint.
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### Don’t use `placeholder` attribute for labeling
+### `placeholder` লেবেল করার জন্য অ্যাট্রিবিউট ব্যবহার করবেন না
 
-`label` element is for a label, `placeholder` attribute is for a short hint.
+`label` ইলিমেন্ট লেভেল এর জন্য, `placeholder` এট্রিবিউট ছোট হিন্ট দেয়ার জন্য।
 
 ভালো না:
 
@@ -1362,9 +1351,9 @@ attribute will be display as a hint.
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### Write one `option` element per line
+### প্রতি লাইনে `option` ইলিমেন্ট লিখুন
 
-Long lines are hard to scan.
+লম্বা লাইন স্ক্যান করা কঠিন।
 
 ভালো না:
 
@@ -1381,9 +1370,9 @@ Long lines are hard to scan.
     </datalist>
 
 
-### Add `max` attribute to `progress` element
+### `progress` ইলিমেন্টের ভিতরে  `max` এট্রিবিউট যোগ করুন।
 
-With `max` attribute, the `value` attribute can be written in an easy format.
+`max`এট্রিবিউটের সাথে `value` এট্রিবিউটের খুব সহজ ফরম্যাটে লেখা যেতে পারে।
 
 ভালো না:
 
@@ -1394,10 +1383,9 @@ With `max` attribute, the `value` attribute can be written in an easy format.
     <progress max="100" value="50"> 50%</progress>
 
 
-### Add `min` and `max` attribute to `meter` element
+### `meter` ইলিমেন্টের এট্রিবিউটে  `min` এবং `max` যোগ করুন
 
-With `min` and `max` attribute, the `value` attribute can be written in an easy
-format.
+`min` এবং `max`এট্রিবিউটের সাথে `value` এট্রিবিউটের খুব সহজ ফরম্যাটে লেখা যেতে পারে।
 
 ভালো না:
 
@@ -1408,9 +1396,9 @@ format.
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### Place `legend` element as the first child of `fieldset` element
+### `fieldset` ইলিমেন্ট এর প্রথম চাইল্ড হিসাবে `legend` রাখুন।
 
-Spec requires this.
+এই Spec এর প্রয়োজনে।
 
 ভালো না:
 
@@ -1429,12 +1417,12 @@ Spec requires this.
     </fieldset>
 
 
-## Scripting
+## স্ক্রিপ্টিং
 
 
-### Omit `type` attribute for JavaScript
+### জাভাস্ক্রিপ্টের এর জন্য `type` অ্যাট্রিবিউট বাদ দিন
 
-HTML এর ভিতরে,  ডিফল্ট `type` attribute’s value of `script` element is
+HTML এর ভিতরে,  ডিফল্ট `type` এট্রিবিউট ভ্যালু এর `script` ইলিমেন্ট হলো
 `text/javascript`.
 
 ভালো না:
@@ -1578,7 +1566,8 @@ HTML এর ভিতরে,  ডিফল্ট `type` attribute’s value of `
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@wesleynepo](https://github.com/wesleynepo)
-- [@zulkar-nayin](https://github.com/zulkar29)
+- [@zulkar29](https://github.com/zulkar29)
+
 
 ## লাইসেন্স
 
