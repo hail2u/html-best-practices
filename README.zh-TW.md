@@ -1,116 +1,122 @@
 Translations: [English (en)](README.md) · [বাংলা (bn)](README.bn.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Français (fr)](README.fr.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md) · [繁體中文 (zh-TW)](README.zh-TW.md)
 
-# Bewährte Verfahren für HTML
+# HTML 最佳實務
 
-Zum Schreiben wartbarer und skalierbarer HTML-Dokumente
+編寫易於維護與擴充的HTML檔案。
 
-## Allgemein
 
-### Beginnen Sie mit DOCTYPE
+## 全局(一般)
 
-DOCTYPE wird zum Aktivieren des No-Quirks-Modus benötigt.
 
-Schlecht:
+### 以 DOCTYPE 為開頭
+
+使用DOCTYPE來觸發標準模式(no-quirks mode)。
+
+Bad:
 
     <html>
       ...
     </html>
 
-Gut:
+Good:
 
     <!DOCTYPE html>
     <html>
       ...
     </html>
 
-### Verwenden Sie kein veraltetes oder veraltetes DOCTYPE
 
-DOCTYPE ist nicht mehr für DTD, seien Sie einfach.
+### 不使用過時的 DOCTYPE
 
-Schlecht:
+DOCTYPE 不在需要引用DTD，簡單明瞭。
+
+Bad:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Gut:
+Good:
 
     <!DOCTYPE html>
 
-### Verwenden Sie keine XML-Deklaration
 
-Sind Sie sicher, dass Sie XHTML schreiben möchten?
+### 不要使用 XML 來宣告
 
-Schlecht:
+你確定會想寫 XHTML?
+
+Bad:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Gut:
+Good:
 
     <!DOCTYPE html>
 
-### Don’t use character references as much as possible
 
-Wenn Sie ein HTML-Dokument mit UTF-8 schreiben, werden fast alle Zeichen (einschließlich
-Emoji) können direkt geschrieben werden.
+### 不要什麼字元都寫成參考的形式(character reference)
 
-Schlecht:
+如果你使用 UTF- 8 來編寫 HTML 檔案，幾乎所有字元(包括表情符號)都能直接寫。
+
+Bad:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Gut:
+Good:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
-### Escape `&`, `<`, `>`, `"` und `'` mit benannten Zeichenreferenzen
 
-Diese Zeichen sollten für ein fehlerfreies HTML-Dokument immer maskiert werden.
+### 將 `&`、`<`、`>`、`"` 和 `'` 字元寫成參考的形式
 
-Schlecht:
+為了避免 HTML 檔案出錯，以上這些字元都應該寫成字元參考的形式。
+
+Bad:
 
     <h1>The "&" character</h1>
 
-Gut:
+Good:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-### Verwenden Sie numerische Zeichenreferenzen für Steuerzeichen oder unsichtbare Zeichen
 
-Diese Zeichen werden leicht mit anderen Zeichen verwechselt. Und auch spec tut
-garantiert nicht, einen für Menschen lesbaren Namen für diese Zeichen zu definieren.
+### 使用字元值參照(Numeric character reference)來控制或隱藏字元
 
-Schlecht:
+這些字元很容易被誤認為是其他字元，並且規範也不保證這些字元有定義好人類可讀的名稱。
+
+Bad:
 
     <p>This book can read in 1 hour.</p>
 
-Gut:
+Good:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-### Platzieren Sie Leerzeichen um Kommentarinhalte
 
-Einige Zeichen können nicht unmittelbar nach dem Öffnen des Kommentars oder vor dem Kommentar verwendet werden
-nah dran.
+### 在註解內容周圍增加空白
 
-Schlecht:
+某寫字元沒有辦法緊接在註解開始或結束的位置上。
+
+Bad:
 
     <!--This section is non-normative-->
 
-Gut:
+Good:
 
     <!-- This section is non-normative -->
 
-### Lassen Sie das schließende Tag nicht aus
 
-Ich glaube, Sie verstehen eine Regel zum Weglassen des schließenden Tags nicht.
+### 不要省略結束標籤(closing tag)
 
-Schlecht:
+我想你可能不了解省略結束標籤的規則。
+
+Bad:
 
     <html>
       <body>
         ...
 
-Gut:
+Good:
 
     <html>
       <body>
@@ -118,130 +124,139 @@ Gut:
       </body>
     </html>
 
-### Mischen Sie kein leeres Elementformat
 
-Konsistenz ist ein Schlüssel zur Lesbarkeit.
+### 不要混用置空元素(empty element)的格式
 
-Schlecht:
+遵循一致的規範能增加可讀性。
+
+Bad:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Gut:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-### Platzieren Sie keine Leerzeichen um Tags und Attributwerte
 
-Es gibt keinen Grund, dies zu tun.
+### 不要再標籤和屬性值周圍增加空格
 
-Schlecht:
+你沒有理由做這件事。
+
+Bad:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Gut:
+Good:
 
     <h1 class="title">HTML Best Practices</h1>
 
-### Mischen Sie keine Groß- und Kleinschreibung
 
-Es gibt auch eine Konsistenz.
+### 不要混用大小寫
 
-Schlecht:
+一樣是為了可讀性，保持一致是重點。
+
+Bad:
 
     <a HREF="#general">General</A>
 
-Gut:
+Good:
 
     <a href="#general">General</a>
 
-Also Gut:
+Also Good:
 
     <A HREF="#general">General</A>
 
-### Mischen Sie keine Anführungszeichen
 
-Das gleiche wie oben.
+### 不要混用單雙引號
 
-Schlecht:
+同上。
+
+Bad:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Gut:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
-### Trennen Sie Attribute nicht durch zwei oder mehr Leerzeichen
 
-Ihre seltsame Formatierungsregel verwirrt jemanden.
+### 不要用多个空格間格屬性
 
-Schlecht:
+奇怪的格式會混淆其他人。
+
+Bad:
 
     <input   name="q"  type="search">
 
-Gut:
+Good:
 
     <input name="q" type="search">
 
-### Booleschen Attributwert weglassen
 
-Es ist einfach zu schreiben, nicht wahr?
+### 省略布林值
 
-Schlecht:
+這樣寫更簡便，對吧?
+
+Bad:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Gut:
+Good:
 
     <audio autoplay src="/audio/theme.mp3">
 
-### Namensräume weglassen
 
-SVG und MathML können direkt in einem HTML-Dokument verwendet werden.
+### 省略命名空間
 
-Schlecht:
+SVG 和 MathML 可以直接在 HTML 檔案中使用。
+
+Bad:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Gut:
+Good:
 
     <svg>
       ...
     </svg>
 
-### Verwenden Sie keine XML-Attribute
 
-Wir schreiben ein HTML-Dokument.
+### 不要使用 XML 屬性
 
-Schlecht:
+我們在寫 HTML 檔案。
+
+Bad:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Gut:
+Good:
 
     <span lang="ja">...</span>
 
-### Mischen Sie die Attribute `data-*`, Mikrodaten und RDFa Lite nicht mit gemeinsamen Attributen
 
-Ein Tag-String kann sehr kompliziert sein. Diese einfache Regel hilft beim Lesen eines solchen Tags
-Schnur.
+### 别把 `data-*`、Microdata、RDFa Lite 屬性與普通屬性混在一起
 
-Schlecht:
+整串標籤可以變得很複雜。這條簡單的規則有助於閱讀。
+
+Bad:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Gut:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
-### Implizite ARIA-Standardsemantik bevorzugen
 
-Einige Elemente haben implizit eine ARIA- `role` in einem HTML-Dokument, geben Sie sie nicht an.
+### 優先選則預設的 ARIA 語意
 
-Schlecht:
+有些元素在 HTML 檔案中隐含了某種 ARIA 語意，不要特意把它們指出來。
+
+Bad:
 
     <nav role="navigation">
       ...
@@ -249,7 +264,7 @@ Schlecht:
 
     <hr role="separator">
 
-Gut:
+Good:
 
     <nav>
       ...
@@ -257,72 +272,77 @@ Gut:
 
     <hr>
 
-## Das Wurzelelement
 
-### Fügen Sie das Attribut „lang“ hinzu
+## 根元素
 
-Das Attribut `lang` hilft beim Übersetzen eines HTML-Dokuments.
 
-Schlecht:
+### 加入 `lang` 屬性
+
+`lang` 屬性有助於翻譯 HTML 檔案。
+
+Bad:
 
     <html>
 
-Gut:
+Good:
 
     <html lang="en-US">
 
-### Halten Sie den Attributwert `lang` so kurz wie möglich
 
-Japanisch wird nur in Japan verwendet. Der Ländercode ist also nicht erforderlich.
+### 盡量讓 `lang` 屬性值為最短 
 
-Schlecht:
+日語只有在日本使用，所以國家地區代碼不是必需的。
+
+Bad:
 
     <html lang="ja-JP">
 
-Gut:
+Good:
 
     <html lang="ja">
 
-### Vermeiden Sie `data-*` so weit wie möglich
 
-Ein entsprechendes Attribut kann von Browsern richtig gehandhabt werden.
+### 盡可能避免使用 `data-*`
 
-Schlecht:
+合適的屬性能被瀏覽器正確的處理。
+
+Bad:
 
     <span data-language="french">chemises</span>
     ...
-    <strong data-type="warning">Do not wash!</strong>
 
-Gut:
+Good:
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
-    <strong class="warning">Do not wash!</strong>
 
-## Dokument-Metadaten
 
-### Fügen Sie das Element `title` hinzu
+## 文件後設資料
 
-Ein Wert für das Element `title` wird von verschiedenen Anwendungen verwendet, nicht nur von einem Browser.
 
-Schlecht:
+### 增加 `title` 元素
+
+`title` 元素的值會被很多應用程式所使用，而不僅僅是瀏覽器。
+
+Bad:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Gut:
+Good:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
-### Verwenden Sie kein `base`-Element
 
-Ein absoluter Pfad oder eine URL ist sowohl für Entwickler als auch für Benutzer sicherer.
+### 不要使用 `base` 元素
 
-Schlecht:
+絕對路徑或 URL 對開發者與使用者來說都更為安全。
+
+Bad:
 
     <head>
       ...
@@ -331,7 +351,7 @@ Schlecht:
       ...
     </head>
 
-Gut:
+Good:
 
     <head>
       ...
@@ -339,113 +359,121 @@ Gut:
       ...
     </head>
 
-### Geben Sie den MIME-Typ der untergeordneten verknüpften Ressourcen an
 
-Dies ist ein Hinweis darauf, wie die Anwendung mit dieser Ressource umgeht.
+### 指定次要連結的 MIME 類別 (網際網路媒體形式)
 
-Schlecht:
+這提示應用程式要如何處理這項資源。
+
+Bad:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Gut:
+Good:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-### Verlinken Sie nicht auf `favicon.ico`
 
-Fast alle Browser holen `/favicon.ico` automatisch und asynchron.
+### 别連結到 `favicon.ico`
 
-Schlecht:
+幾乎所有瀏覽器以非同步的且自動的方式來獲取 `/favicon.ico`。
+
+Bad:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Gut:
+Good:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-### Fügen Sie den Link `apple-touch-icon` hinzu
 
-Ein Standardanforderungspfad für das Touch-Symbol wurde plötzlich geändert.
+### 增加 `apple-touch-icon`
 
-Schlecht:
+觸控圖示的預設請求位置突然改變了。
+
+
+Bad:
 
     <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
 
-Gut:
+Good:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
-### Fügen Sie das Attribut `title` zu alternativen Stylesheets hinzu
 
-Ein für Menschen lesbares Etikett hilft Menschen bei der Auswahl des richtigen Stylesheets.
+### 給備用樣式表增加 `title` 屬性
 
-Schlecht:
+易讀的標籤有助於人們選擇合適的樣式表。
+
+Bad:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Gut:
+Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
-### Verwenden Sie als URL das Element `link`.
 
-Ein Wert des Attributs `href` kann als URL aufgelöst werden.
+### 使用 `link` 元素指向 URL
 
-Schlecht:
+`href` 屬性的值可以被解析為 URL。
+
+Bad:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Gut:
+Good:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
       ...
     </section>
 
-### Geben Sie die Zeichencodierung des Dokuments an
 
-UTF-8 ist noch nicht in allen Browsern voreingestellt.
+### 指定檔案字元編碼格式
 
-Schlecht:
+UTF-8 暫時還不是所有瀏覽器的預設值。
+
+Bad:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Gut:
+Good:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
-### Verwenden Sie kein altes Zeichenkodierungsformat
 
-HTTP-Header sollten von einem Server angegeben werden, einfach sein.
+### 不要使用過時的字元編碼格式
 
-Schlecht:
+HTTP headers應該由伺服器來指定。
+
+Bad:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Gut:
+Good:
 
     <meta charset="UTF-8">
 
-### Geben Sie zuerst die Zeichenkodierung an
 
-Spec erfordert, dass die Zeichencodierung innerhalb der ersten 1024 Bytes angegeben wird
-das Dokument.
+### 一開始就指定字元編碼格式
 
-Schlecht:
+標準要求字元編碼必須在檔案的前 1024 bytes中被指定。
+
+Bad:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -453,7 +481,7 @@ Schlecht:
       ...
     </head>
 
-Gut:
+Good:
 
     <head>
       <meta charset="UTF-8">
@@ -461,39 +489,42 @@ Gut:
       ...
     </head>
 
-### Verwenden Sie UTF-8
 
-Mit UTF-8 können Sie Emoji frei verwenden.
+### 使用 UTF-8
 
-Schlecht:
+有了 UTF-8，你可以隨意的使用表情符號(emoji)
+
+Bad:
 
     <meta charset="Shift_JIS">
 
-Gut:
+Good:
 
     <meta charset="UTF-8">
 
-### Lassen Sie das Attribut `type` für CSS weg
 
-In HTML ist der Standardwert des `type`-Attributs des `style`-Elements `text/css`.
+### 省略 CSS 的 `type` 屬性
 
-Schlecht:
+在 HTML 中，`style` 元素的預設 `type` 屬性值就是 `text/css`。
+
+Bad:
 
     <style type="text/css">
       ...
     </style>
 
-Gut:
+Good:
 
     <style>
       ...
     </style>
 
-### Kommentieren Sie den Inhalt des Elements `style` nicht aus
 
-Dieses Ritual ist für den alten Browser.
+### 不要在 `style` 元素內容中撰寫註解 
 
-Schlecht:
+這個規則適用於舊的瀏覽器。
+
+Bad:
 
     <style>
     <!--
@@ -501,41 +532,44 @@ Schlecht:
       -->
     </style>
 
-Gut:
+Good:
 
     <style>
       ...
     </style>
 
-### Vermische kein Tag für CSS und JavaScript
 
-Manchmal blockiert das `script`-Element die DOM-Konstruktion.
+### 不要混合 CSS 和 JavaScript 的標籤(順序要對)
 
-Schlecht:
+有時 `script` 元素會阻擋 DOM 樹的建立。
+
+Bad:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Gut:
+Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Also Gut:
+Also good:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-## Abschnitte
 
-### Fügen Sie das Element `body` hinzu
+## 部分(Sections)
 
-Manchmal wird das `body`-Element von einem Browser an einer unerwarteten Position ergänzt.
 
-Schlecht:
+### 增加 `body` 元素
+
+有時瀏覽器會在預料之外的地方補充 `body` 元素。
+
+Bad:
 
     <html>
       <head>
@@ -544,7 +578,7 @@ Schlecht:
       ...
     </html>
 
-Gut:
+Good:
 
     <html>
       <head>
@@ -555,71 +589,76 @@ Gut:
       </body>
     </html>
 
-### Vergessen Sie das `hgroup`-Element
 
-Dieses Element wird nicht sehr oft verwendet.
+### 不要使用 `hgroup` 元素
 
-Schlecht:
+這個元素不怎麼使用
+
+Bad:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Gut:
+Good:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-### Verwenden Sie das Element `address` nur für Kontaktinformationen
 
-Das Element `address` ist für E-Mail-Adresse, Konto bei sozialen Netzwerken, Adresse,
-Telefonnummer oder etwas, mit dem Sie sich in Verbindung setzen können.
+### `address` 元素僅用於聯絡資訊
 
-Schlecht:
+`address` 元素是給郵件地址、社交帳號、街道地址、電話號碼等通訊方式所準備的。
+
+Bad:
 
     <address>No rights reserved.</address>
 
-Gut:
+Good:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-## Inhalte gruppieren
 
-### Beginnen Sie nicht mit einem Zeilenumbruch im `pre`-Element
+## 群組内容
 
-Ein erster Zeilenumbruch wird in den Browsern ignoriert, aber der zweite und spätere werden gerendert.
 
-Schlecht:
+### 不要在 `pre` 元素里新起一行
+
+第一行會被瀏覽器忽略，第二行及之後會被渲染。
+
+Bad:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Gut:
+Good:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
-### Verwenden Sie das entsprechende Element im Element `blockquote`.
+### 在 `blockquote` 元素中使用合適的元素
 
-Der Inhalt des `blockquote`-Elements ist ein Zitat, keine Aneinanderreihung von Zeichen.
+`blockquote` 元素的内容是引用，而不僅僅是一堆字元。
 
-Schlecht:
+
+Bad:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Gut:
+Good:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
-### Fügen Sie die Quellenangabe nicht direkt in das Element `blockquote` ein
 
-Der Inhalt des Elements `blockquote` ist ein Zitat.
+### 不要直接在 `blockquote` 中標註來源
 
-Schlecht:
+`blockquote` 元素的内容是引用的话。
+
+Bad:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -627,7 +666,7 @@ Schlecht:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Gut:
+Good:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -635,7 +674,7 @@ Gut:
 
     <p>— HTML Best Practices</p>
 
-Also Gut:
+Also good:
 
     <figure>
       <blockquote>
@@ -645,18 +684,18 @@ Also Gut:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-### Schreiben Sie einen Listenpunkt pro Zeile
 
-Laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaang
-Zeile ist schwer zuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu lesen
+### 一列(row)只寫一個列表項目
 
-Schlecht:
+很很很很很很長長長長長長長長長長長長長長長的列很很很很很難難難難難難難難難難難難難難難難難難難難閱讀。
+
+Bad:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Gut:
+Good:
 
     <ul>
       <li>General</li>
@@ -665,12 +704,12 @@ Gut:
       ...
     </ul>
 
-### Verwenden Sie das Attribut `type` für das Element `ol`.
 
-Manchmal wird durch den Inhalt in der Nähe auf eine Markierung verwiesen. Wenn Sie die Markierung ändern
-Mit dem Attribut `type` können Sie sicher referenzieren.
+### 使用 `ol` 元素的 `type` 屬性
 
-Schlecht:
+有时tag會被附近的內容引用。如果使用 `type` 屬性更改tag，就可以安全地引用。
+
+Bad:
 
     <head>
       <style>
@@ -688,7 +727,7 @@ Schlecht:
       </ol>
     </body>
 
-Gut:
+Good:
 
     <body>
       <ol type="I">
@@ -699,11 +738,12 @@ Gut:
       </ol>
     </body>
 
-### Verwenden Sie `dl` nicht für Dialoge
 
-Das `dl`-Element ist auf eine Assoziationsliste in HTML beschränkt.
+### 不要用 `dl` 表示对话
 
-Schlecht:
+`dl` 元素僅限於表示 HTML 中的關聯列表。
+
+Bad:
 
     <dl>
       <dt>Costello</dt>
@@ -721,7 +761,7 @@ Schlecht:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Gut:
+Good:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -731,11 +771,12 @@ Gut:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-### Platzieren Sie das Element `figcaption` als erstes oder letztes untergeordnetes Element des Elements `figure`.
 
-Die Spezifikation verbietet das `figcaption`-Element in der Mitte des `figure`-Elements.
+### 把 `figcaption` 作為 `figure` 的首或尾元素
 
-Schlecht:
+規範不允許 `figcaption` 元素卡在 `figure` 元素的中間。
+
+Bad:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -743,7 +784,7 @@ Schlecht:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Gut:
+Good:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -751,52 +792,55 @@ Gut:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-### Verwenden Sie das `Haupt`-Element
 
-Das `main`-Element kann verwendet werden, um den Inhalt zu umhüllen.
+### 使用 `main` 元素
 
-Schlecht:
+`main` 元素可以用来包裹内容。
+
+Bad:
 
     <div id="content">
       ...
     </div>
 
-Gut:
+Good:
 
     <main>
       ...
     </main>
 
-### Vermeiden Sie das `div`-Element so weit wie möglich
 
-Das `div`-Element ist ein Element der letzten Instanz.
+### 盡可能避免 `div` 元素
 
-Schlecht:
+實在沒其他替代方案後，才用 `div` 元素。
+
+Bad:
 
     <div class="chapter">
       ...
     </div>
 
-Gut:
+Good:
 
     <section>
       ...
     </section>
 
-## Semantik auf Textebene
 
-### Teilen Sie nicht denselben Link, der gruppiert werden kann
+## 文本語意
 
-Das `a`-Element kann fast alle Elemente umschließen (außer interaktiven Elementen wie form
-Steuerelemente und `a` Element selbst).
 
-Schlecht:
+### 不要把一个連結拆成兩半
+
+`a` 元素可以包裹幾乎所有元素（除了表單控制等互動性元素和 `a` 元素自身）。
+
+Bad:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Gut:
+Good:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
@@ -804,209 +848,227 @@ Gut:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-### Verwenden Sie das Attribut `download`, um eine Ressource herunterzuladen
 
-Es zwingt Browser, verknüpfte Ressourcen in den Speicher herunterzuladen.
+### 使用 `download` 屬性指向下載資源
 
-Schlecht:
+這會迫使瀏覽器下載連結到的資源。
+
+Bad:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Gut:
+Good:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
-### Verwenden Sie bei Bedarf die Attribute `rel`, `hreflang` und `type`
 
-Diese Hinweise helfen Anwendungen beim Umgang mit verknüpften Ressourcen.
+### 按需使用 `rel`、`hreflang` 和 `type` 屬性
 
-Schlecht:
+它們有助於提示應用程式要如何處理連結到的資源
+
+Bad:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Gut:
+Good:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
-### Linktext löschen
 
-Der Linktext sollte die Bezeichnung der verlinkten Ressource sein.
+### 明確的連結文字
 
-Schlecht:
+連結文字應該是對應資源的名稱。
+
+Bad:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Gut:
+Good:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
-### Verwenden Sie das Element „em“ nicht zur Warnung oder Warnung
 
-Das sind Ernsthaftigkeit. Daher ist das `strong` Element angemessener.
+### 不要使用 `em` 元素來表示警告
 
-Schlecht:
+`strong` 元素比`em`更嚴肅，使用起來更合適。
+
+Bad:
 
     <em>Caution!</em>
 
-Gut:
+Good:
 
     <strong>Caution!</strong>
 
-### Vermeiden Sie die Elemente `s`, `i`, `b` und `u` so weit wie möglich
 
-Die Semantik dieser Elemente ist für Menschen zu schwierig.
+### 盡可能避免 `s`、`i`、`b` 和 `u` 元素
 
-Schlecht:
+這些元素的語意比較難理解。
+
+Bad:
 
     <i class="icon-search"></i>
 
-Gut:
+Good:
 
     <span class="icon-search" aria-hidden="true"></span>
 
-### Setzen Sie keine Anführungszeichen in das `q`-Element
 
-Kurse werden vom Browser bereitgestellt.
+### 不要在 `q` 元素外使用引號
 
-Schlecht:
+瀏覽器會自動加上引號。
+
+Bad:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Gut:
+Good:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Also Gut:
+Also good:
 
     “For writing maintainable and scalable HTML documents”
 
-### Attribut `title` zum Element `abbr` hinzufügen
 
-Es gibt keine andere Möglichkeit, seine Expansion darzustellen.
+### 給 `abbr` 元素增加 `title` 屬性
 
-Schlecht:
+這是顯示縮寫全名的唯一方式。
+
+Bad:
 
     <abbr>HBP</abbr>
 
-Gut:
+Good:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
-### Markieren Sie das `ruby`-Element ausführlich
 
-Die Unterstützung für `ruby`-Elemente ist in den modernen Browsern nicht abgeschlossen.
+### 詳細標記 `ruby` 元素
 
-Schlecht:
+現代瀏覽器對 `ruby` 元素的支持還不完整。
+
+Bad:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Gut:
+Good:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-### Fügen Sie dem nicht maschinenlesbaren Element `time` das Attribut `datetime` hinzu
 
-Wenn das Attribut `datetime` nicht vorhanden ist, das Format des Elements `time`.
-Inhalte sind eingeschränkt.
+### 給電腦無法識別的 `time` 元素增加 `datetime` 屬性
 
-Schlecht:
+當 `datetime` 屬性不存在，`time` 元素内容的格式會受限制。
+
+Bad:
 
     <time>Dec 19, 2014</time>
 
-Gut:
+Good:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
-### Geben Sie die Codesprache mit dem Attribut `class` mit dem Präfix `language-` an
 
-Dies ist kein formaler Weg, aber die Spezifikation erwähnt dies.
+### 使用 `language-` 前缀的 `class` 屬性指定程式碼的語言
 
-Schlecht:
+沒有統一的實現方式，但是規範有提及。
+
+Bad:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Gut:
+Good:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-### Halten Sie das `kbd`-Element so einfach wie möglich
 
-Das Verschachteln des `kbd`-Elements ist für Menschen zu schwierig.
+### `kbd` 元素愈簡單愈好
 
-Schlecht:
+巢狀的的 `kbd` 元素難以閱讀。
+
+Bad:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
-Gut:
+Good:
 
     <kbd>Ctrl+F5</kbd>
 
-### Vermeiden Sie das Element `span` so weit wie möglich
 
-Das `span`-Element ist ein Element der letzten Instanz.
+### 盡可能避免 `span` 元素
 
-Schlecht:
+當沒有其他替代方案後，才用 `span`。
+
+Bad:
 
     HTML <span class="best">Best</span> Practices
 
-Gut:
+Good:
 
     HTML <em>Best</em> Practices
 
-### Umbruch nach `br`-Element
 
-Ein Zeilenumbruch sollte erforderlich sein, wenn das Element `br` verwendet wird.
-Schlecht:
+### 在 `br` 元素後換行
+
+使用 `br` 元素後應該要換行。
+
+Bad:
 
     <p>HTML<br>Best<br>Practices</p>
 
-Gut:
+Good:
 
     <p>HTML<br>
     Best<br>
     Practices</p>
 
-### Verwenden Sie das `br`-Element nicht nur zu Präsentationszwecken
 
-Das `br`-Element dient nicht dem Zeilenumbruch, sondern dem Zeilenumbruch im Inhalt.
+### 不要只為了格式好看就用 `br` 元素
 
-Schlecht:
+`br` 元素不是用來給所有元素換行的，是用來在文字内容中換行的。
+
+Bad:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Gut:
+Good:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-## Bearbeitungen
 
-### Überschreiten Sie nicht die Elemente `ins` und `del` über andere Elemente
+## 編輯
 
-Elemente können andere Elemente nicht überlaufen lassen.
 
-Schlecht:
+### 不要跨元素使用 `ins` 和 `del`
+
+元素不能越界。
+
+Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
 
     <p>Don’t trust!</p></del>
 
-Gut:
+Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
 
     <del><p>Don’t trust!</p></del>
 
-## Eingebetteter Inhalt
 
-### Stellen Sie das Fallback-Element `img` für das Element `picture` bereit
+## 内嵌内容
 
-Die Unterstützung des `Bild`-Elements ist noch nicht gut.
 
-Schlecht:
+### 為 `picture` 元素提供備用的 `img` 元素
+
+對 `picture` 元素的支持還不夠好。
+
+Bad:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1015,7 +1077,7 @@ Schlecht:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Gut:
+Good:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1024,63 +1086,67 @@ Gut:
       <img src="/img/logo.jpg">
     </picture>
 
-### Fügen Sie bei Bedarf das Attribut `alt` zum Element `img` hinzu
 
-Das Attribut `alt` hilft denen, die keine Bilder verarbeiten oder Bilder laden können
-deaktiviert.
+### 若有需要可為 `img` 元素增加 `alt` 屬性
 
-Schlecht:
+`alt` 屬性對那些無法處理圖片或是禁用加載圖片的人很有幫助。
+
+Bad:
 
     <img src="/img/logo.png">
 
-Gut:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-### Leeres `alt`-Attribut wenn möglich
 
-Wenn das Bild ergänzend ist, gibt es irgendwo in der Nähe äquivalenten Inhalt.
+### 若有可能則留空 `alt` 屬性
 
-Schlecht:
+如果圖片是用作補充說明，那麼附近應該有與 `alt` 相等作用的内容。
+
+Bad:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Gut:
+Good:
 
     <img alt="" src="/img/icon/help.png"> Help
 
-### Lassen Sie das Attribut `alt` weg, wenn möglich
 
-Manchmal wissen Sie nicht, welcher Text für das Attribut `alt` geeignet ist.
+### 若有可能則省略 `alt` 屬性
 
-Schlecht:
+有時你不確定 `alt` 要寫什麼。
+
+Bad:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Gut:
+Good:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-### Leeres `iframe`-Element
 
-Inhaltlich gibt es einige Einschränkungen. Leer zu sein ist immer sicher.
+### 留空 `iframe` 内容
 
-Schlecht:
+`iframe` 的内容是受限的，留空比较安全。
+
+Bad:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Gut:
+Good:
 
     <iframe src="/ads/default.html"></iframe>
 
-### Markieren Sie den Inhalt des `map`-Elements
 
-Dieser Inhalt wird einem Screenreader angezeigt.
+### 標記 `map` 元素内容
 
-Schlecht:
+這樣使用螢幕閱讀器的讀者可以知道 `map` 的内容。
+
+Bad:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1091,7 +1157,7 @@ Schlecht:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Gut:
+Good:
 
     <map name="toc">
       <p>
@@ -1104,11 +1170,12 @@ Gut:
       </p>
     </map>
 
-### Bereitstellen von Fallback-Inhalten für `audio`- oder `video`-Elemente
 
-Fallback-Content wird für neu eingeführte Elemente in HTML benötigt.
+### 為 `audio` 和 `video` 元素提供備用内容
 
-Schlecht:
+HTML 新引進的元素需要備用内容，以防舊版瀏覽器不支持。
+
+Bad:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1116,7 +1183,7 @@ Schlecht:
       ...
     </video>
 
-Gut:
+Good:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1125,19 +1192,21 @@ Gut:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-## Tabellendaten
 
-### Schreiben Sie eine Zelle pro Zeile
+## 表格資料
 
-Lange Zeilen sind schwer zu scannen.
 
-Schlecht:
+### 一列寫一个單元格
+
+長列難以檢視。
+
+Bad:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Gut:
+Good:
 
     <tr>
       <td>General</td>
@@ -1145,11 +1214,12 @@ Gut:
       <td>Sections</td>
     </tr>
 
-### Verwenden Sie das `th`-Element für die Kopfzelle
 
-Es gibt keinen Grund, dies zu vermeiden.
+### 使用 `th` 元素表示標題格
 
-Schlecht:
+你沒理由不這樣做。
+
+Bad:
 
     <table>
       <thead>
@@ -1173,7 +1243,7 @@ Schlecht:
       </tbody>
     </table>
 
-Gut:
+Good:
 
     <table>
       <thead>
@@ -1197,93 +1267,99 @@ Gut:
       </tbody>
     </table>
 
-## Formen
 
-### Formsteuerelement mit `label`-Element umschließen
+## 表單
 
-Das `label`-Element hilft beim Fokussieren des Formularelements.
 
-Schlecht:
+### 使用 `label` 元素包裹表單來控制元素
+
+`label` 元素有助於聚焦(focus)在表單元素上。
+
+Bad:
 
     <p>Query: <input name="q" type="text"></p>
 
-Gut:
+Good:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-### Lassen Sie das `for`-Attribut wenn möglich weg
 
-Das `label`-Element kann einige Formularelemente enthalten.
+### 若有可能則省略 `for` 屬性
 
-Schlecht:
+`label` 元素可以包含表單元素。
+
+Bad:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Gut:
+Good:
 
     <label>Query: <input name="q" type="text"></label>
 
-### Verwenden Sie das geeignete `type`-Attribut für das `input`-Element
 
-Mit entsprechendem `type` verleiht ein Browser dem `input`-Element winzige Funktionen.
+### 為 `input` 元素選擇適當的 `type` 屬性
 
-Schlecht:
+使用 `type` 屬性後，瀏覽器會賦予 `input` 元素一些新功能。
+
+Bad:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Gut:
+Good:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
-### Attribut `value` zu ​​`input type="submit"` hinzufügen
 
-Die Standardbezeichnung für die Schaltfläche Senden ist nicht im Browser standardisiert und
-Sprachen.
+### 給 `input type="submit"` 增加 `value` 屬性
 
-Schlecht:
+在不同瀏覽器和不同語言環境下，提交按鈕的預設標籤是不同的。
+
+Bad:
 
     <input type="submit">
 
-Gut:
+Good:
 
     <input type="submit" value="Search">
 
-### Attribut `title` zum `input`-Element hinzufügen, wenn Attribut `pattern` vorhanden ist
 
-Wenn der Eingabetext nicht mit dem Attribut `pattern` übereinstimmt, wird der Wert von `title` angezeigt
-Attribut wird als Hinweis angezeigt.
+### 給有 `pattern` 屬性的 `input` 元素增加 `title` 屬性
 
-Schlecht:
+如果輸入的文字與 `pattern` 屬性不匹配，`title` 屬性的值就會被顯示為提示。
+
+Bad:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
 
-Gut:
+Good:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-### Verwenden Sie kein `placeholder`-Attribut für die Beschriftung
 
-Das `label`-Element steht für eine Beschriftung, das `placeholder`-Attribut für einen kurzen Hinweis.
+### 不要把 `placeholder` 當作標籤來使用
 
-Schlecht:
+`label` 元素用於提供標籤，`placeholder` 屬性用於簡單的提示。
+
+Bad:
 
     <input name="email" placeholder="Email" type="text">
 
-Gut:
+Good:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
-### Schreiben Sie ein `option`-Element pro Zeile
 
-Lange Zeilen sind schwer zu scannen.
+### 每行只寫一个 `option` 元素
 
-Schlecht:
+長行難以閱覽。
+
+Bad:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Gut:
+Good:
 
     <datalist id="toc">
       <option label="General">
@@ -1291,35 +1367,38 @@ Gut:
       <option label="Sections">
     </datalist>
 
-### Fügen Sie das Attribut `max` zum Element `progress` hinzu
 
-Mit dem Attribut `max` kann das Attribut `value` in einem einfachen Format geschrieben werden.
-Schlecht:
+### 為 `progress` 元素增加 `max` 屬性
+
+有了 `max` 屬性，`value` 屬性更易於編寫。
+
+Bad:
 
     <progress value="0.5"> 50%</progress>
 
-Gut:
+Good:
 
     <progress max="100" value="50"> 50%</progress>
 
-### Fügen Sie die Attribute `min` und `max` zum Element `meter` hinzu
 
-Mit `min` und `max` Attribut kann das `value` Attribut einfach geschrieben werden
-Format.
+### 為 `meter` 元素增加 `min` 和 `max` 屬性
 
-Schlecht:
+有了 `min` 和 `max` 屬性，`value` 屬性更易於編寫。
+
+Bad:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-Gut:
+Good:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
-### Platzieren Sie das `legend`-Element als erstes untergeordnetes Element des `fieldset`-Elements
 
-Spec erfordert dies.
+### 將 `legend` 作為 `fieldset` 的第一個子元素
 
-Schlecht:
+這是規範的要求。
+
+Bad:
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1327,7 +1406,7 @@ Schlecht:
       <legend>About "General"</legend>
     </fieldset>
 
-Gut:
+Good:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1335,30 +1414,32 @@ Gut:
       ...
     </fieldset>
 
-## Skripterstellung
 
-### Lassen Sie das `type`-Attribut für JavaScript weg
+## 指令碼
 
-In HTML ist der Standardwert des Attributs `type` des Elements `script`
-`text/javascript`.
 
-Schlecht:
+### 省略 JavaScript 的 `type` 屬性
+
+在 HTML 中，`script` 元素的預設 `type` 屬性值就是 `text/javascript`。
+
+Bad:
 
     <script type="text/javascript">
       ...
     </script>
 
-Gut:
+Good:
 
     <script>
       ...
     </script>
 
-### Inhalt des `script`-Elements nicht auskommentieren
 
-Dieses Ritual ist für den alten Browser.
+### 不要在 `script‵ 元素中編寫註解
 
-Schlecht:
+這條規則適用於舊版的瀏覽器。
+
+Bad:
 
     <script>
     /*<![CDATA[*/
@@ -1366,7 +1447,7 @@ Schlecht:
     /*]]>*/
     </script>
 
-Also Schlecht:
+Also bad:
 
     <script>
     <!--
@@ -1374,17 +1455,18 @@ Also Schlecht:
     // -->
     </script>
 
-Gut:
+Good:
 
     <script>
       ...
     </script>
 
-### Verwenden Sie kein Skript-injiziertes `script`-Element
 
-Das Attribut `async` ist das Beste für Einfachheit und Leistung.
+### 不要使用注入指令碼的 `script` 元素
 
-Schlecht:
+`async` 屬性既簡單又高效。
+
+Bad:
 
     <script>
       var script = document.createElement("script");
@@ -1393,17 +1475,19 @@ Schlecht:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Gut:
+Good:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-## Andere
 
-### Konsequent einrücken
+## 其它
 
-Die Einrückung ist wichtig für die Lesbarkeit.
 
-Schlecht:
+### 一致的縮排格式
+
+縮排格式可讀性有很大的影響。
+
+Bad:
 
     <html>
     	<head>
@@ -1414,7 +1498,7 @@ Schlecht:
       </body>
     </html>
 
-Gut:
+Good:
 
     <html>
       <head>
@@ -1425,44 +1509,46 @@ Gut:
       </body>
     </html>
 
-### Absoluten Pfad für interne Links verwenden
 
-Ein absoluter Pfad funktioniert besser auf Ihrem Localhost ohne Internetverbindung.
+### 使用相對路徑引用内部連結
 
-Schlecht:
+無網路連接時，相對路徑在本機端有更好的表現。
+
+Bad:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Gut:
+Good:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-### Verwenden Sie keine protokollrelative URL für externe Ressourcen
 
-Mit dem Protokoll können Sie externe Ressourcen zuverlässig und sicher laden.
+### 不要使用無協議的 URL 引用外部資源
 
-Schlecht:
+有了protocal，外部資源的加載更可靠、更安全。
+
+Bad:
 
     <script src="//example.com/js/library.js">
 
-Gut:
+Good:
 
     <script src="https://example.com/js/library.js">
 
 
 
 
-## Contributors
+## 貢獻者
 
 - [@hail2u_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
 
 
-## Translators
+## 譯者
 
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
@@ -1480,6 +1566,6 @@ Gut:
 - [@zulkar29](https://github.com/zulkar29)
 
 
-## License
+## 版權使用許可
 
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
