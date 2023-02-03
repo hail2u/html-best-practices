@@ -54,7 +54,7 @@ Good:
     <!DOCTYPE html>
 
 
-### Don’t use character references as much as possible
+### Avoid using character references as much as possible
 
 If you write an HTML document with UTF-8, almost all characters (including
 Emoji) can be written directly.
