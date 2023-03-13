@@ -1416,7 +1416,7 @@ Spec requires this.
 Bad:
 
     <fieldset>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
       <legend>About "General"</legend>
     </fieldset>
@@ -1425,7 +1425,7 @@ Good:
 
     <fieldset>
       <legend>About "General"</legend>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
     </fieldset>
 
@@ -1526,7 +1526,7 @@ Good:
     </html>
 
 
-### Use absolute path for internal links
+### Use relative path for internal links
 
 An absolute path works better on your localhost without internet connection.
 
