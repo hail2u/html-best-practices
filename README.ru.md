@@ -1405,7 +1405,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Плохо:
 
     <fieldset>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
       <legend>About "General"</legend>
     </fieldset>
@@ -1414,7 +1414,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <fieldset>
       <legend>About "General"</legend>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
     </fieldset>
 

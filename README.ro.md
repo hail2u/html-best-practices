@@ -1420,7 +1420,7 @@ Specificațiile cer acest lucru.
 Greșit:
 
     <fieldset>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
       <legend>About "General"</legend>
     </fieldset>
@@ -1429,7 +1429,7 @@ Corect:
 
     <fieldset>
       <legend>About "General"</legend>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
     </fieldset>
 

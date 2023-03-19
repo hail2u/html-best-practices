@@ -1403,7 +1403,7 @@ HTML এ,  `style` এর ডিফল্ট `type` অ্যাট্রিব�
 ভালো না:
 
     <fieldset>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
       <legend>About "General"</legend>
     </fieldset>
@@ -1412,7 +1412,7 @@ HTML এ,  `style` এর ডিফল্ট `type` অ্যাট্রিব�
 
     <fieldset>
       <legend>About "General"</legend>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
     </fieldset>
 
