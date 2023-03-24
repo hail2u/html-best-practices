@@ -1,24 +1,24 @@
 Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
-# HTML Best Practices
+# HTML 最佳實務
 
-For writing maintainable and scalable HTML documents
-
-
-## General
+編寫易於維護與擴充的HTML檔案。
 
 
-### Start with DOCTYPE
+## 全局(一般)
 
-DOCTYPE er påkrævet for at aktivere no-quirks mode.
 
-Dårligt:
+### 以 DOCTYPE 為開頭
+
+使用DOCTYPE來觸發標準模式(no-quirks mode)。
+
+Bad:
 
     <html>
       ...
     </html>
 
-Godt:
+Good:
 
     <!DOCTYPE html>
     <html>
@@ -26,97 +26,97 @@ Godt:
     </html>
 
 
-### Undgå forældet DOCTYPE
+### 不使用過時的 DOCTYPE
 
-DOCTYPE bruges ikke længere til DTD. Gør det simpelt!
+DOCTYPE 不在需要引用DTD，簡單明瞭。
 
-Dårligt:
+Bad:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Godt:
+Good:
 
     <!DOCTYPE html>
 
 
-### Undgå at deklarere XML Declaration
+### 不要使用 XML 來宣告
 
-Are you sure you want to write XHTML?
+你確定會想寫 XHTML?
 
-Dårligt:
+Bad:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Godt:
+Good:
 
     <!DOCTYPE html>
 
 
-### Undgå for så vidt muligt at referere til karakterer med HTML
+### 不要什麼字元都寫成參考的形式(character reference)
 
-Hvis du skriver et HTML dokument med UTF-8 encoding, vil næsten alle karakterer (Emojis inkluderet) kunne anvendes direkte
+如果你使用 UTF- 8 來編寫 HTML 檔案，幾乎所有字元(包括表情符號)都能直接寫。
 
-Dårligt:
+Bad:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Godt:
+Good:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
 
-### Escape `&`, `<`, `>`, `"`, og `'` med navngivne referencer til karakterer
+### 將 `&`、`<`、`>`、`"` 和 `'` 字元寫成參考的形式
 
-Disse karakterer bær altid "escapes" (med tilsvarende HTML) for at sikre HTML uden bugs.
+為了避免 HTML 檔案出錯，以上這些字元都應該寫成字元參考的形式。
 
-Dårligt:
+Bad:
 
     <h1>The "&" character</h1>
 
-Godt:
+Good:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
 
-### Anvend numeriske karakterreferencer til kontrol- eller "usynlige" karakterer
+### 使用字元值參照(Numeric character reference)來控制或隱藏字元
 
-Disse karakterer er ofte nemt forvekslet med andre karakterer. Endvidere, HTML specifikationen garanterer ikke en menneskevenlig definition for disse karakterer
+這些字元很容易被誤認為是其他字元，並且規範也不保證這些字元有定義好人類可讀的名稱。
 
-Dårligt:
+Bad:
 
     <p>This book can read in 1 hour.</p>
 
-Godt:
+Good:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
 
-### Tilføj mellemrum før og efter kommentarindhold
+### 在註解內容周圍增加空白
 
-Nogle karakterer kan ikke anvendes som første og sidste karakter i en HTML kommentar.
+某寫字元沒有辦法緊接在註解開始或結束的位置上。
 
-Dårligt:
+Bad:
 
     <!--This section is non-normative-->
 
-Godt:
+Good:
 
     <!-- This section is non-normative -->
 
 
-### Husk at lukke ethvert HTML-element med et "lukke-tag"
+### 不要省略結束標籤(closing tag)
 
-Ethvert HTML-element skal lukkes korrekt for at sikre læsbarhed
+我想你可能不了解省略結束標籤的規則。
 
-Dårligt:
+Bad:
 
     <html>
       <body>
         ...
 
-Godt:
+Good:
 
     <html>
       <body>
@@ -125,136 +125,138 @@ Godt:
     </html>
 
 
-### Husk at lukke "tomme" HTML-elementer
+### 不要混用置空元素(empty element)的格式
 
-Sikrer læsbarhed.
+遵循一致的規範能增加可讀性。
 
-Dårligt:
+Bad:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Godt:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
 
-### Undgå overflødige mellemrum i HTML-elementers tags og værdier
+### 不要再標籤和屬性值周圍增加空格
 
-Det er der ikke nogen grund til.
+你沒有理由做這件事。
 
-Dårligt:
+Bad:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Godt:
+Good:
 
     <h1 class="title">HTML Best Practices</h1>
 
 
-### Undgå at blande store og små bogstaver
+### 不要混用大小寫
 
-Sikrer konsistens
+一樣是為了可讀性，保持一致是重點。
 
-Dårligt:
+Bad:
 
     <a HREF="#general">General</A>
 
-Godt:
+Good:
 
     <a href="#general">General</a>
 
-OgsågGodt:
+Also Good:
 
     <A HREF="#general">General</A>
 
 
-### Undgå at blande typer af anførselstegn
+### 不要混用單雙引號
 
-Samme som ovenfor
+同上。
 
-Dårligt:
+Bad:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Godt:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
 
-### Undgå at separere attributter med to eller flere mellemrum
+### 不要用多个空格間格屬性
 
-Dårligt:
+奇怪的格式會混淆其他人。
+
+Bad:
 
     <input   name="q"  type="search">
 
-Godt:
+Good:
 
     <input name="q" type="search">
 
 
-### Undlad booleansk attributværdier
+### 省略布林值
 
-Det er møj' nemmere blot at skrive attributtens key, såfremt den er sand.
+這樣寫更簡便，對吧?
 
-Dårligt:
+Bad:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Godt:
+Good:
 
     <audio autoplay src="/audio/theme.mp3">
 
 
-### Undlad namespaces
+### 省略命名空間
 
-SVG and MathML kan anvendes direkte i et HTML dokument.
+SVG 和 MathML 可以直接在 HTML 檔案中使用。
 
-Dårligt:
+Bad:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Godt:
+Good:
 
     <svg>
       ...
     </svg>
 
 
-### Undgå at bruge XML-attributter
+### 不要使用 XML 屬性
 
-Det er HTML vi skriver!
+我們在寫 HTML 檔案。
 
-Dårligt:
+Bad:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Godt:
+Good:
 
     <span lang="ja">...</span>
 
 
-### Undgå at blande `data-*`, Microdata og RDFa Lite attributter med gængse attributter
+### 别把 `data-*`、Microdata、RDFa Lite 屬性與普通屬性混在一起
 
-for at sikre læsbarhed, bør de ovennævnte attribut-typer grupperes for sig.
+整串標籤可以變得很複雜。這條簡單的規則有助於閱讀。
 
-Dårligt:
+Bad:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Godt:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### Foretræk at anvende den implicitte standard-semantik
+### 優先選則預設的 ARIA 語意
 
-Nogle elementer har en implicit ARIA `role`-attribut. Undlad at specificere dem unødigt.
+有些元素在 HTML 檔案中隐含了某種 ARIA 語意，不要特意把它們指出來。
 
-Dårligt:
+Bad:
 
     <nav role="navigation">
       ...
@@ -262,7 +264,7 @@ Dårligt:
 
     <hr role="separator">
 
-Godt:
+Good:
 
     <nav>
       ...
@@ -271,66 +273,64 @@ Godt:
     <hr>
 
 
-## root-elementet
+## 根元素
 
 
-### Tilføj `lang`-attribut
+### 加入 `lang` 屬性
 
-`lang` attributten hjælper med at oversætte et HTML-dokument.
+`lang` 屬性有助於翻譯 HTML 檔案。
 
-Dårligt:
+Bad:
 
     <html>
 
-Godt:
+Good:
 
-    <html lang="da-DK">
-
-
-### Hold `lang` attributten så kort som mulig
-
-Dansk er ofte kun brugt i Danmark. Landekoden er derfor ikke nødvendig.
-
-Dårligt:
-
-    <html lang="da-DK">
-
-Godt:
-
-    <html lang="da">
+    <html lang="en-US">
 
 
-### Undgå `data-*` attributter i videst muligt omfang
+### 盡量讓 `lang` 屬性值為最短 
 
-En passende attribut håndteres bedre af browseren
+日語只有在日本使用，所以國家地區代碼不是必需的。
 
-Dårligt:
+Bad:
+
+    <html lang="ja-JP">
+
+Good:
+
+    <html lang="ja">
+
+
+### 盡可能避免使用 `data-*`
+
+合適的屬性能被瀏覽器正確的處理。
+
+Bad:
 
     <span data-language="french">chemises</span>
     ...
-    <strong data-type="warning">Do not wash!</strong>
 
-Godt:
+Good:
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
-    <strong class="warning">Do not wash!</strong>
 
 
-## Document metadata
+## 文件後設資料
 
 
-### Tilføj `title`-element
+### 增加 `title` 元素
 
-Et `title`-element bruges af adskillige applikationer - ikke kun browseren.
+`title` 元素的值會被很多應用程式所使用，而不僅僅是瀏覽器。
 
-Dårligt:
+Bad:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Godt:
+Good:
 
     <head>
       <meta charset="UTF-8">
@@ -338,11 +338,11 @@ Godt:
     </head>
 
 
-### Undgå `base`-element
+### 不要使用 `base` 元素
 
-En absolut sti eller URL er mere sikker for både udviklere og brugere
+絕對路徑或 URL 對開發者與使用者來說都更為安全。
 
-Dårligt:
+Bad:
 
     <head>
       ...
@@ -351,7 +351,7 @@ Dårligt:
       ...
     </head>
 
-Godt:
+Good:
 
     <head>
       ...
@@ -360,76 +360,77 @@ Godt:
     </head>
 
 
-### Specificer MIME-type af linket indhold
+### 指定次要連結的 MIME 類別 (網際網路媒體形式)
 
-Dette giver applikationen eller browser et hint om hvad det linkede indholds type er
+這提示應用程式要如何處理這項資源。
 
-Dårligt:
+Bad:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Godt:
+Good:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
 
-### Undgå at linke til `favicon.ico`
+### 别連結到 `favicon.ico`
 
-Stortset alle browsere henter automatisk `/favicon.ico` asynkront.
+幾乎所有瀏覽器以非同步的且自動的方式來獲取 `/favicon.ico`。
 
-Dårligt:
+Bad:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Godt:
+Good:
 
-    <!-- Placer `favicon.ico` i serverens rod. -->
+    <!-- Place `favicon.ico` in the root directory. -->
 
 
-### Tilføj [`apple-touch-icon`](https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/) link
+### 增加 `apple-touch-icon`
 
-Standard-stien for request af touch icon blev ændret efter iOS 8, og Safari henter ikke automatisk fra den gamle standard-sti i roden af et website.
+觸控圖示的預設請求位置突然改變了。
 
-Dårligt:
 
-    <!-- Hey Apple! Please download `/apple-touch-icon-precomposed.png`! -->
+Bad:
 
-Godt:
+    <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
+
+Good:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
 
-### Tilføj `title`-attribut til alternative stylesheets
+### 給備用樣式表增加 `title` 屬性
 
-En label der er læselig for mennesker hjælper bla. folk med fx synshandicap til at vælge et passende stylesheet.
+易讀的標籤有助於人們選擇合適的樣式表。
 
-Dårligt:
+Bad:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Godt:
+Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
 
-### For en URL, anvend `link`-element
+### 使用 `link` 元素指向 URL
 
-En værdi af en `href`-attibut læses som en URL
+`href` 屬性的值可以被解析為 URL。
 
-Dårligt:
+Bad:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Godt:
+Good:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
@@ -437,17 +438,17 @@ Godt:
     </section>
 
 
-### Specificer et dokuments character encoding
+### 指定檔案字元編碼格式
 
-UTF-8 er ikke standarden i alle browsere (endnu).
+UTF-8 暫時還不是所有瀏覽器的預設值。
 
-Dårligt:
+Bad:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Godt:
+Good:
 
     <head>
       <meta charset="UTF-8">
@@ -455,24 +456,24 @@ Godt:
     </head>
 
 
-### Undgå at ancende forældede character encoding formater
+### 不要使用過時的字元編碼格式
 
-HTTP-headers bør specificeres af serveren.
+HTTP headers應該由伺服器來指定。
 
-Dårligt:
+Bad:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Godt:
+Good:
 
     <meta charset="UTF-8">
 
 
-### Specificer character encoding som det første
+### 一開始就指定字元編碼格式
 
-Specifikationen forventer, at character encoding specificeres inden for de første 1024 bytes af dokumentet
+標準要求字元編碼必須在檔案的前 1024 bytes中被指定。
 
-Dårligt:
+Bad:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -480,7 +481,7 @@ Dårligt:
       ...
     </head>
 
-Godt:
+Good:
 
     <head>
       <meta charset="UTF-8">
@@ -489,41 +490,41 @@ Godt:
     </head>
 
 
-### Brug UTF-8 😎
+### 使用 UTF-8
 
-Med UTF-8, kan du frit bruge emojis.
+有了 UTF-8，你可以隨意的使用表情符號(emoji)
 
-Dårligt:
+Bad:
 
     <meta charset="Shift_JIS">
 
-Godt:
+Good:
 
     <meta charset="UTF-8">
 
 
-### Undlad unødvendig `type`-attribut for CSS
+### 省略 CSS 的 `type` 屬性
 
-I HTML er standardværdien af `type` attributten `text/css`.
+在 HTML 中，`style` 元素的預設 `type` 屬性值就是 `text/css`。
 
-Dårligt:
+Bad:
 
     <style type="text/css">
       ...
     </style>
 
-Godt:
+Good:
 
     <style>
       ...
     </style>
 
 
-### Undlad at udkommentere `style` element
+### 不要在 `style` 元素內容中撰寫註解 
 
-Dette er "gammel strøm" der stammer fra gamle browsere
+這個規則適用於舊的瀏覽器。
 
-Dårligt:
+Bad:
 
     <style>
     <!--
@@ -531,44 +532,44 @@ Dårligt:
       -->
     </style>
 
-Godt:
+Good:
 
     <style>
       ...
     </style>
 
 
-### Undlad at blande tags for CSS og JavaScript
+### 不要混合 CSS 和 JavaScript 的標籤(順序要對)
 
-I særlige tilfælde vil `script`-elementer blokere for konstruktionen af DOM.
+有時 `script` 元素會阻擋 DOM 樹的建立。
 
-Dårligt:
+Bad:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Godt:
+Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Også Godt:
+Also good:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
 
-## Sections
+## 部分(Sections)
 
 
-### Tilføj `body` element
+### 增加 `body` 元素
 
-Af og til vil `body` elementet blive suppleret uventet af en browser.
+有時瀏覽器會在預料之外的地方補充 `body` 元素。
 
-Dårligt:
+Bad:
 
     <html>
       <head>
@@ -577,7 +578,7 @@ Dårligt:
       ...
     </html>
 
-Godt:
+Good:
 
     <html>
       <head>
@@ -589,75 +590,75 @@ Godt:
     </html>
 
 
-### Glem alt om `hgroup`-elementet
+### 不要使用 `hgroup` 元素
 
-Dette element bruges ikke særlig ofte.
+這個元素不怎麼使用
 
-Dårligt:
+Bad:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Godt:
+Good:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
 
-### Brug kun `address`-elementet til kontaktinformation
+### `address` 元素僅用於聯絡資訊
 
-`address`-element er til email-adresser, social media konti, fysisk addresse, telefonnummer eller noget der kan bruges til at kontakte med
+`address` 元素是給郵件地址、社交帳號、街道地址、電話號碼等通訊方式所準備的。
 
-Dårligt:
+Bad:
 
     <address>No rights reserved.</address>
 
-Godt:
+Good:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
 
-## Indholdsgruppering
+## 群組内容
 
 
-### Undlad at starte ned et linjeskift (newline) i et `pre`-element
+### 不要在 `pre` 元素里新起一行
 
-Det første linjeskift bliver ignoreret i browseren, men andet og senere linjer bliver anvendt.
+第一行會被瀏覽器忽略，第二行及之後會被渲染。
 
-Dårligt:
+Bad:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Godt:
+Good:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+### 在 `blockquote` 元素中使用合適的元素
 
-### Brug passende element i et `blockquote` element
+`blockquote` 元素的内容是引用，而不僅僅是一堆字元。
 
-`blockquote`-elementers indhold forventes at være et citat. Ikke blot en bunke karakterer.
 
-Dårligt:
+Bad:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Godt:
+Good:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
 
-### Undlad at inkludere citatets ophavsperson direkte i `blockquote` element
+### 不要直接在 `blockquote` 中標註來源
 
-`blockquote`-elementets indhold er blot et citat
+`blockquote` 元素的内容是引用的话。
 
-Dårligt:
+Bad:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -665,7 +666,7 @@ Dårligt:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Godt:
+Good:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -673,7 +674,7 @@ Godt:
 
     <p>— HTML Best Practices</p>
 
-Også Godt:
+Also good:
 
     <figure>
       <blockquote>
@@ -684,18 +685,17 @@ Også Godt:
     </figure>
 
 
-### Skriv elementer i en liste på hver sin linje
+### 一列(row)只寫一個列表項目
 
-Laaaaaaaaaaaaaaaaaaaaaaaaaaaaaannnnnnnnnnnnnnnnnnnnge
-linjer er svære at lææææææææææææææææææææææææææææææææææææææææææææææææse
+很很很很很很長長長長長長長長長長長長長長長的列很很很很很難難難難難難難難難難難難難難難難難難難難閱讀。
 
-Dårligt:
+Bad:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Godt:
+Good:
 
     <ul>
       <li>General</li>
@@ -705,11 +705,11 @@ Godt:
     </ul>
 
 
-### Brug `type`-attribut for `ol`-elementer
+### 使用 `ol` 元素的 `type` 屬性
 
-Brug `type`-attributten til at bestemme hvilken type markering hver linje i en liste skal anvende, for at sikre fremtidige referencer.
+有时tag會被附近的內容引用。如果使用 `type` 屬性更改tag，就可以安全地引用。
 
-Dårligt:
+Bad:
 
     <head>
       <style>
@@ -727,7 +727,7 @@ Dårligt:
       </ol>
     </body>
 
-Godt:
+Good:
 
     <body>
       <ol type="I">
@@ -739,11 +739,11 @@ Godt:
     </body>
 
 
-### Undgå at bruge `dl` til dialog
+### 不要用 `dl` 表示对话
 
-`dl`-element er begrænset til association list i HTML.
+`dl` 元素僅限於表示 HTML 中的關聯列表。
 
-Dårligt:
+Bad:
 
     <dl>
       <dt>Costello</dt>
@@ -761,7 +761,7 @@ Dårligt:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Godt:
+Good:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -772,11 +772,11 @@ Godt:
     <p>Abbott: Every dollar of it.</p>
 
 
-### Placer `figcaption` element som det første eller sidste child af et `figure` element
+### 把 `figcaption` 作為 `figure` 的首或尾元素
 
-HTML specifikationen foryder at placere `figcaption`inden i et `figure` element.
+規範不允許 `figcaption` 元素卡在 `figure` 元素的中間。
 
-Dårligt:
+Bad:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -784,7 +784,7 @@ Dårligt:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Godt:
+Good:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -793,54 +793,54 @@ Godt:
     </figure>
 
 
-### Brug `main` element
+### 使用 `main` 元素
 
-`main` elementet ckan bruges til at omslutte det generelle indhold.
+`main` 元素可以用来包裹内容。
 
-Dårligt:
+Bad:
 
     <div id="content">
       ...
     </div>
 
-Godt:
+Good:
 
     <main>
       ...
     </main>
 
 
-### Undgå `div` element i videst muligt omfang
+### 盡可能避免 `div` 元素
 
-`div` elementet er en sidste udvej
+實在沒其他替代方案後，才用 `div` 元素。
 
-Dårligt:
+Bad:
 
     <div class="chapter">
       ...
     </div>
 
-Godt:
+Good:
 
     <section>
       ...
     </section>
 
 
-## Text-level semantik
+## 文本語意
 
 
-### Undgå at splitte det samme link som kan grupperes
+### 不要把一个連結拆成兩半
 
-`a` elementer kan omkranse næsten alle elementer (undtagen interaktive elementer som en form-kontrol eller et andet `a` element) .
+`a` 元素可以包裹幾乎所有元素（除了表單控制等互動性元素和 `a` 元素自身）。
 
-Dårligt:
+Bad:
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
 
-Godt:
+Good:
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
@@ -849,226 +849,226 @@ Godt:
     </a>
 
 
-### Brug `download`-attribut hvis der kan downloades en resource
+### 使用 `download` 屬性指向下載資源
 
-Det tvinger browseren til at downloade en linked sti til enhedens lager
+這會迫使瀏覽器下載連結到的資源。
 
-Dårligt:
+Bad:
 
     <a href="/downloads/offline.zip">offline version</a>
 
-Godt:
+Good:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
 
-### Brug `rel`, `hreflang`, og `type` attributter hvis nødvendigt
+### 按需使用 `rel`、`hreflang` 和 `type` 屬性
 
-Disse hints hjælper apps med at håndtere en linked resurse
+它們有助於提示應用程式要如何處理連結到的資源
 
-Dårligt:
+Bad:
 
     <a href="/ja/pdf">Japanese PDF version</a>
 
-Godt:
+Good:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
 
-### Link tekst skal være til at gennemskue
+### 明確的連結文字
 
-Label til et link bør beskrive hvad der linkes til.
+連結文字應該是對應資源的名稱。
 
-Dårligt:
+Bad:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
 
-Godt:
+Good:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
 
-### Undgå at bruge `em` elementer til en advarsel
+### 不要使用 `em` 元素來表示警告
 
-Disse omhandler vigtighed og seriøsitet. Derfor er et `strong` element mere passende
+`strong` 元素比`em`更嚴肅，使用起來更合適。
 
-Dårligt:
+Bad:
 
     <em>Caution!</em>
 
-Godt:
+Good:
 
     <strong>Caution!</strong>
 
 
-### Undgå `s`, `i`, `b`, and `u` elementer i videst muligt omfang
+### 盡可能避免 `s`、`i`、`b` 和 `u` 元素
 
-disse elementers semantik er for vanskelige at læse for mennesker (udviklere)
+這些元素的語意比較難理解。
 
-Dårligt:
+Bad:
 
     <i class="icon-search"></i>
 
-Godt:
+Good:
 
     <span class="icon-search" aria-hidden="true"></span>
 
 
-### Undlad at tilføje anførselstegn til et `q` element
+### 不要在 `q` 元素外使用引號
 
-Anførselstegn bliver tilføjet af browseren.
+瀏覽器會自動加上引號。
 
-Dårligt:
+Bad:
 
     <q>“For writing maintainable and scalable HTML documents”</q>
 
-Godt:
+Good:
 
     <q>For writing maintainable and scalable HTML documents</q>
 
-Også Godt:
+Also good:
 
     “For writing maintainable and scalable HTML documents”
 
 
-### tilføj `title` attribut til `abbr` element
+### 給 `abbr` 元素增加 `title` 屬性
 
-Der er ikke nogen anden måde at repræsentere dens udvidelse
+這是顯示縮寫全名的唯一方式。
 
-Dårligt:
+Bad:
 
     <abbr>HBP</abbr>
 
-Godt:
+Good:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
 
-### Skriv `ruby` element helt ud
+### 詳細標記 `ruby` 元素
 
-`ruby` element er ikke understøttet på tværs af moderne browsere.
+現代瀏覽器對 `ruby` 元素的支持還不完整。
 
-Dårligt:
+Bad:
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
 
-Godt:
+Good:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
 
-### Tilføj `datetime` attribut to ikke-maskin-læseligt `time` element
+### 給電腦無法識別的 `time` 元素增加 `datetime` 屬性
 
-når `datetime` attribut ikke eksisterer, er formatet af `time` elementets indhold begrænset
+當 `datetime` 屬性不存在，`time` 元素内容的格式會受限制。
 
-Dårligt:
+Bad:
 
     <time>Dec 19, 2014</time>
 
-Godt:
+Good:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
 
-### Udspecificer kodesprog med `class` attribut, anført med `language-`
+### 使用 `language-` 前缀的 `class` 屬性指定程式碼的語言
 
-Dette er ikke en formel måde, men spec nævner det.
+沒有統一的實現方式，但是規範有提及。
 
-Dårligt:
+Bad:
 
     <code>&lt;!DOCTYPE html&gt;</code>
 
-Godt:
+Good:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
 
-### Hold `kbd` element så simpelt som muligt
+### `kbd` 元素愈簡單愈好
 
-Indlejring af `kbd` elementer i rekursive niveauer er for svært for mennesker at læse
+巢狀的的 `kbd` 元素難以閱讀。
 
-Dårligt:
+Bad:
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
 
-Godt:
+Good:
 
     <kbd>Ctrl+F5</kbd>
 
 
-### Undgå `span` elementet i videst muligt omfang
+### 盡可能避免 `span` 元素
 
-`span` element er en sidste udvej.
+當沒有其他替代方案後，才用 `span`。
 
-Dårligt:
+Bad:
 
     HTML <span class="best">Best</span> Practices
 
-Godt:
+Good:
 
     HTML <em>Best</em> Practices
 
 
-### Linjeskift efter `br` element
+### 在 `br` 元素後換行
 
-Linjeskift bør tilføjes når der anvendes et `br` element. Læsbarhed.
+使用 `br` 元素後應該要換行。
 
-Dårligt:
+Bad:
 
     <p>HTML<br>Best<br>Practices</p>
 
-Godt:
+Good:
 
-    <p>HTML<br/>
-    Best<br/>
+    <p>HTML<br>
+    Best<br>
     Practices</p>
 
 
-### Brug ikke `br` element kun af præsentationsmæssige årsager
+### 不要只為了格式好看就用 `br` 元素
 
-`br` elementet er ikke til linjeskift af synsmæssige årsager, men til at lave ophold i indhold.
+`br` 元素不是用來給所有元素換行的，是用來在文字内容中換行的。
 
-Dårligt:
+Bad:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-Godt:
+Good:
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
 
-## Redaktionelle overvejelser
+## 編輯
 
 
-### Undlad `ins` og `del` elementer på tværs af andre elementer
+### 不要跨元素使用 `ins` 和 `del`
 
-Elementet kan ikke strække sig til andre elementer.
+元素不能越界。
 
-Dårligt:
+Bad:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
 
     <p>Don’t trust!</p></del>
 
-Godt:
+Good:
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
 
     <del><p>Don’t trust!</p></del>
 
 
-## Embedded (indlejret) indhold
+## 内嵌内容
 
 
-### Angiv et `img` element der kan faldes tilbage på for `picture` element
+### 為 `picture` 元素提供備用的 `img` 元素
 
-Understøttelsen af `picture` element er ikke gennemført endnu.
+對 `picture` 元素的支持還不夠好。
 
-Dårligt:
+Bad:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1077,7 +1077,7 @@ Dårligt:
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
 
-Godt:
+Good:
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1087,67 +1087,66 @@ Godt:
     </picture>
 
 
-### Tilføj `alt` attribut til `img` element hvis nødvendigt
+### 若有需要可為 `img` 元素增加 `alt` 屬性
 
-`alt` attribut helps those who cannot process images or have image loading disabled.
-`alt` attribut hjælper dem der ikke kan processere billedindhold eller har hentning af billedindhold slået fra.
+`alt` 屬性對那些無法處理圖片或是禁用加載圖片的人很有幫助。
 
-Dårligt:
+Bad:
 
     <img src="/img/logo.png">
 
-Godt:
+Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### Undgå overflødig `alt` attribut
+### 若有可能則留空 `alt` 屬性
 
-Hvis billedet blot supplementerer indholdet, kan ekvivalent indhold findes i nærdheden af billedet. Anvendes fx for screenreaders af tilgængelighedshensyn (synshandicap.)
+如果圖片是用作補充說明，那麼附近應該有與 `alt` 相等作用的内容。
 
-Dårligt:
+Bad:
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
 
-Godt:
+Good:
 
     <img alt="" src="/img/icon/help.png"> Help
 
 
-### Undgå `alt` attribut hvis muligt
+### 若有可能則省略 `alt` 屬性
 
-Af og til vides det korrekte indhold til en `alt` attribut ikke.
+有時你不確定 `alt` 要寫什麼。
 
-Dårligt:
+Bad:
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
 
-Godt:
+Good:
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
-    (Hvis du ikke kan se billedet, kan du bruge en <a href="?audio">audio</a> test istedet.)
+    (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
 
-### tomt `iframe` element
+### 留空 `iframe` 内容
 
-Der er nogle begrænsninger i indholdet af en `iframe`. Det er altid sikkert at lade denne være tom.
+`iframe` 的内容是受限的，留空比较安全。
 
-Dårligt:
+Bad:
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
 
-Godt:
+Good:
 
     <iframe src="/ads/default.html"></iframe>
 
 
-### Opmærk indhold i `map` element
+### 標記 `map` 元素内容
 
-Dette indhold bliver præsenteret for en screen reader (skærmlæser, for folk med synshandicap)
+這樣使用螢幕閱讀器的讀者可以知道 `map` 的内容。
 
-Dårligt:
+Bad:
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1158,7 +1157,7 @@ Dårligt:
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
 
-Godt:
+Good:
 
     <map name="toc">
       <p>
@@ -1172,11 +1171,11 @@ Godt:
     </map>
 
 
-### Angiv indhold at falde tilbage på for `audio` og `video` elementer
+### 為 `audio` 和 `video` 元素提供備用内容
 
-Indhold der kan faldes tilbage på sikrer bagudkompatibilitet for indholdstyper der for nyligt er tilføjet til HTML.
+HTML 新引進的元素需要備用内容，以防舊版瀏覽器不支持。
 
-Dårligt:
+Bad:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1184,7 +1183,7 @@ Dårligt:
       ...
     </video>
 
-Godt:
+Good:
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1194,20 +1193,20 @@ Godt:
     </video>
 
 
-## Data på tabelform
+## 表格資料
 
 
-### Skriv en celle per linje
+### 一列寫一个單元格
 
-Lange linjer er svære at læse og overskue.
+長列難以檢視。
 
-Dårligt:
+Bad:
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
 
-Godt:
+Good:
 
     <tr>
       <td>General</td>
@@ -1216,11 +1215,11 @@ Godt:
     </tr>
 
 
-### Brug `th` elementet til et beskrivende tebelhoved
+### 使用 `th` 元素表示標題格
 
-Dette bør ikke undlades
+你沒理由不這樣做。
 
-Dårligt:
+Bad:
 
     <table>
       <thead>
@@ -1244,7 +1243,7 @@ Dårligt:
       </tbody>
     </table>
 
-Godt:
+Good:
 
     <table>
       <thead>
@@ -1269,98 +1268,98 @@ Godt:
     </table>
 
 
-## Formularer
+## 表單
 
 
-### Omkrans form controls med `label` element
+### 使用 `label` 元素包裹表單來控制元素
 
-`label` elementet hjælper brugeren med at fokusere på elementet
+`label` 元素有助於聚焦(focus)在表單元素上。
 
-Dårligt:
+Bad:
 
     <p>Query: <input name="q" type="text"></p>
 
-Godt:
+Good:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
 
-### Undlad `for` attribut hvis muligt
+### 若有可能則省略 `for` 屬性
 
-`label` element can contain some form elements.
+`label` 元素可以包含表單元素。
 
-Dårligt:
+Bad:
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
 
-Godt:
+Good:
 
     <label>Query: <input name="q" type="text"></label>
 
 
-### Brug passende `type` attribut til `input` element
+### 為 `input` 元素選擇適當的 `type` 屬性
 
-Med passende `type`, giver browseren relevante features til `input` elementer.
+使用 `type` 屬性後，瀏覽器會賦予 `input` 元素一些新功能。
 
-Dårligt:
+Bad:
 
     <label>Search keyword: <input name="q" type="text"></label>
 
-Godt:
+Good:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
 
-### Tilføj `value` attribut til `input type="submit"`
+### 給 `input type="submit"` 增加 `value` 屬性
 
-Standardlabel for en submit-knap er ikke standardiseret på tværs af browsere og sprog.
+在不同瀏覽器和不同語言環境下，提交按鈕的預設標籤是不同的。
 
-Dårligt:
+Bad:
 
     <input type="submit">
 
-Godt:
+Good:
 
-    <input type="submit" value="Søg">
+    <input type="submit" value="Search">
 
 
-### tilføj `title` attribut til `input` element når der er en `pattern` attribut
+### 給有 `pattern` 屬性的 `input` 元素增加 `title` 屬性
 
-Hvis input tekst ikke stemmer overens med `pattern` attribut, skal værdien af en `title` attribut vises som et hint.
+如果輸入的文字與 `pattern` 屬性不匹配，`title` 屬性的值就會被顯示為提示。
 
-Dårligt:
+Bad:
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
 
-Godt:
+Good:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
 
-### Undlad at bruge `placeholder` attribut som etiket
+### 不要把 `placeholder` 當作標籤來使用
 
-`label` element anvendes til etiketter, `placeholder` attribut er til et kort hint.
+`label` 元素用於提供標籤，`placeholder` 屬性用於簡單的提示。
 
-Dårligt:
+Bad:
 
     <input name="email" placeholder="Email" type="text">
 
-Godt:
+Good:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
 
-### Skriv én `option` element per line
+### 每行只寫一个 `option` 元素
 
-Lange linjer er svære at overskue.
+長行難以閱覽。
 
-Dårligt:
+Bad:
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
 
-Godt:
+Good:
 
     <datalist id="toc">
       <option label="General">
@@ -1369,35 +1368,37 @@ Godt:
     </datalist>
 
 
-### Tilføj `max` attribut til `progress` element
+### 為 `progress` 元素增加 `max` 屬性
 
-Med `max` attribut, kan `value` attributten blive skrevet i et nemt og mere passende format.
+有了 `max` 屬性，`value` 屬性更易於編寫。
 
-Dårligt:
+Bad:
 
     <progress value="0.5"> 50%</progress>
 
-Godt:
+Good:
 
     <progress max="100" value="50"> 50%</progress>
 
 
-### Tilføj `min` and `max` attribut til `meter` element
+### 為 `meter` 元素增加 `min` 和 `max` 屬性
 
-Med `min` and `max` attributterne, kan `value` attributterne blive skrevet i et nemt og mere passende format.
+有了 `min` 和 `max` 屬性，`value` 屬性更易於編寫。
 
-Dårligt:
+Bad:
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
 
-Godt:
+Good:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
 
-### Placer `legend` element som det første element af et `fieldset` element
+### 將 `legend` 作為 `fieldset` 的第一個子元素
 
-Dårligt:
+這是規範的要求。
+
+Bad:
 
     <fieldset>
       <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
@@ -1405,7 +1406,7 @@ Dårligt:
       <legend>About "General"</legend>
     </fieldset>
 
-Godt:
+Good:
 
     <fieldset>
       <legend>About "General"</legend>
@@ -1414,32 +1415,31 @@ Godt:
     </fieldset>
 
 
-## Scripting
+## 指令碼
 
 
-### Undlad `type` attribut for JavaScript
+### 省略 JavaScript 的 `type` 屬性
 
-I HTML er standardværdien af en `type` attribut i et `script` element
-`text/javascript`.
+在 HTML 中，`script` 元素的預設 `type` 屬性值就是 `text/javascript`。
 
-Dårligt:
+Bad:
 
     <script type="text/javascript">
       ...
     </script>
 
-Godt:
+Good:
 
     <script>
       ...
     </script>
 
 
-### Undlad at udkommentere indhold af et `script` element
+### 不要在 `script‵ 元素中編寫註解
 
-Dette er gammel strøm fra gamle browsere
+這條規則適用於舊版的瀏覽器。
 
-Dårligt:
+Bad:
 
     <script>
     /*<![CDATA[*/
@@ -1447,7 +1447,7 @@ Dårligt:
     /*]]>*/
     </script>
 
-Also Dårligt:
+Also bad:
 
     <script>
     <!--
@@ -1455,19 +1455,18 @@ Also Dårligt:
     // -->
     </script>
 
-Godt:
+Good:
 
     <script>
       ...
     </script>
 
 
-### Don’t use script-injected `script` element
-### Undlad at bruge script-injected `script` element
+### 不要使用注入指令碼的 `script` 元素
 
-`async` attribut er det bedste for både simplicitet of performance.
+`async` 屬性既簡單又高效。
 
-Dårligt:
+Bad:
 
     <script>
       var script = document.createElement("script");
@@ -1476,19 +1475,19 @@ Dårligt:
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
 
-Godt:
+Good:
 
     <script async defer src="https://example.com/widget.js"></script>
 
 
-## Other
+## 其它
 
 
-### Konsistens med indentering
+### 一致的縮排格式
 
-Korrekt indentering er vigtig for læsbarhed.
+縮排格式可讀性有很大的影響。
 
-Dårligt:
+Bad:
 
     <html>
     	<head>
@@ -1499,7 +1498,7 @@ Dårligt:
       </body>
     </html>
 
-Godt:
+Good:
 
     <html>
       <head>
@@ -1511,45 +1510,45 @@ Godt:
     </html>
 
 
-### Anvend absolut sti til interne links
+### 使用相對路徑引用内部連結
 
-En absolut sti virker bedre på en lokal maskine uden internetforbindelse.
+無網路連接時，相對路徑在本機端有更好的表現。
 
-Dårligt:
+Bad:
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
 
-Godt:
+Good:
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
 
-### Undlad at anvende protokol-relative URL til eksterne resurser
+### 不要使用無協議的 URL 引用外部資源
 
-Med den korrekte protokol kan man loade eksterne resurser pålideligt og sikkert.
+有了protocal，外部資源的加載更可靠、更安全。
 
-Dårligt:
+Bad:
 
     <script src="//example.com/js/library.js">
 
-Godt:
+Good:
 
     <script src="https://example.com/js/library.js">
 
 
 
 
-## Contributors
+## 貢獻者
 
 - [@hail2u_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
 
 
-## Translators
+## 譯者
 
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
@@ -1568,6 +1567,6 @@ Godt:
 - [@zulkar29](https://github.com/zulkar29)
 
 
-## License
+## 版權使用許可
 
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/)

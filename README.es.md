@@ -1,6 +1,6 @@
-Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Français (fr)](README.fr.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
-# Mejores Prácticas de HTML
+# Mejores prácticas de HTML
 
 Para escribir documentos HTML mantenibles y escalables.
 
@@ -42,7 +42,7 @@ Bien:
 
 ### No utilices declaraciones XML
 
-Estás seguro de querer escribir XHTML?
+¿Estás seguro de querer escribir XHTML?
 
 Mal:
 
@@ -198,7 +198,7 @@ Bien:
 
 ### Omite el valor de los atributos booleanos
 
-Es más fácil de escribir, ¿No es así?
+Es más fácil de escribir, ¿no es así?
 
 Mal:
 
@@ -252,7 +252,7 @@ Bien:
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
 
-### Usa semánticas ARIA implicitas
+### Usa semánticas ARIA implícitas
 
 Si un elemento tiene un ARIA `role` implícitamente en un documento HTML, no lo especifiques.
 
@@ -708,7 +708,7 @@ Bien:
 
 ### Usa el atributo `type` para elementos `ol`
 
-Algunaas veces el marcador es referenciado por los contenidos cercanos. Si cambias el tipo del marcador
+Algunas veces el marcador es referenciado por los contenidos cercanos. Si cambias el tipo del marcador
 con el atributo `type`, estarás seguro ante esas referencias.
 
 Mal:
@@ -1104,7 +1104,7 @@ Bien:
     <img alt="HTML Best Practices" src="/img/logo.png">
 
 
-### Usa el atributo `alt` vacio de ser posible
+### Usa el atributo `alt` vacío de ser posible
 
 Si la imagen es suplementaria, hay contenido equivalente cerca de ella.
 
@@ -1131,7 +1131,7 @@ Bien:
     (Si no puedes ver la imagen, puedes usar un <a href="?audio">audio</a> de prueba en su lugar.)
 
 
-### Elemento `iframe` vacio
+### Elemento `iframe` vacío
 
 Hay restricciones para su contenido. Tenerlo vacío es seguro siempre.
 
@@ -1200,7 +1200,7 @@ Bien:
 ## Tablas
 
 
-### EScribe una celda por línea
+### Escribe una celda por línea
 
 Las líneas largas son difíciles de leer.
 
@@ -1407,7 +1407,7 @@ La especificación pide ésto.
 Mal:
 
     <fieldset>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
       <legend>About "General"</legend>
     </fieldset>
@@ -1416,7 +1416,7 @@ Bien:
 
     <fieldset>
       <legend>About "General"</legend>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
     </fieldset>
 
@@ -1565,10 +1565,13 @@ Bien:
 - [@naufalk25](https://github.com/naufalk25)
 - [@oebelus](https://github.com/oebelus)
 - [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
 - [@stenbaek](https://github.com/stenbaek)
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
+- [@victorchao996](https://github.com/victorchao996)
 - [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar29](https://github.com/zulkar29)
 
 
 ## License

@@ -1,4 +1,4 @@
-Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Français (fr)](README.fr.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
 # 普通のHTMLの書き方
 
@@ -1402,7 +1402,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
 悪い例:
 
     <fieldset>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
       <legend>About "General"</legend>
     </fieldset>
@@ -1411,7 +1411,7 @@ HTMLで新しく作られた要素にはフォールバックのためのコン�
 
     <fieldset>
       <legend>About "General"</legend>
-      <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
+      <p><label>Is this section useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
     </fieldset>
 
@@ -1559,10 +1559,13 @@ HTMLでは、`script`要素における`type`属性の初期値は`text/javascri
 - [@naufalk25](https://github.com/naufalk25)
 - [@oebelus](https://github.com/oebelus)
 - [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
 - [@stenbaek](https://github.com/stenbaek)
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
+- [@victorchao996](https://github.com/victorchao996)
 - [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar29](https://github.com/zulkar29)
 
 
 ## License
