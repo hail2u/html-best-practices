@@ -1,6 +1,6 @@
 <div dir="rtl" align='right'>
 
-Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Français (fr)](README.fr.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md)
+Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Français (fr)](README.fr.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md) · [فارسی (fa)](README.fa.md)
 
 # HTML بهترین روش های
 
@@ -8,21 +8,21 @@ Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsc
 
 ## عمومی
 
+### با DOCTYPE شروع کنید
 
-### Start with DOCTYPE
-
-DOCTYPE is required for activating no-quirks mode.
-
+برای فعال کردن حالت بدون خصیصه DOCTYPE نیاز است.
 بد:
+
 <div dir="ltr" align='left'>
 
     <html>
       ...
     </html>
-  
+
 </div>
 
 خوب:
+
 <div dir="ltr" align='left'>
   
     <!DOCTYPE html>
@@ -31,101 +31,92 @@ DOCTYPE is required for activating no-quirks mode.
     </html>
 </div>
 
+### از DOCTYPE قدیمی یا منسوخ استفاده نکنید
 
-### Don’t use legacy or obsolete DOCTYPE
+DOCTYPE دیگر برای DTD نیست، ساده باشید.
 
-DOCTYPE is not for DTD anymore, be simple.
-
-Bad:
+بد:
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-Good:
+خوب:
 
     <!DOCTYPE html>
 
+### از اعلان XML استفاده نکنید
 
-### Don’t use XML Declaration
+آیا مطمئن هستید که می خواهید XHTML بنویسید؟
 
-Are you sure you want to write XHTML?
-
-Bad:
+بد:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
 
-Good:
+خوب:
 
     <!DOCTYPE html>
 
+### تا حد امکان از ارجاع کاراکترها استفاده نکنید
 
-### Don’t use character references as much as possible
+اگر یک سند HTML با UTF-8 بنویسید، تقریباً همه کاراکترها (از جمله
+Emoji) را می توان مستقیماً نوشت.
 
-If you write an HTML document with UTF-8, almost all characters (including
-Emoji) can be written directly.
-
-Bad:
+بد:
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
 
-Good:
+خوب:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
+### عدم استفاده از «&»، «<»، «>»، «»، و «» با ارجاع کاراکترهای نام‌گذاری شده
 
-### Escape `&`, `<`, `>`, `"`, and `'` with named character references
+این کاراکترها باید همیشه برای یک سند HTML بدون اشکال مورد استفاده قرار نگیرد.
 
-These characters should escape always for a bug-free HTML document.
-
-Bad:
+بد:
 
     <h1>The "&" character</h1>
 
-Good:
+خوب:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
+### از ارجاع کاراکترهای عددی برای کاراکترهای کنترلی یا نامرئی استفاده کنید
 
-### Use numeric character references for control or invisible characters
+این کاراکترها ها به راحتی با کاراکترهای دیگر اشتباه گرفته می شوند. و همچنین، مشخصات، تعریف یک نام قابل خواندن توسط انسان برای این کاراکترها را تضمین نمی کند.
 
-These characters are easily mistaken for another character. And also spec does
-not guarantee to define a human readable name for these characters.
-
-Bad:
+بد:
 
     <p>This book can read in 1 hour.</p>
 
-Good:
+خوب:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
+### دور محتویات کامنت ها فاصله قرار دهید
 
-### Put white spaces around comment contents
+برخی از کاراکترها را نمی توان بلافاصله پس از باز شدن کامنت یا قبل از بسته شدن کامنت استفاده کرد.
 
-Some character cannot be used immediately after comment open or before comment
-close.
-
-Bad:
+بد:
 
     <!--This section is non-normative-->
 
-Good:
+خوب:
 
     <!-- This section is non-normative -->
 
+### تگ بسته شدن را حذف نکنید
 
-### Don’t omit closing tag
+من فکر می کنم شما قانون حذف تگ بسته را درک نمی کنید.
 
-I think you don’t understand a rule for omitting closing tag.
-
-Bad:
+بد:
 
     <html>
       <body>
         ...
 
-Good:
+خوب:
 
     <html>
       <body>
@@ -133,140 +124,129 @@ Good:
       </body>
     </html>
 
+### فرمت عنصر خالی را با هم ترکیب نکنید
 
-### Don’t mix empty element format
+سازگاری کلید خوانایی است.
 
-Consistency is a key for readability.
-
-Bad:
+بد:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-Good:
+خوب:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+### دور تگ ها و مقادیر مشخصه ها فاصله سفید قرار ندهید
 
-### Don’t put white spaces around tags and attribute values
+هیچ دلیلی برای این کار وجود ندارد.
 
-There is no reason for doing this.
-
-Bad:
+بد:
 
     <h1 class=" title " >HTML Best Practices</h1>
 
-Good:
+خوب:
 
     <h1 class="title">HTML Best Practices</h1>
 
+### بزرگ و کوچک بودن کاراکترها را ترکیب نکنید
 
-### Don’t mix character cases
+این هم باعث ثبات می شود.
 
-It gives a consistency also.
-
-Bad:
+بد:
 
     <a HREF="#general">General</A>
 
-Good:
+خوب:
 
     <a href="#general">General</a>
 
-Also Good:
+همینطور خوب:
 
     <A HREF="#general">General</A>
 
+### گیومه ها را با هم ترکیب نکنید
 
-### Don’t mix quotation marks
+مانند بالا.
 
-Same as above.
-
-Bad:
+بد:
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
 
-Good:
+خوب:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
+### مشخصه ها را با دو یا چند فاصله سفید از هم جدا نکنید
 
-### Don’t separate attributes with two or more white spaces
+قانون قالب بندی عجیب شما، کسی را گیج می کند.
 
-Your weird formatting rule confuses someone.
-
-Bad:
+بد:
 
     <input   name="q"  type="search">
 
-Good:
+خوب:
 
     <input name="q" type="search">
 
+### مقدار مشخصه بولی را حذف کنید
 
-### Omit boolean attribute value
+نوشتنش آسان است، اینطور نیست؟
 
-It’s easy to write, isn’t it?
-
-Bad:
+بد:
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
 
-Good:
+خوب:
 
     <audio autoplay src="/audio/theme.mp3">
 
+### فضاهای نام را حذف کنید
 
-### Omit namespaces
+SVG و MathML را می توان مستقیماً در سند HTML استفاده کرد.
 
-SVG and MathML can be used directly in an HTML document.
-
-Bad:
+بد:
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
 
-Good:
+خوب:
 
     <svg>
       ...
     </svg>
 
-
 ### Don’t use XML attributes
 
-We write an HTML document.
+ما یک سند HTML می نویسیم.
 
-Bad:
+بد:
 
     <span lang="ja" xml:lang="ja">...</span>
 
-Good:
+خوب:
 
     <span lang="ja">...</span>
 
+### مشخصه های `data-*`، Microdata و RDFa Lite را با مشخصه های رایج ترکیب نکنید
 
-### Don’t mix `data-*`, Microdata, and RDFa Lite attributes with common attributes
+یک رشته برچسب می تواند بسیار پیچیده باشد. این قانون ساده به خواندن چنین رشته برچسبی کمک می کند.
 
-A tag string can be very complicated. This simple rule helps reading such tag
-string.
-
-Bad:
+بد:
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
 
-Good:
+خوب:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
+### معنای ARIA ضمنی پیش‌فرض را ترجیح دهید
 
-### Prefer default implicit ARIA semantics
+برخی از عناصر به طور ضمنی یک «نقش» ARIA در یک سند HTML دارند، آنها را مشخص نکنید.
 
-Some elements have an ARIA `role` implicitly in an HTML document, don’t specify them.
-
-Bad:
+بد:
 
     <nav role="navigation">
       ...
@@ -274,7 +254,7 @@ Bad:
 
     <hr role="separator">
 
-Good:
+خوب:
 
     <nav>
       ...
@@ -282,79 +262,71 @@ Good:
 
     <hr>
 
+## عنصر ریشه (root element)
 
-## The root element
+### مشخصه "lang" را اضافه کنید
 
+مشخصه "lang" به ترجمه یک سند HTML کمک می کند.
 
-### Add `lang` attribute
-
-`lang` attribute will help translating an HTML document.
-
-Bad:
+بد:
 
     <html>
 
-Good:
+خوب:
 
     <html lang="en-US">
 
+### مقدار مشخصه «lang» را تا حد امکان کوتاه نگه دارید
 
-### Keep `lang` attribute value as short as possible
+ژاپنی فقط در ژاپن استفاده می شود. بنابراین کد کشور ضروری نیست.
 
-Japanese is only used in Japan. So country code is not necessary.
-
-Bad:
+بد:
 
     <html lang="ja-JP">
 
-Good:
+خوب:
 
     <html lang="ja">
 
+### تا حد امکان از `data-*` اجتناب کنید
 
-### Avoid `data-*` as much as possible
-
-An appropriate attribute can be handled properly by browsers.
-
-Bad:
+یک مشخصه مناسب می تواند توسط مرورگرها به درستی مدیریت شود.
+بد:
 
     <span data-language="french">chemises</span>
     ...
     <strong data-type="warning">Do not wash!</strong>
 
-Good:
+خوب:
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
     <strong class="warning">Do not wash!</strong>
 
+## فراداده سند
 
-## Document metadata
+### عنصر `title` را اضافه کنید
 
+یک مقدار برای عنصر `title` توسط برنامه های مختلف, نه تنها یک مرورگر, استفاده می شود.
 
-### Add `title` element
-
-A value for `title` element is used by various application not only a browser.
-
-Bad:
+بد:
 
     <head>
       <meta charset="UTF-8">
     </head>
 
-Good:
+خوب:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
+### از عنصر `base` استفاده نکنید
 
-### Don’t use `base` element
+یک مسیر یا URL مطلق هم برای توسعه دهندگان و هم برای کاربران ایمن تر است.
 
-An absolute path or URL is safer for both developers and users.
-
-Bad:
+بد:
 
     <head>
       ...
@@ -363,7 +335,7 @@ Bad:
       ...
     </head>
 
-Good:
+خوب:
 
     <head>
       ...
@@ -371,121 +343,112 @@ Good:
       ...
     </head>
 
+### نوع MIME منابع لینک شده جزئی را مشخص کنید
 
-### Specify MIME type of minor linked resources
+این یک اشاره است که چگونه برنامه این منبع را مدیریت می کند.
 
-This is a hint how application handles this resource.
-
-Bad:
+بد:
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
 
-Good:
+خوب:
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+### به `favicon.ico` لینک ندهید
 
-### Don’t link to `favicon.ico`
+تقریباً همه مرورگرها `/favicon.ico` را به صورت خودکار و ناهمزمان دریافت می کنند.
 
-Almost all browsers fetch `/favicon.ico` automatically and asynchronously.
-
-Bad:
+بد:
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-Good:
+خوب:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
+### لینک `apple-touch-icon` را اضافه کنید
 
-### Add `apple-touch-icon` link
+یک مسیر درخواست پیش‌فرض برای آیکون لمسی، ناگهان تغییر کرد.
 
-A default request path for touch icon was changed suddenly.
-
-Bad:
+بد:
 
     <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
 
-Good:
+خوب:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
 
+### ویژگی `title` را به استایل شیت های جایگزین اضافه کنید
 
-### Add `title` attribute to alternate stylesheets
+یک برچسب قابل خواندن توسط انسان به افراد در انتخاب استایل شیت مناسب کمک می کند.
 
-A human readable label helps people selecting proper stylesheet.
-
-Bad:
+بد:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
 
-Good:
+خوب:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
+### برای URL، از عنصر `link` استفاده کنید
 
-### For URL, use `link` element
+مقدار مشخصه `href` را می توان به عنوان URL در نظر گرفت.
 
-A value of `href` attribute can be resolved as URL.
-
-Bad:
+بد:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
 
-Good:
+خوب:
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
       ...
     </section>
 
+### رمزگذاری کاراکتر سند را مشخص کنید
 
-### Specify document character encoding
+هنوز در همه مرورگرها UTF-8 پیش فرض نیست.
 
-UTF-8 is not default in all browsers yet.
-
-Bad:
+بد:
 
     <head>
       <title>HTML Best Practices</title>
     </head>
 
-Good:
+خوب:
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
 
+### از قالب رمزگذاری کاراکتر قدیمی استفاده نکنید
 
-### Don’t use legacy character encoding format
+هدرهای HTTP باید توسط یک سرور مشخص شوند، ساده باشند.
 
-HTTP headers should be specified by a server, be simple.
-
-Bad:
+بد:
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-Good:
+خوب:
 
     <meta charset="UTF-8">
 
+### ابتدا رمزگذاری کاراکتر را مشخص کنید
 
-### Specify character encoding at first
+مشخصات نیاز دارد که رمزگذاری کاراکتر در 1024 بایت اول سند مشخص شود.
 
-Spec requires the character encoding is specified within the first 1024 bytes of
-the document.
-
-Bad:
+بد:
 
     <head>
       <meta content="width=device-width" name="viewport">
@@ -493,7 +456,7 @@ Bad:
       ...
     </head>
 
-Good:
+خوب:
 
     <head>
       <meta charset="UTF-8">
@@ -501,42 +464,39 @@ Good:
       ...
     </head>
 
+### از UTF-8 استفاده کنید
 
-### Use UTF-8
+با استفاده از UTF-8، می توانید از اموجی استفاده کنید.
 
-With UTF-8, you are free to use Emoji.
-
-Bad:
+بد:
 
     <meta charset="Shift_JIS">
 
-Good:
+خوب:
 
     <meta charset="UTF-8">
 
+### مشخصه `type` را برای CSS حذف کنید
 
-### Omit `type` attribute for CSS
+در HTML، مقدار پیش‌فرض مشخصه `type` عنصر `style` ،`text/css` است.
 
-In HTML, default `type` attribute’s value of `style` element is `text/css`.
-
-Bad:
+بد:
 
     <style type="text/css">
       ...
     </style>
 
-Good:
+خوب:
 
     <style>
       ...
     </style>
 
+### محتوای عنصر `style` را کامنت نکنید
 
-### Don’t comment out contents of `style` element
+این روش برای مرورگر قدیمی است.
 
-This ritual is for the old browser.
-
-Bad:
+بد:
 
     <style>
     <!--
@@ -544,44 +504,41 @@ Bad:
       -->
     </style>
 
-Good:
+خوب:
 
     <style>
       ...
     </style>
 
+### تگ CSS و JavaScript را با هم ترکیب نکنید
 
-### Don’t mix tag for CSS and JavaScript
+گاهی اوقات عنصر `script` ساخت DOM را مسدود می کند.
 
-Sometimes `script` element blocks DOM construction.
-
-Bad:
+بد:
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
 
-Good:
+خوب:
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-Also good:
+همچنین خوب:
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+## بخش ها
 
-## Sections
+### عنصر `body` را اضافه کنید
 
+گاهی اوقات عنصر `body` در موقعیت غیرمنتظره ای توسط مرورگر جاگذاری می شود.
 
-### Add `body` element
-
-Sometimes `body` element is complemented in unexpected position by a browser.
-
-Bad:
+بد:
 
     <html>
       <head>
@@ -590,7 +547,7 @@ Bad:
       ...
     </html>
 
-Good:
+خوب:
 
     <html>
       <head>
@@ -601,77 +558,70 @@ Good:
       </body>
     </html>
 
+### عنصر `hgroup` را فراموش کنید
 
-### Forget about `hgroup` element
+این عنصر زیاد استفاده نمی شود.
 
-This element is not used very much.
-
-Bad:
+بد:
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
 
-Good:
+خوب:
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+### از عنصر `address` فقط برای اطلاعات تماس استفاده کنید
 
-### Use `address` element only for contact information
+عنصر `address` برای آدرس ایمیل، حساب شبکه اجتماعی، آدرس خیابان، شماره تلفن یا چیزی است که می توانید با آن در تماس باشید.
 
-`address` element is for email address, social network account, street address,
-telephone number, or something you can get in touch with.
-
-Bad:
+بد:
 
     <address>No rights reserved.</address>
 
-Good:
+خوب:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+## گروه بندی مطالب
 
-## Grouping content
+### در عنصر `pre` با خط جدید شروع نکنید
 
+اولین خط جدید در مرورگرها نادیده گرفته می شود، اما خط دوم و بعدی ارائه می شوند.
 
-### Don’t start with newline in `pre` element
-
-A first newline will ignored in the browsers, but second and later are rendered.
-
-Bad:
+بد:
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
 
-Good:
+خوب:
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+### از عنصر مناسب در عنصر `blockquote` استفاده کنید
 
-### Use appropriate element in `blockquote` element
+محتوای عنصر `blockquote` یک نقل قول است، نه تکه‌ای از کاراکترها.
 
-`blockquote` element’s content is a quote, not a chunks of characters.
-
-Bad:
+بد:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
 
-Good:
+خوب:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
+### انتساب را مستقیماً در عنصر `blockquote` وارد نکنید
 
-### Don’t include attribution directly in `blockquote` element
+محتوای عنصر `blockquote` یک نقل قول است.
 
-`blockquote` element’s content is a quote.
-
-Bad:
+بد:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -679,7 +629,7 @@ Bad:
       <p>— HTML Best Practices</p>
     </blockquote>
 
-Good:
+خوب:
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
@@ -687,7 +637,7 @@ Good:
 
     <p>— HTML Best Practices</p>
 
-Also good:
+همچنین خوب:
 
     <figure>
       <blockquote>
@@ -697,19 +647,19 @@ Also good:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
+### در هر خط یک مورد از فهرست بنویسید
 
-### Write one list item per line
+خوااااااااااااااااااااااااااااااندن یییییییییییییییییییییییییک
 
-Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
-line is hard toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo read.
+خططططططططططططططططط طوووووووووووووووووووووووووووووووولانی سخت است
 
-Bad:
+بد:
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
 
-Good:
+خوب:
 
     <ul>
       <li>General</li>
@@ -718,13 +668,11 @@ Good:
       ...
     </ul>
 
+### از ویژگی `type` برای عنصر `ol` استفاده کنید
 
-### Use `type` attribute for `ol` element
+گاهی اوقات نشانگر توسط محتویات در نزدیک ارجاع داده می شود. اگر نشانگر را با ویژگی `type` تغییر دهید، برای ارجاع در آن ایمن خواهید بود.
 
-Sometimes marker referenced by the contents in the near. If you change marker
-with `type` attribute, you will be safe to reference.
-
-Bad:
+بد:
 
     <head>
       <style>
@@ -742,7 +690,7 @@ Bad:
       </ol>
     </body>
 
-Good:
+خوب:
 
     <body>
       <ol type="I">
@@ -753,12 +701,11 @@ Good:
       </ol>
     </body>
 
+### از `dl` برای دیالوگ استفاده نکنید
 
-### Don’t use `dl` for dialogue
+عنصر `dl` به یک لیست مرتبط در HTML محدود شده است.
 
-`dl` element is restricted to an association list in HTML.
-
-Bad:
+بد:
 
     <dl>
       <dt>Costello</dt>
@@ -776,7 +723,7 @@ Bad:
       <dd>Every dollar of it.</dd>
     </dl>
 
-Good:
+خوب:
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -786,12 +733,11 @@ Good:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
+### عنصر `figcaption` را به عنوان اولین یا آخرین فرزند عنصر `figure` قرار دهید
 
-### Place `figcaption` element as first or last child of `figure` element
+مشخصات، عنصر `figcaption` را در وسط عنصر `figure` مجاز نمی‌داند.
 
-Spec disallows `figcaption` element in the middle of `figure` element.
-
-Bad:
+بد:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
@@ -799,14 +745,13 @@ Bad:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
 
-Good:
+خوب:
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
-
 
 ### Use `main` element
 
@@ -824,7 +769,6 @@ Good:
       ...
     </main>
 
-
 ### Avoid `div` element as much as possible
 
 `div` element is an element of last resort.
@@ -841,9 +785,7 @@ Good:
       ...
     </section>
 
-
 ## Text-level semantics
-
 
 ### Don’t split same link that can be grouped
 
@@ -864,7 +806,6 @@ Good:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-
 ### Use `download` attribute for downloading a resource
 
 It will force browsers to download linked resource to the storage.
@@ -876,7 +817,6 @@ Bad:
 Good:
 
     <a download href="/downloads/offline.zip">offline version</a>
-
 
 ### Use `rel`, `hreflang`, and `type` attribute if needed
 
@@ -890,7 +830,6 @@ Good:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
-
 ### Clear link text
 
 Link text should be the label of its linked resource.
@@ -902,7 +841,6 @@ Bad:
 Good:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
-
 
 ### Don’t use `em` element for warning or caution
 
@@ -916,7 +854,6 @@ Good:
 
     <strong>Caution!</strong>
 
-
 ### Avoid `s`, `i`, `b`, and `u` element as much as possible
 
 These elements’ semantics is too difficult to humans.
@@ -928,7 +865,6 @@ Bad:
 Good:
 
     <span class="icon-search" aria-hidden="true"></span>
-
 
 ### Don’t put quotes to `q` element
 
@@ -946,7 +882,6 @@ Also good:
 
     “For writing maintainable and scalable HTML documents”
 
-
 ### Add `title` attribute to `abbr` element
 
 There is no other way to represent its expansion.
@@ -959,7 +894,6 @@ Good:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
-
 ### Markup `ruby` element verbosely
 
 `ruby` element support is not completed across the modern browsers.
@@ -971,7 +905,6 @@ Bad:
 Good:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
-
 
 ### Add `datetime` attribute to non-machine-readable `time` element
 
@@ -986,7 +919,6 @@ Good:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
-
 ### Specify code language with `class` attribute prefixed with `language-`
 
 This is not a formal way, but spec mentions this.
@@ -998,7 +930,6 @@ Bad:
 Good:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
-
 
 ### Keep `kbd` element as simple as possible
 
@@ -1012,7 +943,6 @@ Good:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### Avoid `span` element as much as possible
 
 `span` element is an element of last resort.
@@ -1024,7 +954,6 @@ Bad:
 Good:
 
     HTML <em>Best</em> Practices
-
 
 ### Break after `br` element
 
@@ -1039,7 +968,6 @@ Good:
     <p>HTML<br>
     Best<br>
     Practices</p>
-
 
 ### Don’t use `br` element only for presentational purpose
 
@@ -1057,9 +985,7 @@ Good:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-
 ## Edits
-
 
 ### Don’t stride `ins` and `del` element over other elements
 
@@ -1077,9 +1003,7 @@ Good:
 
     <del><p>Don’t trust!</p></del>
 
-
 ## Embedded content
-
 
 ### Provide fallback `img` element for `picture` element
 
@@ -1103,7 +1027,6 @@ Good:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### Add `alt` attrbute to `img` element if needed
 
 `alt` attribute helps those who cannot process images or have image loading
@@ -1117,7 +1040,6 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-
 ### Empty `alt` attribute if possible
 
 If the image is supplemental, there is equivalent content somewhere in the near.
@@ -1129,7 +1051,6 @@ Bad:
 Good:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### Omit `alt` attribute if possible
 
@@ -1144,7 +1065,6 @@ Good:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-
 ### Empty `iframe` element
 
 There is some restriction in its content. Being empty is always safe.
@@ -1158,7 +1078,6 @@ Bad:
 Good:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### Markup `map` element content
 
@@ -1188,7 +1107,6 @@ Good:
       </p>
     </map>
 
-
 ### Provide fallback content for `audio` or `video` element
 
 Fallback content is needed for newly introduced elements in HTML.
@@ -1210,9 +1128,7 @@ Good:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## Tabular data
-
 
 ### Write one cell per line
 
@@ -1231,7 +1147,6 @@ Good:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### Use `th` element for header cell
 
@@ -1285,9 +1200,7 @@ Good:
       </tbody>
     </table>
 
-
 ## Forms
-
 
 ### Wrap form control with `label` element
 
@@ -1301,7 +1214,6 @@ Good:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-
 ### Omit `for` attribute if possible
 
 `label` element can contain some form elements.
@@ -1314,7 +1226,6 @@ Good:
 
     <label>Query: <input name="q" type="text"></label>
 
-
 ### Use appropriate `type` attribute for `input` element
 
 With appropriate `type`, a browser gives tiny features to the `input` element.
@@ -1326,7 +1237,6 @@ Bad:
 Good:
 
     <label>Search keyword: <input name="q" type="search"></label>
-
 
 ### Add `value` attribute to `input type="submit"`
 
@@ -1341,7 +1251,6 @@ Good:
 
     <input type="submit" value="Search">
 
-
 ### Add `title` attribute to `input` element when there is `pattern` attribute
 
 If input text does not match to `pattern` attribute, the value of `title`
@@ -1355,7 +1264,6 @@ Good:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-
 ### Don’t use `placeholder` attribute for labeling
 
 `label` element is for a label, `placeholder` attribute is for a short hint.
@@ -1367,7 +1275,6 @@ Bad:
 Good:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-
 
 ### Write one `option` element per line
 
@@ -1387,7 +1294,6 @@ Good:
       <option label="Sections">
     </datalist>
 
-
 ### Add `max` attribute to `progress` element
 
 With `max` attribute, the `value` attribute can be written in an easy format.
@@ -1399,7 +1305,6 @@ Bad:
 Good:
 
     <progress max="100" value="50"> 50%</progress>
-
 
 ### Add `min` and `max` attribute to `meter` element
 
@@ -1413,7 +1318,6 @@ Bad:
 Good:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
-
 
 ### Place `legend` element as the first child of `fieldset` element
 
@@ -1435,9 +1339,7 @@ Good:
       ...
     </fieldset>
 
-
 ## Scripting
-
 
 ### Omit `type` attribute for JavaScript
 
@@ -1455,7 +1357,6 @@ Good:
     <script>
       ...
     </script>
-
 
 ### Don’t comment out contents of `script` element
 
@@ -1483,7 +1384,6 @@ Good:
       ...
     </script>
 
-
 ### Don’t use script-injected `script` element
 
 `async` attribute is the best for both simplicity and performance.
@@ -1501,9 +1401,7 @@ Good:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## Other
-
 
 ### Indent consistently
 
@@ -1531,7 +1429,6 @@ Good:
       </body>
     </html>
 
-
 ### Use absolute path for internal links
 
 An absolute path works better on your localhost without internet connection.
@@ -1548,7 +1445,6 @@ Good:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-
 ### Don’t use protocol-relative URL for external resources
 
 With protocol, you can load external resources reliably and safely.
@@ -1561,14 +1457,10 @@ Good:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u)
+- [@hail2u\_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
-
 
 ## Translators
 
@@ -1584,7 +1476,6 @@ Good:
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@wesleynepo](https://github.com/wesleynepo)
-
 
 ## License
 
