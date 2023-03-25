@@ -1,12 +1,10 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
 
 # Bune practici în HTML
 
 Pentru o scriere scalabilă și ușoară de întreținut în HTML
 
-
 ## Generalitați
-
 
 ### Începe cu DOCTYPE
 
@@ -25,7 +23,6 @@ Corect:
       ...
     </html>
 
-
 ### Nu folosiți expresii învechite DOCTYPE
 
 DOCTYPE nu mai este un DTD (Document Type Definition).
@@ -38,7 +35,6 @@ Greșit:
 Corect:
 
     <!DOCTYPE html>
-
 
 ### Nu folosiți declarații XML
 
@@ -53,7 +49,6 @@ Corect:
 
     <!DOCTYPE html>
 
-
 ### Nu folosiți caractere de referință
 
 Dacă scrii un document HTML în UTF-8, aproape toate caracterele (inclusiv
@@ -67,7 +62,6 @@ Corect:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
-
 ### Nu folosiți `&`, `<`, `>`, `"`, și `'`, folosiți caractere de referință
 
 Pentru evitarea erorilor în HTML, aceste caractere nu trebuie folosite.
@@ -79,7 +73,6 @@ Greșit:
 Corect:
 
     <h1>The &quot;&amp;&quot; character</h1>
-
 
 ### Folosiți caractere de referință numerice, pentru caracterele invizibile sau de control
 
@@ -94,11 +87,9 @@ Corect:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-
 ### Lasă spații libere înainte și după comenturi
 
 Unele caractere nu pot fi folosite imediat după începutul și sfârșitul comentului.
-
 
 Greșit:
 
@@ -107,7 +98,6 @@ Greșit:
 Corect:
 
     <!-- This section is non-normative -->
-
 
 ### Nu omiteți închiderea tag-ului
 
@@ -127,7 +117,6 @@ Corect:
       </body>
     </html>
 
-
 ### Păstrează același tip de format pentru elementele deschise
 
 Consistența este cheia lizibilității.
@@ -142,7 +131,6 @@ Corect:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
 ### Nu lăsa spații libere în jurul tag-urilor sau valorilor atributelor
 
 Nu există vreun motiv pentru a lăsa aceste spații.
@@ -155,9 +143,7 @@ Corect:
 
     <h1 class="title">HTML Best Practices</h1>
 
-
 ### Nu amesteca tipul de caractere
-
 
 Oferă consistență.
 
@@ -173,7 +159,6 @@ De asemenea corect, dar de preferat varianta de mai sus:
 
     <A HREF="#general">General</A>
 
-
 ### Nu amesteca semnele de apostrof
 
 La fel ca mai sus.
@@ -185,7 +170,6 @@ Greșit:
 Corect:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
-
 
 ### Nu despărții atributele prin două sau mai multe spații libere
 
@@ -199,7 +183,6 @@ Corect:
 
     <input name="q" type="search">
 
-
 ### Omite atributele cu valoare booleană
 
 Este mult mai ușor de scris.
@@ -211,7 +194,6 @@ Greșit:
 Corect:
 
     <audio autoplay src="/audio/theme.mp3">
-
 
 ### Omite "namespaces"
 
@@ -229,7 +211,6 @@ Corect:
       ...
     </svg>
 
-
 ### Nu folosiți atribute XML
 
 Scriem un document HTML.
@@ -241,7 +222,6 @@ Greșit:
 Corect:
 
     <span lang="ja">...</span>
-
 
 ### Nu amesteca atributele de tip `data-*`, `Microdata` și `RDFa Lite` cu atributele comune
 
@@ -255,7 +235,6 @@ Greșit:
 Corect:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
-
 
 ### Folosiți semantica implicită ARIA
 
@@ -277,9 +256,7 @@ Corect:
 
     <hr>
 
-
 ## Elementul `root`
-
 
 ### Adaugă atributul `lang`
 
@@ -293,7 +270,6 @@ Corect:
 
     <html lang="en-US">
 
-
 ### Folosiți valoarea cât mai scurtă a atributului `lang`
 
 Limba Japoneză este folosită doar în Japonia, de aceea codul țării nu este necesar.
@@ -305,7 +281,6 @@ Greșit:
 Corect:
 
     <html lang="ja">
-
 
 ### Evită pe cât de mult posibil atributele de tip `data-*`
 
@@ -323,9 +298,7 @@ Corect:
     ...
     <strong class="warning">Do not wash!</strong>
 
-
 ## Metadatele documentului
-
 
 ### Adaugă elementul `title`
 
@@ -343,7 +316,6 @@ Corect:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
-
 
 ### Nu folosiți elementul `base`
 
@@ -366,7 +338,6 @@ Corect:
       ...
     </head>
 
-
 ### Specifică atașamentelor, tipul de resursă `MIME` (Media Type)
 
 Acesta oferă un indiciu aplicației în a gestiona resursa.
@@ -383,7 +354,6 @@ Corect:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ### Nu face legatura cu `favicon.ico`
 
 Aproape toate browserele preiau `/favicon.ico` automat și asincron.
@@ -396,7 +366,6 @@ Corect:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-
 ### Adaugă `apple-touch-icon`
 
 Valoarea implicită a căii pentru `touch icon` a fost schimbată.
@@ -408,7 +377,6 @@ Greșit:
 Corect:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-
 
 ### Pentru stylesheet-uri alternative, adaugă atributul `title`
 
@@ -423,7 +391,6 @@ Corect:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
-
 
 ### Pentru URL-uri, folosiți elementul `link`
 
@@ -443,7 +410,6 @@ Corect:
       ...
     </section>
 
-
 ### Specifică tipul de codificare a caracterelor
 
 UTF-8 nu este încă folosit ca valoare inițială de toate browserele.
@@ -461,7 +427,6 @@ Corect:
       <title>HTML Best Practices</title>
     </head>
 
-
 ### Nu folosiți formate învechite de codificare a caracterelor
 
 Header-ul HTTP ar trebui specificat de un server.
@@ -474,12 +439,10 @@ Corect:
 
     <meta charset="UTF-8">
 
-
 ### Declarați mai intăi tipul de codificare al caracterlor
 
 Conform specificațiilor este necesară declararea tipului de codificare a caracterelor în primi
 1024 biți ai documentului.
-
 
 Greșit:
 
@@ -496,7 +459,6 @@ Corect:
       <meta content="width=device-width" name="viewport">
       ...
     </head>
-
 
 ### Folosiți UTF-8
 
@@ -509,7 +471,6 @@ Greșit:
 Corect:
 
     <meta charset="UTF-8">
-
 
 ### Omite atributul `type` pentru CSS
 
@@ -526,7 +487,6 @@ Corect:
     <style>
       ...
     </style>
-
 
 ### Nu comentați conținutul elementului „style”.
 
@@ -545,7 +505,6 @@ Corect:
     <style>
       ...
     </style>
-
 
 ### Nu amesteca tag-urile de CSS cu cele de Javascript
 
@@ -569,9 +528,7 @@ De asemenea corect:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ## Secțiuni
-
 
 ### Adaugă elementul `body`
 
@@ -597,8 +554,7 @@ Corect:
       </body>
     </html>
 
-
-###  Nu folosiți elementul `hgroup`
+### Nu folosiți elementul `hgroup`
 
 Acest element nu se mai folosește.
 
@@ -614,7 +570,6 @@ Corect:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-
 ### Folosiți elementul `address` doar pentru informațiile de contact
 
 Elementul `address` se folosește doar pentru adresa de e-mail, conturile sociale,
@@ -628,9 +583,7 @@ Corect:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-
 ## Gruparea conținutului
-
 
 ### Nu începe cu un rând gol în elementul `pre`
 
@@ -647,7 +600,6 @@ Corect:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
-
 ### Folosiți elemente corespunzătoare în interiorul elementului `blockquote`
 
 Conținutul elementului `blockquote` este un citat, nu un grup de caractere.
@@ -661,7 +613,6 @@ Corect:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-
 
 ### Nu includeți atribuirea, direct în elementul `blockquote`
 
@@ -693,7 +644,6 @@ De asemenea corect:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-
 ### Declară doar un obiect (item) din listă per rând
 
 Rândurile luuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuungi
@@ -713,7 +663,6 @@ Corect:
       <li>Sections</li>
       ...
     </ul>
-
 
 ### Pentru elementel `ol` folosiți atributul `type`
 
@@ -749,7 +698,6 @@ Corect:
       </ol>
     </body>
 
-
 ### Nu folosiți `dl` pentru dialoguri
 
 Elementul `dl` este folosit în HTML doar pentru asocierea listelor.
@@ -782,11 +730,9 @@ Corect:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-
 ### Declară elementul `figcaption` ca fiind primul sau ultimul descendent din elementul `figure`
 
 Specificațiile interzic folosirea elementului `figcaption` în mijlocul elementului `figure`.
-
 
 Greșit:
 
@@ -803,7 +749,6 @@ Corect:
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
-
 
 ### Folosiți elementul `main`
 
@@ -821,11 +766,9 @@ Corect:
       ...
     </main>
 
-
 ### Evitați cât mai mult posibil elementul `div`
 
 Elementul `div` este un element de ultimă instanță.
-
 
 Greșit:
 
@@ -839,9 +782,7 @@ Corect:
       ...
     </section>
 
-
 ## Semantică la nivel de text
-
 
 ### Nu împărți același link dacă se poate grupa
 
@@ -862,7 +803,6 @@ Corect:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-
 ### Folosiți atributul `download` pentru a descărca o resursă
 
 Va forța browserul să descarce resursa în locația dorită.
@@ -875,8 +815,7 @@ Corect:
 
     <a download href="/downloads/offline.zip">offline version</a>
 
-
-### Folosiți atributele `rel`, `hreflang` și `type`  dacă este necesar
+### Folosiți atributele `rel`, `hreflang` și `type` dacă este necesar
 
 Aceste indicii ajută aplicațiile să gestioneze resursele.
 
@@ -887,7 +826,6 @@ Greșit:
 Corect:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
-
 
 ### Textul link-ului trebuie să fie concis / clar
 
@@ -901,11 +839,9 @@ Corect:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
 
-
 ### Nu folosiți elementul `em` pentru avertizare sau atenționare
 
 În acest caz elementul `strong` este mult mai potrivit.
-
 
 Greșit:
 
@@ -914,7 +850,6 @@ Greșit:
 Corect:
 
     <strong>Caution!</strong>
-
 
 ### Evită folosirea elementelor `s`, `i`, `b` și `u` pe cât posibil
 
@@ -927,7 +862,6 @@ Greșit:
 Corect:
 
     <span class="icon-search" aria-hidden="true"></span>
-
 
 ### Nu cita elementul `q`
 
@@ -944,7 +878,6 @@ Corect:
 De asemenea corect:
 
     “For writing maintainable and scalable HTML documents”
-
 
 ### Adăugați elementului `abbr` atributul `title`
 
@@ -970,9 +903,7 @@ Corect:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-
 ### Adăugați elementului `time` atributul `datetime`
-
 
 Dacă atributul `datetime` nu este prezent, accestul la formatul elementului `time`
 este restricționat.
@@ -984,7 +915,6 @@ Greșit:
 Corect:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
-
 
 ### Specificați limbajul codului cu atributul `class` având ca prefix `language-`
 
@@ -998,7 +928,6 @@ Corect:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-
 ### Păstrați elementul `kbd` cât mai simplu posibil
 
 Nestarea multiplă a acestuia îngreunează citirea.
@@ -1011,7 +940,6 @@ Good:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### Evitați cât mai mult posibil elementul `span`
 
 Elementul `span` este un element de ultimă instanță.
@@ -1023,7 +951,6 @@ Greșit:
 Corect:
 
     HTML <em>Best</em> Practices
-
 
 ### Rând nou după elementul `br`
 
@@ -1038,7 +965,6 @@ Good:
     <p>HTML<br>
     Best<br>
     Practices</p>
-
 
 ### Nu utilizați elementul `br` doar în scop de prezentare
 
@@ -1055,7 +981,6 @@ Corect:
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
-
 
 ## Editări
 
@@ -1075,9 +1000,7 @@ Corect:
 
     <del><p>Don’t trust!</p></del>
 
-
 ## Conținut `Embedded`
-
 
 ### Pentru elementul `picture` furnizați întotdeauna ca element de rezervă `img`
 
@@ -1101,7 +1024,6 @@ Corect:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### Adăugați atributul `alt` la elementul `img` dacă este necesar
 
 Atributul `alt` oferă informații text adiționale în caz ca imaginile nu pot fi accesate
@@ -1115,7 +1037,6 @@ Corect:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-
 ### Omite conținutul atributului `alt` atunci când este cazul
 
 Dacă imaginea este suplimentară și există conținut echivalent undeva în apropiere.
@@ -1127,7 +1048,6 @@ Greșit:
 Corect:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### Omite atributul `alt` dacă este posibil
 
@@ -1142,7 +1062,6 @@ Corect:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-
 ### Elementul `iframe` deschis
 
 Există anumite restricții în conținutul său. A fi gol este întotdeauna în siguranță.
@@ -1156,7 +1075,6 @@ Greșit:
 Corect:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### Marcați conținutul elementului `map`.
 
@@ -1186,7 +1104,6 @@ Corect:
       </p>
     </map>
 
-
 ### Furnizați conținut alternativ pentru elementul `audio` sau `video`
 
 Conținutul de rezervă este necesar pentru noile elementele introduse în HTML.
@@ -1208,9 +1125,7 @@ Corect:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## Date tabulare
-
 
 ### Scrieți doar câte o celulă a tabelului pe fiecare rând
 
@@ -1229,7 +1144,6 @@ Corect:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### Utilizați elementul `th` pentru antetul celulei
 
@@ -1283,7 +1197,6 @@ Corect:
       </tbody>
     </table>
 
-
 ## Form
 
 ### Înfășoară `form control` cu elementul `label`
@@ -1298,7 +1211,6 @@ Corect:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-
 ### Omite atributul `for` dacă este posibil
 
 Elementul `label` poate conține un tip de formă.
@@ -1311,7 +1223,6 @@ Corect:
 
     <label>Query: <input name="q" type="text"></label>
 
-
 ### Utilizați atributul `type` adecvat pentru elementul `input`
 
 Prin folosirea atributului `type` adecvat, browserul ofera niște caracteristici elementului `input`
@@ -1323,7 +1234,6 @@ Greșit:
 Corect:
 
     <label>Search keyword: <input name="q" type="search"></label>
-
 
 ### Adăugați atributul `value` la `input type="submit"`
 
@@ -1338,7 +1248,6 @@ Corect:
 
     <input type="submit" value="Search">
 
-
 ### Adăugați atributul `title` la elementul `input` atunci când există atributul `pattern`
 
 Dacă textul introdus nu se potrivește cu atributul `pattern`, valoarea atributului `title`
@@ -1352,7 +1261,6 @@ Corect:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-
 ### Nu folosiți atributul `placeholder` pentru etichetare
 
 Elementul `label` este folosit pentru etichetare, iar elementul `placeholder` este folosit drept scurt indiciu.
@@ -1365,11 +1273,9 @@ Corect:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
-
 ### Scrieți câte un element `option` per rând.
 
 Rândurile lungi sunt greu de scanat.
-
 
 Greșit:
 
@@ -1385,7 +1291,6 @@ Corect:
       <option label="Sections">
     </datalist>
 
-
 ### Adăugați atributul `max` la elementul `progress`
 
 Cu atributul `max`, atributul `value` poate fi scris într-un format simplu.
@@ -1398,11 +1303,9 @@ Corect:
 
     <progress max="100" value="50"> 50%</progress>
 
-
 ### Adăugați atributele `min` și `max` la elementul `meter`
 
 Cu atributele `min` și `max`, atributul `value` poate fi scris într-un format ușor.
-
 
 Greșit:
 
@@ -1411,7 +1314,6 @@ Greșit:
 Corect:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
-
 
 ### Plasați elementul `legend` ca prim descendent al elementului `fieldset`
 
@@ -1433,9 +1335,7 @@ Corect:
       ...
     </fieldset>
 
-
 ## Scriptare
-
 
 ### Omite atributul `type` pentru Javascript
 
@@ -1452,7 +1352,6 @@ Corect:
     <script>
       ...
     </script>
-
 
 ### Nu comentați conținutul elementului `script`
 
@@ -1480,7 +1379,6 @@ Corect:
       ...
     </script>
 
-
 ### Nu folosi "script-injected" în elementul `script`
 
 Atributul `async` este cel mai bun atât pentru simplitate, cât și pentru performanță.
@@ -1498,9 +1396,7 @@ Corect:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## Alte
-
 
 ### Indentează în mod constant
 
@@ -1509,9 +1405,9 @@ Indentarea este importantă pentru lizibilitate.
 Greșit:
 
     <html>
-	<head>
-	  ...
-	</head>
+    <head>
+      ...
+    </head>
       <body>
         ...
       </body>
@@ -1527,7 +1423,6 @@ Corect:
         ...
       </body>
     </html>
-
 
 ### Pentru linkurile interne folosiți căi absolute
 
@@ -1545,9 +1440,7 @@ Corect:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-
-###  Nu folosiți adrese protocol relative URL pentru resurse externe
-
+### Nu folosiți adrese protocol relative URL pentru resurse externe
 
 Prin protocol puteți încărca resurse externe în mod fiabil și în siguranță.
 
@@ -1559,33 +1452,29 @@ Corect:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## Contribuitori
 
-- [@hail2u_](https://github.com/hail2u)
-- [@momdo](https://github.com/momdo)
-
+-  [@hail2u\_](https://github.com/hail2u)
+-  [@momdo](https://github.com/momdo)
 
 ## Traducători
 
-- [@costinlotreanu](https://github.com/costinlotreanu)
-- [@edgar-avila](https://github.com/edgar-avila)
-- [@kobyborali](https://github.com/kobyborali)
-- [@m1nhnv](https://github.com/m1nhnv)
-- [@mrcaidev](https://github.com/mrcaidev)
-- [@naufalk25](https://github.com/naufalk25)
-- [@oebelus](https://github.com/oebelus)
-- [@sahilmaniyar](https://github.com/sahilmaniyar)
-- [@sliderkh](https://github.com/sliderkh)
-- [@stenbaek](https://github.com/stenbaek)
-- [@techhtml](https://github.com/techhtml)
-- [@umutphp](https://github.com/umutphp)
-- [@victorchao996](https://github.com/victorchao996)
-- [@wesleynepo](https://github.com/wesleynepo)
-- [@zulkar29](https://github.com/zulkar29)
-
+-  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
+-  [@costinlotreanu](https://github.com/costinlotreanu)
+-  [@edgar-avila](https://github.com/edgar-avila)
+-  [@kobyborali](https://github.com/kobyborali)
+-  [@m1nhnv](https://github.com/m1nhnv)
+-  [@mrcaidev](https://github.com/mrcaidev)
+-  [@naufalk25](https://github.com/naufalk25)
+-  [@oebelus](https://github.com/oebelus)
+-  [@sahilmaniyar](https://github.com/sahilmaniyar)
+-  [@sliderkh](https://github.com/sliderkh)
+-  [@stenbaek](https://github.com/stenbaek)
+-  [@techhtml](https://github.com/techhtml)
+-  [@umutphp](https://github.com/umutphp)
+-  [@victorchao996](https://github.com/victorchao996)
+-  [@wesleynepo](https://github.com/wesleynepo)
+-  [@zulkar29](https://github.com/zulkar29)
 
 ## Licență
 

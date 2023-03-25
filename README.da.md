@@ -1,12 +1,10 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
 
 # HTML Best Practices
 
 For writing maintainable and scalable HTML documents
 
-
 ## General
-
 
 ### Start with DOCTYPE
 
@@ -25,7 +23,6 @@ Godt:
       ...
     </html>
 
-
 ### Undgå forældet DOCTYPE
 
 DOCTYPE bruges ikke længere til DTD. Gør det simpelt!
@@ -38,7 +35,6 @@ Dårligt:
 Godt:
 
     <!DOCTYPE html>
-
 
 ### Undgå at deklarere XML Declaration
 
@@ -53,7 +49,6 @@ Godt:
 
     <!DOCTYPE html>
 
-
 ### Undgå for så vidt muligt at referere til karakterer med HTML
 
 Hvis du skriver et HTML dokument med UTF-8 encoding, vil næsten alle karakterer (Emojis inkluderet) kunne anvendes direkte
@@ -65,7 +60,6 @@ Dårligt:
 Godt:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
-
 
 ### Escape `&`, `<`, `>`, `"`, og `'` med navngivne referencer til karakterer
 
@@ -79,7 +73,6 @@ Godt:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-
 ### Anvend numeriske karakterreferencer til kontrol- eller "usynlige" karakterer
 
 Disse karakterer er ofte nemt forvekslet med andre karakterer. Endvidere, HTML specifikationen garanterer ikke en menneskevenlig definition for disse karakterer
@@ -92,7 +85,6 @@ Godt:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-
 ### Tilføj mellemrum før og efter kommentarindhold
 
 Nogle karakterer kan ikke anvendes som første og sidste karakter i en HTML kommentar.
@@ -104,7 +96,6 @@ Dårligt:
 Godt:
 
     <!-- This section is non-normative -->
-
 
 ### Husk at lukke ethvert HTML-element med et "lukke-tag"
 
@@ -124,7 +115,6 @@ Godt:
       </body>
     </html>
 
-
 ### Husk at lukke "tomme" HTML-elementer
 
 Sikrer læsbarhed.
@@ -139,7 +129,6 @@ Godt:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
 ### Undgå overflødige mellemrum i HTML-elementers tags og værdier
 
 Det er der ikke nogen grund til.
@@ -151,7 +140,6 @@ Dårligt:
 Godt:
 
     <h1 class="title">HTML Best Practices</h1>
-
 
 ### Undgå at blande store og små bogstaver
 
@@ -169,7 +157,6 @@ OgsågGodt:
 
     <A HREF="#general">General</A>
 
-
 ### Undgå at blande typer af anførselstegn
 
 Samme som ovenfor
@@ -182,7 +169,6 @@ Godt:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
-
 ### Undgå at separere attributter med to eller flere mellemrum
 
 Dårligt:
@@ -192,7 +178,6 @@ Dårligt:
 Godt:
 
     <input name="q" type="search">
-
 
 ### Undlad booleansk attributværdier
 
@@ -205,7 +190,6 @@ Dårligt:
 Godt:
 
     <audio autoplay src="/audio/theme.mp3">
-
 
 ### Undlad namespaces
 
@@ -223,7 +207,6 @@ Godt:
       ...
     </svg>
 
-
 ### Undgå at bruge XML-attributter
 
 Det er HTML vi skriver!
@@ -236,7 +219,6 @@ Godt:
 
     <span lang="ja">...</span>
 
-
 ### Undgå at blande `data-*`, Microdata og RDFa Lite attributter med gængse attributter
 
 for at sikre læsbarhed, bør de ovennævnte attribut-typer grupperes for sig.
@@ -248,7 +230,6 @@ Dårligt:
 Godt:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
-
 
 ### Foretræk at anvende den implicitte standard-semantik
 
@@ -270,9 +251,7 @@ Godt:
 
     <hr>
 
-
 ## root-elementet
-
 
 ### Tilføj `lang`-attribut
 
@@ -286,7 +265,6 @@ Godt:
 
     <html lang="da-DK">
 
-
 ### Hold `lang` attributten så kort som mulig
 
 Dansk er ofte kun brugt i Danmark. Landekoden er derfor ikke nødvendig.
@@ -298,7 +276,6 @@ Dårligt:
 Godt:
 
     <html lang="da">
-
 
 ### Undgå `data-*` attributter i videst muligt omfang
 
@@ -316,9 +293,7 @@ Godt:
     ...
     <strong class="warning">Do not wash!</strong>
 
-
 ## Document metadata
-
 
 ### Tilføj `title`-element
 
@@ -336,7 +311,6 @@ Godt:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
-
 
 ### Undgå `base`-element
 
@@ -359,7 +333,6 @@ Godt:
       ...
     </head>
 
-
 ### Specificer MIME-type af linket indhold
 
 Dette giver applikationen eller browser et hint om hvad det linkede indholds type er
@@ -376,7 +349,6 @@ Godt:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ### Undgå at linke til `favicon.ico`
 
 Stortset alle browsere henter automatisk `/favicon.ico` asynkront.
@@ -389,7 +361,6 @@ Godt:
 
     <!-- Placer `favicon.ico` i serverens rod. -->
 
-
 ### Tilføj [`apple-touch-icon`](https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/) link
 
 Standard-stien for request af touch icon blev ændret efter iOS 8, og Safari henter ikke automatisk fra den gamle standard-sti i roden af et website.
@@ -401,7 +372,6 @@ Dårligt:
 Godt:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-
 
 ### Tilføj `title`-attribut til alternative stylesheets
 
@@ -416,7 +386,6 @@ Godt:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
-
 
 ### For en URL, anvend `link`-element
 
@@ -436,7 +405,6 @@ Godt:
       ...
     </section>
 
-
 ### Specificer et dokuments character encoding
 
 UTF-8 er ikke standarden i alle browsere (endnu).
@@ -454,7 +422,6 @@ Godt:
       <title>HTML Best Practices</title>
     </head>
 
-
 ### Undgå at ancende forældede character encoding formater
 
 HTTP-headers bør specificeres af serveren.
@@ -466,7 +433,6 @@ Dårligt:
 Godt:
 
     <meta charset="UTF-8">
-
 
 ### Specificer character encoding som det første
 
@@ -488,7 +454,6 @@ Godt:
       ...
     </head>
 
-
 ### Brug UTF-8 😎
 
 Med UTF-8, kan du frit bruge emojis.
@@ -500,7 +465,6 @@ Dårligt:
 Godt:
 
     <meta charset="UTF-8">
-
 
 ### Undlad unødvendig `type`-attribut for CSS
 
@@ -517,7 +481,6 @@ Godt:
     <style>
       ...
     </style>
-
 
 ### Undlad at udkommentere `style` element
 
@@ -536,7 +499,6 @@ Godt:
     <style>
       ...
     </style>
-
 
 ### Undlad at blande tags for CSS og JavaScript
 
@@ -560,9 +522,7 @@ Også Godt:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ## Sections
-
 
 ### Tilføj `body` element
 
@@ -588,7 +548,6 @@ Godt:
       </body>
     </html>
 
-
 ### Glem alt om `hgroup`-elementet
 
 Dette element bruges ikke særlig ofte.
@@ -605,7 +564,6 @@ Godt:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-
 ### Brug kun `address`-elementet til kontaktinformation
 
 `address`-element er til email-adresser, social media konti, fysisk addresse, telefonnummer eller noget der kan bruges til at kontakte med
@@ -618,9 +576,7 @@ Godt:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-
 ## Indholdsgruppering
-
 
 ### Undlad at starte ned et linjeskift (newline) i et `pre`-element
 
@@ -637,7 +593,6 @@ Godt:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
-
 ### Brug passende element i et `blockquote` element
 
 `blockquote`-elementers indhold forventes at være et citat. Ikke blot en bunke karakterer.
@@ -651,7 +606,6 @@ Godt:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-
 
 ### Undlad at inkludere citatets ophavsperson direkte i `blockquote` element
 
@@ -683,7 +637,6 @@ Også Godt:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-
 ### Skriv elementer i en liste på hver sin linje
 
 Laaaaaaaaaaaaaaaaaaaaaaaaaaaaaannnnnnnnnnnnnnnnnnnnge
@@ -703,7 +656,6 @@ Godt:
       <li>Sections</li>
       ...
     </ul>
-
 
 ### Brug `type`-attribut for `ol`-elementer
 
@@ -738,7 +690,6 @@ Godt:
       </ol>
     </body>
 
-
 ### Undgå at bruge `dl` til dialog
 
 `dl`-element er begrænset til association list i HTML.
@@ -771,7 +722,6 @@ Godt:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-
 ### Placer `figcaption` element som det første eller sidste child af et `figure` element
 
 HTML specifikationen foryder at placere `figcaption`inden i et `figure` element.
@@ -792,7 +742,6 @@ Godt:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-
 ### Brug `main` element
 
 `main` elementet ckan bruges til at omslutte det generelle indhold.
@@ -808,7 +757,6 @@ Godt:
     <main>
       ...
     </main>
-
 
 ### Undgå `div` element i videst muligt omfang
 
@@ -826,9 +774,7 @@ Godt:
       ...
     </section>
 
-
 ## Text-level semantik
-
 
 ### Undgå at splitte det samme link som kan grupperes
 
@@ -848,7 +794,6 @@ Godt:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-
 ### Brug `download`-attribut hvis der kan downloades en resource
 
 Det tvinger browseren til at downloade en linked sti til enhedens lager
@@ -860,7 +805,6 @@ Dårligt:
 Godt:
 
     <a download href="/downloads/offline.zip">offline version</a>
-
 
 ### Brug `rel`, `hreflang`, og `type` attributter hvis nødvendigt
 
@@ -874,7 +818,6 @@ Godt:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
-
 ### Link tekst skal være til at gennemskue
 
 Label til et link bør beskrive hvad der linkes til.
@@ -886,7 +829,6 @@ Dårligt:
 Godt:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
-
 
 ### Undgå at bruge `em` elementer til en advarsel
 
@@ -900,7 +842,6 @@ Godt:
 
     <strong>Caution!</strong>
 
-
 ### Undgå `s`, `i`, `b`, and `u` elementer i videst muligt omfang
 
 disse elementers semantik er for vanskelige at læse for mennesker (udviklere)
@@ -912,7 +853,6 @@ Dårligt:
 Godt:
 
     <span class="icon-search" aria-hidden="true"></span>
-
 
 ### Undlad at tilføje anførselstegn til et `q` element
 
@@ -930,7 +870,6 @@ Også Godt:
 
     “For writing maintainable and scalable HTML documents”
 
-
 ### tilføj `title` attribut til `abbr` element
 
 Der er ikke nogen anden måde at repræsentere dens udvidelse
@@ -942,7 +881,6 @@ Dårligt:
 Godt:
 
     <abbr title="HTML Best Practices">HBP</abbr>
-
 
 ### Skriv `ruby` element helt ud
 
@@ -956,7 +894,6 @@ Godt:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-
 ### Tilføj `datetime` attribut to ikke-maskin-læseligt `time` element
 
 når `datetime` attribut ikke eksisterer, er formatet af `time` elementets indhold begrænset
@@ -968,7 +905,6 @@ Dårligt:
 Godt:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
-
 
 ### Udspecificer kodesprog med `class` attribut, anført med `language-`
 
@@ -982,7 +918,6 @@ Godt:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-
 ### Hold `kbd` element så simpelt som muligt
 
 Indlejring af `kbd` elementer i rekursive niveauer er for svært for mennesker at læse
@@ -995,7 +930,6 @@ Godt:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### Undgå `span` elementet i videst muligt omfang
 
 `span` element er en sidste udvej.
@@ -1007,7 +941,6 @@ Dårligt:
 Godt:
 
     HTML <em>Best</em> Practices
-
 
 ### Linjeskift efter `br` element
 
@@ -1022,7 +955,6 @@ Godt:
     <p>HTML<br/>
     Best<br/>
     Practices</p>
-
 
 ### Brug ikke `br` element kun af præsentationsmæssige årsager
 
@@ -1040,9 +972,7 @@ Godt:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-
 ## Redaktionelle overvejelser
-
 
 ### Undlad `ins` og `del` elementer på tværs af andre elementer
 
@@ -1060,9 +990,7 @@ Godt:
 
     <del><p>Don’t trust!</p></del>
 
-
 ## Embedded (indlejret) indhold
-
 
 ### Angiv et `img` element der kan faldes tilbage på for `picture` element
 
@@ -1086,7 +1014,6 @@ Godt:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### Tilføj `alt` attribut til `img` element hvis nødvendigt
 
 `alt` attribut helps those who cannot process images or have image loading disabled.
@@ -1100,7 +1027,6 @@ Godt:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-
 ### Undgå overflødig `alt` attribut
 
 Hvis billedet blot supplementerer indholdet, kan ekvivalent indhold findes i nærdheden af billedet. Anvendes fx for screenreaders af tilgængelighedshensyn (synshandicap.)
@@ -1112,7 +1038,6 @@ Dårligt:
 Godt:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### Undgå `alt` attribut hvis muligt
 
@@ -1127,7 +1052,6 @@ Godt:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (Hvis du ikke kan se billedet, kan du bruge en <a href="?audio">audio</a> test istedet.)
 
-
 ### tomt `iframe` element
 
 Der er nogle begrænsninger i indholdet af en `iframe`. Det er altid sikkert at lade denne være tom.
@@ -1141,7 +1065,6 @@ Dårligt:
 Godt:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### Opmærk indhold i `map` element
 
@@ -1171,7 +1094,6 @@ Godt:
       </p>
     </map>
 
-
 ### Angiv indhold at falde tilbage på for `audio` og `video` elementer
 
 Indhold der kan faldes tilbage på sikrer bagudkompatibilitet for indholdstyper der for nyligt er tilføjet til HTML.
@@ -1193,9 +1115,7 @@ Godt:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## Data på tabelform
-
 
 ### Skriv en celle per linje
 
@@ -1214,7 +1134,6 @@ Godt:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### Brug `th` elementet til et beskrivende tebelhoved
 
@@ -1268,9 +1187,7 @@ Godt:
       </tbody>
     </table>
 
-
 ## Formularer
-
 
 ### Omkrans form controls med `label` element
 
@@ -1284,7 +1201,6 @@ Godt:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-
 ### Undlad `for` attribut hvis muligt
 
 `label` element can contain some form elements.
@@ -1296,7 +1212,6 @@ Dårligt:
 Godt:
 
     <label>Query: <input name="q" type="text"></label>
-
 
 ### Brug passende `type` attribut til `input` element
 
@@ -1310,7 +1225,6 @@ Godt:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
-
 ### Tilføj `value` attribut til `input type="submit"`
 
 Standardlabel for en submit-knap er ikke standardiseret på tværs af browsere og sprog.
@@ -1322,7 +1236,6 @@ Dårligt:
 Godt:
 
     <input type="submit" value="Søg">
-
 
 ### tilføj `title` attribut til `input` element når der er en `pattern` attribut
 
@@ -1336,7 +1249,6 @@ Godt:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-
 ### Undlad at bruge `placeholder` attribut som etiket
 
 `label` element anvendes til etiketter, `placeholder` attribut er til et kort hint.
@@ -1348,7 +1260,6 @@ Dårligt:
 Godt:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-
 
 ### Skriv én `option` element per line
 
@@ -1368,7 +1279,6 @@ Godt:
       <option label="Sections">
     </datalist>
 
-
 ### Tilføj `max` attribut til `progress` element
 
 Med `max` attribut, kan `value` attributten blive skrevet i et nemt og mere passende format.
@@ -1381,7 +1291,6 @@ Godt:
 
     <progress max="100" value="50"> 50%</progress>
 
-
 ### Tilføj `min` and `max` attribut til `meter` element
 
 Med `min` and `max` attributterne, kan `value` attributterne blive skrevet i et nemt og mere passende format.
@@ -1393,7 +1302,6 @@ Dårligt:
 Godt:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
-
 
 ### Placer `legend` element som det første element af et `fieldset` element
 
@@ -1413,9 +1321,7 @@ Godt:
       ...
     </fieldset>
 
-
 ## Scripting
-
 
 ### Undlad `type` attribut for JavaScript
 
@@ -1433,7 +1339,6 @@ Godt:
     <script>
       ...
     </script>
-
 
 ### Undlad at udkommentere indhold af et `script` element
 
@@ -1461,8 +1366,8 @@ Godt:
       ...
     </script>
 
-
 ### Don’t use script-injected `script` element
+
 ### Undlad at bruge script-injected `script` element
 
 `async` attribut er det bedste for både simplicitet of performance.
@@ -1480,9 +1385,7 @@ Godt:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## Other
-
 
 ### Konsistens med indentering
 
@@ -1510,7 +1413,6 @@ Godt:
       </body>
     </html>
 
-
 ### Anvend absolut sti til interne links
 
 En absolut sti virker bedre på en lokal maskine uden internetforbindelse.
@@ -1527,7 +1429,6 @@ Godt:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-
 ### Undlad at anvende protokol-relative URL til eksterne resurser
 
 Med den korrekte protokol kan man loade eksterne resurser pålideligt og sikkert.
@@ -1540,33 +1441,29 @@ Godt:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## Contributors
 
-- [@hail2u_](https://github.com/hail2u)
-- [@momdo](https://github.com/momdo)
-
+-  [@hail2u\_](https://github.com/hail2u)
+-  [@momdo](https://github.com/momdo)
 
 ## Translators
 
-- [@costinlotreanu](https://github.com/costinlotreanu)
-- [@edgar-avila](https://github.com/edgar-avila)
-- [@kobyborali](https://github.com/kobyborali)
-- [@m1nhnv](https://github.com/m1nhnv)
-- [@mrcaidev](https://github.com/mrcaidev)
-- [@naufalk25](https://github.com/naufalk25)
-- [@oebelus](https://github.com/oebelus)
-- [@sahilmaniyar](https://github.com/sahilmaniyar)
-- [@sliderkh](https://github.com/sliderkh)
-- [@stenbaek](https://github.com/stenbaek)
-- [@techhtml](https://github.com/techhtml)
-- [@umutphp](https://github.com/umutphp)
-- [@victorchao996](https://github.com/victorchao996)
-- [@wesleynepo](https://github.com/wesleynepo)
-- [@zulkar29](https://github.com/zulkar29)
-
+-  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
+-  [@costinlotreanu](https://github.com/costinlotreanu)
+-  [@edgar-avila](https://github.com/edgar-avila)
+-  [@kobyborali](https://github.com/kobyborali)
+-  [@m1nhnv](https://github.com/m1nhnv)
+-  [@mrcaidev](https://github.com/mrcaidev)
+-  [@naufalk25](https://github.com/naufalk25)
+-  [@oebelus](https://github.com/oebelus)
+-  [@sahilmaniyar](https://github.com/sahilmaniyar)
+-  [@sliderkh](https://github.com/sliderkh)
+-  [@stenbaek](https://github.com/stenbaek)
+-  [@techhtml](https://github.com/techhtml)
+-  [@umutphp](https://github.com/umutphp)
+-  [@victorchao996](https://github.com/victorchao996)
+-  [@wesleynepo](https://github.com/wesleynepo)
+-  [@zulkar29](https://github.com/zulkar29)
 
 ## License
 

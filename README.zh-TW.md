@@ -1,16 +1,14 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
 
 # HTML 最佳實務
 
-編寫易於維護與擴充的HTML檔案。
-
+編寫易於維護與擴充的 HTML 檔案。
 
 ## 全局(一般)
 
-
 ### 以 DOCTYPE 為開頭
 
-使用DOCTYPE來觸發標準模式(no-quirks mode)。
+使用 DOCTYPE 來觸發標準模式(no-quirks mode)。
 
 Bad:
 
@@ -25,10 +23,9 @@ Good:
       ...
     </html>
 
-
 ### 不使用過時的 DOCTYPE
 
-DOCTYPE 不在需要引用DTD，簡單明瞭。
+DOCTYPE 不在需要引用 DTD，簡單明瞭。
 
 Bad:
 
@@ -38,7 +35,6 @@ Bad:
 Good:
 
     <!DOCTYPE html>
-
 
 ### 不要使用 XML 來宣告
 
@@ -53,7 +49,6 @@ Good:
 
     <!DOCTYPE html>
 
-
 ### 不要什麼字元都寫成參考的形式(character reference)
 
 如果你使用 UTF- 8 來編寫 HTML 檔案，幾乎所有字元(包括表情符號)都能直接寫。
@@ -65,7 +60,6 @@ Bad:
 Good:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
-
 
 ### 將 `&`、`<`、`>`、`"` 和 `'` 字元寫成參考的形式
 
@@ -79,7 +73,6 @@ Good:
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-
 ### 使用字元值參照(Numeric character reference)來控制或隱藏字元
 
 這些字元很容易被誤認為是其他字元，並且規範也不保證這些字元有定義好人類可讀的名稱。
@@ -92,7 +85,6 @@ Good:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
-
 ### 在註解內容周圍增加空白
 
 某寫字元沒有辦法緊接在註解開始或結束的位置上。
@@ -104,7 +96,6 @@ Bad:
 Good:
 
     <!-- This section is non-normative -->
-
 
 ### 不要省略結束標籤(closing tag)
 
@@ -124,7 +115,6 @@ Good:
       </body>
     </html>
 
-
 ### 不要混用置空元素(empty element)的格式
 
 遵循一致的規範能增加可讀性。
@@ -139,7 +129,6 @@ Good:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
-
 ### 不要再標籤和屬性值周圍增加空格
 
 你沒有理由做這件事。
@@ -151,7 +140,6 @@ Bad:
 Good:
 
     <h1 class="title">HTML Best Practices</h1>
-
 
 ### 不要混用大小寫
 
@@ -169,7 +157,6 @@ Also Good:
 
     <A HREF="#general">General</A>
 
-
 ### 不要混用單雙引號
 
 同上。
@@ -181,7 +168,6 @@ Bad:
 Good:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
-
 
 ### 不要用多个空格間格屬性
 
@@ -195,7 +181,6 @@ Good:
 
     <input name="q" type="search">
 
-
 ### 省略布林值
 
 這樣寫更簡便，對吧?
@@ -207,7 +192,6 @@ Bad:
 Good:
 
     <audio autoplay src="/audio/theme.mp3">
-
 
 ### 省略命名空間
 
@@ -225,7 +209,6 @@ Good:
       ...
     </svg>
 
-
 ### 不要使用 XML 屬性
 
 我們在寫 HTML 檔案。
@@ -238,7 +221,6 @@ Good:
 
     <span lang="ja">...</span>
 
-
 ### 别把 `data-*`、Microdata、RDFa Lite 屬性與普通屬性混在一起
 
 整串標籤可以變得很複雜。這條簡單的規則有助於閱讀。
@@ -250,7 +232,6 @@ Bad:
 Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
-
 
 ### 優先選則預設的 ARIA 語意
 
@@ -272,9 +253,7 @@ Good:
 
     <hr>
 
-
 ## 根元素
-
 
 ### 加入 `lang` 屬性
 
@@ -288,8 +267,7 @@ Good:
 
     <html lang="en-US">
 
-
-### 盡量讓 `lang` 屬性值為最短 
+### 盡量讓 `lang` 屬性值為最短
 
 日語只有在日本使用，所以國家地區代碼不是必需的。
 
@@ -300,7 +278,6 @@ Bad:
 Good:
 
     <html lang="ja">
-
 
 ### 盡可能避免使用 `data-*`
 
@@ -316,9 +293,7 @@ Good:
     <span title="French"><span lang="fr">chemises</span></span>
     ...
 
-
 ## 文件後設資料
-
 
 ### 增加 `title` 元素
 
@@ -336,7 +311,6 @@ Good:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
-
 
 ### 不要使用 `base` 元素
 
@@ -359,7 +333,6 @@ Good:
       ...
     </head>
 
-
 ### 指定次要連結的 MIME 類別 (網際網路媒體形式)
 
 這提示應用程式要如何處理這項資源。
@@ -376,7 +349,6 @@ Good:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ### 别連結到 `favicon.ico`
 
 幾乎所有瀏覽器以非同步的且自動的方式來獲取 `/favicon.ico`。
@@ -389,11 +361,9 @@ Good:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-
 ### 增加 `apple-touch-icon`
 
 觸控圖示的預設請求位置突然改變了。
-
 
 Bad:
 
@@ -402,7 +372,6 @@ Bad:
 Good:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
-
 
 ### 給備用樣式表增加 `title` 屬性
 
@@ -417,7 +386,6 @@ Good:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
-
 
 ### 使用 `link` 元素指向 URL
 
@@ -437,7 +405,6 @@ Good:
       ...
     </section>
 
-
 ### 指定檔案字元編碼格式
 
 UTF-8 暫時還不是所有瀏覽器的預設值。
@@ -455,10 +422,9 @@ Good:
       <title>HTML Best Practices</title>
     </head>
 
-
 ### 不要使用過時的字元編碼格式
 
-HTTP headers應該由伺服器來指定。
+HTTP headers 應該由伺服器來指定。
 
 Bad:
 
@@ -468,10 +434,9 @@ Good:
 
     <meta charset="UTF-8">
 
-
 ### 一開始就指定字元編碼格式
 
-標準要求字元編碼必須在檔案的前 1024 bytes中被指定。
+標準要求字元編碼必須在檔案的前 1024 bytes 中被指定。
 
 Bad:
 
@@ -488,7 +453,6 @@ Good:
       <meta content="width=device-width" name="viewport">
       ...
     </head>
-
 
 ### 使用 UTF-8
 
@@ -501,7 +465,6 @@ Bad:
 Good:
 
     <meta charset="UTF-8">
-
 
 ### 省略 CSS 的 `type` 屬性
 
@@ -519,8 +482,7 @@ Good:
       ...
     </style>
 
-
-### 不要在 `style` 元素內容中撰寫註解 
+### 不要在 `style` 元素內容中撰寫註解
 
 這個規則適用於舊的瀏覽器。
 
@@ -537,7 +499,6 @@ Good:
     <style>
       ...
     </style>
-
 
 ### 不要混合 CSS 和 JavaScript 的標籤(順序要對)
 
@@ -561,9 +522,7 @@ Also good:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
-
 ## 部分(Sections)
-
 
 ### 增加 `body` 元素
 
@@ -589,7 +548,6 @@ Good:
       </body>
     </html>
 
-
 ### 不要使用 `hgroup` 元素
 
 這個元素不怎麼使用
@@ -606,7 +564,6 @@ Good:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
-
 ### `address` 元素僅用於聯絡資訊
 
 `address` 元素是給郵件地址、社交帳號、街道地址、電話號碼等通訊方式所準備的。
@@ -619,9 +576,7 @@ Good:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
-
 ## 群組内容
-
 
 ### 不要在 `pre` 元素里新起一行
 
@@ -642,7 +597,6 @@ Good:
 
 `blockquote` 元素的内容是引用，而不僅僅是一堆字元。
 
-
 Bad:
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
@@ -652,7 +606,6 @@ Good:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
-
 
 ### 不要直接在 `blockquote` 中標註來源
 
@@ -684,7 +637,6 @@ Also good:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-
 ### 一列(row)只寫一個列表項目
 
 很很很很很很長長長長長長長長長長長長長長長的列很很很很很難難難難難難難難難難難難難難難難難難難難閱讀。
@@ -704,10 +656,9 @@ Good:
       ...
     </ul>
 
-
 ### 使用 `ol` 元素的 `type` 屬性
 
-有时tag會被附近的內容引用。如果使用 `type` 屬性更改tag，就可以安全地引用。
+有时 tag 會被附近的內容引用。如果使用 `type` 屬性更改 tag，就可以安全地引用。
 
 Bad:
 
@@ -737,7 +688,6 @@ Good:
         ...
       </ol>
     </body>
-
 
 ### 不要用 `dl` 表示对话
 
@@ -771,7 +721,6 @@ Good:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-
 ### 把 `figcaption` 作為 `figure` 的首或尾元素
 
 規範不允許 `figcaption` 元素卡在 `figure` 元素的中間。
@@ -792,7 +741,6 @@ Good:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
-
 ### 使用 `main` 元素
 
 `main` 元素可以用来包裹内容。
@@ -808,7 +756,6 @@ Good:
     <main>
       ...
     </main>
-
 
 ### 盡可能避免 `div` 元素
 
@@ -826,9 +773,7 @@ Good:
       ...
     </section>
 
-
 ## 文本語意
-
 
 ### 不要把一个連結拆成兩半
 
@@ -848,7 +793,6 @@ Good:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
-
 ### 使用 `download` 屬性指向下載資源
 
 這會迫使瀏覽器下載連結到的資源。
@@ -860,7 +804,6 @@ Bad:
 Good:
 
     <a download href="/downloads/offline.zip">offline version</a>
-
 
 ### 按需使用 `rel`、`hreflang` 和 `type` 屬性
 
@@ -874,7 +817,6 @@ Good:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
-
 ### 明確的連結文字
 
 連結文字應該是對應資源的名稱。
@@ -886,7 +828,6 @@ Bad:
 Good:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
-
 
 ### 不要使用 `em` 元素來表示警告
 
@@ -900,7 +841,6 @@ Good:
 
     <strong>Caution!</strong>
 
-
 ### 盡可能避免 `s`、`i`、`b` 和 `u` 元素
 
 這些元素的語意比較難理解。
@@ -912,7 +852,6 @@ Bad:
 Good:
 
     <span class="icon-search" aria-hidden="true"></span>
-
 
 ### 不要在 `q` 元素外使用引號
 
@@ -930,7 +869,6 @@ Also good:
 
     “For writing maintainable and scalable HTML documents”
 
-
 ### 給 `abbr` 元素增加 `title` 屬性
 
 這是顯示縮寫全名的唯一方式。
@@ -942,7 +880,6 @@ Bad:
 Good:
 
     <abbr title="HTML Best Practices">HBP</abbr>
-
 
 ### 詳細標記 `ruby` 元素
 
@@ -956,7 +893,6 @@ Good:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
-
 ### 給電腦無法識別的 `time` 元素增加 `datetime` 屬性
 
 當 `datetime` 屬性不存在，`time` 元素内容的格式會受限制。
@@ -968,7 +904,6 @@ Bad:
 Good:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
-
 
 ### 使用 `language-` 前缀的 `class` 屬性指定程式碼的語言
 
@@ -982,7 +917,6 @@ Good:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
-
 ### `kbd` 元素愈簡單愈好
 
 巢狀的的 `kbd` 元素難以閱讀。
@@ -995,7 +929,6 @@ Good:
 
     <kbd>Ctrl+F5</kbd>
 
-
 ### 盡可能避免 `span` 元素
 
 當沒有其他替代方案後，才用 `span`。
@@ -1007,7 +940,6 @@ Bad:
 Good:
 
     HTML <em>Best</em> Practices
-
 
 ### 在 `br` 元素後換行
 
@@ -1022,7 +954,6 @@ Good:
     <p>HTML<br>
     Best<br>
     Practices</p>
-
 
 ### 不要只為了格式好看就用 `br` 元素
 
@@ -1040,9 +971,7 @@ Good:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
-
 ## 編輯
-
 
 ### 不要跨元素使用 `ins` 和 `del`
 
@@ -1060,9 +989,7 @@ Good:
 
     <del><p>Don’t trust!</p></del>
 
-
 ## 内嵌内容
-
 
 ### 為 `picture` 元素提供備用的 `img` 元素
 
@@ -1086,7 +1013,6 @@ Good:
       <img src="/img/logo.jpg">
     </picture>
 
-
 ### 若有需要可為 `img` 元素增加 `alt` 屬性
 
 `alt` 屬性對那些無法處理圖片或是禁用加載圖片的人很有幫助。
@@ -1099,7 +1025,6 @@ Good:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
-
 ### 若有可能則留空 `alt` 屬性
 
 如果圖片是用作補充說明，那麼附近應該有與 `alt` 相等作用的内容。
@@ -1111,7 +1036,6 @@ Bad:
 Good:
 
     <img alt="" src="/img/icon/help.png"> Help
-
 
 ### 若有可能則省略 `alt` 屬性
 
@@ -1126,7 +1050,6 @@ Good:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
-
 ### 留空 `iframe` 内容
 
 `iframe` 的内容是受限的，留空比较安全。
@@ -1140,7 +1063,6 @@ Bad:
 Good:
 
     <iframe src="/ads/default.html"></iframe>
-
 
 ### 標記 `map` 元素内容
 
@@ -1170,7 +1092,6 @@ Good:
       </p>
     </map>
 
-
 ### 為 `audio` 和 `video` 元素提供備用内容
 
 HTML 新引進的元素需要備用内容，以防舊版瀏覽器不支持。
@@ -1192,9 +1113,7 @@ Good:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
-
 ## 表格資料
-
 
 ### 一列寫一个單元格
 
@@ -1213,7 +1132,6 @@ Good:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
-
 
 ### 使用 `th` 元素表示標題格
 
@@ -1267,9 +1185,7 @@ Good:
       </tbody>
     </table>
 
-
 ## 表單
-
 
 ### 使用 `label` 元素包裹表單來控制元素
 
@@ -1283,7 +1199,6 @@ Good:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
-
 ### 若有可能則省略 `for` 屬性
 
 `label` 元素可以包含表單元素。
@@ -1295,7 +1210,6 @@ Bad:
 Good:
 
     <label>Query: <input name="q" type="text"></label>
-
 
 ### 為 `input` 元素選擇適當的 `type` 屬性
 
@@ -1309,7 +1223,6 @@ Good:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
-
 ### 給 `input type="submit"` 增加 `value` 屬性
 
 在不同瀏覽器和不同語言環境下，提交按鈕的預設標籤是不同的。
@@ -1321,7 +1234,6 @@ Bad:
 Good:
 
     <input type="submit" value="Search">
-
 
 ### 給有 `pattern` 屬性的 `input` 元素增加 `title` 屬性
 
@@ -1335,7 +1247,6 @@ Good:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-
 ### 不要把 `placeholder` 當作標籤來使用
 
 `label` 元素用於提供標籤，`placeholder` 屬性用於簡單的提示。
@@ -1347,7 +1258,6 @@ Bad:
 Good:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
-
 
 ### 每行只寫一个 `option` 元素
 
@@ -1367,7 +1277,6 @@ Good:
       <option label="Sections">
     </datalist>
 
-
 ### 為 `progress` 元素增加 `max` 屬性
 
 有了 `max` 屬性，`value` 屬性更易於編寫。
@@ -1380,7 +1289,6 @@ Good:
 
     <progress max="100" value="50"> 50%</progress>
 
-
 ### 為 `meter` 元素增加 `min` 和 `max` 屬性
 
 有了 `min` 和 `max` 屬性，`value` 屬性更易於編寫。
@@ -1392,7 +1300,6 @@ Bad:
 Good:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
-
 
 ### 將 `legend` 作為 `fieldset` 的第一個子元素
 
@@ -1414,9 +1321,7 @@ Good:
       ...
     </fieldset>
 
-
 ## 指令碼
-
 
 ### 省略 JavaScript 的 `type` 屬性
 
@@ -1433,7 +1338,6 @@ Good:
     <script>
       ...
     </script>
-
 
 ### 不要在 `script‵ 元素中編寫註解
 
@@ -1461,7 +1365,6 @@ Good:
       ...
     </script>
 
-
 ### 不要使用注入指令碼的 `script` 元素
 
 `async` 屬性既簡單又高效。
@@ -1479,9 +1382,7 @@ Good:
 
     <script async defer src="https://example.com/widget.js"></script>
 
-
 ## 其它
-
 
 ### 一致的縮排格式
 
@@ -1509,7 +1410,6 @@ Good:
       </body>
     </html>
 
-
 ### 使用相對路徑引用内部連結
 
 無網路連接時，相對路徑在本機端有更好的表現。
@@ -1526,10 +1426,9 @@ Good:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-
 ### 不要使用無協議的 URL 引用外部資源
 
-有了protocal，外部資源的加載更可靠、更安全。
+有了 protocal，外部資源的加載更可靠、更安全。
 
 Bad:
 
@@ -1539,33 +1438,29 @@ Good:
 
     <script src="https://example.com/js/library.js">
 
-
-
-
 ## 貢獻者
 
-- [@hail2u_](https://github.com/hail2u)
-- [@momdo](https://github.com/momdo)
-
+-  [@hail2u\_](https://github.com/hail2u)
+-  [@momdo](https://github.com/momdo)
 
 ## 譯者
 
-- [@costinlotreanu](https://github.com/costinlotreanu)
-- [@edgar-avila](https://github.com/edgar-avila)
-- [@kobyborali](https://github.com/kobyborali)
-- [@m1nhnv](https://github.com/m1nhnv)
-- [@mrcaidev](https://github.com/mrcaidev)
-- [@naufalk25](https://github.com/naufalk25)
-- [@oebelus](https://github.com/oebelus)
-- [@sahilmaniyar](https://github.com/sahilmaniyar)
-- [@sliderkh](https://github.com/sliderkh)
-- [@stenbaek](https://github.com/stenbaek)
-- [@techhtml](https://github.com/techhtml)
-- [@umutphp](https://github.com/umutphp)
-- [@victorchao996](https://github.com/victorchao996)
-- [@wesleynepo](https://github.com/wesleynepo)
-- [@zulkar29](https://github.com/zulkar29)
-
+-  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
+-  [@costinlotreanu](https://github.com/costinlotreanu)
+-  [@edgar-avila](https://github.com/edgar-avila)
+-  [@kobyborali](https://github.com/kobyborali)
+-  [@m1nhnv](https://github.com/m1nhnv)
+-  [@mrcaidev](https://github.com/mrcaidev)
+-  [@naufalk25](https://github.com/naufalk25)
+-  [@oebelus](https://github.com/oebelus)
+-  [@sahilmaniyar](https://github.com/sahilmaniyar)
+-  [@sliderkh](https://github.com/sliderkh)
+-  [@stenbaek](https://github.com/stenbaek)
+-  [@techhtml](https://github.com/techhtml)
+-  [@umutphp](https://github.com/umutphp)
+-  [@victorchao996](https://github.com/victorchao996)
+-  [@wesleynepo](https://github.com/wesleynepo)
+-  [@zulkar29](https://github.com/zulkar29)
 
 ## 版權使用許可
 
