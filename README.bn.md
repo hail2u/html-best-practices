@@ -1,4 +1,4 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa-IR.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa-IR.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
 # HTML Best Practices
 
@@ -1554,7 +1554,6 @@ HTML এর ভিতরে,  ডিফল্ট `type` এট্রিবিউ
 
 ## অনুবাদক
 
-- [@ShayanTheNerd](https://github.com/ShayanTheNerd)
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
 - [@kobyborali](https://github.com/kobyborali)
@@ -1563,6 +1562,7 @@ HTML এর ভিতরে,  ডিফল্ট `type` এট্রিবিউ
 - [@naufalk25](https://github.com/naufalk25)
 - [@oebelus](https://github.com/oebelus)
 - [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@shayanthenerd](https://github.com/shayanthenerd)
 - [@sliderkh](https://github.com/sliderkh)
 - [@stenbaek](https://github.com/stenbaek)
 - [@techhtml](https://github.com/techhtml)
