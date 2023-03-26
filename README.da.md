@@ -1462,7 +1462,6 @@ Godt:
     </script>
 
 
-### Don’t use script-injected `script` element
 ### Undlad at bruge script-injected `script` element
 
 `async` attribut er det bedste for både simplicitet of performance.
