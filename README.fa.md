@@ -2,7 +2,7 @@
 
 Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsch (de)](README.de.md) · [Español (es)](README.es.md) · [Français (fr)](README.fr.md) · [Bahasa Indonesia (id)](README.id.md) · [日本語 (ja)](README.ja.md) · [한국어 (ko)](README.ko.md) · [Português brasileiro (pt-BR)](README.pt-BR.md) · [Română (ro)](README.ro.md) · [Русский (ru)](README.ru.md) · [Türkçe (tr)](README.tr.md) · [Tiếng Việt (vi)](README.vi.md) · [简体中文 (zh-CN)](README.zh-CN.md) · [فارسی (fa)](README.fa.md)
 
-# HTML بهترین روش های
+# HTML بهترین روش های نگارش
 
 برای نوشتن اسناد مقیاس پذیر و قابل نگهداری HTML
 
@@ -10,8 +10,9 @@ Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsc
 
 ### با DOCTYPE شروع کنید
 
-برای فعال کردن حالت بدون خصیصه DOCTYPE نیاز است.
-بد:
+برای فعال کردن حالت بدون نوع‌های عجیب و غریب٫ DOCTYPE الزامی است.
+
+نامناسب:
 
 <div dir="ltr" align='left'>
 
@@ -21,7 +22,7 @@ Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsc
 
 </div>
 
-خوب:
+مناسب:
 
 <div dir="ltr" align='left'>
   
@@ -33,90 +34,125 @@ Translations: [English (en)](README.md) · [Dansk (da)](README.da.md) · [Deutsc
 
 ### از DOCTYPE قدیمی یا منسوخ استفاده نکنید
 
-DOCTYPE دیگر برای DTD نیست، ساده باشید.
+دیگر DOCTYPE برای DTD استفاده نمی‌شود، ساده باشید.
 
-بد:
+نامناسب:
+
+<div dir="ltr" align='left'>
 
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
       "http://www.w3.org/TR/html4/strict.dtd">
 
-خوب:
+</div>
+
+مناسب:
+
+<div dir="ltr" align='left'>
 
     <!DOCTYPE html>
+</div>
 
-### از اعلان XML استفاده نکنید
+### از تعریف XML پرهیز کنید
 
 آیا مطمئن هستید که می خواهید XHTML بنویسید؟
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
+
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <!DOCTYPE html>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <!DOCTYPE html>
+</div>
 
 ### تا حد امکان از ارجاع کاراکترها استفاده نکنید
 
-اگر یک سند HTML با UTF-8 بنویسید، تقریباً همه کاراکترها (از جمله
+اگر یک سند HTML با UTF-8 مینویسید، تقریباً همه کاراکترها (از جمله
 Emoji) را می توان مستقیماً نوشت.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <p><small>Copyright &copy; 2014 W3C<sup>&reg;</sup></small></p>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
+</div>
 
-### عدم استفاده از «&»، «<»، «>»، «»، و «» با ارجاع کاراکترهای نام‌گذاری شده
+### عدم استفاده از `&` ، `<` ، `>` ، `'`، و `"` با ارجاع کاراکترهای نام‌گذاری شده
 
 این کاراکترها باید همیشه برای یک سند HTML بدون اشکال مورد استفاده قرار نگیرد.
 
-بد:
+نامناسب:
+
+<div dir="ltr" align='left'>
 
     <h1>The "&" character</h1>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <h1>The &quot;&amp;&quot; character</h1>
+</div>
 
 ### از ارجاع کاراکترهای عددی برای کاراکترهای کنترلی یا نامرئی استفاده کنید
 
 این کاراکترها ها به راحتی با کاراکترهای دیگر اشتباه گرفته می شوند. و همچنین، مشخصات، تعریف یک نام قابل خواندن توسط انسان برای این کاراکترها را تضمین نمی کند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <p>This book can read in 1 hour.</p>
 
-خوب:
+</div>
+
+مناسب:
+
+<div dir="ltr" align='left'>
 
     <p>This book can read in 1&#xA0;hour.</p>
+
+</div>
 
 ### دور محتویات کامنت ها فاصله قرار دهید
 
 برخی از کاراکترها را نمی توان بلافاصله پس از باز شدن کامنت یا قبل از بسته شدن کامنت استفاده کرد.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <!--This section is non-normative-->
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <!-- This section is non-normative -->
+</div>
 
 ### تگ بسته شدن را حذف نکنید
 
 من فکر می کنم شما قانون حذف تگ بسته را درک نمی کنید.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <html>
       <body>
         ...
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <html>
       <body>
@@ -124,143 +160,188 @@ Emoji) را می توان مستقیماً نوشت.
       </body>
     </html>
 
+</div>
+
 ### فرمت عنصر خالی را با هم ترکیب نکنید
 
-سازگاری کلید خوانایی است.
+یکپارچگی و سازگاری کلید خوانایی است.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr />
 
-خوب:
+</div>
+
+مناسب:
+<div dir="ltr" align='left'>
 
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
+</div>
 
 ### دور تگ ها و مقادیر مشخصه ها فاصله سفید قرار ندهید
 
 هیچ دلیلی برای این کار وجود ندارد.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <h1 class=" title " >HTML Best Practices</h1>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <h1 class="title">HTML Best Practices</h1>
+</div>
 
 ### بزرگ و کوچک بودن کاراکترها را ترکیب نکنید
 
 این هم باعث ثبات می شود.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <a HREF="#general">General</A>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <a href="#general">General</a>
+</div>
 
-همینطور خوب:
+همینطور مناسب:
+<div dir="ltr" align='left'>
 
     <A HREF="#general">General</A>
+</div>
 
-### گیومه ها را با هم ترکیب نکنید
+### گیومه ها (quotation marks) را با هم ترکیب نکنید
 
 مانند بالا.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <img alt="HTML Best Practices" src='/img/logo.jpg'>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
+</div>
 
 ### مشخصه ها را با دو یا چند فاصله سفید از هم جدا نکنید
 
-قانون قالب بندی عجیب شما، کسی را گیج می کند.
+قانون قالب بندی عجیب شما، سایر توسعه دهندگان را گیج می کند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <input   name="q"  type="search">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <input name="q" type="search">
+</div>
 
-### مقدار مشخصه بولی را حذف کنید
+### مقدار مشخصه بولییَن ( درست یا غلط در مقادیر منطقی) را حذف کنید
 
 نوشتنش آسان است، اینطور نیست؟
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <audio autoplay="autoplay" src="/audio/theme.mp3">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <audio autoplay src="/audio/theme.mp3">
+</div>
 
-### فضاهای نام را حذف کنید
+### فضاهای نام (Namespaces) را حذف کنید
 
-SVG و MathML را می توان مستقیماً در سند HTML استفاده کرد.
+می توان SVG و MathML را مستقیماً در سند HTML استفاده کرد.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <svg xmlns="http://www.w3.org/2000/svg">
       ...
     </svg>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <svg>
       ...
     </svg>
+</div>
 
-### Don’t use XML attributes
+### از ویژگی‌های XML استفاده نکنید.
 
 ما یک سند HTML می نویسیم.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <span lang="ja" xml:lang="ja">...</span>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <span lang="ja">...</span>
+</div>
 
 ### مشخصه های `data-*`، Microdata و RDFa Lite را با مشخصه های رایج ترکیب نکنید
 
-یک رشته برچسب می تواند بسیار پیچیده باشد. این قانون ساده به خواندن چنین رشته برچسبی کمک می کند.
+یک رشته تگ می تواند بسیار پیچیده باشد. این قانون ساده به خواندن چنین رشته تگ کمک می کند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <img alt="HTML Best Practices" data-height="31" data-width="88" itemprop="image" src="/img/logo.png">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
+</div>
 
 ### معنای ARIA ضمنی پیش‌فرض را ترجیح دهید
 
 برخی از عناصر به طور ضمنی یک «نقش» ARIA در یک سند HTML دارند، آنها را مشخص نکنید.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <nav role="navigation">
       ...
     </nav>
 
     <hr role="separator">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <nav>
       ...
     </nav>
 
     <hr>
+</div>
 
 ## عنصر ریشه (root element)
 
@@ -268,40 +349,53 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
 
 مشخصه "lang" به ترجمه یک سند HTML کمک می کند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <html>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <html lang="en-US">
+</div>
 
 ### مقدار مشخصه «lang» را تا حد امکان کوتاه نگه دارید
 
 ژاپنی فقط در ژاپن استفاده می شود. بنابراین کد کشور ضروری نیست.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <html lang="ja-JP">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <html lang="ja">
+</div>
 
 ### تا حد امکان از `data-*` اجتناب کنید
 
 یک مشخصه مناسب می تواند توسط مرورگرها به درستی مدیریت شود.
-بد:
+
+نامناسب:
+<div dir="ltr" align='left'>
 
     <span data-language="french">chemises</span>
     ...
     <strong data-type="warning">Do not wash!</strong>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <span title="French"><span lang="fr">chemises</span></span>
     ...
     <strong class="warning">Do not wash!</strong>
+</div>
 
 ## فراداده سند
 
@@ -309,24 +403,29 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
 
 یک مقدار برای عنصر `title` توسط برنامه های مختلف, نه تنها یک مرورگر, استفاده می شود.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <head>
       <meta charset="UTF-8">
     </head>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
+</div>
 
 ### از عنصر `base` استفاده نکنید
 
 یک مسیر یا URL مطلق هم برای توسعه دهندگان و هم برای کاربران ایمن تر است.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <head>
       ...
@@ -334,203 +433,256 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
       <link href="hello-world" rel="canonical">
       ...
     </head>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <head>
       ...
       <link href="/blog/hello-world" rel="canonical">
       ...
     </head>
+</div>
 
 ### نوع MIME منابع لینک شده جزئی را مشخص کنید
 
 این یک اشاره است که چگونه برنامه این منبع را مدیریت می کند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <link href="/pdf" rel="alternate">
     <link href="/feed" rel="alternate">
     <link href="/css/screen.css" rel="stylesheet">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <link href="/pdf" rel="alternate" type="application/pdf">
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
+</div>
 
 ### به `favicon.ico` لینک ندهید
 
 تقریباً همه مرورگرها `/favicon.ico` را به صورت خودکار و ناهمزمان دریافت می کنند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <!-- Place `favicon.ico` in the root directory. -->
+</div>
 
 ### لینک `apple-touch-icon` را اضافه کنید
 
 یک مسیر درخواست پیش‌فرض برای آیکون لمسی، ناگهان تغییر کرد.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <!-- Hey Apple! Please download `/apple-touch-icon.png`! -->
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+</div>
 
 ### ویژگی `title` را به استایل شیت های جایگزین اضافه کنید
 
 یک برچسب قابل خواندن توسط انسان به افراد در انتخاب استایل شیت مناسب کمک می کند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
+</div>
 
 ### برای URL، از عنصر `link` استفاده کنید
 
 مقدار مشخصه `href` را می توان به عنوان URL در نظر گرفت.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <meta content="https://example.com/blog/hello" itemprop="url">
       ...
     </section>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <section itemscope itemtype="http://schema.org/BlogPosting">
       <link href="/blog/hello" itemprop="url">
       ...
     </section>
+</div>
 
 ### رمزگذاری کاراکتر سند را مشخص کنید
 
 هنوز در همه مرورگرها UTF-8 پیش فرض نیست.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <head>
       <title>HTML Best Practices</title>
     </head>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <head>
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
+</div>
 
 ### از قالب رمزگذاری کاراکتر قدیمی استفاده نکنید
 
 هدرهای HTTP باید توسط یک سرور مشخص شوند، ساده باشند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <meta charset="UTF-8">
+</div>
 
 ### ابتدا رمزگذاری کاراکتر را مشخص کنید
 
 مشخصات نیاز دارد که رمزگذاری کاراکتر در 1024 بایت اول سند مشخص شود.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <head>
       <meta content="width=device-width" name="viewport">
       <meta charset="UTF-8">
       ...
     </head>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <head>
       <meta charset="UTF-8">
       <meta content="width=device-width" name="viewport">
       ...
     </head>
+</div>
 
 ### از UTF-8 استفاده کنید
 
 با استفاده از UTF-8، می توانید از اموجی استفاده کنید.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <meta charset="Shift_JIS">
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <meta charset="UTF-8">
+</div>
 
 ### مشخصه `type` را برای CSS حذف کنید
 
 در HTML، مقدار پیش‌فرض مشخصه `type` عنصر `style` ،`text/css` است.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <style type="text/css">
       ...
     </style>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <style>
       ...
     </style>
+</div>
 
 ### محتوای عنصر `style` را کامنت نکنید
 
 این روش برای مرورگر قدیمی است.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <style>
     <!--
       ...
       -->
     </style>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <style>
       ...
     </style>
+</div>
 
 ### تگ CSS و JavaScript را با هم ترکیب نکنید
 
 گاهی اوقات عنصر `script` ساخت DOM را مسدود می کند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <script src="/js/jquery.min.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/main.js"></script>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <link href="/css/screen.css" rel="stylesheet">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
+</div>
 
-همچنین خوب:
+همینطور مناسب:
+<div dir="ltr" align='left'>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
+</div>
 
 ## بخش ها
 
@@ -538,7 +690,8 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
 
 گاهی اوقات عنصر `body` در موقعیت غیرمنتظره ای توسط مرورگر جاگذاری می شود.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <html>
       <head>
@@ -546,8 +699,10 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
       </head>
       ...
     </html>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <html>
       <head>
@@ -557,34 +712,43 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
         ...
       </body>
     </html>
+</div>
 
 ### عنصر `hgroup` را فراموش کنید
 
 این عنصر زیاد استفاده نمی شود.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <hgroup>
       <h1>HTML Best Practices</h1>
       <h2>For writing maintainable and scalable HTML documents.</h2>
     </hgroup>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
+</div>
 
 ### از عنصر `address` فقط برای اطلاعات تماس استفاده کنید
 
 عنصر `address` برای آدرس ایمیل، حساب شبکه اجتماعی، آدرس خیابان، شماره تلفن یا چیزی است که می توانید با آن در تماس باشید.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <address>No rights reserved.</address>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
+</div>
 
 ## گروه بندی مطالب
 
@@ -592,52 +756,65 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
 
 اولین خط جدید در مرورگرها نادیده گرفته می شود، اما خط دوم و بعدی ارائه می شوند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <pre>
     &lt;!DOCTYPE html&gt;
     </pre>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
+</div>
 
-### از عنصر مناسب در عنصر `blockquote` استفاده کنید
+### از المنت مناسب در المنت `blockquote` استفاده کنید
 
-محتوای عنصر `blockquote` یک نقل قول است، نه تکه‌ای از کاراکترها.
+محتوای المنت `blockquote` یک نقل قول است، نه تکه‌ای از کاراکترها.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <blockquote>For writing maintainable and scalable HTML documents.</blockquote>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
+</div>
 
-### انتساب را مستقیماً در عنصر `blockquote` وارد نکنید
+### انتساب را مستقیماً در المنت `blockquote` وارد نکنید
 
-محتوای عنصر `blockquote` یک نقل قول است.
+محتوای المنت `blockquote` یک نقل قول است.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
 
       <p>— HTML Best Practices</p>
     </blockquote>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
     <p>— HTML Best Practices</p>
+</div>
 
-همچنین خوب:
+همینطور مناسب:
+<div dir="ltr" align='left'>
 
     <figure>
       <blockquote>
@@ -646,20 +823,22 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
 
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
+</div>
 
 ### در هر خط یک مورد از فهرست بنویسید
 
-خوااااااااااااااااااااااااااااااندن یییییییییییییییییییییییییک
+خواندن یک خط طولانی سخت است
 
-خططططططططططططططططط طوووووووووووووووووووووووووووووووولانی سخت است
-
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <ul>
       <li>General</li><li>The root Element</li><li>Sections</li>...
     </ul>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <ul>
       <li>General</li>
@@ -667,12 +846,14 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
       <li>Sections</li>
       ...
     </ul>
+</div>
 
 ### از ویژگی `type` برای عنصر `ol` استفاده کنید
 
 گاهی اوقات نشانگر توسط محتویات در نزدیک ارجاع داده می شود. اگر نشانگر را با ویژگی `type` تغییر دهید، برای ارجاع در آن ایمن خواهید بود.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <head>
       <style>
@@ -689,8 +870,10 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
         ...
       </ol>
     </body>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <body>
       <ol type="I">
@@ -700,12 +883,14 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
         ...
       </ol>
     </body>
+</div>
 
 ### از `dl` برای دیالوگ استفاده نکنید
 
-عنصر `dl` به یک لیست مرتبط در HTML محدود شده است.
+المنت `dl` به یک لیست مرتبط در HTML محدود شده است.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <dl>
       <dt>Costello</dt>
@@ -722,8 +907,10 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
       <dt>Abbott</dt>
       <dd>Every dollar of it.</dd>
     </dl>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <p>Costello: Look, you gotta first baseman?</p>
     <p>Abbott: Certainly.</p>
@@ -732,284 +919,363 @@ SVG و MathML را می توان مستقیماً در سند HTML استفاد�
     <p>Costello becomes exasperated.</p>
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
+</div>
 
-### عنصر `figcaption` را به عنوان اولین یا آخرین فرزند عنصر `figure` قرار دهید
+### المنت `figcaption` را به عنوان اولین یا آخرین فرزند المنت `figure` قرار دهید
 
-مشخصات، عنصر `figcaption` را در وسط عنصر `figure` مجاز نمی‌داند.
+مشخصات، المنت `figcaption` را در وسط المنت `figure` مجاز نمی‌داند.
 
-بد:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
     </figure>
+</div>
 
-خوب:
+مناسب:
+<div dir="ltr" align='left'>
 
     <figure>
       <img alt="Front cover of the “HTML Best Practices” book" src="/img/front-cover.png">
       <img alt="Back cover of the “HTML Best Practices” book" src="/img/back-cover.png">
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
+</div>
 
-### Use `main` element
+### از المنت `main` استفاده کنید
 
-`main` element can be used wrapping contents.
+المنت `main` می تواند برای بسته بندی (wrapping) محتواها استفاده شود.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <div id="content">
       ...
     </div>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <main>
       ...
     </main>
+</div>
 
-### Avoid `div` element as much as possible
+### تا آنجا که ممکن است از المنت `div` اجتناب کنید
 
-`div` element is an element of last resort.
+المنت `div` آخرین راه حل است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <div class="chapter">
       ...
     </div>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <section>
       ...
     </section>
+</div>
 
-## Text-level semantics
+## معناشناسی در سطح متن
 
-### Don’t split same link that can be grouped
+### پیوندی (link) را که می‌توان گروه‌بندی کرد، تقسیم نکنید
 
-`a` element can wrap almost all elements (except interactive elements like form
-controls and `a` element itself).
 
-Bad:
+المنت `a` می تواند تقریباً همه المنت را پوشش دهد (به جز المنت تعاملی مانند کنترل های فرم و خود المنت `a`).
+
+نامناسب:
+<div dir="ltr" align='left'>
 
     <h1><a href="https://whatwg.org/">WHATWG</a></h1>
 
     <p><a href="https://whatwg.org/">A community maintaining and evolving HTML since 2004.</a></p>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <a href="https://whatwg.org/">
       <h1>WHATWG</h1>
 
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
+</div>
 
-### Use `download` attribute for downloading a resource
+### برای دانلود یک منبع از ویژگی `download` استفاده کنید
 
-It will force browsers to download linked resource to the storage.
+مرورگرها را مجبور می‌کند که منبع پیوند شده را به فضای ذخیره‌سازی دانلود کنند.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <a href="/downloads/offline.zip">offline version</a>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <a download href="/downloads/offline.zip">offline version</a>
+</div>
 
-### Use `rel`, `hreflang`, and `type` attribute if needed
+### در صورت نیاز از ویژگی های `rel`، `hreflang` و `type` استفاده کنید
 
-These hints helps applications how handle linked resource.
+این نکات به برنامه‌ها کمک می‌کند که چگونه منابع مرتبط را مدیریت کنند.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <a href="/ja/pdf">Japanese PDF version</a>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
+</div>
 
-### Clear link text
+### متن پیوند را پاک کنید
 
-Link text should be the label of its linked resource.
+متن پیوند باید برچسب منبع پیوند شده آن باشد.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">Click here</a> to view PDF version.</p>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+</div>
 
-### Don’t use `em` element for warning or caution
+### از المنت `em` برای هشدار یا احتیاط استفاده نکنید
 
-These are seriousness. So, `strong` element is more appropriate.
+اینها جدیت است. بنابراین، المنت `strong` مناسب تر است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <em>Caution!</em>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <strong>Caution!</strong>
+</div>
 
-### Avoid `s`, `i`, `b`, and `u` element as much as possible
+### تا حد امکان از المنت `s` ، `i` ، `b` و `u` اجتناب کنید
 
-These elements’ semantics is too difficult to humans.
+معنای این المنت برای انسان بسیار دشوار است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <i class="icon-search"></i>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <span class="icon-search" aria-hidden="true"></span>
+</div>
 
-### Don’t put quotes to `q` element
+### نقل قول ها (quotation marks) را در المنت `q` قرار ندهید
 
-Quotes are provided by the browser.
+نقل قول ها توسط مرورگر ارائه می شود.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <q>“For writing maintainable and scalable HTML documents”</q>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <q>For writing maintainable and scalable HTML documents</q>
+</div>
 
-Also good:
+همینطور مناسب:
+<div dir="ltr" align='left'>
 
     “For writing maintainable and scalable HTML documents”
+</div>
 
-### Add `title` attribute to `abbr` element
+### ویژگی `title` را به المنت `abbr` اضافه کنید
 
-There is no other way to represent its expansion.
+هیچ راه دیگری برای نشان دادن گسترش آن وجود ندارد.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <abbr>HBP</abbr>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <abbr title="HTML Best Practices">HBP</abbr>
+</div>
 
-### Markup `ruby` element verbosely
+### نشانه گذاری المنت `ruby` به طور کامل
 
-`ruby` element support is not completed across the modern browsers.
+پشتیبانی از المنت `ruby` در مرورگرهای مدرن تکمیل نمی شود.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <ruby>HTML<rt>えいちてぃーえむえる</ruby>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
+</div>
 
-### Add `datetime` attribute to non-machine-readable `time` element
+### ویژگی `datetime` را به المنت `time` غیرقابل خواندن توسط ماشین اضافه کنید
 
-When `datetime` attribute does not present, the format of `time` element’s
-content is restricted.
+هنگامی که ویژگی `datetime` ارائه نمی شود، قالب محتوای عنصر `time` محدود می شود.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <time>Dec 19, 2014</time>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
+</div>
 
-### Specify code language with `class` attribute prefixed with `language-`
+### زبان کد را با ویژگی `class` با پیشوند `language-` مشخص کنید
 
-This is not a formal way, but spec mentions this.
+این یک روش رسمی نیست، اما مشخصات به این موضوع اشاره می کند.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <code>&lt;!DOCTYPE html&gt;</code>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
+</div>
 
-### Keep `kbd` element as simple as possible
+### المنت `kbd` تا حد امکان ساده نگه دارید
 
-Nesting `kbd` element is too difficult to humans.
+تودرتو کردن عنصر `kbd` برای انسان بسیار دشوار است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <kbd><kbd>Ctrl</kbd>+<kbd>F5</kbd></kbd>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <kbd>Ctrl+F5</kbd>
+</div>
 
-### Avoid `span` element as much as possible
+### تا حد امکان از المنت `span` اجتناب کنید
 
-`span` element is an element of last resort.
+المنت `span` آخرین گزینه است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     HTML <span class="best">Best</span> Practices
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     HTML <em>Best</em> Practices
+</div>
 
-### Break after `br` element
+### شکستن خط بعد از المنت `br`
 
-Line break should be needed where `br` element is used.
+در جایی که از عنصر `br` استفاده می‌شود، شکست خط مورد نیاز است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <p>HTML<br>Best<br>Practices</p>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <p>HTML<br>
     Best<br>
     Practices</p>
+</div>
 
-### Don’t use `br` element only for presentational purpose
+###  از المنت `br` فقط برای هدف ارائه استفاده نکنید
 
-`br` element is not for line breaking, it is for line breaks in the contents.
+المنت `br` برای شکستن خط نیست، بلکه برای شکستن خط در محتوا است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <p><label>Rule name: <input name="rule-name" type="text"></label><br>
     <label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <p><label>Rule name: <input name="rule-name" type="text"></label></p>
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
+</div>
 
-## Edits
+## ویرایش ها
 
-### Don’t stride `ins` and `del` element over other elements
+### المنت `ins` و `del` را بر سایر المنت گام ندهید
 
-Elements cannot be overflow other elements.
+المنت نمی توانند با المنت دیگر ادغام شوند.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</p>
 
     <p>Don’t trust!</p></del>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <p>For writing maintainable and scalable HTML documents.<del> And for mental stability.</del></p>
 
     <del><p>Don’t trust!</p></del>
+</div>
 
-## Embedded content
+## محتوای تعبیه شده (Embedded)
 
-### Provide fallback `img` element for `picture` element
+### المنت `img` را برای المنت `picture` ارائه دهید
 
-The support of `picture` element is not good yet.
+پشتیبانی از عنصر `picture` هنوز خوب نیست.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1017,8 +1283,10 @@ Bad:
       <source srcset="/img/logo.jp2" type="image/jp2">
       <source srcset="/img/logo.jpg" type="image/jpg">
     </picture>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <picture>
       <source srcset="/img/logo.webp" type="image/webp">
@@ -1026,64 +1294,81 @@ Good:
       <source srcset="/img/logo.jp2" type="image/jp2">
       <img src="/img/logo.jpg">
     </picture>
+</div>
 
-### Add `alt` attrbute to `img` element if needed
+### در صورت نیاز ویژگی `alt` را به المنت `img` اضافه کنید
 
-`alt` attribute helps those who cannot process images or have image loading
-disabled.
+ویژگی `alt` به کسانی که نمی توانند تصاویر را پردازش کنند یا بارگذاری تصویر را غیرفعال کرده اند، کمک می کند.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <img src="/img/logo.png">
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <img alt="HTML Best Practices" src="/img/logo.png">
+</div>
 
-### Empty `alt` attribute if possible
+### در صورت امکان، ویژگی `alt` را خالی کنید
 
-If the image is supplemental, there is equivalent content somewhere in the near.
+اگر تصویر مکمل باشد، محتوایی معادل آن در جایی نزدیک وجود دارد.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <img alt="Question mark icon" src="/img/icon/help.png"> Help
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <img alt="" src="/img/icon/help.png"> Help
+</div>
 
-### Omit `alt` attribute if possible
+### در صورت امکان ویژگی `alt` را حذف کنید
 
-Sometimes you don’t know what text is suitable for `alt` attribute.
+گاهی اوقات نمی دانید چه متنی برای ویژگی `alt` مناسب است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <img alt="CAPTCHA" src="captcha.cgi?id=82174">
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
+</div>
 
-### Empty `iframe` element
+### المنت `iframe` خالی است
 
-There is some restriction in its content. Being empty is always safe.
+در محتوای آن محدودیت هایی وجود دارد. خالی بودن همیشه امن است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <iframe src="/ads/default.html">
       <p>If your browser support inline frame, ads are displayed here.</p>
     </iframe>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <iframe src="/ads/default.html"></iframe>
+</div>
 
-### Markup `map` element content
+### محتوای المنت `map` نشانه گذاری
 
-This content presents to a screen reader.
+این محتوا به یک صفحه خوان ارائه می شود.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <map name="toc">
       <a href="#general">General</a>
@@ -1093,8 +1378,10 @@ Bad:
       <a href="#sections">Sections</a>
       <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
     </map>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <map name="toc">
       <p>
@@ -1106,20 +1393,24 @@ Good:
         <area alt="Sections" coords="100, 0, 140, 40" href="#sections">
       </p>
     </map>
+</div>
 
-### Provide fallback content for `audio` or `video` element
+### محتوای بازگشتی را برای المنت `audio` یا `video` ارائه کنید
 
-Fallback content is needed for newly introduced elements in HTML.
+محتوای بازگشتی برای عناصر تازه معرفی شده در HTML مورد نیاز است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
       <source src="/mov/theme.ogv" type="video/ogg">
       ...
     </video>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <video>
       <source src="/mov/theme.mp4" type="video/mp4">
@@ -1127,32 +1418,38 @@ Good:
       ...
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
+</div>
 
-## Tabular data
+## داده های جدولی
 
-### Write one cell per line
+### در هر خط یک سلول بنویسید
 
-Long lines are hard to scan.
+اسکن خطوط طولانی سخت است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <tr>
       <td>General</td><td>The root Element</td><td>Sections</td>
     </tr>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <tr>
       <td>General</td>
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
+</div>
 
-### Use `th` element for header cell
+### از المنت `th` برای سلول سرصفحه استفاده کنید
 
-There is no reason to avoid this.
+هیچ دلیلی برای اجتناب از این وجود ندارد.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <table>
       <thead>
@@ -1175,8 +1472,10 @@ Bad:
         </tr>
       </tbody>
     </table>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <table>
       <thead>
@@ -1199,196 +1498,245 @@ Good:
         </tr>
       </tbody>
     </table>
+</div>
 
-## Forms
+## فرم ها
 
-### Wrap form control with `label` element
+### بسته بندی کنترل فرم با المنت `label`.
 
-`label` element helps focusing form element.
+المنت `label` به تمرکز المنت فرم کمک می کند.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <p>Query: <input name="q" type="text"></p>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <p><label>Query: <input name="q" type="text"></label></p>
+</div>
 
-### Omit `for` attribute if possible
+### در صورت امکان ویژگی `for` را حذف کنید
 
-`label` element can contain some form elements.
+عنصر `label` می تواند حاوی برخی از عناصر فرم باشد.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <label for="q">Query: </label><input id="q" name="q" type="text">
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <label>Query: <input name="q" type="text"></label>
+</div>
 
-### Use appropriate `type` attribute for `input` element
+### از ویژگی `type` مناسب برای عنصر `input` استفاده کنید
 
-With appropriate `type`, a browser gives tiny features to the `input` element.
+با `type` مناسب، یک مرورگر ویژگی های کوچکی را به عنصر `input` می دهد.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <label>Search keyword: <input name="q" type="text"></label>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <label>Search keyword: <input name="q" type="search"></label>
+</div>
 
-### Add `value` attribute to `input type="submit"`
+### ویژگی `value` را به `input type="submit"` اضافه کنید
 
-The default label for submit button is not standarized across the browser and
-languages.
+برچسب پیش‌فرض دکمه ارسال در مرورگر و زبان‌ها استاندارد نشده است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <input type="submit">
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <input type="submit" value="Search">
+</div>
 
-### Add `title` attribute to `input` element when there is `pattern` attribute
+###  وقتی ویژگی `pattern`  وجود دارد، ویژگی `title` را به عنصر `input` اضافه کنید
 
-If input text does not match to `pattern` attribute, the value of `title`
-attribute will be display as a hint.
+اگر متن ورودی با ویژگی `pattern` مطابقت نداشته باشد، مقدار ویژگی `title` به عنوان یک اشاره نمایش داده می شود.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <input name="security-code" pattern="[0-9]{3}" type="text">
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
+</div>
 
-### Don’t use `placeholder` attribute for labeling
+### از ویژگی `placeholder` برای برچسب‌گذاری استفاده نکنید
 
-`label` element is for a label, `placeholder` attribute is for a short hint.
+عنصر `label` برای یک برچسب است، ویژگی `placeholder` برای یک اشاره کوتاه است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <input name="email" placeholder="Email" type="text">
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
+</div>
 
-### Write one `option` element per line
+### در هر خط یک المنت `option` بنویسید
 
-Long lines are hard to scan.
+خوانایی خطوط طولانی سخت است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <datalist id="toc">
       <option label="General"><option label="The root element"><option label="Sections">
     </datalist>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <datalist id="toc">
       <option label="General">
       <option label="The root element">
       <option label="Sections">
     </datalist>
+</div>
 
-### Add `max` attribute to `progress` element
+### ویژگی `max` را به عنصر `progress` اضافه کنید
 
-With `max` attribute, the `value` attribute can be written in an easy format.
+با ویژگی `max`، ویژگی `value` را می توان در قالبی آسان نوشت.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <progress value="0.5"> 50%</progress>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <progress max="100" value="50"> 50%</progress>
+</div>
 
-### Add `min` and `max` attribute to `meter` element
+### ویژگی `min` و `max` را به المنت `meter` اضافه کنید
 
-With `min` and `max` attribute, the `value` attribute can be written in an easy
-format.
+با ویژگی `min` و `max`، ویژگی `value` را می توان در قالبی آسان نوشت.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <meter value="0.5"> 512GB used (1024GB total)</meter>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
+</div>
 
-### Place `legend` element as the first child of `fieldset` element
+### المنت `legend` را به عنوان اولین فرزند المنت `fieldset` قرار دهید
 
-Spec requires this.
+به این تکه نیاز دارد.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <fieldset>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
       <legend>About "General"</legend>
     </fieldset>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <fieldset>
       <legend>About "General"</legend>
       <p><label>Is this section is useful?: <input name="usefulness-general" type="checkbox"></label></p>
       ...
     </fieldset>
+</div>
 
-## Scripting
+## اسکریپت ها
 
-### Omit `type` attribute for JavaScript
+### ویژگی `type` را برای جاوا اسکریپت حذف کنید
 
-In HTML, the default `type` attribute’s value of `script` element is
-`text/javascript`.
+در HTML، مقدار پیش‌فرض ویژگی `type` المنت ٫`script` مقدار
+`text/javascript` است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <script type="text/javascript">
       ...
     </script>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <script>
       ...
     </script>
+</div>
 
-### Don’t comment out contents of `script` element
+### محتوای المنت `script` را به صورت کامنت نگذارید.
 
-This ritual is for the old browser.
+این روش برای مرورگر قدیمی است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <script>
     /*<![CDATA[*/
       ...
     /*]]>*/
     </script>
+</div>
 
-Also bad:
+همینطور مناسب:
+<div dir="ltr" align='left'>
 
     <script>
     <!--
       ...
     // -->
     </script>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <script>
       ...
     </script>
+</div>
 
-### Don’t use script-injected `script` element
+### از عنصر `script` تزریق شده با اسکریپت استفاده نکنید
 
-`async` attribute is the best for both simplicity and performance.
+ویژگی `async` هم برای سادگی و هم برای عملکرد بهترین است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <script>
       var script = document.createElement("script");
@@ -1396,29 +1744,35 @@ Bad:
       script.src = "//example.com/widget.js";
       document.getElementsByTagName("head")[0].appendChild(script);
     </script>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <script async defer src="https://example.com/widget.js"></script>
+</div>
 
-## Other
+## سایر موارد
 
-### Indent consistently
+### تورفتگی مداوم
 
-Indentation is important for readability.
+تورفتگی برای خوانایی مهم است.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <html>
-    	<head>
-    	  ...
-    	</head>
+     <head>
+       ...
+     </head>
       <body>
         ...
       </body>
     </html>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <html>
       <head>
@@ -1428,41 +1782,53 @@ Good:
         ...
       </body>
     </html>
+</div>
 
-### Use absolute path for internal links
+### برای لینک های داخلی از مسیر مطلق (absolute path) استفاده کنید
 
-An absolute path works better on your localhost without internet connection.
+یک مسیر مطلق در هاست محلی شما بدون اتصال به اینترنت بهتر کار می کند.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <link rel="apple-touch-icon" href="http://you.example.com/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="//you.example.com/contact.html">contact page</a>.</p>
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
+</div>
 
-### Don’t use protocol-relative URL for external resources
+### از URL مرتبط با پروتکل برای منابع خارجی استفاده نکنید
 
-With protocol, you can load external resources reliably and safely.
+با پروتکل، می توانید منابع خارجی را به طور قابل اعتماد و ایمن بارگیری کنید.
 
-Bad:
+نامناسب:
+<div dir="ltr" align='left'>
 
     <script src="//example.com/js/library.js">
+</div>
 
-Good:
+مناسب:
+<div dir="ltr" align='left'>
 
     <script src="https://example.com/js/library.js">
+</div>
 
-## Contributors
+## نویسندگان
+<div dir="ltr" align='left'>
 
 - [@hail2u\_](https://github.com/hail2u)
 - [@momdo](https://github.com/momdo)
+</div>
 
-## Translators
+## مترجمین
+<div dir="ltr" align='left'>
 
 - [@costinlotreanu](https://github.com/costinlotreanu)
 - [@edgar-avila](https://github.com/edgar-avila)
@@ -1476,9 +1842,15 @@ Good:
 - [@techhtml](https://github.com/techhtml)
 - [@umutphp](https://github.com/umutphp)
 - [@wesleynepo](https://github.com/wesleynepo)
+- [@faridvatani](https://github.com/faridvatani)
+- [@smhosseini96](https://github.com/smhosseini96)
 
-## License
+</div>
+
+## مجوز
+<div dir="ltr" align='left'>
 
 [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
+</div>
 
 </div>
