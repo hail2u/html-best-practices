@@ -1,10 +1,12 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
 # Penerapan Terbaik Untuk HTML
 
 Untuk menulis dokumen HTML yang dapat dikelola dan diukur
 
+
 ## Umum
+
 
 ### Dimulai dengan DOCTYPE
 
@@ -23,6 +25,7 @@ Baik:
       ...
     </html>
 
+
 ### Gunakan DOCTYPE versi terbaru
 
 DOCTYPE bukan untuk DTD lagi.
@@ -35,6 +38,7 @@ Buruk:
 Baik:
 
     <!DOCTYPE html>
+
 
 ### Jangan gunakan deklarasi XML
 
@@ -49,6 +53,7 @@ Baik:
 
     <!DOCTYPE html>
 
+
 ### Hindari penggunaan referensi karakter sebisa mungkin
 
 Jika anda menulis dokumen HTML dengan pengkodean UTF-8, sebagian besar karakter (termasuk
@@ -62,6 +67,7 @@ Baik:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
+
 ### Hindari penggunaan referensi karakter bernama seperti `&`, `<`, `>`, `"`, dan `'`
 
 Karakter ini harus dihindari agar dokumen HTML aman dari bug.
@@ -73,6 +79,7 @@ Buruk:
 Baik:
 
     <h1>The &quot;&amp;&quot; character</h1>
+
 
 ### Gunakan referensi karakter numerik untuk karakter kontrol atau karakter tidak terlihat
 
@@ -87,6 +94,7 @@ Baik:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
+
 ### Berikan spasi di sekitar konten komentar
 
 Beberapa karakter tidak dapat digunakan seketika setelah komentar di buka
@@ -99,6 +107,7 @@ Buruk:
 Baik:
 
     <!-- This section is non-normative -->
+
 
 ### Jangan menghapus tag penutup
 
@@ -118,6 +127,7 @@ Baik:
       </body>
     </html>
 
+
 ### Jangan mencampurkan format elemen kosong
 
 Konsistensi adalah kunci agar mudah dibaca.
@@ -132,6 +142,7 @@ Baik:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+
 ### Jangan beri spasi di sekitar tag dan nilai pada atribut
 
 Tidak ada alasan untuk melakukan ini.
@@ -143,6 +154,7 @@ Buruk:
 Baik:
 
     <h1 class="title">HTML Best Practices</h1>
+
 
 ### Jangan mencampurkan karakter besar dan kecil
 
@@ -160,6 +172,7 @@ Juga baik:
 
     <A HREF="#general">General</A>
 
+
 ### Jangan mencampurkan tanda kutip
 
 Sama seperti di atas.
@@ -171,6 +184,7 @@ Buruk:
 Baik:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
+
 
 ### Jangan pisahkan atribut dengan dua atau lebih spasi
 
@@ -184,6 +198,7 @@ Baik:
 
     <input name="q" type="search">
 
+
 ### Menghapus nilai atribut boolean
 
 Sangat mudah untuk ditulis, bukan?
@@ -195,6 +210,7 @@ Buruk:
 Baik:
 
     <audio autoplay src="/audio/theme.mp3">
+
 
 ### Menghapus namespaces
 
@@ -212,6 +228,7 @@ Baik:
       ...
     </svg>
 
+
 ### Jangan gunakan atribut XML
 
 Kita menulis dokumen HTML.
@@ -223,6 +240,7 @@ Buruk:
 Baik:
 
     <span lang="ja">...</span>
+
 
 ### Jangan mencampurkan atribut `data-x`, Microdata, dan RDFa Lite dengan atribut yang umum
 
@@ -236,6 +254,7 @@ Buruk:
 Baik:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
+
 
 ### Lebih menyukai semantik ARIA implisit bawaan
 
@@ -257,7 +276,9 @@ Baik:
 
     <hr>
 
+
 ## Elemen root
+
 
 ### Tambahkan atribut `lang`
 
@@ -271,6 +292,7 @@ Baik:
 
     <html lang="en-US">
 
+
 ### Buat nilai atribut `lang` sesingkat mungkin
 
 Bahasa Jepang hanya digunakan di Jepang. Sehingga kode negara tidak diperlukan.
@@ -282,6 +304,7 @@ Buruk:
 Baik:
 
     <html lang="ja">
+
 
 ### Hindari penggunaan `data-x` jika memungkinkan
 
@@ -299,7 +322,9 @@ Baik:
     ...
     <strong class="warning">Do not wash!</strong>
 
+
 ## Metadata dokumen
+
 
 ### Tambahkan elemen `title`
 
@@ -317,6 +342,7 @@ Baik:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
+
 
 ### Jangan gunakan elemen `base`
 
@@ -339,6 +365,7 @@ Baik:
       ...
     </head>
 
+
 ### Spesifikasikan MIME type pada minor linked resources
 
 Ini adalah petunjuk bagaimana aplikasi mengatasi resource tersebut.
@@ -355,6 +382,7 @@ Baik:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ### Jangan membuat link untuk `favicon.ico`
 
 Hampir semua browser mengambil `/favicon.ico` secara otomatis dan asinkronus.
@@ -367,6 +395,7 @@ Baik:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
+
 ### Tambahkan link `apple-touch-icon`
 
 Request path bawaan pada touch icon telah diubah.
@@ -378,6 +407,7 @@ Buruk:
 Baik:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+
 
 ### Tambahkan atribut `title` pada stylesheet alternatif
 
@@ -392,6 +422,7 @@ Baik:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
+
 
 ### Untuk URL, gunakan elemen `link`
 
@@ -411,6 +442,7 @@ Baik:
       ...
     </section>
 
+
 ### Spesifikasikan pengkodean karakter dokumen
 
 UTF-8 belum menjadi pengkodean bawaan pada semua browser.
@@ -428,6 +460,7 @@ Baik:
       <title>HTML Best Practices</title>
     </head>
 
+
 ### Gunakan format pengkodean karakter terbaru
 
 HTTP headers harus dispesifikasikan oleh server.
@@ -439,6 +472,7 @@ Buruk:
 Baik:
 
     <meta charset="UTF-8">
+
 
 ### Spesifikasikan pengkodean karakter di awal dokumen
 
@@ -461,6 +495,7 @@ Baik:
       ...
     </head>
 
+
 ### Gunakan UTF-8
 
 Dengan UTF-8, anda dapat menggunakan Emoji.
@@ -472,6 +507,7 @@ Buruk:
 Baik:
 
     <meta charset="UTF-8">
+
 
 ### Menghapus atribut `type` untuk CSS
 
@@ -488,6 +524,7 @@ Baik:
     <style>
       ...
     </style>
+
 
 ### Jangan memberikan komentar pada konten dari elemen `style`
 
@@ -506,6 +543,7 @@ Baik:
     <style>
       ...
     </style>
+
 
 ### Jangan mencampurkan tag untuk CSS dan JavaScript
 
@@ -529,7 +567,9 @@ Juga baik:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ## Sections
+
 
 ### Tambahkan elemen `body`
 
@@ -555,6 +595,7 @@ Baik:
       </body>
     </html>
 
+
 ### Lupakan elemen `hgroup`
 
 Elemen ini tidak digunakan lagi.
@@ -571,6 +612,7 @@ Baik:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+
 ### Gunakan elemen `address` hanya untuk informasi kontak
 
 Elemen `address` digunakan untuk email, akun sosial media, alamat, nomor telepon, atau sesuatu
@@ -584,7 +626,9 @@ Baik:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+
 ## Pengelompokkan konten
+
 
 ### Jangan memulai dengan baris baru pada elemen `pre`
 
@@ -601,6 +645,7 @@ Baik:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+
 ### Gunakan elemen yang sesuai pada elemen `blockquote`
 
 Konten dari elemmen `blockquote` adalah kutipan, bukan kumpulan karakter.
@@ -614,6 +659,7 @@ Baik:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
+
 
 ### Jangan tambahkan caption secara langsung pada elemen `blockquote`
 
@@ -645,6 +691,7 @@ Juga baik:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
+
 ### Tuliskan satu daftar data per baris
 
 Baris yang panjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaang akan
@@ -664,6 +711,7 @@ Baik:
       <li>Sections</li>
       ...
     </ul>
+
 
 ### Gunakan atribut `type` untuk elemen `ol`
 
@@ -699,6 +747,7 @@ Baik:
       </ol>
     </body>
 
+
 ### Jangan gunakan `dl` untuk dialog
 
 Elemen `dl` hanya dibatasi untuk daftar asosiasi di HTML.
@@ -731,6 +780,7 @@ Baik:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
+
 ### Letakkan elemen `figcaption` sebagai anak pertama atau terakhir dari elemen `figure`
 
 Spec melarang elemen `figcaption` berada di tengah elemen `figure`.
@@ -751,6 +801,7 @@ Baik:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
+
 ### Gunakan elemen `main`
 
 Elemen `main` dapat digunakan untuk membungkus konten.
@@ -766,6 +817,7 @@ Baik:
     <main>
       ...
     </main>
+
 
 ### Hindari penggunaan elemen `div` jika memungkinkan
 
@@ -783,7 +835,9 @@ Baik:
       ...
     </section>
 
+
 ## Semantik tingkat teks
+
 
 ### Jangan pisahkan link yang dapat di kelompokkan
 
@@ -804,6 +858,7 @@ Baik:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
+
 ### Gunakan atribut `download` untuk mengunduh sebuah resource
 
 Itu akan memaksa browser untuk mengunduh linked resource ke tempat penyimpanan.
@@ -815,6 +870,7 @@ Buruk:
 Baik:
 
     <a download href="/downloads/offline.zip">offline version</a>
+
 
 ### Gunakan atribut `rel`, `hreflang`, dan `type` jika diperlukan
 
@@ -828,6 +884,7 @@ Baik:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
+
 ### Menghapus link text
 
 Link text harus berupa label untuk linked resourcenya sendiri.
@@ -839,6 +896,7 @@ Buruk:
 Baik:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+
 
 ### Jangan gunakan elemen `em` sebagai peringatan
 
@@ -852,6 +910,7 @@ Baik:
 
     <strong>Caution!</strong>
 
+
 ### Hindari penggunaan elemen `s`, `i`, `b`, dan `u` jika memungkinkan
 
 Elemen ini tidak cukup semantik untuk manusia.
@@ -863,6 +922,7 @@ Buruk:
 Baik:
 
     <span class="icon-search" aria-hidden="true"></span>
+
 
 ### Jangan berikan kutipan pada elemen `q`
 
@@ -880,6 +940,7 @@ Juga baik:
 
     “For writing maintainable and scalable HTML documents”
 
+
 ### Tambahkan atribut `title` pada elemen `abbr`
 
 Hanya dengan cara ini untuk mengetahui singkatannya.
@@ -892,6 +953,7 @@ Baik:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
+
 ### Markup elemen `ruby` hingga bertele-tele
 
 Support pada elemen `ruby` belum dimiliki oleh semua browser modern.
@@ -903,6 +965,7 @@ Buruk:
 Baik:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
+
 
 ### Tambahkan atribut `datetime` pada elemen `time` yang tidak dapat dibaca oleh mesin
 
@@ -917,6 +980,7 @@ Baik:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
+
 ### Spesifikasikan bahasa kode dengan atribut `class` yang diawali dengan `language-`
 
 Ini bukan cara yang formal, tetapi lebih baik ditambahkan
@@ -928,6 +992,7 @@ Buruk:
 Baik:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
+
 
 ### Buat elemen `kbd` sesingkat mungkin
 
@@ -941,6 +1006,7 @@ Baik:
 
     <kbd>Ctrl+F5</kbd>
 
+
 ### Hindari penggunaan elemen `span` jika memungkinkan
 
 Elemen `span` hanya digunakan sebagai langkah terakhir.
@@ -952,6 +1018,7 @@ Buruk:
 Baik:
 
     HTML <em>Best</em> Practices
+
 
 ### Jeda baris setelah elemen `br`
 
@@ -966,6 +1033,7 @@ Baik:
     <p>HTML<br>
     Best<br>
     Practices</p>
+
 
 ### Jangan gunakan elemen `br` hanya untuk tujuan presentasi
 
@@ -983,7 +1051,9 @@ Baik:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
+
 ## Edits
+
 
 ### Jangan menumpukkan elemen `ins` dan `del` diatas elemen lain
 
@@ -1001,7 +1071,9 @@ Baik:
 
     <del><p>Don’t trust!</p></del>
 
+
 ## Konten yang ditanam
+
 
 ### Berikan elemen `img` pada elemen `picture` sebagai alternatif
 
@@ -1025,6 +1097,7 @@ Baik:
       <img src="/img/logo.jpg">
     </picture>
 
+
 ### Tambahkan atribut `alt` pada elemen `img` jika diperlukan
 
 Atribut `alt` membantu browser jika browser tidak dapat mengolah gambar atau fitur pemuatan gambarnya
@@ -1038,6 +1111,7 @@ Baik:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
+
 ### Gunakan atribut `alt` kosong jika memungkinkan
 
 Jika gambar hanya sebagai tambahan, pasti ada konten yang memberikan informasi mengenai gambar tersebut.
@@ -1049,6 +1123,7 @@ Buruk:
 Baik:
 
     <img alt="" src="/img/icon/help.png"> Help
+
 
 ### Menghapus atribut `alt` jika memungkinkan
 
@@ -1063,6 +1138,7 @@ Baik:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
+
 ### elemen `iframe` kosong
 
 Kontennya dibatasi. Kosong adalah yang paling aman.
@@ -1076,6 +1152,7 @@ Buruk:
 Baik:
 
     <iframe src="/ads/default.html"></iframe>
+
 
 ### Markup konten elemen `map`
 
@@ -1105,6 +1182,7 @@ Baik:
       </p>
     </map>
 
+
 ### Berikan konten alternatif untuk elemen `audio` atau `video`
 
 Konten alternatif dibutuhkan untuk elemen yang baru diperkenalkan di dalam HTML.
@@ -1126,7 +1204,9 @@ Baik:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
+
 ## Data tabel
+
 
 ### Tulis satu kolom per baris
 
@@ -1145,6 +1225,7 @@ Baik:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
+
 
 ### Gunakan elemen `th` untuk kolom header
 
@@ -1198,7 +1279,9 @@ Baik:
       </tbody>
     </table>
 
+
 ## Formulir
+
 
 ### Bungkus kontrol form dengan elemen `label`
 
@@ -1212,6 +1295,7 @@ Baik:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
+
 ### Menghapus atribut `for` jika memungkinkan
 
 Elemen `label` dapat mengandung beberapa elemen kontrol form.
@@ -1224,6 +1308,7 @@ Baik:
 
     <label>Query: <input name="q" type="text"></label>
 
+
 ### Gunakan atribut `type` yang tepat untuk elemen `input`
 
 Dengan atribut `type` yang tepat, browser dapat memberikan fitur tambahan pada elemen `input`.
@@ -1235,6 +1320,7 @@ Buruk:
 Baik:
 
     <label>Search keyword: <input name="q" type="search"></label>
+
 
 ### Tambahkan atribut `value` pada `input type="submit"`
 
@@ -1249,6 +1335,7 @@ Baik:
 
     <input type="submit" value="Search">
 
+
 ### Tambahkan atribut `title` pada elemen `input` ketika terdapat atribut `pattern`
 
 Jika teks yang dimasukkan tidak sesuai dengan atribut `pattern`, nilai dari atribut
@@ -1262,6 +1349,7 @@ Baik:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
+
 ### Jangan gunakan atribut `placeholder` sebagai label
 
 Elemen `label` digunakan sebagai label, atribut `placeholder` digunakan sebagai petunjuk kecil.
@@ -1273,6 +1361,7 @@ Buruk:
 Baik:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
+
 
 ### Tulis satu elemen `option` per baris
 
@@ -1292,6 +1381,7 @@ Baik:
       <option label="Sections">
     </datalist>
 
+
 ### Tambahkan atribut `max` untuk elemen `progress`
 
 Dengan atribut `max`, atribut `value` dapat ditulis dengan format yang mudah.
@@ -1303,6 +1393,7 @@ Buruk:
 Baik:
 
     <progress max="100" value="50"> 50%</progress>
+
 
 ### Tambahkan atribut `min` dan `max` pada elemen `meter`
 
@@ -1316,6 +1407,7 @@ Buruk:
 Baik:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
+
 
 ### Letakkan elemen `legend` sebagai anak pertama dari elemen `fieldset`
 
@@ -1337,7 +1429,9 @@ Baik:
       ...
     </fieldset>
 
+
 ## Scripting
+
 
 ### Menghapus atribut `type` pada JavaScript
 
@@ -1355,6 +1449,7 @@ Baik:
     <script>
       ...
     </script>
+
 
 ### Jangan memberikan komentar pada konten dari elemen `script`
 
@@ -1382,6 +1477,7 @@ Baik:
       ...
     </script>
 
+
 ### Jangan gunakan elemen `script` yang disuntikkan
 
 Atribut `async` adalah pilihan terbaik untuk kesederhanaan dan kinerja.
@@ -1399,7 +1495,9 @@ Baik:
 
     <script async defer src="https://example.com/widget.js"></script>
 
+
 ## Lainnya
+
 
 ### Konsistensi pada indentasi
 
@@ -1427,6 +1525,7 @@ Baik:
       </body>
     </html>
 
+
 ### Gunakan path absolut untuk link internal
 
 Path absolut dapat bekerja dengan baik pada localhost tanpa koneksi internet.
@@ -1443,6 +1542,7 @@ Baik:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
+
 ### Jangan gunakan URL yang bersifat relatif-protokol untuk resource eksternal
 
 Dengan protokol, anda dapat memuat resource eksternal dengan aman.
@@ -1455,29 +1555,33 @@ Baik:
 
     <script src="https://example.com/js/library.js">
 
+
+
+
 ## Kontributor
 
--  [@hail2u\_](https://github.com/hail2u)
--  [@momdo](https://github.com/momdo)
+- [@hail2u_](https://github.com/hail2u)
+- [@momdo](https://github.com/momdo)
+
 
 ## Penerjemah
 
--  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
--  [@costinlotreanu](https://github.com/costinlotreanu)
--  [@edgar-avila](https://github.com/edgar-avila)
--  [@kobyborali](https://github.com/kobyborali)
--  [@m1nhnv](https://github.com/m1nhnv)
--  [@mrcaidev](https://github.com/mrcaidev)
--  [@naufalk25](https://github.com/naufalk25)
--  [@oebelus](https://github.com/oebelus)
--  [@sahilmaniyar](https://github.com/sahilmaniyar)
--  [@sliderkh](https://github.com/sliderkh)
--  [@stenbaek](https://github.com/stenbaek)
--  [@techhtml](https://github.com/techhtml)
--  [@umutphp](https://github.com/umutphp)
--  [@victorchao996](https://github.com/victorchao996)
--  [@wesleynepo](https://github.com/wesleynepo)
--  [@zulkar29](https://github.com/zulkar29)
+- [@costinlotreanu](https://github.com/costinlotreanu)
+- [@edgar-avila](https://github.com/edgar-avila)
+- [@kobyborali](https://github.com/kobyborali)
+- [@m1nhnv](https://github.com/m1nhnv)
+- [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https://github.com/naufalk25)
+- [@oebelus](https://github.com/oebelus)
+- [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
+- [@stenbaek](https://github.com/stenbaek)
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+- [@victorchao996](https://github.com/victorchao996)
+- [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar29](https://github.com/zulkar29)
+
 
 ## Lisensi
 

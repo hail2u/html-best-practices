@@ -1,10 +1,12 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
 # Cách viết HTML tối ưu nhất
 
 Để các tài liệu HTML có khả năng bảo trì và mở rộng.
 
+
 ## Chung chung
+
 
 ### Bắt đầu với DOCTYPE
 
@@ -23,6 +25,7 @@ Tốt:
       ...
     </html>
 
+
 ### Đừng sử dụng các khai báo DOCTYPE cũ hoặc đã lỗi thời
 
 DOCTYPE không dành cho bất kỳ DTD (Document Type Declaration) nữa, hãy đơn giản sử dụng:
@@ -35,6 +38,7 @@ Tồi:
 Tốt:
 
     <!DOCTYPE html>
+
 
 ### Đừng sử dụng XML trong khai báo
 
@@ -49,6 +53,7 @@ Tốt:
 
     <!DOCTYPE html>
 
+
 ### Đừng sử dụng các tham chiếu ký tự càng nhiều càng tốt
 
 Nếu bạn viết một tài liệu HTML với định dạng UTF-8, hầu hết tất cả các ký tự
@@ -62,7 +67,8 @@ Tốt:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
-### Những ký tự `&`, `<`, `>`, `"` và `'` với tên tham chiếu ký tự
+
+### Những ký tự `&`, `<`, `>`, `"` và  `'` với tên tham chiếu ký tự
 
 Những ký tự này nên được viết bằng các tham chiếu ký tự để không xảy ra lỗi ở tài liệu HTML.
 
@@ -73,6 +79,7 @@ Tồi:
 Tốt:
 
     <h1>The &quot;&amp;&quot; character</h1>
+
 
 ### Sử dụng tham chiếu ký tự số cho những ký tự điều khiển hoặc những ký tự vô hình
 
@@ -87,6 +94,7 @@ Tốt:
 
     <p>This book can read in 1&#xA0;hour.</p>
 
+
 ### Thêm khoảng trắng xung quanh nội dung ghi chú
 
 Một số ký tự không thể được sử dụng ngay lập tức sau khi ghi chú được mở
@@ -99,6 +107,7 @@ Tồi:
 Tốt:
 
     <!-- This section is non-normative -->
+
 
 ### Đừng bỏ qua thẻ đóng
 
@@ -118,6 +127,7 @@ Tốt:
       </body>
     </html>
 
+
 ### Đừng trộn lẫn định dạng phần tử trống
 
 Tính nhất quán là chìa khóa cho việc dễ đọc.
@@ -132,6 +142,7 @@ Tốt:
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+
 ### Đừng thêm khoảng trắng vào xung quanh các thẻ và giá trị của các thuộc tính
 
 Không có lý do gì để làm điều này.
@@ -143,6 +154,7 @@ Tồi:
 Tốt:
 
     <h1 class="title">HTML Best Practices</h1>
+
 
 ### Đừng trộn lẫn chữ hoa và chữ thường
 
@@ -160,6 +172,7 @@ Cũng được:
 
     <A HREF="#general">General</A>
 
+
 ### Đừng trộn lẫn các dấu ngoặc kép
 
 Giống như trên.
@@ -171,6 +184,7 @@ Tồi:
 Tốt:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
+
 
 ### Đừng phân tách các thuộc tính bằng hai hoặc nhiều khoảng trắng
 
@@ -184,6 +198,7 @@ Tốt:
 
     <input name="q" type="search">
 
+
 ### Bỏ qua giá trị thuộc tính boolean
 
 Nó thật dễ dàng để viêt, phải không?
@@ -195,6 +210,7 @@ Tồi:
 Tốt:
 
     <audio autoplay src="/audio/theme.mp3">
+
 
 ### Bỏ qua namespaces
 
@@ -212,6 +228,7 @@ Tốt:
       ...
     </svg>
 
+
 ### Đừng sử dụng các thuộc tính XML
 
 Chúng tôi viết một tài liệu HTML.
@@ -224,6 +241,7 @@ Tốt:
 
     <span lang="ja">...</span>
 
+
 ### Đừng trộn lẫn thuộc tính `data-*`, Microdata và RDFa Lite với các thuộc tính chung khác
 
 Một thẻ dài có thể rất phức tạp. Quy tắc đơn giản này sẽ giúp đọc một thẻ dài dễ dàng hơn.
@@ -235,6 +253,7 @@ Tồi:
 Tốt:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
+
 
 ### Ưu tiên các ngữ nghĩa ARIA mặc định ngầm
 
@@ -257,7 +276,9 @@ Tốt:
 
     <hr>
 
+
 ## Phần tử root
+
 
 ### Thêm một thuộc tính `lang`
 
@@ -271,6 +292,7 @@ Tốt:
 
     <html lang="en-US">
 
+
 ### Giữ thuộc tính `lang` càng ngắn càng tốt
 
 Tiếng Nhật chỉ sử dụng ở Nhật bản. Vì thế mã quốc gia là không cần thiết.
@@ -282,6 +304,7 @@ Tồi:
 Tốt:
 
     <html lang="ja">
+
 
 ### Tránh sử dụng `data-*` càng nhiều càng tốt
 
@@ -299,7 +322,9 @@ Tốt:
     ...
     <strong class="warning">Do not wash!</strong>
 
+
 ## Document metadata
+
 
 ### Thêm phần tử `title`
 
@@ -318,6 +343,7 @@ Tốt:
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
+
 
 ### Đừng sử dụng thuộc tính `base`
 
@@ -340,6 +366,7 @@ Tốt:
       ...
     </head>
 
+
 ### Chỉnh định kiểu MIME hoặc các tài nguyên liên kết phụ
 
 Đây là một gợi ý về cách ứng dụng xử lý tài nguyên này.
@@ -356,6 +383,7 @@ Tốt:
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ### Đừng liên kết đến `favico.ico`
 
 Hầu hết các trình duyệt nạp `/favicon.ico` tự động và không đồng bộ.
@@ -368,6 +396,7 @@ Tốt:
 
     <!-- Place `favicon.ico` in the root directory. -->
 
+
 ### Thêm liên kết `apple-touch-icon`
 
 Một đường dẫn yêu cầu mặc định cho biểu tượng cảm ứng đã bị thay đổi đột ngột.
@@ -379,6 +408,7 @@ Tồi:
 Tốt:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+
 
 ### Thêm thuộc tính `title` cho định dạng kiểu luân phiên
 
@@ -393,6 +423,7 @@ Tốt:
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
+
 
 ### Với URL, sử dụng phần tử `link`
 
@@ -412,6 +443,7 @@ Tốt:
       ...
     </section>
 
+
 ### Chỉ định mã hóa ký tự của tài liệu
 
 UTF-8 chưa phải là mặc định trên tất cả các trình duyệt.
@@ -429,6 +461,7 @@ Tốt:
       <title>HTML Best Practices</title>
     </head>
 
+
 ### Đừng sử dụng định dạng mã hóa ký tự cũ
 
 HTTP headers được chỉnh định bởi một máy chủ, hãy giữ nó đơn giản.
@@ -440,6 +473,7 @@ Tồi:
 Tốt:
 
     <meta charset="UTF-8">
+
 
 ### Chỉ định mã hóa ký tự vào đầu tài liệu
 
@@ -461,6 +495,7 @@ Tốt:
       ...
     </head>
 
+
 ### Sử dụng UTF-8
 
 Với UTF-8, bạn sử dụng Emoji miễn phí.
@@ -472,6 +507,7 @@ Tồi:
 Tốt:
 
     <meta charset="UTF-8">
+
 
 ### Bỏ qua thuộc tính `type` cho CSS
 
@@ -488,6 +524,7 @@ Tốt:
     <style>
       ...
     </style>
+
 
 ### Đừng ghi chú trong nội dung của phần tử `style`
 
@@ -506,6 +543,7 @@ Tốt:
     <style>
       ...
     </style>
+
 
 ### Đừng trộn lẫn thẻ cho CSS và JavaScript
 
@@ -529,7 +567,9 @@ Cũng tốt:
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ## Sections
+
 
 ### Thêm thuộc tính `body`
 
@@ -555,6 +595,7 @@ Tốt:
       </body>
     </html>
 
+
 ### Quên phần tử `hgroup` đi
 
 Phần tử này không được sử dụng quá nhiều.
@@ -571,6 +612,7 @@ Tốt:
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+
 ### Chỉ sử dụng phần tử `address` cho thông tin liên lạc
 
 Phần tử `address` là dành cho địa chỉ email, tài khoản mạng xã hôi, địa chỉ đường,
@@ -584,7 +626,9 @@ Tốt:
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+
 ## Nhóm nội dung
+
 
 ### Đừng quên bắt đầu với dòng mới trong phần tử `pre`
 
@@ -602,6 +646,7 @@ Tốt:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+
 ### Sử dụng phần tử phù hợp trong `blockquote`
 
 Nội dung của phần tử `blockquote` là một trích dẫn, không phải một đoạn ký tự.
@@ -615,6 +660,7 @@ Tốt:
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
+
 
 ### Đừng bao gồm sự chỉ định trong phần tử `blockquote`
 
@@ -646,6 +692,7 @@ Cũng tốt:
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
+
 ### Viết một danh sách trên mỗi dòng
 
 Dònnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
@@ -665,6 +712,7 @@ Tốt:
       <li>Sections</li>
       ...
     </ul>
+
 
 ### Sử dụng thuộc tính `type` cho phần tử `ol`
 
@@ -700,6 +748,7 @@ Tốt:
       </ol>
     </body>
 
+
 ### Đừng sử dụng `dl` cho đoạn hội thoại
 
 Phần tử `dl` bị giới hạn vào một danh sách liên kết trong HTML.
@@ -732,6 +781,7 @@ Tốt:
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
+
 ### Đặt phần tử `figcaption` là phần tử đầu hoặc cuối của phần tử `figure`
 
 Tài liệu không cho phép phần tử `figcaption` ở giữa phần tử `figure`.
@@ -752,6 +802,7 @@ Tốt:
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
+
 ### Sử dụng phần tử `main`
 
 Phần tử `main` có thể được sử dụng để bọc nội dung.
@@ -767,6 +818,7 @@ Tốt:
     <main>
       ...
     </main>
+
 
 ### Tránh sử dụng phần tử `div` càng nhiều càng tốt
 
@@ -784,7 +836,9 @@ Tốt:
       ...
     </section>
 
+
 ## Ngữ nghĩa cấp độ văn bản
+
 
 ### Đừng chia thành nhiều liên kết giống nhau mà có thể nhóm lại
 
@@ -805,6 +859,7 @@ Tốt:
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
+
 ### Sử dụng thuộc tính `download` cho việc tải một tài nguyên
 
 Nó sẽ buộc các trình duyệt tải xuống tài nguyên được liên kết vào bộ nhớ.
@@ -816,6 +871,7 @@ Tồi:
 Tốt:
 
     <a download href="/downloads/offline.zip">offline version</a>
+
 
 ### Sử dụng thuộc tính `rel`, `hreflang` và `type` nếu cần
 
@@ -829,6 +885,7 @@ Tốt:
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
+
 ### Làm sạch văn bản liên kết
 
 Văn bản liên kết nên là nhãn nếu nó liên kết đến tài nguyên.
@@ -840,6 +897,7 @@ Tồi:
 Tốt:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+
 
 ### Đừng sử dụng thuộc tính `em` cho cảnh báo hoặc thận trọng
 
@@ -853,6 +911,7 @@ Tốt:
 
     <strong>Caution!</strong>
 
+
 ### Tránh phần tử `s`, `i`, `b` và `u` càng nhiều càng tốt
 
 Những ngữ nghĩa của các phần tử này thì quá khó cho con người.
@@ -864,6 +923,7 @@ Tồi:
 Tốt:
 
     <span class="icon-search" aria-hidden="true"></span>
+
 
 ### Đừng thêm dấu ngoặc kép trong phần tử `q`
 
@@ -881,6 +941,7 @@ Cũng tốt:
 
     “For writing maintainable and scalable HTML documents”
 
+
 ### Thêm thuộc tính `title` cho phần từ `abbr`
 
 Không có cách nào khác để thể hiện sự mở rộng của nó.
@@ -892,6 +953,7 @@ Tồi:
 Tốt:
 
     <abbr title="HTML Best Practices">HBP</abbr>
+
 
 ### Đánh dấu phần tử `ruby` dài dòng
 
@@ -905,6 +967,7 @@ Tốt:
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
+
 ### Thêm thuộc tính `datetime` vào phần từ `time` không thể đọc được bằng máy
 
 Khi thuộc tính `datetime` không hiển thị, định dạng nội dung của các phần tử `time` bị hạn chế.
@@ -916,6 +979,7 @@ Tồi:
 Tốt:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
+
 
 ### Chỉ định code languge với thuộc tính `class` có tiền tố `language-`
 
@@ -929,6 +993,7 @@ Tốt:
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
+
 ### Giữ phần tử `kbd` càng đơn giản càng tốt
 
 Việc lồng phần tử `kdb` là quá khó đối với con người.
@@ -941,6 +1006,7 @@ Tốt:
 
     <kbd>Ctrl+F5</kbd>
 
+
 ### Tránh sử dụng phần tử `span` càng nhiều càng tốt
 
 Phần tử `span` là sự lựa chọn cuối cùng.
@@ -952,6 +1018,7 @@ Tồi:
 Tốt:
 
     HTML <em>Best</em> Practices
+
 
 ### Xuống dòng sau phần tử `br`
 
@@ -966,6 +1033,7 @@ Tốt:
     <p>HTML<br>
     Best<br>
     Practices</p>
+
 
 ### Đừng sử dụng phần tử `br` cho mục đích trình bày
 
@@ -983,7 +1051,9 @@ Tốt:
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
+
 ## Chỉnh sửa
+
 
 ### Không lấn phần tử `ins` và `del` lên các phần tử khác
 
@@ -1001,7 +1071,9 @@ Tốt:
 
     <del><p>Don’t trust!</p></del>
 
+
 ## Nội dung được nhúng
+
 
 ### Cung cấp phần tử `img` dự phòng cho phần tử `picture`
 
@@ -1025,6 +1097,7 @@ Tốt:
       <img src="/img/logo.jpg">
     </picture>
 
+
 ### Thêm thuộc tính `alt` cho phần tử `img` nếu cần thiết
 
 Thuộc tính `alt` sẽ giúp cho những ai không thể xử lý hình ảnh hoặc việc tải hình ảnh bị vô hiệu hóa
@@ -1037,6 +1110,7 @@ Tốt:
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
+
 ### Thuộc tính `alt` để trống nếu có thể
 
 Nếu hình ảnh là bổ sung, có tương tự nội dung tương tự ở gần đó.
@@ -1048,6 +1122,7 @@ Tồi:
 Tốt:
 
     <img alt="" src="/img/icon/help.png"> Help
+
 
 ### Bỏ qua thuộc tính `alt` nếu có thể
 
@@ -1062,6 +1137,7 @@ Tốt:
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
+
 ### Phần tử `iframe` rỗng
 
 Ở đây có một số hạn chế trong nội dung của nó. Nên để trống thì luôn an toàn.
@@ -1075,6 +1151,7 @@ Tồi:
 Tốt:
 
     <iframe src="/ads/default.html"></iframe>
+
 
 ### Đánh dấu nội dung phần tử `map`
 
@@ -1104,6 +1181,7 @@ Tốt:
       </p>
     </map>
 
+
 ### Cung cấp nội dung dự phòng cho phần tử `audio` hoặc `video`
 
 Nội dung dự phòng là cần thiết cho những phần tử mới được giới thiệu trong HTML.
@@ -1125,7 +1203,9 @@ Tốt:
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
+
 ## Dữ liệu dạng bảng
+
 
 ### Viết một ô trên một dòng
 
@@ -1144,6 +1224,7 @@ Tốt:
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
+
 
 ### Sử dụng phần tử `th` cho ô tiêu đề
 
@@ -1197,7 +1278,9 @@ Tốt:
       </tbody>
     </table>
 
+
 ## Biểu mẫu
+
 
 ### Bao bọc biểu mẫu điều khiển với phần tử `label`
 
@@ -1211,6 +1294,7 @@ Tốt:
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
+
 ### Bỏ qua thuộc tính `for` nếu có thể
 
 Phần tử `label` có thể chứa một số phần tử biểu mẫu.
@@ -1222,6 +1306,7 @@ Tồi:
 Tốt:
 
     <label>Query: <input name="q" type="text"></label>
+
 
 ### Sử dụng thích hợp thuộc tính `type` cho phần tử `input`
 
@@ -1235,6 +1320,7 @@ Tốt:
 
     <label>Search keyword: <input name="q" type="search"></label>
 
+
 ### Thêm thuộc tính `value` cho `input type="submit`
 
 Nhãn mặc định cho nút gởi là không tiêu chuẩn hóa trên trình duyệt và ngôn ngữ.
@@ -1246,6 +1332,7 @@ Tồi:
 Tốt:
 
     <input type="submit" value="Search">
+
 
 ### Thêm thuộc tính `title` cho phần tử `input` khi có thuộc tính `pattern`
 
@@ -1260,6 +1347,7 @@ Tốt:
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
+
 ### Don’t use `placeholder` attribute for labeling Đừng sử dụng thuộc tính `placeholder` để gắn nhãn
 
 Phần tử `label` là dành cho một nhãn, thuộc tính `placeholder` là dành cho một gợi ý ngắn.
@@ -1271,6 +1359,7 @@ Tồi:
 Tốt:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
+
 
 ### Viết một phần tử option trên một dòng
 
@@ -1290,6 +1379,7 @@ Tốt:
       <option label="Sections">
     </datalist>
 
+
 ### Thêm thuộc tính `max` cho phần tử `progress`
 
 Với thuộc tính `max`, thuộc tính `value` có thể được viết ở định dạng dễ hiểu.
@@ -1301,6 +1391,7 @@ Tồi:
 Tốt:
 
     <progress max="100" value="50"> 50%</progress>
+
 
 ### Thêm thuộc tính `min` và `max` cho phần tử `meter`
 
@@ -1314,6 +1405,7 @@ Tồi:
 Tốt:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
+
 
 ### Đặt phần tử `legend` như một phần tử con đầu tiên của phần tử `fieldset`
 
@@ -1335,7 +1427,9 @@ Tốt:
       ...
     </fieldset>
 
+
 ## Viết kịch bản
+
 
 ### Bỏ qua thuộc tính `type` cho JavaScript
 
@@ -1353,6 +1447,7 @@ Tốt:
     <script>
       ...
     </script>
+
 
 ### Đừng ghi chú trong nôi dung của phần tử `script`
 
@@ -1380,6 +1475,7 @@ Tốt:
       ...
     </script>
 
+
 ### Không sử dụng tập lệnh chèn cho phần tử `script`
 
 Thuộc tính `async` là tốt nhất cho cả tính đơn giản và hiệu suất.
@@ -1397,7 +1493,9 @@ Tốt:
 
     <script async defer src="https://example.com/widget.js"></script>
 
+
 ## Khác
+
 
 ### Thụt lề một cách nhất quán
 
@@ -1425,6 +1523,7 @@ Tốt:
       </body>
     </html>
 
+
 ### Sử dụng đường dẫn tuyệt đối cho các liên kết nội bộ
 
 Một đường dẫn tuyệt đối làm việc tốt hơn trên máy chủ cục bộ của bạn mà
@@ -1442,6 +1541,7 @@ Tốt:
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
+
 ### Đừng sử dụng URL tương đối cho các tài nguyên bên ngoài
 
 Với giao thức, bạn có thể tải tài nguyên bên ngoài một cách tin cậy và an toàn.
@@ -1454,29 +1554,33 @@ Tốt:
 
     <script src="https://example.com/js/library.js">
 
+
+
+
 ## Những người đóng góp
 
--  [@hail2u\_](https://github.com/hail2u)
--  [@momdo](https://github.com/momdo)
+- [@hail2u_](https://github.com/hail2u)
+- [@momdo](https://github.com/momdo)
+
 
 ## Những người dịch
 
--  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
--  [@costinlotreanu](https://github.com/costinlotreanu)
--  [@edgar-avila](https://github.com/edgar-avila)
--  [@kobyborali](https://github.com/kobyborali)
--  [@m1nhnv](https://github.com/m1nhnv)
--  [@mrcaidev](https://github.com/mrcaidev)
--  [@naufalk25](https://github.com/naufalk25)
--  [@oebelus](https://github.com/oebelus)
--  [@sahilmaniyar](https://github.com/sahilmaniyar)
--  [@sliderkh](https://github.com/sliderkh)
--  [@stenbaek](https://github.com/stenbaek)
--  [@techhtml](https://github.com/techhtml)
--  [@umutphp](https://github.com/umutphp)
--  [@victorchao996](https://github.com/victorchao996)
--  [@wesleynepo](https://github.com/wesleynepo)
--  [@zulkar29](https://github.com/zulkar29)
+- [@costinlotreanu](https://github.com/costinlotreanu)
+- [@edgar-avila](https://github.com/edgar-avila)
+- [@kobyborali](https://github.com/kobyborali)
+- [@m1nhnv](https://github.com/m1nhnv)
+- [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https://github.com/naufalk25)
+- [@oebelus](https://github.com/oebelus)
+- [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
+- [@stenbaek](https://github.com/stenbaek)
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+- [@victorchao996](https://github.com/victorchao996)
+- [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar29](https://github.com/zulkar29)
+
 
 ## Giấy phép
 

@@ -1,14 +1,16 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
-# 普通の HTML の書き方
+# 普通のHTMLの書き方
 
-保守しやすく、規模に依存しない HTML 文書のために
+保守しやすく、規模に依存しないHTML文書のために
+
 
 ## 一般
 
-### DOCTYPE で始める
 
-DOCTYPE は標準モードを有効にするために必要です。
+### DOCTYPEで始める
+
+DOCTYPEは標準モードを有効にするために必要です。
 
 悪い例:
 
@@ -23,9 +25,10 @@ DOCTYPE は標準モードを有効にするために必要です。
       ...
     </html>
 
-### 置き換えられるべきまたは旧式の DOCTYPE を使わない
 
-もはや DOCTYPE は DTD のためにあるわけではないので、シンプルにしましょう。
+### 置き換えられるべきまたは旧式のDOCTYPEを使わない
+
+もはやDOCTYPEはDTDのためにあるわけではないので、シンプルにしましょう。
 
 悪い例:
 
@@ -36,9 +39,10 @@ DOCTYPE は標準モードを有効にするために必要です。
 
     <!DOCTYPE html>
 
-### XML 宣言を使用しない
 
-まだ XHTML を書きたいんですか？
+### XML宣言を使用しない
+
+まだXHTMLを書きたいんですか？
 
 悪い例:
 
@@ -49,9 +53,10 @@ DOCTYPE は標準モードを有効にするために必要です。
 
     <!DOCTYPE html>
 
+
 ### 文字参照はできる限り使わない
 
-UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる文字はそのまま書けます。
+UTF-8でHTML文書を書くなら、Emojiも含めほとんどあらゆる文字はそのまま書けます。
 
 悪い例:
 
@@ -61,9 +66,10 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
+
 ### `&`と`<`、`>`、`"`、`'`は名前文字参照を使ってエスケープする
 
-バグのない HTML 文書を作成するためには、これらの文字は常にエスケープされるべきです。
+バグのないHTML文書を作成するためには、これらの文字は常にエスケープされるべきです。
 
 悪い例:
 
@@ -72,6 +78,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 良い例:
 
     <h1>The &quot;&amp;&quot; character</h1>
+
 
 ### 制御文字や不可視文字は数値文字参照を使う
 
@@ -85,6 +92,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 
     <p>This book can read in 1&#xA0;hour.</p>
 
+
 ### コメントではその内容の前後へ空白文字を置く
 
 いくつかの文字はコメントの開始直後や終了直前に書けません。
@@ -96,6 +104,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 良い例:
 
     <!-- This section is non-normative -->
+
 
 ### 終了タグを省略しない
 
@@ -115,6 +124,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
       </body>
     </html>
 
+
 ### 空要素の書き方を混ぜない
 
 一貫性は読みやすさのキーポイントです。
@@ -129,6 +139,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+
 ### タグや属性値の前後へ空白文字を置かない
 
 そうする必要はまったくありません。
@@ -140,6 +151,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 良い例:
 
     <h1 class="title">HTML Best Practices</h1>
+
 
 ### 大文字・小文字を混ぜない
 
@@ -157,6 +169,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 
     <A HREF="#general">General</A>
 
+
 ### 引用符を混ぜない
 
 上に同じです。
@@ -169,7 +182,8 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
 
-### 属性を 2 文字以上の空白文字で区切らない
+
+### 属性を2文字以上の空白文字で区切らない
 
 あなたのよくわからない整形ルールは誰かを混乱させます。
 
@@ -180,6 +194,7 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 良い例:
 
     <input name="q" type="search">
+
 
 ### 真偽値を取る属性の値は省略する
 
@@ -193,9 +208,10 @@ UTF-8 で HTML 文書を書くなら、Emoji も含めほとんどあらゆる�
 
     <audio autoplay src="/audio/theme.mp3">
 
+
 ### 名前空間は省略する
 
-SVG や MathML は HTML の文書では直接扱えます。
+SVGやMathMLはHTMLの文書では直接扱えます。
 
 悪い例:
 
@@ -209,9 +225,10 @@ SVG や MathML は HTML の文書では直接扱えます。
       ...
     </svg>
 
-### XML 属性は使わない
 
-我々は HTML 文書を書いています。
+### XML属性は使わない
+
+我々はHTML文書を書いています。
 
 悪い例:
 
@@ -221,7 +238,8 @@ SVG や MathML は HTML の文書では直接扱えます。
 
     <span lang="ja">...</span>
 
-### `data-*`と Microdata、RDFa Lite 用の属性と通常の属性を混ぜない
+
+### `data-*`とMicrodata、RDFa Lite用の属性と通常の属性を混ぜない
 
 タグ文字列はとても複雑になりえます。こういった簡単なルールによってタグ文字列を読みやすくできるでしょう。
 
@@ -233,9 +251,10 @@ SVG や MathML は HTML の文書では直接扱えます。
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
 
-### デフォルトの暗黙の ARIA セマンティックスを尊重する
 
-いくつかの要素は HTML 文章において暗黙的に ARIA `role`を持っているので、それは指定しないようにしましょう。
+### デフォルトの暗黙のARIAセマンティックスを尊重する
+
+いくつかの要素はHTML文章において暗黙的にARIA `role`を持っているので、それは指定しないようにしましょう。
 
 悪い例:
 
@@ -253,11 +272,13 @@ SVG や MathML は HTML の文書では直接扱えます。
 
     <hr>
 
+
 ## 文書要素
+
 
 ### `lang`属性を追加する
 
-`lang`属性は HTML 文書の翻訳に役立ちます。
+`lang`属性はHTML文書の翻訳に役立ちます。
 
 悪い例:
 
@@ -266,6 +287,7 @@ SVG や MathML は HTML の文書では直接扱えます。
 良い例:
 
     <html lang="en-US">
+
 
 ### `lang`属性の値はできる限り短くする
 
@@ -278,6 +300,7 @@ SVG や MathML は HTML の文書では直接扱えます。
 良い例:
 
     <html lang="ja">
+
 
 ### できる限り`data-*`属性は避ける
 
@@ -295,7 +318,9 @@ SVG や MathML は HTML の文書では直接扱えます。
     ...
     <strong class="warning">Do not wash!</strong>
 
+
 ## 文書メタデータ
+
 
 ### `title`要素を書く
 
@@ -314,9 +339,10 @@ SVG や MathML は HTML の文書では直接扱えます。
       <title>HTML Best Practices</title>
     </head>
 
+
 ### `base`要素を使わない
 
-絶対パスや絶対 URL の方が開発者とユーザーの双方に安全です。
+絶対パスや絶対URLの方が開発者とユーザーの双方に安全です。
 
 悪い例:
 
@@ -335,7 +361,8 @@ SVG や MathML は HTML の文書では直接扱えます。
       ...
     </head>
 
-### マイナーな参照先リソースの MIME タイプを指定する
+
+### マイナーな参照先リソースのMIMEタイプを指定する
 
 アプリケーションがそのリソースをどう取り扱うべきかのヒントになります。
 
@@ -351,6 +378,7 @@ SVG や MathML は HTML の文書では直接扱えます。
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ### `favicon.ico`へリンクしない
 
 ほとんどのブラウザーは`/favicon.ico`を自動的に非同期で取得します。
@@ -363,6 +391,7 @@ SVG や MathML は HTML の文書では直接扱えます。
 
     <!-- Place `favicon.ico` in the root directory. -->
 
+
 ### `apple-touch-icon`へのリンクを書く
 
 デフォルトでリクエストされるタッチ・アイコンのパスは突然変わりました。
@@ -374,6 +403,7 @@ Bad:
 Good:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+
 
 ### 代替スタイルシートへ`title`属性を追加する
 
@@ -389,9 +419,10 @@ Good:
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
-### URL には`link`要素を使う
 
-`href`属性の値は URL として解決できます。
+### URLには`link`要素を使う
+
+`href`属性の値はURLとして解決できます。
 
 悪い例:
 
@@ -407,9 +438,10 @@ Good:
       ...
     </section>
 
+
 ### 文書の文字エンコーディングを指定する
 
-まだすべてのブラウザーで UTF-8 がデフォルトになっていません。
+まだすべてのブラウザーでUTF-8がデフォルトになっていません。
 
 悪い例:
 
@@ -424,9 +456,10 @@ Good:
       <title>HTML Best Practices</title>
     </head>
 
+
 ### 置き換えられるべき文字エンコーディング指定フォーマットを使わない
 
-HTTP ヘッダーはサーバー側で指定されるべきで、簡単にしておきましょう。
+HTTPヘッダーはサーバー側で指定されるべきで、簡単にしておきましょう。
 
 悪い例:
 
@@ -436,9 +469,10 @@ HTTP ヘッダーはサーバー側で指定されるべきで、簡単にして
 
     <meta charset="UTF-8">
 
+
 ### 最初に文字エンコーディングを指定する
 
-仕様では文書の先頭 1024 バイトまでに文字エンコーディングを指定することを要求しています。
+仕様では文書の先頭1024バイトまでに文字エンコーディングを指定することを要求しています。
 
 悪い例:
 
@@ -456,9 +490,10 @@ HTTP ヘッダーはサーバー側で指定されるべきで、簡単にして
       ...
     </head>
 
-### UTF-8 を使う
 
-UTF-8 なら Emoji を自由に使えます。
+### UTF-8を使う
+
+UTF-8ならEmojiを自由に使えます。
 
 悪い例:
 
@@ -468,9 +503,10 @@ UTF-8 なら Emoji を自由に使えます。
 
     <meta charset="UTF-8">
 
-### CSS の`type`属性は省略する
 
-HTML では、`style`要素における`type`属性の初期値は`text/css`です。
+### CSSの`type`属性は省略する
+
+HTMLでは、`style`要素における`type`属性の初期値は`text/css`です。
 
 悪い例:
 
@@ -483,6 +519,7 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
     <style>
       ...
     </style>
+
 
 ### `style`要素の中をコメントアウトしない
 
@@ -502,9 +539,10 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
       ...
     </style>
 
-### CSS と JavaScript のタグを混ぜない
 
-`script`要素は DOM の構築をブロックするかもしれません。
+### CSSとJavaScriptのタグを混ぜない
+
+`script`要素はDOMの構築をブロックするかもしれません。
 
 悪い例:
 
@@ -524,7 +562,9 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ## セクション
+
 
 ### `body`要素を書く
 
@@ -550,6 +590,7 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
       </body>
     </html>
 
+
 ### `hgroup`要素のことは忘れる
 
 あまり使われていません。
@@ -566,9 +607,10 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+
 ### `address`要素は連絡先情報にのみ使う
 
-`address`要素はメールアドレスや SNS アカウント、住所、電話番号など、実際に利用できるあなたとの連絡手段のための要素です。
+`address`要素はメールアドレスやSNSアカウント、住所、電話番号など、実際に利用できるあなたとの連絡手段のための要素です。
 
 悪い例:
 
@@ -578,11 +620,13 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+
 ## グルーピングコンテンツ
+
 
 ### `pre`要素は改行で始めない
 
-最初の改行はブラウザーに無視されますが、2 番目以降はそのまま表示されます。
+最初の改行はブラウザーに無視されますが、2番目以降はそのまま表示されます。
 
 悪い例:
 
@@ -594,6 +638,7 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
+
 
 ### `blockquote`要素内でも適切な要素を使う
 
@@ -608,6 +653,7 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
+
 
 ### `blockquote`要素内に帰属情報を含めない
 
@@ -639,7 +685,8 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
-### リスト項目は 1 行に 1 つずつ書く
+
+### リスト項目は1行に1つずつ書く
 
 長ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーい行はとっっっっっっっっっっっっっっっっっっっっっっっっっっっても読みづらいです。
 
@@ -657,6 +704,7 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
       <li>Sections</li>
       ...
     </ul>
+
 
 ### `ol`要素では`type`属性を使う
 
@@ -691,9 +739,10 @@ HTML では、`style`要素における`type`属性の初期値は`text/css`で�
       </ol>
     </body>
 
+
 ### `dl`を会話のために使わない
 
-HTML では`dl`要素は関連付けリストに限定されています。
+HTMLでは`dl`要素は関連付けリストに限定されています。
 
 悪い例:
 
@@ -723,6 +772,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
+
 ### `figcaption`要素は`figure`要素の最初か最後に置く
 
 仕様では`figcaption`要素を`figure`要素の中ほどに置けません。
@@ -743,6 +793,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
+
 ### `main`要素を使う
 
 `main`要素はコンテンツをまとめるために使えます。
@@ -758,6 +809,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
     <main>
       ...
     </main>
+
 
 ### できる限り`div`要素は避ける
 
@@ -775,7 +827,9 @@ HTML では`dl`要素は関連付けリストに限定されています。
       ...
     </section>
 
+
 ## テキストレベルセマンティックス
+
 
 ### グループ化できるリンクは分割しない
 
@@ -795,6 +849,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
+
 ### リソースをダウンロードさせる場合は`download`属性を使う
 
 こうすることでダウンロードするリンク先のリソースを確実にローカルに保存させられます。
@@ -806,6 +861,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     <a download href="/downloads/offline.zip">offline version</a>
+
 
 ### `rel`や`hreflang`、`type`属性を必要ならば使う
 
@@ -819,6 +875,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
+
 ### リンク文字列は明確にする
 
 リンク文字列はリンク先のリソースのラベルであるべきです。
@@ -830,6 +887,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+
 
 ### `em`要素を警告や注意に使わない
 
@@ -843,6 +901,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     <strong>Caution!</strong>
 
+
 ### できる限り`s`や`i`、`b`、`u`要素を避ける
 
 これらの要素のセマンティックスは人類には難しすぎます。
@@ -854,6 +913,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     <span class="icon-search" aria-hidden="true"></span>
+
 
 ### `q`要素内へ引用符は置かない
 
@@ -871,6 +931,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     “For writing maintainable and scalable HTML documents”
 
+
 ### `abbr`要素へ`title`属性を追加する
 
 他に完全表記を提示する方法がありません。
@@ -882,6 +943,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     <abbr title="HTML Best Practices">HBP</abbr>
+
 
 ### `ruby`要素は冗長にマークアップする
 
@@ -895,6 +957,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
+
 ### 機械的に解釈可能でない`time`要素では`datetime`属性を追加する
 
 `datetime`属性を使わない場合、`time`要素の中身は限定されます。
@@ -906,6 +969,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
+
 
 ### コードの言語は`class`属性で`language-`で始めることで指定する
 
@@ -919,6 +983,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
+
 ### できる限り`kbd`要素はシンプルにする
 
 入れ子にした`kbd`要素は人類には難しすぎます。
@@ -931,6 +996,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     <kbd>Ctrl+F5</kbd>
 
+
 ### できる限り`span`要素は使わない
 
 `span`要素は最後の手段です。
@@ -942,6 +1008,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     HTML <em>Best</em> Practices
+
 
 ### `br`要素の後ろでは改行する
 
@@ -956,6 +1023,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
     <p>HTML<br>
     Best<br>
     Practices</p>
+
 
 ### 見た目だけのために`br`要素を使わない
 
@@ -973,7 +1041,9 @@ HTML では`dl`要素は関連付けリストに限定されています。
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
+
 ## 編集
+
 
 ### `ins`や`del`要素は他の要素をまたがせない
 
@@ -991,7 +1061,9 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     <del><p>Don’t trust!</p></del>
 
+
 ## エンベディッドコンテンツ
+
 
 ### `picture`要素ではフォールバックのための`img`要素を提供する
 
@@ -1015,6 +1087,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
       <img src="/img/logo.jpg">
     </picture>
 
+
 ### 必要な時は`img`要素へ`alt`属性を追加する
 
 `alt`属性は、画像を表示できなかったり、画像の読み込みを無効にしている環境へ助けになります。
@@ -1027,6 +1100,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
+
 ### 可能ならば`alt`属性は空にする
 
 画像が補助的なものならば、きっと周囲に同等のコンテンツが存在するはずです。
@@ -1038,6 +1112,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     <img alt="" src="/img/icon/help.png"> Help
+
 
 ### 可能ならば`alt`属性は省略する
 
@@ -1052,6 +1127,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
+
 ### `iframe`要素の中は空にする
 
 その内容にはいくつかの制限があります。空にすれば安全です。
@@ -1065,6 +1141,7 @@ HTML では`dl`要素は関連付けリストに限定されています。
 良い例:
 
     <iframe src="/ads/default.html"></iframe>
+
 
 ### `map`要素の中はマークアップする
 
@@ -1094,9 +1171,10 @@ HTML では`dl`要素は関連付けリストに限定されています。
       </p>
     </map>
 
+
 ### `audio`や`video`要素にフォールバックのためのコンテンツを提供する
 
-HTML で新しく作られた要素にはフォールバックのためのコンテンツが必要です。
+HTMLで新しく作られた要素にはフォールバックのためのコンテンツが必要です。
 
 悪い例:
 
@@ -1115,9 +1193,11 @@ HTML で新しく作られた要素にはフォールバックのためのコン
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
+
 ## テーブルデータ
 
-### 1 行に 1 つのセルを書く
+
+### 1行に1つのセルを書く
 
 長い行は把握しづらいです。
 
@@ -1134,6 +1214,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
+
 
 ### 見出しセルには`th`要素を使う
 
@@ -1187,7 +1268,9 @@ HTML で新しく作られた要素にはフォールバックのためのコン
       </tbody>
     </table>
 
+
 ## フォーム
+
 
 ### フォームコントロールは`label`要素で括る
 
@@ -1201,6 +1284,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
+
 ### 可能ならば`for`属性は省略する
 
 `label`要素はいくつかのフォーム要素を含められます。
@@ -1212,6 +1296,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 良い例:
 
     <label>Query: <input name="q" type="text"></label>
+
 
 ### `input`要素では適切な`type`属性を使う
 
@@ -1225,6 +1310,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 
     <label>Search keyword: <input name="q" type="search"></label>
 
+
 ### `input type="submit"`には`value`属性を追加する
 
 送信ボタンは、そのデフォルトのラベルがブラウザーや言語設定によって変わってしまいます。
@@ -1236,6 +1322,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 良い例:
 
     <input type="submit" value="Search">
+
 
 ### `pattern`属性を持つ`input`要素には`title`属性を追加する
 
@@ -1249,6 +1336,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
+
 ### `placeholder`属性をラベル付けに使わない
 
 `label`要素がラベルのためにあり、`placeholder`属性は短いヒントのためにあります。
@@ -1261,7 +1349,8 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
-### `option`要素は 1 行に 1 つ書く
+
+### `option`要素は1行に1つ書く
 
 長い行は把握しづらいです。
 
@@ -1279,6 +1368,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
       <option label="Sections">
     </datalist>
 
+
 ### `progress`要素には`max`属性を追加する
 
 `max`属性があると、`value`属性を簡単な形式で書けます。
@@ -1291,6 +1381,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 
     <progress max="100" value="50"> 50%</progress>
 
+
 ### `meter`要素では`min`及び`max`属性を追加する
 
 `min`と`max`属性があると、`value`属性を簡単な形式で書けます。
@@ -1302,6 +1393,7 @@ HTML で新しく作られた要素にはフォールバックのためのコン
 良い例:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
+
 
 ### `legend`要素は`fieldset`要素の最初に置く
 
@@ -1323,11 +1415,13 @@ HTML で新しく作られた要素にはフォールバックのためのコン
       ...
     </fieldset>
 
+
 ## スクリプティング
 
-### JavaScript では`type`属性を省略する
 
-HTML では、`script`要素における`type`属性の初期値は`text/javascript`です。
+### JavaScriptでは`type`属性を省略する
+
+HTMLでは、`script`要素における`type`属性の初期値は`text/javascript`です。
 
 悪い例:
 
@@ -1340,6 +1434,7 @@ HTML では、`script`要素における`type`属性の初期値は`text/javascr
     <script>
       ...
     </script>
+
 
 ### `script`要素の中をコメントアウトしない
 
@@ -1367,6 +1462,7 @@ HTML では、`script`要素における`type`属性の初期値は`text/javascr
       ...
     </script>
 
+
 ### `script`要素を動的に生成するテクニックを使わない
 
 明快さとパフォーマンスの両面で`async`属性が最良です。
@@ -1384,7 +1480,9 @@ HTML では、`script`要素における`type`属性の初期値は`text/javascr
 
     <script async defer src="https://example.com/widget.js"></script>
 
+
 ## その他
+
 
 ### 一貫した量でインデントする
 
@@ -1412,6 +1510,7 @@ HTML では、`script`要素における`type`属性の初期値は`text/javascr
       </body>
     </html>
 
+
 ### 内部リンクには絶対パスを使う
 
 絶対パスはインターネット回線のないローカルの環境でもうまく動きます。
@@ -1428,7 +1527,8 @@ HTML では、`script`要素における`type`属性の初期値は`text/javascr
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
-### 外部リソースにはプロトコル相対 URL を使わない
+
+### 外部リソースにはプロトコル相対URLを使わない
 
 プロトコルを指定すると、外部リソースを確実かつ安全に読み込めます。
 
@@ -1440,29 +1540,33 @@ HTML では、`script`要素における`type`属性の初期値は`text/javascr
 
     <script src="https://example.com/js/library.js">
 
+
+
+
 ## Contributors
 
--  [@hail2u\_](https://github.com/hail2u)
--  [@momdo](https://github.com/momdo)
+- [@hail2u_](https://github.com/hail2u)
+- [@momdo](https://github.com/momdo)
+
 
 ## Translators
 
--  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
--  [@costinlotreanu](https://github.com/costinlotreanu)
--  [@edgar-avila](https://github.com/edgar-avila)
--  [@kobyborali](https://github.com/kobyborali)
--  [@m1nhnv](https://github.com/m1nhnv)
--  [@mrcaidev](https://github.com/mrcaidev)
--  [@naufalk25](https://github.com/naufalk25)
--  [@oebelus](https://github.com/oebelus)
--  [@sahilmaniyar](https://github.com/sahilmaniyar)
--  [@sliderkh](https://github.com/sliderkh)
--  [@stenbaek](https://github.com/stenbaek)
--  [@techhtml](https://github.com/techhtml)
--  [@umutphp](https://github.com/umutphp)
--  [@victorchao996](https://github.com/victorchao996)
--  [@wesleynepo](https://github.com/wesleynepo)
--  [@zulkar29](https://github.com/zulkar29)
+- [@costinlotreanu](https://github.com/costinlotreanu)
+- [@edgar-avila](https://github.com/edgar-avila)
+- [@kobyborali](https://github.com/kobyborali)
+- [@m1nhnv](https://github.com/m1nhnv)
+- [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https://github.com/naufalk25)
+- [@oebelus](https://github.com/oebelus)
+- [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
+- [@stenbaek](https://github.com/stenbaek)
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+- [@victorchao996](https://github.com/victorchao996)
+- [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar29](https://github.com/zulkar29)
+
 
 ## License
 

@@ -1,10 +1,12 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
 # Лучшие практики HTML
 
 Для написания поддерживаемых и масштабируемых HTML-документов
 
+
 ## Общее
+
 
 ### Начните с DOCTYPE
 
@@ -23,6 +25,7 @@ DOCTYPE требуется для активации стандартного р
       ...
     </html>
 
+
 ### Не используйте устаревший или недействительный DOCTYPE
 
 DOCTYPE больше не предназначен для DTD, будьте проще.
@@ -35,6 +38,7 @@ DOCTYPE больше не предназначен для DTD, будьте пр
 Хорошо:
 
     <!DOCTYPE html>
+
 
 ### Не используйте XML Declaration
 
@@ -49,6 +53,7 @@ DOCTYPE больше не предназначен для DTD, будьте пр
 
     <!DOCTYPE html>
 
+
 ### По возможности избегайте использования ссылок на символы
 
 Если вы пишете HTML-документ с использованием UTF-8, почти все символы (включая
@@ -62,6 +67,7 @@ Emoji) могут быть записаны напрямую.
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
 
+
 ### Экранирование `&`, `<`, `>`, `"` и `'` с именованными ссылками на символы
 
 Чтобы HTML-документ не содержал ошибок, эти символы следует всегда экранировать.
@@ -73,6 +79,7 @@ Emoji) могут быть записаны напрямую.
 Хорошо:
 
     <h1>The &quot;&amp;&quot; character</h1>
+
 
 ### Используйте числовые ссылки на символы управления или невидимые символы
 
@@ -87,6 +94,7 @@ Emoji) могут быть записаны напрямую.
 
     <p>This book can read in 1&#xA0;hour.</p>
 
+
 ### Поместите пробелы вокруг содержимого комментария
 
 Некоторые символы нельзя использовать сразу после открытия комментария или до закрытия комментария.
@@ -98,6 +106,7 @@ Emoji) могут быть записаны напрямую.
 Хорошо:
 
     <!-- This section is non-normative -->
+
 
 ### Не пропускайте закрывающий тег
 
@@ -117,6 +126,7 @@ Emoji) могут быть записаны напрямую.
       </body>
     </html>
 
+
 ### Не смешивайте пустой формат элемента
 
 Последовательность - залог удобного чтения.
@@ -131,6 +141,7 @@ Emoji) могут быть записаны напрямую.
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+
 ### Не ставьте пробелы вокруг тегов и значений атрибутов
 
 Для этого нет никаких причин.
@@ -142,6 +153,7 @@ Emoji) могут быть записаны напрямую.
 Хорошо:
 
     <h1 class="title">HTML Best Practices</h1>
+
 
 ### Не смешивайте регистры символов
 
@@ -159,6 +171,7 @@ Emoji) могут быть записаны напрямую.
 
     <A HREF="#general">General</A>
 
+
 ### Не смешивайте кавычки
 
 То же, что и выше.
@@ -170,6 +183,7 @@ Emoji) могут быть записаны напрямую.
 Хорошо:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
+
 
 ### Не разделяйте атрибуты двумя или более пробелами
 
@@ -183,6 +197,7 @@ Emoji) могут быть записаны напрямую.
 
     <input name="q" type="search">
 
+
 ### Пропустите логическое значение атрибута
 
 Писать легко, не так ли?
@@ -194,6 +209,7 @@ Emoji) могут быть записаны напрямую.
 Хорошо:
 
     <audio autoplay src="/audio/theme.mp3">
+
 
 ### Опустите пространства имен
 
@@ -211,6 +227,7 @@ SVG и MathML можно использовать непосредственно
       ...
     </svg>
 
+
 ### Не используйте атрибуты XML
 
 Мы пишем HTML-документ.
@@ -223,6 +240,7 @@ SVG и MathML можно использовать непосредственно
 
     <span lang="ja">...</span>
 
+
 ### Не смешивай `data-*`, Microdata, и RDFa Lite атрибуты с обычными атрибутами
 
 Строка тега может быть очень сложной. Это простое правило поможет прочитать такую строку тегов.
@@ -234,6 +252,7 @@ SVG и MathML можно использовать непосредственно
 Хорошо:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
+
 
 ### Предпочитайте неявную семантику ARIA по умолчанию
 
@@ -255,7 +274,9 @@ SVG и MathML можно использовать непосредственно
 
     <hr>
 
+
 ## Корневой элемент
+
 
 ### Добавьте атрибут `lang`
 
@@ -269,6 +290,7 @@ SVG и MathML можно использовать непосредственно
 
     <html lang="en-US">
 
+
 ### Держите значение атрибута `lang` как можно короче
 
 Японский язык используется только в Японии. Поэтому код страны не нужен.
@@ -280,6 +302,7 @@ SVG и MathML можно использовать непосредственно
 Хорошо:
 
     <html lang="ja">
+
 
 ### По возможности избегайте `data-*`
 
@@ -297,7 +320,9 @@ SVG и MathML можно использовать непосредственно
     ...
     <strong class="warning">Do not wash!</strong>
 
+
 ## Метаданные документа
+
 
 ### Добавить элемент `title`
 
@@ -315,6 +340,7 @@ SVG и MathML можно использовать непосредственно
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
+
 
 ### Не используйте элемент `base`
 
@@ -337,6 +363,7 @@ SVG и MathML можно использовать непосредственно
       ...
     </head>
 
+
 ### Укажите MIME-тип второстепенных связанных ресурсов
 
 Это подсказка о том, как приложение работает с этим ресурсом.
@@ -353,6 +380,7 @@ SVG и MathML можно использовать непосредственно
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ### Не ссылайтесь на `favicon.ico`
 
 Почти все браузеры получают `/favicon.ico` автоматически и асинхронно.
@@ -365,6 +393,7 @@ SVG и MathML можно использовать непосредственно
 
     <!-- Place `favicon.ico` in the root directory. -->
 
+
 ### Добавьте ссылку на `apple-touch-icon`
 
 Путь запроса по умолчанию для сенсорного значка был неожиданно изменен.
@@ -376,6 +405,7 @@ SVG и MathML можно использовать непосредственно
 Хорошо:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+
 
 ### Добавьте атрибут `title` к альтернативным таблицам стилей
 
@@ -390,6 +420,7 @@ SVG и MathML можно использовать непосредственно
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
+
 
 ### Для URL используйте элемент `link`
 
@@ -409,6 +440,7 @@ SVG и MathML можно использовать непосредственно
       ...
     </section>
 
+
 ### Укажите кодировку символов документа
 
 UTF-8 пока не используется по умолчанию во всех браузерах.
@@ -426,6 +458,7 @@ UTF-8 пока не используется по умолчанию во все
       <title>HTML Best Practices</title>
     </head>
 
+
 ### Не используйте устаревший формат кодирования символов
 
 HTTP-заголовки должны задаваться сервером, будь проще.
@@ -437,6 +470,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <meta charset="UTF-8">
+
 
 ### Сначала укажите кодировку символов
 
@@ -458,6 +492,7 @@ HTTP-заголовки должны задаваться сервером, бу
       ...
     </head>
 
+
 ### Используйте UTF-8
 
 При использовании UTF-8 вы можете свободно использовать Emoji.
@@ -469,6 +504,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <meta charset="UTF-8">
+
 
 ### Для URL используйте элемент `link`
 
@@ -485,6 +521,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <style>
       ...
     </style>
+
 
 ### Не комментируйте содержимое элемента `style`
 
@@ -503,6 +540,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <style>
       ...
     </style>
+
 
 ### Не смешивайте теги для CSS и JavaScript
 
@@ -526,7 +564,9 @@ HTTP-заголовки должны задаваться сервером, бу
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ## Секции
+
 
 ### Добавить элемент `body`
 
@@ -552,6 +592,7 @@ HTTP-заголовки должны задаваться сервером, бу
       </body>
     </html>
 
+
 ### Забудьте об элементе `hgroup`
 
 Этот элемент используется нечасто.
@@ -568,6 +609,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+
 ### Используйте элемент `address` только для контактной информации
 
 Элемент `address` предназначен для адреса электронной почты, аккаунта в социальной сети, адреса улицы, номер телефона или что-то, с чем вы можете связаться.
@@ -580,7 +622,9 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+
 ## Группировка контента
+
 
 ### Не начинайте с новой строки в элементе `pre`
 
@@ -597,6 +641,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+
 ### Используйте соответствующий элемент в элементе `blockquote`
 
 Содержимое элемента `blockquote` - это цитата, а не куски символов.
@@ -610,6 +655,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
+
 
 ### Не включайте атрибуцию непосредственно в элемент `blockquote`
 
@@ -641,6 +687,7 @@ HTTP-заголовки должны задаваться сервером, бу
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
+
 ### Напишите по одному элементу списка в строке
 
 Длиннyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyю
@@ -660,6 +707,7 @@ HTTP-заголовки должны задаваться сервером, бу
       <li>Sections</li>
       ...
     </ul>
+
 
 ### Используйте атрибут `type` для элемента `ol`
 
@@ -694,6 +742,7 @@ HTTP-заголовки должны задаваться сервером, бу
       </ol>
     </body>
 
+
 ### Не используйте `dl` для диалога
 
 Элемент `dl` ограничен ассоциативным списком в HTML.
@@ -726,6 +775,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
+
 ### Поместите элемент `figcaption` в качестве первого или последнего дочернего элемента `figure`
 
 Спецификация не позволяет использовать элемент `figcaption` в середине элемента `figure`.
@@ -746,6 +796,7 @@ HTTP-заголовки должны задаваться сервером, бу
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
+
 ### Используйте элемент `main`
 
 Элемент `main` может быть использован для обертывания содержимого.
@@ -761,6 +812,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <main>
       ...
     </main>
+
 
 ### По возможности избегайте элемента `div`
 
@@ -778,7 +830,9 @@ HTTP-заголовки должны задаваться сервером, бу
       ...
     </section>
 
+
 ## Семантика на уровне текста
+
 
 ### Не разделяйте одинаковые ссылки, которые можно сгруппировать
 
@@ -798,6 +852,7 @@ HTTP-заголовки должны задаваться сервером, бу
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
+
 ### Используйте атрибут `download` для загрузки ресурса
 
 Это заставит браузеры загрузить связанный ресурс в хранилище.
@@ -809,6 +864,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <a download href="/downloads/offline.zip">offline version</a>
+
 
 ### Используйте атрибуты `rel`, `hreflang` и `type` при необходимости
 
@@ -822,6 +878,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
+
 ### Четкий текст ссылки
 
 Текст ссылки должен представлять собой метку связанного с ней ресурса.
@@ -833,6 +890,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+
 
 ### Не используйте элемент `em` для предупреждения или предостережения
 
@@ -846,6 +904,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <strong>Caution!</strong>
 
+
 ### По возможности избегайте элементов `s`, `i`, `b` и `u`
 
 Семантика этих элементов слишком сложна для человека.
@@ -857,6 +916,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <span class="icon-search" aria-hidden="true"></span>
+
 
 ### Не ставьте кавычки для элемента `q`
 
@@ -874,6 +934,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     “For writing maintainable and scalable HTML documents”
 
+
 ### Добавить атрибут `title` к элементу `abbr`
 
 Нет другого способа представить его полную форму.
@@ -885,6 +946,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <abbr title="HTML Best Practices">HBP</abbr>
+
 
 ### Разметка элемента `ruby` в развернутом виде
 
@@ -898,6 +960,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
+
 ### Добавьте атрибут `datetime` к элементу `time`, не поддающемуся машинному чтению
 
 Когда атрибут `datetime` не присутствует, формат содержимого элемента `time` ограничивается.
@@ -909,6 +972,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
+
 
 ### Укажите язык кода с помощью атрибута `class` с префиксом `language-`
 
@@ -922,6 +986,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
+
 ### Максимально упростите элемент `kbd`
 
 Вложенность элемента `kbd` слишком сложна для человека.
@@ -934,6 +999,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <kbd>Ctrl+F5</kbd>
 
+
 ### По возможности избегайте элемента `span`
 
 Элемент `span` - это элемент последней надежды.
@@ -945,6 +1011,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     HTML <em>Best</em> Practices
+
 
 ### Разрыв после элемента `br`
 
@@ -959,6 +1026,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <p>HTML<br>
     Best<br>
     Practices</p>
+
 
 ### Не используйте элемент `br` только в презентационных целях
 
@@ -976,7 +1044,9 @@ HTTP-заголовки должны задаваться сервером, бу
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
+
 ## Edits
+
 
 ### Не накладывайте элементы `ins` и `del` на другие элементы
 
@@ -994,7 +1064,9 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <del><p>Don’t trust!</p></del>
 
+
 ## Встроенный контент
+
 
 ### Предоставьте резервные ресурсы элемента `img` для элемента `picture`
 
@@ -1018,6 +1090,7 @@ HTTP-заголовки должны задаваться сервером, бу
       <img src="/img/logo.jpg">
     </picture>
 
+
 ### Добавьте атрибут `alt` к элементу `img`, если это необходимо
 
 Атрибут `alt` помогает тем, кто не может обрабатывать изображения или у кого загрузка изображений отключена.
@@ -1030,6 +1103,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
+
 ### Пустой атрибут `alt`, если это возможно
 
 Если изображение является дополнительным, значит, где-то рядом находится эквивалентный контент.
@@ -1041,6 +1115,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <img alt="" src="/img/icon/help.png"> Help
+
 
 ### Опустите атрибут `alt`, если это возможно
 
@@ -1055,6 +1130,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
+
 ### Пустой элемент `iframe`
 
 Существует некоторое ограничение в его содержании. Быть пустым всегда безопасно.
@@ -1068,6 +1144,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <iframe src="/ads/default.html"></iframe>
+
 
 ### Разметка содержимого элемента `map`
 
@@ -1097,6 +1174,7 @@ HTTP-заголовки должны задаваться сервером, бу
       </p>
     </map>
 
+
 ### Предоставьте резервное содержимое для элемента `audio` или `video`
 
 Вспомогательный контент необходим для вновь введенных элементов в HTML.
@@ -1118,7 +1196,9 @@ HTTP-заголовки должны задаваться сервером, бу
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
+
 ## Табличные данные
+
 
 ### Напишите по одной ячейке в строке
 
@@ -1137,6 +1217,7 @@ HTTP-заголовки должны задаваться сервером, бу
       <td>TКорневой элемент</td>
       <td>Sections</td>
     </tr>
+
 
 ### Используйте элемент `th` для ячейки заголовка
 
@@ -1190,7 +1271,9 @@ HTTP-заголовки должны задаваться сервером, бу
       </tbody>
     </table>
 
+
 ## Формы
+
 
 ### Обернуть элемент управления формой элементом `label`
 
@@ -1204,6 +1287,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
+
 ### По возможности опустите атрибут `for`
 
 Элемент `label` может содержать некоторые элементы формы.
@@ -1215,6 +1299,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <label>Query: <input name="q" type="text"></label>
+
 
 ### Используйте соответствующий атрибут `type` для элемента `input`
 
@@ -1228,6 +1313,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <label>Search keyword: <input name="q" type="search"></label>
 
+
 ### Добавьте атрибут `value` к `input type="submit"`
 
 Метка по умолчанию для кнопки submit не стандартизирована для разных браузеров и языков.
@@ -1239,6 +1325,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <input type="submit" value="Search">
+
 
 ### Добавьте атрибут `title` в элемент `input` при наличии атрибута `pattern`
 
@@ -1252,6 +1339,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
+
 ### Не используйте атрибут `placeholder` для маркировки
 
 Элемент `label` предназначен для метки, атрибут `placeholder` - для короткой подсказки.
@@ -1263,6 +1351,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
+
 
 ### Запишите один элемент `option` в строке
 
@@ -1282,6 +1371,7 @@ HTTP-заголовки должны задаваться сервером, бу
       <option label="Sections">
     </datalist>
 
+
 ### Добавьте атрибут `max` к элементу `progress`
 
 С помощью атрибута `max` атрибут `value` может быть записан в удобном формате.
@@ -1294,6 +1384,7 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <progress max="100" value="50"> 50%</progress>
 
+
 ### Добавьте атрибуты `min` и `max` к элементу `meter`
 
 С помощью атрибутов `min` и `max` атрибут `value` может быть записан в удобном формате.
@@ -1305,6 +1396,7 @@ HTTP-заголовки должны задаваться сервером, бу
 Хорошо:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
+
 
 ### Поместите элемент `legend` в качестве первого дочернего элемента `fieldset`
 
@@ -1326,7 +1418,9 @@ HTTP-заголовки должны задаваться сервером, бу
       ...
     </fieldset>
 
+
 ## Скриптинг
+
 
 ### Опустите атрибут `type` для JavaScript
 
@@ -1343,6 +1437,7 @@ HTTP-заголовки должны задаваться сервером, бу
     <script>
       ...
     </script>
+
 
 ### Не комментируйте содержимое элемента `script`
 
@@ -1370,6 +1465,7 @@ HTTP-заголовки должны задаваться сервером, бу
       ...
     </script>
 
+
 ### Не используйте внедренный скриптом элемент `script`
 
 Атрибут `async` является лучшим как по простоте, так и по производительности.
@@ -1387,7 +1483,9 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <script async defer src="https://example.com/widget.js"></script>
 
+
 ## Прочее
+
 
 ### Последовательный отступ
 
@@ -1415,6 +1513,7 @@ HTTP-заголовки должны задаваться сервером, бу
       </body>
     </html>
 
+
 ### Используйте абсолютный путь для внутренних ссылок
 
 Абсолютный путь лучше работает на локальном хосте без подключения к Интернету.
@@ -1431,6 +1530,7 @@ HTTP-заголовки должны задаваться сервером, бу
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
+
 ### Укажите протокл URL для внешних ресурсов
 
 С помощью протокола вы можете надежно и безопасно загружать внешние ресурсы.
@@ -1443,29 +1543,31 @@ HTTP-заголовки должны задаваться сервером, бу
 
     <script src="https://example.com/js/library.js">
 
+
 ## Авторы
 
--  [@hail2u\_](https://github.com/hail2u)
--  [@momdo](https://github.com/momdo)
+- [@hail2u\_](https://github.com/hail2u)
+- [@momdo](https://github.com/momdo)
+
 
 ## Переводчики
 
--  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
--  [@costinlotreanu](https://github.com/costinlotreanu)
--  [@edgar-avila](https://github.com/edgar-avila)
--  [@kobyborali](https://github.com/kobyborali)
--  [@m1nhnv](https://github.com/m1nhnv)
--  [@mrcaidev](https://github.com/mrcaidev)
--  [@naufalk25](https://github.com/naufalk25)
--  [@oebelus](https://github.com/oebelus)
--  [@sahilmaniyar](https://github.com/sahilmaniyar)
--  [@sliderkh](https://github.com/sliderkh)
--  [@stenbaek](https://github.com/stenbaek)
--  [@techhtml](https://github.com/techhtml)
--  [@umutphp](https://github.com/umutphp)
--  [@victorchao996](https://github.com/victorchao996)
--  [@wesleynepo](https://github.com/wesleynepo)
--  [@zulkar29](https://github.com/zulkar29)
+- [@costinlotreanu](https://github.com/costinlotreanu)
+- [@edgar-avila](https://github.com/edgar-avila)
+- [@kobyborali](https://github.com/kobyborali)
+- [@m1nhnv](https://github.com/m1nhnv)
+- [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https://github.com/naufalk25)
+- [@oebelus](https://github.com/oebelus)
+- [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
+- [@stenbaek](https://github.com/stenbaek)
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+- [@victorchao996](https://github.com/victorchao996)
+- [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar29](https://github.com/zulkar29)
+
 
 ## Лицензия
 

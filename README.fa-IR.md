@@ -1,10 +1,12 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
 # بهترین شیوه ها و استاندارد های نوشتن HTML
 
 برای نوشتن صفحات و اسناد HTML مقیاس پذیر و قابل توسعه
 
+
 ## عمومی
+
 
 ### با DOCTYPE شروع کنید
 
@@ -23,6 +25,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </html>
 
+
 ### از DOCTYPE های قدیمی یا منسوخ استفاده نکنید
 
 از DOCTYPE دیگر برای تعیین نوع سند یا همان (DTD) استفاده نمی‌شود؛ باید به صورت ساده باشد.
@@ -35,6 +38,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <!DOCTYPE html>
+
 
 ### از علامت ها و مشخصه های XML استفاده نکنید
 
@@ -49,6 +53,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <!DOCTYPE html>
 
+
 ### تا حد امکان از ارجاع کاراکتر ها استفاده نکنید
 
 اگر سند HTML را تحت رمزگذاری کاراکتر UTF-8 بنویسید، تقریباً همه‌ی کاراکتر ها (از جمله ایموجی ها) را می‌توان به طور مستقیم نوشت.
@@ -60,6 +65,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
+
 
 ### به جای استفاده‌ مستقیم از کاراکتر های `&` ، `<` ، `>` ، `'` و `"` از ارجاع کاراکتر های غیرمستقیم آنها استفاده کنید
 
@@ -73,6 +79,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <h1>The &quot;&amp;&quot; character</h1>
 
+
 ### از ارجاع کاراکترهای عددی برای کاراکترهای کنترلی یا نامرئی استفاده کنید
 
 این کاراکتر ها به راحتی با کاراکتر های دیگر اشتباه گرفته می‌شوند. همچنین مرجع اصلی قواعد (spec) در خصوص این کاراکتر ها تضمینی برای تعریف یک نام خوانا برای انسان ها نمی‌کند.
@@ -85,6 +92,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <p>This book can read in 1&#xA0;hour.</p>
 
+
 ### اطراف محتویات کامنت ها فاصله بگذارید
 
 بعضی از کاراکتر ها نمی‌توانند بلافصله پس از باز کردن بلاک کامنت یا قبل از بستن آن استفاده شوند.
@@ -96,6 +104,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <!-- This section is non-normative -->
+
 
 ### تگ های بسته را جا نیندازید
 
@@ -115,6 +124,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       </body>
     </html>
 
+
 ### ساختار تگ های باز را بهم نزنید
 
 ثبات ساختار، کلید خوانایی است.
@@ -129,6 +139,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+
 ### اطراف نام تگ ها و مقدار صفت ها فضای خالی نگذارید
 
 هیچ دلیلی برای انجام این کار نیست.
@@ -140,6 +151,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <h1 class="title">HTML Best Practices</h1>
+
 
 ### حالت بزرگی و کوچکی کاراکتر ها را بهم نزنید
 
@@ -157,6 +169,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <A HREF="#general">General</A>
 
+
 ### حالت بزرگی و کوچکی گیومه‌ ها را بهم نزنید
 
 مشابه مورد قبلی.
@@ -168,6 +181,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
+
 
 ### صفت ها را با دو فاصله یا بیشتر از آن جدا نکنید
 
@@ -181,6 +195,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <input name="q" type="search">
 
+
 ### مقدار صفات صحیح/غلط (boolean) را حذف کنید
 
 نوشتن اینگونه راحت است؛ اینطور نیست؟
@@ -192,6 +207,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <audio autoplay src="/audio/theme.mp3">
+
 
 ### فضا های نام‌گذاری را حذف کنید
 
@@ -209,6 +225,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </svg>
 
+
 ### صفات XML را قاطی نکنید
 
 چیزی که ما می‌نویسیم سند HTML است.
@@ -221,6 +238,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <span lang="ja">...</span>
 
+
 ### صفات `*-data` ، میکرودیتا (Microdata) و RDFa Lite را با صفات معمولی قاطی نکنید
 
 یک تگ می‌تواند بسیار پیچیده باشد. این قاعده ساده به خوانایی این تگ ها کمک می‌کند.
@@ -232,6 +250,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
+
 
 ### صفات ARIA ضمنی و پیش‌فرص را ترجیح دهید
 
@@ -253,7 +272,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <hr>
 
+
 ## عنصر اصلی (`<html></html>`)
+
 
 ### صفت `lang` را اضافه کنید
 
@@ -267,6 +288,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <html lang="en-US">
 
+
 ### مقدار صفت `lang` را تا حد امکان کوتاه نگه دارید
 
 زبان ژاپنی فقط در کشور ژاپن صحبت می‌شود؛ پس اضافه کردن کد کشور نیازی نیست.
@@ -278,6 +300,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <html lang="ja">
+
 
 ### تا حد امکان از صفت `*-data` استفاده نکنید
 
@@ -295,7 +318,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     ...
     <strong class="warning">Do not wash!</strong>
 
+
 ## متادیتای سند
+
 
 ### صفت `title` را اضافه کنید
 
@@ -313,6 +338,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <meta charset="UTF-8">
       <title>HTML Best Practices</title>
     </head>
+
 
 ### تا حد امکان از عنصر `base` استفاده نکنید
 
@@ -335,6 +361,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </head>
 
+
 ### نوع MIME منابع مرتبط را مشخص کنید
 
 این یک اشاره است که چگونه برنامه این منبع را مدیریت کند.
@@ -351,6 +378,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ### به `favicon.ico` پیوند ندهید
 
 تقریباً همه مرورگر ها `favicon.ico/` را به صورت خودکار و غیر‌هم‌زمان (async) واکشی می‌کنند.
@@ -363,6 +391,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <!-- Place `favicon.ico` in the root directory. -->
 
+
 ### لینک `apple-touch-icon` را اضافه کنید
 
 یک مسیر درخواست پیش‌فرض برای نماد لمسی ناگهان تغییر کرد.
@@ -374,6 +403,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+
 
 ### صفت `title` را به فایل های استایل (stylesheet) جایگزین اضافه کنید
 
@@ -388,6 +418,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
+
 
 ### برای URL از عنصر `link` استفاده کنید
 
@@ -407,6 +438,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </section>
 
+
 ### نوع رمزگذاری کاراکتر های سند را مشخص کنید
 
 هنوز UTF-8 در همه مرورگر ها پیش‌فرض نیست.
@@ -424,6 +456,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <title>HTML Best Practices</title>
     </head>
 
+
 ### از فرمت های قدیمی رمزگذاری کاراکتر استفاده نکنید
 
 هدر های HTTP باید توسط یک سرور مشخص شوند؛ پس از فرمت ساده استفاده کنید.
@@ -435,6 +468,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <meta charset="UTF-8">
+
 
 ### نوع رمزگذاری کاراکتر را در ابتدای کار مشخص کنید
 
@@ -456,6 +490,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </head>
 
+
 ### از UTF-8 استفاده کنید
 
 با UTF-8 می‌توانید از ایموجی ها استفاده کنید.
@@ -467,6 +502,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <meta charset="UTF-8">
+
 
 ### برای CSS از صفت `type` صرف نظر کنید
 
@@ -483,6 +519,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <style>
       ...
     </style>
+
 
 ### محتوای عنصر `style` را کامنت گذاری نکنید
 
@@ -501,6 +538,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <style>
       ...
     </style>
+
 
 ### محل تگ های CSS و JavaScript را در کد قاطی نکنید
 
@@ -524,7 +562,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ## بخش‌بندی ها
+
 
 ### عنصر `body` را اضافه کنید
 
@@ -550,6 +590,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       </body>
     </html>
 
+
 ### عنصر `hgroup` را فراموش کنید
 
 این عنصر کاربرد چندانی ندارد.
@@ -566,6 +607,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+
 ### عنصر `address` را فقط برای اطلاعات تماس استفاده کنید
 
 عنصر `address` برای آدرس ایمیل، حساب شبکه اجتماعی، آدرس خیابان، شماره تلفن یا چیزی است که می‌توانید با آن تماس بگیرید.
@@ -578,7 +620,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+
 ## گروه‌بندی مطالب
+
 
 ### در عنصر `pre` با خط جدید شروع نکنید
 
@@ -595,6 +639,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+
 ### از عنصر مناسب در عنصر `blockquote` استفاده کنید
 
 محتوای عنصر `blockquote` یک نقل قول است، نه تکه‌ای از کاراکترها.
@@ -608,6 +653,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <blockquote>
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
+
 
 ### انتساب نقل قول را مستقیماً در عنصر `blockquote` وارد نکنید
 
@@ -639,9 +685,11 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
+
 ### در هر خط یک مورد از لیست را بنویسید
 
-خوااااااااااااااااااااااااااااااااااااااااااااااااااااااااندن متن طولاااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااانی سخت است.
+خوااااااااااااااااااااااااااااااااااااااااااااااااااااااااندن متن طولاااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااااانی
+ سخت است.
 
 بد:
 
@@ -658,9 +706,11 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </ul>
 
+
 ### برای عنصر `ol` از صفت `type` استفاده کنید
 
-گاهی نشانگر توسط محتویات نزدیک خود ارجاع داده می‌شود. با تغییر نشانگر با صفت `type`، برای ارجاع مشکلی نخواهید داشت.
+گاهی نشانگر توسط محتویات نزدیک خود ارجاع داده می‌شود.
+ با تغییر نشانگر با صفت `type`، برای ارجاع مشکلی نخواهید داشت.
 
 بد:
 
@@ -690,6 +740,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
         ...
       </ol>
     </body>
+
 
 ### برای دیالوگ از `dl` استفاده نکنید
 
@@ -723,6 +774,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
+
 ### عنصر `figcaption` را به عنوان اولین یا آخرین فرزند عنصر `figure` قرار دهید
 
 مرج اصلی قواعد (spec) عنصر `figcaption` را در وسط عنصر `figure` مجاز نمی‌داند.
@@ -743,6 +795,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
+
 ### از عنصر `main` استفاده کنید
 
 عنصر `main` را می‌توان به عنوان قالبی برای اطراف محتوا استفاده کرد.
@@ -758,6 +811,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <main>
       ...
     </main>
+
 
 ### تا حد امکان از استفاده از عنصر `div` بپرهیزید
 
@@ -775,7 +829,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </section>
 
-## Text-level semantics
+
+## عناصر معنایی برای محتوای متنی
+
 
 ### لینکی که می‌توان گروه بندی کرد را به دو یا چند بخش تقسیم نکنید
 
@@ -795,6 +851,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
+
 ### از صفت `donwload` برای دانلود کردن منابع استفاده کنید
 
 مرورگرها را مجبور می‌کند که منبع پیوند شده را در فضای ذخیره‌سازی دانلود کنند.
@@ -806,6 +863,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <a download href="/downloads/offline.zip">offline version</a>
+
 
 ### در صورت نیاز از صفات `type`، `hreflang` و `rel` استفاده کنید
 
@@ -819,6 +877,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
+
 ### متن لینک واضح
 
 متن لینک باید برچسب منبع پیوند شده به آن باشد.
@@ -830,6 +889,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+
 
 ### از عنصر `em` برای هشدار یا احتیاط استفاده نکنید
 
@@ -843,6 +903,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <strong>Caution!</strong>
 
+
 ### تا حد امکان از عناصر `s` ، `i` ، `b` و `u` استفاده نکنید
 
 معنای این عناصر برای انسان های بسیار دشوار است.
@@ -854,6 +915,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <span class="icon-search" aria-hidden="true"></span>
+
 
 ### نقل قول ها را داخل عنصر `q` نگذارید
 
@@ -871,6 +933,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     “For writing maintainable and scalable HTML documents”
 
+
 ### صفت `title` را به عنصر `abbr` اضافه کنید
 
 هیچ راه دیگری برای نشان دادن گسترش (اطلاعات اضافه) آن وجود ندارد.
@@ -882,6 +945,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <abbr title="HTML Best Practices">HBP</abbr>
+
 
 ### عنصر `ruby` را به طور کامل نشانه گذاری کنید
 
@@ -895,6 +959,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
 
+
 ### صفت `datetime` را به عناصر `time` با مقدار ناخوانا برای دستگاه (ماشین) اضافه کنید
 
 هنگامی که صفت `datetime` وجود نداشته باشد، فرمت محتوای عنصر `time` محدود می‌شود.
@@ -906,6 +971,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
+
 
 ### زبان کد را با صفت `class` و مقداری با پیشوند `-language` مشخص کنید
 
@@ -919,6 +985,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
 
+
 ### عنصر `kbd` را تا حد امکان ساده نگه دارید
 
 تودرتو کردن عنصر `kbd` برای انسان بسیار دشوار است.
@@ -931,6 +998,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <kbd>Ctrl+F5</kbd>
 
+
 ### تا حد ممکن از استفاده از عنصر `span` بپرهیزید
 
 عنصر `span` باید به عنوان آخر راه حل مورد استفاده قرار گیرد.
@@ -942,6 +1010,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     HTML <em>Best</em> Practices
+
 
 ### شکستن خط بعد از عنصر `br`
 
@@ -956,6 +1025,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <p>HTML<br>
     Best<br>
     Practices</p>
+
 
 ### از عنصر `br` فقط با هدف ارائه مطالب استفاده نکنید
 
@@ -973,7 +1043,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
+
 ## ویرایش ها
+
 
 ### عناصر `ins` و `del` را بر سایر عناصر اولویت ندهید
 
@@ -991,7 +1063,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <del><p>Don’t trust!</p></del>
 
+
 ## مطالب جدا شده
+
 
 ### عنصر `img` را به عنوان عنصر جایگزین (در صورت نیاز) برای عنصر `picture` قرار دهید
 
@@ -1015,6 +1089,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <img src="/img/logo.jpg">
     </picture>
 
+
 ### در صورت نیاز، صفت `alt` را برای عنصر `img` اضافه کنید
 
 صفت `alt` به کسانی که نمی توانند تصاویر را پردازش کنند یا دانلود تصویر را غیر فعال کرده اند  کمک می کند.
@@ -1027,6 +1102,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <img alt="HTML Best Practices" src="/img/logo.png">
 
+
 ### در صورت امکان صفت `alt` را خالی بگذارید
 
 اگر تصویر فقط مکمل باشد، پس محتوایی معادل آن در همان نزدیکی وجود دارد.
@@ -1038,6 +1114,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <img alt="" src="/img/icon/help.png"> Help
+
 
 ### اگر امکانش هست از صفت `alt` صرف نظر کنید
 
@@ -1052,6 +1129,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
 
+
 ### عنصر `iframe` خالی
 
 محدودیت هایی در محتوای آن وجود دارد؛ پس خالی بودن آن همیشه راهی مطمئن است.
@@ -1065,6 +1143,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <iframe src="/ads/default.html"></iframe>
+
 
 ### محتوای عنصر `map` را نشانه گذاری کنید
 
@@ -1094,6 +1173,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       </p>
     </map>
 
+
 ### محتوای بازگشتی (در صورت پشتیبانی نشدن) برای عناصر `audio` و `video` قرار دهید
 
 محتوای بازگشتی برای عناصر تازه معرفی شده در HTML مورد نیاز است.
@@ -1115,7 +1195,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
+
 ## داده های جدولی
+
 
 ### در هر خط تنها یک خانه از جدول را بنویسید
 
@@ -1134,6 +1216,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
+
 
 ### برای خانه هایی از جدول که سرفصل هستند از عنصر `th` استفاده کنید
 
@@ -1187,7 +1270,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       </tbody>
     </table>
 
+
 ## فرم ها
+
 
 ### اجزای فرم را داخل عنصر `label` قرار دهید
 
@@ -1201,6 +1286,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <p><label>Query: <input name="q" type="text"></label></p>
 
+
 ### در صورت امکان از صفت `for` صرف نظر کنید
 
 عنصر `label` خودش می‌تواند حاوی برخی از اجزای فرم باشد.
@@ -1212,6 +1298,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <label>Query: <input name="q" type="text"></label>
+
 
 ### از صفت `type` مناسب برای عنصر `input` استفاده کنید
 
@@ -1225,6 +1312,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <label>Search keyword: <input name="q" type="search"></label>
 
+
 ### صفت `value` را به عنصر `</ "input type="submit>` اضافه کنید
 
 برچسب پیش‌فرض دکمه ارسال در میان مرورگر ها و زبان های مختلف استاندارد سازی نشده است.
@@ -1236,6 +1324,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <input type="submit" value="Search">
+
 
 ### در صورت وجود صفت `pattern`،‌ صفت `title` را به عنصر `input` اضافه کنید
 
@@ -1249,6 +1338,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
+
 ### برای برچسب گذاری از صفت `placeholder` استفاده نکنید
 
 عنصر `label` برای برچسب گذاری است؛ در صورتی که صفت `placeholder` برای یک راهنمایی کوچک می‌باشد.
@@ -1260,6 +1350,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
+
 
 ### در هر خط تنها یک عنصر `option` بنویسید
 
@@ -1279,6 +1370,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       <option label="Sections">
     </datalist>
 
+
 ### صفت `max` را برای عنصر `progress` اضافه کنید
 
 در صورت وجود صفت `max`، صفت `value` را می توان در قالبی آسان نوشت.
@@ -1291,6 +1383,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <progress max="100" value="50"> 50%</progress>
 
+
 ### صفات `min` و `max` را به عنصر `meter` اضافه کنید
 
 در صورت وجود صفات `min` و `max`، صفت `value` را می توان در قالبی آسان نوشت.
@@ -1302,6 +1395,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 خوب:
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
+
 
 ### عنصر `legend` را به عنوان اولین فرزند عنصر `fieldset` قرار دهید
 
@@ -1323,7 +1417,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </fieldset>
 
+
 ## اسکریپت نویسی
+
 
 ### برای JavaScript  از صفت `type` صرف نظر کنید
 
@@ -1340,6 +1436,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     <script>
       ...
     </script>
+
 
 ### محتویات عنصر `script` را کامنت گذاری نکنید
 
@@ -1367,6 +1464,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       ...
     </script>
 
+
 ### از عنصر `script` تزریق شده توسط اسکریپت استفاده نکنید
 
 صفت `async` از نظر عملکرد و سادگی بهترین گزینه است.
@@ -1384,7 +1482,9 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <script async defer src="https://example.com/widget.js"></script>
 
+
 ## متفرقه
+
 
 ### ثبات در فرورفتگی ها و فواصل
 
@@ -1412,6 +1512,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
       </body>
     </html>
 
+
 ### برای لینک های داخلی از مسیر یا URL مطلق استفاده کنید
 
 یک مسیر یا URL مطلق در لوکال‌هاست شما بدون اتصال به اینترنت بهتر کار می‌کند.
@@ -1428,6 +1529,7 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
+
 ### از مسیر یا URL وابسته به پروتکل برای منابع خارجی استفاده نکنید
 
 با پروتکل مناسب، می توانید منابع خارجی را با اطمینان کامل بارگیری کنید.
@@ -1440,29 +1542,33 @@ Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk]
 
     <script src="https://example.com/js/library.js">
 
+
+
+
 ## Contributors
 
--  [@hail2u\_](https://github.com/hail2u)
--  [@momdo](https://github.com/momdo)
+- [@hail2u_](https://github.com/hail2u)
+- [@momdo](https://github.com/momdo)
+
 
 ## Translators
 
--  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
--  [@costinlotreanu](https://github.com/costinlotreanu)
--  [@edgar-avila](https://github.com/edgar-avila)
--  [@kobyborali](https://github.com/kobyborali)
--  [@m1nhnv](https://github.com/m1nhnv)
--  [@mrcaidev](https://github.com/mrcaidev)
--  [@naufalk25](https://github.com/naufalk25)
--  [@oebelus](https://github.com/oebelus)
--  [@sahilmaniyar](https://github.com/sahilmaniyar)
--  [@sliderkh](https://github.com/sliderkh)
--  [@stenbaek](https://github.com/stenbaek)
--  [@techhtml](https://github.com/techhtml)
--  [@umutphp](https://github.com/umutphp)
--  [@victorchao996](https://github.com/victorchao996)
--  [@wesleynepo](https://github.com/wesleynepo)
--  [@zulkar29](https://github.com/zulkar29)
+- [@costinlotreanu](https://github.com/costinlotreanu)
+- [@edgar-avila](https://github.com/edgar-avila)
+- [@kobyborali](https://github.com/kobyborali)
+- [@m1nhnv](https://github.com/m1nhnv)
+- [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https://github.com/naufalk25)
+- [@oebelus](https://github.com/oebelus)
+- [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
+- [@stenbaek](https://github.com/stenbaek)
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+- [@victorchao996](https://github.com/victorchao996)
+- [@wesleynepo](https://github.com/wesleynepo)
+- [@zulkar29](https://github.com/zulkar29)
+
 
 ## License
 

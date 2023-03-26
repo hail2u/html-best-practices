@@ -1,10 +1,12 @@
-Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md) · [فارسی](README.fa.md)
+Translations: [English](README.md) · [বাংলা](README.bn.md) · [Dansk](README.da.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Indonesia](README.id.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md) · [Română](README.ro.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [简体中文](README.zh-CN.md) · [正體中文](README.zh-TW.md)
 
 # Meilleures pratiques HTML
 
 Pour rédiger des documents HTML maintenables et extensibles.
 
+
 ## General
+
 
 ### Commencez avec DOCTYPE
 
@@ -23,6 +25,7 @@ Bon :
       ...
     </html>
 
+
 ### N’utilisez pas un DOCTYPE obsolète
 
 DOCTYPE n’est plus pour la DTD, soyez simple.
@@ -35,6 +38,7 @@ Mal :
 Bon :
 
     <!DOCTYPE html>
+
 
 ### N'utilisez pas la déclaration XML
 
@@ -49,6 +53,7 @@ Bon :
 
     <!DOCTYPE html>
 
+
 ### Évitez autant que possible d’utiliser des références de caractères
 
 Si vous écrivez un document HTML avec UTF-8, presque tous les caractères (y compris les emojis) peuvent être écrits directement.
@@ -60,6 +65,7 @@ Mal :
 Bon :
 
     <p><small>Copyright © 2014 W3C<sup>®</sup></small></p>
+
 
 ### Evitez &, <, >, ", et ' , et remplacez les avec les entités de charactère
 
@@ -73,7 +79,8 @@ Bon :
 
     <h1>The &quot;&amp;&quot; character</h1>
 
-### Utilisez les références numériques pour les caractères invisibles ou de contrôle
+
+### Utilisez les références numériques pour les caractères invisibles ou de contrôle 
 
 Ces caractères sont facilement confondus avec d'autre caractères. En outre, la spécification ne garantit pas la définition d’un nom lisible par l’homme pour ces caractères.
 
@@ -84,6 +91,7 @@ Mal :
 Bon :
 
     <p>This book can read in 1&#xA0;hour.</p>
+
 
 ### Placez des espaces autour du contenu des commentaires
 
@@ -96,6 +104,7 @@ Mal :
 Bon :
 
     <!-- This section is non-normative -->
+
 
 ### Ne pas omettre la balise de fermeture
 
@@ -115,6 +124,7 @@ Bon :
       </body>
     </html>
 
+
 ### Utilisez un seul format pour les éléments vides
 
 La consistance est la clé pour un code lisible.
@@ -129,6 +139,7 @@ Bon :
     <img alt="HTML Best Practices" src="/img/logo.png">
     <hr>
 
+
 ### Ne mettez pas d’espaces blancs autour des balises et des d’attributs
 
 Il n’y a aucune raison de faire cela.
@@ -140,6 +151,7 @@ Mal :
 Bon :
 
     <h1 class="title">HTML Best Practices</h1>
+
 
 ### Ne mélangez pas les majuscules et les minuscules
 
@@ -157,6 +169,7 @@ Egalement Bon :
 
     <A HREF="#general">General</A>
 
+
 ### Ne pas mélanger les guillemets
 
 Comme ci-dessus.
@@ -168,6 +181,7 @@ Mal :
 Bon :
 
     <img alt="HTML Best Practices" src="/img/logo.jpg">
+
 
 ### Ne séparez pas les attributs avec deux ou plus d'espaces blancs
 
@@ -181,9 +195,10 @@ Bon :
 
     <input name="q" type="search">
 
+
 ### Omettre la valeur de l’attribut booléen
 
-C'est facile à écrire, non?
+C'est facile à écrire, non? 
 
 Mal :
 
@@ -192,6 +207,7 @@ Mal :
 Bon :
 
     <audio autoplay src="/audio/theme.mp3">
+
 
 ### Ignorer les espaces de noms (namespaces)
 
@@ -209,6 +225,7 @@ Bon :
       ...
     </svg>
 
+
 ### N'utilisez pas les attributs XML
 
 Nous sommes en train d'écrire un document HTML.
@@ -221,9 +238,10 @@ Bon :
 
     <span lang="ja">...</span>
 
+
 ### Ne mélangez pas les attributs `data-*`, Microdata, et RDFa Lite avec des attributs communs.
 
-Un texte dans une balise peut devenir très compliqué. Cette règle simple aide à lire ces textes.
+Un texte dans une balise peut devenir très compliqué. Cette règle simple aide à lire ces textes. 
 
 Mal :
 
@@ -232,6 +250,7 @@ Mal :
 Bon :
 
     <img alt="HTML Best Practices" src="/img/logo.png" data-width="88" data-height="31" itemprop="image">
+
 
 ### Privilégier la sémantique implicite ARIA par défaut
 
@@ -253,7 +272,9 @@ Bon :
 
     <hr>
 
+
 ## L'élement racine
+
 
 ### Ajouter un attribut `lang`
 
@@ -267,6 +288,7 @@ Bon :
 
     <html lang="en-US">
 
+
 ### Gardez la valeur de l'attribut `lang` aussi court que possible
 
 Le Japonais n'est utilisé que dans le Japon. Donc, le code pays n'est pas nécessaire.
@@ -278,6 +300,7 @@ Mal :
 Bon :
 
     <html lang="ja">
+
 
 ### Evitez `data-*` le maximum possible
 
@@ -295,11 +318,13 @@ Bon :
     ...
     <strong class="warning">Do not wash!</strong>
 
+
 ## Les métadonnées du document
 
-### Ajouter l'élément `title`
 
-Une valeur pour l'éément `title` est utilisée par plusieurs applications, et non pas seulement les navigateurs
+### Ajouter l'élément `title` 
+
+Une valeur pour l'éément `title` est utilisée par plusieurs applications, et non pas seulement les navigateurs 
 
 Mal :
 
@@ -314,7 +339,8 @@ Bon :
       <title>HTML Best Practices</title>
     </head>
 
-### N'utiliser pas l'élément `base`
+
+### N'utiliser pas l'élément `base` 
 
 Un chemin absolu ou une URL est plus sûr pour les développeurs et les utilisateurs.
 
@@ -335,6 +361,7 @@ Bon :
       ...
     </head>
 
+
 ### Spécifier le type du MIME des ressources mineures liées
 
 C’est un conseil sur la façon dont l’application gère cette ressource.
@@ -351,9 +378,10 @@ Bon :
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ### N’utilisez pas de lien pour `favicon.ico`
 
-Presque tous les navigateurs vont chercher `/favicon.ico` automatiquement et de façon asynchrone.
+Presque tous les navigateurs vont chercher  `/favicon.ico` automatiquement et de façon asynchrone.
 
 Mal :
 
@@ -363,7 +391,8 @@ Bon :
 
     <!-- Place `favicon.ico` in the root directory. -->
 
-### Ajouter le lien `apple-touch-icon`
+
+### Ajouter le lien `apple-touch-icon` 
 
 Indique quelle icône les plateformes iOS utilisent pour représenter le site.
 
@@ -374,6 +403,7 @@ Mal :
 Bon :
 
     <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+
 
 ### Ajouter l'attribut `title` à d’autres feuilles de style
 
@@ -389,7 +419,8 @@ Bon :
     <link href="/css/screen.css" rel="stylesheet">
     <link href="/css/high-contrast.css" rel="alternate stylesheet" title="High contrast">
 
-### Pour l'URL, utiliser l'élément `link`
+
+### Pour l'URL, utiliser l'élément `link` 
 
 Une valeur pour l'attribut `href` attribute peut être résolue en tant qu’URL.
 
@@ -406,6 +437,7 @@ Bon :
       <link href="/blog/hello" itemprop="url">
       ...
     </section>
+
 
 ### Spécifier l’encodage des caractères du document
 
@@ -424,6 +456,7 @@ Bon :
       <title>HTML Best Practices</title>
     </head>
 
+
 ### N’utilisez pas un codage de caractères obsolète
 
 Les en-têtes HTTP doivent être spécifiés par un serveur, soyez simples.
@@ -435,6 +468,7 @@ Mal :
 Bon :
 
     <meta charset="UTF-8">
+
 
 ### Spécifier l’encodage des caractères en premier
 
@@ -456,6 +490,7 @@ Bon :
       ...
     </head>
 
+
 ### Utiliser UTF-8
 
 Avec UTF-8, tu peux utiliser des Emojis
@@ -467,6 +502,7 @@ Mal :
 Bon :
 
     <meta charset="UTF-8">
+
 
 ### Evite l'attribut `type` pour CSS
 
@@ -484,7 +520,8 @@ Bon :
       ...
     </style>
 
-### Ne pas commenter le contenu de l'élément `style`
+
+### Ne pas commenter le contenu de l'élément `style` 
 
 Ce rituel n'est nécessaire que pour les anciens navigateurs
 
@@ -501,6 +538,7 @@ Bon :
     <style>
       ...
     </style>
+
 
 ### Ne mélanger pas les balises CSS et JavaScript
 
@@ -524,9 +562,11 @@ Egalement Bon :
     <script src="/js/main.js"></script>
     <link href="/css/screen.css" rel="stylesheet">
 
+
 ## Sections
 
-### Ajouter un élément `body`
+
+### Ajouter un élément `body` 
 
 Ne pas utiliser l’élément `body` pour envelopper le contenu de la page peut provoquer des comportements inattendus dans les navigateurs.
 
@@ -550,6 +590,7 @@ Bon :
       </body>
     </html>
 
+
 ### Oublie l'élément `hgroup`
 
 Cet élément n'est pas trop utilisé
@@ -566,6 +607,7 @@ Bon :
     <h1>HTML Best Practices</h1>
     <p>For writing maintainable and scalable HTML documents.</p>
 
+
 ### N'utilise l'élément `address` que pour les coordonnées
 
 L'élément `address`est pour les adresses e-mail, réseaux sociaux, domicile, numéro de téléphone et autres moyens de contact.
@@ -578,9 +620,11 @@ Bon :
 
     <address>Contact: <a href="https://twitter.com/hail2u_">Kyo Nagashima</a></address>
 
+
 ## Regroupement du contenu
 
-### Ne saute pas la ligne après l'élément `pre`
+
+### Ne saute pas la ligne après l'élément `pre` 
 
 La première ligne sera ignorée dans les navigateurs, mais la seconde et les suivantes seront affichées.
 
@@ -594,6 +638,7 @@ Bon :
 
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
+
 
 ### Utilise un format approprié dans l'élément `blockquote`
 
@@ -609,7 +654,8 @@ Bon :
       <p>For writing maintainable and scalable HTML documents.</p>
     </blockquote>
 
-### Ne pas inclure l'attribution directement dans l'élément `blockquote`
+
+### Ne pas inclure l'attribution directement dans l'élément `blockquote` 
 
 Le contenu de l'élément `blockquote` est une citation
 
@@ -639,10 +685,11 @@ Egalement Bon :
       <figcaption>— HTML Best Practices</figcaption>
     </figure>
 
+
 ### Ecrire un seul élément de liste par ligne
 
 Une ligne looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongue
-est difficiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiile à lire.
+est difficiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiile à lire. 
 
 Mal :
 
@@ -659,7 +706,8 @@ Bon :
       ...
     </ul>
 
-### Utilise l'attribut `type` pour l'élément `ol`
+
+### Utilise l'attribut `type` pour l'élément `ol` 
 
 Parfois, le marqueur est référencé par le contenu à proximité. Si vous changez le type du marqueur
 avec l’attribut type, vous serez en sécurité avec ces références.
@@ -693,6 +741,7 @@ Bon :
       </ol>
     </body>
 
+
 ### Ne pas utiliser `dl` pour le dialogue
 
 L'élément `dl` est utilisé pour les listes descriptives en HTML.
@@ -725,7 +774,8 @@ Bon :
     <p>Costello: When you pay off the first baseman every month, who gets the money?</p>
     <p>Abbott: Every dollar of it.</p>
 
-### Place l'élément `figcaption` comme premier ou dernier enfant de l’élément `figure`
+
+### Place l'élément `figcaption` comme premier ou dernier enfant de l’élément `figure` 
 
 Les spécifications n'autorisent pas l'élément `figcaption` au milieu de l'élément `figure`.
 
@@ -745,6 +795,7 @@ Bon :
       <figcaption>“HTML Best Practices” Cover Art</figcaption>
     </figure>
 
+
 ### Utilise l'élément `main`
 
 L'élément `main` peut être utilisé pour envelopper le contenu.
@@ -760,6 +811,7 @@ Bon :
     <main>
       ...
     </main>
+
 
 ### Evite l'élément `div` le maximum possible
 
@@ -777,11 +829,13 @@ Bon :
       ...
     </section>
 
+
 ## Sémantique au niveau du texte
+
 
 ### Ne pas diviser un lien qui peut être groupé
 
-L'élément `a` peut envelopper presque tous les éléments (sauf les éléments interactifs
+L'élément `a` peut envelopper presque tous les éléments (sauf les éléments interactifs 
 tels que les contrôles d’un formulaire et l'élément `a`).
 
 Mal :
@@ -798,6 +852,7 @@ Bon :
       <p>A community maintaining and evolving HTML since 2004.</p>
     </a>
 
+
 ### Utiliser l'attribut `download` pour télécharger une resource
 
 Il forcera les navigateurs à télécharger la ressource liée au stockage.
@@ -809,6 +864,7 @@ Mal :
 Bon :
 
     <a download href="/downloads/offline.zip">offline version</a>
+
 
 ### Utiliser les attributs `rel`, `hreflang`, and `type` au besoin
 
@@ -822,6 +878,7 @@ Bon :
 
     <a href="/ja/pdf" hreflang="ja" rel="alternate" type="application/pdf">Japanese PDF version</a>
 
+
 ### Pour un texte clair sur les liens
 
 Le texte du lien doit être l’étiquette de sa ressource liée.
@@ -833,6 +890,7 @@ Mal :
 Bon :
 
     <p><a href="/pdf" rel="alternate" type="application/pdf">PDF version</a> is also available.</p>
+
 
 ### N'utilise pas l'élément `em` pour l'avertissement ou la mise en garde
 
@@ -846,6 +904,7 @@ Bon :
 
     <strong>Caution!</strong>
 
+
 ### Evite les éléments `s`, `i`, `b`, et `u` le maximum possible
 
 La sémantique de ces éléments est difficile pour les humains
@@ -857,6 +916,7 @@ Mal :
 Bon :
 
     <span class="icon-search" aria-hidden="true"></span>
+
 
 ### Ne mettez pas de guillemets sur l’élément `q` element
 
@@ -874,7 +934,8 @@ Egalement Bon :
 
     “For writing maintainable and scalable HTML documents”
 
-### Ajouter l'attribut `title` à l'élément `abbr`
+
+### Ajouter l'attribut `title` à l'élément `abbr` 
 
 Il n’y a pas d’autre façon de représenter son expansion.
 
@@ -885,6 +946,7 @@ Mal :
 Bon :
 
     <abbr title="HTML Best Practices">HBP</abbr>
+
 
 ### Marque l'élément `ruby` en détail
 
@@ -897,6 +959,7 @@ Mal :
 Bon :
 
     <ruby>HTML<rp> (</rp><rt>えいちてぃーえむえる</rt><rp>) </rp></ruby>
+
 
 ### Ajouter l'attribut `datetime` à l’élément `time` si vous utilisez des formats non reconnaissables par l'ordinateur
 
@@ -911,6 +974,7 @@ Bon :
 
     <time datetime="2014-12-19">Dec 19, 2014</time>
 
+
 ### Spécifie le langage du code avec l'attribut `class` avec comme préfixe : `language-`
 
 Ce n’est pas formel, mais la spécification le mentionne ainsi.
@@ -922,6 +986,7 @@ Mal :
 Bon :
 
     <code class="language-html">&lt;!DOCTYPE html&gt;</code>
+
 
 ### Garde l'élément `kbd` le plus simple possible
 
@@ -935,6 +1000,7 @@ Bon :
 
     <kbd>Ctrl+F5</kbd>
 
+
 ### Eviter l'élément `span` le maximum possible
 
 L'élément `span` est un élément de dernier recours.
@@ -947,7 +1013,8 @@ Bon :
 
     HTML <em>Best</em> Practices
 
-### Saute la ligne lors de l’utilisation de l’élémen `br`
+
+### Saute la ligne lors de l’utilisation de l’élémen `br` 
 
 Un saut de ligne doit être nécessaire lorsque l’élément `br` est utilisé.
 
@@ -960,6 +1027,7 @@ Bon :
     <p>HTML<br>
     Best<br>
     Practices</p>
+
 
 ### Ne pas utiliser l'élément `br` uniquement à des fins de présentation
 
@@ -977,7 +1045,9 @@ Bon :
     <p><label>Rule description:<br>
     <textarea name="rule-description"></textarea></label></p>
 
+
 ## Editions
+
 
 ### Ne placez pas les éléments `ins` and `del` sur d'autres éléments
 
@@ -995,9 +1065,11 @@ Bon :
 
     <del><p>Don’t trust!</p></del>
 
+
 ## Contenu intégré
 
-### Fournir l’élément de repli `img` pour l'élément `picture`
+
+### Fournir l’élément de repli `img` pour l'élément `picture` 
 
 Le support de l’élément `picture` n’est pas encore bon.
 
@@ -1019,9 +1091,10 @@ Bon :
       <img src="/img/logo.jpg">
     </picture>
 
+
 ### Ajoute l'attribut `alt` à l'élément `img` au besoin
 
-L'attribut `alt` aide ceux qui ne peuvent pas traiter les images
+L'attribut `alt` aide ceux qui ne peuvent pas traiter les images 
 ou dont le chargement des images est désactivé.
 
 Mal :
@@ -1031,6 +1104,7 @@ Mal :
 Bon :
 
     <img alt="HTML Best Practices" src="/img/logo.png">
+
 
 ### Utilise l’attribut `alt` vide si possible
 
@@ -1044,6 +1118,7 @@ Bon :
 
     <img alt="" src="/img/icon/help.png"> Help
 
+
 ### Evite l'attribut `alt` si possible
 
 Parfois, vous ne savez pas quel texte convient à l’attribut `alt`.
@@ -1056,6 +1131,7 @@ Bon :
 
     <img src="captcha.cgi?id=82174" title="CAPTCHA">
     (If you cannot see the image, you can use an <a href="?audio">audio</a> test instead.)
+
 
 ### L'élément `iframe` vide
 
@@ -1071,7 +1147,8 @@ Bon :
 
     <iframe src="/ads/default.html"></iframe>
 
-### Marque le contenu de l'élément `map`
+
+### Marque le contenu de l'élément `map` 
 
 Ce contenu se présente à un lecteur d’écran.
 
@@ -1099,7 +1176,8 @@ Bon :
       </p>
     </map>
 
-### Proposer un contenu alternatif pour les éléments `audio` et `video`
+
+### Proposer un contenu alternatif pour les éléments `audio` et `video` 
 
 Un contenu alternatif est nécessaire pour les éléments nouvellement introduits en HTML.
 
@@ -1120,11 +1198,13 @@ Bon :
       <iframe src="//www.youtube.com/embed/..." allowfullscreen></iframe>
     </video>
 
+
 ## Données tabulaires
+
 
 ### Taper une cellule par ligne
 
-Les longues lignes sont difficiles à lire
+Les longues lignes sont difficiles à lire 
 
 Mal :
 
@@ -1139,6 +1219,7 @@ Bon :
       <td>The root Element</td>
       <td>Sections</td>
     </tr>
+
 
 ### Utilise l'élément `th` pour le cellule d'en-tête.
 
@@ -1192,9 +1273,11 @@ Bon :
       </tbody>
     </table>
 
+
 ## Formulaires
 
-### Enveloppe le formulaire de contrôle avec l'élément `label`
+
+### Enveloppe le formulaire de contrôle avec l'élément `label` 
 
 L'élément `label` aide à focaliser l’élément de forme.
 
@@ -1205,6 +1288,7 @@ Mal :
 Bon :
 
     <p><label>Query: <input name="q" type="text"></label></p>
+
 
 ### Omettre l'attribut `for` si possible
 
@@ -1218,7 +1302,8 @@ Bon :
 
     <label>Query: <input name="q" type="text"></label>
 
-### Utiliser un attribut `type` approprié pour l'élément `input`
+
+### Utiliser un attribut `type` approprié pour l'élément `input` 
 
 Avec un `type` approprié, les navigateurs offrent des fonctions supplémentaires aux éléments `input`.
 
@@ -1230,9 +1315,10 @@ Bon :
 
     <label>Search keyword: <input name="q" type="search"></label>
 
+
 ### Ajouter un attribut `value` à `input type="submit"`
 
-Le texte par défaut pour le bouton d’envoi n’est pas standardisé dans
+Le texte par défaut pour le bouton d’envoi n’est pas standardisé dans 
 différents navigateurs et langues.
 
 Mal :
@@ -1243,7 +1329,8 @@ Bon :
 
     <input type="submit" value="Search">
 
-### Ajouter l'attribut `title` à l'élément `input` quand il y'a un attribut `pattern`
+
+### Ajouter l'attribut `title` à l'élément `input` quand il y'a un attribut `pattern` 
 
 Si le texte saisi ne correspond pas à l’attribut `pattern`, la valeur de l’attribut `title`
 s’affichera comme indice.
@@ -1256,7 +1343,8 @@ Bon :
 
     <input name="security-code" pattern="[0-9]{3}" title="A security code is a number in three figures." type="text">
 
-### Ne pas utiliser l'attribut `placeholder` pour étiquetter
+
+### Ne pas utiliser l'attribut `placeholder` pour étiquetter 
 
 L'élément `label` est pour une étiquette, l'attribut `placeholder` est pour un petit indice.
 
@@ -1268,9 +1356,10 @@ Bon :
 
     <label>Email: <input name="email" placeholder="john.doe@example.com" type="text"></label>
 
+
 ### Ecrit un seul élément `option` par line.
 
-Les longues lignes sont difficiles à lire.
+Les longues lignes sont difficiles à lire. 
 
 Mal :
 
@@ -1286,7 +1375,8 @@ Bon :
       <option label="Sections">
     </datalist>
 
-### Ajouter un attribut `max` à l'élément `progress`
+
+### Ajouter un attribut `max` à l'élément `progress` 
 
 Avec l'attribut `max`, l'attribut `value` peut être écrit dans un format simple.
 
@@ -1298,9 +1388,10 @@ Bon :
 
     <progress max="100" value="50"> 50%</progress>
 
-### Ajouter les attributs `min` et `max` à l'élément `meter`
 
-Avec les attributs `min` et `max`, l'attribut `value` peut être écrit dans un
+### Ajouter les attributs `min` et `max` à l'élément `meter` 
+
+Avec les attributs `min` et `max`, l'attribut `value` peut être écrit dans un 
 format simple
 
 Mal :
@@ -1311,7 +1402,8 @@ Bon :
 
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total)</meter>
 
-### Placer l'élément `legend` comme premier enfant de l'élément `fieldset`
+
+### Placer l'élément `legend` comme premier enfant de l'élément `fieldset` 
 
 C'est nécessaire.
 
@@ -1331,7 +1423,9 @@ Bon :
       ...
     </fieldset>
 
+
 ## Script
+
 
 ### Omettre l'attribut `type` pour JavaScript
 
@@ -1350,7 +1444,8 @@ Bon :
       ...
     </script>
 
-### DNe pas commenter le contenu de l'élément `script`
+
+### DNe pas commenter le contenu de l'élément `script` 
 
 Ce rituel est pour les navigateurs anciens
 
@@ -1376,6 +1471,7 @@ Bon :
       ...
     </script>
 
+
 ### N’utilisez pas d’éléments de `script` injectés par script
 
 L'attribut `async` est le meilleur pour la simplicité et la performance.
@@ -1393,7 +1489,9 @@ Bon :
 
     <script async defer src="https://example.com/widget.js"></script>
 
+
 ## Autres
+
 
 ### Indenter constamment
 
@@ -1421,6 +1519,7 @@ Bon :
       </body>
     </html>
 
+
 ### Utiliser un chemin absolu pour les liens internes
 
 Un lien absolu fonctionne mieux sur votre localhost sans connexion Internet.
@@ -1437,9 +1536,10 @@ Bon :
     ...
     <p>You can find more at <a href="/contact.html">contact page</a>.</p>
 
+
 ### N’utilisez pas l’URL relative au protocole pour les ressources externes
 
-Avec le protocole, vous pouvez charger des ressources externes de manière
+Avec le protocole, vous pouvez charger des ressources externes de manière 
 fiable et en toute sécurité.
 
 Mal :
@@ -1450,31 +1550,35 @@ Bon :
 
     <script src="https://example.com/js/library.js">
 
+
+
+
 ## Contributors
 
--  [@hail2u\_](https://github.com/hail2u)
--  [@momdo](https://github.com/momdo)
+- [@hail2u_](https://github.com/hail2u)
+- [@momdo](https://github.com/momdo)
+
 
 ## Translators
 
--  [@ShayanTheNerd](https://github.com/ShayanTheNerd)
--  [@costinlotreanu](https://github.com/costinlotreanu)
--  [@edgar-avila](https://github.com/edgar-avila)
--  [@kobyborali](https://github.com/kobyborali)
--  [@m1nhnv](https://github.com/m1nhnv)
--  [@mrcaidev](https://github.com/mrcaidev)
--  [@naufalk25](https://github.com/naufalk25)
--  [@oebelus](https://github.com/oebelus)
--  [@oebelus](https://github.com/oebelus)
--  [@sahilmaniyar](https://github.com/sahilmaniyar)
--  [@sliderkh](https://github.com/sliderkh)
--  [@stenbaek](https://github.com/stenbaek)
--  [@techhtml](https://github.com/techhtml)
--  [@umutphp](https://github.com/umutphp)
--  [@wesleynepo](https://github.com/wesleynepo)
--  [@oebelus](https://github.com/oebelus)
--  [@zulkar29](https://github.com/zulkar29)
--  [@victorchao996](https://github.com/victorchao996)
+- [@costinlotreanu](https://github.com/costinlotreanu)
+- [@edgar-avila](https://github.com/edgar-avila)
+- [@kobyborali](https://github.com/kobyborali)
+- [@m1nhnv](https://github.com/m1nhnv)
+- [@mrcaidev](https://github.com/mrcaidev)
+- [@naufalk25](https://github.com/naufalk25)
+- [@oebelus](https://github.com/oebelus)
+- [@oebelus](https://github.com/oebelus)
+- [@sahilmaniyar](https://github.com/sahilmaniyar)
+- [@sliderkh](https://github.com/sliderkh)
+- [@stenbaek](https://github.com/stenbaek)
+- [@techhtml](https://github.com/techhtml)
+- [@umutphp](https://github.com/umutphp)
+- [@wesleynepo](https://github.com/wesleynepo)
+- [@oebelus](https://github.com/oebelus)
+- [@zulkar29](https://github.com/zulkar29)
+- [@victorchao996](https://github.com/victorchao996)
+
 
 ## License
 
