@@ -958,6 +958,7 @@ Corect:
 
     <abbr title="HTML Best Practices">HBP</abbr>
 
+
 ### Marcați în mod verbos elementul `ruby`
 
 Suportul pentru elementul `ruby` nu este finalizat în browserele moderne.
@@ -1058,6 +1059,7 @@ Corect:
 
 
 ## Editări
+
 
 ### Nu săriți cu elementele `ins` și `del` peste alte elemente
 
@@ -1285,6 +1287,7 @@ Corect:
 
 
 ## Form
+
 
 ### Înfășoară `form control` cu elementul `label`
 
@@ -1558,8 +1561,6 @@ Greșit:
 Corect:
 
     <script src="https://example.com/js/library.js">
-
-
 
 
 ## Contribuitori

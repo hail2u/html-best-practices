@@ -637,6 +637,7 @@ Good:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+
 ### 在 `blockquote` 元素中使用恰当的元素
 
 `blockquote` 元素的内容是引用，而不仅仅是一堆字符。
@@ -1537,8 +1538,6 @@ Bad:
 Good:
 
     <script src="https://example.com/js/library.js">
-
-
 
 
 ## 贡献者

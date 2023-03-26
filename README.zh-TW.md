@@ -638,6 +638,7 @@ Good:
     <pre>&lt;!DOCTYPE html&gt;
     </pre>
 
+
 ### 在 `blockquote` 元素中使用合適的元素
 
 `blockquote` 元素的内容是引用，而不僅僅是一堆字元。
@@ -1538,8 +1539,6 @@ Bad:
 Good:
 
     <script src="https://example.com/js/library.js">
-
-
 
 
 ## 貢獻者

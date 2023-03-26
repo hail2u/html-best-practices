@@ -1555,8 +1555,6 @@ Tốt:
     <script src="https://example.com/js/library.js">
 
 
-
-
 ## Những người đóng góp
 
 - [@hail2u_](https://github.com/hail2u)

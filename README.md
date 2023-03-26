@@ -1556,8 +1556,6 @@ Good:
     <script src="https://example.com/js/library.js">
 
 
-
-
 ## Contributors
 
 - [@hail2u_](https://github.com/hail2u)

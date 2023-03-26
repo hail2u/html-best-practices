@@ -1556,8 +1556,6 @@ Baik:
     <script src="https://example.com/js/library.js">
 
 
-
-
 ## Kontributor
 
 - [@hail2u_](https://github.com/hail2u)
