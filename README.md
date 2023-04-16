@@ -1057,7 +1057,7 @@ Good:
 
 ### Don’t stride `ins` and `del` element over other elements
 
-Elements cannot be overflow other elements.
+Elements cannot overflow other elements.
 
 Bad:
 
