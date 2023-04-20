@@ -874,7 +874,7 @@ Good:
 
 ### Use `rel`, `hreflang`, and `type` attribute if needed
 
-These hints helps applications how handle linked resource.
+These hints help applications to handle linked resources.
 
 Bad:
 
