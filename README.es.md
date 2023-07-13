@@ -906,7 +906,7 @@ Bien:
 
 ### Evita los elementos `s`, `i`, `b`, y `u` tanto como sea posible
 
-La semántica de estos elementos es difícil para los humano.
+La semántica de estos elementos es difícil para los humanos.
 
 Mal:
 
