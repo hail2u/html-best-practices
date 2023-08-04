@@ -1394,7 +1394,7 @@ Doğru:
     <meter min="0" max="1024" value="512"> 512GB used (1024GB total</meter>
 
 
-### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak elemanı olarak oluşturun
+### `legend` etiketini `fieldset` etiketinin ilk çocuğu olarak oluşturun
 
 Spec bunu gerektirir.
 
