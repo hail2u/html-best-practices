@@ -111,7 +111,7 @@ Good:
 
 ### Don’t omit closing tag
 
-I think you don’t understand a rule for omitting closing tag.
+I think you understand the rule for not omitting a closing tag.
 
 Bad:
 
