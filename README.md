@@ -6,7 +6,8 @@ For writing maintainable and scalable HTML documents
 
 
 ## General
-
+# More useful HTML practices
+https://www.freecodecamp.org/news/html-best-practices/
 
 ### Start with DOCTYPE
 
